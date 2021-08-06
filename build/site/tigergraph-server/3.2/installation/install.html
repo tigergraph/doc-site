@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Installation Guide :: TigerGraph Server User Guide</title>
+    <meta name="description" content="Installing Single-machine and Multi-machine systems">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="install.html">TigerGraph Server User Guide</a></li>
+    <li>Installation</li>
+    <li><a href="install.html">Installation Guide</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/installation/pages/install.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Installation Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide describes how to install the TigerGraph platform either as a single node or as a multi-node cluster, interactively or non-interactively.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+If you signed up for the Enterprise Free license, you also have access to the TigerGraph platform as a Docker image or a virtual machine (VirtualBox) image.   Follow the instructions in <a href="#../../../cloud/getting-started.adoc" class="page unresolved">Getting started</a> to start up TigerGraph in a Docker container or with VirtualBox.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preparation"><a class="anchor" href="#_preparation"></a>Preparation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before you can install the TigerGraph system, you need the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One or more machines that meet the minimum <a href="hw-and-sw-requirements.html" class="page"><em>Hardware and Software Requirements</em></a>.</p>
+</li>
+<li>
+<p>A sudo user with the same username and login credential on every machine.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If sudo privilege is not available, please contact TigerGraph support for workarounds.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A license key provided by TigerGraph (not applicable to Enterprise Free)</p>
+</li>
+<li>
+<p>A TigerGraph system package</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you do not yet have a TigerGraph system package, you can request one at the following address: <a href="https://www.tigergraph.com/get-tigergraph/" class="bare">https://www.tigergraph.com/get-tigergraph/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you are installing a cluster, ensure that every machine has the same SSH port and the port stays open during installation</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a><strong>Installation</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph&#8217;s installation script support both single-node and cluster installation, and the user can choose to install either interactively and non-interactively.</p>
+</div>
+<div class="sect2">
+<h3 id="_interactive_installation"><a class="anchor" href="#_interactive_installation"></a>Interactive installation</h3>
+<div class="paragraph">
+<p>The following describes the procedure to install TigerGraph on Linux interactively. The filename of your package may vary, depending on the product edition and version. For the examples here, we use the filename <code>tigergraph-&lt;version&gt;.tar.gz</code>, which should be replaced by the actual filename of your package.</p>
+</div>
+<div class="sect3">
+<h4 id="_step_1_extract_the_package"><a class="anchor" href="#_step_1_extract_the_package"></a><strong>Step 1</strong>: Extract the package</h4>
+<div class="paragraph">
+<p>Extract the package by running the following command. A folder named <code>tigergraph-&lt;version&gt;-offline</code> <em>**</em>will be created.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: extract for <version>= x.y.z" %}</version></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_2_run_installation_script"><a class="anchor" href="#_step_2_run_installation_script"></a><strong>Step 2</strong>:  Run installation script</h4>
+<div class="paragraph">
+<p>Navigate to the <code>tigergraph-&lt;version&gt;-offline</code> folder and run script <code>install.sh</code>  with the following commands:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: Default installation for <version>= 3.1.0" %}</version></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd tigergraph-&lt;version&gt;-offline
+
+# to install enterprise license
+$ sudo ./install.sh
+
+# For non-interactive installations, please see the non-interactive mode section.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The installer will ask for the following information, for which you may choose to hit Enter to skip and use the system default or enter a new value:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your agreement to the License Terms and Conditions</p>
+</li>
+<li>
+<p>Your license key (not applicable for Enterprise Free)</p>
+</li>
+<li>
+<p>Username for the Linux user who will own and manage the TigerGraph platform</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The installer creates a Linux user who is the only authorized user that can run <code>gadmin</code> commands to manage the TigerGraph Platform, and for whom this username is for</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Password for the Linux user who will own and manage the TigerGraph platform</p>
+</li>
+<li>
+<p>Path to where the installation folder will be</p>
+</li>
+<li>
+<p>Path to where the data folder will be</p>
+</li>
+<li>
+<p>Path to where the log folder will be</p>
+</li>
+<li>
+<p>Path to where the temp folder will be</p>
+</li>
+<li>
+<p>The SSH port for your machine</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To see what the default settings are, read the <a href="install.md#installation-options">Installation options</a> section below.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Since license keys are long&#8201;&#8212;&#8201;over 100 characters long. If you copy-and-paste the license key, be careful not to accidentally include an end-of-line character.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_3_configure_cluster_settings"><a class="anchor" href="#_step_3_configure_cluster_settings"></a><strong>Step 3</strong>: Configure cluster settings</h4>
+<div class="paragraph">
+<p>TigerGraph cluster configuration enables the graph database to be partitioned and distributed across multiple server nodes in a local network. After you have answered the questions described in the previous step, the installation script will ask for the following to complete cluster configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The number of nodes in your cluster. Each node  will be given an alias following the input (<code>m1</code>, <code>m2</code>, <code>m3</code>, etc.)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If this is a single-node installation, enter <code>1</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The IP address of each node</p>
+</li>
+<li>
+<p>Username and credentials information of the sudo user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Every machine in the cluster must have a sudo user with the same username and password or SSH key.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Permission to set NPT time synchronization</p>
+</li>
+<li>
+<p>Permission to set firewall rules among the cluster nodes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+In TigerGraph 3.x, the installation machine can be within or outside the cluster. If outside the cluster, the installation machine still needs to be a Linux machine.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>After all the questions are answered, the script will proceed to installation. A screenshot of the interactive installation is shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2876%29.png" alt="image%20%2876%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_4_verify_installation"><a class="anchor" href="#_step_4_verify_installation"></a><strong>Step 4</strong>: Verify installation</h4>
+<div class="paragraph">
+<p>After installation is complete, you can switch to the Linux user who owns the platform (created in <a href="install.md#step-2-run-installation-script">Step 2</a>) with the following command :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ su &lt;username&gt;  # default username: tigergraph</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At the prompt, enter the password that was set in Step 2.</p>
+</div>
+<div class="paragraph">
+<p>After switching to the correct user, you now have access to <a href="#../system-management/management-with-gadmin.adoc" class="page unresolved"><code>gadmin</code> commands</a>. Confirm successful installation by running <code>gadmin status</code>. If the system is installed correctly and the license is activated, the command should report that all services are up and ready. Since there is no graph data loaded yet, GSE <em>**</em>and GPE will show <code>"Warmup"</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2877%29.png" alt="Status of all components upon successful installation">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_non_interactive_installation"><a class="anchor" href="#_non_interactive_installation"></a>Non-interactive installation</h3>
+<div class="paragraph">
+<p>The following describes the procedure to install TigerGraph on Linux non-interactively.</p>
+</div>
+<div class="sect3">
+<h4 id="_step_1_extract_the_package_2"><a class="anchor" href="#_step_1_extract_the_package_2"></a><strong>Step 1</strong>: Extract the package</h4>
+<div class="paragraph">
+<p>Extract the package by running the following command. A folder named <code>tigergraph-&lt;version&gt;-offline</code> <em>**</em>will be created.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: extract for <version>= x.y.z" %}</version></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_2_configure_installation_settings"><a class="anchor" href="#_step_2_configure_installation_settings"></a>Step 2: Configure installation settings</h4>
+<div class="paragraph">
+<p>Navigate to the <code>tigergraph-&lt;version&gt;-offline</code> folder. Inside the folder, there is a file named <code>install_conf.json</code>. For non-interactive mode installation, the user must review and modify all the settings in the file <em>**</em>`install_conf.json` before running the installer.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of the <code>install_conf.json</code> file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "BasicConfig": {
+    "TigerGraph": {
+      "Username": "tigergraph",
+      "Password": "tigergraph",
+      "SSHPort": 22,
+      "PrivateKeyFile": "",
+      "PublicKeyFile": ""
+    },
+    "RootDir": {
+      "AppRoot": "/home/tigergraph/tigergraph/app",
+      "DataRoot": "/home/tigergraph/tigergraph/data",
+      "LogRoot": "/home/tigergraph/tigergraph/log",
+      "TempRoot": "/home/tigergraph/tigergraph/tmp"
+    },
+    "License": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJJc3N1ZXIiOiJUaWdlckdyYXBoIEluYy4iLCJBdWRpZW5jZSI6IlRpZ2VyR3JhcGggRnJlZSIsIlN0YXJ0VGltZSI6MTYxNzM1NTgwMywiRW5kVGltZSI6MTY1MTQ4NzQwMywiSXNzdWVUaW1lIjoxNjE3MzU5NDAzLCJFZGl0aW9uIjoiRW50ZXJwcmlzZSIsIlZlcnNpb24iOiJBbGwiLCJIb3N0Ijp7Ik1heENQVUNvcmUiOjEwMDAwMDAwMDAwMDAwMDAsIk1heFBoeXNpY2FsTWVtb3J5Qnl0ZXMiOjEwMDAwMDAwMDAwMDAwMDAsIk1heENsdXN0ZXJOb2RlTnVtYmVyIjoxMDI0fSwiVG9wb2xvZ3kiOnsiTWF4VmVydGV4TnVtYmVyIjoxMDAwMDAwMDAwMDAwMDAwLCJNYXhFZGdlTnVtYmVyIjoxMDAwMDAwMDAwMDAwMDAwLCJNYXhHcmFwaE51bWJlciI6MTAyNCwiTWF4VG9wb2xvZ3lCeXRlcyI6NTM2ODcwNjM3MTJ9LCJHU1QiOnsiRW5hYmxlIjp0cnVlLCJab29tQ2hhcnRzTGljZW5zZSI6IntcbiAgXCJsaWNlbnNlXCI6IFwiWkNCLTRtZmk3NDRsdjogWm9vbUNoYXJ0cyBFbnRlcnByaXNlIGxpY2VuY2UgZm9yIFRpZ2VyR3JhcGggZm9yIG9mZmxpbmUgdXNlOyB1cGdyYWRlcyB1bnRpbDogMjAyMi0xMi0zMVwiLFxuICBcImxpY2Vuc2VLZXlcIjogXCI4Zjg2ZWQzM2Y0ZWJmYmE4YTI4NjlkZGUzMmYzYTMwZGI4NGEzOTgxYmEzNmZhZWZlYTMxNDhhYzY4MzkxZTlhYzUzZDU3YmI5MjdmNjY5YWI1ZWJhYzJhYmQ3YTFkNDBiM2UxNDRmZjIwMDYyZWNiZmIwZjJiN2I0ZWFmZWIwYzU2NTc2NjBhZGExZDc1MWNhODU3NWZhYTE1ZWQwODI0NzkwZWQxMjJkY2Q4NjcyZTJiN2QzN2MwNmE3MzFhYTc2MDIwM2FhYmMwYjYzOWEzMjBhOGQxNmI0YmFiNGY5NTJiNTMwOTUzMWI4MDkxNjYwZDVjOGMzNGY0NmMyNjZiOGZiNzc2YzFmN2Y0MTdlMGQ5Y2JkZGFlOTExNTFlY2Y3YmMzZDlkNDgyNWE2MjAwYzk0MWMyMDE4ZDY4YjkyOWE5ZWY2MzQ2MDE5NjFhYmU1MGI0ZTk0ZmY5Y2VjMjA1ODEwYmVlZmRkM2NlZDU2YjM5NTVjYmE0YWIyMGNiNzc5MWE0NmQxNzIwMzNiZmI0ZDIyMDM4ODZhZTllZDFkOWMzOWIyOTM2ODc3Yjc2NzY4ZjQwNWQ5Y2MwY2JlODVjOTE2NDllMDI5YTA0NDFlOGFmYjA2MzY4MTMxZGM1YTc1NDEyOTc1NjFlMDRlMGM1MzE1ZmFjMDdhYzViOWViM1wiXG59In0sIlJ1bnRpbWVNZW1vcnkiOnsiTWF4VXNlclJlc2lkZW50U2V0Qnl0ZXMiOjEwMDAwMDAwMDAwMDAwMDB9fQ.B1tR-ZyzFB3WCtCXBl-CXb-3YlL1Hy1btCzsEnkLd6GE2AOvJdpqVZGU-YGyIaOGSYX1sbjrePBoupuWPwrOgvce-mq_Qwp8eounoEOkuzYlTQXFj3lM1wO6vrdiOn2GUm0qMVtlVTIDrFZlZ-bWcdSUA4J8t2JNJrYxQgPWjlO9f4I4w2RbTK3sZW7N96bqFUQPituiwLcPX_VSVT8KBluM2WIH7CJitHl21IbnQbwScBw_QgjfaITZXE6UXisMM9XNphf5yQX9arFDQLchV7e2i3R2tUEuF7V_mHFrVa8vCBjm_0uABzcY8U02QJ78SB9MgLNrqgtzIwHmYP22KQ",
+    "NodeList": [
+      "m1: 127.0.0.1"
+    ]
+  },
+  "AdvancedConfig": {
+    "ClusterConfig": {
+      "LoginConfig": {
+        "SudoUser": "sudoUserName",
+        "Method": "P[or K]",
+        "P": "&lt;sudo_user_password&gt;",
+        "K": "&lt;/path/to/my_key.pem_rsa&gt;"
+      },
+      "ReplicationFactor": 1
+    }
+  }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is a description of all the fields in the config file:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"BasicConfig"</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"TigerGraph"</code> : Information about the Linux user that will be created by the installer who owns and manages the TigerGraph platform.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"Username"</code>: Username of the Linux user.</p>
+</li>
+<li>
+<p><code>"Password"</code>: Password of the Linux user.</p>
+</li>
+<li>
+<p><code>"SSHPort"</code>: Port number used to establish SSH connections.</p>
+</li>
+<li>
+<p><code>"PrivateKeyFile"</code> (optional):  Absolute path to a valid private key file. If left empty, TigerGraph will generate one named <code>tigergraph.rsa</code> automatically.</p>
+</li>
+<li>
+<p><code>"PublicKeyFile"</code>(optional): Absolute path to a valid public key file. If left empty, TigerGraph will generate one named <code>tigergraph.pub</code> automatically.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>"RootDir"</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"AppRoot"</code>: Absolute path to where application folder will be.</p>
+</li>
+<li>
+<p><code>"DataRoot</code>": Absolute path to where the data folder will be.</p>
+</li>
+<li>
+<p><code>"LogRoot"</code>: Absolute path to where the log folder will be.</p>
+</li>
+<li>
+<p><code>"TempRoot"</code>: Absolute path to where the temp folder will be.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>"License"</code>: Your TigerGraph license string.</p>
+</li>
+<li>
+<p><code>"Node List"</code>:  A JSON array of the nodes in the cluster. Each machine in the cluster is defined as a key-value pair, where the key is a machine alias (m1, m2, m3, etc) and the value is the IP address of the node.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>"AdvancedConfig"</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"ClusterConfig"</code>: Cluster configurations</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"LoginConfig"</code>: Login configurations</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"SudoUser"</code>: Username of the sudo user who will be used to execute the installation on all nodes.</p>
+</li>
+<li>
+<p><code>"Method"</code>: Authentication method for SSH. Enter <code>"P"</code> to use password authentication and <code>"K"</code> to use key-based authentication.</p>
+</li>
+<li>
+<p><code>"P"</code>: Password of the sudo user.</p>
+</li>
+<li>
+<p><code>"K"</code>: Absolute path to the SSH key to be used to authenticate the sudo user.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>"ReplicationFactor"</code>: <a href="../../../tigergraph-platform-overview/continuous-availability-overview.md#continuous-availability-definitions">Replication factor</a> of the cluster.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you would like to enable the High Availability (HA) feature, please make sure you have at least 3 nodes in the cluster and set the replication factor to be greater than 1. For example, if your cluster has 6 nodes, you could set the replication factor to be 2 or 3. If you set the replication factor to be 2, then the partitioning factor will be  6 / 2 = 3.  Therefore, 3 nodes will be used for one copy of the data, and the other 3 nodes will be used as a replica copy of the data.</p>
+</li>
+<li>
+<p>Ensure that the total number of nodes can be fully divided by the replication factor.  Otherwise, some nodes may not be utilized as parts of the HA cluster.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_step_3_run_install_script_with_n_option"><a class="anchor" href="#_step_3_run_install_script_with_n_option"></a>Step 3: Run install script with <code>-n</code> option</h4>
+<div class="paragraph">
+<p>Start the non-interactive installation process by running the <code>install.sh</code> script with the <code>-n</code> option:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo ./install.sh -n</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installation_options"><a class="anchor" href="#_installation_options"></a>Installation options</h3>
+<div class="paragraph">
+<p>The following default settings will be applied if no parameters are specified:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The installer will create a Linux user with username <code>tigergraph</code> and with password <code>tigergraph</code>. This user will be the only user authorized to run <code>gadmin</code> commands to manage the TigerGraph platform and services.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there is already a user named <code>tigergraph</code>, this user will be designated as the platform owner and no other user will be created.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The default root directory for the installation would be <code>/home/tigergraph/tigergraph</code> <strong><strong>*with the App/Data/Log/Temp files within it : App Path : <code>/home/tigergraph/tigergraph/app</code> </strong><strong>Data Path :<code>/home/tigergraph/tigergraph/data</code> </strong><strong>Log Path :<code>/home/tigergraph/tigergraph/log</code> </strong></strong>*Temp Path :<code>/home/tigergraph/tigergraph/tmp</code></p>
+</li>
+<li>
+<p>The root directory for the installation (referred to as <code>&lt;tigerGraph_root_dir&gt;</code>) is a folder called <code>tigergraph</code> <em>**</em>located in the tigergraph user&#8217;s home directory, i.e., <code>/home/tigergraph/tigergraph</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The installation can be customized by running command-line options with the <code>install.sh</code> script:</p>
+</div>
+<div class="sect3">
+<h4 id="_command_line_options"><a class="anchor" href="#_command_line_options"></a>Command-line options</h4>
+<div class="listingblock">
+<div class="content">
+<pre># Command-line options for install.sh
+Usage:
+./install.sh [-n] [-u &lt;user&gt;] [-p &lt;password&gt;] [-r &lt;tigergraph_root_dir&gt;] [-l &lt;license_key&gt;] [-F] [-N]
+./install.sh -h
+Options:
+  -h  --  Show help information
+  -u  --  Username of Linux user to create [default: tigergraph]
+  -p  --  Password of Linux user to create [default: tigergraph]
+  -l  --  TigerGraph license key
+  -n  --  Non-interactive option: suppress prompts, and install
+          using default config
+  -F  --  Set iptables (firewall) rules to open TCP ports among cluster nodes
+  -N  --  Set NTP system time synchronization among cluster nodes
+
+[NOTE    ]: Using option '-n' will non-interactively install the platform
+            on single node or cluster with all configurations from
+            config file "install_config.json". In this case, the config
+            file should be modified before installation.
+
+[WARNING ]: Installer will fail if any option (except -F and -N)
+            is provided with option '-n' at the same time.</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

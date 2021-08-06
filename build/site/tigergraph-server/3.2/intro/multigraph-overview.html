@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/intro/pages/multigraph-overview.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Beginning with Version 3.1,</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>*</strong>*<a href="../start/vertex-level-access-control/"><strong>Vertex-Level Access Control</strong></a> <strong>greatly improves the granularity of data access control from partitioning data at the type-level (MultiGraph) to the individual vertex-level (VLAC).</strong></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>One TigerGraph instance can manage multiple graphs, each with its own set of user privileges. This first-of-its-kind capability, dubbed MultiGraph, is available as an optional service in the TigerGraph platform.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src=".gitbook/assets/image%20%2816%29.png" alt="MultiGraph allows one graph schema to be shared accross all departments" width="with different levels of access control at the type level.">
+</div>
+</div>
+<div class="paragraph">
+<p>MultiGraph enables several powerful use cases:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple Tenancy: Use one TigerGraph instance to support several completely separate data sets, each with its own set of users. Each user community cannot see the other user communities or other data sets.</p>
+</li>
+<li>
+<p>Fine-grained privileges on the same set of data: Role-based access control, available on single graphs, grants permission for the privilege to run queries (include data modification queries). In a single graph scheme, there is no way to say "Query X can be run by some users but not by others." Using multiple graphs defined over the same set of data, each graph can have its own set of queries and own set of users, in effect customizing who can run which queries.</p>
+</li>
+<li>
+<p>Overlapping graphs: Graphs can partially overlap, to enable a combination of shared and private data.</p>
+</li>
+<li>
+<p>Hierarchical subgraphs: A Graph X can be defined to cover the domains of Graphs Y and Z, that is, Graph X = (Graph Y) U (Graph Z). This provides an interesting way to describe a data partitioning or parent-child structure. (This is not the same as defining sub-classes of data types; data types are still independent.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you implement only one graph now, you can upgrade to MultiGraph and add additional graphs at any time, without having to redo your existing design.</p>
+</div>
+<div class="sect1">
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>Concepts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_graphs_and_graph_domains"><a class="anchor" href="#_graphs_and_graph_domains"></a>Graphs and Graph Domains</h3>
+<div class="paragraph">
+<p>A graph <strong><strong>*is defined as a set of vertex types and edge types. More precisely, it is all the vertices and edges of that collection of types. The domain </strong></strong>*of a graph is its set of vertex types and edge types. Each graph contains its own data loading jobs and queries, which do not affect and are not visible to other graphs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE GRAPH &lt;gname&gt; (&lt;list of vertex types &amp; edge types&gt;)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+<strong>MultiGraph Principles</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A TigerGraph instance with a basic license key can have one graph. A TigerGraph instance with a MultiGraph license key can create multiple graphs.</p>
+<div class="paragraph">
+<p><strong><code>superuser</code></strong>and <strong><code>globaldesigner</code></strong>can define one or more graphs. The domains of the two graphs may be completely separate, may overlap, or may coincide exactly.</p>
+</div>
+</li>
+<li>
+<p>A vertex type or edge type created by a superuser is a global type.</p>
+</li>
+<li>
+<p>A <strong><code>superuser</code></strong> or <strong><code>globaldesigner</code></strong> can include a global vertex or edge type in one or more graphs. Global types can be shared among multiple graphs.</p>
+</li>
+<li>
+<p>Users with the <strong><code>admin</code></strong> or <strong><code>designer</code></strong> role for a particular graph can add local vertex types and edge types to their own graph. Local types cannot be shared among multiple graphs.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_graph_specific_roles_and_privileges"><a class="anchor" href="#_graph_specific_roles_and_privileges"></a>Graph-Specific Roles and Privileges</h3>
+<div class="paragraph">
+<p>The TigerGraph system includes several predefined roles<strong>.</strong> Each role is a fixed and logical set of privileges to perform operations. In order to access a graph, a user must be granted a role on that graph. Without a role, a user has no meaningful access.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+<strong>Role-Based MultiGraph Access Control</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User roles are granted or revoked on a per-graph basis. Each GRANT or REVOKE statement specifies not only a role but also a graph.</p>
+</li>
+<li>
+<p>The <code>GRANT</code>/<code>REVOKE</code> privilege is reserved for superuser and admin users.</p>
+</li>
+<li>
+<p>The <strong><code>superuser</code></strong> can grant a role to any user on any graph.</p>
+</li>
+<li>
+<p>A <strong><code>superuser</code></strong> can pick a user to be an <strong><code>admin</code></strong> on a particular graph. The admin can then manage user privileges on their graph.</p>
+</li>
+<li>
+<p>A user may be granted different roles on different graphs.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For details about managing users, privileges, and roles, see <a href="#../admin/admin-guide/user-access/user-privileges-and-authentication.adoc" class="page unresolved">User Privileges and Authentication</a>. There you will find a chart describing each of the roles in detail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_a_working_graph"><a class="anchor" href="#_setting_a_working_graph"></a>Setting a Working Graph</h3>
+<div class="paragraph">
+<p>{% hint style="info" %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A user must set their working graph in order to access that graph, either using the -g flag with the GSQL command, or by using the <code>USE GRAPH</code> command.</p>
+</li>
+<li>
+<p>Users who have privileges on more than one graph (including superusers) may only work with one graph at a time. The <code>GLOBAL SCHEMA_CHANGE JOB</code> stretches this rule.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that the <code>CREATE</code> commands for queries, loading jobs, and schema_change jobs require that the graph name be specified, even for systems with only one graph.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_effect_on_other_specifications"><a class="anchor" href="#_effect_on_other_specifications"></a>Effect on Other Specifications</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>RESTPP Endpoints: Endpoints that pertain to the graph data must include the name of the graph in the request URL.  See <a href="../dev/restpp-api/">RESTPP API User Guide .</a></p>
+</li>
+<li>
+<p>User Authentication secrets and tokens: Our commands and procedures follow OAuth standards.  See <a href="#../admin/admin-guide/user-access/user-privileges-and-authentication.adoc" class="page unresolved">Managing User Privileges and Authentication.</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>There are many other details about using the MultiGraph feature, especially if your application has multiple users with different roles. In the documentation, the Multiple Graph logo is placed next to relevant topics: <span class="image"><img src=".gitbook/assets/mg_logo_vl_50_new.jpg" alt="mg logo vl 50 new"></span></p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

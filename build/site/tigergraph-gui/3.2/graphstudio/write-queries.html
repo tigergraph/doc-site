@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Write Queries :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="write-queries.html">Write Queries</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/write-queries.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Write Queries</h1>
+<div class="sect1">
+<h2 id="_write_queries"><a class="anchor" href="#_write_queries"></a>Write Queries <a id="TigerGraphGraphStudioUIGuide-WriteQueries"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On the Write Queries page, you can design and run custom queries with TigerGraph&#8217;s powerful graph query language&#8201;&#8212;&#8201;GSQL.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.1.1.png" alt="3.1.1">
+</div>
+</div>
+<div class="paragraph">
+<p>The Write Query page is horizontally divided into two parts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Query Editing Panel</p>
+</li>
+<li>
+<p>Result, Log and Visualization Panel</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_query_editing_panel"><a class="anchor" href="#_query_editing_panel"></a>Query Editing Panel <a id="TigerGraphGraphStudioUIGuide-QueryEditingPanel"></a></h3>
+<div class="paragraph">
+<p>The Query Editing panel is divided into two sub-panels: the left sub-panel is used to select a query to edit, and the right, larger sub-panel displays the selected query for editing. Here you can edit, save, delete query and/or its draft, install and run the query. The query editor features syntax highlighting customized for the GSQL language.  Also, the query editor performs real-time semantic checking.</p>
+</div>
+<div class="paragraph">
+<p>Above the query editing pane is a toolbar, with the following buttons, from left to right:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.2.1.png" alt="3.2.1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Expand/Collapse</strong> : Expand or collapse the Query Editing panel to or from full page mode. The icon changes depending on whether the panel is currently expanded or collapsed.</p>
+</li>
+<li>
+<p><strong>Save</strong> : Save the current query draft.</p>
+</li>
+<li>
+<p><strong>Install</strong> : Install the query into the database.</p>
+</li>
+<li>
+<p><strong>Run</strong> : Run the query. If the query is not installed, it will run the query in interpreted mode. Note there is performance penalty to run queries in interpreted mode.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Run Configuration:</strong> Set the query runtime configurations.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Delete</strong> : Delete the selected query and its draft.</p>
+</li>
+<li>
+<p><strong>Show query endpoint:</strong> Show the RESTFul endpoint to execute the query. Only installed queries can see their RESTFul endpoints.</p>
+</li>
+<li>
+<p><strong>Download:</strong> Download the query as a gsql file.</p>
+</li>
+<li>
+<p><strong>Discard query draft :</strong> Delete the selected query draft.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_add_or_edit_query"><a class="anchor" href="#_add_or_edit_query"></a>Add Or Edit Query <a id="TigerGraphGraphStudioUIGuide-AddOrEditQuery"></a></h4>
+<div class="paragraph">
+<p>To create a new query, simply click on the "New GSQL Query" button<span class="image"><img src="../.gitbook/assets/upload_file_btn.png" alt="upload file btn"></span>at the bottom-right corner of the left sub-panel, and type in the name of the new query in the popup window:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/create_new_query.png" alt="create new query">
+</div>
+</div>
+<div class="paragraph">
+<p>A query draft will be created with a template:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.4.1.png" alt="3.4.1">
+</div>
+</div>
+<div class="paragraph">
+<p>To edit an existing query, click on the query name in the list in the left sub panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.5%20%281%29.png" alt="3.5%20%281%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_save_query_draft"><a class="anchor" href="#_save_query_draft"></a>Save Query Draft <a id="TigerGraphGraphStudioUIGuide-SaveQueryDraft"></a></h4>
+<div class="paragraph">
+<p>Once you made some changes to the query code and want to save it as a query draft, click on the "save" button<span class="image"><img src="../.gitbook/assets/save_btn.png" alt="save btn"></span>in the toolbar.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_query_in_interpreted_mode"><a class="anchor" href="#_run_query_in_interpreted_mode"></a>Run Query in Interpreted Mode <a id="TigerGraphGraphStudioUIGuide-InstallQuery"></a></h4>
+<div class="paragraph">
+<p>If you have saved the query and there is no errors in the query, you can run the query in interpreted mode. Click the run query button<span class="image"><img src="../.gitbook/assets/start_loading.png" alt="start loading"></span>. Together with the query execution result, a warning message will appear to notify user of the performance concerns running the query in interpreted mode. To speed up the query performance after you are satisfied with the GSQL query developed in interpreted mode, you can follow the instructions in the next section "Install Query".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.6.1.png" alt="3.6.1">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_install_query"><a class="anchor" href="#_install_query"></a>Install Query <a id="TigerGraphGraphStudioUIGuide-InstallQuery"></a></h4>
+<div class="paragraph">
+<p>If you saved a query, the "install query" button<span class="image"><img src="../.gitbook/assets/publish_btn.png" alt="publish btn"></span>will be enabled. Click it to install the query. The installation process may take about 1 minute:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/install_query_progress.png" alt="install query progress">
+</div>
+</div>
+<div class="paragraph">
+<p>After the installation, the run query button changes from<span class="image"><img src="../.gitbook/assets/start_loading.png" alt="start loading"></span>to<span class="image"><img src="../.gitbook/assets/run-installed-query.png" alt="run installed query"></span>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_query"><a class="anchor" href="#_run_query"></a>Run Query <a id="TigerGraphGraphStudioUIGuide-RunQuery"></a></h4>
+<div class="paragraph">
+<p>To run the query, click on the "run" button<span class="image"><img src="../.gitbook/assets/run-installed-query.png" alt="run installed query"></span>in the toolbar. If the query has no parameters, it will run directly and the result will be shown in the Result panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.7.1.png" alt="3.7.1">
+</div>
+</div>
+<div class="paragraph">
+<p>If the query requires parameters, the Enter Query Parameters panel will appear. Enter your parameter values and then click the "Run Query" button<span class="image"><img src="../.gitbook/assets/run_query.png" alt="run query"></span>at the bottom of the panel. If there are several parameters, you might need to scroll the panel to the bottom to find the Run Query button.</p>
+</div>
+<div class="paragraph">
+<p>The query will be executed, and the results will be shown in the Result Panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.8.1.png" alt="3.8.1">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_configuration"><a class="anchor" href="#_run_configuration"></a>Run Configuration</h4>
+<div class="paragraph">
+<p>You can set runtime configurations of the GSQL query by clicking the small <span class="image"><img src="../.gitbook/assets/3.9%20%281%29.png" alt="3.9%20%281%29"></span>button to the right of run query button, then a drop-down menu will appear.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.10.1.png" alt="3.10.1">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the "Run configuration" item, and the Run Configuration panel will be opened.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.11.1.png" alt="3.11.1">
+</div>
+</div>
+<div class="paragraph">
+<p>You can set GSQL query timeout here. By default it uses the timeout of TigerGraph configuration (specified by gadmin commands). You can change it by unchecking the "Use default timeout" label, and then set a new timeout:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/3.13.png" alt="3.13">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the submit button <span class="image"><img src="../.gitbook/assets/3.12%20%282%29.png" alt="3.12%20%282%29"></span> to apply your changes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_delete_query"><a class="anchor" href="#_delete_query"></a>Delete Query <a id="TigerGraphGraphStudioUIGuide-DeleteQuery"></a></h4>
+<div class="paragraph">
+<p>Choose the query you want to delete and click on the "delete" button<span class="image"><img src="../.gitbook/assets/delete_forever.png" alt="delete forever"></span>. The query will be deleted permanently.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_show_query_endpoint"><a class="anchor" href="#_show_query_endpoint"></a>Show Query Endpoint <a id="TigerGraphGraphStudioUIGuide-DeleteQuery"></a></h4>
+<div class="paragraph">
+<p>After finishing writing the GSQL queries and installing the queries, you can access the queries via REST endpoints. By clicking the "show query endpoint" button<span class="image"><img src="../.gitbook/assets/endpoint.png" alt="endpoint"></span>, you can see the format of the endpoint to access this query, so that you can integrate the query with your applications.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/show_query_endpoint.png" alt="show query endpoint">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_download"><a class="anchor" href="#_download"></a>Download</h4>
+<div class="paragraph">
+<p>You can download your query by click <span class="image"><img src="../.gitbook/assets/3.14.1.png" alt="3.14.1"></span>, or download all your queries as a tarball by click <span class="image"><img src="../.gitbook/assets/3.15.1.png" alt="3.15.1"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_delete_query_draft"><a class="anchor" href="#_delete_query_draft"></a>Delete query draft <a id="download"></a></h4>
+<div class="paragraph">
+<p>You can delete your query draft by clicking ​<span class="image"><img src="../.gitbook/assets/delete-query-draft.png" alt="delete query draft"></span>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_install_all_queries"><a class="anchor" href="#_install_all_queries"></a>Install All Queries</h4>
+<div class="paragraph">
+<p>If you want to install all queries that you haven&#8217;t installed yet, you can click "Install all queries" button<span class="image"><img src="../.gitbook/assets/install_all_queries.png" alt="install all queries"></span>in GSQL Queries list. After some verification time, a pop up window listing all queries to be installed will show:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/install_all_query_list.png" alt="install all query list">
+</div>
+</div>
+<div class="paragraph">
+<p>Click INSTALL button, then the listed queries will be installed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/installing_all_queries.png" alt="installing all queries">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_result_panel"><a class="anchor" href="#_result_panel"></a>Result Panel <a id="TigerGraphGraphStudioUIGuide-ResultPanel"></a></h3>
+<div class="paragraph">
+<p>The Result panel shows the result of the last run query. Each query generates up to three types of result: visualized graph, JSON text, or log messages. On the left is a toolbar with buttons for changing the the panel size or for switching to a different type of result. The buttons, from top to bottom, are the following:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">menu option</th>
+<th class="tableblock halign-left valign-top">functionality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../.gitbook/assets/expand_panel.png" alt="expand panel"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expand/Collapse: Expand or collapse the Result panel.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../.gitbook/assets/schema%20%281%29.png" alt="schema%20%281%29"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View schema: Show the graph schema.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../.gitbook/assets/visual-result%20%281%29%20%281%29.png" alt="visual result%20%281%29%20%281%29"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visualize graph result: Show the visual result of the last run query.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../.gitbook/assets/json-result%20%281%29.png" alt="json result%20%281%29"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View JSON result: Show the raw text result in JSON format of the last run query.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="../.gitbook/assets/visualize_log.png" alt="visualize log"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">View logs: Show the log for the last run query.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_view_schema"><a class="anchor" href="#_view_schema"></a>View schema: <a id="TigerGraphGraphStudioUIGuide-VisualResult"></a></h4>
+<div class="paragraph">
+<p>Viewing graph schema makes it more convenient for developers to refer to the schema topology logic and easier to write correct GSQL queries.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/write-queries-schema.png" alt="write queries schema">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_visualize_graph_result"><a class="anchor" href="#_visualize_graph_result"></a>Visualize graph result</h4>
+<div class="paragraph">
+<p>If the query execution result contains a graph structure, the result will be visualized in this panel as a graph. The panel is the same as the <a href="explore-graph.md#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1">Explore Graph panel</a>. Please refer to the documentation for the <a href="explore-graph.md#TigerGraphGraphStudioUIGuide-GraphExplorationPanelOptions-1">Explore Graph panel</a>. The only difference is that each time you run a query, the previous result will be erased. In Explore Graph the results are added incrementally.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/write-queries-graph.png" alt="write queries graph">
+</div>
+</div>
+<div class="paragraph">
+<p>You can switch to the JSON Result panel to see the result in JSON format.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_view_json_result"><a class="anchor" href="#_view_json_result"></a>View JSON result</h4>
+<div class="paragraph">
+<p>If there is no graph structure in the result, the result will be displayed in this panel as a JSON object.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/view-json-result.png" alt="view json result">
+</div>
+</div>
+<div class="paragraph">
+<p>You can learn about the JSON format in the <a href="../../dev/gsql-ref/querying/">GSQL Language documentation</a> , and integrate it with your applications. In this fashion, the TigerGraph system can serve as a backend or embedded graph data service.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_view_logs"><a class="anchor" href="#_view_logs"></a>View logs <a id="TigerGraphGraphStudioUIGuide-QueryLog"></a></h4>
+<div class="paragraph">
+<p>If a query ran successfully, the Query Log message will be "query ran successfully" or something similar. If there was anything wrong when executing your query, such as invalid parameters or runtime errors, an error message will be shown in the Query Log panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/query-log.png" alt="query log">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_expand_panels"><a class="anchor" href="#_expand_panels"></a>Expand Panels <a id="TigerGraphGraphStudioUIGuide-ExpandPanels.1"></a></h3>
+<div class="paragraph">
+<p>If you just want to focus on developing your query, or want to have more space to view your result, click the Expand button <span class="image"><img src="../.gitbook/assets/expand_panel.png" alt="expand panel"></span> in either the Query Editing panel or the Result panel.</p>
+</div>
+<div class="paragraph">
+<p>If you expand the Query Editing panel, it looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/write-queries-gsql.1.png" alt="write queries gsql.1">
+</div>
+</div>
+<div class="paragraph">
+<p>If you expand the Result panel, it looks like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/write-queries-exploration.png" alt="write queries exploration">
+</div>
+</div>
+<div class="paragraph">
+<p>When the panel is expanded, the Expand button becomes the Collapse button<span class="image"><img src="../.gitbook/assets/collapse_btn.png" alt="collapse btn"></span>. Clicking it will return the display to the split panel view.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

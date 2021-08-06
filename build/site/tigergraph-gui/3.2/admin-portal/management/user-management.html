@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>User Management :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../graphstudio/overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../graphstudio/overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../graphstudio/overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="user-management.html">User Management</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/admin-portal/pages/management/user-management.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">User Management</h1>
+<div class="sect1">
+<h2 id="_user_management_page"><a class="anchor" href="#_user_management_page"></a>User Management Page <a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The User Management page has three tabs: My Profile, All Users and Role Management.</p>
+</div>
+<div class="sect2">
+<h3 id="_my_profile"><a class="anchor" href="#_my_profile"></a>My Profile</h3>
+<div class="paragraph">
+<p>All users can access the My Profile tab to manage themselves.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/my-profile-updated.png" alt="my profile updated">
+</div>
+</div>
+<div class="paragraph">
+<p>There are three information cards at the top: Username shows the user&#8217;s username; Accessible graph shows how many graphs the user can access, and Password allows user to change password by clicking the key icon<span class="image"><img src="../../../.gitbook/assets/key.png" alt="key"></span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/change-password.png" alt="change password">
+</div>
+</div>
+<div class="paragraph">
+<p>Below the cards are secret management section. You can create as many secrets for each graph as you want, but remember to copy the secret value out at the creation time. Once you refresh the page or go to another page and come back, the actual secret value will be masked for security. You need to provide an alias for the secret, and click the green plus sign to add the secret.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/secret-management.png" alt="secret management">
+</div>
+</div>
+<div class="paragraph">
+<p>When token authentication is enabled, you need to use the secrets to request tokens and add the tokens in the HTTP request headers to call TigerGraph RESTful endpoints. Read more at: <a href="../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#rest-authentication">User Privileges and Authentication</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_all_users"><a class="anchor" href="#_all_users"></a>All Users</h3>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Due to the difference in users' information display compared to GSQL, Admin Portal doesn&#8217;t allow users with admin role to a graph to create/edit/delete users or assign a user with a role to a graph. Superuser can manage users in this case. Users with Admin role to a local graph can revoke roles to other users for this local graph.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Both native users and proxy users are displayed in the User section. However, you can only change password for native users.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>Only superuser can access this tab. Superuser can add new users, change other users' password, delete users, create proxy groups, change proxy rules of the groups, and delete proxy groups.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/all-users-updated.png" alt="all users updated">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add-user-btn.png" alt="add user btn"></span>to add new users:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/all-users%20%281%29.png" alt="all users%20%281%29">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/change-others-password-btn.png" alt="change others password btn"></span>to change other users' password:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/change-others-password.png" alt="change others password">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/delete_btn.png" alt="delete btn"></span>to delete a user.</p>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/proxy-groups-tab.png" alt="proxy groups tab"></span>to see all proxy groups:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/proxy-groups.png" alt="proxy groups">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add-group-btn.png" alt="add group btn"></span>to add new proxy groups:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/add-proxy-group.png" alt="add proxy group">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/edit.png" alt="edit"></span>to edit the proxy rule of an existing proxy group:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/edit-proxy-group.png" alt="edit proxy group">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/delete_btn.png" alt="delete btn"></span>to delete a proxy group.</p>
+</div>
+<div class="paragraph">
+<p>Read more about proxy group at <a href="../../../admin/admin-guide/user-access/user-privileges-and-authentication.md#creating-and-managing-proxy-groups">User Privileges and Authentication</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_role_management"><a class="anchor" href="#_role_management"></a>Role Management</h3>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Admin Portal does not indicate whether a user belongs a proxy group. You can find out more from GSQL client.</p>
+</div>
+<div class="paragraph">
+<p>Admin Portal shows a combination of roles for proxy users. Proxy user which belongs to a proxy group inherits all the roles from the proxy group plus all the roles the proxy user has. Therefore, if you want to revoke a role from a proxy user, you need to revoke the role from the proxy group first. Then you might need to revoke the same role from the proxy user if the proxy user also has that role.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>Superusers and Admin users can access this tab to assign different roles to users on different graphs. Superusers can assign superuser role to other users, while admin users cannot.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/role-management-updated.png" alt="role management updated">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_select_a_graph"><a class="anchor" href="#_select_a_graph"></a>Select a graph</h4>
+<div class="paragraph">
+<p>You can use the dropdown menu at the top left corner to select on which graph you want to assign different roles to different users:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/select-graph.png" alt="select graph">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_search_user"><a class="anchor" href="#_search_user"></a>Search user</h4>
+<div class="paragraph">
+<p>You can type in text to search for users:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/search-user.png" alt="search user">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_settings_for_users"><a class="anchor" href="#_settings_for_users"></a>Settings for users</h4>
+<div class="paragraph">
+<p>You can sort the users by alphabetic order or number of roles they have:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/sort-users.png" alt="sort users">
+</div>
+</div>
+<div class="paragraph">
+<p>You can choose to show all users, show the users who have role(s), or show the users who don&#8217;t have a role:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/show-users.png" alt="show users">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_grant_a_new_role_to_a_user"><a class="anchor" href="#_grant_a_new_role_to_a_user"></a>Grant a new role to a user</h4>
+<div class="paragraph">
+<p>You have two ways to grant a new role to a user.</p>
+</div>
+<div class="paragraph">
+<p>The first way is drag-and-drop. You can drag a user from the right section to under the role you want to grant.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assign-by-dnd-updated.png" alt="assign by dnd updated">
+</div>
+</div>
+<div class="paragraph">
+<p>After the role is granted successfully, the user&#8217;s name will appear under the corresponding role, and the role&#8217;s color will appear on the user at the right section. You can grant multiple roles to the same user, and multiple colors will show on the user at the right section to indicate these roles.</p>
+</div>
+<div class="paragraph">
+<p>The second way is right click a user, and choose the role you want to grant:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/grant-roles.png" alt="grant roles">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_revoke_a_role_from_a_user"><a class="anchor" href="#_revoke_a_role_from_a_user"></a>Revoke a role from a user</h4>
+<div class="paragraph">
+<p>You have two ways to revoke a role from a user.</p>
+</div>
+<div class="paragraph">
+<p>The first way is drag-and-drop. You can drag a user from the role you want to revoke to the right section:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/revoke-dnd-updated.png" alt="revoke dnd updated">
+</div>
+</div>
+<div class="paragraph">
+<p>After the role is revoked successfully, the user&#8217;s name will disappear under the corresponding role, and the role&#8217;s color will disappear from the user at the right section.</p>
+</div>
+<div class="paragraph">
+<p>The second way is right click a user, and choose the role you want to revoke:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/revoke-a-role.png" alt="revoke a role">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_change_a_users_role"><a class="anchor" href="#_change_a_users_role"></a>Change a user&#8217;s role</h4>
+<div class="paragraph">
+<p>You can drag a user from under one role to under another role at the left section. This is a shortcut to change the user&#8217;s role:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/change-role-updated.png" alt="change role updated">
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, you can also click<span class="image"><img src="../../../.gitbook/assets/proxy-groups%20%281%29.png" alt="proxy groups%20%281%29"></span>to switch to proxy groups and manage their roles.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/manage-groups.png" alt="manage groups">
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+<strong>Tip:</strong> If you manage users through GSQL, please click on refresh button on the top right corner to reflect the changes in Admin Portal.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

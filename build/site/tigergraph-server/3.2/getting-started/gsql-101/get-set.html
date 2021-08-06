@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Get Set :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../installation/install.html">TigerGraph Server User Guide</a></li>
+    <li><a href="get-set.html">Get Set</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/getting-started/pages/gsql-101/get-set.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Get Set</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this tutorial, we will show you how to create a graph schema, load data in your graph, write simple parameterized queries, and run your queries. Before you start, you need to have installed the TigerGraph system, verified that it is working, and cleared out any previous data. It&#8217;ll also help to become familiar with our graph terminology.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_a_graph"><a class="anchor" href="#_what_is_a_graph"></a>What is a Graph?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A graph is a collection of data entities and the connections between them.  That is, it&#8217;s a network of data entities.</p>
+</div>
+<div class="paragraph">
+<p>Many people call a data entity a <strong>node</strong> ; at TigerGraph we called it a <strong>vertex</strong>. The plural is <strong>vertices</strong>. We call a connection an edge.  Both vertices and edges can have properties or attributes.  The figure below is a visual representation of a graph containing 7 vertices (shown as circles) and 7 edges (the lines).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/friendship-social-graph.png" alt="Friendship Social Graph">
+</div>
+</div>
+<div class="paragraph">
+<p>A graph schema is the model which describes the <strong>types</strong> of vertices (nodes) and edge (connections) which can appear in your graph.  The graph above has one type of vertex (person) and one type of edge (friendship).</p>
+</div>
+<div class="paragraph">
+<p>A schema diagram looks like a small graph, except each node represents one <strong>type</strong> of vertex, and each link represents one <strong>type</strong> of edge.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/friendship-social-graph-schema.png" alt="Friendship Social Graph Schema">
+</div>
+</div>
+<div class="paragraph">
+<p>The friendship loop shows that a friendship is between a person and another person.</p>
+</div>
+<div class="sect2">
+<h3 id="_data_set"><a class="anchor" href="#_data_set"></a>Data Set <a id="GSQL101-DataSet"></a></h3>
+<div class="paragraph">
+<p>For this tutorial, we will create and query the simple friendship social graph shown in Figure Friendship Social Graph. The data for this graph consists of two files in csv (comma-separated values) format. To follow along with this tutorial, please save these two files, person.csv and friendship.csv, to your TigerGraph local disk. In our running example, we use the <code>/home/tigergraph/</code> folder to store the two csv files.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="person.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>name,gender,age,state
+Tom,male,40,ca
+Dan,male,34,ny
+Jenny,female,25,tx
+Kevin,male,28,az
+Amily,female,22,ca
+Nancy,female,20,ky
+Jack,male,26,fl</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="friendship.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>person1,person2,date
+Tom,Dan,2017-06-03
+Tom,Jenny,2015-01-01
+Dan,Jenny,2016-08-03
+Jenny,Amily,2015-06-08
+Dan,Nancy,2016-01-03
+Nancy,Jack,2017-03-02
+Dan,Kevin,2015-12-30</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prepare_your_tigergraph_environment"><a class="anchor" href="#_prepare_your_tigergraph_environment"></a>Prepare Your TigerGraph Environment <a id="GSQL101-dropallPrepareYourTigerGraphEnvironment"></a></h3>
+<div class="paragraph">
+<p>First, let&#8217;s check that you can access GSQL.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a Linux shell.</p>
+</li>
+<li>
+<p>Type gsql as below. A GSQL shell prompt should appear as below.</p>
+<div class="paragraph">
+<p>{% code title="Linux Shell" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gsql
+GSQL &gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</li>
+<li>
+<p>If the GSQL shell does not launch, try resetting the system with "gadmin start all". If you need further help, please see <a href="https://docs.tigergraph.com/admin/admin-guide/system-management/management-with-gadmin#gadmin-start">manage TigerGraph with gadmin</a> and   <a href="#../../faqs/knowledge-base-and-faqs.adoc" class="page unresolved">TigerGraph Knowledge Base and FAQs</a>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If this is your first time using GSQL, the TigerGraph data store is probably empty.  However, if you or someone else has already been working on the system, there may already be a database.  You can check by listing out the database catalog with the "ls" command. This is what should look like if it is empty:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="GSQL shell - an empty database catalog" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GSQL &gt; ls
+---- Global vertices, edges, and all graphs
+Vertex Types:
+Edge Types:
+
+Graphs:
+Jobs:
+
+Json API version: v2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>If the data catalog is not empty, you will need to empty it to start this tutorial. We&#8217;ll assume you have your coworkers' permission.  Use the command DROP ALL to delete all the database data, its schema, and all related definitions. This command takes about a minute to run.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="GSQL shell - DROP ALL" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GSQL &gt; drop all
+
+Dropping all, about 1 minute ...
+Abort all active loading jobs
+[ABORT_SUCCESS] No active Loading Job to abort.
+
+Shutdown restpp gse gpe ...
+Graph store /usr/local/tigergraph/gstore/0/ has been cleared!
+Everything is dropped.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+<strong>Restarting TigerGraph</strong></p>
+</div>
+<div class="paragraph">
+<p>If you need to restart TigerGraph for any reason, use the following command sequence:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Linux Shell - Restarting TigerGraph services" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Switch to the user account set up during installation
+# The default is user=tigergraph, password=tigergraph
+$ su tigergraph
+Password:tigergraph
+
+# Start all services
+$ gadmin restart -y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+<strong>Running GSQL commands from Linux</strong></p>
+</div>
+<div class="paragraph">
+<p>You can also run GSQL commands from a Linux shell. To run a single command, just use "gsql" followed by the command line enclosed in single quotes. (The quotes aren&#8217;t necessary if there is no parsing ambiguity; it&#8217;s safer to just use them.)  For example,</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Linux shell - GSQL commands from a Linux shell" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># "-g graphname" is need for a given graph
+gsql -g social 'ls'
+gsql 'drop all'
+gsql 'ls'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>You can also execute a series of commands which you have stored in a file, by simply invoking "gsql" following by the name of the file.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>When you are done, you can exit the GSQL shell with the command "quit" (without the quotes).</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

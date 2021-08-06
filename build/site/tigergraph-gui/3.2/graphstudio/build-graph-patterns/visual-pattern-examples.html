@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Visual Pattern Examples :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="visual-pattern-examples.html">Visual Pattern Examples</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/build-graph-patterns/visual-pattern-examples.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Visual Pattern Examples</h1>
+<div class="sect1">
+<h2 id="_visual_pattern_examples"><a class="anchor" href="#_visual_pattern_examples"></a>Visual Pattern Examples <a id="TigerGraphGraphStudioUIGuide-WriteQueries"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have learnt all the basic concepts of Visual Query Builder in the previous article. In this article we will walk you through building several visual patterns step by step, and then show you more graph analytics questions and how to solve them with visual patterns.‌</p>
+</div>
+<div class="sect2">
+<h3 id="_example_1_find_all_the_departments_with_male_employees"><a class="anchor" href="#_example_1_find_all_the_departments_with_male_employees"></a>Example 1. Find all the departments with male employees‌. <a id="example-1-find-all-the-departments-with-male-employees"></a></h3>
+<div class="paragraph">
+<p>Click<span class="image"><img src="https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4<em>6bA0T-QmU%2F-LMA-P3NzEEls-E_ml1t%2F-LMA37QmCzHgMSncIl_A%2Fupload_file_btn.png?alt=media&amp;token=57239bf7-50db-4993-b2b2-e3f22f182dc1" alt="assets%2F LHvjxIN4<em>6bA0T QmU%2F LMA P3NzEEls E ml1t%2F LMA37QmCzHgMSncIl A%2Fupload file btn"></span>in the pattern list pattern, input the pattern name, and click<span class="image"><img src="https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4</em>6bA0T-QmU%2F-LM9e_2BQZhEfn2WheoU%2F-LM9gaAqbCEhwkJn8k8d%2Fadd_vertex_type_btn.png?alt=media&amp;token=4ca5020e-b47d-4e7f-8275-590a9684093f" alt="em>6bA0T QmU%2F LM9e 2BQZhEfn2WheoU%2F LM9gaAqbCEhwkJn8k8d%2Fadd vertex type btn"></span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvvsnl5eksscgabgze_demo_2_name.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvvvsnl5eksscgabgze demo 2 name">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add_vertex_type.png" alt="add vertex type"></span>in the toolbar to add a vertex pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxrsv4oqboqfdo5rn_add-1st-vertex-pattern.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvvxrsv4oqboqfdo5rn add 1st vertex pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>In the config panel, change the vertex type to be department, and put it in result:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/edit-vertex-pattern.png" alt="edit vertex pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change by click<span class="image"><img src="../../../.gitbook/assets/confirm.png" alt="confirm"></span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvxyennhcuze3pjgew_changed-to-department.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvvxyennhcuze3pjgew changed to department">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add_vertex_type.png" alt="add vertex type"></span>in the toolbar to add another vertex pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvyo9rsvkzoxl5ti45_2nd-vertex-pattern.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvvyo9rsvkzoxl5ti45 2nd vertex pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>Expand the Filter section in the config panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/open-filter.png" alt="open filter">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add_button.png" alt="add button"></span>to add a filter:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/add-filter.png" alt="add filter">
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the filter to be <strong>(gender == "male")</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/edit-filter.png" alt="edit filter">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvvaran9ybyvmp5ddmo_apply-filter.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvvaran9ybyvmp5ddmo apply filter">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add_edge_type.png" alt="add edge type"></span>in the toolbar, then click the person vertex pattern in the working panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/click-person-vp.png" alt="click person vp">
+</div>
+</div>
+<div class="paragraph">
+<p>Then click department vertex pattern in the working panel to create an edge pattern between the two vertex patterns:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcirpqnzwxjjmibcm_click-dep-vp.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvwcirpqnzwxjjmibcm click dep vp">
+</div>
+</div>
+<div class="paragraph">
+<p>In the config panel, change the edge type to be work_in:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/edit-etype.png" alt="edit etype">
+</div>
+</div>
+<div class="paragraph">
+<p>Apply the change, and drag the person vertex pattern to a better position:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwcxjavy9gzmh4fyzv_apply-etype-change.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvwcxjavy9gzmh4fyzv apply etype change">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/save_btn.png" alt="save btn"></span>in the toolbar to save the pattern, and click<span class="image"><img src="../../../.gitbook/assets/start_loading.png" alt="start loading"></span>in the toolbar to run the pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwdbsyr4slvpf3q_x3_run-pattern.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvwdbsyr4slvpf3q x3 run pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>You can also try to output the entire matched subgraphs. Click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>in the toolbar to enter output toggle mode, then click the person vertex pattern and the work_in edge pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwe_5_izo_dqy6pq3s_toggle-output.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvwe 5 izo dqy6pq3s toggle output">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>in the toolbar again to exit output toggle mode, then click<span class="image"><img src="../../../.gitbook/assets/start_loading.png" alt="start loading"></span>to run the pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvvuteg9eqbxemig3sx_-lvwf5sghnsn1ueleppj_pattern-result-1.png" alt="assets  lhvjxin4  6ba0t qmu  lvvuteg9eqbxemig3sx  lvwf5sghnsn1ueleppj pattern result 1">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_2_find_all_such_people_a_b_c_a_and_b_are_friends_a_and_c_are_friends_and_b_manages_c"><a class="anchor" href="#_example_2_find_all_such_people_a_b_c_a_and_b_are_friends_a_and_c_are_friends_and_b_manages_c"></a>Example 2. Find all such people A, B, C: A and B are friends, A and C are friends, and B manages C.</h3>
+<div class="paragraph">
+<p>Create a new visual pattern named FriendsManagerABC.</p>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/schema%20%281%29%20%281%29.png" alt="schema%20%281%29%20%281%29"></span>in the console panel to switch to graph schema:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwkwq25sm1gxtjubld_schema-in-pattern.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwkwq25sm1gxtjubld schema in pattern">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/pick-btn.png" alt="pick btn"></span>in the toolbar, then click the friend edge type in the graph schema:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwlwh76dzytgclrkor_pick-edge.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwlwh76dzytgclrkor pick edge">
+</div>
+</div>
+<div class="paragraph">
+<p>An edge pattern is added into the working panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwo0h98unajvnqwuia_friend-1.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwo0h98unajvnqwuia friend 1">
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, use<span class="image"><img src="../../../.gitbook/assets/pick-btn.png" alt="pick btn"></span>to add another friend edge pattern and a manage edge pattern into the working panel:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwofvai82aycjxsbyj_edge-3.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwofvai82aycjxsbyj edge 3">
+</div>
+</div>
+<div class="paragraph">
+<p>Adjust the vertex patterns' positions:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwomds8bycwkyyqie8_move-position.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwomds8bycwkyyqie8 move position">
+</div>
+</div>
+<div class="paragraph">
+<p>Hold Shift key and choose the two vertex patterns on the left, then click<span class="image"><img src="../../../.gitbook/assets/merge-btn.png" alt="merge btn"></span>in the toolbar to merge them together:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwodylbzk0sgn7ttot_merge-1st.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwodylbzk0sgn7ttot merge 1st">
+</div>
+</div>
+<div class="paragraph">
+<p>Then, merge the top two vertex patterns:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwojoequux6ziyicjf_merge-2nd.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwojoequux6ziyicjf merge 2nd">
+</div>
+</div>
+<div class="paragraph">
+<p>Then, merge the right two vertex patterns:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwooxl8ofw6hod2te2_merge-3rd.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwooxl8ofw6hod2te2 merge 3rd">
+</div>
+</div>
+<div class="paragraph">
+<p>Now you have a triangle visual pattern representing the three people relationship!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwoyw8xb-i3gb6ri-b_after-merge.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwoyw8xb i3gb6ri b after merge">
+</div>
+</div>
+<div class="paragraph">
+<p>Now, click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>in the toolbar and put all the vertex patterns and edge patterns into result:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwp9hypyw9tbbpbkii_add-output.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwp9hypyw9tbbpbkii add output">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>again to exit output toggle mode, click<span class="image"><img src="../../../.gitbook/assets/save_btn.png" alt="save btn"></span>to save the pattern, and click<span class="image"><img src="../../../.gitbook/assets/start_loading.png" alt="start loading"></span>to run the pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwfa_jg53mztz9qs87_-lvwpok75z2ozrptgrf__run-triangle.png" alt="assets  lhvjxin4  6ba0t qmu  lvwfa jg53mztz9qs87  lvwpok75z2ozrptgrf  run triangle">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_3_find_the_top_2_cities_where_the_most_number_of_companies_of_an_industry_are_located_in"><a class="anchor" href="#_example_3_find_the_top_2_cities_where_the_most_number_of_companies_of_an_industry_are_located_in"></a>Example 3. Find the top 2 cities where the most number of companies of an industry are located in.</h3>
+<div class="paragraph">
+<p>Create a new visual pattern named IndustryCenterCity. Click<span class="image"><img src="../../../.gitbook/assets/schema%20%281%29%20%281%29.png" alt="schema%20%281%29%20%281%29"></span>in the console panel to switch to graph schema.</p>
+</div>
+<div class="paragraph">
+<p>Use<span class="image"><img src="../../../.gitbook/assets/pick-btn.png" alt="pick btn"></span>in the toolbar to pick the company_locate_at edge type and belong_to edge type in graph schema:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/pick-edges.png" alt="pick edges">
+</div>
+</div>
+<div class="paragraph">
+<p>Use Shift key to select the two company vertex patterns, and click<span class="image"><img src="../../../.gitbook/assets/merge-btn.png" alt="merge btn"></span>to merge them into one. Drag the vertex patterns to make their positions look good:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvww7qmtmgs2f_oiha2_merge-and-reposition.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvww7qmtmgs2f oiha2 merge and reposition">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the industry vertex pattern, then click<span class="image"><img src="../../../.gitbook/assets/edit.png" alt="edit"></span>in the toolbar (or double click the industry vertex pattern), now you are in edit mode:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvweww5lc9n2jxsiuz7_edit-industry.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvweww5lc9n2jxsiuz7 edit industry">
+</div>
+</div>
+<div class="paragraph">
+<p>Change the vertices to be from parameter, and give a parameter name <strong>ind</strong>. This annotates the industry as an input vertex set when running the pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/change-industry.png" alt="change industry">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change, and notice there is an id condition on the industry vertex pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwfkjmr-j8e5ccnisg_apply-change.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvwfkjmr j8e5ccnisg apply change">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the company vertex pattern, then click<span class="image"><img src="../../../.gitbook/assets/edit.png" alt="edit"></span>in the toolbar, and change the Name to <strong>C</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwglklozwsamam-q6v_edit-company.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvwglklozwsamam q6v edit company">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change, and the label of company vertex pattern becomes <strong>company as C</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwgylchchachlxgiiu_confirm-edit-company.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvwgylchchachlxgiiu confirm edit company">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the city vertex pattern, then click<span class="image"><img src="../../../.gitbook/assets/edit.png" alt="edit"></span>in the toolbar:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmigwtcze0gpznc2s_1-edit-city.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvwmigwtcze0gpznc2s 1 edit city">
+</div>
+</div>
+<div class="paragraph">
+<p>Expand the Aggregation section in the config panel, and add an aggregation:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/2-add-aggregation.png" alt="2 add aggregation">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwpsgl7org8uej3dw2_-lvwmryx7ir5k2qby88t_3-confirm-agg.png" alt="assets  lhvjxin4  6ba0t qmu  lvwpsgl7org8uej3dw2  lvwmryx7ir5k2qby88t 3 confirm agg">
+</div>
+</div>
+<div class="paragraph">
+<p>Expand the Order section in the config panel, and add a descending order of aggregation result <strong>countCompany</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/4-add-order.png" alt="4 add order">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwn7ddd3u0myj7lfcx_5-confirm-order.png" alt="assets  lhvjxin4  6ba0t qmu  lvwmzsftkfmajvmccm0  lvwn7ddd3u0myj7lfcx 5 confirm order">
+</div>
+</div>
+<div class="paragraph">
+<p>Expand the Limit section in the config panel, check the use limit checkbox, and change limit to 2:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/6-add-limit.png" alt="6 add limit">
+</div>
+</div>
+<div class="paragraph">
+<p>Confirm the change:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwndz7zl9y9oh9umsk_7-confirm-limit.png" alt="assets  lhvjxin4  6ba0t qmu  lvwmzsftkfmajvmccm0  lvwndz7zl9y9oh9umsk 7 confirm limit">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>, then click the city vertex pattern, then click<span class="image"><img src="../../../.gitbook/assets/output-btn.png" alt="output btn"></span>again to exit output toggle mode, click<span class="image"><img src="../../../.gitbook/assets/save_btn.png" alt="save btn"></span>to save the pattern:</p>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/start_loading.png" alt="start loading"></span>. Because the pattern has one input parameter <strong>ind</strong>, the Pattern parameters section in the pattern list panel expands:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/9-run.png" alt="9 run">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/add_button.png" alt="add button"></span>to add one industry vertex, and input "big data" for vertex id, then click <span class="image"><img src="../../../.gitbook/assets/run-pattern.png" alt="run pattern"></span>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwnopp6-_3mp6ndy4b_10-big-data.png" alt="assets  lhvjxin4  6ba0t qmu  lvwmzsftkfmajvmccm0  lvwnopp6  3mp6ndy4b 10 big data">
+</div>
+</div>
+<div class="paragraph">
+<p>Change the industry vertex id to be "internet", and run the pattern again:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwnrxlwx4u7ivox3y1_11-internet.png" alt="assets  lhvjxin4  6ba0t qmu  lvwmzsftkfmajvmccm0  lvwnrxlwx4u7ivox3y1 11 internet">
+</div>
+</div>
+<div class="paragraph">
+<p>Again, you can choose to output everything in the matched subgraphs:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwmzsftkfmajvmccm0_-lvwntv-xjmorxvfg4pm_12-full.png" alt="assets  lhvjxin4  6ba0t qmu  lvwmzsftkfmajvmccm0  lvwntv xjmorxvfg4pm 12 full">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_4_find_the_people_who_either_were_born_in_redwood_city_or_attended_stanford_university_but_didnt_work_for_hooli"><a class="anchor" href="#_example_4_find_the_people_who_either_were_born_in_redwood_city_or_attended_stanford_university_but_didnt_work_for_hooli"></a>Example 4. Find the people who either were born in Redwood City or attended Stanford university, but didn&#8217;t work for Hooli.</h3>
+<div class="paragraph">
+<p>Expand Graph patterns section in the pattern list panel, then create a new visual pattern named SearchPeople. Create the following visual pattern following similar steps as above:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwq7ggctwogkilkkjj_widget-base%20%281%29.png" alt="assets  lhvjxin4  6ba0t qmu  lvwnvp3dgnx vok3v4n  lvwq7ggctwogkilkkjj widget base%20%281%29">
+</div>
+</div>
+<div class="paragraph">
+<p>Click<span class="image"><img src="../../../.gitbook/assets/widget-btn.png" alt="widget btn"></span>in the toolbar, and choose <strong>Union</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/1-union.png" alt="1 union">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the left two person vertex patterns respectively to add the union widget:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwspew3aygvwqpnad8_2-union.png" alt="assets  lhvjxin4  6ba0t qmu  lvwnvp3dgnx vok3v4n  lvwspew3aygvwqpnad8 2 union">
+</div>
+</div>
+<div class="paragraph">
+<p>Click​<span class="image"><img src="https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LHvjxIN4__6bA0T-QmU%2F-LvhbTLpvz8Pj5ZBuKlD%2F-Lvly1LBfdXQxZvwuE-u%2Fwidget-btn.png?alt=media&amp;token=c8f287b1-a243-4c7b-b648-a91a6c12b48b" alt="assets%2F LHvjxIN4  6bA0T QmU%2F LvhbTLpvz8Pj5ZBuKlD%2F Lvly1LBfdXQxZvwuE u%2Fwidget btn"></span>in the toolbar, and choose <strong>Subtract</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/3-subtract.png" alt="3 subtract">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the output person vertex pattern of the union widget, then click the right person vertex pattern, a subtract widget is added into the visual pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwsveopdlwkrij6849_4-subtract.png" alt="assets  lhvjxin4  6ba0t qmu  lvwnvp3dgnx vok3v4n  lvwsveopdlwkrij6849 4 subtract">
+</div>
+</div>
+<div class="paragraph">
+<p>Put the output person vertex pattern of the subtract widget into result:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwszgkk0ui6kghylhv_5-output.png" alt="assets  lhvjxin4  6ba0t qmu  lvwnvp3dgnx vok3v4n  lvwszgkk0ui6kghylhv 5 output">
+</div>
+</div>
+<div class="paragraph">
+<p>Save and run the pattern:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwnvp3dgnx-vok3v4n_-lvwt1jugq5zvf-7iqdh_6-result.png" alt="assets  lhvjxin4  6ba0t qmu  lvwnvp3dgnx vok3v4n  lvwt1jugq5zvf 7iqdh 6 result">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_5_find_all_the_people_that_were_born_in_a_city_with_population_no_more_than_100000_worked_for_graphlet_and_have_research_skill"><a class="anchor" href="#_example_5_find_all_the_people_that_were_born_in_a_city_with_population_no_more_than_100000_worked_for_graphlet_and_have_research_skill"></a>Example 5. Find all the people that were born in a city with population no more than 100,000, worked for Graphlet, and have research skill.</h3>
+<div class="paragraph">
+<p>A snowflake-like visual pattern is commonly used in this type of searching problems:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvwvacebmsfya4_x1e0_-lvwv_2yllbcss4fur5e_people-search-2.png" alt="assets  lhvjxin4  6ba0t qmu  lvwvacebmsfya4 x1e0  lvwv 2yllbcss4fur5e people search 2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_6_giving_a_person_p_among_all_his_direct_friends_and_friends_friends_who_have_programming_skill_what_are_the_top_5_other_skills_that_most_of_these_people_have"><a class="anchor" href="#_example_6_giving_a_person_p_among_all_his_direct_friends_and_friends_friends_who_have_programming_skill_what_are_the_top_5_other_skills_that_most_of_these_people_have"></a>Example 6. Giving a person P, among all his direct friends and friends' friends who have programming skill, what are the top 5 other skills that most of these people have?</h3>
+<div class="paragraph">
+<p>First, we get the friends and friends' friends of P. We use the programming skill to filter these friends, then we find the other skills that these people have. Then we count the number of people having these skills, and choose the top 5 skills as the result.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lvww8lr3vzytece1i3e_-lvx6fnowhhcfsolmdjg_top-skills.png" alt="assets  lhvjxin4  6ba0t qmu  lvww8lr3vzytece1i3e  lvx6fnowhhcfsolmdjg top skills">
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

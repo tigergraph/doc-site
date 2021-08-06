@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Comparing TigerGraph Editions :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../installation/install.html">TigerGraph Server User Guide</a></li>
+    <li><a href="comparison-of-editions.html">Comparing TigerGraph Editions</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/intro/pages/comparison-of-editions.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Comparing TigerGraph Editions</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document compares what is included in the Enterprise Edition vs. TigerGraph Cloud of the TigerGraph platform.</p>
+</div>
+<div class="paragraph">
+<p>To see what has been added or changed in different releases (versions) of TigerGraph, see <a href="../faqs/change-log-1/">Change Log</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview<table><thead><tr><th style="text-align:left"></th></h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:left"&gt;+++TigerGraph Cloud+++&lt;/th&gt;+++
+    +++&lt;th style="text-align:left"&gt;+++Enterprise Edition+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Licensing+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Pay as you go by the minute; Annual contracts available+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++A free license is available with up to 50 GB storage after compression
+      - +++&lt;a href="https://info.tigergraph.com/pricing"&gt;+++contact us+++&lt;/a&gt;+++ for a paid
+      version without storage limitations+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Includes+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++The power of TigerGraph, as a Service+++&lt;/p&gt;+++
+      +++&lt;p&gt;++++ Instant Deployment+++&lt;/p&gt;+++
+      +++&lt;p&gt;++++ Automatic backups+++&lt;/p&gt;+++
+      +++&lt;p&gt;++++ Scaling out &amp; Replication+++&lt;/p&gt;+++
+      +++&lt;p&gt;++++ Security+++&lt;/p&gt;+++
+      +++&lt;p&gt;++++ Pay for what you use+++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++All TigerGraph Database and Enterprise features, including
+      +++&lt;br&gt;++++++&lt;/br&gt;++++ Distributed Graph
+      +++&lt;br&gt;++++++&lt;/br&gt;++++ MultiGraph
+      +++&lt;br&gt;++++++&lt;/br&gt;++++ Security
+      +++&lt;br&gt;++++++&lt;/br&gt;++++ User Management+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Support+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Free version includes support from the +++&lt;a href="https://community.tigergraph.com/"&gt;+++Community Forum+++&lt;/a&gt;+++.
+      Contact us to get professional support.+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++How to Get It+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;a href="https://www.tigergraph.com/cloud"&gt;+++www.tigergraph.com/cloud+++&lt;/a&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;a href="https://info.tigergraph.com/enterprise-free"&gt;+++www.tigergraph.com/free-trial+++&lt;/a&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_database_features"><a class="anchor" href="#_database_features"></a>Database Features</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feature</th>
+<th class="tableblock halign-center valign-top">TigerGraph Cloud</th>
+<th class="tableblock halign-center valign-top">Enterprise Edition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Native MPP Graph</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Real-Time Deep Link Analytics</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ultra-Fast Loading and Updates</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GSQL Query and Loading Language</strong>  SQL-like syntax and built-in parallelism</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Graph Size</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Unlimited</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Unlimited</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Compressed Data Store</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In-Memory Processing;  ACID Transactions</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Distributed, Auto-Partitioned Graph</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MultiGraph</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dynamic Schema Change</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GraphStudio Visual SDK and UI</strong>  Design, Load, Explore, Query, Visualize</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Admin Portal</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enterprise_features"><a class="anchor" href="#_enterprise_features"></a>Enterprise Features</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Feature</strong></th>
+<th class="tableblock halign-center valign-top">TigerGraph Cloud</th>
+<th class="tableblock halign-center valign-top">Enterprise Edition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automated Deployment</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automated Backups</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Backup and Restore</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅ built-in cloud feature</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Multiple Users</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Continuous Availability</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HA Replication</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✅</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_security_featuresfeature"><a class="anchor" href="#_security_featuresfeature"></a>Security Features<table><thead><tr><th style="text-align:left">Feature</th></h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:center"&gt;+++TigerGraph Cloud+++&lt;/th&gt;+++
+    +++&lt;th style="text-align:left"&gt;+++Enterprise Edition+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Data Encryption +++&lt;/b&gt;+++
+      +++&lt;br&gt;++++++&lt;/br&gt;+++At Rest and In Motion+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Enterprise User Management +++&lt;/b&gt;+++
+      +++&lt;br&gt;++++++&lt;/br&gt;+++LDAP and SSO+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;through GSQL web shell+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Role-Based Access Control+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Audit Compliance+++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;SOC 2 type 1 and type 2+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Coming soon+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;++++++&lt;b&gt;+++Cloud Security:+++&lt;/b&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;+++VPC for each account+++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++N/A+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

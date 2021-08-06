@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AWS S3 Loader User Guide :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../installation/install.html">TigerGraph Server User Guide</a></li>
+    <li>Data loading</li>
+    <li><a href="s3-loader-user-guide.html">AWS S3 Loader User Guide</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/data-loading/pages/s3-loader-user-guide.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">AWS S3 Loader User Guide</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AWS Simple Storage Service (S3) is a popular destination to store data in the cloud and has become an essential component in the data pipeline of many enterprises. It is an object storage service on the AWS platform which can be accessed through a web service interface.</p>
+</div>
+<div class="paragraph">
+<p>TigerGraph&#8217;s S3 Loader makes it easier for you to integrate with an Amazon S3 service and ingest data from S3 buckets either in <em>realtime</em> or via <em>one-time data import</em> into the TigerGraph System. Your TigerGraph cluster can be deployed either on-premises or in a cloud environment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From a high level, a user provides instructions to the TigerGraph system through GSQL, and the external Amazon S3 data is loaded into TigerGraph&#8217;s RESTPP server. The following diagram demonstrates the S3 Loader data architecture.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/graphguru15-image1.png" alt="graphguru15 image1">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a><strong>Prerequisites</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should have uploaded your data to Amazon S3 buckets.</p>
+</div>
+<div class="paragraph">
+<p>Once you have the buckets set up, you need to prepare the following two configuration files and place them in your desired location in the TigerGraph system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>S3 data source configuration file: This file includes the credentials for accessing Amazon S3 which consists of <em>access key</em> and <em>secret key</em>. Through the configuration file, the TigerGraph system acquires the authority to access your buckets. Please see the example in <a href="s3-loader-user-guide.md#1-define-the-data-source">Step 1. Define the Data Source</a>.</p>
+</li>
+<li>
+<p>S3 file configuration file: This file specifies various options for reading data from Amazon S3. Please the see example in <a href="s3-loader-user-guide.md#2-create-a-loading-job">Step 2. Create a Loading Job</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_and_using_the_s3_loader"><a class="anchor" href="#_configuring_and_using_the_s3_loader"></a>Configuring and Using the S3 Loader</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three basic steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="s3-loader-user-guide.md#1-define-the-data-source">Define the Data Source</a></p>
+</li>
+<li>
+<p><a href="s3-loader-user-guide.md#2-create-a-loading-job">Create a Loading Job</a></p>
+</li>
+<li>
+<p><a href="s3-loader-user-guide.md#3-run-the-loading-job">Run the Loading Job</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The GSQL syntax for the S3 Loader is designed to be consistent with the existing GSQL loading syntax.</p>
+</div>
+<div class="sect2">
+<h3 id="_1_define_the_data_source"><a class="anchor" href="#_1_define_the_data_source"></a>1. Define the Data Source</h3>
+<div class="sect3">
+<h4 id="_create_data_source"><a class="anchor" href="#_create_data_source"></a>CREATE DATA_SOURCE</h4>
+<div class="paragraph">
+<p>Before starting a S3 data loading job, you need to define the credentials to connect to Amazons  S3. The CREATE DATA_SOURCE statement defines a data_source type variable, with a sub type S3:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 data_source_name</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_s3_data_source_configuration_file"><a class="anchor" href="#_s3_data_source_configuration_file"></a>S3 Data Source Configuration File</h4>
+<div class="paragraph">
+<p>After the data source is created, use the SET command to specify the path to a configuration file for that data source.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SET data_source_name = "/path/to/s3.config";</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This SET command reads, validates, and applies the configuration file, integrating its settings into TigerGraph&#8217;s dictionary. The data source configuration file&#8217;s content, structured as a JSON object, describes the S3 credential settings, including the <em>access key</em> and <em>secret key</em>. A sample s3.config is shown in the following example:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="s3.config" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "file.reader.settings.fs.s3a.access.key": "AKIAJ****4YGHQ",
+    "file.reader.settings.fs.s3a.secret.key": "R8bli****p+dT4"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>For simplicity, you can merge the CREATE DATA_SOURCE and SET statements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 data_source_name = "/path/to/s3.config"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you have a TigerGraph cluster, the configuration file must be on machine m1, where the GSQL server and GSQL client both reside,  and it must be in JSON format. If the configuration file uses a relative path, the path should be relative to the GSQL client working directory.</p>
+</li>
+<li>
+<p>Each time when the config file is updated, you must run "SET data_source_name"  to update the data source details in the dictionary.
+{% endhint %}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To further simplify, instead of specifying the S3 data source config file path, you can also directly provide the S3 data source configuration as a string argument, as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 data_source_name = "{\"file.reader.settings.fs.s3a.access.key\":\"AKIAJ****4YGHQ\",\"file.reader.settings.fs.s3a.secret.key\":\"R8bli****p+dT4\"}"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+<strong>Tip</strong>: The above simplified statement is useful for using S3 Data Loader in TigerGraph Cloud when you are not loading S3 data through GraphStudio. In TigerGraph Cloud (tgcloud.io), you can also use GSQL web shell to define and create S3 data sources, without creating the S3 data source configuration file in filesystem.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_advanced_multigraph_support"><a class="anchor" href="#_advanced_multigraph_support"></a>ADVANCED: MultiGraph Support</h4>
+<div class="paragraph">
+<p>The S3 Loader supports the TigerGraph MultiGraph feature. In the MultiGraph context, a data source can be either global or local:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A global data source can only be created by a superuser, who can grant the global data source to any graph.</p>
+</li>
+<li>
+<p>An admin user can only create a local data source, which cannot be accessed by other graphs.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following are examples of permitted DATA_SOURCE operations.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <strong>superuser</strong> may create a global level data source without assigning it to a particular graph:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 s1 = "/path/to/config"</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>2. A **superuser** may grant/revoke a data source to/from one or more graphs:</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>GRANT DATA_SOURCE s1 TO GRAPH graph1, graph2
+REVOKE DATA_SOURCE s1 FROM GRAPH graph1, graph2</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>3. An **admin** user may create a local data source for a specified graph which the admin user administers:</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 s1 = "/path/to/config" FOR GRAPH test_graph</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+In the above statement, the local data_source s1 is only accessible to graph test_graph. A superuser cannot grant it to another graph<strong>.</strong>
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_drop_data_source"><a class="anchor" href="#_drop_data_source"></a>DROP DATA_SOURCE</h4>
+<div class="paragraph">
+<p>A data_source variable can be dropped by a user who has the privilege. A global data source can only be dropped by a superuser. A local data_source can only be dropped by an admin for the relevant graph or by a superuser. The syntax for the DROP command is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DROP DATA_SOURCE &lt;source1&gt;[&lt;source2&gt;...] | * | ALL</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below is an example with a few legal s3 data_source create and drop commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CREATE DATA_SOURCE S3 s1 = "/home/tigergraph/s3.config"
+CREATE DATA_SOURCE S3 s2 = "/home/tigergraph/s3_2.config"
+
+DROP DATA_SOURCE s1, s2
+DROP DATA_SOURCE *
+DROP DATA_SOURCE ALL</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_show_data_source"><a class="anchor" href="#_show_data_source"></a>SHOW DATA_SOURCE</h4>
+<div class="paragraph">
+<p>The SHOW DATA_SOURCE command will display a summary of all existing data_sources for which the user has privilege:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ GSQL SHOW DATA_SOURCE *
+
+# The sample output:
+Data Source:
+  - S3 s1 ("file.reader.settings.fs.s3a.access.key": "AKIAJ****4YGHQ", "file.reader.settings.fs.s3a.secret.key": "R8bli****p+dT4")
+# The global data source will be shown in global scope.
+# The graph scope will only show the data source it has access to.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_create_a_loading_job"><a class="anchor" href="#_2_create_a_loading_job"></a>2. Create a Loading Job</h3>
+<div class="paragraph">
+<p>The S3 Loader uses the same basic <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/creating-a-loading-job#create-loading-job">CREATE LOADING JOB</a> syntax used for standard GSQL loading jobs. A DEFINE FILENAME statement should be used to assign a loader FILENAME variable to a S3 data source name and the path to its config file.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the filename can be specified in the RUN LOADING JOB statement with the USING clause. The filename value set by a RUN statement overrides the value set in the CREATE LOADING JOB.</p>
+</div>
+<div class="paragraph">
+<p>Below is the syntax for DEFINE FILENAME when using the S3 Loader. In the syntax, $DATA_SOURCE_NAME is the S3 data source name, and the path points to a configuration file <em>which provides information about how to read an Amazon S3 file</em>. The S3 file configuration file must be in JSON format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DEFINE FILENAME filevar "=" [filepath_string | data_source_string];
+data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>*Example:*</em> Load a S3 Data Source <em>*s*</em>*1*, <em>_**</em>_where the path to the file configuration file is "~/files.conf":</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DEFINE FILENAME f1 = "$s1:~/files.config";</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_s3_file_configuration_file"><a class="anchor" href="#_s3_file_configuration_file"></a>S3 File Configuration File</h4>
+<div class="paragraph">
+<p>The S3 file configuration file tells the TigerGraph system exactly which Amazon S3 files to read and how to read them. Similar to the data source configuration file described above, the contents are in JSON object format. An example file is shown below.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="files.config" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "file.uris": "s3://my-bucket/data.csv"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The "file.uris" key is required. It specifies one or more paths on your Amazon S3 bucket. Each path is either to an individual file or to a directory. If it is a directory, then each file directly under that directory is included. You can specify multiple paths by using a comma-separated list. An example with multiple paths is show below:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="files.config" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "file.uris": "s3://my-bucket1/data1.csv,s3://my-bucket1/data2.csv,s3://my-bucket2/data3.csv"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Instead of specifying the config file path, you can also directly provide the S3 file configuration as a string argument, as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>DEFINE FILENAME f1 = "$s1:~/files.config";
+DEFINE FILENAME f1 = "$s1:{\"file.uris\":\"s3://my-bucket/data.csv\"}";</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_advanced_configure_how_to_read_s3_file"><a class="anchor" href="#_advanced_configure_how_to_read_s3_file"></a>ADVANCED: Configure How to Read S3 File</h4>
+<div class="paragraph">
+<p>Besides the required "file.uris" key, you can further configure the S3 loader. A sample full configuration is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="files.config" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "tasks.max": 1,
+    "file.uris": "s3://my-bucket/data.csv",
+    "file.regexp": ".*",
+    "file.recursive": false,
+    "file.scan.interval.ms": 60000,
+    "file.reader.type": "text",
+    "file.reader.batch.size": 10000,
+    "file.reader.text.archive.type": "auto",
+    "file.reader.text.archive.extensions.tar": "tar",
+    "file.reader.text.archive.extensions.zip": "zip",
+    "file.reader.text.archive.extensions.gzip": "tar.gz,tgz"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Following is a detailed explanation of each option:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"<strong>tasks.max</strong>" (default is <strong>1</strong>): specifies the maximum number of tasks which can run in parallel. E.g. if there are 2 files and 2 tasks, each task will handle 1 file. If there are 2 files and 1 task, the single task will handle 2 files. If there is 1 file and 2 tasks, one of the tasks will handle the file.</p>
+</li>
+<li>
+<p>"<strong>file.uris</strong>": specifies the path(s) to the data files on Amazon S3. The path can also be dynamic by using expressions to modify the URIs at runtime. These expressions have the form <code>${XX}</code> where XX represents a pattern from <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html"><code>DateTimeFormatter</code></a> Java class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+if you want to ingest data dynamically, i.e. directories/files created every day and avoid adding new URIs every time, you can include expressions in URIs to do that. For example, for the URI<code>s3://my-bucket/${yyyy}</code>, it is converted to<code>s3://my-bucket/2019</code>when running the loader. You can use as many as you like in the URIs, for instance:<code>s3://my-bucket/${yyyy}/${MM}/${DD}/${HH}-${mm}</code>
+{% endhint %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"<strong>file.regexp</strong>" (default is <strong>.</strong>* which matches all files): the regular expression to filter which files to read.</p>
+</li>
+<li>
+<p>"<strong>file.recursive</strong>" (default is <strong>false</strong>): whether to recursively access all files in a directory.</p>
+</li>
+<li>
+<p>"<strong>file.scan.interval.ms</strong>" (default is <strong>60000</strong>): the wait time in ms before starting another scan of the file directory after finishing the current scan. Only applicable in <strong>stream</strong> mode.</p>
+</li>
+<li>
+<p>"<strong>file.reader.type</strong>" (default is <strong>text</strong>): the type of file reader to use. If <strong>text</strong>, read the file line by line as pure text. If <strong>parquet</strong>, read the file as parquet format.</p>
+</li>
+<li>
+<p>"<strong>file.reader.batch.size</strong>" (default is <strong>1000</strong>): maximum number of lines to include in a single batch.</p>
+</li>
+<li>
+<p>"<strong>file.reader.text.archive.type</strong>" (default is <strong>auto</strong>): the archive type of the file to be read. If <strong>auto</strong>, determine the archive type automatically. If <strong>tar</strong>, read the file with tar format. if <strong>zip</strong>, read the file with zip format. If <strong>gzip</strong>, read the file with gzip format. If <strong>none</strong>, read the file normally.</p>
+</li>
+<li>
+<p>"<strong>file.reader.text.archive.extensions.tar</strong>" (default is <strong>tar</strong>): the list of file extensions to be read with tar format.</p>
+</li>
+<li>
+<p>"<strong>file.reader.text.archive.extensions.zip</strong>" (default is <strong>zip</strong>):  <em>**</em>the list of file extensions to be read with zip format.</p>
+</li>
+<li>
+<p>"<strong>file.reader.text.archive.extensions.gzip</strong>" (default is <strong>gzip</strong>): the list of file extensions to be read with gzip format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+The archive type is applied to all files in "file.uris" when loading. If you have different archive type files to be read at the same time, set <strong>auto</strong> for "file.reader.text.archive.type" and configure how to detect each archive extensions by providing the extensions list. Currently we support <strong>tar</strong>, <strong>zip</strong> and <strong>gzip</strong> archive types.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_run_the_loading_job"><a class="anchor" href="#_3_run_the_loading_job"></a>3. Run the Loading Job</h3>
+<div class="paragraph">
+<p>The S3 Loader uses the same <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/running-a-loading-job#run-loading-job">RUN LOADING JOB</a> statement that is used for GSQL loading from files. Each filename variable can be assigned a string "DATA_SOURCE Var:file configure", which will override the value defined in the loading job. In the example below, the config files for f2 and f3 are being set by the RUN command, whereas f1 is using the config which was specified in the CREATE LOADING JOB statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>RUN LOADING JOB job1 USING f1, f2="$s1:~/files1.config", f3="$s2:~/files2.config", EOF="true";</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+A RUN LOADING JOB instance may only use one type of data source.  E.g., you may not mix both S3 data sources and regular file data sources in one loading job.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>All filename variables in one loading job statement must refer to the same DATA_SOURCE variable.</p>
+</div>
+<div class="paragraph">
+<p>There are two modes for the S3 Loader: <strong>streaming</strong> mode and <strong>EOF</strong> mode. The default mode is <strong>streaming</strong> mode. In <strong>streaming</strong> mode, loading will never stop until the job is aborted. In <strong>EOF</strong> mode,  loading will stop after consuming the provided Amazon S3 file objects.</p>
+</div>
+<div class="paragraph">
+<p>To set <strong>EOF</strong> mode, an optional parameter is added to the RUN LOADING JOB syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>RUN LOADING JOB [-noprint] [-dryrun] [-n [i],j] jobname
+   [ USING filevar [="filepath_string"][, filevar [="filepath_string"]]*
+   [, CONCURRENCY="cnum"][,BATCH_SIZE="bnum"]][, EOF="true"]</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manage_loading_jobs"><a class="anchor" href="#_manage_loading_jobs"></a>Manage Loading Jobs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>S3 Loader loading jobs are managed the same way as native loader jobs. The three key commands are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SHOW LOADING STATUS</p>
+</li>
+<li>
+<p>ABORT LOADING JOB</p>
+</li>
+<li>
+<p>RESUME LOADING JOB</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the syntax for the SHOW LOADING STATUS command is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>SHOW LOADING STATUS job_id|ALL</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To refer to a specific job instance, use the job_id which is provided when RUN LOADING JOB is executed. For each loading job, the above command reports the following information :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>current loaded lines</p>
+</li>
+<li>
+<p>average loading speed</p>
+</li>
+<li>
+<p>loaded size</p>
+</li>
+<li>
+<p>duration</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/running-a-loading-job#inspecting-and-managing-loading-jobs">Inspecting and Managing Loading Jobs</a> for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_s3_loader_example"><a class="anchor" href="#_s3_loader_example"></a>S3 Loader Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is an example code for loading data through the S3 Loader:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>USE GRAPH test_graph
+DROP JOB load_person
+DROP DATA_SOURCE s1
+
+# Create data_source s3 s1 = "s3_config.json" for graph test_graph.
+CREATE DATA_SOURCE S3 s1 FOR GRAPH test_graph
+SET s1 = "s3_config.json"
+
+# Define the loading jobs.
+CREATE LOADING JOB load_person FOR GRAPH test_graph {
+  DEFINE FILENAME f1 = "$s1:s3_file_config.json";
+  LOAD f1
+      TO VERTEX Person VALUES ($2, $0, $1),
+      TO EDGE Person2Comp VALUES ($0, $1, $2)
+      USING SEPARATOR=",";
+}
+
+# load the data
+RUN LOADING JOB load_person</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

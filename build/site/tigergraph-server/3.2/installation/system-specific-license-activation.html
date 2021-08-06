@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Advanced License Issues :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="install.html">TigerGraph Server User Guide</a></li>
+    <li><a href="system-specific-license-activation.html">Advanced License Issues</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/installation/pages/system-specific-license-activation.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Advanced License Issues</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide covers two advanced license issues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Activating a System-Specific License</p>
+</li>
+<li>
+<p>Usage limits enforced by certain license keys</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_system_specific_license_activation"><a class="anchor" href="#_system_specific_license_activation"></a>System-Specific License Activation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provides step-to-step instructions for activating or renewing a TigerGraph license, by generating and installing a license key unique to that TigerGraph system. This document applies to both non-distributed and distributed systems. In this document, a cluster acting cooperatively as one TigerGraph database is considered one system.</p>
+</div>
+<div class="paragraph">
+<p>A valid license key activates the TigerGraph system for normal operation. A license key has a built-in expiration date and is valid on only one system. Some license keys may apply other restrictions, depending on your contract. Without a valid license key, a TigerGraph system can perform certain administrative functions, but database operations will not work.</p>
+</div>
+<div class="paragraph">
+<p>To activate a new license, a user first configures their TigerGraph system. The user then collects the fingerprint of the TigerGraph system (license seed) using a TigerGraph-provided utility program. Then the collected materials are sent to TigerGraph or an authorized agent via email or web form. TigerGraph certifies the license based on the collected materials and sends a license key back to the user. The user then installs the license key on their system using another TigerGraph command. A new license key (e.g., one with a later expiration) can be installed on a live system that already has a valid license; the installation process does not disrupt database operations.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+If your system is currently using an older string-based license key that does not use a license seed, please contact <a href="mailto:support@tigergraph.com">support@tigergraph.com</a>for the procedure to upgrade to the new system-specific license type.
+{% endhint %}</p>
+</div>
+<div class="sect2">
+<h3 id="_step_by_step_guide"><a class="anchor" href="#_step_by_step_guide"></a>Step-by-Step Guide</h3>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Before beginning the license activation process, the TigerGraph package must be installed on each server, and the TigerGraph system must be configured with gadmin.
+{% endhint %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Collect the fingerprint of the whole TigerGraph system using the command <code>gadmin license seed &lt;host_signature_type&gt;</code> , which can be executed on any machine in the system. The command packs all the collected data to generate the license seed and writes it into a file. When the command has completed successfully, it outputs the path of the file to the console.</p>
+<div class="paragraph">
+<p>Depending on the host machine, the user needs to choose the appropriate type of host signature for <code>gadmin</code> to collect. The options are: <code>aws</code>. <code>azure</code>, <code>gcp</code>, <code>hardware,</code> and <code>node-id</code>. If you are generating the seed on a cloud instance, choose the corresponding cloud provider for the host signature type. If you are generating the seed on your own machines, choose either <code>hardware</code> or <code>node-id</code>. Signatures generated with the <code>hardware</code> parameter will use unique hardware information that persists through software changes, while signatures generated with <code>node-id</code> will use a unique <a href="https://man7.org/linux/man-pages/man5/machine-id.5.html#:~:text=The%20%2Fetc%2Fmachine%2Did,may%20not%20be%20all%20zeros" class="bare">https://man7.org/linux/man-pages/man5/machine-id.5.html#:~:text=The%20%2Fetc%2Fmachine%2Did,may%20not%20be%20all%20zeros</a>.[machine ID]that may change during an OS reinstall. Most users installing their own instances should use the <code>hardware</code> option.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Collect Fingerprint of TigerGraph System" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gadmin license seed hardware
+[   Info] seed generated at: ./tigergraph_v3_seed, please send it to TigerGraph</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</li>
+<li>
+<p>Send the license seed file to TigerGraph, either through our license activation web portal (preferred) or by email to <a href="mailto:license@tigergraph.com.">license@tigergraph.com.</a>If using email, please include the following information:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Company/Organization name</p>
+</li>
+<li>
+<p>Contract number. If you do not know your contract number, please contact your sales representative or <a href="mailto:sales@tigergraph.com.">sales@tigergraph.com.</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>A new license key file will be certificated and sent back to you.</p>
+</li>
+<li>
+<p>Copy the license key file to a directory on the TigerGraph system where the TigerGraph Linux user has read permission.</p>
+</li>
+<li>
+<p>Run the following three commands to install the license key:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ gadmin license set &lt;new_license_key&gt;
+[   Info] Configuration has been changed.
+Please use 'gadmin config apply' to persist the changes.
+
+$ gadmin config apply
+[Warning] No difference from staging config, config apply is skipped.
+[   Info] Successfully applied configuration change. Please restart services to make it effective immediately.
+
+$ gadmin restart
+[   Note] Restart the service(s)? (y/N)y
+[   Info] Stopping DICT ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN TS3SERV GSQL TS3 GUI
+[   Info] Starting ZK ETCD DICT KAFKA ADMIN GSE NGINX GPE RESTPP KAFKASTRM-LL KAFKACONN TS3SERV GSQL TS3 GUI</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If the installation completes successfully, the message "install license successfully" will be displayed in the console.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_checking_license_information"><a class="anchor" href="#_checking_license_information"></a>Checking License Information</h3>
+<div class="paragraph">
+<p>After a license key has been installed successfully on a TigerGraph system, the information of the installed license is available via either the CLI command <code>gadmin license status</code> or via the following REST API:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Get License Information" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> $ curl -X GET "localhost:9000/showlicenseinfo"
+  {
+    "message": "",
+    "error": false,
+    "version": {
+      "edition": "developer",
+      "schema": 0,
+      "api": "v2",
+    }
+    "code": "",
+    "results": [
+      {
+        "Days remaining": 10160,
+        "Expiration date": "Mon Oct  2 04:00:00 2045\n"
+      }
+    ]
+  }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage_limits_controlled_by_license_key"><a class="anchor" href="#_usage_limits_controlled_by_license_key"></a>Usage Limits Controlled by License Key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some license keys include a limit on the graph size, or on the number and size of machines which may be used, or restrict the use of certain optional features. In the case of a memory usage or graph size limit, when a TigerGraph system reaches its license&#8217;s limit, additional data will not be loaded into the graph. You may still query the graph and delete data. To check whether or not you have exceeded your license limits, use the command <strong>gstatusgraph</strong> and collect the VertexCount, EdgeCount, and Partition Size. Compare this information to the limits established for your license.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Checking graph limits" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~/tigergraph/loadingData$ gstatusgraph
+=== graph ===
+[GRAPH  ] Graph was loaded (/home/tigergraph/tigergraph/data/gstore/0/part/):
+[m1     ] Partition size: 23KiB, IDS size: 47KiB, Vertex count: 5, Edge count: 8, NumOfDeletedVertices: 0 NumOfSkippedVertices: 0
+[WARN   ] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The output may include a warning message such such as the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[Warning] License limit exceeded. The system is running in limited capacity mode</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

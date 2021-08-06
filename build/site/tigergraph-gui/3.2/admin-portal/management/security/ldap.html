@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LDAP :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../graphstudio/overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../graphstudio/overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../../graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../graphstudio/overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="ldap.html">LDAP</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/admin-portal/pages/management/security/ldap.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">LDAP</h1>
+<div class="sect1">
+<h2 id="_ldap_page"><a class="anchor" href="#_ldap_page"></a>LDAP Page <a id="TigerGraphAdminPortalUIGuide-DashboardPagedashboard"></a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can set up and configure LDAP settings through this page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/ldap-page.png" alt="ldap page">
+</div>
+</div>
+<div class="paragraph">
+<p>When you don&#8217;t have any changes, the DISCARD and APPLY buttons are disabled.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/discard-apply.png" alt="discard apply">
+</div>
+</div>
+<div class="paragraph">
+<p>You can clear your changes by clicking the DISCARD button at the bottom right corner of the page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/discard.png" alt="discard">
+</div>
+</div>
+<div class="paragraph">
+<p>For security reason, password is masked by default:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/password-hide.png" alt="password hide">
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to see your password, click the button at the end of the input box</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/password-show.png" alt="password show">
+</div>
+</div>
+<div class="paragraph">
+<p>Truststore can be updated by uploading files. Click the file upload button next to the input box, and a drop-down for uploading files will appear. Click the upload file option to upload the desired file, and you can see the file content in the input box.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/ldap-file-uploading.png" alt="ldap file uploading">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/ldap-file-uploaded.png" alt="ldap file uploaded">
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to get the default data again, you can click the refresh button on the upper right corner of the page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/refresh-button.png" alt="refresh button">
+</div>
+</div>
+<div class="paragraph">
+<p>The fields with * in the label are required entries.When users do not fill the required items and click the APPLY button, the following error message will appear:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/reqired-error.png" alt="reqired error">
+</div>
+</div>
+<div class="paragraph">
+<p>If everything is ready, click the APPLY button and a confirmation box will pop up</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/confirm-config-pop.png" alt="confirm config pop">
+</div>
+</div>
+<div class="paragraph">
+<p>Click the CANCEL button, the pop-up window will be closed. Click the OK button, it will prompt the success message. Since configuration modification requires restarting the server service, a pop-up box will appear to confirm whether to restart the service. After clicking the OK button, it will take a while for configuration changes and server restart. You will be notified when all the process is completed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/ldap-confirm-serve.png" alt="ldap confirm serve">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../../../.gitbook/assets/ldap-finished.png" alt="ldap finished">
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../../_/js/site.js"></script>
+<script async src="../../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

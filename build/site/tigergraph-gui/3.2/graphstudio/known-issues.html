@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Known Issues :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="known-issues.html">Known Issues</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/known-issues.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Known Issues</h1>
+<h3 id="_solution_import_if_string_compress_data_type_is_disabled" class="discrete">Solution import if STRING COMPRESS data type is disabled</h3>
+<div class="paragraph">
+<p>In v3.1.0, objects related to STRING COMPRESS data type would be skipped during solution import. All the others would be imported successfully.</p>
+</div>
+<div class="paragraph">
+<p>In v3.1.1, solution having STRING COMPRESS data type would fail to import.</p>
+</div>
+<div class="paragraph">
+<p>Please update the data type using STRING COMPRESS in your solution before importing into TG v3.1.0 and TG v3.1.1</p>
+</div>
+<h3 id="_solution_import_from_version_lower_than_v3_1_is_not_compatible_with_v3_1" class="discrete">Solution import from version lower than v3.1 is not compatible with v3.1</h3>
+<div class="paragraph">
+<p>Since TigerGraph supports HA for the application server in v3.1, GraphStudio and Admin Portal data storage has to be updated. The HA enhancement caused a known compatibility issue during solution import process from GraphStudio: a solution that is created from "Export Current Solution" from a version released prior to v3.1 cannot be imported into v3.1. A solution exported from v3.1 will work with v3.1 and can be imported through "Import An Existing Solution". Contact <a href="mailto:support@tigergraph.com">support@tigergraph.com</a> for a detailed workaround if you want to import a solution tarball prior to TG3.1.</p>
+</div>
+<h3 id="_after_upgrading_to_v3_1_downgrading_from_https_to_http_turn_onoff_ssl_will_result_in_user_authentication_failure" class="discrete">After upgrading to v3.1, downgrading from HTTPS to HTTP (turn on/off SSL) will result in user authentication failure</h3>
+<div class="paragraph">
+<p>In v3.1, TigerGraph enhanced the security configuration for cookie by setting a secure flag when SSL is enabled, which may trigger an issue when using Chrome to turn off SSL. Due to this security feature, when downgrading from HTTPS to HTTP, Chrome will not allow setting the same cookie. This will result in user authentication failure because the cookie fails to be set. To solve this problem, users can clear the cache from Chrome and refresh the browser. Enabling from HTTP to HTTPS will work as expected.</p>
+</div>
+<h3 id="_after_upgrading_to_v2_4_data_mappings_created_in_earlier_versions_of_graphstudio_will_disappear" class="discrete">After upgrading to v2.4, data mappings created in earlier versions of GraphStudio will disappear.</h3>
+<div class="paragraph">
+<p>GraphStudio v2.4 changes internal loading job generation. Older version data mappings are deprecated. Please contact TigerGraph support if you need to migrate them from an earlier version.</p>
+</div>
+<h3 id="_integers_larger_than_253_1_may_lose_precision" class="discrete">Integers larger than 2^53 - 1 may lose precision.</h3>
+<div class="paragraph">
+<p>Read more at <a href="https://stackoverflow.com/questions/307179/what-is-javascripts-highest-integer-value-that-a-number-can-go-to-without-losin" class="bare">https://stackoverflow.com/questions/307179/what-is-javascripts-highest-integer-value-that-a-number-can-go-to-without-losin</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the future, GraphStudio will use BigInt to solve this problem.</p>
+</div>
+<h3 id="_graph_exploration_result_disappears" class="discrete">Graph Exploration result disappears <a id="TigerGraphGraphStudioUIGuide-GraphExplorationResultDisappears"></a></h3>
+<div class="paragraph">
+<p>Sometimes when you double-click a vertex, the graph exploration result disappears. This is only a front-end rendering issue. The data is still there.<br>
+<strong>Workaround</strong> : click the change layout button<span class="image"><img src="../.gitbook/assets/change_layout_btn.png" alt="change layout btn"></span>, and choose any layout. Everything will be rendered.</p>
+</div>
+<h3 id="_edge_response_area_is_too_big" class="discrete">Edge response area is too big <a id="TigerGraphGraphStudioUIGuide-EdgeResponseAreaIsTooBig"></a></h3>
+<div class="paragraph">
+<p>When there are edges very close to one another, their click response areas may overlap, making it hard to select the edge you want. This happens after zoom-in / zoom-out or connecting to another screen sometimes.<br>
+<strong>Workaround</strong>: click a blank place in the working panel then zoom-in and zoom-out. The response area will back to normal.</p>
+</div>
+<h3 id="_you_cannot_use_fixed_binary_type_attributes" class="discrete">You cannot use fixed binary type attributes</h3>
+<div class="paragraph">
+<p>Currently GraphStudio doesn&#8217;t support fixed binary type attributes in schema. If you create your graph schema from GSQL with such attributes, GraphStudio will refuse to work. We will support this feature in future releases.</p>
+</div>
+<h3 id="_loading_jobs_created_from_gsql_wont_be_shown" class="discrete">Loading jobs created from GSQL won&#8217;t be shown</h3>
+<div class="paragraph">
+<p>GraphStudio can only recognize data mapping procedures created through GUI. If you create loading jobs from GSQL, they won&#8217;t be shown in GraphStudio.</p>
+</div>
+<h3 id="_gsql_changes_do_not_auto_refresh" class="discrete">GSQL changes do not auto refresh <a id="TigerGraphGraphStudioUIGuide-ReportBugsToUs"></a></h3>
+<div class="paragraph">
+<p>If you make changes to graph schema, and create/delete/modify global schema and local schema through GSQL, you need to refresh the browser for the changes to show up in GraphStudio.</p>
+</div>
+<h3 id="_config_expression_with_accumulators_will_be_not_applicable_with_refresh_button" class="discrete">Config expression with accumulators will be not applicable with refresh button</h3>
+<div class="paragraph">
+<p>On Explore Graph, Build Graph Pattern and Write Query pages, a refresh button <span class="image"><img src="../.gitbook/assets/refresh-button.png" alt="refresh button"></span> to retrieve updated data is used in visualization viewer. If your color/size configs use accumulator as a variable, it will be lost in the new visualization after clicking the refresh button.</p>
+</div>
+<h3 id="_report_bugs_to_us" class="discrete">Report bugs to us <a id="TigerGraphGraphStudioUIGuide-ReportBugsToUs"></a></h3>
+<div class="paragraph">
+<p>If you find any bugs, please report them to <a href="mailto:support@tigergraph.com.">support@tigergraph.com.</a>We really appreciate it!</p>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

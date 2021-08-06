@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LDAP :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../installation/install.html">TigerGraph Server User Guide</a></li>
+    <li><a href="ldap.html">LDAP</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/security/pages/user-access/ldap.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">LDAP</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Lightweight Directory Access Protocol ( LDAP ) is an industry-standard protocol for accessing and maintaining directory information services across a network. Typically, LDAP servers are used to provide centralized user authentication service. The TigerGraph system supports LDAP authentication by allowing a TigerGraph user to log in using an LDAP username and credentials. During the authentication process, the GSQL server connects to the LDAP server and requests the LDAP server to authenticate the user.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_features"><a class="anchor" href="#_supported_features"></a>Supported Features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>GSQL LDAP authentication supports any LDAP server that follows LDAPv3 protocol. StartTLS/SSL connection is also supported.</p>
+</div>
+<div class="paragraph">
+<p>SASL authentication is not yet supported. Some LDAP server are configured to require a client certificate upon connection. Client certificate is not yet supported in GSQL LDAP authentication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mapping_users_from_ldap_to_gsql"><a class="anchor" href="#_mapping_users_from_ldap_to_gsql"></a>Mapping Users From LDAP to GSQL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to manage the user roles and privileges, the TigerGraph GSQL server employs two concepts&#8212;&#8203;proxy user and proxy group.</p>
+</div>
+<div class="sect2">
+<h3 id="_proxy_user"><a class="anchor" href="#_proxy_user"></a>Proxy User</h3>
+<div class="paragraph">
+<p>A proxy user is a GSQL user created to correspond to an external LDAP user. When operating within GSQL, the external LDAP user&#8217;s roles and privileges are determined by the proxy user.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proxy_group"><a class="anchor" href="#_proxy_group"></a>Proxy Group</h3>
+<div class="paragraph">
+<p>A proxy group is a GSQL user group that is used to manage a group of proxy users who share similar properties/attributes in LDAP.</p>
+</div>
+<div class="paragraph">
+<p>An existing LDAP user can log in to GSQL only when the user matches at least one of the existing proxy groups' criteria. Once the criteria are satisfied, a proxy user will be created for the LDAP user. The roles and privileges of the proxy user are at least as permissive as the proxy group(s) he belongs to. It is also possible to change the roles of a specific proxy user independently. When the roles and privileges of a proxy group changes, the roles and privileges of all the proxy users belonging to this proxy group change accordingly.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_gsql_ldap_authentication"><a class="anchor" href="#_configure_gsql_ldap_authentication"></a>Configure GSQL LDAP Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To configure a TigerGraph system to use LDAP, there are two main configuration steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Configure the LDAP Connection.</p>
+</li>
+<li>
+<p>Configure GSQL Proxy Groups and Users.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In order to choose and specify your LDAP configuration settings, you must understand some basic LDAP concepts.  One reference for LDAP concepts is <a href="https://www.ldap.com/basic-ldap-concepts" class="bare">https://www.ldap.com/basic-ldap-concepts</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_step_1_configure_the_ldap_connection"><a class="anchor" href="#_step_1_configure_the_ldap_connection"></a>Step 1 - Configure the LDAP Connection</h3>
+<div class="paragraph">
+<p>To enable and configure LDAP, run three commands.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Configure LDAP:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gadmin config entry ldap</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The gadmin program will then prompt the user for the settings for several LDAP configuration parameters.</p>
+</div>
+<div class="paragraph">
+<p>2.Apply the configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gadmin config apply -y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>3.Restart the gsql server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gadmin restart gsql -y</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example configuration is shown below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Example of gadmin config entry ldap
+
+$ gadmin config entry ldap
+
+Security.LDAP.Enable [ false ]: Enable LDAP authentication: default false
+New: true
+
+Security.LDAP.Hostname [ localhost ]: Configure LDAP server hostname: default localhost
+New: ldap.tigergraph.com
+
+Security.LDAP.Port [ 389 ]: Configure LDAP server port: default 389
+New: 389
+
+Security.LDAP.BaseDN [  ]: Configure LDAP search base DN, the root node to start the LDAP search for user authentication: must specify
+New: dc=tigergraph,dc=com
+
+Security.LDAP.SearchFilter [ (objectClass=*) ]: Configure LDAP search base DN, the root node to start the LDAP search for user authentication.
+New: (objectClass=*)
+
+Security.LDAP.UsernameAttribute [ uid ]: Configure the username attribute name in LDAP server: default uid
+New: uid
+
+Security.LDAP.AdminDN [  ]: Configure the DN of LDAP user who has read access to the base DN specified above. Empty if everyone has read access to LDAP data: default empty
+New: cn=Manager,dc=tigergraph,dc=com
+
+Security.LDAP.AdminPassword [ secret ]: Configure the password of the admin DN specified above. Needed only when admin_dn is specified: default empty
+New: secret
+
+Security.LDAP.Secure.Protocol [ none ]: Enable SSL/StartTLS for LDAP connection [none/ssl/starttls]: default none
+New: none
+
+Security.LDAP.Secure.TruststorePath [  ]: Configure the truststore absolute path for the certificates used in SSL: default empty
+New: /tmp/ca_server.pkcs12
+
+Security.LDAP.Secure.TruststoreFormat [ JKS ]: Configure the truststore format  [JKS/PKCS12]: default JKS
+New: PKCS12
+
+Security.LDAP.Secure.TruststorePassword [ changeit ]: Configure the truststore password: default changeit
+New: test
+
+Security.LDAP.Secure.TrustAll [ false ]: Configure to trust all LDAP servers (unsafe): default false
+New: false
+[   Info] Configuration has been changed. Please use 'gadmin config apply' to persist the changes.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below is an explanation of each configuration parameter.</p>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_enable"><a class="anchor" href="#_security_ldap_enable"></a><strong>security.ldap.enable</strong></h4>
+<div class="paragraph">
+<p>Set to "true" to enable LDAP; "false" to disable LDAP.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_host"><a class="anchor" href="#_security_ldap_host"></a><strong>security.ldap.host</strong></h4>
+<div class="paragraph">
+<p>Hostname of LDAP server.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_port"><a class="anchor" href="#_security_ldap_port"></a><strong>security.ldap.port</strong></h4>
+<div class="paragraph">
+<p>Port of LDAP server.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_base_dn"><a class="anchor" href="#_security_ldap_base_dn"></a><strong>security.ldap.base_dn</strong></h4>
+<div class="paragraph">
+<p>Base DN (Distinguished Name), in order for GSQL to perform the LDAP search.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_search_filter"><a class="anchor" href="#_security_ldap_search_filter"></a><strong>security.ldap.search_filter</strong></h4>
+<div class="paragraph">
+<p>A search filter is optional. When configured, the search is only performed for the LDAP entries that satisfy the filter. The filter must strictly follow LDAP filter format, i.e., the condition must be wrapped by parentheses, etc. A description of the different types of filters is available at <a href="https://www.ldap.com/ldap-filters" class="bare">https://www.ldap.com/ldap-filters</a>. The official specification for LDAP filters is available at <a href="https://docs.ldap.com/specs/rfc4515.txt" class="bare">https://docs.ldap.com/specs/rfc4515.txt</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_username_attribute"><a class="anchor" href="#_security_ldap_username_attribute"></a><strong>security.ldap.username_attribute</strong></h4>
+<div class="paragraph">
+<p>This specifies the LDAP attribute to search when the GSQL server looks up the usernames in the LDAP server upon login. For example, in the configuration shown above, when a user logs in with the "-u john" option, the GSQL server will search the "uid" attribute in LDAP to find "john" and check the credentials only after "john" is found.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_admin_password_security_ldap_admin_dn"><a class="anchor" href="#_security_ldap_admin_password_security_ldap_admin_dn"></a><strong>security.ldap.admin_password &amp; security.ldap.admin_dn</strong></h4>
+<div class="paragraph">
+<p>These options are needed when the LDAP server is not publicly readable. In this case, the admin DN and corresponding password need to be specified in order for the GSQL server to connect to the LDAP server.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_secure_protocol"><a class="anchor" href="#_security_ldap_secure_protocol"></a><strong>security.ldap.secure.protocol</strong></h4>
+<div class="paragraph">
+<p>When set to "none", TigerGraph uses insecure LDAP connection. This can be changed to a secure connection protocol: "starttls" or "ssl".</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_secure_truststore_path_security_ldap_secure_truststore_password"><a class="anchor" href="#_security_ldap_secure_truststore_path_security_ldap_secure_truststore_password"></a><strong>security.ldap.secure.truststore_path &amp; security.ldap.secure.truststore_password</strong></h4>
+<div class="paragraph">
+<p>When starttls or ssl is used, a truststore path as well as its password needs to be configured.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_secure_truststore_format"><a class="anchor" href="#_security_ldap_secure_truststore_format"></a><strong>security.ldap.secure.truststore_format</strong></h4>
+<div class="paragraph">
+<p>Currently, the TigerGraph system supports two trustore formats: pkcs12 and jks.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_security_ldap_secure_trust_all"><a class="anchor" href="#_security_ldap_secure_trust_all"></a><strong>security.ldap.secure.trust_all</strong></h4>
+<div class="paragraph">
+<p>When specified, the GSQL server will blindly trust any LDAP sever.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_configure_gsql_proxy_groups_and_users"><a class="anchor" href="#_step_2_configure_gsql_proxy_groups_and_users"></a>Step 2 - Configure GSQL Proxy Groups and Users</h3>
+<div class="paragraph">
+<p>This section explains how to configure a GSQL proxy group in order to allow LDAP user authentication.</p>
+</div>
+<div class="sect3">
+<h4 id="_configure_proxy_group"><a class="anchor" href="#_configure_proxy_group"></a><strong>Configure Proxy Group</strong></h4>
+<div class="paragraph">
+<p>A GSQL proxy group is created by the CREATE GROUP command with a given proxy rule. For example, assume there is an attribute called "role" in the LDAP directory, and "engineering" is one of the "role" attribute values. We can create a proxy group with the proxy rule "role=engineering". Different roles can then be assigned to the proxy group. An example is shown below. When a user logins, the GSQL server searches for the user&#8217;s entry in the LDAP directory. If the user&#8217;s LDAP entry matches the proxy rule of an existing proxy group, a proxy user is created to which the user will login in.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="CREATE GROUP command" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># create a proxy group
+CREATE GROUP developers PROXY "role=engineering" // Any user in LDAP with role=engineer is proxied to the group 'developers'
+
+# grant role to proxy group
+GRANT ROLE querywriter ON GRAPH computerNet TO developers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The SHOW GROUP command will display information about a group. The DROP GROUP command deletes the definition of a group.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="SHOW GROUP and DROP GROUP commands" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># show the current groups
+SHOW GROUP
+
+# delete a proxy group
+DROP GROUP developers</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ Only users with the admin and superuser role can create, show, or drop a group.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_proxy_user_2"><a class="anchor" href="#_proxy_user_2"></a><strong>Proxy User</strong></h4>
+<div class="paragraph">
+<p>Nothing needs to be configured for a proxy user. As long as the proxy rule matches, the proxy user will be automatically created upon login. A proxy user is very similar to a normal user. The minor differences are that a proxy user cannot change their password in GSQL and that a proxy user comes with default roles inherited from the proxy group that they belong to.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_frequently_asked_questions"><a class="anchor" href="#_frequently_asked_questions"></a>Frequently Asked Questions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_what_is_security_ldap_admin_dn"><a class="anchor" href="#_what_is_security_ldap_admin_dn"></a>What is security.ldap.admin_dn?</h3>
+<div class="paragraph">
+<p>Admin_dn is the "distinguished name" of an LDAP entry. In LDAP, "distinguished name" is often abbreviated as dn. When configuring this field, a dn entry with read permission on the ldap directory is expected. Configuring a dn with no read permission will result in an error. Not configuring this field will likely result in an error since the LDAP server is typically not publicly readable. Please note that only the dn field will be accepted for this entry. All other entries will result in an authentication error. The corresponding password for the configured dn should also be set correctly in the configured entry "security.ldap.admin_password ".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_protocol_should_i_use_for_security_ldap_secure_protocol"><a class="anchor" href="#_what_protocol_should_i_use_for_security_ldap_secure_protocol"></a>What protocol should I use for security.ldap.secure.protocol?</h3>
+<div class="paragraph">
+<p>It depends on what type of protocol your LDAP server uses. SSL/TLS is very common in enterprise use today. When SSL is used, the port is typically 636 instead of default port 389.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_should_i_configure_the_truststore_and_how"><a class="anchor" href="#_should_i_configure_the_truststore_and_how"></a>Should I configure the truststore and how?</h3>
+<div class="paragraph">
+<p>You need to configure the truststore when SSL/TLS is used in the LDAP server. The truststore&#8217;s path, password, and format need to be configured accordingly. We support two formats&#8212;&#8203;JKS and PKCS12. The JKS is Java KeyStore. The corresponding certificates for the LDAP server need to be imported to the JKS for successful authentication. Different truststore formats are typically interchangeable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_if_i_just_want_to_test_the_ldap_login_without_any_certificate"><a class="anchor" href="#_what_if_i_just_want_to_test_the_ldap_login_without_any_certificate"></a>What if I just want to test the LDAP login without any certificate?</h3>
+<div class="paragraph">
+<p>This might be the case if SSL/TLS is enabled from the LDAP server side but you don&#8217;t have a certificate. You can set "security.ldap.secure.trust_all" to true to bypass the SSL/TLS certificate checking.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_does_it_mean_when_i_try_to_login_but_got_parameter_error_can_i_see_a_more_detailed_error_message"><a class="anchor" href="#_what_does_it_mean_when_i_try_to_login_but_got_parameter_error_can_i_see_a_more_detailed_error_message"></a>What does it mean when I try to login but got "parameter error"? Can I see a more detailed error message?</h3>
+<div class="paragraph">
+<p>"Parameter error" means some of the LDAP configurations are not set properly. Most often it is because admin_dn, admin_password, or the login username and password are not set correctly. Unfortunately, we cannot know exactly what field is wrong because the LDAP server side does not respond back with such detail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_does_it_mean_when_i_see_error_user_does_not_match_any_proxy_rule"><a class="anchor" href="#_what_does_it_mean_when_i_see_error_user_does_not_match_any_proxy_rule"></a>What does it mean when I see error "User does not match any proxy rule"?</h3>
+<div class="paragraph">
+<p>Congratulations! This means the LDAP is working. However, TigerGraph cannot find a matching rule for the login user. Please create a proxy group for the user. See documents for creating a proxy group <a href="ldap.md#proxy-group">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

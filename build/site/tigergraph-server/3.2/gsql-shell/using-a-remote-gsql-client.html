@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using a Remote GSQL Client :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">The GSQL Shell</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data Definition</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Data loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">System management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/README.html">System Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Backup and Restore</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <span class="nav-text">References</span>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../installation/install.html">TigerGraph Server User Guide</a></li>
+    <li>The GSQL Shell</li>
+    <li><a href="using-a-remote-gsql-client.html">Using a Remote GSQL Client</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/gsql-shell/pages/using-a-remote-gsql-client.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using a Remote GSQL Client</h1>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When the TigerGraph platform is installed, the GSQL client and server are on the same machine.  The client is packaged as a Java jar file, <code>gsql_client.jar</code> <strong><strong>located in the folder <code>&lt;TigerGraph_root_dir&gt;/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql/lib/</code> </strong></strong>. Installation consists of copying the file <code>gsql_client.jar</code> to the client machine and storing it anywhere the user finds appropriate.  The client machine needs to have Java 7.0 or higher.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_the_client"><a class="anchor" href="#_running_the_client"></a>Running the Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To run the client, execute the jar file each time that you would run gsql if you were local to the GSQL server.  That is, the command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>java -jar &lt;path&gt;gsql_client.jar</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>takes the place of gsql.  For example, the commands</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gsql DROP ALL
+gsql create_my_schema.gsql
+gsql LS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>would become</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>java -jar gsql_client.jar DROP ALL
+java -jar gsql_client.jar create_my_schema.gsql
+java -jar gsql_client.jar LS</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Therefore, it may be useful to define a Unix alias:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The java operation alone is not sufficient, however, because it does not tell the client where to find the GSQL server. In addition, the client needs to satisfy three conditions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It must know the IP address of the GSQL server.</p>
+</li>
+<li>
+<p>It must have the authorization to access the server in general and to execute the requested GSQL commands in particular.</p>
+</li>
+<li>
+<p>If a SSL/TLS encrypted connection (e.g., HTTPS) is used, then it must provide the certificate chain.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_specifying_server_ip_address"><a class="anchor" href="#_specifying_server_ip_address"></a>Specifying Server IP Address</h3>
+<div class="paragraph">
+<p>There are two ways to provide the IP address of the GSQL Server.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Method 1: Store the address in a file. Create a one-line file called <strong>gsql_server_ip_config</strong> containing the ip address of the GSQL server. <strong>This file needs to be in the same directory where you run GSQL.</strong></p>
+</li>
+<li>
+<p>Method 2 : Every time you run the client jar, provide the ip address on the command line, e.g., " <em>gsql -ip 192.168.55.46</em> "</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_authorization_and_authentication"><a class="anchor" href="#_client_authorization_and_authentication"></a>Client Authorization and Authentication</h3>
+<div class="paragraph">
+<p>The GSQL server applies the same user authentication procedures to remote GSQL users that it applies to local GSQL users. That is, if user authentication has been enabled, then each gsql command line must include valid user credentials.</p>
+</div>
+<div class="paragraph">
+<p>The client addresses the server at server port 14240. You need to make sure your security policy allows the access to this port.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ It is strongly recommended that you enable user authentication. See the document <a href="../admin/admin-guide/user-access/user-privileges-and-authentication.md#gsql-authentication"><em>*Managing User Privileges and Authentication v2.1#GSQLAuthentication*</em></a> <em>_**</em>_for more details.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_https_connection"><a class="anchor" href="#_https_connection"></a>HTTPS Connection</h3>
+<div class="paragraph">
+<p>If SSL/TLS is enabled for TigerGraph, to connect a GSQL remote client to the GSQL server, each GSQL command line should provide the certificate chain file via the -cacert option. This certificate file should be exactly the same as the file of entry Nginx.SSL.Cert setting SSL for Nginx. See <a href="../admin/admin-guide/data-encryption/encrypting-connections.md#step-2-configure-ssl-with-gadmin">Encrypting Connections: Step 2. Configure SSL with Gadmin</a>. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gsql -cacert /path/to/certificate -ip hostname:port</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_path_semantics"><a class="anchor" href="#_file_path_semantics"></a>File Path Semantics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data loading jobs always specify an input file location; logically the data should be on the server side, not on the client side. Because the command request comes from one machine and the target data file is on another machine, it no longer makes sense to use a relative path.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Rule: If a remote GSQL client invokes an instruction containing a relative path, the GSQL server considers the starting point of the path to be <code>&lt;tigergraph_rootdir&gt;/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql</code> on the GSQL server.</p>
+</div>
+<div class="paragraph">
+<p><strong>It is strongly recommended that remotely-run GSQL commands use absolute paths only.</strong>
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>For example, if the data file cf_data.csv is in the folder /home/tigergraph/example/cf/, then the command to run the loading job might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_modifying_a_bash_script_for_a_remote_gsql_client"><a class="anchor" href="#_example_modifying_a_bash_script_for_a_remote_gsql_client"></a>Example: Modifying a Bash Script for a Remote GSQL Client</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The GSQL Tutorials employ both GSQL and bash scripts to run the examples.  Typically, each example case contains 3 GSQL command files (for schema creation, data loading, and querying) and one bash script to run all the parts together and to display status information.  Below is a simplified version of the Collaborative Filtering (cf) bash script:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="RUN_cf.sh: Bash script for Collaborative Filtering (cf) example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/bin/bash
+test='cf'
+###
+gsql 'DROP ALL'
+gsql ../${test}/${test}_model.gsql
+gsql 'CREATE GRAPH gsql_demo(*)'
+
+# Loading
+gsql -g gsql_demo ../${test}/${test}_load.gsql
+## loading script contains this line:
+## RUN JOB load_cf USING FILENAME="../cf/data/cf_data.csv", SEPARATOR=",", EOL="\n"
+
+# Querying
+gsql -g gsql_demo ../${test}/${test}_query.gsql
+gsql -g gsql_demo INSTALL QUERY ALL
+gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The bash script will not run from a remote GSQL client unless a few changes are made: We need to invoke "java -jar gsql_client.jar" instead of "gsql", and need to specify the server ip address. If we use the gsql_server_ip_config file, this file must be in the same folder as the command file. The GSQL Tutorial has several different folders, one for each example, so that suggests making several config files.  Below is an approach that minimizes the changes required and maximizes standardization.</p>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Do initial client setup. This is done only once.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Store gsql_client.jar in a standard location, say <em>~/gsql_client/gsql_client.jar</em> (e.g,, <em>/home/tigergraph/gsql_client/ gsql_client.jar</em> )</p>
+</li>
+<li>
+<p>Create a file called gsql_server_ip_config containing the GSQL server&#8217;s IP address, and store it a standard location, say <em>~/gsql_client/gsql_server_ip_config</em> .</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% code title="Sample config file: /home/tigergraph/gsql_client/gsql_server_ip_config" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>123.45.67.255</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the .bashrc file in your home directory, add an alias for gsql which points to the standard location:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>alias gsql='java -jar ~/gsql_client/gsql_client.jar'</pre>
+</div>
+</div>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Add a standard header to each bash script.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% code title="standard which makes 'gsql' work on remote clients" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>alias gsql='java -jar gsql_client.jar'
+shopt -s expand_aliases
+ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
+ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>This header does the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Repeat the alias definition for the gsql command.  The definition in .bashrc may not be visible here.</p>
+</li>
+<li>
+<p>By default, bash scripts ignore aliases.  Instruct the script to use aliases.</p>
+</li>
+<li>
+<p>Define softlinks from the current folder to the locations of the client jar and config file.</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>Change any relative paths to absolute paths. This is the only step that must be customized for each script.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Here is the resulting script.  Four standard lines were added to the beginning, and one line was edited in the cf_load.gsql file.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="RUN_cf_remote.sh: Modified bash script for Collaborative Filtering (cf) example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#!/bin/bash
+alias gsql='java -jar gsql_client.jar'
+shopt -s expand_aliases
+ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
+ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config
+test='cf'
+###
+gsql 'DROP ALL'
+gsql ../${test}/${test}_model.gsql
+gsql 'CREATE GRAPH gsql_demo(*)'
+
+# Loading
+gsql -g gsql_demo ../${test}/${test}_load.gsql
+## loading script contains this line:
+## RUN JOB load_cf USING FILENAME="/home/tigergraph/tigergraph/document/examples/tutorial_real_life/cf/data/cf_load.csv", SEPARATOR=",", EOL="\n"
+
+# Querying
+gsql -g gsql_demo ../${test}/${test}_query.gsql
+gsql -g gsql_demo INSTALL QUERY ALL
+gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

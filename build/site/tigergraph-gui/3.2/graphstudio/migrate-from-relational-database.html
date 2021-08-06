@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Migrate From Relational Database :: TigerGraph Server User Guide</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="overview.html">TigerGraph Web UI Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="overview.html">GraphStudio Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="migrate-from-relational-database.html">Migrate From Relational Database</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/migrate-from-relational-database.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Migrate From Relational Database</h1>
+<div class="sect1">
+<h2 id="_migrate_from_relational_database"><a class="anchor" href="#_migrate_from_relational_database"></a>Migrate From Relational Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting from 3.0, you can easily migrate your relational database into TigerGraph database without having to write a single line of code!</p>
+</div>
+<div class="paragraph">
+<p>At GraphStudio home page, click the Migrate From Relational Database link to start the process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/rdnms-link.png" alt="rdnms link">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_1_choose_relational_database_type"><a class="anchor" href="#_step_1_choose_relational_database_type"></a>Step 1. Choose relational database type</h3>
+<div class="paragraph">
+<p>Currently we support PostgreSQL and MySQL. We will support more RDBMS types in the future.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/step-1.png" alt="step 1">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_2_input_connection_information"><a class="anchor" href="#_step_2_input_connection_information"></a>Step 2. Input connection information</h3>
+<div class="paragraph">
+<p>Provide the credentials to connect to your relational database. You need to specify which database you want to migrate from in this step.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/step-2.png" alt="step 2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_3_choose_tablesattributes_to_be_migrated"><a class="anchor" href="#_step_3_choose_tablesattributes_to_be_migrated"></a>Step 3. Choose tables/attributes to be migrated</h3>
+<div class="paragraph">
+<p>GraphStudio will connect to your relational database and retrieve all the table schemes of the database. You can choose which tables and which attributes of each table you want to migrate. By default everything will be migrated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/step-3.png" alt="step 3">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_4_configurations"><a class="anchor" href="#_step_4_configurations"></a>Step 4. Configurations</h3>
+<div class="paragraph">
+<p>You can set the migrated graph&#8217;s name (by default it will be your RDBMS type concatenated with the database name). You can choose to create index for the attributes if an index exists in the relational database. You can also choose to only migrate the top several records of each table (by default the whole dataset will be migrated).</p>
+</div>
+<div class="paragraph">
+<p>The foreign keys will be treated as edge types. This is the fixed migration rule we are using. In the future we will provide more migration rules for you to choose.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/step-4.png" alt="step 4">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_step_5_start_migration"><a class="anchor" href="#_step_5_start_migration"></a>Step 5. Start migration</h3>
+<div class="paragraph">
+<p>The migration will take a few minutes. After migration finished, a new subgraph will be created.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+The data from RDBMS will be imported to the server&#8217;s filesystem before being loaded into TigerGraph database. Please make sure that the server has enough disk space!
+{% endhint %}</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/step-5-migrating.png" alt="step 5 migrating">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verify_migration_result"><a class="anchor" href="#_verify_migration_result"></a>Verify Migration Result</h3>
+<div class="paragraph">
+<p>After migration, a popup message will guide you to go to Design Schema page to verify the graph schema.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/migration-verify.png" alt="migration verify">
+</div>
+</div>
+<div class="paragraph">
+<p>You can take a look of the auto-generated schema and make appropriate modifications.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/rdbms-schema.png" alt="rdbms schema">
+</div>
+</div>
+<div class="paragraph">
+<p>Then go to Map Data To Graph page and check the auto-generated data mapping.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/rdbms-data-mapping.png" alt="rdbms data mapping">
+</div>
+</div>
+<div class="paragraph">
+<p>Then go to Load Data page and load the data into the graph.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/rdbms-data-loading.png" alt="rdbms data loading">
+</div>
+</div>
+<div class="paragraph">
+<p>Well done, you can play with your data and work on your business logic! Here is an example of playing with the data in Explore Graph page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/rdbms-graph-exploration.png" alt="rdbms graph exploration">
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
