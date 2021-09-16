@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Design Schema :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>Design Schema :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -61,7 +61,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="overview.html">TigerGraph Web UI Guide</a></h3>
+    <h3 class="title"><a href="overview.html">GraphStudio and Admin Portal</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -71,6 +71,75 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="overview.html">GraphStudio Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user-access-management.html">User Access Management</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="design-schema.html">Design Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="map-data-to-graph.html">Map Data To Graph</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="explore-graph/README.html">Explore Graph</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/graph-exploration-panel.html">Graph Exploration Panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/search-for-vertices.html">Search for Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/expand-from-vertices.html">Expand from Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/find-paths-between-vertices.html">Find Paths between Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/run-gsql-queries.html">Run GSQL Queries</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/augment-visualization-result.html">Augment Visualization Result</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Build Graph Patterns</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="build-graph-patterns/visual-query-builder-overview.html">Visual Query Builder Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="build-graph-patterns/visual-pattern-examples.html">Visual Pattern Examples</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="write-queries.html">Write Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migrate-from-relational-database.html">Migrate From Relational Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="export-and-import-solution.html">Export And Import Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keyboard-shortcuts.html">Keyboard Shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="known-issues.html">Known Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patent-and-third-party-notice.html">GraphStudio Patent and Third Party Notice</a>
   </li>
 </ul>
   </li>
@@ -83,7 +152,61 @@
     <span class="nav-text">Admin Portal</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+    <a class="nav-link" href="../admin-portal/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../admin-portal/monitoring/README.html">Monitor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/monitoring/log-viewer.html">Logs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/management/license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#user-management.adoc">user-management.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/nginx.html">Nginx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/restpp.html">RESTPP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/gui.html">Application Server (GUI)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/security/ldap.html">LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/security/sso.html">SSO</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/known-issues.html">Known Issues</a>
   </li>
 </ul>
   </li>
@@ -94,23 +217,47 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="title">GraphStudio and Admin Portal</span>
     <span class="version">3.2</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
-      <a class="title" href="overview.html">TigerGraph Web UI Guide</a>
+      <a class="title" href="overview.html">GraphStudio and Admin Portal</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -124,7 +271,8 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="overview.html">GraphStudio and Admin Portal</a></li>
+    <li>GraphStudio</li>
     <li><a href="design-schema.html">Design Schema</a></li>
   </ul>
 </nav>
@@ -175,7 +323,7 @@ Only certain roles have the privilege to modify a graph schema.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/design-schema-no-graph-globalview.png" alt="design schema no graph globalview">
+<img src="../../.gitbook/assets/design-schema-no-graph-globalview.png" alt="design schema no graph globalview">
 </div>
 </div>
 <div class="paragraph">
@@ -183,7 +331,7 @@ Only certain roles have the privilege to modify a graph schema.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/schema.png" alt="schema">
+<img src="../../.gitbook/assets/schema.png" alt="schema">
 </div>
 </div>
 <div class="paragraph">
@@ -208,7 +356,7 @@ The relationship between a vertex type and a vertex instance of a graph is like 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-06-10-at-13.01.14.png" alt="screen shot 2020 06 10 at 13.01.14">
+<img src="../../.gitbook/assets/screen-shot-2020-06-10-at-13.01.14.png" alt="screen shot 2020 06 10 at 13.01.14">
 </div>
 </div>
 <div class="paragraph">
@@ -230,18 +378,18 @@ The relationship between a vertex type and a vertex instance of a graph is like 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/schema-local.png" alt="schema local">
+<img src="../../.gitbook/assets/schema-local.png" alt="schema local">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_add_a_vertex_type"><a class="anchor" href="#_add_a_vertex_type"></a>Add A Vertex Type <a id="TigerGraphGraphStudioUIGuide-AddAVertexType"></a></h3>
 <div class="paragraph">
-<p>Click the add vertex type button<span class="image"><img src="../.gitbook/assets/add_vertex_type.png" alt="add vertex type"></span>to add a vertex type. The working space will enter Add Vertex mode and the button color will change to green<span class="image"><img src="../.gitbook/assets/add-vertex-mode-on.png" alt="add vertex mode on"></span>. Click the button again to exit Add Vertex mode. The add vertex type panel in the right:</p>
+<p>Click the add vertex type button<span class="image"><img src="../../.gitbook/assets/add_vertex_type.png" alt="add vertex type"></span>to add a vertex type. The working space will enter Add Vertex mode and the button color will change to green<span class="image"><img src="../../.gitbook/assets/add-vertex-mode-on.png" alt="add vertex mode on"></span>. Click the button again to exit Add Vertex mode. The add vertex type panel in the right:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/add-vertex-panel.png" alt="add vertex panel">
+<img src="../../.gitbook/assets/add-vertex-panel.png" alt="add vertex panel">
 </div>
 </div>
 <div class="paragraph">
@@ -249,16 +397,16 @@ The relationship between a vertex type and a vertex instance of a graph is like 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/color-picker.png" alt="color picker">
+<img src="../../.gitbook/assets/color-picker.png" alt="color picker">
 </div>
 </div>
 <div class="paragraph">
 <p>Once you are satisfied with the color, click anywhere outside of the color palette window to set the color.<br>
-You can also choose an icon for the vertex type by clicking the Select Icon button<span class="image"><img src="../.gitbook/assets/select_icon_btn.png" alt="select icon btn"></span>. Then a Select Icon window will pop up. Select an icon that fits the vertex type semantic best. You can type in keywords to help filter the icons and find the best match faster.</p>
+You can also choose an icon for the vertex type by clicking the Select Icon button<span class="image"><img src="../../.gitbook/assets/select_icon_btn.png" alt="select icon btn"></span>. Then a Select Icon window will pop up. Select an icon that fits the vertex type semantic best. You can type in keywords to help filter the icons and find the best match faster.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/select_icons.png" alt="select icons">
+<img src="../../.gitbook/assets/select_icons.png" alt="select icons">
 </div>
 </div>
 <div class="paragraph">
@@ -266,7 +414,7 @@ You can also choose an icon for the vertex type by clicking the Select Icon butt
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/upload_icon.png" alt="upload icon">
+<img src="../../.gitbook/assets/upload_icon.png" alt="upload icon">
 </div>
 </div>
 <div class="paragraph">
@@ -274,7 +422,7 @@ You can also choose an icon for the vertex type by clicking the Select Icon butt
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/select_icon_with_user_upload.png" alt="select icon with user upload">
+<img src="../../.gitbook/assets/select_icon_with_user_upload.png" alt="select icon with user upload">
 </div>
 </div>
 <div class="paragraph">
@@ -283,7 +431,7 @@ To add an attribute, click the green plus sign at the right of the Attributes se
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/add-attribute.png" alt="add attribute">
+<img src="../../.gitbook/assets/add-attribute.png" alt="add attribute">
 </div>
 </div>
 <div class="paragraph">
@@ -294,14 +442,14 @@ To add an attribute, click the green plus sign at the right of the Attributes se
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/attribute-with-index.png" alt="attribute with index">
+<img src="../../.gitbook/assets/attribute-with-index.png" alt="attribute with index">
 </div>
 </div>
 <div class="paragraph">
 <p>Click the red minus sign to the right of the attribute to delete an existing attribute.</p>
 </div>
 <div class="paragraph">
-<p>Once you are satisfied with the vertex type settings, click the Add button<span class="image"><img src="../.gitbook/assets/add-btn.png" alt="add btn"></span>to add the vertex type. A new circle will appear in the working panel. You can drag the circle to any desired position.</p>
+<p>Once you are satisfied with the vertex type settings, click the Add button<span class="image"><img src="../../.gitbook/assets/add-btn.png" alt="add btn"></span>to add the vertex type. A new circle will appear in the working panel. You can drag the circle to any desired position.</p>
 </div>
 <div class="paragraph">
 <p>{% hint style="danger" %}
@@ -312,14 +460,14 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 <div class="sect2">
 <h3 id="_add_an_edge_type"><a class="anchor" href="#_add_an_edge_type"></a>Add An Edge Type <a id="TigerGraphGraphStudioUIGuide-AddAnEdgeType"></a></h3>
 <div class="paragraph">
-<p>Click the add edge type button<span class="image"><img src="../.gitbook/assets/add_edge_type.png" alt="add edge type"></span>to add an edge type. The working space will enter Add Edge mode and the button color will change to green<span class="image"><img src="../.gitbook/assets/add_edge_type_active.png" alt="add edge type active"></span>. Click the button again to exit Add Edge mode.</p>
+<p>Click the add edge type button<span class="image"><img src="../../.gitbook/assets/add_edge_type.png" alt="add edge type"></span>to add an edge type. The working space will enter Add Edge mode and the button color will change to green<span class="image"><img src="../../.gitbook/assets/add_edge_type_active.png" alt="add edge type active"></span>. Click the button again to exit Add Edge mode.</p>
 </div>
 <div class="paragraph">
 <p>Each edge type has one or many source vertex types and target vertex types. First, click the source vertex type. A hint will appear on the vertex type circle:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/click_edge_type_source_vertex.png" alt="click edge type source vertex">
+<img src="../../.gitbook/assets/click_edge_type_source_vertex.png" alt="click edge type source vertex">
 </div>
 </div>
 <div class="paragraph">
@@ -327,7 +475,7 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/add-edge-panel.png" alt="add edge panel">
+<img src="../../.gitbook/assets/add-edge-panel.png" alt="add edge panel">
 </div>
 </div>
 <div class="paragraph">
@@ -338,7 +486,7 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/edge-multi-pair.png" alt="edge multi pair">
+<img src="../../.gitbook/assets/edge-multi-pair.png" alt="edge multi pair">
 </div>
 </div>
 <div class="paragraph">
@@ -346,7 +494,7 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/directed-edge.png" alt="directed edge">
+<img src="../../.gitbook/assets/directed-edge.png" alt="directed edge">
 </div>
 </div>
 <div class="paragraph">
@@ -356,7 +504,7 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 <p>Editing edge type attributes is the same as editing vertex type attributes.</p>
 </div>
 <div class="paragraph">
-<p>Once you are satisfied with the edge type settings, click the Add button<span class="image"><img src="../.gitbook/assets/add-btn.png" alt="add btn"></span>to add the edge type. A new link between the selected source vertex type circle(s) and target vertex type circle(s) will appear in the working panel.</p>
+<p>Once you are satisfied with the edge type settings, click the Add button<span class="image"><img src="../../.gitbook/assets/add-btn.png" alt="add btn"></span>to add the edge type. A new link between the selected source vertex type circle(s) and target vertex type circle(s) will appear in the working panel.</p>
 </div>
 <div class="paragraph">
 <p>You can add multiple edge types between the same source vertex type and target vertex type pair. Moreover, an edge can use the same vertex type for both its source vertex type and its target vertex type, e.g., a Friendship edge from Person vertex to Person vertex.</p>
@@ -365,29 +513,29 @@ Note:  PRIMARY KEY and COMPOSITE KEY is not supported in GraphStudio. If you dec
 <div class="sect2">
 <h3 id="_edit_vertex_or_edge_type"><a class="anchor" href="#_edit_vertex_or_edge_type"></a>Edit Vertex Or Edge Type <a id="TigerGraphGraphStudioUIGuide-EditVertexOrEdgeType"></a></h3>
 <div class="paragraph">
-<p>You can edit the vertex types or edge types at any time after you add them. Just click one vertex type circle or one edge link, and then click the edit button<span class="image"><img src="../.gitbook/assets/edit.png" alt="edit"></span>(double clicking on the selected vertex/edge will have the same effect). The working space will enter Edit mode and the button color will change to green<span class="image"><img src="../.gitbook/assets/edit-mode-on.png" alt="edit mode on"></span>. Click the button again to exit Edit mode. The Edit Attributes panel in the right:</p>
+<p>You can edit the vertex types or edge types at any time after you add them. Just click one vertex type circle or one edge link, and then click the edit button<span class="image"><img src="../../.gitbook/assets/edit.png" alt="edit"></span>(double clicking on the selected vertex/edge will have the same effect). The working space will enter Edit mode and the button color will change to green<span class="image"><img src="../../.gitbook/assets/edit-mode-on.png" alt="edit mode on"></span>. Click the button again to exit Edit mode. The Edit Attributes panel in the right:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/edit-panel.png" alt="edit panel">
+<img src="../../.gitbook/assets/edit-panel.png" alt="edit panel">
 </div>
 </div>
 <div class="paragraph">
-<p>Once you are satisfied with the change, click the Update button<span class="image"><img src="../.gitbook/assets/add-btn.png" alt="add btn"></span>.</p>
+<p>Once you are satisfied with the change, click the Update button<span class="image"><img src="../../.gitbook/assets/add-btn.png" alt="add btn"></span>.</p>
 </div>
 <div class="paragraph">
 <p>In graph mode, you can only edit the style of a global vertex or edge type:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/view-panel.png" alt="view panel">
+<img src="../../.gitbook/assets/view-panel.png" alt="view panel">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_delete_vertex_or_edge_type"><a class="anchor" href="#_delete_vertex_or_edge_type"></a>Delete Vertex Or Edge Type <a id="TigerGraphGraphStudioUIGuide-DeleteVertexOrEdgeType"></a></h3>
 <div class="paragraph">
-<p>You can delete a vertex type or an edge type by first choosing the vertex type circles or edge type links, then clicking the delete button<span class="image"><img src="../.gitbook/assets/delete_btn.png" alt="delete btn"></span>. In order to delete multiple vertex types and edge types, hold down the "Shift" key while you select multiple items.</p>
+<p>You can delete a vertex type or an edge type by first choosing the vertex type circles or edge type links, then clicking the delete button<span class="image"><img src="../../.gitbook/assets/delete_btn.png" alt="delete btn"></span>. In order to delete multiple vertex types and edge types, hold down the "Shift" key while you select multiple items.</p>
 </div>
 <div class="paragraph">
 <p>{% hint style="warning" %}
@@ -398,17 +546,17 @@ Note that user cannot delete a global vertex or edge type using delete button in
 <div class="sect2">
 <h3 id="_redo_and_undo"><a class="anchor" href="#_redo_and_undo"></a>Redo And Undo <a id="TigerGraphGraphStudioUIGuide-RedoAndUndo"></a></h3>
 <div class="paragraph">
-<p>You can redo and undo your changes by clicking the two buttons:<span class="image"><img src="../.gitbook/assets/redo_undo_btn.png" alt="redo undo btn"></span>. The whole history since the time you entered Design Schema page is recorded.</p>
+<p>You can redo and undo your changes by clicking the two buttons:<span class="image"><img src="../../.gitbook/assets/redo_undo_btn.png" alt="redo undo btn"></span>. The whole history since the time you entered Design Schema page is recorded.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_view_global_vertex_and_edge_types"><a class="anchor" href="#_view_global_vertex_and_edge_types"></a>View Global Vertex And Edge Types</h3>
 <div class="paragraph">
-<p>Click the view global vertex and edge types button<span class="image"><img src="../.gitbook/assets/view-global-type-button.png" alt="view global type button"></span>to assign global vertex and edge types to a graph, or drop them from a graph. The working space will enter View Global Vertex and Edge Types mode and the button color will change to green<span class="image"><img src="../.gitbook/assets/view-global-types-mode-on.png" alt="view global types mode on"></span>. Click the button again to exit View Global Vertex and Edge Types mode. The add vertex type panel in the right:</p>
+<p>Click the view global vertex and edge types button<span class="image"><img src="../../.gitbook/assets/view-global-type-button.png" alt="view global type button"></span>to assign global vertex and edge types to a graph, or drop them from a graph. The working space will enter View Global Vertex and Edge Types mode and the button color will change to green<span class="image"><img src="../../.gitbook/assets/view-global-types-mode-on.png" alt="view global types mode on"></span>. Click the button again to exit View Global Vertex and Edge Types mode. The add vertex type panel in the right:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/view-global-types-panel.png" alt="view global types panel">
+<img src="../../.gitbook/assets/view-global-types-panel.png" alt="view global types panel">
 </div>
 </div>
 <div class="paragraph">
@@ -420,11 +568,11 @@ Only superuser or globaldesigner can modify global types in a graph. The view gl
 <div class="sect2">
 <h3 id="_publish_schema"><a class="anchor" href="#_publish_schema"></a>Publish Schema <a id="TigerGraphGraphStudioUIGuide-PublishSchema"></a></h3>
 <div class="paragraph">
-<p>Once you are satisfied with the graph schema, click the publish schema button<span class="image"><img src="../.gitbook/assets/publish_btn.png" alt="publish btn"></span>to publish the schema to the TigerGraph system. If you are publishing a brand new schema, a progress bar will show:</p>
+<p>Once you are satisfied with the graph schema, click the publish schema button<span class="image"><img src="../../.gitbook/assets/publish_btn.png" alt="publish btn"></span>to publish the schema to the TigerGraph system. If you are publishing a brand new schema, a progress bar will show:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/installing_schema_enterprise.png" alt="installing schema enterprise">
+<img src="../../.gitbook/assets/installing_schema_enterprise.png" alt="installing schema enterprise">
 </div>
 </div>
 <div class="paragraph">
@@ -448,15 +596,15 @@ If a vertex type will be removed in order to change the schema, all edge types c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/affected_ve_types.png" alt="affected ve types">
+<img src="../../.gitbook/assets/affected_ve_types.png" alt="affected ve types">
 </div>
 </div>
 <div class="paragraph">
-<p>Finally, when you click publish schema button<span class="image"><img src="../.gitbook/assets/publish_btn.png" alt="publish btn"></span>, a pop up window will summarize your changes to the schema. The vertex and edge types that will be removed are highlighted. Make sure you confirm the changes before continue:</p>
+<p>Finally, when you click publish schema button<span class="image"><img src="../../.gitbook/assets/publish_btn.png" alt="publish btn"></span>, a pop up window will summarize your changes to the schema. The vertex and edge types that will be removed are highlighted. Make sure you confirm the changes before continue:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-01-24-at-11.28.29-am.png" alt="screen shot 2019 01 24 at 11.28.29 am">
+<img src="../../.gitbook/assets/screen-shot-2019-01-24-at-11.28.29-am.png" alt="screen shot 2019 01 24 at 11.28.29 am">
 </div>
 </div>
 <div class="paragraph">
@@ -464,7 +612,7 @@ If a vertex type will be removed in order to change the schema, all edge types c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/changing_schema.png" alt="changing schema">
+<img src="../../.gitbook/assets/changing_schema.png" alt="changing schema">
 </div>
 </div>
 <div class="paragraph">
@@ -504,7 +652,7 @@ If a vertex type will be removed in order to change the schema, all edge types c
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/migrate_data_mapping.png" alt="migrate data mapping">
+<img src="../../.gitbook/assets/migrate_data_mapping.png" alt="migrate data mapping">
 </div>
 </div>
 </div>

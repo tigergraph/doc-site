@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using a Remote GSQL Client :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>Using a Remote GSQL Client :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -61,16 +61,28 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Introduction</span>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
   </li>
 </ul>
   </li>
@@ -83,7 +95,25 @@
     <span class="nav-text">Getting Started</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
 </ul>
   </li>
@@ -96,7 +126,19 @@
     <span class="nav-text">Installation</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
   </li>
 </ul>
   </li>
@@ -106,7 +148,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">The GSQL Shell</span>
+    <a class="nav-link" href="gsql-shell.html">The GSQL Shell</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
@@ -119,10 +161,68 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data Definition</span>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
   </li>
 </ul>
   </li>
@@ -131,11 +231,50 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data loading</span>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
@@ -147,16 +286,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">System management</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/README.html">System Management</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
   </li>
 </ul>
   </li>
@@ -167,7 +304,13 @@
     <span class="nav-text">Security</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
   </li>
 </ul>
   </li>
@@ -176,13 +319,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Backup and Restore</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
   </li>
 </ul>
   </li>
@@ -198,14 +342,72 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -214,23 +416,47 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">TigerGraph Server User Guide</span>
+    <span class="title">TigerGraph Server</span>
     <span class="version">3.2</span>
   </div>
   <ul class="components">
-    <li class="component is-current">
-      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../installation/install.html">3.2</a>
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -244,8 +470,8 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../installation/install.html">TigerGraph Server User Guide</a></li>
-    <li>The GSQL Shell</li>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li><a href="gsql-shell.html">The GSQL Shell</a></li>
     <li><a href="using-a-remote-gsql-client.html">Using a Remote GSQL Client</a></li>
   </ul>
 </nav>
@@ -273,7 +499,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>java -jar &lt;path&gt;gsql_client.jar</pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar &lt;path&gt;gsql_client.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -281,9 +507,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gsql DROP ALL
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">gsql DROP ALL
 gsql create_my_schema.gsql
-gsql LS</pre>
+gsql LS</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -291,9 +517,9 @@ gsql LS</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>java -jar gsql_client.jar DROP ALL
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar gsql_client.jar DROP ALL
 java -jar gsql_client.jar create_my_schema.gsql
-java -jar gsql_client.jar LS</pre>
+java -jar gsql_client.jar LS</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -301,7 +527,7 @@ java -jar gsql_client.jar LS</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -357,7 +583,7 @@ java -jar gsql_client.jar LS</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gsql -cacert /path/to/certificate -ip hostname:port</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gsql -cacert /path/to/certificate -ip hostname:port</code></pre>
 </div>
 </div>
 </div>
@@ -382,7 +608,7 @@ Rule: If a remote GSQL client invokes an instruction containing a relative path,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</code></pre>
 </div>
 </div>
 </div>
@@ -393,12 +619,10 @@ Rule: If a remote GSQL client invokes an instruction containing a relative path,
 <div class="paragraph">
 <p>The GSQL Tutorials employ both GSQL and bash scripts to run the examples.  Typically, each example case contains 3 GSQL command files (for schema creation, data loading, and querying) and one bash script to run all the parts together and to display status information.  Below is a simplified version of the Collaborative Filtering (cf) bash script:</p>
 </div>
-<div class="paragraph">
-<p>{% code title="RUN_cf.sh: Bash script for Collaborative Filtering (cf) example" %}</p>
-</div>
 <div class="listingblock">
+<div class="title">Bash script for Collaborative Filtering (cf) example</div>
 <div class="content">
-<pre>#!/bin/bash
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#!/bin/bash
 test='cf'
 ###
 gsql 'DROP ALL'
@@ -413,11 +637,8 @@ gsql -g gsql_demo ../${test}/${test}_load.gsql
 # Querying
 gsql -g gsql_demo ../${test}/${test}_query.gsql
 gsql -g gsql_demo INSTALL QUERY ALL
-gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
+gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endcode %}</p>
 </div>
 <div class="paragraph">
 <p>The bash script will not run from a remote GSQL client unless a few changes are made: We need to invoke "java -jar gsql_client.jar" instead of "gsql", and need to specify the server ip address. If we use the gsql_server_ip_config file, this file must be in the same folder as the command file. The GSQL Tutorial has several different folders, one for each example, so that suggests making several config files.  Below is an approach that minimizes the changes required and maximizes standardization.</p>
@@ -444,7 +665,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>123.45.67.255</pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">123.45.67.255</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -459,7 +680,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>alias gsql='java -jar ~/gsql_client/gsql_client.jar'</pre>
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql='java -jar ~/gsql_client/gsql_client.jar'</code></pre>
 </div>
 </div>
 <div class="olist upperalpha">
@@ -474,10 +695,10 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>alias gsql='java -jar gsql_client.jar'
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
-ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</pre>
+ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -514,7 +735,7 @@ ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>#!/bin/bash
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#!/bin/bash
 alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
@@ -533,7 +754,7 @@ gsql -g gsql_demo ../${test}/${test}_load.gsql
 # Querying
 gsql -g gsql_demo ../${test}/${test}_query.gsql
 gsql -g gsql_demo INSTALL QUERY ALL
-gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
+gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 </div>
 <div class="paragraph">

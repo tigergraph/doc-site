@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>High Availability Support for Application Server :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>High Availability Support for Application Server :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -85,6 +85,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -97,6 +106,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="install.html">Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="upgrade.html">Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="uninstallation.html">Uninstallation</a>
   </li>
 </ul>
   </li>
@@ -218,6 +233,30 @@
     <span class="version">3.2</span>
   </div>
   <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="install.html">TigerGraph Server User Guide</a>
       <ul class="versions">
@@ -272,7 +311,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../.gitbook/assets/diagram-draft-1-.svg" alt="diagram draft 1 ">
+<img src="../../../.gitbook/assets/diagram-draft-1-.svg" alt="diagram draft 1 ">
 </div>
 </div>
 </div>
@@ -301,7 +340,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>    upstream flask_pool {
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">    upstream flask_pool {
         ip_hash;
         zone flask_pool 64k;
         server 172.31.86.19:14240;
@@ -330,7 +369,7 @@
         location = /50x.html {
                 root html;
         }
-    }</pre>
+    }</code></pre>
 </div>
 </div>
 <div class="paragraph">

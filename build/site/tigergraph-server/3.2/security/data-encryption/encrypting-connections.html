@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Encrypting Connections :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>Encrypting Connections :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -85,6 +85,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../getting-started/docker.html">Getting started with Docker</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -97,6 +106,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../installation/install.html">Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/upgrade.html">Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/uninstallation.html">Uninstallation</a>
   </li>
 </ul>
   </li>
@@ -218,6 +233,30 @@
     <span class="version">3.2</span>
   </div>
   <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../installation/install.html">TigerGraph Server User Guide</a>
       <ul class="versions">
@@ -333,7 +372,7 @@ In the example below, the Common Name value should be your server hostname, sinc
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ~/nginx-selfsigned.key -out ~/nginx-selfsigned.crt
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ~/nginx-selfsigned.key -out ~/nginx-selfsigned.crt
 
 Generating a 2048 bit RSA private key
 .................................................................................................................................+++
@@ -353,7 +392,7 @@ Locality Name (eg, city) []:Redwood City
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:TigerGraph
 Organizational Unit Name (eg, section) []:GLE
 Common Name (e.g. server FQDN or YOUR name) []: my.ip.addr.num
-Email Address []:engineer@tigergraph.com</pre>
+Email Address []:engineer@tigergraph.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -367,7 +406,7 @@ Email Address []:engineer@tigergraph.com</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ chmod 600 ~/nginx-selfsigned.*</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ chmod 600 ~/nginx-selfsigned.*</code></pre>
 </div>
 </div>
 </div>
@@ -386,7 +425,7 @@ TigerGraph&#8217;s SSL only accepts PEM-encoded certificates. If you have a cert
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gadmin config entry ssl
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gadmin config entry ssl
 
 ​Nginx.SSL.Enable [ false ]: Enable SSL connection for all HTTP requests
 New: true
@@ -399,7 +438,7 @@ New: @ssl_cert_path
 
 # This config (Nginx.ProxySSLVerify) was removed in v3.1.1
 Nginx.ProxySSLVerify [ false ]: Enable verification of the proxied HTTPS server certificate. Recommend to turn on.
-New: true</pre>
+New: true</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -407,9 +446,9 @@ New: true</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin config apply -y
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin config apply -y
 
-[ Info] Successfully applied configuration change. Please restart services to make it effective immediately.</pre>
+[ Info] Successfully applied configuration change. Please restart services to make it effective immediately.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -417,7 +456,7 @@ New: true</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gadmin restart gsql nginx gui ts3 -y</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gadmin restart gsql nginx gui ts3 -y</code></pre>
 </div>
 </div>
 </div>
@@ -433,7 +472,7 @@ New: true</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ curl https://localhost:14240
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ curl https://localhost:14240
 
 curl: (60) server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
 More details here: http://curl.haxx.se/docs/sslcerts.html
@@ -449,7 +488,7 @@ problem with the certificate (it might be expired, or the name might
 not match the domain name in the URL).
 
 If you'd like to turn off curl's verification of the certificate, use
-the -k (or --insecure) option.</pre>
+the -k (or --insecure) option.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -465,9 +504,9 @@ the -k (or --insecure) option.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ curl --cacert /home/tigergraph/nginx-selfsigned.crt https://localhost:14240
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ curl --cacert /home/tigergraph/nginx-selfsigned.crt https://localhost:14240
 
-&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;GraphStudio&lt;/title&gt;&lt;base href="/"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;&lt;link href="styles.d67299ba9f5d73aecbe2.bundle.css" rel="stylesheet"/&gt;&lt;/head&gt;&lt;body class="mat-typography"&gt;&lt;app-root&gt;&lt;/app-root&gt;&lt;script type="text/javascript" src="inline.4aae6a8088c30a61d5b0.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="polyfills.c9b879328f3396b2bbe8.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="vendor.5392e4ea4f904cd1658c.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="main.a39087227fcdf478cd2a.bundle.js"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;GraphStudio&lt;/title&gt;&lt;base href="/"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;&lt;link href="styles.d67299ba9f5d73aecbe2.bundle.css" rel="stylesheet"/&gt;&lt;/head&gt;&lt;body class="mat-typography"&gt;&lt;app-root&gt;&lt;/app-root&gt;&lt;script type="text/javascript" src="inline.4aae6a8088c30a61d5b0.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="polyfills.c9b879328f3396b2bbe8.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="vendor.5392e4ea4f904cd1658c.bundle.js"&gt;&lt;/script&gt;&lt;script type="text/javascript" src="main.a39087227fcdf478cd2a.bundle.js"&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
 </div>
 </div>
 </div>

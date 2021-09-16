@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-cloud" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="README.html">TigerGraph Cloud</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">TigerGraph Cloud</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../solutions/README.html">Solutions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/cloud-providers-and-regions.html">Cloud Providers and Regions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/create.html">Create a New Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/stop-restart-and-terminate.html">Stop, Restart, and Terminate a Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/sizing-and-scaling.html">Sizing and Scaling</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../access-solution/README.html">Access a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/graphstudio.html">Access a Solution through GraphStudio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#rest-requests">[rest-requests]</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/gsql-web-shell.html">Access a Solution through GSQL Web Shell</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../monitor-solution/README.html">Monitor a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/monitor-solution-state.html">Monitor Solution State</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/view-activity-log.html">View Activity Log</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../resize-solution/README.html">Resize a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/resize-instance-type.html">Resize Instance Type</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/upgrade-storage-volume.html">Upgrade Storage Volume</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../security/README.html">Security and User Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-database-users.html">Manage Database Users</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-cloud-account.html">Manage Your TigerGraph Cloud Account</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../billing/README.html">Billing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/manage-payment-methods.html">Manage Payment Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/subscriptions.html">Subscriptions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/faqs.html">FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/support.html">Contact Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/README.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/aws.html">Amazon Web Services (AWS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/azure.html">Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/gcp.html">Google Cloud Platform (GCP)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/service-limits.html">Service Limits</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Cloud</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="README.html">TigerGraph Cloud</a></li>
+    <li><a href="getting-started.html">Getting Started</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/cloud/edit/main/modules/start/pages/getting-started.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting Started</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph Cloud offers an easy way to analyze and query your graph data in the cloud. This tutorial guides you through creating your TigerGraph Cloud account, provisioning a free-tier TigerGraph Cloud Solution, and logging into GraphStudio.</p>
+</div>
+<div class="paragraph">
+<p><strong>Watch</strong> <a href="https://www.youtube.com/watch?v=JARd9ULRP_I&amp;feature=youtu.be"><strong>Quick Start Video</strong></a> <strong>and Start Your TigerGraph Cloud Solutions in 5 Minutes!</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_tigergraph_cloud_account"><a class="anchor" href="#_create_a_tigergraph_cloud_account"></a>Create a TigerGraph Cloud account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to the <a href="https://tgcloud.io/">TigerGraph Cloud landing page</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can create a TigerGraph Cloud account with a Google account, a LinkedIn account, or an email address.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Email" %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Login/Register</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Sign Up</strong>.</p>
+</li>
+<li>
+<p>Enter your email and password.</p>
+</li>
+<li>
+<p>A verification email with the subject "Verify your email" will be sent to the email address you provided.</p>
+</li>
+<li>
+<p>Go to your email inbox. Find the verification email and click <strong>Confirm my account.</strong>
+{% endtab %}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% tab title="Google" %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Login/Register.</strong></p>
+</li>
+<li>
+<p>Click <strong>Sign up.</strong></p>
+</li>
+<li>
+<p>Click <strong>Sign up with Google.</strong></p>
+</li>
+<li>
+<p>Enter the password for your Google account.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review and click the checkbox to accept the <strong>Terms of Service</strong> and the <strong>Privacy Policy</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Submit</strong>.</p>
+</li>
+<li>
+<p>After being redirected back to TigerGraph Cloud, enter the information on the signup form and click the checkbox to accept TigerGraph&#8217;s <strong>Terms &amp; Conditions</strong> and <strong>Privacy Policy</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Submit</strong>.
+{% endtab %}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% tab title="LinkedIn" %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Login/Register.</strong></p>
+</li>
+<li>
+<p>Click <strong>Sign up.</strong></p>
+</li>
+<li>
+<p>Click Sign up with LinkedIn.</p>
+</li>
+<li>
+<p>Enter your LinkedIn credentials and click Sign in.</p>
+</li>
+<li>
+<p>Review the Terms and Conditions and click <strong>Allow</strong>.</p>
+</li>
+<li>
+<p>After being redirected back to TigerGraph Cloud, enter the information on the signup form and click the checkbox to accept TigerGraph&#8217;s <strong>Terms &amp; Conditions</strong> and <strong>Privacy Policy</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Submit</strong>.
+{% endtab %}
+{% endtabs %}</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_in_to_your_tigergraph_cloud_account"><a class="anchor" href="#_log_in_to_your_tigergraph_cloud_account"></a>Log in to your TigerGraph Cloud account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you already created a TigerGraph Cloud account, sign in to your account:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to the <a href="https://tgcloud.io">TigerGraph Cloud landing page</a>.</p>
+</li>
+<li>
+<p>Click <strong>Login / Register</strong>.</p>
+</li>
+<li>
+<p>Enter your email and password, or if you registered with an identity provider, select the correct provider and enter your credentials.</p>
+</li>
+<li>
+<p>Click <strong>Log In.</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_free_tier_solution"><a class="anchor" href="#_create_a_free_tier_solution"></a><strong>Create</strong> a free-tier solution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph Cloud free-tier solutions (subject to <a href="reference/service-limits.md#free-tier-solution-limits">limits</a>) offer a small-scale analytics platform to store and query your graph data.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Free-tier solutions are for training, learning, and light scale proof of concept (POC) use cases and do not support backup and restore. For in-depth POCs, consider adding a valid payment method and use paid-tier solutions to access the backup and restore feature.<br>
+{% endhint %}</p>
+</div>
+<h4 id="_1_click_my_solutions" class="discrete">1. Click <strong>My Solutions</strong>.</h4>
+<div class="paragraph">
+<p>After logging in, you will be directed to the dashboard page, on the right side of the page, click <strong>My Solutions.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2838%29%20%287%29%20%282%29.png" alt="TigerGraph Cloud Dashboard view">
+</div>
+</div>
+<h4 id="_2_click_create_solution" class="discrete"><strong>2. Click Create Solution.</strong></h4>
+<div class="paragraph">
+<p>On the <strong>My Solutions</strong> page, click <strong>Create Solution.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/screen-shot-2021-02-19-at-9.21.12-am.png" alt="TigerGraph Cloud My Solutions view">
+</div>
+</div>
+<h4 id="_3_select_tigergraph_version" class="discrete"><strong>3. Select TigerGraph version.</strong></h4>
+<div class="paragraph">
+<p>Not all TigerGraph versions that are offered on-prem are offered on TigerGraph Cloud. In the dropdown list, choose the version of TigerGraph you want to run.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2840%29.png" alt="image%20%2840%29">
+</div>
+</div>
+<h4 id="_4_select_a_starter_kit" class="discrete"><strong>4. Select a starter kit.</strong></h4>
+<div class="paragraph">
+<p>TigerGraph Cloud Starter Kits are built with sample graph data schema, dataset, and queries focused on a specific use case <strong><strong>to help you get started quickly</strong>.</strong> Most of our starter kits have a <a href="https://www.tigergraph.com/starterkits/">demo video</a> that walks you through the schema and the queries built for its use case. If you wish to proceed with your own schema and data, select <strong>Blank.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2858%29%20%281%29%20%281%29.png" alt="image%20%2858%29%20%281%29%20%281%29">
+</div>
+</div>
+<div class="paragraph">
+<p>After you have selected a starter kit, scroll down to the bottom of the page and click <strong>Next</strong>.</p>
+</div>
+<h4 id="_5_select_cloud_provider_and_instance_type" class="discrete">5. Select <em>Cloud Provider</em> and instance type.</h4>
+<div class="paragraph">
+<p>Currently, TigerGraph Cloud only supports free-tier solutions on AWS. Select <strong>AWS</strong> as your cloud provider and select <strong>TG.Free</strong> as your instance type.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2857%29.png" alt="Cloud platform and instance type options">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>6. Select Region.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2847%29.png" alt="Regions for AWS">
+</div>
+</div>
+<h4 id="_7_select_disk_size" class="discrete">7. Select disk size.</h4>
+<div class="paragraph">
+<p>Select <strong>50 GB</strong> for your disk size. Scroll down to the bottom of the page and click <strong>Next</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2839%29.png" alt="image%20%2839%29">
+</div>
+</div>
+<h4 id="_8_enter_a_name_and_a_tag_for_your_solution" class="discrete">8. Enter a name and a tag for your solution.</h4>
+<div class="paragraph">
+<p>You can enter any name for your solution. A solution name may contain alphanumerics, dashes, underscores, and spaces, and cannot be longer than 20 characters. A solution tag can be no longer than 40 characters and can contain any character.</p>
+</div>
+<h4 id="_9_set_initial_password" class="discrete">9. Set initial password.</h4>
+<div class="paragraph">
+<p>This is the initial password for the default <a href="security/#tigergraph-users">TigerGraph user</a> <code>tigergraph</code>. You can <a href="../ui/admin-portal/management/user-management.md#my-profile">change the password</a> later in Admin Portal.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2819%29%20%281%29.png" alt="image%20%2819%29%20%281%29">
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+This initial password allows you to log into the database when your solution is in the ready state. If you forget this password, you will need to terminate and recreate the solution.
+{% endhint %}</p>
+</div>
+<h4 id="_10_enter_a_subdomain_and_description" class="discrete">10. Enter a subdomain and description.</h4>
+<div class="paragraph">
+<p>Customize the subdomain for your solution. If this field is left blank, a random subdomain will be automatically generated for the solution.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2850%29.png" alt="image%20%2850%29">
+</div>
+</div>
+<div class="paragraph">
+<p>Enter an optional description of what your solution will be used for, and click <strong>Next</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2827%29.png" alt="image%20%2827%29">
+</div>
+</div>
+<h4 id="_11_confirm_your_settings" class="discrete">11. Confirm your settings.</h4>
+<div class="paragraph">
+<p>Confirm your settings and click <strong>Submit.</strong> You will be redirected back to the <strong>My Solutions</strong> view, and your solution will be ready in minutes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_log_in_to_graphstudio"><a class="anchor" href="#_log_in_to_graphstudio"></a>Log in to GraphStudio</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have created your solution, it may take a few minutes for it to be ready. Once you see the status of your solution turn to "Ready", you can proceed to log into GraphStudio.</p>
+</div>
+<h4 id="_1_open_graphstudio_for_your_solution" class="discrete">1. Open GraphStudio for your solution.</h4>
+<div class="paragraph">
+<p>Go to My Solutions. Find the solution that is ready, click the blue Applications icon, and Click <strong>GraphStudio</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2871%29.png" alt="image%20%2871%29">
+</div>
+</div>
+<h4 id="_2_enter_your_credentials" class="discrete">2. Enter your credentials.</h4>
+<div class="paragraph">
+<p>Enter the initial password set during <strong>Create Solution</strong> for the default database user <code>tigergraph</code> and click <strong>Login</strong>. This is not your TigerGraph Cloud account email and password.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../.gitbook/assets/image%20%2843%29.png" alt="GraphStudio login page">
+</div>
+</div>
+<h4 id="_3_you_are_now_ready_to_use_your_free_tier_tigergraph_solution" class="discrete">3. You are now ready to use your free-tier TigerGraph Solution.</h4>
+<div class="paragraph">
+<p>You can learn how to use GraphStudio in our <a href="../ui/graphstudio/">GraphStudio UI guide</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

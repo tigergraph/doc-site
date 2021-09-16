@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>String Functions :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="README.html">Functions</a></li>
+    <li><a href="string-functions.html">String Functions</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/func/string-functions.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">String Functions</h1>
+<div class="paragraph">
+<p>This page lists the string functions available in the GSQL query language</p>
+</div>
+<h3 id="_ascii" class="discrete">ascii()</h3>
+<h4 id="_syntax" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>ascii( str )</code></p>
+</div>
+<h4 id="_description" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the ASCII (numeric) position of the first character in a string. If the argument is an empty string, returns 0.</p>
+</div>
+<h4 id="_return_type" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ascii("") =&gt; 0
+ascii("A") =&gt; 65</code></pre>
+</div>
+</div>
+<h3 id="_chr" class="discrete">chr()</h3>
+<h4 id="_syntax_2" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>chr( n )</code></p>
+</div>
+<h4 id="_description_2" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Converts an integer to a character according to its ASCII position. If the input value <code>n</code> is greater than 255, returns the character at the position of the modulo of <code>n / 256</code>.</p>
+</div>
+<h4 id="_return_type_2" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_2" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">chr(65) =&gt; 'A'
+chr(322) =&gt; 'B'</code></pre>
+</div>
+</div>
+<h3 id="_difference" class="discrete">difference()</h3>
+<h4 id="_syntax_3" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>difference(str1, str2)</code></p>
+</div>
+<h4 id="_description_3" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Compares the <a href="string-functions.md#soundex">Soundex codes</a> of two strings and returns an integer. The return value ranges from 0 to 4, and it indicates the similarity between the input strings' phonetic representation values.</p>
+</div>
+<div class="paragraph">
+<p>0 indicates weak similarity, and 4 indicates strong similarity with identical phonetic representation values.</p>
+</div>
+<h4 id="_return_type_3" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_3" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_2" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">difference("Johnson", "Jonson") =&gt; 4
+difference("Adams", "Addamms") =&gt; 4
+difference("Mary", "Bob") =&gt; 2</code></pre>
+</div>
+</div>
+<h3 id="_find_in_set" class="discrete">find_in_set()</h3>
+<h4 id="_syntax_4" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>find_in_set(str, str_list)</code></p>
+</div>
+<h4 id="_description_4" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the position of a string within a list of strings separated by commas.</p>
+</div>
+<div class="paragraph">
+<p>If <code>string</code> is not found in <code>string_list</code>, this function returns -1.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>NOTE</strong>: <code>find_in_set</code> does <em>not</em> ignore whitespace after the comma. For example, <code>find_in_set("a", "b a, a") = 0</code>, indicating that &#8220;a&#8221; is not an element in the list. This happens because the second and third elements of the list are space+a, rather than a.</p>
+</div>
+</blockquote>
+</div>
+<h4 id="_return_type_4" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_4" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str_list</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string representation of a list of strings.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_2" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">find_in_set("a","") =&gt; 0
+find_in_set("a","b,c,d") =&gt; 0
+find_in_set("a","b,a,d") =&gt; 2</code></pre>
+</div>
+</div>
+<h3 id="_gsql_uuid_v4" class="discrete">gsql_uuid_v4()</h3>
+<h4 id="_syntax_5" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>gsql_uuid_v4()</code></p>
+</div>
+<h4 id="_description_5" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Generates and returns a <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_%28random%29">version-4 universally unique identifier(UUID)</a>.</p>
+</div>
+<h4 id="_return_type_5" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_5" class="discrete">Parameters</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="_insert" class="discrete">insert()</h3>
+<h4 id="_syntax_6" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>insert(str1, position[, number], str2)</code></p>
+</div>
+<h4 id="_description_6" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Inserts a string within a string at the specified position and for a certain number of characters, and replaces a specified number of characters starting from the insertion position. The starting index is 0.</p>
+</div>
+<h4 id="_return_type_6" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_6" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to insert another string into</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>position</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The index of the starting position to insert the string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The number of characters from the original string that will be replaced. If the argument is left off, it defaults to 0.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to be inserted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_3" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">insert("tigergraph.com", 0, 10, "Example") =&gt; "Example.com”
+insert("tigergraph.com", 0, 2, "Example") =&gt; "Examplegergraph.com”
+insert("tigergraph.com", 2, 20, "Example") =&gt; ”tiExample”
+insert("Complete blank.", 9, "every ") =&gt; "Complete every blank."</code></pre>
+</div>
+</div>
+<h3 id="_instr" class="discrete">instr()</h3>
+<h4 id="_syntax_7" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>instr (str, substr [, position, occurence])</code></p>
+</div>
+<h4 id="_description_7" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Searches a string (<code>str</code>) for a substring (<code>substr</code>) and returns the location of the substring in the string. If a substring that is equal to <code>substr</code> is found, then the function returns an integer indicating the position of the first character of this substring. If no such substring is found, then the function returns -1.</p>
+</div>
+<h4 id="_return_type_7" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_7" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to search</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>substr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to search for in <code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>position</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The position is a nonzero integer indicating the character of <code>str</code> from where the search begins. If omitted, it defaults to 0. The first position in the string is 0. If <code>position</code> is negative, then the function counts backward from the end of <code>str</code> and then searches backward from the resulting position.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>occurrence</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional, The occurrence is an integer indicating which occurrence of <code>substr</code> in <code>str</code> the function should search for.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_3" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">instr("This is the thing", "Th") -&gt; 0;
+instr("This is the thing", "is", 3) -&gt; 5;</code></pre>
+</div>
+</div>
+<h3 id="_left" class="discrete">left()</h3>
+<h4 id="_syntax_8" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>left(str, number_of_chars)</code></p>
+</div>
+<h4 id="_description_8" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts a number of characters from a string starting from left.</p>
+</div>
+<h4 id="_return_type_8" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_8" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number_of_chars</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of characters to extract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_length" class="discrete">length()</h3>
+<h4 id="_syntax_9" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>length(str)</code></p>
+</div>
+<h4 id="_description_9" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the length of the input string.</p>
+</div>
+<h4 id="_return_type_9" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_9" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string whose length to evaluate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_4" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">length("hello world") -&gt; 11
+length("") -&gt; 0</code></pre>
+</div>
+</div>
+<h3 id="_ltrim" class="discrete">ltrim()</h3>
+<h4 id="_syntax_10" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>ltrim( str[, set] )</code></p>
+</div>
+<h4 id="_description_10" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Removes all occurrences of the characters contained in a set from a string from the left side.</p>
+</div>
+<div class="paragraph">
+<p>The function begins scanning the string from its first character and removes all characters that appear in <em>`set` until reaching a character not in <code>set</code> and then returns the result.</em></p>
+</div>
+<h4 id="_return_type_10" class="discrete"><em>Return type</em></h4>
+<div class="paragraph">
+<p><em>`STRING`</em></p>
+</div>
+<h4 id="_parameters_10" class="discrete"><em>Parameters</em></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>set</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. A string of characters. The distinct characters from the string form the set. If not specified, it defaults to a single space.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_lower" class="discrete">lower()</h3>
+<h4 id="_syntax_11" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>lower(str)</code></p>
+</div>
+<h4 id="_description_11" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the input string with all letters in lowercase.</p>
+</div>
+<h4 id="_return_type_11" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_11" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to convert to lowercase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_5" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">lower("GSQL") -&gt; "gsql"</code></pre>
+</div>
+</div>
+<h3 id="_lpad" class="discrete">lpad()</h3>
+<h4 id="_syntax_12" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>lpad(str, padded_length [, pad_str] )</code></p>
+</div>
+<h4 id="_description_12" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Pads the left side of a string with another pad string. If the pad string (<code>pad_str</code>) is omitted, it will pad with white space. If the parameter length is smaller than the original string, it will truncate the string from the right side.</p>
+</div>
+<h4 id="_return_type_12" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_12" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to pad characters to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padded_length</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of characters to return. If the <code>padded_length</code> is smaller than the original string, the <code>lpad</code> function will truncate the string to the size of <code>padded_length</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pad_str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This is the string that will be padded to the left-hand side of <code>str</code>. If this parameter is omitted, the <code>lpad</code> function will pad spaces to the left-side of <code>str</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_6" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text"> lpad("PQR", 5) -&gt; "  PQR"
+ lpad("PQR", 2) -&gt; "PQ"
+ lpad("PQR", 10, "ABC") -&gt; "ABCABCAPQR"</code></pre>
+</div>
+</div>
+<h3 id="_replace" class="discrete">replace()</h3>
+<h4 id="_syntax_13" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>replace(str, str_to_replace [, replacement_str])</code></p>
+</div>
+<h4 id="_description_13" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Replaces a sequence of characters in a string with another set of characters.</p>
+</div>
+<h4 id="_return_type_13" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_13" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The original string whose substrings are to be replaced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str_to_replace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string that will be searched for and replaced in <code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>replacement_str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The string that will replace <code>str_to_replace</code>. If omitted, <code>replace()</code> removes all occurrences of <em>string_to_replace</em>, and returns the resulting string.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_4" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text"> replace("SSQLL", "S", "G") -&gt; "GGQLL"
+ replace("SSQLL", "SQL", "Q") -&gt; "SQL"
+ replace("SSQLL", "L") -&gt; "SSQ"</code></pre>
+</div>
+</div>
+<h3 id="_right" class="discrete">right()</h3>
+<h4 id="_syntax_14" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>right(str, number_of_chars)</code></p>
+</div>
+<h4 id="_description_14" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts a number of characters from a string starting from the right.</p>
+</div>
+<h4 id="_return_type_14" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_14" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number_of_chars</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of characters to extract</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_rpad" class="discrete">rpad()</h3>
+<h4 id="_syntax_15" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>rpad(str, padded_length [, pad_str] )</code></p>
+</div>
+<h4 id="_description_15" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Pads the right side of a string (<code>str</code>) with another pad string. If the pad string (<code>pad_str</code>) is omitted, it will pad with white space. If the parameter length is smaller than the original string, it will truncate the string from the right side.</p>
+</div>
+<h4 id="_return_type_15" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_15" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to pad characters to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>padded_length</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of characters to return. If the <code>padded_length</code> is smaller than the original string, the <code>lpad</code> function will truncate the string to the size of <code>padded_length</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pad_str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This is the string that will be padded to the right-hand side of <code>str</code>. If this parameter is omitted, the <code>lpad</code> function will pad spaces to the right-side of <code>str</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_7" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">rpad("PQR", 5) -&gt; "PQF  "
+lpad("PQR", 2) -&gt; "PQ"
+lpad("PQR", 10, "ABC") -&gt; "ABCABCAPQR"</code></pre>
+</div>
+</div>
+<h3 id="_rtrim" class="discrete">rtrim()</h3>
+<h4 id="_syntax_16" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>rtrim( str [,set] )</code></p>
+</div>
+<h4 id="_description_16" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Removes all occurrences of the characters contained in a set from a string from the right side.</p>
+</div>
+<div class="paragraph">
+<p>The function begins scanning the string from its last character and removes all characters that appear in <em>`set` until reaching a character not in <code>set</code> and then returns the result.</em></p>
+</div>
+<h4 id="_return_type_16" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_16" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>set</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. A string of characters. The distinct characters from the string form the set. If not specified, it defaults to a single space.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_soundex" class="discrete">soundex()</h3>
+<h4 id="_syntax_17" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>soundex( str )</code></p>
+</div>
+<h4 id="_description_17" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns a character string containing the <a href="https://en.wikipedia.org/wiki/Soundex#:~:text=Soundex%20is%20a%20phonetic%20algorithm,despite%20minor%20differences%20in%20spelling.&amp;text=Improvements%20to%20Soundex%20are%20the%20basis%20for%20many%20modern%20phonetic%20algorithms" class="bare">https://en.wikipedia.org/wiki/Soundex#:~:text=Soundex%20is%20a%20phonetic%20algorithm,despite%20minor%20differences%20in%20spelling.&amp;text=Improvements%20to%20Soundex%20are%20the%20basis%20for%20many%20modern%20phonetic%20algorithms</a>.[Soundex] code of <code>str</code>. This function lets you compare words that are spelled differently, but sound alike in English.</p>
+</div>
+<div class="paragraph">
+<p>Soundex is a phonetic algorithm defined in <em>The Art of Computer Programming</em>, Volume 3: Sorting and Searching, by Donald E. Knuth, as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Retain the first letter of the string and remove all other occurrences of the following letters: a, e, h, i, o, u, w, y.</p>
+</li>
+<li>
+<p>Assign numbers to the remaining letters (after the first) as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">b, f, p, v = 1
+c, g, j, k, q, s, x, z = 2
+d, t = 3
+l = 4
+m, n = 5
+r = 6</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If two or more letters with the same number were adjacent in the original name (before step 1), or adjacent except for any intervening h and w, then retain the first letter and omit the rest of all the adjacent letters with the same number.</p>
+</li>
+<li>
+<p>Return the first four bytes padded with 0.</p>
+</li>
+</ol>
+</div>
+<h4 id="_return_type_17" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_17" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_5" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">soundex("Ashcraft") =&gt; "A261"
+soundex("Burroughs") =&gt; "B620"
+soundex("Burrows") =&gt; "B620"</code></pre>
+</div>
+</div>
+<h3 id="_space" class="discrete">space()</h3>
+<h4 id="_syntax_18" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>space( n )</code></p>
+</div>
+<h4 id="_description_18" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns a string that contains the specified number of space characters</p>
+</div>
+<h4 id="_return_type_18" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_18" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_6" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">space(0) = ””
+space(1) = ” ”
+space(5) = ”     ”</code></pre>
+</div>
+</div>
+<h3 id="_substr" class="discrete">substr()</h3>
+<h4 id="_syntax_19" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>substr(str, start [, length])</code></p>
+</div>
+<h4 id="_description_19" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the substring indicated by the start point and length. If the parameter length is omitted, then it will extend to the end.</p>
+</div>
+<h4 id="_return_type_19" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_19" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to extract substring from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>start</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position that indicates the start of the substring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>length</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The length of the substring. If omitted, the substring will be</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_8" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">substr("ABCDE", 2) -&gt; "CDE"
+substr("ABCDE", 2, 2) -&gt; "CD"
+substr("ABCDE", -2, 1) -&gt; "D"</code></pre>
+</div>
+</div>
+<h3 id="_translate" class="discrete">translate()</h3>
+<h4 id="_syntax_20" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>translate( str_origin, characters, translations )</code></p>
+</div>
+<h4 id="_description_20" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the string from the first argument after the characters specified in the second argument are translated into the characters specified at the same index in the third argument.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><strong>NOTE</strong>: The function will return an error if <code>characters</code> and <code>translations</code> have different lengths.</p>
+</div>
+</blockquote>
+</div>
+<h4 id="_return_type_20" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_20" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str_origin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>characters</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string of characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>translations</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string of characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_examples_7" class="discrete">Examples</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">translate(”Hello world”, "", "") = ”Hello World”
+translate(”Hello world”, "o", "U") = ”HellU WUrld”
+translate(”Hello world”, "lo", "aU") = ”HeaaU WUrad”
+translate(””, "lo", "aU") = ””</code></pre>
+</div>
+</div>
+<h3 id="_trim" class="discrete">trim()</h3>
+<h4 id="_syntax_21" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>trim( [ [ LEADING | TRAILING | BOTH ] [removal_char FROM] ] str )</code></p>
+</div>
+<h4 id="_description_21" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Trims characters from the leading and/or trailing ends of a string.</p>
+</div>
+<div class="paragraph">
+<p>By using one of the keywords <code>LEADING</code>, <code>TRAILING</code>, or <code>BOTH</code>, the user can specify that characters are to be removed from the left end, right end, or both ends of the string, respectively. If none of these keywords is used, the function will remove from both ends.</p>
+</div>
+<h4 id="_return_type_21" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_21" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>removal_char</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The character to remove. If <code>removal_char</code> is not specified, the function will remove whitespaces, including spaces, tabs, and newlines. If <code>removal_char</code> is specified, the user must also write the keyword <code>FROM</code> between <code>removal_char</code> and <code>str</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string value.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_9" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">trim("  Abc   ") =&gt; "Abc"
+trim( LEADING " a A   ") =&gt; "a A   "
+trim( TRAILING "a" FROM "aa ABC aaa") =&gt; "aa ABC "</code></pre>
+</div>
+</div>
+<h3 id="_upper" class="discrete">upper()</h3>
+<h4 id="_syntax_22" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>upper(str)</code></p>
+</div>
+<h4 id="_description_22" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the input string with all letters in uppercase.</p>
+</div>
+<h4 id="_return_type_22" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parameters_22" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>str</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string to convert to uppercase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_10" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">upper("gsql") -&gt; "GSQL"</code></pre>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

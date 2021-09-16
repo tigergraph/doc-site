@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Database Import/Export :: TigerGraph Documentation</title>
+    <meta name="description" content="Export/Import is a complement to Backup/Restore, not a substitute.">
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="database-import-export.html">Database Import/Export</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li><a href="database-import-export.html">Database Import/Export</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/import-export/pages/database-import-export.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Database Import/Export</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The GSQL <code>EXPORT</code> and <code>IMPORT</code> commands perform a logical backup and restore. A database export contains the database&#8217;s data, and optionally some types of metadata, which can be subsequently imported in order to recreate the same database, in the original or in a different TigerGraph platform instance.</p>
+</div>
+<div class="paragraph">
+<p>To import an exported database, ensure that the export files are from a database that was running <strong>the exact same version</strong> of TigerGraph as the database that you are importing into.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Known Issues (Updated Feb 16th):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User-defined loading jobs containing<a href="../../../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.md#delete-statement"><code>DELETE</code> statements</a> are not exported correctly.</p>
+</li>
+<li>
+<p>If a graph contains vertex or edge types with a composite key, the graph data is exported in a nonstandard format that cannot be reimported.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_export_graph"><a class="anchor" href="#_export_graph"></a>EXPORT GRAPH</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>EXPORT GRAPH</code> command reads the data and metadata for all graphs in the TigerGraph system and writes the information to a zip file in the designated folder. If no options are specified, then a full backup is performed, including schema, data, template information, and user profiles.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">EXPORT GRAPH ALL [exportOptions] TO "/path/to/a/folder"
+
+exportOptions ::=
+(-S | --SCHEMA | -T | --TEMPLATE | -D | --DATA | -U | --USERS | -P | --PASSWORD pwd)
+
+    -S, --SCHEMA        Only Schema will be exported
+    -T, --TEMPLATE      Only Schema, Queries, Loading Jobs, UDFs
+    -D, --DATA          Only Data Sources will be exported
+    -U, --USERS         Includes Permissions, Secrets, and Tokens
+    -P, --PASSWORD      Encrypt with password. User will be prompted.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+The export directory should be empty before running <code>EXPORT GRAPH</code> because all contents are zipped and compressed.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p><code>EXPORT_GRAPH</code></p>
+</div>
+<div class="sect2">
+<h3 id="_output"><a class="anchor" href="#_output"></a>Output</h3>
+<div class="paragraph">
+<p>The <code>EXPORT GRAPH</code> command exports all graphs in the database.</p>
+</div>
+<div class="paragraph">
+<p>The export contains four categories of files:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Data files in CSV format, one file for each type of vertex and each type of edge.</p>
+</li>
+<li>
+<p>GSQL DDL command files created by the export command. The import command uses these files to recreate the graph schema(s) and reload the data.</p>
+</li>
+<li>
+<p>Copies of the database&#8217;s queries, loading jobs, and user-defined functions.</p>
+</li>
+<li>
+<p>GSQL command files used to recreate the users and their privileges.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following files are created in the specified directory when exporting and are then zipped into a single file called ExportedGraphs.zip.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+If the file is password-protected, it can only be unzipped using GSQL IMPORT. The security feature prevents users from directly unzipping it.
+{% endhint %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A <strong>DBImportExport_&lt;graphName&gt;.gsql</strong> for each graph called &lt;graphName&gt; in a multigraph database that contains a series of GSQL DDL statements that do the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create the exported graph, along with its local vertex, edge, and tuple types,</p>
+</li>
+<li>
+<p>Create the loading jobs from the exported graphs</p>
+</li>
+<li>
+<p>Create data source file objects</p>
+</li>
+<li>
+<p>Create queries</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A <strong>graph_&lt;graphName&gt;/</strong> folder for each graph in a multigraph database containing data for local vertex/edge types in &lt;graphName&gt;. For each vertex or edge type called &lt;type&gt;, there is one of the following two data files:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vertex_&lt;type&gt;.csv</p>
+</li>
+<li>
+<p>edge_&lt;type&gt;.csv</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>global.gsql</strong> - DDL job to create all global vertex and edge types, and data sources.</p>
+</li>
+<li>
+<p><strong>tuple.gsql</strong> - DDL job to create all User Defined Tuples.</p>
+</li>
+<li>
+<p>Exported data and jobs used to restore the data:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GlobalTypes/</strong> - folder containing data for global vertex/edge types</p>
+<div class="ulist">
+<ul>
+<li>
+<p>vertex_name.csv</p>
+</li>
+<li>
+<p>edge_name.csv</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>run_loading_jobs.gsql</strong> - DDL created by the export command which will be used during import:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Temporary global schema change job to add user-defined indexes. This schema job is dropped after it is has run.</p>
+</li>
+<li>
+<p>Loading jobs to load data for global and local vertex/edges.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Database&#8217;s saved queries, loading jobs, and schema change jobs</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>SchemaChangeJob/ -</strong> folder containing DDL for schema change jobs. See section "Schema Change Jobs" for more information</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Global_Schema_Change_Jobs.gsql contains all global schema change jobs</p>
+</li>
+<li>
+<p>graphName_Schema_Change_Jobs.gsql contains schema change jobs for each graph "graphName"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Tokenbank.cpp</strong> - copy of <code>&lt;tigergraph.root.dir&gt;/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql/src/TokenBank/TokenBank.cpp</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>ExprFunctions.hpp</strong> - copy of <code>&lt;tigergraph.root.dir&gt;/app/&lt;VERSION_NUM&gt;dev/gdk/gsql/src/QueryUdf/ExprFunctions.hpp</code></p>
+</li>
+<li>
+<p><strong>ExprUtil.hpp</strong> - copy of <code>&lt;tigergraph.root.dir&gt;/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql/src/QueryUdf/ExprUtil.hpp</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Users:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>users.gsql</strong> - DDL to create all exported users and import Secrets and Tokens, and grant permissions.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">EXPORT GRAPH ALL TO "/tmp/export_graphs/"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_insufficient_disk_space"><a class="anchor" href="#_insufficient_disk_space"></a>Insufficient Disk Space</h3>
+<div class="paragraph">
+<p>If not enough disk space is available for the data to be exported, the system returns an error message indicating not all data has been exported. Some data may have already been written to disk. If an insufficient disk error occurs, the files will not be zipped, due to the possibility of corrupted data which would then corrupt the zip file. The user should clear enough disk space, including deleting the partially exported data, before reattempting the export.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+It is possible for all the files to be written to disk and then to run out of disk space during the zip operation. If that is the case, the system will report this error. The unzipped files will be present in the specified export directory.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_timeout_and_session_parameter_export_timeout"><a class="anchor" href="#_default_timeout_and_session_parameter_export_timeout"></a>Default Timeout and Session Parameter export_timeout</h3>
+<div class="paragraph">
+<p>If the timeout limit is reached during export, the system returns an error message indicating not all data has been exported. Some data may have already been written to disk. If a timeout error occurs, the files will not be zipped. The user should delete the export files, increase the timeout limit and then rerun the export.</p>
+</div>
+<div class="paragraph">
+<p>The timeout limit is controlled by the session parameter <strong>export_timeout</strong>.  The default timeout is ~138 hours. To change the timeout limit, use the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">set export_timeout = &lt;timeout_in_ms&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_import_graph"><a class="anchor" href="#_import_graph"></a>IMPORT GRAPH</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>IMPORT GRAPH</code> command unzips the <code>.zip</code> file <code>ExportedGraph.zip</code> located in the designated folder, unzips it, and then runs the GSQL command files within.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">IMPORT GRAPH ALL [importOptions] FROM "/path/from/a/folder"
+
+importOptions ::= [-P | --PASSWORD ] [ (-KU | -- keep-users]
+    -P,  --PASSWORD     Decrypt with password. User will be prompted.
+    -KU, --KEEP-USERS   Do not delete user identities before importing</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">IMPORT GRAPH ALL FROM "/tmp/export_graphs/"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+<code>IMPORT GRAPH</code> looks for specific filenames.  If either the zip file or any of its contents are renamed by the user, IMPORT GRAPH may fail.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+<code>IMPORT GRAPH</code> erases the current database (equivalent to running DROP ALL). The current version does not support incremental or supplemental changes to an existing database (except for the --keep-users option)
+{% endhint %}</p>
+</div>
+<div class="sect2">
+<h3 id="_required_privilege"><a class="anchor" href="#_required_privilege"></a>Required privilege</h3>
+<div class="paragraph">
+<p><code>WRITE_SCHEMA</code>, <code>WRITE_QUERY</code>, <code>WRITE_LOADINGJOB</code>, <code>EXECUTE_LOADINGJOB</code>, <code>DROP ALL</code>, <code>WRITE_USERS</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_jobs"><a class="anchor" href="#_loading_jobs"></a>Loading Jobs</h3>
+<div class="paragraph">
+<p>There are two sets of loading jobs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Those that were in the <strong>catalog</strong> of the database which was exported. These are embedded in the file DBImportExport_graphName.gsql</p>
+</li>
+<li>
+<p>Those that are <strong>created by EXPORT GRAPH</strong> and are used to assist with the import process. These are embedded in the file run_loading_jobs,gsql.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The catalog loading jobs are not needed to restore the data. They are included for archival purposes.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Some special rules apply to importing loading jobs. Some catalog loading jobs will not be imported.
+{% endhint %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>If a catalog loading job contains <code>DEFINE FILENAME F = "/path/to/file/"</code></strong>, the path will be removed and the imported loading job will only contain <strong><code>DEFINE FILENAME F</code></strong>.  This is to allow a loading job to still be imported even though the file may no longer exist or the path may be different due to moving to another TigerGraph instance.</p>
+</li>
+<li>
+<p><strong>If a specific file path is used directly in the LOAD statement, and the file cannot be found, the loading job cannot be created and will be skipped.</strong>  For example, <code>LOAD "/path/to/file" to vertex v1</code> cannot be created if <code>/path/to/file</code> does not exist.</p>
+</li>
+<li>
+<p><strong>Any file path using <code>$sys.data_root</code> will be skipped.</strong> This is because the value of <code>$sys.data_root</code> is  not retained from export. During import, <code>$sys.data_root</code> is set to the root folder of the import location.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_schema_change_jobs"><a class="anchor" href="#_schema_change_jobs"></a>Schema Change Jobs</h3>
+<div class="paragraph">
+<p>There are two sets of schema change jobs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Those that were in the catalog of the database which was exported. These are stored in the folder /SchemaChangeJobs.</p>
+</li>
+<li>
+<p>Those that were created by EXPORT GRAPH and are used to assist with the import process.  These are in the run_loading_jobs.gsql command file.  The jobs are dropped after the import command is finished with them.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The database&#8217;s schema change jobs are not executed during the import process. This is because if a schema change job had been run before the export, then the exported schema already reflects the result of the schema change job. The directory /SchemaChangeJobs contains these files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Global_Schema_Change_Jobs.gsql</strong> contains all global schema change jobs</p>
+</li>
+<li>
+<p><strong>&lt;graphName&gt;_Schema_Change_Jobs.gsql</strong> contains schema change jobs for each graph &lt;graphName&gt;.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cluster_mode"><a class="anchor" href="#_cluster_mode"></a>Cluster Mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In v3.0, importing and exporting clusters is not fully automated. The database can be exported and imported by following some additional steps.</p>
+</div>
+<div class="sect2">
+<h3 id="_export_from_a_cluster"><a class="anchor" href="#_export_from_a_cluster"></a>Export from a Cluster</h3>
+<div class="paragraph">
+<p>Rather than creating a single export zip file, export will create a file for each machine. Before exporting, specific folders must be created on each server using the following commands:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Run on each server before EXPORT" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">grun all "mkdir -p /path/to/export_directory/GlobalTypes/"
+grun all "mkdir -p /path/to/export_directory/graph_&lt;graphName&gt;/"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Then run the export command on one server. The EXPORT command does not bundle all the files to one server, and it does not compress each server&#8217;s files to one zip. Some files, including the data files, will be exported to each server, to the folders created above. Some files will be only on the local server where EXPORT GRAPH was run.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_import_to_a_cluster"><a class="anchor" href="#_import_to_a_cluster"></a>Import to a Cluster</h3>
+<div class="sect3">
+<h4 id="_1_place_the_files_on_the_import_servers"><a class="anchor" href="#_1_place_the_files_on_the_import_servers"></a>1. Place the files on the import servers</h4>
+<div class="paragraph">
+<p>You may only import to a cluster that has the same number and configuration of servers as the data from which the export originated. <strong>Transfer the files from one export server to a corresponding import server.</strong> That is, copy the files from<br>
+<code>export_server_n:/path/to/export_directory</code> to<br>
+<code>import_server_n:/path/to/import/directory</code></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Manually modify the loading jobs</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>On the main server, edit the run_loading_jobs.gsql files as follows.</p>
+</div>
+<div class="paragraph">
+<p>Find the line(s) of the form:<br>
+<code>LOAD "sys.data_root/.../&lt;vertex_or_edge_type&gt;.csv"</code><br>
+Close to it should be similar line that is commented out which have the "all:" data source directive:<br>
+<code>#LOAD "all:sys.data_root/.../&lt;vertex_or_edge_type&gt;.csv"</code></p>
+</div>
+<div class="paragraph">
+<p>See the example below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">LOAD "$sys.data_root/graph_graph1/localE.csv"
+#If running on a cluster, check that the file exists on all nodes then uncomment the line below and comment the line above.
+#LOAD "all:$sys.data_root/graph_graph1/localE.csv"
+    TO EDGE localE VALUES ($"from", $"to") USING SEPARATOR = "^]", HEADER = "true";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Comment out the LOAD line and uncomment the LOAD all: line</strong>. Be sure that you do this for all data source files.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the IMPORT GRAPH command from the main server (e.g., the one that corresponds to the server where EXPORT GRAPH was run).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

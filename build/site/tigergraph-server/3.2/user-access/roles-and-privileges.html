@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Roles and Privileges :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">User Access Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li><a href="README.html">User Access Management</a></li>
+    <li><a href="roles-and-privileges.html">Roles and Privileges</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/user-access/pages/roles-and-privileges.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Roles and Privileges</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph uses Role-based Access Control (RBAC) to manage authorization. On every graph, privileges to perform actions are assigned to roles, and roles are granted to users. Outside of the permissions granted by their roles, a user has no access to the system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_privileges"><a class="anchor" href="#_privileges"></a>Privileges</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Privilege is permission to perform an action in a given scope. When a privilege is assigned to a role, it allows users with the role to perform the specified action in the specified scope. For example, the privilege <code>READ_SCHEMA</code> on graph <code>social</code> gives a user read permission to the schema of the graph <code>social</code>. This allows the user to run commands such as <code>ls</code> and <code>SHOW VERTEX</code> on the graph.</p>
+</div>
+<div class="paragraph">
+<p>To view a complete list of privileges available in TigerGraph and the commands they enable a user to run, see <a href="#../reference/list-of-privileges.adoc" class="page unresolved">List of Privileges</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_global_vs_local_privileges"><a class="anchor" href="#_global_vs_local_privileges"></a>Global vs local privileges</h3>
+<div class="paragraph">
+<p>The scope of a privilege can be global or local. Global privileges apply to all graphs and global objects. Local privileges only apply on the graph they belong to.</p>
+</div>
+<div class="paragraph">
+<p>For example, a role with <code>WRITE_QUERY</code> on graph <code>social</code> can only create queries on graph <code>social</code>, but not on other graphs. In contrast, a role with <code>WRITE_QUERY</code> on the global scope can create queries on all graphs.</p>
+</div>
+<div class="paragraph">
+<p>Local roles can only be granted local privileges, while global roles can be granted both local and global privileges.</p>
+</div>
+<div class="paragraph">
+<p><strong>Global-only privileges</strong></p>
+</div>
+<div class="paragraph">
+<p>Some privileges can only be global by nature. For example, since users are global objects, any user-related privileges are global only. To see which privileges are global-only, see <a href="#../reference/list-of-privileges.adoc" class="page unresolved">List of Privileges</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_roles"><a class="anchor" href="#_roles"></a>Roles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A role is a collection of privileges you can assign to users to grant them permission to perform actions on specific resources.</p>
+</div>
+<div class="sect2">
+<h3 id="_global_vs_local_roles"><a class="anchor" href="#_global_vs_local_roles"></a>Global vs local roles</h3>
+<div class="paragraph">
+<p>Roles can be global or local. Local roles can only be granted local privileges, while global roles can be granted both local and global privileges.</p>
+</div>
+<div class="paragraph">
+<p>For example, if a user creates a role <code>manager</code> on the graph <code>social</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">GSQL &gt; CREATE ROLE manager ON GRAPH social
+Successfully created roles: [manager].</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This role can only be granted privileges on the graph <code>social</code>. It cannot be granted global privileges.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_built_in_roles"><a class="anchor" href="#_built_in_roles"></a>Built-in roles</h3>
+<div class="paragraph">
+<p>GSQL offers 5 built-in local roles and 2 built-in global roles. The built-in roles cannot be dropped. Below is a table of the built-in roles and their corresponding set of privileges.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Global or Local</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Privilege List</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>observer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ_SCHEMA</code>, <code>READ_LOADINGJOB</code>,<code>READ_QUERY</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>queryreader</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ_SCHEMA</code>, <code>READ_LOADINGJOB</code>,<code>READ_QUERY</code>, <code>EXECUTE_LOADINGJOB</code>, <code>READ_DATA</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>querywriter</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ_SCHEMA</code>, <code>READ_LOADINGJOB</code>,<code>READ_QUERY</code>, <code>EXECUTE_LOADINGJOB</code>, <code>READ_DATA</code>, <code>WRITE_QUERY, WRITE_DATA</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>designer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ_SCHEMA</code>, <code>READ_LOADINGJOB</code>,<code>READ_QUERY</code>, <code>EXECUTE_LOADINGJOB</code>, <code>READ_DATA</code>, <code>WRITE_QUERY, WRITE_DATA</code>,  <code>WRITE_SCHEMA</code>, <code>WRITE_LOADINGJOB</code>, <code>ACCESS_TAG</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>admin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>READ_SCHEMA</code>, <code>READ_LOADINGJOB</code>,<code>READ_QUERY</code>, <code>EXECUTE_LOADINGJOB</code>, <code>READ_DATA</code>, <code>WRITE_QUERY, WRITE_DATA</code>,  <code>WRITE_SCHEMA</code>, <code>WRITE_LOADINGJOB</code>, <code>ACCESS_TAG</code> <code>WRITE_ROLE</code>, <code>WRITE_DATASOURCE</code>, <code>READ_ROLE</code>, <code>READ_USER</code>, <code>READ_PROXYGROUP</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globaldesigner</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Designer&#8217;s privileges on global + drop graph created by the same user</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>superuser</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All supported privileges</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_user_defined_roles"><a class="anchor" href="#_user_defined_roles"></a>User-defined roles</h3>
+<div class="paragraph">
+<p>Users can define roles with their own list of privileges they want to grant to the role. To learn how to create/drop user-defined roles and manage privileges for the roles, see <a href="role-management.html" class="page">Role Management</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

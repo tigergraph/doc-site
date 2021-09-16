@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Map Data To Graph :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>Map Data To Graph :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -61,7 +61,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="overview.html">TigerGraph Web UI Guide</a></h3>
+    <h3 class="title"><a href="overview.html">GraphStudio and Admin Portal</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -71,6 +71,75 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="overview.html">GraphStudio Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="user-access-management.html">User Access Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="design-schema.html">Design Schema</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="map-data-to-graph.html">Map Data To Graph</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="explore-graph/README.html">Explore Graph</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/graph-exploration-panel.html">Graph Exploration Panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/search-for-vertices.html">Search for Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/expand-from-vertices.html">Expand from Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/find-paths-between-vertices.html">Find Paths between Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/run-gsql-queries.html">Run GSQL Queries</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="explore-graph/augment-visualization-result.html">Augment Visualization Result</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Build Graph Patterns</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="build-graph-patterns/visual-query-builder-overview.html">Visual Query Builder Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="build-graph-patterns/visual-pattern-examples.html">Visual Pattern Examples</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="write-queries.html">Write Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="migrate-from-relational-database.html">Migrate From Relational Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="export-and-import-solution.html">Export And Import Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keyboard-shortcuts.html">Keyboard Shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="known-issues.html">Known Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="patent-and-third-party-notice.html">GraphStudio Patent and Third Party Notice</a>
   </li>
 </ul>
   </li>
@@ -83,7 +152,61 @@
     <span class="nav-text">Admin Portal</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../admin-portal/admin-portal-overview.html">admin-portal-overview.adoc</a>
+    <a class="nav-link" href="../admin-portal/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../admin-portal/monitoring/README.html">Monitor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/monitoring/log-viewer.html">Logs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/management/license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#user-management.adoc">user-management.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/nginx.html">Nginx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/restpp.html">RESTPP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/components/gui.html">Application Server (GUI)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/security/ldap.html">LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../admin-portal/security/sso.html">SSO</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../admin-portal/known-issues.html">Known Issues</a>
   </li>
 </ul>
   </li>
@@ -94,23 +217,47 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">TigerGraph Web UI Guide</span>
+    <span class="title">GraphStudio and Admin Portal</span>
     <span class="version">3.2</span>
   </div>
   <ul class="components">
-    <li class="component">
-      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
-      <a class="title" href="overview.html">TigerGraph Web UI Guide</a>
+      <a class="title" href="overview.html">GraphStudio and Admin Portal</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -124,7 +271,8 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="overview.html">TigerGraph Web UI Guide</a></li>
+    <li><a href="overview.html">GraphStudio and Admin Portal</a></li>
+    <li>GraphStudio</li>
     <li><a href="map-data-to-graph.html">Map Data To Graph</a></li>
   </ul>
 </nav>
@@ -144,7 +292,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/map-data-to-graph-overview%20%281%29.png" alt="map data to graph overview%20%281%29">
+<img src="../../.gitbook/assets/map-data-to-graph-overview%20%281%29.png" alt="map data to graph overview%20%281%29">
 </div>
 </div>
 <div class="paragraph">
@@ -182,7 +330,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-29-at-2.15.45-pm.png" alt="screen shot 2020 01 29 at 2.15.45 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-29-at-2.15.45-pm.png" alt="screen shot 2020 01 29 at 2.15.45 pm">
 </div>
 </div>
 <div class="ulist">
@@ -216,11 +364,11 @@
 <div class="sect2">
 <h3 id="_add_local_data_file"><a class="anchor" href="#_add_local_data_file"></a>Add Local Data File</h3>
 <div class="paragraph">
-<p>In this step, you inform GraphStudio about your data files. A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances. The first step for data mapping is to specify your data files. Click the Add Data File button<span class="image"><img src="../.gitbook/assets/add_data_source_btn.png" alt="add data source btn"></span>to add data files. The Add Data File window will pop up:</p>
+<p>In this step, you inform GraphStudio about your data files. A data file is a file containing structured data to be loaded into the graph, creating vertex and/or edge instances. The first step for data mapping is to specify your data files. Click the Add Data File button<span class="image"><img src="../../.gitbook/assets/add_data_source_btn.png" alt="add data source btn"></span>to add data files. The Add Data File window will pop up:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf0zwnpgkbc0uw_zrvy_screen-shot-2019-05-16-at-11.52.29-am.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf0zwnpgkbc0uw zrvy screen shot 2019 05 16 at 11.52.29 am">
+<img src="../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf0zwnpgkbc0uw_zrvy_screen-shot-2019-05-16-at-11.52.29-am.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf0zwnpgkbc0uw zrvy screen shot 2019 05 16 at 11.52.29 am">
 </div>
 </div>
 <div class="paragraph">
@@ -229,11 +377,11 @@
 <div class="sect3">
 <h4 id="_upload_file_to_server"><a class="anchor" href="#_upload_file_to_server"></a>Upload File To Server <a id="TigerGraphGraphStudioUIGuide-UploadFileToServer"></a></h4>
 <div class="paragraph">
-<p>Click the Upload File button <span class="image"><img src="../.gitbook/assets/upload_file_btn.png" alt="upload file btn"></span> . A file selection window will appear. Choose the data files you want to use. The files will be uploaded to the server data folder:</p>
+<p>Click the Upload File button <span class="image"><img src="../../.gitbook/assets/upload_file_btn.png" alt="upload file btn"></span> . A file selection window will appear. Choose the data files you want to use. The files will be uploaded to the server data folder:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/upload-files.png" alt="upload files">
+<img src="../../.gitbook/assets/upload-files.png" alt="upload files">
 </div>
 </div>
 <div class="paragraph">
@@ -261,7 +409,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf111c7fe8u3ier-tzo_screen-shot-2019-05-16-at-12.03.19-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf111c7fe8u3ier tzo screen shot 2019 05 16 at 12.03.19 pm">
+<img src="../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf111c7fe8u3ier-tzo_screen-shot-2019-05-16-at-12.03.19-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf111c7fe8u3ier tzo screen shot 2019 05 16 at 12.03.19 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -272,23 +420,23 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/edit-header.png" alt="edit header">
+<img src="../../.gitbook/assets/edit-header.png" alt="edit header">
 </div>
 </div>
 <div class="paragraph">
-<p>Once you are satisfied with the file parsing configuration, click the add button<span class="image"><img src="../.gitbook/assets/add_vertex_type_btn.png" alt="add vertex type btn"></span>to add the data file into left working panel. The data file will be shown as a file icon on the working panel:</p>
+<p>Once you are satisfied with the file parsing configuration, click the add button<span class="image"><img src="../../.gitbook/assets/add_vertex_type_btn.png" alt="add vertex type btn"></span>to add the data file into left working panel. The data file will be shown as a file icon on the working panel:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/added_file_icon.png" alt="added file icon">
+<img src="../../.gitbook/assets/added_file_icon.png" alt="added file icon">
 </div>
 </div>
 <div class="paragraph">
-<p>Once you think a file is no longer needed, you can remove it from server by clicking the delete button<span class="image"><img src="../.gitbook/assets/delete_forever.png" alt="delete forever"></span>to the left of each file. Please note that you also need to manually remove data mapping using this file as data file, otherwise when you load data later, a "file not found" error will be triggered.</p>
+<p>Once you think a file is no longer needed, you can remove it from server by clicking the delete button<span class="image"><img src="../../.gitbook/assets/delete_forever.png" alt="delete forever"></span>to the left of each file. Please note that you also need to manually remove data mapping using this file as data file, otherwise when you load data later, a "file not found" error will be triggered.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/file-not-on-server.png" alt="file not on server">
+<img src="../../.gitbook/assets/file-not-on-server.png" alt="file not on server">
 </div>
 </div>
 <div class="paragraph">
@@ -303,7 +451,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf15ub6_fv8dme6lsw7_screen-shot-2019-05-16-at-12.23.02-pm%20%282%29.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf15ub6 fv8dme6lsw7 screen shot 2019 05 16 at 12.23.02 pm%20%282%29">
+<img src="../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf15ub6_fv8dme6lsw7_screen-shot-2019-05-16-at-12.23.02-pm%20%282%29.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf15ub6 fv8dme6lsw7 screen shot 2019 05 16 at 12.23.02 pm%20%282%29">
 </div>
 </div>
 <div class="paragraph">
@@ -313,11 +461,11 @@
 <p>A data source is an appropriately configured connection to some remote source of data file(s). When the data file type is switched to S3, you can configure connection to your S3 buckets.</p>
 </div>
 <div class="paragraph">
-<p>Click the Add new data source button <span class="image"><img src="../.gitbook/assets/upload_file_btn.png" alt="upload file btn"></span>, then the new S3 data source window will pop up. Give a name to the data source, and provide the access key id and secret access key to connect to S3. Then click the ADD button:</p>
+<p>Click the Add new data source button <span class="image"><img src="../../.gitbook/assets/upload_file_btn.png" alt="upload file btn"></span>, then the new S3 data source window will pop up. Give a name to the data source, and provide the access key id and secret access key to connect to S3. Then click the ADD button:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/s3-connection.png" alt="s3 connection">
+<img src="../../.gitbook/assets/s3-connection.png" alt="s3 connection">
 </div>
 </div>
 <div class="paragraph">
@@ -325,7 +473,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1airkv9bdfve8lpca_screen-shot-2019-05-16-at-12.44.52-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf1airkv9bdfve8lpca screen shot 2019 05 16 at 12.44.52 pm">
+<img src="../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1airkv9bdfve8lpca_screen-shot-2019-05-16-at-12.44.52-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf1airkv9bdfve8lpca screen shot 2019 05 16 at 12.44.52 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -333,7 +481,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf1d 1wslbwckzs4fah screen shot 2019 05 16 at 12.56.32 pm">
+<img src="../../.gitbook/assets/assets_-lhvjxin4__6ba0t-qmu_-lf0ykiyeocjfdocoopb_-lf1d-1wslbwckzs4fah_screen-shot-2019-05-16-at-12.56.32-pm.png" alt="assets  lhvjxin4  6ba0t qmu  lf0ykiyeocjfdocoopb  lf1d 1wslbwckzs4fah screen shot 2019 05 16 at 12.56.32 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -351,7 +499,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-05-16-at-1.03.41-pm.png" alt="screen shot 2019 05 16 at 1.03.41 pm">
+<img src="../../.gitbook/assets/screen-shot-2019-05-16-at-1.03.41-pm.png" alt="screen shot 2019 05 16 at 1.03.41 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -364,14 +512,14 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 <h2 id="_3_map_data_files_to_vertex_type_or_edge_type"><a class="anchor" href="#_3_map_data_files_to_vertex_type_or_edge_type"></a>3 Map Data Files To Vertex Type Or Edge Type</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this step, you link (map) a data file to a target vertex type or edge type. The mapping can be many-to-many, which means one data file can map to multiple vertex and / or edge types, and multiple data files can map to the same vertex or edge type. Click the map data file to vertex or edge button<span class="image"><img src="../.gitbook/assets/map_file_to_ve.png" alt="map file to ve"></span>to enter <em>map data file to vertex or edge</em> mode. When you finish mapping the data files, click the button again to exit this mode.</p>
+<p>In this step, you link (map) a data file to a target vertex type or edge type. The mapping can be many-to-many, which means one data file can map to multiple vertex and / or edge types, and multiple data files can map to the same vertex or edge type. Click the map data file to vertex or edge button<span class="image"><img src="../../.gitbook/assets/map_file_to_ve.png" alt="map file to ve"></span>to enter <em>map data file to vertex or edge</em> mode. When you finish mapping the data files, click the button again to exit this mode.</p>
 </div>
 <div class="paragraph">
 <p>Then, click the data file icon. A hint will appear over the icon:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-05-16-at-1.05.30-pm.png" alt="screen shot 2019 05 16 at 1.05.30 pm">
+<img src="../../.gitbook/assets/screen-shot-2019-05-16-at-1.05.30-pm.png" alt="screen shot 2019 05 16 at 1.05.30 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -379,7 +527,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-05-16-at-2.20.53-pm.png" alt="screen shot 2019 05 16 at 2.20.53 pm">
+<img src="../../.gitbook/assets/screen-shot-2019-05-16-at-2.20.53-pm.png" alt="screen shot 2019 05 16 at 2.20.53 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -395,7 +543,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/1.png" alt="1">
+<img src="../../.gitbook/assets/1.png" alt="1">
 </div>
 </div>
 <div class="paragraph">
@@ -403,7 +551,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/2%20%282%29.png" alt="2%20%282%29">
+<img src="../../.gitbook/assets/2%20%282%29.png" alt="2%20%282%29">
 </div>
 </div>
 <div class="paragraph">
@@ -411,7 +559,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/3%20%283%29.png" alt="3%20%283%29">
+<img src="../../.gitbook/assets/3%20%283%29.png" alt="3%20%283%29">
 </div>
 </div>
 <div class="sect2">
@@ -420,11 +568,11 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 <p>GraphStudio gives you access to both a set of built-in functions and user-defined token functions to preprocess data file tokens before loading them in to the graph. For example, you can concatenate two columns in the data file and load them as an attribute. This section describes how to use these token functions.</p>
 </div>
 <div class="paragraph">
-<p>First click the add token function button<span class="image"><img src="../.gitbook/assets/add_token_function_btn.png" alt="add token function btn"></span>. The Add Token Function window will pop up. Click the down arrow to see the list of available token functions and select one. For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs). Click Add.</p>
+<p>First click the add token function button<span class="image"><img src="../../.gitbook/assets/add_token_function_btn.png" alt="add token function btn"></span>. The Add Token Function window will pop up. Click the down arrow to see the list of available token functions and select one. For some functions, you may also specify the number of input parameters. (Most token functions have a fixed number of input parameters; gsql_concat can accept any positive number of inputs). Click Add.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/add_token_function_window.png" alt="add token function window">
+<img src="../../.gitbook/assets/add_token_function_window.png" alt="add token function window">
 </div>
 </div>
 <div class="paragraph">
@@ -432,7 +580,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/user_defined_token_functions.png" alt="user defined token functions">
+<img src="../../.gitbook/assets/user_defined_token_functions.png" alt="user defined token functions">
 </div>
 </div>
 <div class="paragraph">
@@ -440,14 +588,14 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/4.png" alt="4">
+<img src="../../.gitbook/assets/4.png" alt="4">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_auto_mapping"><a class="anchor" href="#_auto_mapping"></a>Auto Mapping</h3>
 <div class="paragraph">
-<p>If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping button<span class="image"><img src="../.gitbook/assets/auto_mapping_btn.png" alt="auto mapping btn"></span>. All similar columns will be mapped automatically.</p>
+<p>If the data file columns and the vertex/edge attributes have very similar names (only capitalization and hyphen differences), you can click the auto mapping button<span class="image"><img src="../../.gitbook/assets/auto_mapping_btn.png" alt="auto mapping btn"></span>. All similar columns will be mapped automatically.</p>
 </div>
 </div>
 <div class="sect2">
@@ -462,7 +610,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/6.png" alt="6">
+<img src="../../.gitbook/assets/6.png" alt="6">
 </div>
 </div>
 <div class="paragraph">
@@ -470,7 +618,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/load_constant_panel.png" alt="load constant panel">
+<img src="../../.gitbook/assets/load_constant_panel.png" alt="load constant panel">
 </div>
 </div>
 <div class="paragraph">
@@ -478,7 +626,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/7.png" alt="7">
+<img src="../../.gitbook/assets/7.png" alt="7">
 </div>
 </div>
 <div class="paragraph">
@@ -492,7 +640,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/double_click_token_function_input.png" alt="double click token function input">
+<img src="../../.gitbook/assets/double_click_token_function_input.png" alt="double click token function input">
 </div>
 </div>
 <div class="paragraph">
@@ -500,7 +648,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/token_function_with_constant_input.png" alt="token function with constant input">
+<img src="../../.gitbook/assets/token_function_with_constant_input.png" alt="token function with constant input">
 </div>
 </div>
 <div class="paragraph">
@@ -518,11 +666,11 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/8.png" alt="8">
+<img src="../../.gitbook/assets/8.png" alt="8">
 </div>
 </div>
 <div class="paragraph">
-<p>By default, there is no data filter. Click the Data Filter button<span class="image"><img src="../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png" alt="filter%20%282%29%20%281%29%20%282%29"></span>to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:</p>
+<p>By default, there is no data filter. Click the Data Filter button<span class="image"><img src="../../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png" alt="filter%20%282%29%20%281%29%20%282%29"></span>to start creating a data filter. The Add Data Filter window will appear.  The window contains three parts:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -539,7 +687,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/add_data_filter_window.png" alt="add data filter window">
+<img src="../../.gitbook/assets/add_data_filter_window.png" alt="add data filter window">
 </div>
 </div>
 <div class="paragraph">
@@ -550,7 +698,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/data_filter_choose_expression.png" alt="data filter choose expression">
+<img src="../../.gitbook/assets/data_filter_choose_expression.png" alt="data filter choose expression">
 </div>
 </div>
 <div class="paragraph">
@@ -558,7 +706,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/data_filter_choose_operator.png" alt="data filter choose operator">
+<img src="../../.gitbook/assets/data_filter_choose_operator.png" alt="data filter choose operator">
 </div>
 </div>
 <div class="paragraph">
@@ -582,7 +730,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/complete_data_filter.png" alt="complete data filter">
+<img src="../../.gitbook/assets/complete_data_filter.png" alt="complete data filter">
 </div>
 </div>
 <div class="paragraph">
@@ -590,34 +738,34 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/9.png" alt="9">
+<img src="../../.gitbook/assets/9.png" alt="9">
 </div>
 </div>
 <div class="paragraph">
-<p>Hovering the mouse over the data filter indicator<span class="image"><img src="../.gitbook/assets/data_filter_indicator.png" alt="data filter indicator"></span>will make the data filter condition appear. If you want to modify the data filter, click the Data Filter button<span class="image"><img src="../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png" alt="filter%20%282%29%20%281%29%20%282%29"></span>or double-click the data filter indicator​. The Add Data Filter panel will appear.</p>
+<p>Hovering the mouse over the data filter indicator<span class="image"><img src="../../.gitbook/assets/data_filter_indicator.png" alt="data filter indicator"></span>will make the data filter condition appear. If you want to modify the data filter, click the Data Filter button<span class="image"><img src="../../.gitbook/assets/filter%20%282%29%20%281%29%20%282%29.png" alt="filter%20%282%29%20%281%29%20%282%29"></span>or double-click the data filter indicator​. The Add Data Filter panel will appear.</p>
 </div>
 <div class="paragraph">
 <p>To remove a data filter, select "None" at the top level dropdown of Build Data Filter section and then click Add. The data filter will be deleted.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/remove_data_filter.png" alt="remove data filter">
+<img src="../../.gitbook/assets/remove_data_filter.png" alt="remove data filter">
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_advanced_features"><a class="anchor" href="#_advanced_features"></a>Advanced Features <a id="TigerGraphGraphStudioUIGuide-map_const_value_to_attributeMapAConstantValueToAnAttributeOrTokenFunctionInput"></a></h3>
 <div class="paragraph">
-<p>More advanced data mapping features are grouped in the dropdown list under<span class="image"><img src="../.gitbook/assets/more-data-mapping.png" alt="more data mapping"></span>.</p>
+<p>More advanced data mapping features are grouped in the dropdown list under<span class="image"><img src="../../.gitbook/assets/more-data-mapping.png" alt="more data mapping"></span>.</p>
 </div>
 <div class="sect3">
 <h4 id="_map_data_to_a_map_type_attribute"><a class="anchor" href="#_map_data_to_a_map_type_attribute"></a>Map data to a map type attribute</h4>
 <div class="paragraph">
-<p>Click <span class="image"><img src="../.gitbook/assets/map-widget-btn.png" alt="map widget btn"></span>in the dropdown list, then choose key type and value type. The types must match the key type and value type of the attribute you are mapping towards.</p>
+<p>Click <span class="image"><img src="../../.gitbook/assets/map-widget-btn.png" alt="map widget btn"></span>in the dropdown list, then choose key type and value type. The types must match the key type and value type of the attribute you are mapping towards.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.41.40-pm.png" alt="screen shot 2020 01 21 at 5.41.40 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.41.40-pm.png" alt="screen shot 2020 01 21 at 5.41.40 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -625,7 +773,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.43.15-pm.png" alt="screen shot 2020 01 21 at 5.43.15 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.43.15-pm.png" alt="screen shot 2020 01 21 at 5.43.15 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -633,18 +781,18 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.44.41-pm.png" alt="screen shot 2020 01 21 at 5.44.41 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.44.41-pm.png" alt="screen shot 2020 01 21 at 5.44.41 pm">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_map_data_to_a_udt_type_attribute"><a class="anchor" href="#_map_data_to_a_udt_type_attribute"></a>Map data to a UDT type attribute</h4>
 <div class="paragraph">
-<p>Click <span class="image"><img src="../.gitbook/assets/udt-widget-btn.png" alt="udt widget btn"></span>in the dropdown list, then choose UDT name. The name must match the UDT type of the attribute you are mapping towards.</p>
+<p>Click <span class="image"><img src="../../.gitbook/assets/udt-widget-btn.png" alt="udt widget btn"></span>in the dropdown list, then choose UDT name. The name must match the UDT type of the attribute you are mapping towards.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.46.32-pm.png" alt="screen shot 2020 01 21 at 5.46.32 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.46.32-pm.png" alt="screen shot 2020 01 21 at 5.46.32 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -652,7 +800,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.47.29-pm.png" alt="screen shot 2020 01 21 at 5.47.29 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.47.29-pm.png" alt="screen shot 2020 01 21 at 5.47.29 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -660,7 +808,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.47.42-pm.png" alt="screen shot 2020 01 21 at 5.47.42 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.47.42-pm.png" alt="screen shot 2020 01 21 at 5.47.42 pm">
 </div>
 </div>
 </div>
@@ -674,7 +822,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.50.41-pm.png" alt="screen shot 2020 01 21 at 5.50.41 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.50.41-pm.png" alt="screen shot 2020 01 21 at 5.50.41 pm">
 </div>
 </div>
 <div class="paragraph">
@@ -682,7 +830,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2020-01-21-at-5.53.30-pm.png" alt="screen shot 2020 01 21 at 5.53.30 pm">
+<img src="../../.gitbook/assets/screen-shot-2020-01-21-at-5.53.30-pm.png" alt="screen shot 2020 01 21 at 5.53.30 pm">
 </div>
 </div>
 </div>
@@ -690,7 +838,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 <div class="sect2">
 <h3 id="_delete_options"><a class="anchor" href="#_delete_options"></a>Delete Options <a id="TigerGraphGraphStudioUIGuide-delete_optionsDeleteOptions"></a></h3>
 <div class="paragraph">
-<p>In the Map Data To Graph page, you can delete anything that you added. Choose what you want to delete, then click the delete button<span class="image"><img src="../.gitbook/assets/delete_btn.png" alt="delete btn"></span>. Press the "Shift" key to select multiple icons you want to delete. Note that you cannot delete vertex or edge types in this page.</p>
+<p>In the Map Data To Graph page, you can delete anything that you added. Choose what you want to delete, then click the delete button<span class="image"><img src="../../.gitbook/assets/delete_btn.png" alt="delete btn"></span>. Press the "Shift" key to select multiple icons you want to delete. Note that you cannot delete vertex or edge types in this page.</p>
 </div>
 <div class="sect3">
 <h4 id="_delete_data_files"><a class="anchor" href="#_delete_data_files"></a>Delete Data Files <a id="TigerGraphGraphStudioUIGuide-DeleteDataSource"></a></h4>
@@ -699,7 +847,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-05-16-at-2.35.00-pm.png" alt="screen shot 2019 05 16 at 2.35.00 pm">
+<img src="../../.gitbook/assets/screen-shot-2019-05-16-at-2.35.00-pm.png" alt="screen shot 2019 05 16 at 2.35.00 pm">
 </div>
 </div>
 </div>
@@ -710,7 +858,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/screen-shot-2019-05-16-at-2.36.18-pm.png" alt="screen shot 2019 05 16 at 2.36.18 pm">
+<img src="../../.gitbook/assets/screen-shot-2019-05-16-at-2.36.18-pm.png" alt="screen shot 2019 05 16 at 2.36.18 pm">
 </div>
 </div>
 </div>
@@ -721,7 +869,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/5%20%281%29.png" alt="5%20%281%29">
+<img src="../../.gitbook/assets/5%20%281%29.png" alt="5%20%281%29">
 </div>
 </div>
 </div>
@@ -732,7 +880,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../.gitbook/assets/delete_token_functions.png" alt="delete token functions">
+<img src="../../.gitbook/assets/delete_token_functions.png" alt="delete token functions">
 </div>
 </div>
 </div>
@@ -740,7 +888,7 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 <div class="sect2">
 <h3 id="_undo_and_redo"><a class="anchor" href="#_undo_and_redo"></a>Undo And Redo <a id="TigerGraphGraphStudioUIGuide-UndoAndRedo"></a></h3>
 <div class="paragraph">
-<p>You can undo or redo changes by clicking the Back or Forward buttons, respectively:<span class="image"><img src="../.gitbook/assets/redo_undo_btn.png" alt="redo undo btn"></span>. The whole history since the time you entered the Map Data To Graph page is recorded.</p>
+<p>You can undo or redo changes by clicking the Back or Forward buttons, respectively:<span class="image"><img src="../../.gitbook/assets/redo_undo_btn.png" alt="redo undo btn"></span>. The whole history since the time you entered the Map Data To Graph page is recorded.</p>
 </div>
 </div>
 </div>
@@ -749,12 +897,12 @@ TigerGraph supports loading from archived and compressed S3 files directly. Curr
 <h2 id="_5_publish_data_mapping"><a class="anchor" href="#_5_publish_data_mapping"></a>5 Publish Data Mapping</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you are satisfied with the data loading procedure, click the publish schema button<span class="image"><img src="../.gitbook/assets/publish_btn.png" alt="publish btn"></span>to publish the data loading procedure to the TigerGraph system. It takes about 2 to 3 seconds for publishing each data file mapping.</p>
+<p>Once you are satisfied with the data loading procedure, click the publish schema button<span class="image"><img src="../../.gitbook/assets/publish_btn.png" alt="publish btn"></span>to publish the data loading procedure to the TigerGraph system. It takes about 2 to 3 seconds for publishing each data file mapping.</p>
 </div>
 <div class="sect2">
 <h3 id="_expand_panels"><a class="anchor" href="#_expand_panels"></a>Expand Panels <a id="TigerGraphGraphStudioUIGuide-ExpandPanels"></a></h3>
 <div class="paragraph">
-<p>The following three buttons allow you to expand the left or right working panel:<span class="image"><img src="../.gitbook/assets/split-view.png" alt="split view"></span>.</p>
+<p>The following three buttons allow you to expand the left or right working panel:<span class="image"><img src="../../.gitbook/assets/split-view.png" alt="split view"></span>.</p>
 </div>
 <div class="paragraph">
 <p>By default, the two panels have equal widths. Click the left button to expand the left working panel, or click the right button to expand the right working panel.</p>

@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CREATE/INTERPRET/INSTALL/RUN QUERY :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/query-operations.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CREATE/INTERPRET/INSTALL/RUN QUERY</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>{% hint style="info" %}
+Query Privileges</p>
+</div>
+<div class="paragraph">
+<p>Users with the <code>querywriter</code> role or greater (<code>designer</code>, <code>admin</code>, <code>globaldesigner,</code> and <code>superuser</code>) can create, install, and drop queries.</p>
+</div>
+<div class="paragraph">
+<p>Any user with the <code>queryreader</code> role or greater for a given graph can run the queries for that graph.</p>
+</div>
+<div class="paragraph">
+<p>To implement fine-grained control over which queries can be executed by which sets of users:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Group your queries into your desired privilege groups.</p>
+</li>
+<li>
+<p>Define a graph for each privilege group. These graphs can all have the same domain if you wish.</p>
+</li>
+<li>
+<p>Create your queries, assigning each to its appropriate privilege group.
+{% endhint %}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for CREATE QUERY" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">createQuery := CREATE [OR REPLACE] [DISTRIBUTED] QUERY queryName
+               "(" [parameterList] ")"
+               [FOR GRAPH graphName]
+               [RETURNS "("  baseType | accumType ")"]
+               [API "(" stringLiteral ")"]
+               [SYNTAX syntaxName]
+               "{" queryBody "}"
+
+interpretQuery := INTERPRET QUERY "(" ")"
+               [FOR GRAPH graphName]
+               [SYNTAX syntaxName]
+               "{" queryBody "}"
+
+parameterValueList := parameterValue ["," parameterValue]*
+parameterValue := parameterConstant
+                | "[" parameterValue ["," parameterValue]* "]"  // BAG or SET
+                | "(" stringLiteral "," stringLiteral ")"        // generic VERTEX value
+parameterConstant := numeric | stringLiteral | TRUE | FALSE
+parameterList := parameterType paramName ["=" constant]
+                 ["," parameterType paramName ["=" constant]]*
+
+syntaxName := name
+
+queryBody := [typedefs] [declStmts] [declExceptStmts] queryBodyStmts
+typedefs := (typedef ";")+
+declStmts := (declStmt ";")+
+declStmt := baseDeclStmt | accumDeclStmt | fileDeclStmt
+declExceptStmts := (declExceptStmt ";")+
+queryBodyStmts := (queryBodyStmt ";")+
+
+installQuery := INSTALL QUERY [installOptions] ( "*" | ALL |queryName ["," queryName]* )
+runQuery := RUN QUERY [runOptions] queryName "(" parameterValueList ")"
+
+showQuery := SHOW QUERY queryName
+dropQuery := DROP QUERY ( "*" | ALL | queryName ["," queryName]* )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>A GSQL query is a sequence of data retrieval-and-computation statements executed as a single operation. Users can write queries to explore a data graph however they like, to read and make computations on the graph data along the way, to update the graph, and to deliver resulting data. A query is analogous to a user-defined procedure or function: it can have one or more input parameters, and it can produce output in two ways: by returning a value or by printing. A query can be run in one of three ways:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Define and run an unnamed query immediately:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>INTERPRET QUERY</code>: execute the query&#8217;s statements</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Alternately, there is also a built-in REST&#43;&#43; endpoint to interpret a query string:<br>
+<code>POST /gsqlserver/interpreted_query</code><br>
+See the <a href="../../restpp-api/">RESTPP API User Guide</a> for details.</p>
+</div>
+</li>
+<li>
+<p>Define a named query and then run it.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>CREATE QUERY</code>: define the functionality of the query</p>
+</li>
+<li>
+<p><code>INTERPRET QUERY</code>: execute the query with input values</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Define a named query, compile it to optimize performance, and then run it.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>CREATE QUERY</code>: define the functionality of the query</p>
+</li>
+<li>
+<p><code>INSTALL QUERY</code>: compile the query</p>
+</li>
+<li>
+<p><code>RUN QUERY</code>: execute the query with input values</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>There are some limitations to Interpreted Mode. See the section on <a href="query-operations.md#interpret-query"><code>INTERPRET QUERY</code></a> and the appendix section <a href="appendix-query/interpreted-gsql-limitations.html" class="page">Interpreted GSQL Limitations</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_query"><a class="anchor" href="#_create_query"></a><code>CREATE QUERY</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">createQuery := CREATE [OR REPLACE] [DISTRIBUTED] QUERY queryName
+               "(" [parameterList] ")"
+               [FOR GRAPH graphName]
+               [RETURNS "("  baseType | accumType ")"]
+               [API "(" stringLiteral ")"]
+               [SYNTAX syntaxName]
+               "{" queryBody "}"
+
+queryBody := [typedefs] [declStmts] [declExceptStmts] queryBodyStmts</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>CREATE QUERY</code> defines the functionality of a query on a given graph schema.</p>
+</div>
+<div class="paragraph">
+<p>A query has a name, a parameter list, the name of the graph being queried, an optional <code>RETURNS</code> type (see Section "<a href="output-statements-and-file-objects.md#return-statement"><code>RETURN</code> Statement</a>" for more details), optional specifiers for the output API and the language syntax version, and a body. The body consists of an optional sequence of <em>`typedefs`</em>, followed by an optional sequence of declarations, then followed by one or more statements. The body defines the behavior of the query.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+<strong>Dynamic Query Support</strong></p>
+</div>
+<div class="paragraph">
+<p>As of TigerGraph 3.0+, <strong><code>FOR GRAPH graphName</code></strong> is optional, as long as the graph has been specified already, either when entering gsql:<br>
+<strong><code>GSQL -g graphName [&lt;gsql_command&gt;]</code></strong><br>
+or once inside the GSQL shell, by using the <strong><code>USE GRAPH graphName</code></strong> command.<br>
+This is one aspect of <a href="query-operations.md#dynamic-querying">Dynamic Querying</a>.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>If the optional keywords <code>OR REPLACE</code> are included, then this query definition, if error-free, will replace a previous definition with the same query name. The new query will not be installed.  That is,<br>
+<code>CREATE OR REPLACE QUERY name</code><br>
+acts like<br>
+<code>DROP QUERY name
+CREATE QUERY name</code><br>
+However, if there are any errors in this query definition, then the previous query definition will be maintained. If the <code>OR REPLACE</code> option is not used, then GSQL will reject a <code>CREATE QUERY</code> command that uses an existing name.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DISTRIBUTED</code> option applies only to installations where the graph has been distributed across a cluster. If specified, the query will run with a different execution model which may give better performance for queries that traverse a large portion of the cluster. For details, see <a href="distributed-query-mode.html" class="page">Distributed Query Mode.</a></p>
+</div>
+<div class="paragraph">
+<p>Typedefs allow the definition of custom types for use within the body.  The declarations support the definition of <em>accumulators</em> (see Chapter  "<a href="accumulators.html" class="page">Accumulators</a>" for more details) and global/local variables.  All accumulators and global variables must be declared before any statements. There are various types of statements that can be used within the body.  Typically, the core statement(s) in the body of a query is one or more <code>SELECT</code>, <code>UPDATE</code>, <code>INSERT</code>, <code>DELETE</code> statements. The language supports conditional statements such as an <code>IF</code> statement as well as looping constructs such as <code>WHILE</code> and <code>FOREACH</code>. It also supports calling functions, assigning variables, printing, and modifying the graph data.</p>
+</div>
+<div class="paragraph">
+<p>The query body may include calls to other queries. That is, the other queries are treated as subquery functions.  See the subsection on "<a href="operators-and-expressions.md#queries-as-functions">Queries as Functions</a>".</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of a CREATE QUERY statement" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">CREATE QUERY createQueryEx (STRING uid) FOR GRAPH socialNet RETURNS (int)
+  SYNTAX v2 {
+  # declaration statements
+  users = {person.*};
+  # body statements
+  posts = SELECT p
+    FROM users:u-(posted)-&gt;:p
+    WHERE u.id == uid;
+  PRINT posts;
+  RETURN posts.size();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="sect2">
+<h3 id="_query_parameter_and_return_types"><a class="anchor" href="#_query_parameter_and_return_types"></a>Query parameter and return types</h3>
+<div class="paragraph">
+<p>This table lists the supported data types for input parameters and return values.<table><thead><tr><th style="text-align:center">Type</th>
+      <th style="text-align:left">Supported Data Types</th></tr></thead>
+  <tbody><tr><td style="text-align:center">Parameter Types</td>
+      <td style="text-align:left"><ul><li>Any base type (except <code>EDGE</code> or <code>JSONOBJECT</code>): <code>INT, UINT, FLOAT, DOUBLE, STRING, BOOL, STRING, DATETIME, VERTEX, JSONARRAY</code></li>
+          <li><code>SET&lt;baseType&gt;</code>, <code>BAG&lt;baseType&gt;</code>
+            <ul><li><code>Edge</code> and <code>JSONOBJECT </code></li></ul></li></ul></td></tr>
+    <tr><td style="text-align:center">Return Types</td>
+      <td style="text-align:left"><ul><li>any baseType (including EDGE): INT, UINT, FLOAT, DOUBLE, STRING, BOOL,
+            STRING, VERTEX, EDGE, JSONOBJECT, JSONARRAY</li>
+          <li>any accumulator type, except GroupByAccum</li></ul></td></tr>
+    <tr><td style="text-align:center">API (JSON output format)</td>
+      <td style="text-align:left">Currently, the only option is &quot;v2&quot; (default)</td></tr>
+    <tr><td style="text-align:center">SYNTAX</td>
+      <td style="text-align:left">v1 (default) or v2 (pattern matching). See the <a href="select-statement/">SELECT Statement </a>section
+        for an outline of the differences. See <a href="../../../start/gsql-102/">Pattern Matching</a> for
+        details on v2.</td></tr></tbody></table></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_parameter_values"><a class="anchor" href="#_default_parameter_values"></a>Default parameter values</h3>
+<div class="paragraph">
+<p>You can specify default values for parameters of primitive types when creating a query. Primitive types include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INT</code></p>
+</li>
+<li>
+<p><code>UINT</code></p>
+</li>
+<li>
+<p><code>FLOAT</code></p>
+</li>
+<li>
+<p><code>DOUBLE</code></p>
+</li>
+<li>
+<p><code>STRING</code></p>
+</li>
+<li>
+<p><code>BOOL</code></p>
+</li>
+<li>
+<p><code>STRING</code></p>
+</li>
+<li>
+<p><code>DATETIME</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To specify the default value for a parameter, use the assignment operator (<code>=</code>) after the parameter name and specify the default value:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of a CREATE QUERY command with a default parameter value" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">CREATE QUERY createQueryEx (STRING uid = "Tom") FOR GRAPH socialNet RETURNS (int)
+  SYNTAX v2 {
+  # declaration statements
+  users = {person.*};
+  # body statements
+  posts = SELECT p
+    FROM users:u-(posted)-&gt;:p
+    WHERE u.id == uid;
+  PRINT posts;
+  RETURN posts.size();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dynamic_querying"><a class="anchor" href="#_dynamic_querying"></a>Dynamic querying</h3>
+<div class="paragraph">
+<p>TigerGraph 3.0+ supports Dynamic Querying. This means the query can be written and installed as a saved procedure without referencing a particular graph. Schema details&#8201;&#8212;&#8201;the name of the graph, vertex types, edge types, and attributes&#8201;&#8212;&#8201;can all be parameterized and only need to be specified at run time.</p>
+</div>
+<div class="paragraph">
+<p>Here are the ingredients for a dynamic query:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Graph name:</strong> When <a href="query-operations.md#create-query-statement">creating a query</a>, <strong><code>FOR GRAPH graphName</code></strong> is optional, as long as the graph has been specified already, either when entering gsql: <strong><code>GSQL -g graphName [&lt;gsql_command&gt;]</code></strong> or once inside the GSQL shell, by using the <strong><code>USE GRAPH graphName</code></strong> command.</p>
+</li>
+<li>
+<p><strong>Vertex type and edge type in <code>SELECT</code> statements</strong>.  Typically, the <a href="select-statement/#from-clause-vertex-and-edge-sets"><code>FROM</code> clause</a> mentions the name of specific vertex types and edge types.  String or string set parameters can be used for edge and target types instead.</p>
+</li>
+<li>
+<p><strong>Attribute names</strong>. The<a href="operators-and-expressions.md#vertex-functions"><code>getAttr</code> and setAttr functions</a>, which take attribute name and data type as string parameters, can be used to parameterize attribute access.</p>
+</li>
+<li>
+<p><code>INSERT</code> <strong>statements</strong>: If you are using <a href="data-modification-statements.md#insert-into-statement"><code>INSERT</code></a> to add data to your graph, you need to specify what type of vertex or edge you want to add. This can also be parameterized.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here is a simple example to demonstrate how to apply Dynamic GSQL Query techniques. Here is the PageRank algorithm from our GSQL Graph Algorithm library. Here is it written with schema information embedded statically in the query:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>graph name = social</p>
+</li>
+<li>
+<p>vertex type = Page</p>
+</li>
+<li>
+<p>edge type  = Link</p>
+</li>
+<li>
+<p>vertex attribute = Score</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">CREATE QUERY pageRank (FLOAT maxChange=0.00, INT maxIter=25,
+  FLOAT damping=0.85)  //parameters
+  FOR GRAPH gsql_demo
+{
+  MaxAccum&lt;float&gt; @@maxDiff = 9999;
+  SumAccum&lt;float&gt; @rcvd_score = 0;
+  SumAccum&lt;float&gt; @score = 1;
+
+  Start = {Page.*};
+  WHILE @@maxDiff &gt; maxChange LIMIT maxIter DO
+      @@maxDiff = 0;
+      V = SELECT s
+          FROM Start:s -(Linkto:e)- Page:t       //hardcoded types
+          ACCUM t.@rcvd_score += s.@score/(s.outdegree("Linkto")) //Param
+          POST-ACCUM s.@score = (1.0-damping) + damping * s.@rcvd_score,
+                      s.@rcvd_score = 0,
+                      @@maxDiff += abs(s.@score - s.@score');
+  END;
+
+  V = SELECT s FROM Start:s
+      POST-ACCUM s.Score = s.@score;    //hardcoded attribute
+}
+RUN QUERY pageRank(_,_,_)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is the same algorithm written in Dynamic Querying style:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">CREATE QUERY pageRankDyn (FLOAT maxChange=0.00, INT maxIter=25,
+  FLOAT damping=0.85,
+  STRING vType, STRING eType, STRING attr)  //parameterized schema
+//no graph name
+{
+  MaxAccum&lt;float&gt; @@maxDiff = 9999;
+  SumAccum&lt;float&gt; @rcvd_score = 0;
+  SumAccum&lt;float&gt; @score = 1;
+
+  Start = {vType};
+  WHILE @@maxDiff &gt; maxChange LIMIT maxIter DO
+      @@maxDiff = 0;
+      V = SELECT s
+          FROM Start:s -(eType:e)- vType:t //parameterized
+          ACCUM t.@rcvd_score += s.@score/(s.outdegree(eType)) //param
+          POST-ACCUM s.@score = (1.0-damping) + damping * s.@rcvd_score,
+                      s.@rcvd_score = 0,
+                      @@maxDiff += abs(s.@score - s.@score');
+  END;
+
+  V = SELECT s FROM Start:s
+      POST-ACCUM s.setAttr(attr, s.@score); //parameterized
+}
+RUN QUERY pageRankDyn(_,_,_,"Page", "Link", "Score")</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_statement_types"><a class="anchor" href="#_statement_types"></a>Statement types</h3>
+<div class="paragraph">
+<p>A <em>statement</em> is a standalone instruction that expresses an action to be carried out. The most common statements are <em>*data manipulation language (DML) statements*</em>. DML statements include the <code>SELECT</code>, <code>UPDATE</code>, <code>INSERT INTO</code>, <code>DELETE FROM</code>, and <code>DELETE</code> statements.</p>
+</div>
+<div class="paragraph">
+<p>A GSQL query has two levels of statements. The upper-level statement type is called <em>query-body-level statement</em>, or <em>*query-body statement*</em> for short. This statement type is part of either the top-level block or a query-body control flow block. For example, each of the statements at the top level directly under <code>CREATE QUERY</code> is a query-body statement. If one of the statements is a <code>CASE</code> statement with several <code>THEN</code> blocks, each of the statements in the <code>THEN</code> blocks is also a query-body statement. Each query-body statement ends with a semicolon.</p>
+</div>
+<div class="paragraph">
+<p>The lower-level statement type is called <em>DML-sub-level statement</em> or <em>*DML-sub statement*</em> for short. This statement type is used inside certain query-body DML statements, to define particular data manipulation actions. DML-sub-statements are comma-separated. There is no comma or semicolon after the last DML-sub-statement in a block. For example, one of the top-level statements is a <code>SELECT</code> statement, each of the statements in its <code>ACCUM</code> clause is a DML-sub-statement.  If one of those DML-sub-statements is a <code>CASE</code> statement, each of the statement in the <code>THEN</code> blocks is a DML-sub-statement.</p>
+</div>
+<div class="paragraph">
+<p>There is some overlap in the types. For example, an assignment statement can be used either at the query-body level or the DML-sub-level.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">queryBodyStmts := (queryBodyStmt ";")+
+
+queryBodyStmt := assignStmt           // Assignment
+               | vSetVarDeclStmt      // Declaration
+               | gAccumAssignStmt     // Assignment
+               | gAccumAccumStmt      // Assignment
+               | lAccumAccumStmt      // Assignment
+               | funcCallStmt         // Function Call
+               | selectStmt           // Select
+               | queryBodyCaseStmt    // Control Flow
+               | queryBodyIfStmt      // Control Flow
+               | queryBodyWhileStmt   // Control Flow
+               | queryBodyForEachStmt // Control Flow
+               | BREAK                // Control Flow
+               | CONTINUE             // Control Flow
+               | updateStmt           // Data Modification
+               | insertStmt           // Data Modification
+               | queryBodyDeleteStmt  // Data Modification
+               | printStmt            // Output
+               | printlnStmt          // Output
+               | logStmt              // Output
+               | returnStmt           // Output
+               | raiseStmt            // Exception
+               | tryStmt              // Exception
+
+DMLSubStmtList := DMLSubStmt ["," DMLSubStmt]*
+
+DMLSubStmt := assignStmt           // Assignment
+            | funcCallStmt         // Function Call
+            | gAccumAccumStmt      // Assignment
+            | lAccumAccumStmt      // Assignment
+            | attrAccumStmt        // Assignment
+            | vAccumFuncCall       // Function Call
+            | localVarDeclStmt     // Declaration
+            | DMLSubCaseStmt       // Control Flow
+            | DMLSubIfStmt         // Control Flow
+            | DMLSubWhileStmt      // Control Flow
+            | DMLSubForEachStmt    // Control Flow
+            | BREAK                // Control Flow
+            | CONTINUE             // Control Flow
+            | insertStmt           // Data Modification
+            | DMLSubDeleteStmt     // Data Modification
+            | printlnStmt          // Output
+            | logStmt              // Output</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Guidelines for understanding statement type hierarchy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Top-level statements are Query-Body type (each statement ending with a semicolon).</p>
+</li>
+<li>
+<p>The statements within a DML statement are DML-sub statements (comma-separated list).</p>
+</li>
+<li>
+<p>The blocks within a Control Flow statement have the same type as the entire Control Flow statement itself.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% code title="Schematic illustration of relationship between queryBodyStmt and DMLSubStmt" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript"># Each statement's operation type is either ControlFlow, DML, or other.
+# Each statement's syntax type is either queryBodyStmt or DMLSubStmt.
+
+CREATE QUERY stmtTypes (parameterList) FOR GRAPH g [
+	other queryBodyStmt1;
+	ControlFlow queryBodyStmt2   # ControlFlow inside top level.
+		other queryBodyStmt2.1;      # subStmts in ControlFlow are queryBody unless inside DML.
+		ControlFlow queryBodyStmt2.2 # ControlFlow inside ControlFlow inside top level
+			other queryBodyStmt2.2.1;
+			other queryBodyStmt2.2.2;
+		END;
+		DML queryBodyStmt2.3     # DML inside ControlFlow inside top-level
+			other DMLSubStmt2.3.1,   # switch to DMLSubStmt
+			other DMLSubStmt2.3.2
+		;
+	END;
+	DML queryBodyStmt3           # DML inside top level.
+		other DMLSubStmt3.1,      # All subStmts in DML must be DMLSubStmt type
+		ControlFlow DMLSubStmt3.2 # ControlFlow inside DML inside top level
+			other DMLSubStmt3.2.1,
+			other DMLSubStmt3.2.2
+		,
+		DML DMLsubStmt3.3
+			other DMLSubStmt3.3.1,
+			other DMLSubStmt3.3.2
+	;
+	other queryBodyStmt4;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Here is a descriptive list of query-body statements:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EBNF term</th>
+<th class="tableblock halign-left valign-top">Common Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assignStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignment Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vSetVarDeclStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertex Set Variable Declaration Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gAccumAssignStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global Accumulator Assignment Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gAccumAccumStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global Accumulator Accumulation Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lAccumAccumStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local Accumulator Accumulation Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">funcCallStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Functional Call or Query Call Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SELECT Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "SELECT Statement"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queryBodyCaseStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query-body CASE statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Control Flow Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queryBodyIfStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query-body IF statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Control Flow Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queryBodyWhileStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query-body WHILE statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Control Flow Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queryBodyForEachStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">query-body FOREACH statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Control Flow Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updateStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UPDATE Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insertStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INSERT INTO statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queryBodyDeleteStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query-body DELETE Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">printStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PRINT Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Output Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOG Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See Output Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">returnStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RETURN Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See  "Output Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">raiseStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PRINT Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See  "Exception Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tryStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TRY Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Exception Statements"</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Here is a descriptive list of DML-sub-statements:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">EBNF term</th>
+<th class="tableblock halign-left valign-top">Common Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assignStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignment Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">funcCallStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Functional Call Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See  "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gAccumAccumStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global Accumulator Accumulation Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lAccumAccumStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local Accumulator Accumulation Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attrAccumStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute Accumulation Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vAccumFuncCall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertex-attached Accumulator Function Call Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Declaration and Assignment Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">localVarDeclStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local Variable Declaration Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "SELECT Statement"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">insertStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INSERT INTO Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Control Flow Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DMLSubDeleteStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DML-sub DELETE Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DMLSubcaseStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DML-sub CASE statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DMLSubIfStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DML-sub IF statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DMLSubForEachStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DML-sub FOREACH statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DMLSubWhileStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DML-sub WHILE statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Data Modification Statements"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logStmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOG Statement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See "Output Statements"</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interpret_query"><a class="anchor" href="#_interpret_query"></a><code>INTERPRET QUERY</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>INTERPRET QUERY</code> runs a query by translating it line-by-line. This is in contrast to the 2-step flow: (1) <code>INSTALL</code> to pre-translate and optimize a query, then (2) <code>RUN</code> to execute the installed query.  The basic trade-off between <code>INTERPRET QUERY</code> and <code>INSTALL/RUN QUERY</code> is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INTERPRET</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starts running immediately but may take longer to finish than running an installed query.</p>
+</li>
+<li>
+<p>Suitable for ad hoc exploration of a graph or when developing and debugging an application, and rapid experimentation is desired.</p>
+</li>
+<li>
+<p>Supports most but not all of the features of the full GSQL query language.  See the Appendix section <a href="appendix-query/interpreted-gsql-limitations.html" class="page">Interpreted GSQL Limitations</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>INSTALL</code>/<code>RUN</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Takes up to a minute to <code>INSTALL</code>.</p>
+</li>
+<li>
+<p>Runs faster than <code>INTERPRET</code>, from only a few percent faster to twice as fast.</p>
+</li>
+<li>
+<p>Should always be used for production environments with fixed queries.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are two GSQL syntax options for Interpreted GSQL: <a href="query-operations.md#immediate-mode-define-and-interpret">Immediate mode</a> and <a href="query-operations.md#interpret-a-saved-query">Saved-query mode</a>. In addition there is also a predefined RESTful endpoint for running interpreted GSQL: <code>POST /gsqlserver/interpreted_query</code>.  The query body is sent as the payload of the request. The syntax is like the Immediate query option, except that it is possible to provide parameters, using the query string of the endpoint&#8217;s request URL. The example below shows a parameterized query using the <code>POST /gsqlserver/interpreted_query</code> endpoint. For more details, see the <a href="../../restpp-api/">RESTPP API User Guide</a>.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Interpreted GSQL REST Endpoint with Immediate Query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">curl --user tigergraph:tigergraph -X POST 'localhost:14240/gsqlserver/interpreted_query?a=10' -d '
+  INTERPRET QUERY (int a) FOR GRAPH gsql_demo {
+    PRINT a;
+  }
+'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="sect2">
+<h3 id="_immediate_mode_define_and_interpret"><a class="anchor" href="#_immediate_mode_define_and_interpret"></a>Immediate mode: define and interpret</h3>
+<div class="paragraph">
+<p>{% code title="interpret-anonymous-query syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">interpretQuery := INTERPRET QUERY "(" ")"
+               [FOR GRAPH graphName]
+               [SYNTAX syntaxName]
+               "{" queryBody "}"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>This syntax is similar in concept to SQL queries. Queries are not named, do not accept parameters, and are not saved after being run. Syntax differences from compiled GSQL:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The keyword <code>CREATE</code> is replaced with <code>INTERPRET</code>.</p>
+</li>
+<li>
+<p>The query is executed immediately by the <code>INTERPRET</code> statement.  The <code>INSTALL</code> and <code>RUN</code> statements are not used.</p>
+</li>
+<li>
+<p>Parameters are not accepted.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Compare the example below to the example in the <code>Create Query</code> section:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>No query name, no parameters, no <code>RETURN</code> statement.</p>
+</li>
+<li>
+<p>Because no parameter is allowed, the parameter <code>uid</code> is set within the query.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of Immediate Mode for INTERPRET QUERY" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">INTERPRET QUERY () FOR GRAPH socialNet {
+  # declaration statements
+  STRING uid = "Jane.Doe";
+  users = {person.*};
+  # body statements
+  posts = SELECT p
+    FROM users:u-(posted)-&gt;:p
+    WHERE u.id == uid;
+  PRINT posts, posts.size();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interpret_a_created_query"><a class="anchor" href="#_interpret_a_created_query"></a>Interpret a created query</h3>
+<div class="paragraph">
+<p>{% code title="interpret-saved-query syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">runQuery := (RUN | INTERPRET) QUERY [runOptions] queryName "(" parameterValueList ")"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>This syntax is like <code>RUN</code> query, except</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The keyword <code>RUN</code> is replaced with <code>INTERPRET</code>.</p>
+</li>
+<li>
+<p>Some options may not be supported.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of Interpret-Only Mode for INTERPRET QUERY" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">INTERPRET QUERY createQueryEx ("Jane.Doe")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_query"><a class="anchor" href="#_install_query"></a><code>INSTALL QUERY</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">installQuery := INSTALL QUERY [installOptions] ( "*" | ALL | queryName ["," queryMame]* )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>INSTALL QUERY</code> installs a query or multiple queries on a graph. Installing a query compiles the procedures described by the query as well as generates a <a href="../../restpp-api/built-in-endpoints.md#run-an-installed-query-get">REST endpoint</a> for running the query.</p>
+</div>
+<div class="paragraph">
+<p>Installing a query allows the query to be run through the <code>RUN QUERY</code> command as well as through its REST endpoint, both offering stronger performance as compared to running the query through the <code>INTERPRET QUERY</code> command. The <code>INSTALL QUERY</code> command will install the queries specified, with query names separated by a comma.</p>
+</div>
+<div class="paragraph">
+<p>If a query calls a <a href="operators-and-expressions.md#subqueries">subquery</a>, the query can only be installed after one of the following conditions is met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The subquery has already been installed</p>
+</li>
+<li>
+<p>The subquery is being installed in the same <code>INSTALL QUERY</code> command as the query itself</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If a subquery that was previously installed is dropped from the graph, all installed queries that call the subquery will be disabled. To re-enable a disabled query, all its subqueries need to be installed with the same parameters and return type.</p>
+</div>
+<div class="paragraph">
+<p>When a single <code>INSTALL QUERY</code> command installs multiple queries, each query is installed independently. If one query fails to be installed, it will not affect the installation of other queries.</p>
+</div>
+<div class="paragraph">
+<p>To install a query, the user needs to have the <code>WRITE_QUERY</code> privilege on the graph where the query is to be installed or on the global scope.</p>
+</div>
+<div class="paragraph">
+<p>Users can also install all uninstalled queries on a graph with <code>INSTALL QUERY</code>, using either of the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INSTALL QUERY *</code></p>
+</li>
+<li>
+<p><code>INSTALL QUERY ALL</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Installing takes several seconds for each query. The current version does not support concurrent installation and running of queries. Other concurrent graph operations will be delayed until the installation finishes.</p>
+</div>
+<div class="paragraph">
+<p>Concurrent <code>INSTALL QUERY</code> commands are allowed as long as only one <code>INSTALL QUERY</code> command is running on a single graph. Concurrent <code>INSTALL QUERY</code> commands are <em>not</em> allowed on a single graph.
+{% endhint %}</p>
+</div>
+<div class="sect2">
+<h3 id="_options_for_install_query"><a class="anchor" href="#_options_for_install_query"></a>Options for <code>INSTALL QUERY</code></h3>
+<div class="paragraph">
+<p>The following options are available:<table><thead><tr><th style="text-align:left">Option</th>
+      <th style="text-align:left">Effect</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><p></p>
+        <p><code>-FORCE</code><b></b></p></td>
+      <td style="text-align:left"><p>Reinstall the query even if the system indicates the query is already
+          installed.</p>
+        <p></p>
+        <p>This is useful for overwriting an installation that is corrupted or otherwise
+          outdated, without having to drop and then recreate the query. If this option
+          is not used, the GSQL shell will refuse to re-install a query that is already
+          installed.</p></td></tr>
+    <tr><td style="text-align:left"><code>-DISTRIBUTED</code></td>
+      <td style="text-align:left">If you have a distributed database deployment, installing the query in
+        Distributed Query Mode can increase performance for single queries - using
+        a single worker from each available machine to yield results. Certain cases
+        may benefit more from this option than others&#8201;&#8212;&#8201;more detailed information
+        is available on the next page: <a href="https://docs.tigergraph.com/dev/gsql-ref/querying/distributed-query-mode">Distributed Query Mode</a>.</td></tr></tbody></table></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_optimize_installed_queries"><a class="anchor" href="#_optimize_installed_queries"></a>Optimize installed queries</h3>
+<div class="paragraph">
+<p><code>INSTALL QUERY -OPTIMIZE</code></p>
+</div>
+<div class="paragraph">
+<p>Users can run <code>INSTALL QUERY -OPTIMIZE</code> to optimize all installed queries. The names of the individual queries are not needed. This operation optimizes all previously installed queries, reducing their run times by about 20%. Optimize a query if query run time is more important to you than query installation time.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_query"><a class="anchor" href="#_run_query"></a>RUN QUERY</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>RUN QUERY</code> command runs an installed query. To run a query with the <code>RUN QUERY</code> command, specify the query name, followed by the query parameters enclosed in parentheses. Running a query executes all statements in the query body and produces output as specified by the output statements in the query.</p>
+</div>
+<div class="paragraph">
+<p>You can also run an installed query through REST requests - see <a href="../../restpp-api/built-in-endpoints.md#run-an-installed-query-get">Run an installed query</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h3>
+<div class="paragraph">
+<p>{% code title="RUN QUERY syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">runQuery := (RUN | INTERPRET) QUERY [runOptions] queryName
+    "(" parameterValueList | parameterValueJSON ")"
+
+runOptions := ( "-av" | "-d" )*
+parameterValueList := parameterValue ["," parameterValue]*
+parmeterValueJSON ::= '{"'parameterName'":' parameterValue(', "'parameterName'":' parameterValue)* '}'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>Query parameters</h3>
+<div class="paragraph">
+<p>There are two ways of passing parameters to a query in a <code>RUN QUERY</code> command:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="query-operations.md#parameter-list">Pass parameters as an ordered list separated by commas</a></p>
+</li>
+<li>
+<p><a href="query-operations.md#parameter-json-object">Pass parameters by name in JSON</a></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_parameter_list"><a class="anchor" href="#_parameter_list"></a>Parameter list</h4>
+<div class="paragraph">
+<p>To pass parameters to a query with a list, the parameters must be put in the same order as they were in the query definition. Each value passed in will correspond to the parameter at the same index when the query was created.</p>
+</div>
+<div class="paragraph">
+<p>To use the default value for a parameter, use the <code>_</code> character for the value of the parameter. You can also omit parameters to use their default value. However, if you omit one parameter, you also have to omit all parameters that come after that parameter.</p>
+</div>
+<div class="paragraph">
+<p>For example, if we have the following query definition:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">CREATE QUERY greetPerson(INT age = 3, STRING name = "John",
+  DATETIME birthday = to_datetime("2019-02-19 19:19:19"))
+{
+  PRINT age, name, birthday;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To run the query with default values for the parameter <code>name,</code> use <code>_</code> in the place of the second parameter value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GSQL &gt; RUN QUERY greetPerson (21, _, "2020-02-02 20:02:20")
+# Below is the query output
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{
+    "birthday": "2020-02-02 20:02:20",
+    "name": "John",
+    "age": 21
+  }]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To use the default values for both the second and the third parameters, you can omit both parameters and only provide a value for the first parameter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GSQL &gt; RUN QUERY greetPerson(21)
+# Below is the query output
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{
+    "birthday": "2019-02-19 19:19:19",
+    "name": "John",
+    "age": 21
+  }]
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameter_json_object"><a class="anchor" href="#_parameter_json_object"></a>Parameter JSON object</h4>
+<div class="paragraph">
+<p>To pass query parameters by name with a JSON object, map the parameter names to their values in a JSON object enclosed in parentheses. Parameters that are not named in the JSON object will keep their default values for the execution of the query.</p>
+</div>
+<div class="paragraph">
+<p>For example, if we have the following query:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">CREATE QUERY greetPerson(INT age = 3, STRING name = "John",
+  DATETIME birthday = to_datetime("2019-02-19 19:19:19"))
+{
+  PRINT age, name, birthday;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Supplying the parameters with a JSON object will look like the following. The parameter <code>birthday</code> is not named in the parameter JSON object and therefore takes the default value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">RUN QUERY greetPerson( {"name": "Emma", "age": 21} )</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_complex_type_parameter_passing"><a class="anchor" href="#_complex_type_parameter_passing"></a>Complex type parameter passing</h3>
+<div class="paragraph">
+<p>This subsection describes how to format the complex type parameter values when executing a query by <code>RUN QUERY</code>. More details about all parameter types are described in Section "<a href="data-types.md#query-parameter-types">Query Parameter Types</a>".</p>
+</div>
+<div class="sect3">
+<h4 id="_parameter_listparameter_type"><a class="anchor" href="#_parameter_listparameter_type"></a>Parameter list<table><thead><tr><th style="text-align:left">Parameter type</th></h4>
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:left"&gt;+++Syntax+++&lt;/th&gt;+++
+    +++&lt;th style="text-align:left"&gt;+++Example+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++DATETIME+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a string formatted as +++&lt;code&gt;+++&amp;quot;YYYY-MM-DD HH-MM-SS&amp;quot;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++&amp;quot;2019-02-19 19:19:19&amp;quot;+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Set or bag of primitives+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use square brackets to enclose the collection of values.+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++A set of integers: +++&lt;code&gt;+++[1,5,10]+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++VERTEX&lt;type&gt;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++If the vertex type is specified in the query definition, then the vertex
+      argument is +++&lt;b&gt;++++++&lt;code&gt;+++vertex_id+++&lt;/code&gt;++++++&lt;br&gt;++++++&lt;/br&gt;++++++&lt;/b&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++The vertex type is +++&lt;code&gt;+++person+++&lt;/code&gt;+++ and the desired ID is +++&lt;code&gt;+++person2+++&lt;/code&gt;+++.
+      +++&lt;br&gt;++++++&lt;/br&gt;++++++&lt;code&gt;+++&amp;quot;person2&amp;quot; +++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++VERTEX+++&lt;/code&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;+++(type not pre-specified)+++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++If the type is not defined in the query definition, then the argument
+        must provide both the id and type in parentheses:+++&lt;b&gt;+++(vertex_id, vertex_type)+++&lt;/b&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++A vertex with ID +++&lt;code&gt;+++&amp;quot;person1&amp;quot;+++&lt;/code&gt;+++ and +++&lt;code&gt;+++type=&amp;quot;person+++&lt;/code&gt;+++:
+      +++&lt;br&gt;++++++&lt;/br&gt;++++++&lt;code&gt;+++(&amp;quot;person1&amp;quot;,&amp;quot;person&amp;quot;)+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Set or bag of +++&lt;code&gt;+++VERTEX&lt;type&gt;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Same as a SET or BAG of primitives, where the primitive type is vertex_id.
+      +++&lt;br&gt;++++++&lt;/br&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++[ &amp;quot;person3&amp;quot;, &amp;quot;person4&amp;quot; ]+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++Set or bag of +++&lt;code&gt;+++VERTEX+++&lt;/code&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;+++(type not pre-specified)+++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Same as a SET or BAG of vertices, with vertex type not pre-specified.
+      Square brackets enclose a comma-separated list of vertex (id, type) pairs.
+      Mixed types are permitted.
+      +++&lt;br&gt;++++++&lt;/br&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++[ (&amp;quot;person1&amp;quot;,&amp;quot;person&amp;quot;),(&amp;quot;11&amp;quot;,&amp;quot;post&amp;quot;) ]+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameter_json_objectparameter_type"><a class="anchor" href="#_parameter_json_objectparameter_type"></a>Parameter JSON object<table><thead><tr><th style="text-align:left">Parameter type</th></h4>
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:left"&gt;+++Syntax+++&lt;/th&gt;+++
+    +++&lt;th style="text-align:left"&gt;+++Example+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++DATETIME+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a string formatted as +++&lt;code&gt;+++&amp;quot;YYYY-MM-DD HH-MM-SS&amp;quot;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++&amp;quot;2019-02-19 19:19:19&amp;quot;+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Set or bag of primitives+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a JSON array containing the primitive values+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++[&amp;quot;a&amp;quot;, &amp;quot;list&amp;quot;, &amp;quot;of&amp;quot;, &amp;quot;args&amp;quot;]+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++VERTEX&lt;type&gt;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a JSON object containing a field +++&lt;code&gt;+++&amp;quot;id&amp;quot;+++&lt;/code&gt;+++ for the
+      vertex ID and a field +++&lt;code&gt;+++&amp;quot;type&amp;quot;+++&lt;/code&gt;+++ for the type of the vertex+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++{&amp;quot;id&amp;quot;: &amp;quot;person1&amp;quot;,+++&lt;/code&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;++++++&lt;code&gt;+++&amp;quot;type&amp;quot;: &amp;quot;person&amp;quot;}+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++VERTEX+++&lt;/code&gt;+++ (type not specified)+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a JSON object containing a field +++&lt;code&gt;+++&amp;quot;id&amp;quot;+++&lt;/code&gt;+++ for the
+      vertex ID+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++{&amp;quot;id&amp;quot;: &amp;quot;person1&amp;quot;}+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Set or bag of +++&lt;code&gt;+++VERTEX&lt;type&gt;+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a JSON array containing a list of JSON +++&lt;code&gt;+++VERTEX&lt;type&gt;+++&lt;/code&gt;+++ object+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++[{&amp;quot;id&amp;quot;: &amp;quot;person1&amp;quot;}, {&amp;quot;id&amp;quot;: &amp;quot;person2&amp;quot;}]+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Set or bag of vertices of unspecified types+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Use a JSON array containing a list of JSON +++&lt;code&gt;+++VERTEX+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;++++++&lt;code&gt;+++[{&amp;quot;id&amp;quot;: &amp;quot;person1&amp;quot;,+++&lt;/code&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;++++++&lt;code&gt;+++&amp;quot;type&amp;quot;: &amp;quot;person&amp;quot;},{&amp;quot;id&amp;quot;: &amp;quot;person2&amp;quot;,+++&lt;/code&gt;++++++&lt;/p&gt;+++
+      +++&lt;p&gt;++++++&lt;code&gt;+++&amp;quot;type&amp;quot;: &amp;quot;person&amp;quot;}]+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_options"><a class="anchor" href="#_options"></a>Options</h3>
+<div class="sect3">
+<h4 id="_all_vertex_mode_av_option"><a class="anchor" href="#_all_vertex_mode_av_option"></a>All-vertex mode -av option</h4>
+<div class="paragraph">
+<p>Some queries run with all or almost all vertices in a SELECT statement s, e.g. PageRank algorithm. In this case, the graph processing engine can run much more efficiently in all-vertex mode. In the all-vertex mode, all vertices are always selected, and the following actions become ineffective:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Filtering with selected vertices or vertex types. The source vertex set must be all vertices.</p>
+</li>
+<li>
+<p>Filtering with the WHERE clause.</p>
+</li>
+<li>
+<p>Filtering with the HAVING clause.</p>
+</li>
+<li>
+<p>Assigning designated vertex or designated type of vertexes. E.g. X = { <em>vertex_type</em> .*}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To run the query in all-vertex mode, use the -av option in shell mode or include <code><em>GQUERY</em>USING_ALL_ACTIVE_MODE=true</code> in the query string of an HTTP request.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GSQL &gt; RUN QUERY -av test()
+
+## In a curl URL call.  Note the use of both single and double underscores.
+curl -X GET 'http://localhost:9000/query/graphname/queryname?__GQUERY__USING_ALL_ACTIVE_MODE=true'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_detached_mode_async_option"><a class="anchor" href="#_detached_mode_async_option"></a>Detached mode -async option</h4>
+<div class="paragraph">
+<p>Typically, the GSQL <code>RUN QUERY</code> command runs in the foreground and does not produce output until the query completes, which is inconvenient in the case of long-running queries. Starting with TigerGraph 3.1, you can run queries in Detached Mode to enable background execution of long-running queries.</p>
+</div>
+<div class="paragraph">
+<p>Queries executed in Detached mode are still subject to the system timeout limit. The default timeout limit is 16 seconds and can be set using the<a href="../../restpp-api/intro.md#gsql-query-timeout"><code>GSQL-TIMEOUT</code></a> header.</p>
+</div>
+<div class="paragraph">
+<p>To run a query in Detached Mode from the command line, use the<code>-async</code>option for the<code>RUN QUERY</code>command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">GSQL &gt; RUN QUERY -async &lt;queryName&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will receive a JSON response immediately containing a query ID (<code>request_id</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">{
+  "error": false,
+  "message": "The query is successfully submitted. Please check query status using the request id.",
+  "request_id": "&lt;RequestID&gt;"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To run queries in Detached Mode via RESTPP endpoint call, use the <code>GSQL-ASYNC</code> header and set its value to true. If the query takes parameters, put them in the query string:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">$ curl -s -H "GSQL-ASYNC:true" GET "http://localhost:9000/query/&lt;graphName&gt;/&lt;queryName&gt;?parameter1=&lt;parameter1&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To check the status and results of the queries executed in Detached Mode, use the <a href="../../restpp-api/built-in-endpoints.md#check-query-status-detached-mode-query_status"><strong><code>/query_status</code></strong></a> and the <a href="../../restpp-api/built-in-endpoints.md#check-query-results-detached-mode-query_result"><strong><code>/query_result</code></strong></a> <em>**</em>RESTPP endpoints.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gsql_query_output_format"><a class="anchor" href="#_gsql_query_output_format"></a>GSQL Query output format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The standard output of GSQL queries is in industry-standard JSON format. A JSON <strong>object</strong> is an unordered set of <strong>key-value pairs</strong>, enclosed in curly braces. Among the acceptable data types for a JSON <strong>value</strong> are <strong>array</strong> and <strong>object</strong>. A JSON <strong>array</strong> is an ordered list of <strong>values</strong>, enclosed in square brackets. Since values can be objects or arrays, JSON supports hierarchical, nested structures. Strings are enclosed in double quotation marks. We also use the term <strong>field</strong> to refer to a key (or a key-value pair) of a given object.</p>
+</div>
+<div class="paragraph">
+<p>At the top level of the JSON structure are four required fields ("version", "error", "message", and "results") and one dependent field ("code"). If a query is successful, the value of "error" will be "false", the "message" value will be empty, and the "results" value will be the intended output of the query. If an error or exception occurred during query execution, the "error" value will be "true", the "message" value will be a string message describing the error condition, and the "results" field will be empty. Also, the "code" field will contain an error code.</p>
+</div>
+<div class="paragraph">
+<p>Beginning with version 2 (v2) of the output specification, an additional top-level field is required: <code>"version"</code>. The <code>"version"</code> value is an object with the following fields:<table><thead><tr><th style="text-align:left">Field</th>
+      <th style="text-align:left">Description</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><code>api</code></td>
+      <td style="text-align:left"><p>String specifying the output API version. Values are specified as follows:</p>
+        <ul><li>&quot;v1&quot;: Output API used in TigerGraph platform v0.8 through v1.0.
+            <br></br><b>NOTE: &quot;v1&quot; support is no longer available as of TigerGraph v3.0.</b></li>
+          <li>&quot;v2&quot; (default): Output API introduced in TigerGraph platform
+            v1.1 This is the latest API.</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>edition</code></td>
+      <td style="text-align:left">String indicating the edition of the product.</td></tr>
+    <tr><td style="text-align:left"><code>schema</code></td>
+      <td style="text-align:left">Integer representing which version of the user&apos;s graph schema is
+        currently in use. When a <code>CREATE GRAPH</code> statement is executed,
+        the version is initialized to 0. Each time a <code>SCHEMA_CHANGE JOB</code> is
+        run, the schema value is incremented by 1 (e.g., 1, 2, etc.).</td></tr></tbody></table></p>
+</div>
+<div class="paragraph">
+<p>Other top-level objects, such as "code" may appear in certain circumstances. Note that the top-level objects are enclosed in curly braces, meaning that they form an unordered set. They may appear in any order.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of the output of a successful query:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Top Level JSON of a Valid Query - Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">{
+  "version": {"edition": "developer","api": "v2","schema": "1"},
+  "error": false,
+  "message": "",
+  "results": [
+    {results_of_PRINT_statement_1},
+    ...,
+    {results_of_PRINT_statement_N}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The value of the "results" key-value pair is a sequential list of the data objects specified by the PRINT statements of the query. The list order follows the order of PRINT execution. The detailed format of the PRINT statement results is described in  <a href="output-statements-and-file-objects.html" class="page">Output Statements and FILE Objects</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following REST response misspells the name of the endpoint</p>
+</div>
+<div class="paragraph">
+<p>{% code title="GET echo/ Request and Response" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X GET "http://localhost:9000/eco"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>and generates the following output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+  "version": {"edition":"developer","api":"v2","schema":0},
+  "error": true,
+  "message": "Endpoint is not found from url = /eco, please use GET /endpoints to list all valid endpoints.",
+  "code": "REST-1000"
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changing_the_default_output_api"><a class="anchor" href="#_changing_the_default_output_api"></a>Changing the default output API</h3>
+<div class="paragraph">
+<p>The following GSQL statement can be used to set the JSON output API configuration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">SET json_api = &lt;version_string&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This statement sets a persistent system parameter. Each version of the TigerGraph platform is pre-configured to what was the latest output API that at the time of release. For example, platform version 1.1 is configured so that each query will produce v2 output by default.</p>
+</div>
+<div class="paragraph">
+<p>As of TigerGraph v3.0, the only supported JSON API is "v2".</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_show_query"><a class="anchor" href="#_show_query"></a>SHOW QUERY</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">showQuery := SHOW QUERY queryName</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To show the GSQL text of a query, run <code>SHOW QUERY query_name</code> . The <code>query_name</code> argument can use <code>*</code> or <code>?</code> wildcards from Linux globbing, or it can be a regular expression when preceded by  <code>-r</code>. See  <a href="../ddl-and-loading/defining-a-graph-schema.md#show-view-parts-of-the-catalog">SHOW: View Parts of the Catalog</a></p>
+</div>
+<div class="paragraph">
+<p>Additionally, the <code>ls</code> GSQL command lists all created queries and identifies which queries have been installed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_drop_query"><a class="anchor" href="#_drop_query"></a>DROP QUERY</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">dropQuery := DROP QUERY ( "*" | ALL | queryName ["," queryName]* )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To drop a query, run <code>DROP QUERY query_name</code> __. The query will be uninstalled (if it has been installed) and removed from the dictionary.  The GSQL language will refuse to drop an installed query if another query is installed which calls query Q.  That is, all calling queries must be dropped before or at the same time that their called subqueries are dropped.</p>
+</div>
+<div class="paragraph">
+<p>To drop all queries, either of the following commands can be used:<br>
+<code>DROP QUERY ALL
+DROP QUERY *</code></p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+The scope of ALL depends on the user&#8217;s current scope. If the user has set a working graph, then DROP ALL removes all the jobs for that graph. If a superuser has set their scope to be global, then DROP ALL removes all jobs across all graph spaces.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

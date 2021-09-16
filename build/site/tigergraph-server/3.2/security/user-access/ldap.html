@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>LDAP :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>LDAP :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -85,6 +85,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../getting-started/docker.html">Getting started with Docker</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -97,6 +106,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../installation/install.html">Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/upgrade.html">Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/uninstallation.html">Uninstallation</a>
   </li>
 </ul>
   </li>
@@ -218,6 +233,30 @@
     <span class="version">3.2</span>
   </div>
   <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../installation/install.html">TigerGraph Server User Guide</a>
       <ul class="versions">
@@ -330,7 +369,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin config entry ldap</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gadmin config entry ldap</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -341,7 +380,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin config apply -y</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gadmin config apply -y</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -349,7 +388,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin restart gsql -y</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gadmin restart gsql -y</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -357,7 +396,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Example of gadmin config entry ldap
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Example of gadmin config entry ldap
 
 $ gadmin config entry ldap
 
@@ -399,7 +438,7 @@ New: test
 
 Security.LDAP.Secure.TrustAll [ false ]: Configure to trust all LDAP servers (unsafe): default false
 New: false
-[   Info] Configuration has been changed. Please use 'gadmin config apply' to persist the changes.</pre>
+[   Info] Configuration has been changed. Please use 'gadmin config apply' to persist the changes.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -487,11 +526,11 @@ New: false
 </div>
 <div class="listingblock">
 <div class="content">
-<pre># create a proxy group
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># create a proxy group
 CREATE GROUP developers PROXY "role=engineering" // Any user in LDAP with role=engineer is proxied to the group 'developers'
 
 # grant role to proxy group
-GRANT ROLE querywriter ON GRAPH computerNet TO developers</pre>
+GRANT ROLE querywriter ON GRAPH computerNet TO developers</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -505,11 +544,11 @@ GRANT ROLE querywriter ON GRAPH computerNet TO developers</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre># show the current groups
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># show the current groups
 SHOW GROUP
 
 # delete a proxy group
-DROP GROUP developers</pre>
+DROP GROUP developers</code></pre>
 </div>
 </div>
 <div class="paragraph">

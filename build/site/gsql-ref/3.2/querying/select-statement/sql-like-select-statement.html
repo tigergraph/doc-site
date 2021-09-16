@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SQL-like SELECT statement :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="README.html">SELECT Statement</a></li>
+    <li><a href="sql-like-select-statement.html">SQL-like SELECT statement</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/select-statement/sql-like-select-statement.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SQL-like SELECT statement</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SQL-like SELECT statement defines a tabular output. It introduces the GROUP BY clause, as well as internal table structures which can be printed.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for SQL-Like Select Statement" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">sqlSelectBlock := sqlSelectClause
+               fromClause
+               [whereClause]
+               [groupByClause]
+               [havingClause]
+               [orderClause]
+               [limitClause]
+
+sqlSelectClause := SELECT [DISTINCT] columnExpr ("," columnExpr)*
+               INTO tableName
+columnExpr := expr [AS columnName]
+            | aggregator "("[DISTINCT] expr ")" [AS columnName]
+columnName := name
+tableName := name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Just as in SQL, the SELECT keyword is followed by an ordered list of expressions (<code>columnExpr</code>), each expression defining one column in the output table.  The expressions can refer to the attributes or accumulators of the vertices and edges selected in the FROM clause of this query. A column can apply one of the <code>aggregator</code> functions (COUNT, SUM, AVG, MIN, MAX), so that the table aggregates the raw data into summary results.  Each column can be given an alias for its heading (<code>AS columnName</code>).</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+If some columns are aggregated, the non-aggregated (grouping) columns must come first.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>Unlike the classic GSQL SELECT statement which assigns its output to a vertex set variable, the SQL-like form uses <code>INTO tableName</code> to store the results in a table. <code>tableName</code> can be any identifier that has not been used in the query before.</p>
+</div>
+<div class="paragraph">
+<p><code>DISTINCT</code> has the same meaning as it does in SQL: values that appear more than once in the raw data should only be used once. It can be used either individually for aggregated columns (e.g., count how many unique values there are) or collectively so that there are no repeated rows in the table.</p>
+</div>
+<div class="paragraph">
+<p>The SQL-like form may use the <a href="sql-like-select-statement.md#group-by-clause">GROUP  BY clause</a> but may not use the ACCUM and POST-ACCUM clauses.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+This feature is only available in syntax v2. Ensure that the correct syntax version is specified in the <code>CREATE QUERY</code> header.<br>
+{% endhint %}</p>
+</div>
+<h4 id="_example" class="discrete">Example:</h4>
+<div class="paragraph">
+<p>In the example graph <code>socialNet</code>, which has vertex types <code>person</code> and <code>post</code>, and edge type <code>liked</code> for when someone likes a post, use a query to retrieve timestamps of all likes, the subject of the posts being liked, and the primary IDs of the people who liked the posts.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY getLikes() FOR GRAPH socialNet SYNTAX v2 {
+    SELECT l.actionTime, pt.subject, p INTO T
+        FROM person:p -(liked&gt;:l)- post:pt;
+    PRINT T;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}</p>
+</div>
+<div class="paragraph">
+<p>{% tab title="Output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[
+  {
+    "Table1": [
+      {
+        "actionTime": "2010-01-12 11:22:05",
+        "p": "person7",
+        "subject": "cats"
+      },
+      {
+        "actionTime": "2010-01-12 21:12:05",
+        "p": "person5",
+        "subject": "tigergraph"
+      },
+      {
+        "actionTime": "2010-01-11 11:32:00",
+        "p": "person1",
+        "subject": "Graphs"
+      },
+      {
+        "actionTime": "2010-01-13 03:16:05",
+        "p": "person4",
+        "subject": "coffee"
+      },
+      {
+        "actionTime": "2010-01-12 10:52:15",
+        "p": "person2",
+        "subject": "Graphs"
+      },
+      {
+        "actionTime": "2010-01-11 16:02:26",
+        "p": "person2",
+        "subject": "cats"
+      },
+      {
+        "actionTime": "2010-01-16 05:15:53",
+        "p": "person3",
+        "subject": "Graphs"
+      },
+      {
+        "actionTime": "2010-01-11 03:26:05",
+        "p": "person8",
+        "subject": "coffee"
+      },
+      {
+        "actionTime": "2010-01-14 11:23:05",
+        "p": "person6",
+        "subject": "cats"
+      }
+    ]
+  }
+]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_group_by_clause"><a class="anchor" href="#_group_by_clause"></a>GROUP BY Clause</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The optional GROUP BY clause acts just as it does in basic SQL: it groups and merge rows of data together, so that the output table summarizes the data, rather than showing every individual tuple which matches the SELECT and FROM clauses.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for GROUP BY clause" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">groupByClause := GROUP BY groupExpr ("," groupExpr)*
+groupExpr = expr</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The SELECT clause&#8217;s list of column expressions defines a set of tuples or rows. All the tuples which have the same value for <code>groupExpr</code> are grouped together. If there is a second <code>groupExpr</code>, then this is used to subdivide each group into subgroups, and so on through the list of <code>groupExpr</code> from left to right.</p>
+</div>
+<h4 id="_coordinating_select_and_group_by" class="discrete">Coordinating SELECT and GROUP BY</h4>
+<div class="paragraph">
+<p>The SELECT clause and GROUP BY clause must be coordinated. Each expression <code>groupExpr</code> may be a vertex or edge alias from the FROM clause, or an attribute of a vertex or edge alias. Furthermore, each <code>groupExpr</code> must either be the same as or the basis of a SELECT <code>columnExpr</code>. In the SELECT clause, any columns which are not associated with a  groupExpr must be be aggregated (with COUNT, SUM, AVG, MIN or MAX) and must be at the end of the list of columns. For example, in the workNet graph, if we have this FROM clause:<br>
+<code>FROM person:p -(worksFor:w)- company:c</code><br>
+and if we want columns for company&#8217;s country, whether working full time or not, and employees, with no grouping we could have</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SELECT c.country, w.fulltime, p INTO T
+FROM person:p -(worksFor:w)- company:c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The non-grouped output would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">[{"T": [
+      {"country": "us","fullTime": true,"p": "person3"},
+      {"country": "us","fullTime": true,"p": "person6"},
+      {"country": "us","fullTime": true,"p": "person10"},
+      ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we want to group by country and then by work status, we could have this:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Coordination between SELECT columns and GROUP BY expressions" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SELECT c.country, w.fulltime, COUNT(p) AS numEmployees INTO T
+FROM person:p -(worksFor:w)- company:c
+GROUP BY c.country, w.fulltime</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Then the grouped output would look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">[{"T": [
+      {"country": "us","fullTime": true,"numEmployees": 7},
+      {"country": "chn","fullTime": false,"numEmployees": 4},
+      {"country": "chn","fullTime": true,"numEmployees": 2},
+      ...</code></pre>
+</div>
+</div>
+<h4 id="_implied_group_by" class="discrete">Implied GROUP BY</h4>
+<div class="paragraph">
+<p>If the SELECT clause contains aggregator functions, the GROUP BY clause can be omitted. Instead, GSQL will assume that every SELECT expression that is not aggregrated is to be used for grouping, in left-to-right order.</p>
+</div>
+<h4 id="_examples" class="discrete">Examples</h4>
+<div class="paragraph">
+<p>Example 1 (grouping and aggregation): For each employee, find the number of its employers</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY tabularEx1() FOR GRAPH workNet SYNTAX v2 {
+  SELECT    p AS employee, count(c) AS employerCount INTO T
+  FROM      person:p -(worksFor)- company:c
+  GROUP BY p;
+
+  PRINT T;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}</p>
+</div>
+<div class="paragraph">
+<p>{% tab title="Output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{"version":{"edition":"enterprise",
+                  "api":"v2",
+           	      "schema":0},
+"error":false,
+"message":"",
+"results":[{"T":[
+{"employee":"person6","employerCount":1},
+{"employee":"person7","employerCount":2},
+{"employee":"person12","employerCount":1},
+{"employee":"person3","employerCount":1},
+{"employee":"person11","employerCount":1},
+{"employee":"person4","employerCount":1},
+{"employee":"person9","employerCount":2},
+{"employee":"person10","employerCount":2},
+{"employee":"person1","employerCount":2},
+{"employee":"person5","employerCount":1},
+{"employee":"person2","employerCount":2},
+{"employee":"person8","employerCount":1}]}]}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Example 2 (HAVING clause): Find persons with at least 2 employers.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY tabularEx2() FOR GRAPH workNet SYNTAX v2 {
+  SELECT    p AS employee, count(c) AS employerCount INTO T
+  FROM      person:p -(worksFor)- company:c
+  GROUP BY p
+  HAVING  employerCount &gt; 1;
+
+  PRINT T;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}</p>
+</div>
+<div class="paragraph">
+<p>{% tab title="Output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"T": [
+    {"employee": "person2","employerCount": 2},
+    {"employee": "person1","employerCount": 2},
+    {"employee": "person7","employerCount": 2},
+    { "employee": "person10","employerCount": 2},
+    {"employee": "person9","employerCount": 2}
+  ]}]
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Example 2a (implicit grouping): Same as Example 2, but with implicit grouping from the SELECT clause.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY tabularEx2a() FOR GRAPH workNet SYNTAX v2 {
+  SELECT    p AS employee, count(c) AS employerCount INTO T
+  FROM      person:p -(worksFor)- company:c
+  HAVING  employerCount &gt; 1;
+
+  PRINT T;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output is the same as for Example 2.</p>
+</div>
+<div class="paragraph">
+<p>Example 3 (grouping, aggregation, order by and limit): Group employees by country and by work status, sorted by group size and then by country name.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY tabularEx3() SYNTAX v2 {
+  SELECT    c.country, w.fullTime, COUNT(p) AS numEmployees INTO T
+  FROM      person:p -(worksFor:w)- company:c
+  GROUP BY c.country, w.fullTime
+  ORDER BY  numEmployees DESC, c.country ASC
+  LIMIT  10;
+
+  PRINT T;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}</p>
+</div>
+<div class="paragraph">
+<p>{% tab title="Output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"T": [
+    {"country":"us", "numEmployees":7, "fullTime":true},
+    {"country":"chn", "numEmployees":4, "fullTime":false},
+    {"country":"chn", "numEmployees":2, "fullTime":true},
+    {"country":"jp", "numEmployees":2, "fullTime":false},
+    {"country":"can", "numEmployees":1, "fullTime":true},
+    {"country":"jp", "numEmployees":1, "fullTime":true}
+  ]}]
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

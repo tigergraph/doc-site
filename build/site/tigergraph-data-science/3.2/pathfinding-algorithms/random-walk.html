@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Random Walk :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-data-science" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/overview.html">TigerGraph Data Science Library</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/overview.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Centrality Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/betweenness-centrality.html">Betweenness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/closeness-centrality.html">Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/harmonic-centrality.html">Harmonic Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/pagerank.html">PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/personalized-pagerank.html">Personalized PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/weighted-pagerank.html">Weighted PageRank</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Classification Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/greedy-graph-coloring.html">Greedy Graph Coloring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors.html">k-Nearest Neighbors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-batch.html">k-Nearest Neighbors (Batch Version)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-cross-validation.html">k-Nearest Neighbors (Cross-Validation Version)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Community Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/connected-components.html">Weakly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/k-core-decomposition.html">K-Core Decomposition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/label-propogation.html">Label Propogation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/local-clustering-coefficient.html">Local Clustering Coefficient</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/louvain-method-with-parallelism-and-refinement.html">Louvain Method with Parallelism and Refinement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/README.html">Community Algorithms</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/strongly-connected-components.html">Strongly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/triangle-counting.html">Triangle Counting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Node Embeddings</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/fast-random-projection.html">Fast Random Projection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/node2vec.html">Node2Vec</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pathfinding Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="all-pairs-shortest-path.html">All-Pairs Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cycle-detection.html">Cycle Detection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="estimated-diameter.html">Estimated Diameter</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="maximum-independent-set.html">Maximum Independent Set</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="minimum-spanning-forest.html">Minimum Spanning Forest</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="minimum-spanning-tree.html">Minimum Spanning Tree</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="random-walk.html">Random Walk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="single-pair-shortest-path.html">Single-Pair Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="single-source-shortest-path-unweighted.html">Single-source Shortest Path (Unweighted)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="single-source-shortest-path-weighted.html">Single-source Shortest Path (Weighted)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Similarity Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-all-pairs.html">Cosine Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-batch.html">Cosine Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-single-source.html">Cosine Similarity of Neighborhoods (Single-Source)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-all-pairs.html">Jaccard Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-batch.html">Jaccard Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-single-source.html">Jaccard Similarity of Neighborhoods (Single Source)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Data Science Library</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/overview.html">TigerGraph Data Science Library</a></li>
+    <li>Pathfinding Algorithms</li>
+    <li><a href="random-walk.html">Random Walk</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/graph-ml/edit/main/modules/pathfinding-algorithms/pages/random-walk.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Random Walk</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Random Walk is an algorithm that generate random paths in a graph. A random walk starts at every vertex that has an outgoing edge, and moves to another vertex at random. The random walk algorithm will print all possible paths of the specified size from the walks that were performed onto a file in the CSV format.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">CREATE QUERY tg_random_walk(
+INT step = 8, INT path_size = 4, STRING filepath = "/home/tigergraph/path.csv",
+SET&lt;STRING&gt; edge_types, INT sample_num)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>step</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of hops performed in each random walk.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>path_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The length of the paths to output. The length refers to the number of vertices in a path.    For example, if a walk has two steps: A &#8594; B &#8594; C, then there are paths of both lengths 2 and lengths 3 that can be output from this walk. If a path size of 2 is supplied, then the algorithm outputs two paths: A &#8594; B and B &#8594; C. If the path size is 3, then there is one path: A &#8594; B &#8594; C.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filepath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The filepath to output the paths to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edge_types</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The edge types that the random walk will traverse.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SET&lt;STRING&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sample_num</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">At each possible step, the number of sample walks to perform.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Suppose we have the following social graph:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2842%29.png" alt="Example social graph">
+</div>
+</div>
+<div class="paragraph">
+<p>If we run the random walk algorithm on the graph and supply a path size of 3 and a step of 2, and a sample number of 1. Then from each vertex there is a two-step random walk, and a total of 6 three-vertex paths:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="path.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Howard Yelena Noah
+Noah Owen Noah
+George Owen Noah
+Eddie Noah Yelena
+Yelena Howard Yelena
+Owen George Owen</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>We can also perform a 3 step walk and still ask for three-vertex paths, in which case the number of paths would double, because in each 3 step walk, there are two possible three-vertex paths:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="path.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Howard Yelena Noah
+Owen Yelena Noah
+Noah Owen Noah
+George Owen Noah
+Yelena Owen Noah
+Eddie Noah Owen
+Howard Yelena Noah
+Noah Owen Noah
+George Owen Noah
+Eddie Noah Howard
+Yelena Noah Howard
+Owen Noah Howard</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

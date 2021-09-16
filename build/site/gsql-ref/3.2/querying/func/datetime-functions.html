@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Datetime Functions :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="README.html">Functions</a></li>
+    <li><a href="datetime-functions.html">Datetime Functions</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/func/datetime-functions.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Datetime Functions</h1>
+<div class="paragraph">
+<p>This page lists <code>DATETIME</code> functions that are available in the GSQL query language. Every function in this page either takes a <code>DATETIME</code> object as its argument or return a <code>DATETIME</code> object.</p>
+</div>
+<h3 id="_datetime_add" class="discrete"><code>datetime_add()</code></h3>
+<h4 id="_syntax" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>datetime_add( date, INTERVAL int_value time_unit )</code></p>
+</div>
+<h4 id="_description" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Calculates a new <code>DATETIME</code> from a specified datepart multiplied by a specified amount, added to a specified <code>DATETIME</code>.<code>INTERVAL</code> is a keyword that must be exactly entered. <code>time_unit</code> is one of the keywords <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code>, <code>MINUTE</code>, or <code>SECOND</code>.</p>
+</div>
+<h4 id="_return_type" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>DATETIME</code></p>
+</div>
+<h4 id="_parameters" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>DATETIME</code> to add to.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>int_value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">datetime_add(to_datetime("1970-01-01 00:00:00"), INTERVAL 1 MONTH)
+    -&gt; 1970-02-01 00:00:00</code></pre>
+</div>
+</div>
+<h3 id="_datetime_diff" class="discrete"><code>datetime_diff()</code></h3>
+<h4 id="_syntax_2" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>datetime_diff( date1, date2 )</code></p>
+</div>
+<h4 id="_description_2" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Calculates the difference in seconds between two <code>DATETIME</code> values</p>
+</div>
+<h4 id="_return_type_2" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_2" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_2" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">datetime_diff(to_datetime("2020-01-01 00:00:00"), to_datetime("2020-02-03 04:13:12"))
+    -&gt; -2866392</code></pre>
+</div>
+</div>
+<h3 id="_datetime_format" class="discrete"><code>datetime_format()</code></h3>
+<h4 id="_syntax_3" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>datetime_format(date[, str])</code></p>
+</div>
+<h4 id="_description_3" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Print a <code>DATETIME</code> value in a specific format indicated by a string.</p>
+</div>
+<h4 id="_return_type_3" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>STRING</code></p>
+</div>
+<h4 id="_parametersparameter" class="discrete">Parameters<table><thead><tr><th style="text-align:left">Parameter</th></h4>
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:left"&gt;+++Description+++&lt;/th&gt;+++
+    +++&lt;th style="text-align:left"&gt;+++Data type+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++date+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++A +++&lt;code&gt;+++DATETIME+++&lt;/code&gt;+++ value+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++DATETIME+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++str+++&lt;/code&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++A string pattern expressing the format to print +++&lt;code&gt;+++date+++&lt;/code&gt;+++ in. Use
+        the following specifiers in your string to insert the corresponding value
+        in the output.+++&lt;/p&gt;+++
+      +++&lt;ul&gt;++++++&lt;li&gt;++++++&lt;code&gt;+++%Y+++&lt;/code&gt;+++ - year+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;code&gt;+++%m+++&lt;/code&gt;+++ - month+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;code&gt;+++%d+++&lt;/code&gt;+++ - day of month+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;code&gt;+++%H+++&lt;/code&gt;+++ - hour+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;code&gt;+++%M+++&lt;/code&gt;+++ - minute+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;code&gt;+++%S+++&lt;/code&gt;+++ - second+++&lt;/li&gt;++++++&lt;/ul&gt;+++
+      +++&lt;p&gt;+++The default value for this parameter is +++&lt;code&gt;+++&amp;quot;%Y-%m-%d %H:%M:%S&amp;quot;+++&lt;/code&gt;++++++&lt;/p&gt;++++++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++DATETIME+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+<h4 id="_example_3" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">datetime_format(to_datetime("2020-01-02 05:30:12"), "hi, it's %Y-%m-%d")
+    -&gt; "hi, it's 2020-01-02"</code></pre>
+</div>
+</div>
+<h3 id="_datetime_sub" class="discrete"><code>datetime_sub( )</code></h3>
+<h4 id="_syntax_4" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>datetime_sub(date, INTERVAL int_value time_unit)</code></p>
+</div>
+<h4 id="_description_4" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Calculates a new <code>DATETIME</code> from a specified datepart multiplied by a specified amount, subtracted from a specified <code>DATETIME</code>.<code>INTERVAL</code> is a keyword that must be exactly entered. <code>time_unit</code> is one of the keywords <code>YEAR</code>, <code>MONTH</code>, <code>DAY</code>, <code>HOUR</code>, <code>MINUTE</code>, or <code>SECOND</code>.</p>
+</div>
+<h4 id="_return_type_4" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>DATETIME</code></p>
+</div>
+<h4 id="_parameters_3" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>DATETIME</code> to subtract from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>int_value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_4" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">datetime_add(to_datetime("1970-02-01 00:00:00"), INTERVAL 1 MONTH) -&gt; 1970-01-01 00:00:00</code></pre>
+</div>
+</div>
+<h3 id="_datetime_to_epoch" class="discrete"><code>datetime_to_epoch()</code></h3>
+<h4 id="_syntax_5" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>datetime_to_epoch( date )</code></p>
+</div>
+<h4 id="_description_5" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Converts a <code>DATETIME</code> value to epoch time.</p>
+</div>
+<h4 id="_return_type_5" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_4" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_5" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">datetime_to_epoch(to_datetime("1970-01-01 00:01:00")) -&gt; 60</code></pre>
+</div>
+</div>
+<h3 id="_day" class="discrete"><code>day()</code></h3>
+<h4 id="_syntax_6" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>day( date )</code></p>
+</div>
+<h4 id="_description_6" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the day of the month of a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_6" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_5" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_6" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">day(to_datetime("1973-01-05 00:00:00")) -&gt; 5</code></pre>
+</div>
+</div>
+<h3 id="_epoch_to_datetime" class="discrete"><code>epoch_to_datetime()</code></h3>
+<h4 id="_syntax_7" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>epoch_to_datetime(int_value)</code></p>
+</div>
+<h4 id="_description_7" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Converts an epoch time value to a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_7" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>DATETIME</code></p>
+</div>
+<h4 id="_parameters_6" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>int_value</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An epoch time value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_7" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">epoch_to_datetime(1) -&gt; 1970-01-01 00:00:01</code></pre>
+</div>
+</div>
+<h3 id="_hour" class="discrete"><code>hour()</code></h3>
+<h4 id="_syntax_8" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>hour(date)</code></p>
+</div>
+<h4 id="_description_8" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts the hour of the day from a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_8" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_7" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_8" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">hour(to_datetime("1980-01-01 15:01:02")) -&gt; 15</code></pre>
+</div>
+</div>
+<h3 id="_minute" class="discrete"><code>minute()</code></h3>
+<h4 id="_syntax_9" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>minute(date)</code></p>
+</div>
+<h4 id="_description_9" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts the minute of the hour from a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_9" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_8" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_9" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">minute(to_datetime("1980-02-05 03:04:05")) -&gt; 4</code></pre>
+</div>
+</div>
+<h3 id="_month" class="discrete"><code>month()</code></h3>
+<h4 id="_syntax_10" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>month(date)</code></p>
+</div>
+<h4 id="_description_10" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts the month of the year from a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_10" class="discrete">Return type</h4>
+<h4 id="_parameters_9" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_10" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">month(to_datetime("1980-02-05 03:04:05")) -&gt; 2</code></pre>
+</div>
+</div>
+<h3 id="_now" class="discrete"><code>now()</code></h3>
+<h4 id="_syntax_11" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>now()</code></p>
+</div>
+<h4 id="_description_11" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Returns the current time in <code>DATETIME</code></p>
+</div>
+<h4 id="_return_type_11" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>DATETIME</code></p>
+</div>
+<h4 id="_parameters_10" class="discrete">Parameters</h4>
+<div class="paragraph">
+<p>None.</p>
+</div>
+<h3 id="_second" class="discrete"><code>second()</code></h3>
+<h4 id="_syntax_12" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>second(date)</code></p>
+</div>
+<h4 id="_description_12" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts the second from a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_12" class="discrete">Return type</h4>
+<div class="paragraph">
+<p><code>INT</code></p>
+</div>
+<h4 id="_parameters_11" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_11" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">second(to_datetime("1980-02-05 03:04:05")) -&gt; 5</code></pre>
+</div>
+</div>
+<h3 id="_year" class="discrete"><code>year()</code></h3>
+<h4 id="_syntax_13" class="discrete">Syntax</h4>
+<div class="paragraph">
+<p><code>year(date)</code></p>
+</div>
+<h4 id="_description_13" class="discrete">Description</h4>
+<div class="paragraph">
+<p>Extracts the year from a <code>DATETIME</code> value.</p>
+</div>
+<h4 id="_return_type_13" class="discrete">Return type</h4>
+<h4 id="_parameters_12" class="discrete">Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>date</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A <code>DATETIME</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<h4 id="_example_12" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">year(to_datetime("1980-02-05 03:04:05")) -&gt; 1980</code></pre>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

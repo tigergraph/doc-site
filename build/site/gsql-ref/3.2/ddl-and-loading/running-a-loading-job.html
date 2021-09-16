@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Running a Loading Job :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../querying/func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../querying/select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Database definition &amp; Loading</li>
+    <li><a href="running-a-loading-job.html">Running a Loading Job</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/ddl-and-loading/pages/running-a-loading-job.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Running a Loading Job</h1>
+<div class="sect1">
+<h2 id="_clearing_and_initializing_the_graph_store"><a class="anchor" href="#_clearing_and_initializing_the_graph_store"></a>Clearing and Initializing the Graph Store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two aspects to clearing the system: flushing the data and clearing the schema definitions in the catalog. Two different commands are available.</p>
+</div>
+<div class="sect2">
+<h3 id="_clear_graph_store"><a class="anchor" href="#_clear_graph_store"></a>CLEAR GRAPH STORE</h3>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Available only to superusers.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>The CLEAR GRAPH STORE command flushes all the data out of the graph store (database).  By default, the system will ask the user to confirm that you really want to discard all the graph data.  To force the clear operation and bypass the confirmation question, use the -HARD option, e.g.,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CLEAR GRAPH STORE -HARD</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clearing the graph store does not affect the schema.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use the -HARD option with extreme caution. There is no undo option. -HARD must be in all capital letters.</p>
+</li>
+<li>
+<p>CLEAR GRAPH STORE stops all the TigerGraph servers (GPE, GSE, RESTPP, Kafka, and Zookeeper).</p>
+</li>
+<li>
+<p>Loading jobs and queries are aborted.
+{% endhint %}</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="defining-a-graph-schema.md#drop-all">DROP ALL</a> clears both the data and the schema.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_a_loading_job"><a class="anchor" href="#_running_a_loading_job"></a>Running a Loading Job</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Running a loading job executes a previously installed loading job.  The job reads lines from an input source, parses each line into data tokens, and applies loading rules and conditions to create new vertex and edge instances to store in the graph data store. The input sources could be defined in the load job or could be provided when running the job. Additionally, loading jobs can also be run by submitted an HTTP request to the REST&#43;&#43; server.</p>
+</div>
+<div class="sect2">
+<h3 id="_run_loading_job"><a class="anchor" href="#_run_loading_job"></a>RUN LOADING JOB</h3>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="RUN LOADING JOB syntax for concurrent loading" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">RUN LOADING JOB [-noprint] [-dryrun] [-n [i],j] jobname [
+    USING filevar [="filepath_string"][, filevar [="filepath_string"]]*
+    [, CONCURRENCY="cnum"][,BATCH_SIZE="bnum"]
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Note that the keyword LOADING is included. This makes it more clear to users and to GSQL that the job is a loading job and not some other type of job ( such as a SCHEMA_CHANGE JOB).</p>
+</div>
+<div class="paragraph">
+<p>When a concurrent loading job is submitted, it is assigned a job ID number, which is displayed on the GSQL console.  The user can use this job ID to refer to the job, for a status update, to abort the job, or to re-start the job.  These operations are described later in this section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_options"><a class="anchor" href="#_options"></a><strong>Options</strong></h3>
+<div class="sect3">
+<h4 id="_noprint"><a class="anchor" href="#_noprint"></a><code>-noprint</code></h4>
+<div class="paragraph">
+<p>By default, the command will print several lines of status information while the loading is running.<br>
+If the -noprint option is included, the output will omit the progress and summary details, but it will still display the job id and the location of the log file.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of minimal output when -noprint option is used" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">Kick off the following job:
+  JobName: load_videoE, jobid: gsql_demo_m1.1525091090494
+  Loading log: '/usr/local/tigergraph/logs/restpp/restpp_loader_logs/gsql_demo/gsql_demo_m1.1525091090494.log'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dryrun"><a class="anchor" href="#_dryrun"></a><code>-dryrun</code></h4>
+<div class="paragraph">
+<p>If -dryrun is used, the system will read the data files and process the data as instructed by the job, but will NOT load any data into the graph. This option can be a useful diagnostic tool.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_n_i_j"><a class="anchor" href="#_n_i_j"></a><code>-n [i], j</code></h4>
+<div class="paragraph">
+<p>The <strong><code>-n</code></strong> option limits the loading job to processing only a range of lines of each input data file. The -n flag accepts one or two arguments. For example, <strong><code>-n 50</code></strong> means read lines 1 to 50.<br>
+<strong><code>-n 10, 50</code></strong> means read lines 10 to 50.  The special symbol $ is interpreted as "last line", so <strong><code>-n 10,$</code></strong> means reads from line 10 to the end.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h3>
+<div class="paragraph">
+<p>Below are the parameters available for the <code>RUN QUERY</code> command introduced by the <code>USING</code> clause.</p>
+</div>
+<div class="sect3">
+<h4 id="_filevar_list"><a class="anchor" href="#_filevar_list"></a><code>filevar</code> list</h4>
+<div class="paragraph">
+<p>The optional USING clause may contain a list of file variables. Each file variable may optionally be assigned a <em>filepath_string</em>, obeying the same format as in the CREATE LOADING JOB. This list of file variables determines which parts of a loading job are run and what data files are used.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When a loading job is compiled, it generates one RESTPP endpoint for each <em>filevar and filepath_string</em>.  As a consequence, a loading job can be run in parts. When RUN LOADING JOB is executed, only those endpoints whose <em>filevar</em> or file identifier (" <code><em>GSQL_FILENAME_n</em>"</code>) is mentioned in the USING clause will be used. However, if the USING clause is omitted, then the entire loading job will be run.</p>
+</li>
+<li>
+<p>If a <em>filepath_string</em> is given, it overrides the <em>filepath_string</em> defined in the loading job. If a particular <em>filevar</em> is not assigned a <em>filepath_string</em> either in the loading job or in the RUN LOADING JOB statement, then an error is reported and the job exits.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_concurrency"><a class="anchor" href="#_concurrency"></a><code>CONCURRENCY</code></h4>
+<div class="paragraph">
+<p>The <code>CONCURRENCY</code> parameter sets the maximum number of concurrent requests that the loading job may send to the GPE.  The default is 256.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_batch_size"><a class="anchor" href="#_batch_size"></a><code>BATCH_SIZE</code></h4>
+<div class="paragraph">
+<p>The <code>BATCH_SIZE</code> parameter sets the number of data lines included in each concurrent request sent to the GPE.  The default is 8192.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_running_loading_jobs_as_rest_requests"><a class="anchor" href="#_running_loading_jobs_as_rest_requests"></a>Running Loading Jobs as REST Requests</h3>
+<div class="paragraph">
+<p>Another way to run a loading job is through the <code>POST /ddl/{graph_name}</code> <em>**</em>endpoint of the REST&#43;&#43; server. Since the REST&#43;&#43; server has more direct access to the graph processing engine, this can execute more quickly than a <code>RUN LOADING JOB</code> statement in GSQL. For details on how to use the endpoint, please see <a href="../../restpp-api/built-in-endpoints.md#run-a-loading-job">Run a loading job</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_inspecting_and_managing_loading_jobs"><a class="anchor" href="#_inspecting_and_managing_loading_jobs"></a>Inspecting and Managing Loading Jobs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting with v2.0, there are now commands to check loading job status, abort a loading job and, restart a loading job.</p>
+</div>
+<div class="sect2">
+<h3 id="_job_id_and_status"><a class="anchor" href="#_job_id_and_status"></a>Job ID and Status</h3>
+<div class="paragraph">
+<p>When a loading job starts, the GSQL server assigns it a job id and displays it for the user to see. The job id format is typically the name of the graph, followed by the machine alias, following by a code number, e.g., <code>gsql_demo_m1.1525091090494</code></p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of SHOW LOADING STATUS output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">Kick off the following job, i.e.
+  JobName: load_test1, jobid: demo_graph_m1.1523663024967
+  Loading log: '/home/tigergraph/tigergraph/logs/restpp/restpp_loader_logs/demo_graph/demo_graph_m1.1523663024967.log'
+
+Job "demo_graph_m1.1523663024967" loading status
+
+[RUNNING] m1 ( Finished: 3 / Total: 4 )
+  [LOADING] /data/output/company.data
+  [=============                        ]  20%, 200 kl/s
+  [LOADED]
+  +-------------------------------------------------------------------+
+  |               FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  | /data/output/movie.dat |            100 |     100 l/s |     1.00 s|
+  |/data/output/person.dat |            100 |     100 l/s |     1.00 s|
+  | /data/output/roles.dat |            200 |     200 l/s |     1.00 s|
+  +-------------------------------------------------------------------+
+[RUNNING] m2 ( Finished: 1 / Total: 2 )
+  [LOADING] /data/output/company.data
+  [==========================           ]  60%, 200 kl/s
+  [LOADED]
+  +-------------------------------------------------------------------+
+  |               FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  | /data/output/movie.dat |            100 |     100 l/s |     1.00 s|
+  +-------------------------------------------------------------------+</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>By default, an active loading job will display periodic updates of its progress.  There are two ways to inhibit these automatic output displays:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the loading job with the -noprint option.</p>
+</li>
+<li>
+<p>After the loading job has started, enter CTRL+C. This will abort the output display process, but the loading job will continue.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_show_loading_status"><a class="anchor" href="#_show_loading_status"></a>SHOW LOADING STATUS</h3>
+<div class="paragraph">
+<p>The command SHOW LOADING JOB shows the current status of either a specified loading job or all current jobs:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="SHOW LOADING JOB syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SHOW LOADING STATUS job_id|ALL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The display format is the same as that displayed during the periodic progress updates of the RUN LOADING JOB command. If you do not know the job id, but you know the job name and possibly the machine, then the ALL option is a handy way to see a list of active job ids.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abort_loading_job"><a class="anchor" href="#_abort_loading_job"></a>ABORT LOADING JOB</h3>
+<div class="paragraph">
+<p>The command ABORT LOADING JOB aborts either a specified load job or all active loading jobs:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ABORT LOADING JOB syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">ABORT LOADING JOB job_id|ALL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The output will show a summary of aborted loading jobs.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ABORT LOADING JOB example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">gsql -g demo_graph "abort loading job all"
+
+Job "demo_graph_m1.1519111662589" loading status
+[ABORT_SUCCESS] m1
+[SUMMARY] Finished: 0 / Total: 2
+  +--------------------------------------------------------------------------------------+
+  |                  FILENAME |   LOADED LINES |   AVG SPEED  |   DURATION |   PERCENTAGE|
+  | /home/tigergraph/data.csv |       23901701 |     174 kl/s |   136.83 s |         65 %|
+  |/home/tigergraph/data1.csv |              0 |        0 l/s |     0.00 s |          0 %|
+  +--------------------------------------------------------------------------------------+
+
+Job "demo_graph_m2.1519111662615" loading status
+[ABORT_SUCCESS] m2
+[SUMMARY] Finished: 0 / Total: 2
+  +--------------------------------------------------------------------------------------+
+  |                  FILENAME |   LOADED LINES |   AVG  SPEED |   DURATION |   PERCENTAGE|
+  | /home/tigergraph/data.csv |       23860559 |     175 kl/s |   136.23 s |         65 %|
+  |/home/tigergraph/data1.csv |              0 |        0 l/s |     0.00 s |          0 %|
+  +--------------------------------------------------------------------------------------+</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_resume_loading_job"><a class="anchor" href="#_resume_loading_job"></a>RESUME LOADING JOB</h3>
+<div class="paragraph">
+<p>The command RESUME LOADING JOB will restart a previously-run job which ended for some reason before completion.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="RESUME LOADING JOB syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">RESUME LOADING JOB job_id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>If the job is finished, this command will do nothing. The RESUME command should pick up where the previous run ended; that is, it should not load the same data twice.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="RESUME LOADING JOB example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">gsql -g demo_graph "RESUME LOADING JOB demo_graph_m1.1519111662589"
+[RESUME_SUCCESS] m1
+[MESSAGE] The current job got resummed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verifying_and_debugging_a_loading_job"><a class="anchor" href="#_verifying_and_debugging_a_loading_job"></a>Verifying and Debugging a Loading Job</h3>
+<div class="paragraph">
+<p>Every loading job creates a log file. When the job starts, it will display the location of the log file. Typically, the file is located at</p>
+</div>
+<div class="paragraph">
+<p>&lt;TigerGraph.root.dir&gt;/logs/restpp/restpp_loader_logs/&lt;graph_name&gt;/&lt;job_id&gt;.log</p>
+</div>
+<div class="paragraph">
+<p>This file contains the following information which most users will find useful:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of all the parameter and option settings for the loading job</p>
+</li>
+<li>
+<p>A copy of the status information that is printed</p>
+</li>
+<li>
+<p>Statistics report on the number of lines successfully read and parsed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The statistics report include how many objects of each type is created, and how many lines are invalid due to different reasons. This report also shows which lines cause the errors. Here is the list of statistics shown in the report. There are two types of statistics. One is file level (the number of lines), and the other is data object level (the number of objects). If an file level error occurs, e.g., a line does not have enough columns, this line of data is skipped for all LOAD statements in this loading job. If an object level error or failed condition occurs, only the corresponding object is not created, i.e., all other objects in the same loading job are still created if no object level error or failed condition for each corresponding object.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">File level statistics</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid lines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of valid lines in the source file</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reject lines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines which are rejected by reject_line_rules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invalid Json format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines with invalid JSON format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not enough token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines with missing column(s)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oversize token</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of lines with oversize token(s). Please increase "OutputTokenBufferSize" in the <code>tigergraph/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql/config</code> file.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Object level statistics</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid Object</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of objects which have been loaded successfully</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No ID found</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of objects in which PRIMARY_ID is empty</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invalid Attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of invalid objects caused by wrong data format for the attribute type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invalid primary id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of invalid objects caused by wrong data format for the PRIMARY_ID type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">incorrect fixed binary length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of invalid objects caused by the mismatch of the length of the data to the type defined in the schema</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that failing a WHERE clause is not necessarily a bad result.  If the user&#8217;s intent for the WHERE clause is to select only certain lines, then it is natural for some lines to pass and some lines to fail.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX movie (PRIMARY_ID id UINT, title STRING, country STRING COMPRESS, year UINT)
+CREATE DIRECTED EDGE sequel_of (FROM movie, TO movie)
+CREATE GRAPH movie_graph(*)
+CREATE LOADING JOB load_movie FOR GRAPH movie_graph{
+  DEFINE FILENAME f
+  LOAD f TO VERTEX movie VALUES ($0, $1, $2, $3) WHERE to_int($3) &lt; 2000;
+}
+RUN LOADING JOB load_movie USING f="movie.dat"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% code title="movie.dat" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">0,abc,USA,-1990
+1,abc,CHN,1990
+2,abc,CHN,1990
+3,abc,FRA,2015
+4,abc,FRA,2005
+5,abc,USA,1990
+6,abc,1990</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The above loading job and data generate the following report</p>
+</div>
+<div class="paragraph">
+<p>{% code title="load_output.log (tail)" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">--------------------Statistics------------------------------
+Valid lines:             6
+Reject lines:            0
+Invalid Json format:     0
+Not enough token:        1 [ERROR] (e.g. 7)
+Oversize token:          0
+
+Vertex:                  movie
+Valid Object:            3
+No ID found:             0
+Invalid Attributes:      1 [ERROR] (e.g. 1:year)
+Invalid primary id:      0
+Incorrect fixed
+binary length:           0
+Passed condition lines:  4
+Failed condition lines:  2 (e.g. 4,5)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>There are a total of 7 data lines. The report shows that</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Six of the lines are valid data lines</p>
+</li>
+<li>
+<p>One line (Line 7) does not have enough tokens.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of the 6 valid lines,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Three of the 6 valid lines generate valid movie vertices.</p>
+</li>
+<li>
+<p>One line has an invalid attribute  (Line 1: year)</p>
+</li>
+<li>
+<p>Two lines (Lines 4 and 5) do not pass the WHERE clause.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

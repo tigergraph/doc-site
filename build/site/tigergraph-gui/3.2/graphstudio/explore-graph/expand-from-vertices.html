@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Expand from Vertices :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../overview.html">GraphStudio and Admin Portal</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../overview.html">GraphStudio Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access-management.html">User Access Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../design-schema.html">Design Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../map-data-to-graph.html">Map Data To Graph</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Explore Graph</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="graph-exploration-panel.html">Graph Exploration Panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="search-for-vertices.html">Search for Vertices</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="expand-from-vertices.html">Expand from Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="find-paths-between-vertices.html">Find Paths between Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="run-gsql-queries.html">Run GSQL Queries</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="augment-visualization-result.html">Augment Visualization Result</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Build Graph Patterns</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../build-graph-patterns/visual-query-builder-overview.html">Visual Query Builder Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../build-graph-patterns/visual-pattern-examples.html">Visual Pattern Examples</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../write-queries.html">Write Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../migrate-from-relational-database.html">Migrate From Relational Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../export-and-import-solution.html">Export And Import Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keyboard-shortcuts.html">Keyboard Shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../known-issues.html">Known Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../patent-and-third-party-notice.html">GraphStudio Patent and Third Party Notice</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../admin-portal/monitoring/README.html">Monitor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/monitoring/log-viewer.html">Logs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/management/license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#user-management.adoc">user-management.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/nginx.html">Nginx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/restpp.html">RESTPP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/gui.html">Application Server (GUI)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/security/ldap.html">LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/security/sso.html">SSO</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/known-issues.html">Known Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GraphStudio and Admin Portal</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../overview.html">GraphStudio and Admin Portal</a></li>
+    <li>GraphStudio</li>
+    <li><a href="README.html">Explore Graph</a></li>
+    <li><a href="expand-from-vertices.html">Expand from Vertices</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/explore-graph/expand-from-vertices.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Expand from Vertices</h1>
+<div class="paragraph">
+<p>The second button in the Explore Graph Menu is the "Expand from vertices" option<span class="image"><img src="../../../.gitbook/assets/k-step.png" alt="k step"></span>. "Expand" in this context means find 1-step or multi-step neighbors of the selected vertices. Clicking the button again will hide the Parameter Panel to increase space for the Graph Exploration Panel. To expand from vertices, you need to have at least one selected vertex in the Graph Exploration Panel. If no vertices are visible, please refer to the previous section "Search Vertices in Graph" to search for some vertices.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+Shortcut: double-clicking on a vertex will expand to up to 200 neighbors of that vertex.
+{% endhint %}</p>
+</div>
+<h3 id="_1_choose_vertices_to_expand_from" class="discrete">1. Choose vertices To expand from</h3>
+<div class="paragraph">
+<p>The standard click and shift-click behavior applies for selecting one or multiple objects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on a vertex to select it. Any previously selected objects are unselected.</p>
+</li>
+<li>
+<p>Shift-click on an unselected object to add it to the selection set.</p>
+</li>
+<li>
+<p>Shift-click on a selected object to remove it from the selection set.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A vertex that is selected has a thick gray border around it. To unselect all vertices, click on a blank area of the panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/select-multiple-vertices%20%281%29.png" alt="select multiple vertices%20%281%29">
+</div>
+</div>
+<h3 id="_2_set_expansion_conditions" class="discrete">2. Set expansion conditions</h3>
+<div class="paragraph">
+<p>GraphStudio lets you expand multiple steps from the target vertices, as long as the resulting number of vertices and edges does not exceed the limit for visualization (default limit is 5000 vertices and 10000 edges). The conditions for each expansion step are specified independently.</p>
+</div>
+<div class="paragraph">
+<p>In the Parameter Panel, set the conditions for each expansion step:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maximum number of edges include for each vertex. The effect is that vertices with more neighbors than this limit will not have all their neighbors included in the expansion.</p>
+</li>
+<li>
+<p>Edge types and the attribute filter for each edge type to include.</p>
+</li>
+<li>
+<p>Target vertex types and the attribute filter for each vertex type to include.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/config.png" alt="config">
+</div>
+</div>
+<div class="paragraph">
+<p>Initially, the expansion conditions panel for only one expansion step is shown. Click "Add Expansion Step" to add more expansion steps.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/add_expansion_step.png" alt="add expansion step">
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, you can remove expansion steps by clicking the "Remove Expansion Step" button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/remove_expansion_step.png" alt="remove expansion step">
+</div>
+</div>
+<h3 id="_3_expand" class="discrete">3. Expand</h3>
+<div class="paragraph">
+<p>After setting the conditions for each expansion step, click on the "Expand" button<span class="image"><img src="../../../.gitbook/assets/expand.png" alt="expand"></span>to perform the expansion. The Graph Exploration Panel will be updated to include the expansion result. The expansion starting vertices will be highlighted with a white border. Here is a sample two-step expansion starting from 1 vertex:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/two-step.png" alt="two step">
+</div>
+</div>
+<div class="paragraph">
+<p>##</p>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

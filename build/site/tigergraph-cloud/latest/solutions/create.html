@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Create a New Solution :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-cloud" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../start/README.html">TigerGraph Cloud</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../start/README.html">TigerGraph Cloud</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../start/getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Solutions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cloud-providers-and-regions.html">Cloud Providers and Regions</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="create.html">Create a New Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="stop-restart-and-terminate.html">Stop, Restart, and Terminate a Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sizing-and-scaling.html">Sizing and Scaling</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../access-solution/README.html">Access a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/graphstudio.html">Access a Solution through GraphStudio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#rest-requests">[rest-requests]</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/gsql-web-shell.html">Access a Solution through GSQL Web Shell</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../monitor-solution/README.html">Monitor a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/monitor-solution-state.html">Monitor Solution State</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/view-activity-log.html">View Activity Log</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../resize-solution/README.html">Resize a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/resize-instance-type.html">Resize Instance Type</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/upgrade-storage-volume.html">Upgrade Storage Volume</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../security/README.html">Security and User Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-database-users.html">Manage Database Users</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-cloud-account.html">Manage Your TigerGraph Cloud Account</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../billing/README.html">Billing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/manage-payment-methods.html">Manage Payment Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/subscriptions.html">Subscriptions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/faqs.html">FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/support.html">Contact Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/README.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/aws.html">Amazon Web Services (AWS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/azure.html">Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/gcp.html">Google Cloud Platform (GCP)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/service-limits.html">Service Limits</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Cloud</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../start/README.html">TigerGraph Cloud</a></li>
+    <li><a href="README.html">Solutions</a></li>
+    <li><a href="create.html">Create a New Solution</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/cloud/edit/main/modules/solutions/pages/create.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Create a New Solution</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this tutorial, you will learn how to provision a new TigerGraph Cloud solution.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_procedure"><a class="anchor" href="#_procedure"></a>Procedure</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_navigate_to_my_solutions_page"><a class="anchor" href="#_1_navigate_to_my_solutions_page"></a>1. Navigate to My Solutions page</h3>
+<div class="paragraph">
+<p>After logging into your TigerGraph Cloud account, click <strong>My Solutions</strong> on the left side menu to go to the <strong>My Solutions</strong> page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2838%29%20%287%29%20%283%29.png" alt="image%20%2838%29%20%287%29%20%283%29">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_click_create_solution"><a class="anchor" href="#_2_click_create_solution"></a>2. Click Create Solution</h3>
+<div class="paragraph">
+<p>On the My Solutions page, click <strong>Create Solution.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2829%29.png" alt="image%20%2829%29">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_select_version_and_starter_kit"><a class="anchor" href="#_3_select_version_and_starter_kit"></a>3. Select version and starter kit</h3>
+<div class="paragraph">
+<p>Not all TigerGraph versions that are offered on-prem are offered on TigerGraph Cloud. In the dropdown list, choose the version of TigerGraph you want to run.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2840%29.png" alt="image%20%2840%29">
+</div>
+</div>
+<div class="paragraph">
+<p>TigerGraph Cloud Starter Kits are built with sample graph data schema, dataset, and queries focused on a specific use case <strong><strong>to help you get started quickly</strong>.</strong> Most of our starter kits have a <a href="https://www.tigergraph.com/starterkits/">demo video</a> that walks you through the schema and the queries built for its use case. If you wish to proceed with your own schema and data, select <strong>Blank.</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2858%29%20%281%29.png" alt="image%20%2858%29%20%281%29">
+</div>
+</div>
+<div class="paragraph">
+<p>After choosing the starter kit, scroll down to the bottom and click <strong>Next</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_configure_your_instance"><a class="anchor" href="#_4_configure_your_instance"></a><strong>4. Configure your instance</strong></h3>
+<div class="sect3">
+<h4 id="_4_1_choose_a_cloud_provider"><a class="anchor" href="#_4_1_choose_a_cloud_provider"></a><strong>4.1. Choose a cloud provider</strong></h4>
+<div class="paragraph">
+<p>The choice of cloud provider affects the configuration options for the available instance types and disk sizes, network latency for accessing your solution, the geographic location of your solution, and the cost of running your solutions. For more information, see <a href="cloud-providers-and-regions.html" class="page">Cloud Providers and Regions</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2868%29.png" alt="image%20%2868%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_2_choose_an_instance_type"><a class="anchor" href="#_4_2_choose_an_instance_type"></a>4.2. Choose an instance type</h4>
+<div class="paragraph">
+<p>Each instance type indicates its vCPU and RAM specifications as well as the hourly rate for running the instance. For suggestions on choosing the right instance type and disk storage, see <a href="sizing-and-scaling.html" class="page">Sizing and Scaling</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2853%29.png" alt="image%20%2853%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_3_choose_a_region"><a class="anchor" href="#_4_3_choose_a_region"></a>4.3. Choose a region</h4>
+<div class="paragraph">
+<p>Region reflects the physical location of the server running your solutions. It also affects the network latency for accessing your solution.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2820%29.png" alt="image%20%2820%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_4_4_choose_a_disk_size"><a class="anchor" href="#_4_4_choose_a_disk_size"></a>4.4. Choose a disk size</h4>
+<div class="paragraph">
+<p>Disk storage refers to the root disk that is attached to your instance. If you need help choosing the right disk storage, see <a href="sizing-and-scaling.html" class="page">Sizing and Scaling</a>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+To ensure your solution has enough disk storage, TigerGraph mandates that any solution&#8217;s disk size must be <strong>at least 3 times the size of the solution instance&#8217;s RAM</strong>. For example, if you choose an instance type that has a RAM of 64 GB, then the solution&#8217;s disk size must be more than 192 GB.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_enter_cluster_settings"><a class="anchor" href="#_5_enter_cluster_settings"></a>5. Enter cluster settings</h3>
+<div class="sect3">
+<h4 id="_5_1_choose_a_partitioning_factor"><a class="anchor" href="#_5_1_choose_a_partitioning_factor"></a>5.1. Choose a partitioning factor</h4>
+<div class="paragraph">
+<p>In a <a href="#../../admin/admin-guide/install-and-config/ha-cluster.adoc" class="page unresolved">High Availability (HA) cluster,</a> the partitioning factor refers to the number of parts or components your graph data is split into, which also equals the number of instances that collectively store one copy of the full graph.</p>
+</div>
+<div class="paragraph">
+<p>If you only need a single instance to store your entire graph, enter 1 as your partition factor.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_5_2_choose_a_replication_factor"><a class="anchor" href="#_5_2_choose_a_replication_factor"></a>5.2. Choose a replication factor</h4>
+<div class="paragraph">
+<p>The replication factor is the number of copies of data, each on a separate machine. TigerGraph Cloud currently supports a replication factor of up to three for TigerGraph v3.0.6+.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t need additional copies of your data, enter 1 as your replication factor.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_enter_solution_settings"><a class="anchor" href="#_6_enter_solution_settings"></a>6. Enter solution settings</h3>
+<div class="sect3">
+<h4 id="_6_1_name_and_tag_your_solution"><a class="anchor" href="#_6_1_name_and_tag_your_solution"></a>6.1. Name and tag your solution</h4>
+<div class="paragraph">
+<p>Give your solution a name. A solution name can only contain alphanumeric characters, space, dash, and underscore and may be no longer than 20 characters.</p>
+</div>
+<div class="paragraph">
+<p>Give your solution a tag, which helps you sort and identify your solutions. A solution tag may be no longer than 40 characters and can contain any character.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_2_set_initial_password"><a class="anchor" href="#_6_2_set_initial_password"></a>6.2. Set initial password</h4>
+<div class="paragraph">
+<p>When a solution is provisioned, a default <a href="../security/#tigergraph-users">TigerGraph user</a> <code>tigergraph</code> is created in the installation process. This is the initial password for the default user.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2819%29.png" alt="Set initial password">
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+This initial password allows you to log into the database when your solution is in the ready state. If you forget this password, you will need to terminate and recreate the solution.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_3_set_a_subdomain"><a class="anchor" href="#_6_3_set_a_subdomain"></a>6.3. Set a subdomain</h4>
+<div class="paragraph">
+<p>Enter a unique subdomain for your solution. Only letters, numbers, and inner hyphen(-) are allowed in the subdomain. You can send HTTP requests to the REST endpoints on the domain once the solution is up and running. If you do not enter a subdomain, an automatically generated subdomain will be assigned to the solution.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_6_4_enter_a_description"><a class="anchor" href="#_6_4_enter_a_description"></a>6.4. Enter a description</h4>
+<div class="paragraph">
+<p>Enter a description of what the solution is used for or anything else you would like to note about this solution.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_7_review_and_confirm"><a class="anchor" href="#_7_review_and_confirm"></a>7. Review and confirm.</h3>
+<div class="paragraph">
+<p>After making sure all your settings are correct, click <strong>Submit</strong> to start your solution. Your solution should be ready after a brief warm-up period.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

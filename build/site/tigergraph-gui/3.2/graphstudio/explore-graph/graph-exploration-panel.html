@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Graph Exploration Panel :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-gui" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../overview.html">GraphStudio and Admin Portal</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">GraphStudio</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../overview.html">GraphStudio Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access-management.html">User Access Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../design-schema.html">Design Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../map-data-to-graph.html">Map Data To Graph</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Explore Graph</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="graph-exploration-panel.html">Graph Exploration Panel</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="search-for-vertices.html">Search for Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="expand-from-vertices.html">Expand from Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="find-paths-between-vertices.html">Find Paths between Vertices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="run-gsql-queries.html">Run GSQL Queries</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="augment-visualization-result.html">Augment Visualization Result</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Build Graph Patterns</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../build-graph-patterns/visual-query-builder-overview.html">Visual Query Builder Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../build-graph-patterns/visual-pattern-examples.html">Visual Pattern Examples</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../write-queries.html">Write Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../migrate-from-relational-database.html">Migrate From Relational Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../export-and-import-solution.html">Export And Import Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keyboard-shortcuts.html">Keyboard Shortcuts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../known-issues.html">Known Issues</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../patent-and-third-party-notice.html">GraphStudio Patent and Third Party Notice</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Admin Portal</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/dashboard.html">Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../admin-portal/monitoring/README.html">Monitor</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/monitoring/log-viewer.html">Logs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/management/license.html">License</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#user-management.adoc">user-management.adoc</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Components</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/nginx.html">Nginx</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/restpp.html">RESTPP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/components/gui.html">Application Server (GUI)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/security/ldap.html">LDAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../admin-portal/security/sso.html">SSO</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../admin-portal/known-issues.html">Known Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GraphStudio and Admin Portal</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../overview.html">GraphStudio and Admin Portal</a></li>
+    <li>GraphStudio</li>
+    <li><a href="README.html">Explore Graph</a></li>
+    <li><a href="graph-exploration-panel.html">Graph Exploration Panel</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-gui/edit/main/modules/graphstudio/pages/explore-graph/graph-exploration-panel.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Graph Exploration Panel</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Graph Exploration panel displays the result of your Graph Exploration actions. After you have a subgraph displayed in the Graph Exploration Panel, you can use the buttons in the Explorer View Menu or the options in the bottom right corner to customize the display. Additionally, you can make modifications to the graph database itself in edit mode.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/image%20%2833%29.png" alt="Explorer View Menu">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/screen-shot-2020-06-03-at-5.03.45-pm.png" alt="Options in the bottom right corner">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_customize_visualization"><a class="anchor" href="#_customize_visualization"></a>Customize visualization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Graph Exploration panel provides you with multiple ways of customizing the visualization of your graph exploration results.</p>
+</div>
+<div class="sect2">
+<h3 id="_zoom_inout"><a class="anchor" href="#_zoom_inout"></a>Zoom in/out</h3>
+<div class="paragraph">
+<p>Although you can use a mouse scroller to zoom in and zoom out the graph exploration result, you can also use the two buttons at the bottom-right corner to do that: <span class="image"><img src="../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.35-pm.png" alt="screen shot 2020 06 03 at 5.16.35 pm"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_refresh_eesult"><a class="anchor" href="#_refresh_eesult"></a>Refresh eesult</h3>
+<div class="paragraph">
+<p>The graph exploration result only reflects a snapshot of the graph data. If the data is changed due to CRUD operations (maybe in another session), the snapshot is outdated.</p>
+</div>
+<div class="paragraph">
+<p>You can click the refresh button<span class="image"><img src="../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.43-pm.png" alt="screen shot 2020 06 03 at 5.16.43 pm"></span>to get all vertices and edges synced with the graph database. All vertices and edges that already got removed will be removed from the exploration panel, and all the attribute values will also get updated.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_change_layout"><a class="anchor" href="#_change_layout"></a>Change layout</h3>
+<div class="paragraph">
+<p>You can click the change layout button <span class="image"><img src="../../../.gitbook/assets/screen-shot-2020-06-03-at-5.16.50-pm.png" alt="screen shot 2020 06 03 at 5.16.50 pm"></span> to change layout:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/image%20%2836%29.png" alt="Change layout">
+</div>
+</div>
+<div class="paragraph">
+<p>If your vertices have attributes named <code>latitude</code> and <code>longitude</code>, with valid latitude and longitude values respectively, you can choose the geospatial layout option. The geospatial layout will present all your vertices and edges between them on the world map:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/image%20%2832%29.png" alt="Example of vertices and edges in the geospatial layout">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_locate_vertex"><a class="anchor" href="#_locate_vertex"></a>Locate vertex</h3>
+<div class="paragraph">
+<p>The Locate Vertex In Result feature<span class="image"><img src="../../../.gitbook/assets/locate_vertex_btn.png" alt="locate vertex btn"></span>searches for and then zooms in on vertices that match the given value for ID and/or attribute. For example, if you type "Mary" in the Locate Vertices in Result popup window, and have both of the checkboxes selected, then this feature will look for any vertices where "Mary" is an exact match for either the ID or any of the attribute values. Those vertices will be selected (and all other objects will be unselected). The display will zoom in to focus on the selected objects.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/locate_vertex_in_result.png" alt="locate vertex in result">
+</div>
+</div>
+<div class="paragraph">
+<p>The vertices with the matching ID or attributes will be selected:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/locate_vertex_result.png" alt="locate vertex result">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_show_selected_vertices_and_edges"><a class="anchor" href="#_show_selected_vertices_and_edges"></a>Show selected vertices and edges</h3>
+<div class="paragraph">
+<p>Click the Show Selections button<span class="image"><img src="../../../.gitbook/assets/show_ve_btn.png" alt="show ve btn"></span>to hide all the vertices and edges which are not currently selected. However, if the two endpoints of an edge are selected, the edge will be selected as well. Also, if nothing is selected, nothing will be hidden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hide_vertices_and_edges"><a class="anchor" href="#_hide_vertices_and_edges"></a>Hide vertices and edges</h3>
+<div class="paragraph">
+<p>Click the Hide button<span class="image"><img src="../../../.gitbook/assets/hide_ve_btn.png" alt="hide ve btn"></span>to hide the currently selected vertices and edges. If nothing is selected, all vertices and edges in the Graph Exploration Panel will be hidden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_undo_and_redo"><a class="anchor" href="#_undo_and_redo"></a>Undo and redo</h3>
+<div class="paragraph">
+<p>The Explore Graph page records the whole history of the current session&#8217;s changes to the visualization result set. Click the Undo and the Redo buttons <span class="image"><img src="../../../.gitbook/assets/redo_undo_btn.png" alt="redo undo btn"></span> to go back or forward in the history.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Database changes (adding or deleting vertices/edges, editing attributes) cannot be undone with the Undo feature.<br>
+Also, Undo/Redo do not include layout and display changes (e.g., positioning of objects and display of attributes).
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_save_and_open_graph_exploration_result"><a class="anchor" href="#_save_and_open_graph_exploration_result"></a>Save and open graph exploration result</h3>
+<div class="paragraph">
+<p>When you find something interesting during exploration and want to save the result as a picture, you can click the Save Exploration button<span class="image"><img src="../../../.gitbook/assets/save_btn.png" alt="save btn"></span>. In the popup window, you can give the result a file name and an optional description, then click Save:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/save_exploration_result.png" alt="save exploration result">
+</div>
+</div>
+<div class="paragraph">
+<p>In the future, you can open a previously saved exploration result by clicking the Open Exploration History button<span class="image"><img src="../../../.gitbook/assets/open_exploration_result.png" alt="open exploration result"></span>and choose one result from the list:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/exploration_history.png" alt="exploration history">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_save_screenshot"><a class="anchor" href="#_save_screenshot"></a>Save screenshot</h3>
+<div class="paragraph">
+<p>When you find something interesting during exploration and want to save the result as a picture, you can click the Save Screenshot button<span class="image"><img src="../../../.gitbook/assets/screenshot_btn.png" alt="screenshot btn"></span>. The exploration result will be saved as a PNG picture to your local file system.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_change_settings"><a class="anchor" href="#_change_settings"></a>Change settings</h3>
+<div class="paragraph">
+<p>To change graph exploration settings by clicking Settings button<span class="image"><img src="../../../.gitbook/assets/settings_btn.png" alt="settings btn"></span>. Currently you can select what attributes to show for each vertex type and edge type, and set whether to show an object&#8217;s detailed information in a popup tooltip when the cursor hovers over it. Click Apply and the new settings will take effect.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/settings.png" alt="settings">
+</div>
+</div>
+<div class="paragraph">
+<p>In the example below, the ID and gender for person vertices are shown.  The ID and the foundYear attributes for company vertices are shown.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/show-attributes.png" alt="show attributes">
+</div>
+</div>
+<div class="paragraph">
+<p>You can also configure the text font size of vertex and edge labels and properties.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/screen-shot-2019-01-24-at-11.36.10-am.png" alt="screen shot 2019 01 24 at 11.36.10 am">
+</div>
+</div>
+<div class="paragraph">
+<p>Other than the above, you can also configure vertex and edge size and color to augment the visualization in settings. See <a href="#augment-visualization-result.adoc" class="page unresolved">Augment Visualization Result</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_edit_graph"><a class="anchor" href="#_edit_graph"></a>Edit graph</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Besides customizing the view of your graph exploration results, you can also enable the edit mode and and make edits to the graph itself by adding or removing vertices and edges, as well as changing their attributes.</p>
+</div>
+<div class="paragraph">
+<p>In order to perform any of the actions in this section, you need to enable edit mode by clicking on the toggle next to Edit mode. Once you are in the edit mode, the four buttons that allow you to edit the graph will appear on the right.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/image%20%2833%29.png" alt="Explorer View Menu">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_new_vertex"><a class="anchor" href="#_add_new_vertex"></a>Add new vertex</h3>
+<div class="paragraph">
+<p>In edit mode, click the Add New Vertex button<span class="image"><img src="../../../.gitbook/assets/add_vertex_type.png" alt="add vertex type"></span>to add a new vertex to the graph database. The Add New Vertex window will pop up. Choose a vertex type and then fill in values for the ID and the attributes. Click ADD and the vertex will be inserted into the TigerGraph database. It will also be shown in the Graph Exploration Panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/add_new_vertex.png" alt="add new vertex">
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+If you provide a vertex ID that is already used, GraphStudio will ask you whether you want to overwrite the existing vertex.  If you say no, then it will not add or update anything.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_new_edge"><a class="anchor" href="#_add_new_edge"></a>Add new edge</h3>
+<div class="paragraph">
+<p>In edit mode, click the Add New Edge button<span class="image"><img src="../../../.gitbook/assets/add_edge_type.png" alt="add edge type"></span>to add a new edge to the graph database. Next, click the source vertex of the edge in the Graph Exploration Panel, and then click the target vertex of the edge. Then the Add New Edge panel will pop up. Choose the edge type from the dropdown menu. Only types that match the two vertices you selected are shown. (It is possible that there are no eligible edge types). Fill in values for attributes and click ADD. Your new edge will be inserted into the TigerGraph database. It will also be shown in the Graph Exploration Panel.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/add_new_edge.png" alt="add new edge">
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+If you select an edge type that already exists between the two vertices, GraphStudio will ask if you want to overwrite the existing edge.  If you say no, nothing will be added or updated.  The current TigerGraph system does not support having multiple edges of the same type between two specific vertices.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_edit_attributes"><a class="anchor" href="#_edit_attributes"></a>Edit attributes</h3>
+<div class="paragraph">
+<p>To edit the attributes of one vertex or edge, select one object and then click the Edit Attributes button<span class="image"><img src="../../../.gitbook/assets/edit.png" alt="edit"></span>in edit mode. The edit attributes panel will pop up.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/edit_attributes.png" alt="edit attributes">
+</div>
+</div>
+<div class="paragraph">
+<p>When you finish editing, click the Update button to apply the change.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_vertices_and_edges"><a class="anchor" href="#_delete_vertices_and_edges"></a>Delete vertices and edges</h3>
+<div class="paragraph">
+<p>To delete vertices or edges, select the objects you want to delete, and click the Delete Selected Elements button<span class="image"><img src="../../../.gitbook/assets/delete_forever.png" alt="delete forever"></span> in edit mode.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+"Delete" permanently removes data from the graph database. Deleted vertices and edges cannot be restored with Undo. To restore them, you must manually add them back.</p>
+</div>
+<div class="paragraph">
+<p>If you delete a vertex, all of its outgoing and incoming edges will also be deleted
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

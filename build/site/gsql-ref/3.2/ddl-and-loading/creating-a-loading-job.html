@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Creating a Loading Job :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../querying/func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../querying/select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../querying/comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../querying/appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Database definition &amp; Loading</li>
+    <li><a href="creating-a-loading-job.html">Creating a Loading Job</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/ddl-and-loading/pages/creating-a-loading-job.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Creating a Loading Job</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After a graph schema has been created, the system is ready to load data into the graph store. The GSQL language offers easy-to-understand and easy-to-use commands for data loading which perform many of the same data conversion, mapping, filtering, and merging operations that are found in enterprise ETL (Extract, Transform, and Load) systems.</p>
+</div>
+<div class="paragraph">
+<p>The GSQL system can read structured or semistructured data from text files. The loading language syntax is geared towards tabular or JSON data, but conditional clauses and data manipulation functions allow for reading data that is structured in a more complex or irregular way.  For tabular data, each line in the data file contains a series of data values, separated by commas, tabs, spaces, or any other designated ASCII characters (only single character separators are supported). A line should contain only data values and separators, without extra whitespace. From a tabular view, each line of data is a row, and each row consists of a series of column values.</p>
+</div>
+<div class="paragraph">
+<p>Loading data is a two-step process. First, a loading job is defined. Next, the job is executed with a <code>RUN LOADING JOB</code> statement. These two statements, and the components of the loading job, are detailed below.</p>
+</div>
+<div class="paragraph">
+<p>The structure of a loading job will be presented hierarchically, top-down:</p>
+</div>
+<div class="paragraph">
+<p>CREATE LOADING JOB, which may contain a set of DEFINE and LOAD statements</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DEFINE statements</p>
+</li>
+<li>
+<p>LOAD statements, which can have several clauses</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+<strong>All blank spaces are meaningful in string fields in CSV and JSON</strong>. Either pre-process your data files to remove extra spaces, or use GSQL&#8217;s token processing functions <code>gsql_trim</code>, <code>gsql_ltrim</code>, and <code>gsql_rtrim</code> (<a href="creating-a-loading-job.md#built-in-loader-token-functions">Built-in Loader Token Functions</a>).
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_loading_job_capabilities"><a class="anchor" href="#_loading_job_capabilities"></a>Loading job capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph&#8217;s syntax for defining and running loading jobs offers several advantages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The TigerGraph platform can handle concurrent loading jobs, which can greatly increase throughput.</p>
+</li>
+<li>
+<p>The data file locations can be specified at compile time or at run time. Run-time settings override compile-time settings.</p>
+</li>
+<li>
+<p>A loading job definition can include several input files. When running the job, the user can choose to run only part of the job by specifying only some of the input files.</p>
+</li>
+<li>
+<p>Loading jobs can be monitored, aborted, and restarted.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_concurrent_loading"><a class="anchor" href="#_concurrent_loading"></a>Concurrent Loading</h3>
+<div class="paragraph">
+<p>Among its several duties, the RESTPP component manages loading jobs. There can be multiple RESTPP-LOADER subcomponents, each of which can handle a loading job independently.  The maximum number of concurrent loading jobs is set by the configuration parameter <code>FileLoader.ReplicaNumber</code>.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, if the TigerGraph graph is distributed (partitioned) across multiple machine nodes, each machine&#8217;s RESTPP-LOADER(s) can be put into action. Each RESTPP-LOADER only reads local input data files, but the resulting graph data can be stored on any machine in the cluster.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+ To maximize loading performance in a cluster, use at least two loaders per machine, and assign each loader approximately the same amount of data.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>A concurrent-capable loading job can logically be separated into parts according to each file variable.  When a concurrent-capable loading job is compiled, a <a href="../../restpp-api/built-in-endpoints.md#run-a-loading-job">RESTPP endpoint</a> is generated for the loading job, which you can call to load data into your graph as an alternative to <code>RUN LOADING JOB</code>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+Example loading jobs and data files for the <code>book_rating</code> schema defined earlier in the document are available in the <code>$(gadmin config get System.AppRoot)/document/examples</code> folder in your TigerGraph platform installation.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_loading_job"><a class="anchor" href="#_create_loading_job"></a><strong>CREATE LOADING JOB</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CREATE LOADING JOB statement is used to define a block of DEFINE, LOAD, and DELETE statements for loading data to or removing data from a particular graph. The sequence of statements is enclosed in curly braces. Each statement in the block, including the last one, should end with a semicolon.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="CREATE LOADING JOB syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB job_name FOR GRAPH graph_name {
+   [zero or more DEFINE statements;]
+   [zero or more LOAD statements;] | [zero or more DELETE statements;]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+<strong>LOAD or DELETE Statements</strong><br>
+A loading job may contain either <code>LOAD</code> or <code>DELETE</code> statements but not both.<br>
+A loading job that includes both will be rejected when the <code>CREATE</code> statement is executed.
+{% endhint %}</p>
+</div>
+<h4 id="_example" class="discrete">Example:</h4>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Loading Job Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB job1 FOR GRAPH graph1 {
+   # File path specified at complile time
+   DEFINE FILENAME file1 = "/data/v1.csv";
+   DEFINE FILENAME file2;
+
+   LOAD file1 TO VERTEX v1 VALUES ($0, $1, $2);
+   LOAD file2 TO EDGE e2 VALUES ($0, $1);
+}
+
+# Run-time specification will override path specified at compile time
+RUN LOADING JOB job1 USING file1="m1:/data/v1_1.csv", file2="m2:/data/e2.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_drop_job_statement"><a class="anchor" href="#_drop_job_statement"></a><strong>DROP JOB statement</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To drop (remove) a job, run <code>DROP JOB job_name</code>. The job will be removed from GSQL. To drop all jobs, run either of the following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">DROP JOB ALL
+DROP JOB *</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+The scope of <code>ALL</code> depends on the user&#8217;s current scope. If the user has set a working graph, then <code>DROP ALL</code> removes all the jobs for that graph. If a superuser has set their scope to be global, then <code>DROP ALL</code> removes all jobs across all graph spaces.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_define_statements"><a class="anchor" href="#_define_statements"></a><code>DEFINE</code> statements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <code>DEFINE</code> statement is used to define a local variable or expression to be used by the subsequent <code>LOAD</code> statements in the loading job.</p>
+</div>
+<div class="sect2">
+<h3 id="_define_filename"><a class="anchor" href="#_define_filename"></a><code>DEFINE FILENAME</code></h3>
+<div class="paragraph">
+<p>The <code>DEFINE FILENAME</code> statement defines a filename variable. The variable can then be used later in the <code>JOB</code> block by a <code>LOAD</code> statement to identify its data source. Every concurrent loading job must have at least one <code>DEFINE FILENAME</code> statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">DEFINE FILENAME filevar ["=" filepath_string ];
+filepath_string = ( path | " all :" path | " any :" path | mach_aliases " :" path ["," mach_aliases ":" path ]* )
+mach_aliases = name["|"name]*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>filevar</code> <em>_is optionally followed by a <code>filepath_string</code>, which tells the job where to find input data. As the name suggests, _filepath_string</em> is a string value. Therefore, it should start and end with double quotes.</p>
+</div>
+<div class="paragraph">
+<p><strong>filepath_string</strong></p>
+</div>
+<div class="paragraph">
+<p>There are four options for <em>filepath_string</em> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>`path`<em>:</em> either an absolute path or relative path for either a file or a folder on the machine where the job is run. If it is a folder, then the loader will attempt to load each non-hidden file in the folder.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="path examples" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">"/data/graph.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+If this path is not valid when CREATE LOADING JOB is executed, GSQL will report an error.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>An absolute path may begin with the session variable $sys.data_root.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: using sys.data_root in a loading job" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB filePathEx FOR GRAPH gsql_demo {
+  LOAD "$sys.data_root/persons.csv" TO ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Then, when running this loading job, first set a value for the parameter, and then run the job:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: Setting sys.data_root session parameter" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SET sys.data_root="/data/mydata"
+RUN JOB filePathEx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>As the name implies, session parameters only retain their value for the duration of the current GSQL session.  If the user exits GSQL, the settings are lost.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"all:" path</code>: If the path is prefixed with <code>all:</code>, then the loading job will attempt to run on every machine in the cluster which has a RESTPP component, and each machine will look locally for data at <em>path</em>. <strong>If the path is invalid on any of the machines, the job will be aborted</strong>.  Also, the session parameter $sys.data_root may not be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="ALL:path examples" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">"ALL:/data/graph.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"any:" path</code>: If the path is prefixed with <code>any:</code> , then the loading job will attempt to run on every machine in the cluster which has a RESTPP component, and each machine will look locally for data at the specified path. <strong>If the path is invalid on any of the machines, those machines where the path is not valid are skipped.</strong> Also, the session parameter $sys.data_root may not be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="ANY:path examples" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">"ANY:/data/graph.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>A list of machine-specific paths</strong>: A machine_alias is a name such as m1, m2, etc. which is defined when the cluster configuration is set.  For this option, the <em>filepath_string</em> may include a list of paths, separated by commas. If several machines have the same path, the paths can be grouped together by using a list of machine aliases, with the vertical bar "|" as a separator. The loading job will run on whichever machines are named; each RESTPP-LOADER will work on its local files.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="machine-specific path example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">"m1:/data1.csv, m2|m3|m5:/data/data2.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_define_header"><a class="anchor" href="#_define_header"></a>DEFINE HEADER</h3>
+<div class="paragraph">
+<p>The DEFINE HEADER statement defines a sequence of column names for an input data file. The first column name maps to the first column, the second column name maps to the second column, etc.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">DEFINE HEADER header_name = " column_name "[," column_name "]*;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_define_input_line_filter"><a class="anchor" href="#_define_input_line_filter"></a>DEFINE INPUT_LINE_FILTER</h3>
+<div class="paragraph">
+<p>The DEFINE INPUT_LINE_FILTER statement defines a named Boolean expression whose value depends on column attributes from a row of input data. When combined with a USING reject_line_rule clause in a LOAD statement, the filter determines whether an input line is ignored or not.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">DEFINE INPUT_LINE_FILTER filter_name = boolean_expression_using_column_variables ;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load_statement"><a class="anchor" href="#_load_statement"></a><strong><code>LOAD</code> statement</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <code>LOAD</code> statement describes how to parse a data line into column values (tokens), and then describes how the values should be used to create a new vertex or edge instance. One <code>LOAD</code> statement can be used to generate multiple vertices or edges, each vertex or edge having its own <em>destination clause</em>, as shown below. Additionally, two or more LOAD statements may refer to the same input data file. In this case, the GSQL loader will merge their operations so that both of their operations are executed in a single pass through the data file.</p>
+</div>
+<div class="paragraph">
+<p>The <code>LOAD</code> statement has many options. This reference guide provides examples of key features and options. The <a href="#../../../faqs/knowledge-base-and-faqs.adoc" class="page unresolved">Knowledge Base and FAQs</a> <em>_**</em>_and the tutorials, such as <a href="../../../start/gsql-101/">GSQL 101</a>, provide additional solution- and application-oriented examples.</p>
+</div>
+<div class="paragraph">
+<p>Different <code>LOAD</code> statement types have different rules for the <a href="creating-a-loading-job.md#using-clause"><code>USING</code> clause</a>; see the <code>USING</code> clause section below for specifics.</p>
+</div>
+<div class="sect2">
+<h3 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">LOAD [filepath_string|filevar|TEMP_TABLE table_name ]
+     Destination_Clause [, Destination_Clause ]*
+     [TAGS clause ]
+     [USING clause ];</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>filevar</code> __must have been previously defined in a DEFINE FILENAME statement.</p>
+</div>
+<div class="paragraph">
+<p><code>filepath_string</code> __must satisfy the same rules given above in the DEFINE FILENAME section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_destination_clause"><a class="anchor" href="#_destination_clause"></a>Destination clause</h3>
+<div class="paragraph">
+<p>A <em>Destination clause</em> <strong><strong>describes how the tokens from a data source should be used to construct one of three types of </strong>data objects</strong>: a vertex, an edge, or a row in a temporary table (<code>TEMP_TABLE</code>). The destination clause formats for the three types are very similar, but we show them separately for clarity:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Vertex Destination Clause" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TO VERTEX vertex_type_name VALUES (id_expr [, attr_expr]*)
+    [WHERE conditions] [OPTION (options)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Edge Destination Clause" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TO EDGE edge_type_name VALUES (source_id_expr [source_type_expr],
+                               target_id_expr [target_type_expr]
+                               [, attr_expr]*)
+    [WHERE conditions] [OPTION (options)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>For the <code>TO VERTEX</code> and <code>TO EDGE</code> destination clauses, the following rules for its parameters apply:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <em>`vertex_type_name`</em> or <em>`edge_type_name`</em> must match the name of a vertex or edge type previously defined in a <code>CREATE VERTEX</code> or <code>CREATE UNDIRECTED|DIRECTED EDGE</code> statement.</p>
+</li>
+<li>
+<p>The values in the value list_(<code>id_expr</code>, <code>attr_expr1</code>, <code>attr_expr2</code>,&#8230;&#8203;)_ are assigned to the id(s) and attributes of a new vertex or edge instance, in the same order in which they are listed in the <code>CREATE</code> statement.</p>
+</li>
+<li>
+<p><em>`id_expr`</em> obeys the same attribute rules as <em>`attr_expr`</em>, except that <em>only `attr_expr`</em> can use the reducer function, which is introduced later.</p>
+</li>
+<li>
+<p>For edge clauses, the <em>`source_id_expr`</em> and <em>`target_id_expr`</em> can each optionally be followed by a <em>`source_type_expr`</em> and <em>`target_type_expr`</em>, respectively. The <em>`source_type_expr`</em> and <em>`target_type_expr`</em> must evaluate to one of the allowed endpoint vertex types for the given edge type. By specifying the vertex type, this tells the loader what id types to expect. This may be important when the edge type is defined to accept more than one type of source/target vertex.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="TEMP_TABLE Destination Clause" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TO TEMP_TABLE table_name (id_name [, attr_name]*)
+    VALUES (id_expr [, attr_expr]*)
+    [WHERE conditions] [OPTION (options)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The <code>TO TEMP_TABLE</code> clause defines a new, temporary data structure. Its unique characteristics will be described in a separate subsection. For now, we focus on <code>TO VERTEX</code> and <code>TO EDGE</code>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+<strong>For fast loading of edge data, referential integrity checking is disabled by default.</strong><br>
+For an edge to be valid, it must refer to endpoint vertices that exist. To support fast, out-of-order loading, <strong>if one or both of the endpoint vertices do not yet exist, the loader will create vertices with the necessary IDs and default attribute values.</strong> Due to the loader&#8217;s UPSERT semantics, if the vertex data is loaded later, it will be automatically merged with the dummy vertices. The user can disable this feature and perform regular referential integrity checking by setting the <code>VERTEX_MUST_EXIST=true</code> option.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
+<div class="paragraph">
+<p>Suppose we have the following vertex and edge types:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX Person (pid STRING PRIMARY KEY, birthdate DATETIME)
+CREATE VERTEX Company (cid INT PRIMARY KEY, industry STRING)
+CREATE DIRECTED EDGE Visit (FROM Person, TO Person
+                          | FROM Person, TO Company, year INT)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A <code>Visit</code> edge can connect two <code>Person</code> vertices or a <code>Person</code> to a <code>Company</code>. A <code>Person</code> has a string ID, while a Company has an <code>INT</code> ID. Then suppose the <code>Visit</code> edge source data comes from a single CSV file, containing both variants of edges. Note that the 2nd column ($1) contains either <code>Person</code> or <code>Company</code>, and that the 3rd column ($2) contains either a string or an integer.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">Sam,Person,Joe,2012
+Sam,Company,4057,2017
+Chris,Company,9401,2016
+Pat,Person,Taylor,2020</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using the optional <em>`target_type_expr`</em> field, we can load both variants of the <code>Visit</code> edge with a single clause.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">LOAD file1 TO EDGE Visit VALUES ($0, $2 $1, $3) USING separator=",";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Known issue: you must include a <code>USING clause</code> when loading data into edge types with different <code>FROM-TO</code> vertex pairs, even if all options are default.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_attributes_and_attribute_expressions"><a class="anchor" href="#_attributes_and_attribute_expressions"></a><strong>Attributes and Attribute Expressions</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <code>LOAD</code> statement processes each line of an input file, splitting each line (according to the <code>SEPARATOR</code> character, see Section "Other Optional <code>LOAD</code> Clauses" for more details) into a sequence of tokens. Each destination clause provides a token-to-attribute mapping which defines how to construct a new vertex, an edge, or a temp table row instance (e.g., one data object). The tokens can also be thought of as the column values in a table. There are two ways to refer to a column, by position or by name.  Assuming a column has a name, either method may be used, and both methods may be used within one expression.</p>
+</div>
+<div class="paragraph">
+<p><strong>By Position</strong>: The columns (tokens) are numbered from left to right, starting with $0.  The next column is $1, and so on.</p>
+</div>
+<div class="paragraph">
+<p><strong>By Name</strong>: Columns can be named, either through a header line in the input file, or through a <code>DEFINE HEADER</code> statement.  If a header line is used, then the first line of the input file should be structured like a data line, using the same separator characters, except that each column contains a column name string instead of a data value. Names are enclosed in double quotes, e.g. <code>$"age"</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Data file name:</strong> $sys.file_name refers to the current input data file.</p>
+</div>
+<div class="paragraph">
+<p>In a simple case, a token value is copied directly to an attribute. For example, in the following <code>LOAD</code> statement,</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: using $sys.file_name in an attribute expression" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">LOAD "xx/yy/a.csv" TO VERTEX person VALUES ($0, $1, $sys.file_name)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>PRIMARY_ID</code> of a person vertex comes from column <code>$0</code> of the file "xx/yy/a.csv".</p>
+</li>
+<li>
+<p>The next attribute of a person vertex comes from column <code>$1</code>.</p>
+</li>
+<li>
+<p>The next attribute of a person vertex is given the value "xx/y/a.csv" (the filename itself).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Users do not need to explicitly define a primary ID. Given the attributes, one will be selected as the primary key.
+{% endhint %}</p>
+</div>
+<div class="sect2">
+<h3 id="_cumulative_loading"><a class="anchor" href="#_cumulative_loading"></a>Cumulative Loading</h3>
+<div class="paragraph">
+<p>A basic principle in the GSQL Loader is cumulative loading. Cumulative loading means that a particular data object might be written to (i.e., loaded) multiple times, and the result of the multiple loads may depend on the full sequence of writes. This usually means that If a data line provides a valid data object, and the <code>WHERE</code> clause and <code>OPTION</code> clause are satisfied, then the data object is loaded.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Valid input</strong>: For each input data line, each destination clause constructs one or more new data objects. To be a <strong>valid data object,</strong> it must have an ID value of the correct type, have correctly typed attribute values, and satisfy the optional <code>WHERE</code> clause. If the data object is not valid, the object is rejected (skipped) and counted as an error in the log file. The rules for invalid attributes values are summarized below:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>UINT</code>: Any non-digit character. (Out-of-range values cause overflow instead of rejection)</p>
+</li>
+<li>
+<p><code>INT</code>: Any non-digit or non-sign character. (Out-of-range values cause overflow instead of rejection)</p>
+</li>
+<li>
+<p><code>FLOAT</code> and <code>DOUBLE</code>: Any wrong format</p>
+</li>
+<li>
+<p><code>STRING</code>, <code>STRING COMPRESS</code>, <code>FIXED_BINARY</code>: N/A</p>
+</li>
+<li>
+<p><code>DATETIME</code>: Wrong format, invalid date time, or out of range.</p>
+</li>
+<li>
+<p><code>BOOL</code>: Any value not listed later.</p>
+</li>
+<li>
+<p>Complex type: Depends on the field type or element type. Any invalid field (in <code>UDT</code>), element (in <code>LIST</code> or <code>SET</code>), key or value (in <code>MAP</code>) causes rejection.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>New data objects:</strong> If a valid data object has a new ID value, then the data object is added to the graph store.  Any attributes which are missing are assigned the default value for that data type or for that attribute.</p>
+</li>
+<li>
+<p><strong>Overwriting existing data objects</strong>: If a valid data object has a ID value for an existing object, then the new object overwrites the existing data object, with the following clarifications and exceptions:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The attribute values of the new object overwrite the attribute values of the existing data object.</p>
+</li>
+<li>
+<p><strong>Missing tokens</strong>: If a token is missing from the input line so that the generated attribute is missing, then that attribute retains its previous value.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ A STRING token is never considered missing; if there are no characters, then the string is the empty string
+{% endhint %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Skipping an attribute</strong>: A <code>LOAD</code> statement can specify that a particular attribute should <strong>not</strong> be loaded by using the special character _ (underscore) as its attribute expression (attr_expr).  For example,</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">LOAD TO VERTEX person VALUES ($0, $1, _, $2)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>means to skip the next-to-last attribute. This technique is used when it is known that the input data file does not contain data for every attribute.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If the load operation is creating a new vertex or edge, then the skipped attribute will be assigned the default value.</p>
+</li>
+<li>
+<p>If the load operation is overwriting an existing vertex or edge, then the skipped attribute will retain its existing value.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_more_complex_attribute_expressions"><a class="anchor" href="#_more_complex_attribute_expressions"></a><strong>More Complex Attribute Expressions</strong></h3>
+<div class="paragraph">
+<p>An attribute expression may use column tokens (e.g., <code>$0</code>), literals (constant numeric or string values), any of the built-in loader token functions, or a user-defined token function. Attribute expressions may <strong>not</strong> contain mathematical or boolean operators (such as <code>+</code>, <code>*</code>, <code>AND</code>). The rules for attribute expressions are the same as those for id expressions, but an attribute expression can additionally use a reducer function:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>id_expr</em> := $column_number | $"column_name" | constant | $sys.file_name | token_function_name( <em>id_expr</em> [, <em>id_expr</em> ]* )</p>
+</li>
+<li>
+<p><em>attr_expr</em> := <em>id_expr</em> | REDUCE(reducer_function_name(id <em>_expr</em> ))</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that token functions can be nested, that is, a token function can be used as an input parameter for another token function. The built-in loader token/reducer functions and user-defined token functions are described in the section "Built-In Loader Token Functions".</p>
+</div>
+<div class="paragraph">
+<p>The subsections below describe details about loading particular data types.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_double_or_float_attribute"><a class="anchor" href="#_loading_a_double_or_float_attribute"></a>Loading a DOUBLE or FLOAT Attribute</h3>
+<div class="paragraph">
+<p>A floating point value has the basic format</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">[sign][digits].[digits](e|E)[sign][digits]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the first case, the decimal point and following digits are required. In the second case, some digits are required (looking like an integer), and the following decimal point and digits are optional.</p>
+</div>
+<div class="paragraph">
+<p>In both cases, the leading sign ( "+" or "-") is optional. The exponent, using "e" or "E", is optional. Commas and extra spaces are not allowed.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Examples of valid and invalid floating point values" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Valid floating point values
+-198256.03
++16.
+-.00036
+7.14285e15
+9.99E-22
+
+
+# Invalid floating point values
+-198,256.03
+9.99 E-22</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_datetime_attribute"><a class="anchor" href="#_loading_a_datetime_attribute"></a>Loading a <code>DATETIME</code> Attribute</h3>
+<div class="paragraph">
+<p>When loading data into a <code>DATETIME</code> attribute, the GSQL loader will automatically read a string representation of DateTime information and convert it to internal DateTime representation.  The loader accepts any of the following string formats:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>%Y-%m-%d %H:%M:%S</code> (e.g., 2011-02-03 01:02:03)</p>
+</li>
+<li>
+<p><code>%Y/%m/%d %H:%M:%S</code> (e.g., 2011/02/03 01:02:03)</p>
+</li>
+<li>
+<p><code>%Y-%m-%dT%H:%M:%S.000z</code> (e.g., 2011-02-03T01:02:03.123z, 123 will be ignored)</p>
+</li>
+<li>
+<p><code>%Y-%m-%d</code> (only date, no time, e.g., 2011-02-03 )</p>
+</li>
+<li>
+<p><code>%Y/%m/%d</code> (only date, no time, e.g., 2011/02/03)</p>
+</li>
+<li>
+<p>Any integer value (Unix Epoch time, where Jan 1, 1970 at 00:00:00 is integer 0)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format notation:</p>
+</div>
+<div class="paragraph">
+<p>%Y is a 4-digit year. A 2-digit year is not a valid value.</p>
+</div>
+<div class="paragraph">
+<p>%m and %s are a month (1 to 12) and a day (1 to 31), respectively.  Leading zeroes are optional.</p>
+</div>
+<div class="paragraph">
+<p>%H, %M, %S are hours (0 to 23), minutes (0 to 59) and seconds (0 to 59), respectively. Leading zeroes are optional.</p>
+</div>
+<div class="paragraph">
+<p>When loading data, the loader checks whether the values of year, month, day, hour, minute, second are out of the valid range. If any invalid value is present, e.g. '2010-13-05' or '2004-04-31 00:00:00', the attribute is invalid and the object (vertex or edge) is not created.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_bool_attribute"><a class="anchor" href="#_loading_a_bool_attribute"></a>Loading a BOOL Attribute</h3>
+<div class="paragraph">
+<p>When loading data from CSV files the following values are accepted for BOOL attributes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>True: <code>TRUE</code>,<code>True</code>,<code>true</code>,<code>1</code></p>
+</li>
+<li>
+<p>False: <code>FALSE</code>,<code>False</code>,<code>false</code>,<code>0</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When loading data from JSON documents, the valid BOOL values are <code>true</code> and <code>false</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_user_defined_type_udt_attribute"><a class="anchor" href="#_loading_a_user_defined_type_udt_attribute"></a>Loading a User-Defined Type (UDT) Attribute</h3>
+<div class="paragraph">
+<p>To load a UDT attribute, state the name of the UDT type, followed by the list of attribute expressions for the UDT&#8217;s fields, in parentheses. See the example below.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Load UDT example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TYPEDEF TUPLE &lt;f1 INT (1), f2 UINT, f3 STRING (10), f4 DOUBLE &gt; myTuple   # define a UDT
+CREATE VERTEX v_udt  (id STRING PRIMARY KEY, att_udt myTuple)
+CREATE GRAPH test_graph (v_udt)
+CREATE LOADING JOB load_udt FOR GRAPH test_graph {
+    DEFINE FILENAME f;
+    LOAD f TO VERTEX v_udt VALUES ($0, myTuple($1, $2, $3, $4) );
+    # $1 is loaded as f1, $2 is loaded as f2, and so on
+}
+RUN LOADING JOB load_udt USING f="./udt.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_list_or_set_attribute"><a class="anchor" href="#_loading_a_list_or_set_attribute"></a>Loading a LIST or SET Attribute</h3>
+<div class="paragraph">
+<p>There are three methods to load a <code>LIST</code> or a <code>SET</code>.</p>
+</div>
+<div class="paragraph">
+<p>The first method is to load multiple rows of data that share the same ID values and append the individual attribute values to form a collection of values. The collections are formed incrementally by reading one value from each eligible data line and appending the new value into the collection. When the loading job processes a line, it checks to see whether a vertex or edge with that id value(s) already exists or not. If the id value(s) is new, then a new vertex or edge is created with a new list/set containing the single value. If the id(s) has been used before, then the value from the new line is appended to the existing list/set. Below shows an example:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: Cumulative loading of multiple rows to a SET/LIST" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX test_vertex (PRIMARY_ID id STRING, iset SET&lt;INT&gt;, ilist LIST&lt;INT&gt;)
+CREATE UNDIRECTED EDGE test_edge(FROM test_vertex, TO test_vertex)
+CREATE GRAPH test_set_list (*)
+
+CREATE LOADING JOB load_set_list FOR GRAPH test_set_list {
+  DEFINE FILENAME f;
+  LOAD f TO VERTEX test_vertex VALUES ($0, $1, $1);
+}
+RUN LOADING JOB load_set_list USING f="./list_set_vertex.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/list_set_vertex.csv" caption="list_set_vertex.csv" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="list_set_vertex.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">1,10
+3,30
+1,20
+3,30
+3,40
+1,20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The job <code>load_set_list</code>  will load two <code>test_vertex</code> vertices because there are two unique id values in the data file. Vertex 1 has attribute values with <code>iset = [10,20]</code> and <code>ilist = [10,20,20]</code>. Vertex 3 has values <code>iset = [30,40]</code> and <code>ilist = [30, 30, 40]</code>. Note that a set doesn&#8217;t contain duplicate values, while a list can contain duplicate values.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ Because GSQL loading is multi-threaded, the order of values loaded into a LIST might not match the input order.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>If the input file contains multiple columns which should be all added to the LIST or SET, then a second method is available. Use the LIST() or SET() function as in the example below:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: loading multiple columns to a SET/LIST" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX v_set  (PRIMARY_ID id STRING, nick_names SET&lt;STRING&gt;)
+CREATE VERTEX v_list (PRIMARY_ID id STRING, lucky_nums LIST&lt;INT&gt;)
+CREATE GRAPH test_graph (*)
+CREATE LOADING JOB load_set_list FOR GRAPH test_graph {
+    DEFINE FILENAME f;
+    LOAD f TO VERTEX v_set  VALUES ($0, SET($1,$2,$3) );
+    LOAD f TO VERTEX v_list VALUES ($0, LIST($2,$4) );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The third method is to use the <strong><code>SPLIT()</code></strong> function to read a compound token and split it into a collection of elements, to form a <code>LIST</code> or <code>SET</code> collection. The <code>SPLIT()</code> function takes two arguments: the column index and the element separator. The element separator should be distinct from the separator throughout the whole file. Below shows an example:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: SET/LIST loading by SPLIT() example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX test_vertex (PRIMARY_ID id STRING, ustrset SET&lt;STRING&gt;, ilist LIST&lt;INT&gt;)
+CREATE UNDIRECTED EDGE test_edge(FROM test_vertex, TO test_vertex)
+CREATE GRAPH test_split (*)
+
+CREATE LOADING JOB set_list_job FOR GRAPH test_split {
+  DEFINE FILENAME f;
+  LOAD f TO VERTEX test_vertex VALUES ($0, SPLIT($1,"|") , SPLIT($2,"#") );
+}
+RUN LOADING JOB set_list_job USING f="./split_list_set.csv"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/split_list_set.csv" caption=" split_list_set.csv" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="split_list_set.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">vid,names,numbers
+v1,mike|tom|jack, 1 # 2 # 3
+v2,john, 5 # 4 # 8</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ The <code>SPLIT()</code> function cannot be used for UDT type elements.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_a_map_attribute"><a class="anchor" href="#_loading_a_map_attribute"></a>Loading a MAP Attribute</h3>
+<div class="paragraph">
+<p>There are three methods to load a <code>MAP</code>.</p>
+</div>
+<div class="paragraph">
+<p>The first method is to load multiple rows of data that share the same id values. The maps are formed incrementally by reading one key-value pair from each eligible data line. When the loading job processes a line, it checks to see whether a vertex or edge with that id value(s) already exists or not. If the id value(s) is new, then a new vertex or edge is created with a new map containing the single key-value pair. If the id(s) has been used before, then the loading job checks whether the key exists in the map or not. If the key doesn&#8217;t exist in the map, the new key-value pair is inserted. Otherwise, the value will be replaced by the new value.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ The loading order might not be the same as the order in the raw data. If a data file contains multiple lines with the same id and same key but different values, loading them together results in a nondeterministic final value for that key.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p><strong>Method 1</strong>: Below is the syntax to load a <code>MAP</code> by the first method: Use an arrow (&#8594;)  to separate the map&#8217;s key and value.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Loading a MAP by method 1: -&gt; separator" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX v_map  (PRIMARY_ID id STRING, att_map MAP&lt;INT, STRING&gt;)
+CREATE GRAPH test_graph (*)
+CREATE LOADING JOB load_map FOR GRAPH test_graph {
+    DEFINE FILENAME f;
+    LOAD f TO VERTEX v_map  VALUES ($0, ($1 -&gt; $2) );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p><strong>Method 2</strong>: The second method is to use the <code>MAP()</code> function. If there are multiple key-value pairs among multiple columns, <code>MAP()</code> can load them together. Below is an example:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Loading a MAP by method 2: MAP() function" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX v_map  (PRIMARY_ID id STRING, att_map MAP&lt;INT, STRING&gt;)
+CREATE GRAPH test_graph (*)
+CREATE LOADING JOB load_map FOR GRAPH test_graph {
+    DEFINE FILENAME f;
+    LOAD f TO VERTEX v_map  VALUES ($0, MAP( ($1 -&gt; $2), ($3 -&gt; $4) ) );  # $1 and $3 are keys and $2 and $4 are the corresponding values.
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p><strong>Method 3</strong>: The third method is to use the <code>SPLIT()</code> function. Similar to the <code>SPLIT()</code> in loading <code>LIST</code> or <code>SET</code>, the <code>SPLIT()</code> function can be used when the key-value pair is in one column and separated by a key-value separator, or multiple key-value pairs are in one column and separated by element separators and key-value separators. <code>SPLIT()</code> here has three parameters: The first is the column index, the second is the key-value separator, and the third is the element separator. The third parameter is optional. If one row of raw data only has one key-value pair, the third parameter can be skipped. Below are the examples without and with the given element separator.</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/one_key_value.csv" caption="one_key_value.csv" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="example data with one key-value pair per line" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">vid,key_value
+v1,1:mike
+v2,2:tom
+v1,3:lucy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/multi_key_value.csv" caption="multi_key_value.csv" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="example data with multiple key-value pairs per line" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">vid,key_value_list
+v1,1:mike#4:lin
+v2,2:tom
+v1,3:lucy#1:john#6:jack</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Loading a MAP by method 3: SPLIT() function" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">CREATE VERTEX v_map  (PRIMARY_ID id STRING, att_map MAP&lt;INT, STRING&gt;)
+CREATE GRAPH test_graph (*)
+CREATE LOADING JOB load_map FOR GRAPH test_graph {
+    DEFINE FILENAME f;
+    LOAD f TO VERTEX v_map  VALUES ($0, SPLIT($1, ":", "#") );
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ The SPLIT() function cannot be used for UDT type elements.
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_composite_key_attributes"><a class="anchor" href="#_loading_composite_key_attributes"></a>Loading Composite Key Attributes</h3>
+<div class="paragraph">
+<p>Loading a Composite Key for a vertex works no differently than normal loading. Simply load all the attributes as you would for a vertex with a single-attribute primary key. The primary key will automatically be constructed from the appropriate attributes.</p>
+</div>
+<div class="paragraph">
+<p>When loading to an edge where either <code>TO_VERTEX</code> or <code>FROM_VERTEX</code> contains a composite key, the composite set of attributes must be enclosed in parentheses. See the example below.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: loading composite key to vertex and edge" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">#schema setup
+CREATE VERTEX compositePerson (id uint, name string, PRIMARY KEY (name,id))
+CREATE VERTEX compositeMovie (id uint, title string, country string, year uint, primary key (title,year,id))
+CREATE DIRECTED EDGE compositeRoles (from compositePerson,to compositeMovie, role string) with reverse_edge="composite_roles_reverse"
+CREATE GRAPH MyGraph(*)
+
+#loading job
+CREATE LOADING JOB composite_load FOR GRAPH MyGraph {
+  LOAD "$sys.data_root/movies.csv" TO VERTEX compositeMovie VALUES
+       ($"id", $"title", $"country" ,$"year") USING header ="true", separator=",";
+
+  LOAD "$sys.data_root/persons.csv" TO VERTEX compositePerson VALUES
+       ($"id",$"name") USING header = "true", separator =",";
+
+  LOAD "$sys.data_root/compositeroles.csv" TO EDGE compositeRoles VALUES
+       (($"personName", $"personId"),($"movieTitle",$"movieYear",$"movieId"),$"role")
+       USING header="true", separator = ",";
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_wildcard_type_edges"><a class="anchor" href="#_loading_wildcard_type_edges"></a>Loading Wildcard Type Edges</h3>
+<div class="paragraph">
+<p>If an edge has been defined using a wildcard vertex type, a vertex type name must be specified, following the vertex id, in a <code>LOAD</code> statement for the edge. An example is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Example: explicit vertex typing for an untyped edge" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">#schema setup
+CREATE VERTEX user(PRIMARY_ID id UINT)
+CREATE VERTEX product(PRIMARY_ID id UINT)
+CREATE VERTEX picture(PRIMARY_ID id UINT)
+CREATE UNDIRECTED EDGE purchase (FROM *, TO *)
+CREATE GRAPH test_graph(*)
+
+#loading job
+CREATE LOADING JOB test2 FOR GRAPH test_graph {
+  DEFINE FILENAME f;
+  LOAD f
+     TO EDGE purchase VALUES ($0 user, $1 product),
+     TO EDGE purchase VALUES ($0 user, $2 picture);
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_built_in_loader_token_functions"><a class="anchor" href="#_built_in_loader_token_functions"></a><strong>Built-in Loader Token Functions</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The GSQL Loader provides several built-in functions which operate on tokens. Some may be used to construct attribute expressions and some may be used for conditional expressions in the <code>WHERE</code> clause.</p>
+</div>
+<div class="paragraph">
+<p>To use a token function, replace the attribute in the destination clause of the <code>LOAD</code> statement with the function call. The arguments of the function can be a column from the <code>FILE</code> object.</p>
+</div>
+<h4 id="_example_2" class="discrete">Example</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB loadOrders {
+    DEFINE FILENAME f;
+    LOAD f
+        TO VERTEX order VALUES(gsql_trim($"id"), $"date");
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_token_functions_for_attribute_expressions"><a class="anchor" href="#_token_functions_for_attribute_expressions"></a>Token Functions for Attribute Expressions</h3>
+<div class="paragraph">
+<p>The following token functions can be used in an id or attribute expression<table><thead><tr><th style="text-align:left">Function</th>
+      <th style="text-align:left">Output type</th>
+      <th style="text-align:left">Description</th></tr></thead>
+  <tbody><tr><td style="text-align:left">gsql_reverse( <em>in_string </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns a string with the characters in the reverse order of the input
+        string <em>in_string</em>.</td></tr>
+    <tr><td style="text-align:left">gsql_concat( <em>string1, string2,...,stringN </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns a string which is the concatenation of all the input strings.</td></tr>
+    <tr><td style="text-align:left">gsql_uuid_v4()</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns a version-4 UUID.</td></tr>
+    <tr><td style="text-align:left">gsql_split_by_space( <em>in_string </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns a modified version of <em>in_string</em>, in which each space character
+        is replaced with ASCII 30 (decimal).</td></tr>
+    <tr><td style="text-align:left">gsql_substring(<em>str</em>, <em>beginIndex</em> [, <em>length</em>])</td>
+      <td style="text-align:left">string</td>
+        <td style="text-align:left">Returns the substring beginning at <em>beginIndex</em>, having the given <em>length</em>.</td></tr>
+    <tr><td style="text-align:left">gsql_find(<em>str</em>, <em>substr </em>)</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns the start index of the substring within the string. If it is not
+        found, then return -1.</td></tr>
+    <tr><td style="text-align:left">gsql_length(<em>str </em>)</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns the length of the string.</td></tr>
+    <tr><td style="text-align:left">gsql_replace(<em>str</em>, <em>oldToken</em>, <em>newToken</em> [, <em>max</em>])</td>
+      <td style="text-align:left">string</td>
+        <td style="text-align:left">Returns the string resulting from replacing all matchings of <em>oldToken</em> with <em>newToken</em> in
+          the original string. If a <em>max </em>count is provided, there can only
+          be up to that many replacements.</td></tr>
+    <tr><td style="text-align:left">gsql_regex_replace( <em>str</em>, <em>regex</em>, <em>replaceSubstr</em> )</td>
+      <td style="text-align:left">string</td>
+        <td style="text-align:left">Returns the string resulting from replacing all substrings in the input
+          string that match the given <em>regex</em> token with the substitute string.</td></tr>
+    <tr><td style="text-align:left">gsql_regex_match(<em>str</em>, <em>regex</em> )</td>
+      <td style="text-align:left">bool</td>
+      <td style="text-align:left">Returns true if the given string token matches the given regex token and
+        false otherwise.</td></tr>
+    <tr><td style="text-align:left">gsql_to_bool( <em>in_string </em>)</td>
+      <td style="text-align:left">bool</td>
+      <td style="text-align:left">Returns true if the <em>in_string </em>is either &quot;t&quot; or &quot;true&quot;,
+        with case insensitive checking. Returns false otherwise.</td></tr>
+    <tr><td style="text-align:left">gsql_to_uint( <em>in_string </em>)</td>
+      <td style="text-align:left">uint</td>
+      <td style="text-align:left">If <em>in_string </em>is the string representation of an unsigned int,
+        the function returns that integer.
+        <br></br>If <em>in_string </em>is the string representation of a nonnegative float,
+        the function returns that number cast as an int.</td></tr>
+    <tr><td style="text-align:left">gsql_to_int( <em>in_string </em>)</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">If <em>in_string </em>is the string representation of an int, the function
+        returns that integer.
+        <br></br>If <em>in_string </em>is the string representation of a float, the function
+        returns that number cast as an int.</td></tr>
+    <tr><td style="text-align:left">gsql_ts_to_epoch_seconds( <em>timestamp </em>)</td>
+      <td style="text-align:left">uint</td>
+      <td style="text-align:left">Converts a timestamp in canonical string format to Unix epoch time, which
+        is the int number of seconds since Jan. 1, 1970. Refer to the timestamp
+        input format note below.</td></tr>
+    <tr><td style="text-align:left">gsql_current_time_epoch(0)
+        <br></br>
+        <br></br></td>
+      <td style="text-align:left">uint</td>
+      <td style="text-align:left">Returns the current time in Unix epoch seconds. *By convention, the input
+        parameter should be 0, but it is ignored.</td></tr>
+    <tr><td style="text-align:left"><p>flatten( <em>column_to_be_split, group_separator, 1 </em>)</p>
+        <p>flatten( <em>column_to_be_split, group_separator, sub_field_separator, number_of_sub_fields_in_one_group </em>)</p></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">See the section &quot;TEMP_TABLE and Flatten Functions&quot; below. <b><br></br></b></td></tr>
+    <tr><td style="text-align:left"><p>flatten_json_array ( <em>$&quot;array_name&quot; </em>)</p>
+        <p>flatten_json_array ( <em>$&quot;array_name&quot;, $&quot;sub_obj_1&quot;, $&quot;sub_obj_2&quot;, ..., $&quot;sub_obj_n&quot; </em>)
+          <br></br></p></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">See the section &quot;TEMP_TABLE and Flatten Functions&quot; below.</td></tr>
+    <tr><td style="text-align:left"><p>split( <em>column_to_be_split, element_separator </em>)</p>
+        <p>split( <em>column_to_be_split, key_value_separator, element _separator </em>)</p></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"><p>See the section &quot;Loading a LIST or SET Attribute&quot; above.</p>
+        <p>See the section &quot;Loading a MAP Attribute&quot; above.</p></td></tr>
+    <tr><td style="text-align:left">gsql_upper( <em>in_string </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns the input string in upper-case.</td></tr>
+    <tr><td style="text-align:left">gsql_lower( <em>in_string </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Returns the input string in lower-case.</td></tr>
+    <tr><td style="text-align:left">gsql_trim( <em>in_string </em>)</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Trims whitespace from the beginning and end of the input string.</td></tr>
+    <tr><td style="text-align:left"><p>gsql_ltrim( <em>in_string </em>)</p>
+        <p>gsql_rtrim( <em>in_string </em>)</p></td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Trims white space from either the beginning or the end of the input string
+        (Left or right).</td></tr>
+    <tr><td style="text-align:left">gsql_year( <em>timestamp</em> )</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns 4-digit year from timestamp. Refer to timestamp input format note
+        below.</td></tr>
+    <tr><td style="text-align:left"><em>gsql_month( timestamp )</em></td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns month (1-12) from timestamp. Refer to timestamp input format note
+        below.</td></tr>
+    <tr><td style="text-align:left">gsql_day( <em>timestamp</em> )</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns day (1-31) from timestamp. Refer to timestamp input format note
+        below.</td></tr>
+    <tr><td style="text-align:left">gsql_year_epoch( <em>epoch</em> )</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns 4-digit year from Unix epoch time, which is the int number of
+        seconds since Jan. 1, 1970.</td></tr>
+    <tr><td style="text-align:left">gsql_month_epoch( <em>epoch</em> )</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns month (1-12) from Unix epoch time, which is the int number of
+        seconds since Jan. 1, 1970.</td></tr>
+    <tr><td style="text-align:left">gsql_day_epoch( <em>epoch</em> )</td>
+      <td style="text-align:left">int</td>
+      <td style="text-align:left">Returns day (1-31) from Unix epoch time, which is the int number of seconds
+        since Jan. 1, 1970.</td></tr></tbody></table></p>
+</div>
+<div class="sect3">
+<h4 id="_timestamp_input_format"><a class="anchor" href="#_timestamp_input_format"></a>Timestamp Input Format</h4>
+<div class="paragraph">
+<p>{% hint style="info" %}
+The timestamp parameter should be in one of the following formats:<br>
+<code>"%Y-%m-%d %H:%M:%S"
+"%Y/%m/%d %H:%M:%S"
+"%Y-%m-%dT%H:%M:%S.000z" // text after the dot . is ignored</code>
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reducer_functions"><a class="anchor" href="#_reducer_functions"></a>Reducer Functions</h3>
+<div class="paragraph">
+<p>A reducer function aggregates multiple values of a non-id attribute into one attribute value of a single vertex or edge. Reducer functions are computed incrementally; that is, each time a new input token is applied, a new resulting value is computed.</p>
+</div>
+<div class="paragraph">
+<p>To reduce and load aggregate data to an attribute, the attribute expression has the form</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">REDUCE( reducer_function ( input_expr ) )</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <em>reducer_function</em> is one of the functions in the table below. <em>input_expr</em> can include non-reducer functions, but reducer functions cannot be nested.</p>
+</div>
+<div class="paragraph">
+<p>Each reducer function is overloaded so that one function can be used for several different data types. For primitive data types, the output type is the same as the <em>input_expr</em> type. For LIST, SET, and MAP containers, the <em>input_expr</em> type is one of the allowed element types for these containers (see "Complex Types" in the Attribute Data Types section).  The output is the entire container.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function name</th>
+<th class="tableblock halign-left valign-top">Data type of <em>arg</em>: Description of function&#8217;s return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">max( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT, UINT, FLOAT, DOUBLE: maximum of all <em>arg</em> values cumulatively received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">min( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT, UINT, FLOAT, DOUBLE: minimum of all <em>arg</em> values cumulatively received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT, UINT, FLOAT, DOUBLE: sum of all <em>arg</em> values cumulatively received  STRING: concatenation of all arg values cumulatively received  LIST, SET element: list/set of all <em>arg</em> values cumulatively received  MAP (key &#8594; value) pair: key-value dictionary of all key-value pair <em>arg</em> values cumulatively received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">and( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL: AND of all <em>arg</em> values cumulatively received  INT, UINT: bitwise AND of all <em>arg</em> values cumulatively received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">or( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL: OR of all <em>arg</em> values cumulatively received  INT, UINT: bitwise OR of all <em>arg</em> values cumulatively received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">overwrite( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">non-container: <em>arg</em>  LIST, SET: new list/set containing only <em>arg</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ignore_if_exists( <em>arg</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any: If an attribute value already exists, return(retain) the existing value. Otherwise, return(load) <em>arg</em> .</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ Each function supports a certain set of attribute types. Calling a reducer function with an incompatible type crashes the service. In order to prevent that, use the WHERE clause (introduced below) together with IS NUMERIC or other operators, functions, predicates for type checking if necessary.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_clause"><a class="anchor" href="#_where_clause"></a><strong>WHERE Clause</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>WHERE</code> clause is an optional clause. The <code>WHERE</code> clause&#8217;s condition is a boolean expression.  The expression may use column token variables, token functions, and operators which are described below. The expression is evaluated for each input data line. If the condition is true, then the vertex or edge instance is loaded into the graph store. If the condition is false, then this instance is skipped. Note that all attribute values are treated as string values in the expression, so the type conversion functions <code>to_int()</code> and <code>to_float()</code>, which are described below, are provided to enable numerical conditions.</p>
+</div>
+<div class="sect2">
+<h3 id="_operators_in_the_where_clause"><a class="anchor" href="#_operators_in_the_where_clause"></a>Operators in the WHERE Clause</h3>
+<div class="paragraph">
+<p>The GSQL Loader language supports most of the standard arithmetic, relational, and boolean operators found in C&#43;&#43;. Standard operator precedence applies, and parentheses provide the usual override of precedence.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Arithmetic Operators: +, -, *, /, ^</strong>  Numeric operators can be used to express complex operations between numeric types. Just as in ordinary mathematical expressions, parentheses can be used to define a group and to modify the order of precedence.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Because computers necessarily can only store approximations for most <code>DOUBLE</code> and <code>FLOAT</code> type values, it is not recommended to test these data types for exact equality or inequality. Instead, one should allow for an acceptable amount of error. The following example checks if <code>$0 = 5</code>, with an error of 0.00001 permitted:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">WHERE to_float($0) BETWEEN 5-0.00001 AND 5+0.00001</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endhint %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Relational Operators: &lt;, &gt;, ==, !=, &#8656;, &gt;=</strong>  Comparisons can be performed between two numeric values or between two string values.</p>
+</li>
+<li>
+<p><strong>Predicate Operators:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>AND, OR, NOT</strong> operators are the same as in SQL. They can be used to combine multiple conditions together.  E.g., <em>$0 &lt; "abc" AND $1 &gt; "abc"</em> selects the rows with the first token less than "abc" and the second token greater than "abc".  E.g., <em>NOT $1 &lt; "abc"</em> selects the rows with the second token greater than or equal to "abc".</p>
+</li>
+<li>
+<p><strong>IS NUMERIC</strong>  <em>*token*</em> <strong>IS NUMERIC</strong> returns true if <strong>token</strong> is in numeric format. Numeric format include integers, decimal notation, and exponential notation. Specifically, IS NUMERIC is true if token matches the following regular expression: (/-) ? [0-9] + (.[0-9]) ? [0-9] * ((e/E)(/-) ? [0-9] +) ? . Any leading space and trailing space is skipped, but no other spaces are allowed.  E.g., <em>$0 IS NUMERIC</em> checks whether the first token is in numeric format.</p>
+</li>
+<li>
+<p><strong>IS EMPTY</strong>  <em>*token*</em> <strong>IS EMPTY</strong> returns true if <strong>token</strong> is an empty string.  E.g., <em>$1 IS EMPTY</em> checks whether the second token is empty.</p>
+</li>
+<li>
+<p><strong>IN</strong>  <em>*token*</em> <strong>IN (</strong> <em>*set_of_values*</em> <strong>)</strong> returns true if <strong>token</strong> is equal to one member of a set of specified values. The values may be string or numeric types.  E.g., <em>$2 IN ("abc", "def", "lhm")</em> tests whether the third token equals one of the three strings in the given set.  E.g., <em>to_int($3) IN (10, 1, 12, 13, 19)</em> tests whether the fourth token equals one of the specified five numbers.</p>
+</li>
+<li>
+<p><strong>BETWEEN &#8230;&#8203; AND</strong>  <em>*token*</em> <strong>BETWEEN</strong> <em>*lowerVal*</em> <strong>AND</strong> <em>*upperVal*</em> returns true if <strong>token</strong> is within the specified range, inclusive of the endpoints. The values may be string or numeric types.  E.g., <em>$4 BETWEEN "abc" AND "def"</em> checks whether the fifth token is greater than or equal to "abc" and also less than or equal to "def"  E.g., <em>to_float($5) BETWEEN 1 AND 100.5</em> checks whether the sixth token is greater than or equal to 1.0 and less than or equal to 100.5.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_token_functions_in_the_where_clause"><a class="anchor" href="#_token_functions_in_the_where_clause"></a>Token functions in the WHERE clause</h3>
+<div class="paragraph">
+<p>The GSQL loading language provides several built-in functions for the WHERE clause.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function name</th>
+<th class="tableblock halign-left valign-top">Output type</th>
+<th class="tableblock halign-left valign-top">Description of function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to_int( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Converts <em>main_string</em> to an integer value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to_float( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Converts <em>main_string</em> to a float value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">concat( <em>string1, string2</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns a string which is the concatenation of <em>string1</em> and <em>string2</em> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">token_len( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the length of <em>main_string.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gsql_is_not_empty_string( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if <em>main_string</em> is empty after removing white space. Returns false otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gsql_token_equal( <em>string1, string2</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if <em>string1</em> is exactly the same (case sensitive) as <em>string2</em> . Returns false otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gsql_token_ignore_case_equal( <em>string1, string2</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if <em>string1</em> is exactly the same (case insensitive) as <em>string2</em> . Returns false otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gsql_is_true( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if <em>main_string</em> is either "t" or "true" (case insensitive). Returns false otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gsql_is_false( <em>main_string</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true if <em>main_string</em> is either "f" or "false" (case insensitive). Returns false otherwise.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ The token functions in the WHERE clause and those token functions used for attribute expression are different. They cannot be used exchangeably.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_user_defined_token_functions"><a class="anchor" href="#_user_defined_token_functions"></a><strong>User-Defined Token Functions</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users can write their own token functions in C&#43;&#43; and install them in the GSQL system. The system installation already contains a source code file containing sample functions. Users simply add their customized token functions to this file. The file for user-defined token functions for attribute expressions or <code>WHERE</code> clauses is at <code>&lt;tigergraph.root.dir&gt;/app/&lt;VERSION_NUM&gt;/dev/gdk/gsql/src/TokenBank/TokenBank.cpp</code>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+With TigerGraph Version 3.1, GSQL server runs in HA mode by default. Please follow the instructions in the link below to keep all User Sources files in sync across all GSQL servers.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.tigergraph.com/admin/admin-guide/installation-and-configuration/high-availability-support-for-gsql-server#user-source-code-maintenance" class="bare">https://docs.tigergraph.com/admin/admin-guide/installation-and-configuration/high-availability-support-for-gsql-server#user-source-code-maintenance</a>
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>There are a few examples in this file, and details are presented below.</p>
+</div>
+<div class="paragraph">
+<p>Testing your functions is simple. In the same directory with the <code>TokenBank.cpp</code> file is a command script called compile.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To test that your function compiles:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">./compile</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To test that your function works correctly, write your own test and add it to the <code>main()</code> procedure in the <code>TokenBank.cpp</code>. Then, compile the file and run it. Note that files located in <code>../TokenLib</code> need to be included:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">g++ -I../TokenLib TokenBank.cpp
+./a.out</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_defined_token_functions_for_attribute_expressions"><a class="anchor" href="#_user_defined_token_functions_for_attribute_expressions"></a>User-defined Token Functions for Attribute Expressions</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute type</th>
+<th class="tableblock halign-left valign-top">Function signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string or string compress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" void funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum,  char* const oToken, uint32_t&amp; oTokenLen)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" bool funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" uint64_t funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" int64_t funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" float funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extern "C" double funcName (const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The parameters are as follows: iToken is the array of string tokens, iTokenLen is the array of the length of the string tokens, and iTokenNum is the number of tokens. Note that the input tokens are always in string (char*) format.</p>
+</div>
+<div class="paragraph">
+<p>If the attribute type is not string nor string compress, the return type should be the corresponding type: bool for bool; uint64_t for uint; int64_t for int; float for float double for double. If the attribute type is string or string compress, the return type should be void, and use the extra parameters ( char *const oToken, uint32_t&amp; oTokenLen) for storing the return string. oToken is the returned string value, and oTokenLen is the length of this string.</p>
+</div>
+<div class="paragraph">
+<p>The built-in token function <code>gsql_concat</code> is used as an example below. It takes multiple token parameters and returns a string.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="gsql_concat" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">extern "C" void gsql_concat(const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum, char* const oToken, uint32_t&amp; oTokenLen) {
+  int k = 0;
+  for (int i=0; i &lt; iTokenNum; i++) {
+    for (int j =0; j &lt; iTokenLen[i]; j++) {
+           oToken[k++] = iToken[i][j];
+    }
+  }
+  oTokenLen = k;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_defined_token_functions_for_where_clause"><a class="anchor" href="#_user_defined_token_functions_for_where_clause"></a>User-defined Token Functions for WHERE Clause</h3>
+<div class="paragraph">
+<p>User-defined token functions (described above) can also be used to construct the boolean conditional expression in the <code>WHERE</code> clause. However, there are some restrictions in the <code>WHERE</code> clause:</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+In the clause "WHERE <em>conditions</em> ",</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The only type of user-defined token function allowed are those that return a boolean value.</p>
+</li>
+<li>
+<p>If a user-defined token function is used in a WHERE Clause, then it must constitute the entire condition; it cannot be combined with another function or operator to produce a subsequent value. However, the arguments of the UDF can include other functions.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The source code for the built-in token function gsql_token_equal is used as an example for how to write a user-defined token function.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="gsql_token_equal" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">extern "C" bool gsql_token_equal(const char* const iToken[], uint32_t iTokenLen[], uint32_t iTokenNum) {
+  if (iTokenNum != 2) {
+    return false;
+  }
+  if (iTokenLen[0] != iTokenLen[1]) {
+    return false;
+  }
+  for (int i =0; i &lt; iTokenLen[0]; i++) {
+    if (iToken[0][i] != iToken[1][i]) {
+      return false;
+    }
+  }
+  return true;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_optional_load_clauses"><a class="anchor" href="#_other_optional_load_clauses"></a><strong>Other Optional LOAD Clauses</strong></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_option_clause"><a class="anchor" href="#_option_clause"></a><strong><code>OPTION</code> clause</strong></h3>
+<div class="paragraph">
+<p>There are no supported options for the OPTION clause at this time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tags_clause_beta"><a class="anchor" href="#_tags_clause_beta"></a><code>TAGS</code> clause (Beta)</h3>
+<div class="paragraph">
+<p>The <code>TAGS</code> clause specifies the tags to be applied to the vertices loaded by the <code>LOAD</code> statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">TAGS "(" tag_name (, tag_name)* ")" BY [ OR | OVERWRITE ]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If a <code>LOAD</code> statement has a <code>TAGS</code> clause, it will tag the vertices with the tags specified in the <code>TAGS</code> clause. Before vertices can be loaded and tagged with a <code>LOAD</code> statement, the vertex type must first be <a href="modifying-a-graph-schema.md#alter-vertex-or-edge">marked as taggable</a>, and <a href="modifying-a-graph-schema.md#add-tag">the tags must be defined</a>.</p>
+</div>
+<div class="paragraph">
+<p>Users have two options when it comes to how to merge tags if the target vertices exist in the graph:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>BY OR</code> : Add the new tags to the existing set of tags.</p>
+</li>
+<li>
+<p><code>BY OVERWRITE</code>: Overwrite existing tags with the new tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_clause"><a class="anchor" href="#_using_clause"></a><strong><code>USING</code> clause</strong></h3>
+<div class="paragraph">
+<p>A <code>USING</code> clause contains one or more optional parameter value pairs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USING parameter=value [,parameter=value]*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+If multiple LOAD statements use the same source (the same file path, the same TEMP_TABLE, or the same file variable), the USING clauses in these LOAD statements must be the same. Therefore, we recommend that if multiple destination clauses share the same source, put all of these destination clauses into the same LOAD statement.
+{% endhint %}<table><thead><tr><th style="text-align:left"><b>Parameter</b></th>
+      <th style="text-align:left"><b>Meaning of Value</b></th>
+      <th style="text-align:left"><b>Allowed Values</b></th></tr></thead>
+  <tbody><tr><td style="text-align:left">SEPARATOR</td>
+      <td style="text-align:left">specifies the special character that separates tokens (columns) in the
+        data file</td>
+      <td style="text-align:left"><p>any single ASCII character.</p>
+        <p>Default is comma &quot;,&quot;</p>
+        <p><code>&quot;\t&quot; </code>for tab<code>&quot;\xy&quot; </code>for ASCII
+          decimal code xy</p></td></tr>
+    <tr><td style="text-align:left">EOL</td>
+      <td style="text-align:left">the end-of-line character</td>
+      <td style="text-align:left"><p>any ASCII sequence</p>
+        <p>Default = <b><code>&quot;\n&quot; </code></b>(system-defined newline character
+          or character sequence)</p></td></tr>
+    <tr><td style="text-align:left">QUOTE
+        <br></br>(See note below)</td>
+      <td style="text-align:left">specifies explicit boundary markers for string tokens, either single or
+        double quotation marks. See more details below.</td>
+      <td style="text-align:left">&quot;single&quot; for &apos;
+        <br></br>&quot;double&quot; for &quot;</td></tr>
+    <tr><td style="text-align:left">HEADER</td>
+      <td style="text-align:left"><p>whether the data file&apos;s first line is a header line.</p>
+        <p>The header assigns names to the columns.</p>
+        <p>The LOAD statement must refer to an actual file with a valid header.</p></td>
+      <td style="text-align:left"><p>&quot;true&quot;, &quot;false&quot;</p>
+        <p>Default is &quot;false&quot;</p></td></tr>
+    <tr><td style="text-align:left">USER_DEFINED_HEADER</td>
+      <td style="text-align:left">specifies the name of the header variable, when a header has been defined
+        in the loading job, rather than in the data file</td>
+      <td style="text-align:left">the variable name in the preceding DEFINE HEADER statement</td></tr>
+    <tr><td style="text-align:left">REJECT_LINE_RULE</td>
+      <td style="text-align:left">if the filter expression evaluates to true, then do not use this input
+        data line.</td>
+      <td style="text-align:left">name of filter from a preceding DEFINE INPUT_LINE_FILTER statement</td></tr>
+    <tr><td style="text-align:left">JSON_FILE
+        <br></br>(See Loading JSON Data section below)</td>
+      <td style="text-align:left">whether each line is a json object (see Section &quot;JSON Loader&quot;
+        below for more details)</td>
+      <td style="text-align:left"><p>&quot;true&quot;, &quot;false&quot;</p>
+        <p>Default is &quot;false&quot;</p></td></tr>
+    <tr><td style="text-align:left">NEW_VERTEX_ONLY</td>
+      <td style="text-align:left"><p>If true, treat vertices as insert-only. If the input data refers to a
+          vertex which already exists, do not update it.</p>
+        <p>If false, upsert vertices.</p></td>
+      <td style="text-align:left"><p>&quot;true&quot;, &quot;false&quot;</p>
+        <p>Default is &quot;false&quot;</p></td></tr>
+    <tr><td style="text-align:left"><p>VERTEX_MUST_EXIST</p>
+        <p>(See VERTEX_MUST_EXIST section below)</p></td>
+      <td style="text-align:left">If true, only insert or update an edge If both endpoint vertices already
+        exist. If false, always insert new edges, creating endpoint vertices as
+        needed, using given id and default values for other parameters.</td>
+      <td style="text-align:left"><p>&quot;true&quot;, &quot;false&quot;</p>
+        <p>Default is &quot;false&quot;</p></td></tr></tbody></table></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_quote_parameter"><a class="anchor" href="#_quote_parameter"></a><strong>QUOTE parameter</strong></h3>
+<div class="paragraph">
+<p>The parser will not treat separator characters found within a pair of quotation marks as a separator. For example, if the parsing conditions are <code>QUOTE="double", SEPARATOR=","</code>, the comma in <code>"Leonard,Euler"</code> will not separate Leonard and Euler into separate tokens.<br>
+<em>**</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If QUOTE is not declared, quotation marks are treated as ordinary characters.</p>
+</li>
+<li>
+<p>If QUOTE is declared, but a string does not contain a matching pair of quotation marks, then the string is treated as if QUOTE is not declared.</p>
+</li>
+<li>
+<p>Only the string inside the first pair of quote (from left to right) marks are loaded. For example QUOTE="double", the string a"b"c"d"e will be loaded as b.</p>
+</li>
+<li>
+<p>There is no escape character in the loader, so the only way to include quotation marks within a string is for the string body to use one type of quote (single or double) and to declare the other type as the string boundary marker.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Previously, ill-formatted strings such as <strong>a"a,b"ac,d</strong> would be parsed as a,b,d ignoring a,a,c. The expected input string should be <strong>a,"a,b",ac,d</strong>. In v2.4, incorrectly formatted strings such as this example will be parsed normally, giving you this result: <strong>a"a,b"ac</strong> and <strong>d.</strong>
+{% endhint %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_loading_json_data"><a class="anchor" href="#_loading_json_data"></a><strong>Loading JSON Data</strong></h3>
+<div class="paragraph">
+<p>When the USING option <code>JSON_FILE="true"</code> is used, the loader loads JSON objects instead of tabular data. A JSON object is an unordered set of key/value pairs, where each value may itself be an array or object, leading to nested structures.  A colon separates each key from its value, and a comma separates items in a collection.  A more complete description of JSON format is available at <a href="http://www.json.org/">www.json.org</a>. The JSON loader requires that each input line has exactly one JSON object. Instead of using column values as tokens, the JSON loader uses JSON values as tokens, that is, the second part of each JSON key/value pair. In a GSQL loading job, a JSON field is identified by a dollar sign $ followed by the colon-separated sequence of nested key names to reach the value from the top level. For example, given the JSON object <code>{"abc":{"def": "this_value"}}</code>, the identifier <code>$"abc":"def"</code> is used to access <code>"this_value"</code>. The double quotes are mandatory.</p>
+</div>
+<div class="paragraph">
+<p>An example is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="USING JSON_FILE test schema and loading job" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX encoding (PRIMARY_ID id STRING, length FLOAT default 10)
+CREATE UNDIRECTED EDGE encoding_edge (FROM encoding, TO encoding)
+CREATE GRAPH encoding_graph (*)
+
+CREATE LOADING JOB json_load FOR GRAPH encoding_graph {
+  LOAD "encoding.json" TO VERTEX encoding
+    VALUES ($"encoding", $"indent":"length") USING JSON_FILE="true";
+}
+RUN JOB json_load</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>To specify an end-of-line character other than the standard one, use the EOL option, as shown below.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="JSON loading using EOL" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB json_load2 FOR GRAPH companyGraph {
+
+  LOAD "/tmp/data.json"
+    TO VERTEX company VALUES($"company":"name":"value",$"company":"name":"value"),
+    TO VERTEX members VALUES($"members",$"members") USING JSON_FILE="true", EOL="\03";
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/encoding.json" caption="encoding.json - Download" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="encoding.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{"encoding": "UTF-7","plug-ins":["c"],"indent" : { "length" : 30, "use_space": true }}
+{"encoding":"UTF-1","indent":{"use_space": "dontloadme"}, "plug-ins" : [null, true, false] }
+{"plug-ins":["C","c++"],"indent":{"length" : 3, "use_space": false},"encoding":"UTF-6"}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>In the above data encoding.json, the order of fields are not fixed and some fields are missing. The JSON loader ignores the order and accesses the fields by the nested key names. The missing fields are loaded with default values. The result vertices are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">id</th>
+<th class="tableblock halign-left valign-top">attr1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"UTF-7"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"UTF-1"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"UTF-6"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_loading_parquet_data"><a class="anchor" href="#_loading_parquet_data"></a>Loading Parquet Data</h3>
+<div class="paragraph">
+<p>TigerGraph can load data from Parquet files if they are stored in AWS S3 buckets. For more details on how to set up S3 data sources and loading jobs, read the <a href="#../../data-loader-guides/s3-loader-user-guide.adoc" class="page unresolved">AWS S3 Loader User Guide</a>. In the background TigerGraph uses the JSON loading functionality to read data from Parquet files, so the <a href="creating-a-loading-job.md#loading-json-data">JSON specific information</a> in the previous section applies.</p>
+</div>
+<div class="paragraph">
+<p>In order to load Parquet data, you need to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Specify <code>"file.reader.type": "parquet"</code> in the S3 file configuration file or argument</p>
+</li>
+<li>
+<p>Specify <code>JSON_FILE="true"</code> in the USING clause of the LOAD statements</p>
+</li>
+<li>
+<p>Refer to JSON keys (≈ Parquet "column names") instead of column numbers</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You will probably want to add <code>USING EOF="true"</code> to your RUN LOADING JOB statement to explicitly indicate to the loading job to stop after consuming all data from the Parquet source, not to expect further entries.</p>
+</div>
+<div class="paragraph">
+<p>An example of a Parquet loading setup is shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE DATA_SOURCE S3 s3ds = "{\"file.reader.settings.fs.s3a.access.key\":\"myaccesskey\",\"file.reader.settings.fs.s3a.secret.key\":\"mysecretkey\"}" FOR GRAPH companyGraph
+
+CREATE LOADING JOB parquet_load FOR GRAPH companyGraph {
+
+    DEFINE FILENAME f = "$s3ds:{\"file.uris\": \"s3://mybucket/mydata.parquet\", \"file.reader.type\": \"parquet\"}";
+
+    LOAD f
+      TO VERTEX members VALUES($"members", $"members") USING JSON_FILE="true";
+}
+
+RUN LOADING JOB parquet_load USING EOF="true"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vertex_must_exist_parameter"><a class="anchor" href="#_vertex_must_exist_parameter"></a><strong><code>VERTEX_MUST_EXIST</code> Parameter</strong></h3>
+<div class="paragraph">
+<p>Normally, if vertices do not exist when loading data to edges, a vertex will be created for the connecting edge, using default values for all attributes. Using the VERTEX_MUST_EXIST="true" option will load data only if the vertices on both sides of an edge already exist, therefore no longer creating extra vertices.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB load_edge FOR GRAPH MyGraph {
+    DEFINE FILENAME f;
+    LOAD f
+        TO EDGE MyEdge VALUES ($1, $2, $3,) USING VERTEX_MUST_EXIST="true";
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_temp_table_and_flatten_functions"><a class="anchor" href="#_temp_table_and_flatten_functions"></a><strong><code>TEMP_TABLE</code> and Flatten Functions</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The keyword <code>TEMP_TABLE</code> triggers the use of a temporary data table which is used to store data generated by one <code>LOAD</code> statement, for use by a later <code>LOAD</code> statement. Earlier we introduced the syntax for loading data to a <code>TEMP_TABLE</code>:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="TEMP_TABLE Destination Clause" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TO TEMP_TABLE table_name (id_name [, attr_name]*) VALUES (id_expr [, attr_expr]*)
+    [WHERE conditions] [OPTION (options)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>This clause is designed to be used in conjunction with the <code>flatten</code> or <code>flatten_json_array</code> function in one of the <code>attr_expr</code> expressions. The flatten function splits a multi-value field into a set of records. Those records can first be stored in a temporary table, and then the temporary table can be loaded into vertices and/or edges. Only one flatten function is allowed in one temp table destination clause.</p>
+</div>
+<div class="paragraph">
+<p>There are two versions of the flatten function: One parses single-level groups and the other parses two-level groups. There are also two versions of the flatten_json_array function: One splits an array of primitive values, and the other splits an array of JSON objects.</p>
+</div>
+<div class="sect2">
+<h3 id="_one_level_flatten_function"><a class="anchor" href="#_one_level_flatten_function"></a>One-Level Flatten Function</h3>
+<div class="paragraph">
+<p><code>flatten( column_to_be_split, separator, 1 )</code> is used to parse a one-level group into individual elements. An example is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/book1.dat" caption="book1.dat" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="book1.dat" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">101|"Harry Potter and the Philosopher's Stone"|"fiction,fantasy,young adult"
+102|"The Three-Body Problem"|"fiction,science fiction,Chinese"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The following loading job contains two <code>LOAD</code> statements. The first one loads input data to <code>Book</code> vertices and to a <code>TEMP_TABLE</code>. The second one loads the <code>TEMP_TABLE</code> data to <code>Genre</code> vertices and <code>book_genre</code> edges.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="One-level Flatten Function loading (load_book_flatten1.gsql)" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB load_books_flatten1 FOR GRAPH Book_rating {
+  DEFINE FILENAME f;
+  LOAD f
+      TO VERTEX Book VALUES ($0, $1, _),
+      TO TEMP_TABLE t1(bookcode,genre) VALUES ($0, flatten($2,",",1))
+      USING QUOTE="double", SEPARATOR="|";
+
+  LOAD TEMP_TABLE t1
+      TO VERTEX Genre VALUES($"genre", $"genre"),
+      TO EDGE book_genre VALUES($"bookcode", $"genre");
+}
+RUN LOADING JOB load_books_flatten1 USING f="../data/book1.dat"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>Line 5 says that the third column (<code>$2</code>) of each input line should be split into separate tokens, with comma (<code>,</code>) as the separator. Each token will have its own row in table <code>t1</code>. The first column is labeled <code>bookcode</code> with value <code>$0</code> and the second column is <code>genre</code> with one of the <code>$2</code> tokens. The contents of <code>TEMP_TABLE t1</code> are shown below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">bookcode</th>
+<th class="tableblock halign-left valign-top">genre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fantasy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">young_adult</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">science_fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chinese</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Then, lines 8 to 10 say to read <code>TEMP_TABLE t1</code> and to do the following for each row:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a <code>Genre</code> vertex for each new value of <code>genre</code>.</p>
+</li>
+<li>
+<p>Create a <code>book_genre</code> edge from <code>bookcode</code> to <code>genre</code>.  In this case, each row of <code>TEMP_TABLE t1</code> generates one <code>book_genre</code> edge.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The final graph will contain two <code>Book</code> vertices (101 and 102), five Genre vertices, and six <code>book_genre</code> edges.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="List of all book_genre edges after loading" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+  "results": [{"@@edgeSet": [
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "101",
+      "to_id": "fiction",
+      "attributes": {},
+      "e_type": "book_genre"
+    },
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "101",
+      "to_id": "fantasy",
+      "attributes": {},
+      "e_type": "book_genre"
+    },
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "102",
+      "to_id": "sciencevfiction",
+      "attributes": {},
+      "e_type": "book_genre"
+    },
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "101",
+      "to_id": "young adult",
+      "attributes": {},
+      "e_type": "book_genre"
+    },
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "102",
+      "to_id": "fiction",
+      "attributes": {},
+      "e_type": "book_genre"
+    },
+    {
+      "from_type": "Book",
+      "to_type": "Genre",
+      "directed": false,
+      "from_id": "102",
+      "to_id": "Chinese",
+      "attributes": {},
+      "e_type": "book_genre"
+    }
+  ]}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_two_level_flatten_function"><a class="anchor" href="#_two_level_flatten_function"></a>Two-Level Flatten Function</h3>
+<div class="paragraph">
+<p>flatten( <em>column_to_be_split, group_separator, sub_field_separator, number_of_sub_fields_in_one_group</em> ) is used for parse a two-level group into individual elements. Each token in the main group may itself be a group, so there are two separators: one for the top level and one for the second level. An example is shown below.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="book2.dat" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">101|"Harry Potter and the Philosopher's Stone"|"FIC:fiction,FTS:fantasy,YA:young adult"
+102|"The Three-Body Problem"|"FIC:fiction,SF:science fiction,CHN:Chinese"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The flatten function now has four parameters instead of three.  The additional parameter is used to record the genre_name in the Genre vertices.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="Two-level Flatten Function loading (book_flatten2_load.gsql)" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB load_books_flatten2 FOR GRAPH Book_rating {
+  DEFINE FILENAME f;
+  LOAD f
+      TO VERTEX Book VALUES ($0, $1, _),
+      TO TEMP_TABLE t2(bookcode,genre_id,genre_name) VALUES ($0, flatten($2,",",":",2))
+      USING QUOTE="double", SEPARATOR="|";
+
+  LOAD TEMP_TABLE t2
+      TO VERTEX Genre VALUES($"genre_id", $"genre_name"),
+      TO EDGE book_genre VALUES($"bookcode", $"genre_id");
+}
+RUN LOADING JOB load_books_flatten2 USING f="book2.dat"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>In this example, in the genres column ($2), there are multiple groups, and each group has two sub-fields, genre_id and genre_name. After running the loading job, the file book2.dat will be loaded into the TEMP_TABLE t2 as shown below.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">bookcode</th>
+<th class="tableblock halign-left valign-top">genre_id</th>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FIC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fantasy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">101</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">young adult</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FIC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">science fiction</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CHN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chinese</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_flatten_a_json_array_of_primitive_values"><a class="anchor" href="#_flatten_a_json_array_of_primitive_values"></a>Flatten a JSON Array of Primitive Values</h3>
+<div class="paragraph">
+<p>flatten_json_array($" <em>array_name</em> ") parses a JSON array of primitive (string, numberic, or bool) values, where "array_name" is the name of the array. Each value in the array creates a record. Below is an example:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="flatten_json_array_values loading" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX encoding (PRIMARY_ID id STRING, length FLOAT default 10)
+CREATE UNDIRECTED EDGE encoding_edge (FROM encoding, TO encoding)
+CREATE GRAPH encoding_graph (*)
+
+CREATE LOADING JOB json_flatten FOR GRAPH encoding_graph {
+  LOAD "encoding2.json" TO TEMP_TABLE t2 (name, length)
+    VALUES (flatten_json_array($"plug-ins"), $"indent":"length") USING JSON_FILE ="true";
+  LOAD TEMP_TABLE t2
+    TO VERTEX encoding VALUES ($"name", $"length");
+}
+RUN LOADING JOB json_flatten</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/encoding2.json" caption="encoding2.json - Download" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="encoding2.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{"plug-ins" : ["C", "c++"],"encoding" : "UTF-6","indent" : { "length" : 3, "use_space": false}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The above data and loading job creates the following temporary table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">id</th>
+<th class="tableblock halign-left valign-top">length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c&#43;&#43;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_flatten_a_json_array_of_json_objects"><a class="anchor" href="#_flatten_a_json_array_of_json_objects"></a>Flatten a JSON Array of JSON Objects</h3>
+<div class="paragraph">
+<p>flatten_json_array ( <em>$"array_name", $"sub_obj_1", $"sub_obj_2", &#8230;&#8203;, $"sub_obj_n"</em> ) parses a JSON array of JSON objects. "array_name" is the name of the array, and the following parameters <em>$"sub_obj_1", $"sub_obj_2", &#8230;&#8203;, $"sub_obj_n"</em> are the field key names in each object in the array. See complete example below:</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/encoding3.json" caption="encoding3.json - Download" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="encoding3.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{"encoding":"UTF-1","indent":{"use_space": "dontloadme"}, "plug-ins" : [null, true, false, {"lang":"golang","prop":{"age":"noidea"}}]}
+{"encoding": "UTF-8", "plug-ins" : [{"lang": "pascal", "score":"1.0", "prop":{"age":"old"}}, {"lang":"c++", "score":2.0}],"indent":{"length" :12,"use_space": true}}
+{"encoding": "UTF-7",  "plug-ins" : [{"lang":"java", "score":2.22}, {"lang":"python", "score":3.0},{"lang":"go", "score":4.0, "prop":{"age":"new"}}],"indent" : { "length" : 30, "use_space": true }}
+{"plug-ins" : ["C", "c++"],"encoding" : "UTF-6","indent" : { "length" : 3, "use_space": false}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="json_flatten_array_test.gsql" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX encoding3 (PRIMARY_ID id STRING, score FLOAT default -1.0, age STRING default "Unknown", length INT default -1)
+CREATE UNDIRECTED EDGE encoding3_edge (FROM encoding3, TO encoding3)
+CREATE GRAPH encoding_graph (*)
+
+CREATE LOADING JOB json_flatten_array FOR GRAPH encoding_graph {
+  LOAD "encoding3.json" TO TEMP_TABLE t3 (name, score, prop_age, indent_length )
+    VALUES (flatten_json_array($"plug-ins", $"lang", $"score", $"prop":"age"), $"indent":"length")
+    USING JSON_FILE="true";
+  LOAD TEMP_TABLE t3
+    TO VERTEX encoding3 VALUES ($"name", $"score", $"prop_age", $"indent_length");
+}
+RUN LOADING JOB json_flatten_array</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>When splitting a JSON array of JSON objects, the primitive values are skipped and only JSON objects are processed. As in the example above, the 4th line&#8217;s "plug-ins" field will not generate any record because its "plug-ins" array doesn&#8217;t contain any JSON object. Any field which does not exist in the object will be loaded with default value. The above example generates the temporary table shown below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">id</th>
+<th class="tableblock halign-left valign-top">score</th>
+<th class="tableblock halign-left valign-top">age</th>
+<th class="tableblock halign-left valign-top">length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"golang"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>default</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"noidea"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>default</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"pascal"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"old"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"c&#43;&#43;"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>default</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"java"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>default</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"python"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>default</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"go"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"new"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_flatten_a_json_array_in_a_csv_file"><a class="anchor" href="#_flatten_a_json_array_in_a_csv_file"></a>Flatten a JSON Array in a CSV file</h3>
+<div class="paragraph">
+<p><strong>flatten_json_array()</strong> can also be used to split a column of a tabular file, where the column contains JSON arrays. An example is given below:</p>
+</div>
+<div class="paragraph">
+<p>{% file src="../../../.gitbook/assets/encoding.csv" caption="encoding.csv" %}</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="encoding.csv" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">golang|{"prop":{"age":"noidea"}}
+pascal|{"score":"1.0", "prop":{"age":"old"}}
+c++|{"score":2.0, "indent":{"length":12, "use_space": true}}
+java|{"score":2.22, "prop":{"age":"new"}, "indent":{"use_space":"true", "length":2}}
+python|{ "prop":{"compiled":"false"}, "indent":{"length":4}, "score":3.0}
+go|{"score":4.0, "prop":{"age":"new"}}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The second column in the csv file is a JSON array which we want to split. flatten_json_array() can be used in this case without  the USING JSON_FILE="true" clause:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="json_flatten_cvs.gsql" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE VERTEX encoding3 (PRIMARY_ID id STRING, score FLOAT default -1.0, age STRING default "Unknown", length INT default -1)
+CREATE UNDIRECTED EDGE encoding3_edge (FROM encoding3, TO encoding3)
+CREATE GRAPH encoding_graph (*)
+
+CREATE LOADING JOB json_flatten_cvs FOR GRAPH encoding_graph {
+  LOAD "encoding.csv" TO TEMP_TABLE t4 (name, score, prop_age, indent_length )
+    VALUES ($0,flatten_json_array($1, $"score", $"prop":"age", $"indent":"length"))
+    USING SEPARATOR="|";
+  LOAD TEMP_TABLE t4
+    TO VERTEX encoding3 VALUES ($"name", $"score", $"prop_age", $"indent_length");
+}
+RUN LOADING JOB json_flatten_cvs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>The above example generates the temporary table shown below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">id</th>
+<th class="tableblock halign-left valign-top">score</th>
+<th class="tableblock halign-left valign-top">age</th>
+<th class="tableblock halign-left valign-top">length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">golang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1 (default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">noidea</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1 (default)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pascal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">old</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1 (default)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c&#43;&#43;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown (default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">python</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unknown (default)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1 (default)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+flatten_json_array in csv</p>
+</div>
+<div class="paragraph">
+<p>flatten_json_array() does not work if the separator appears also within the json array column. For example, if the separator is comma, the csv loader will erroneously divide the json array into multiple columns. Therefore, it is recommended that the csv file use a special column separator, such as "|" in the above example .
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete_statement"><a class="anchor" href="#_delete_statement"></a><strong>DELETE statement</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to loading data, a LOADING JOB can be used to perform the opposite operation: deleting vertices and edges, using the DELETE statement. DELETE cannot be used in offline loading. Just as a LOAD statement uses the tokens from each input line to set the id and attribute values of a vertex or edge to be created, a DELETE statement uses the tokens from each input line to specify the id value of the item(s) to be deleted.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ In the v2.0 syntax, there is now a " <code>FROM (filepath_string | filevar)</code> " clause just before the WHERE clause.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>There are four variations of the DELETE statement. The syntax of the four cases is shown below.</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="DELETE VERTEX | EDGE Syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE LOADING JOB abc FOR GRAPH graph_name {
+  DEFINE FILENAME f;
+  # 1. Delete each vertex which has the given vertex type and primary id.
+  DELETE VERTEX vertex_type_name (PRIMARY_ID id_expr) FROM f [WHERE condition] ;
+
+  # 2. Delete each edge which has the given edge type, source vertex id, and destination vertex id.
+  DELETE EDGE edge_type_name (FROM id_expr, TO id_expr) FROM f [WHERE condition] ;
+
+  # 3. Delete all edges which have the given edge type and source vertex id. (Destination vertex id is left open.)
+  DELETE EDGE edge_type_name (FROM id_expr) FROM f [WHERE condition] ;
+
+  # 4. Delete all edges which have the given source vertex id. (Edge type and destination vertex id are left open.)
+  DELETE EDGE * (FROM id_expr vertex_type_name) FROM f [WHERE condition] ;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>An example using book_rating data is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% tabs %}
+{% tab title="DELETE example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Delete all user occupation edges if the user is in the new files, then load the new files
+CREATE LOADING JOB clean_user_occupation FOR GRAPH Book_rating {
+  DEFINE FILENAME f;
+  DELETE EDGE user_occupation (FROM $0) FROM f;
+}
+CREATE LOADING JOB load_user_occupation FOR GRAPH Book_rating {
+  DEFINE FILENAME f;
+  LOAD f TO EDGE user_occupation VALUES ($0,$1);
+}
+RUN LOADING JOB clean_user_occupation USING f="./data/user_occupation_update.dat"
+RUN LOADING JOB load_user_occupation USING f="./data/user_occupation_update.dat"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endtab %}
+{% endtabs %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+ There is a separate DELETE statement in the GSQL Query Language. The query delete statement can leverage the query language&#8217;s ability to explore the graph and to use complex conditions to determine which items to delete. In contrast, the loading job delete statement requires that the id values of the items to be deleted must be specified in advance in an input file.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

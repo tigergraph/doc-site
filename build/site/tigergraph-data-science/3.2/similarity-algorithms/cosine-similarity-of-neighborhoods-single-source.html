@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cosine Similarity of Neighborhoods (Single-Source) :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-data-science" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/overview.html">TigerGraph Data Science Library</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/overview.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Centrality Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/betweenness-centrality.html">Betweenness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/closeness-centrality.html">Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/harmonic-centrality.html">Harmonic Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/pagerank.html">PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/personalized-pagerank.html">Personalized PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/weighted-pagerank.html">Weighted PageRank</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Classification Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/greedy-graph-coloring.html">Greedy Graph Coloring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors.html">k-Nearest Neighbors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-batch.html">k-Nearest Neighbors (Batch Version)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-cross-validation.html">k-Nearest Neighbors (Cross-Validation Version)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Community Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/connected-components.html">Weakly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/k-core-decomposition.html">K-Core Decomposition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/label-propogation.html">Label Propogation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/local-clustering-coefficient.html">Local Clustering Coefficient</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/louvain-method-with-parallelism-and-refinement.html">Louvain Method with Parallelism and Refinement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/README.html">Community Algorithms</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/strongly-connected-components.html">Strongly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/triangle-counting.html">Triangle Counting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Node Embeddings</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/fast-random-projection.html">Fast Random Projection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/node2vec.html">Node2Vec</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pathfinding Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/all-pairs-shortest-path.html">All-Pairs Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/cycle-detection.html">Cycle Detection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/estimated-diameter.html">Estimated Diameter</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/maximum-independent-set.html">Maximum Independent Set</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-forest.html">Minimum Spanning Forest</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-tree.html">Minimum Spanning Tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/random-walk.html">Random Walk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-pair-shortest-path.html">Single-Pair Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-unweighted.html">Single-source Shortest Path (Unweighted)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-weighted.html">Single-source Shortest Path (Weighted)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Similarity Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cosine-similarity-of-neighborhoods-all-pairs.html">Cosine Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cosine-similarity-of-neighborhoods-batch.html">Cosine Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="cosine-similarity-of-neighborhoods-single-source.html">Cosine Similarity of Neighborhoods (Single-Source)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="jaccard-similarity-of-neighborhoods-all-pairs.html">Jaccard Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="jaccard-similarity-of-neighborhoods-batch.html">Jaccard Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="jaccard-similarity-of-neighborhoods-single-source.html">Jaccard Similarity of Neighborhoods (Single Source)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Data Science Library</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/overview.html">TigerGraph Data Science Library</a></li>
+    <li>Similarity Algorithms</li>
+    <li><a href="cosine-similarity-of-neighborhoods-single-source.html">Cosine Similarity of Neighborhoods (Single-Source)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/graph-ml/edit/main/modules/similarity-algorithms/pages/cosine-similarity-of-neighborhoods-single-source.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Cosine Similarity of Neighborhoods (Single-Source)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To compare two vertices by <a href="https://en.wikipedia.org/wiki/Cosine_similarity">cosine similarity</a>, the selected properties of each vertex are first represented as a vector. For example, a property vector for a Person vertex could have the elements age, height, and weight. Then the cosine function is applied to the two vectors.</p>
+</div>
+<div class="paragraph">
+<p>The cosine similarity of two vectors A and B is defined as follows:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[cos(A,B)=\frac{A\cdot B}{||A||\cdot ||B||} = \frac{\sum_iA_i B_i}{\sqrt{\sum_iA^2_i}\sqrt{\sum_iB^2_i}}\]
+</div>
+</div>
+<div class="paragraph">
+<p>If A and B are identical, then cos(A, B) = 1. As expected for a cosine function, the value can also be negative or zero. In fact, cosine similarity is closely related to the Pearson correlation coefficient.</p>
+</div>
+<div class="paragraph">
+<p>For this library function, the feature vector is the set of edge weights between the two vertices and their neighbors.</p>
+</div>
+<div class="paragraph">
+<p>In the movie graph shown in the figure below, there are Person vertices and Movie vertices. Every person may give a rating to some of the movies. The rating score is stored on the Likes edge using the weight attribute. For example, in the graph below, Alex gives a rating of 10 to the movie "Free Solo".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/screen-shot-2018-12-21-at-10.51.01-am.png" alt="movie graph">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">tg_cosine_nbor_ss (VERTEX source, SET&lt;STRING&gt; e_type, SET&lt;STRING&gt; re_type,
+  STRING weight, INT top_k, INT output_limit, BOOL print_accum = TRUE,
+  STRING file_path = "", STRING similarity_edge = "")
+RETURNS (MapAccum&lt;VERTEX, FLOAT&gt;)
+----+++&lt;table&gt;++++++&lt;thead&gt;++++++&lt;tr&gt;++++++&lt;th style="text-align:left"&gt;++++++&lt;b&gt;+++Characteristic+++&lt;/b&gt;++++++&lt;/th&gt;+++
+      +++&lt;th style="text-align:left"&gt;+++Value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
+  +++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Result+++&lt;/td&gt;+++
+      +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++The top K vertices in the graph that have the highest similarity scores,
+          along with their scores.+++&lt;/p&gt;+++
+        +++&lt;p&gt;+++The result is available in three forms:+++&lt;/p&gt;+++
+        +++&lt;ul&gt;++++++&lt;li&gt;+++streamed out in JSON format+++&lt;/li&gt;+++
+          +++&lt;li&gt;+++written to a file in tabular format+++&lt;/li&gt;+++
+          +++&lt;li&gt;+++stored as a vertex attribute value+++&lt;/li&gt;++++++&lt;/ul&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+    +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Input Parameters+++&lt;/td&gt;+++
+      +++&lt;td style="text-align:left"&gt;++++++&lt;ul&gt;++++++&lt;li&gt;++++++&lt;code&gt;+++VERTEX source+++&lt;/code&gt;++++++&lt;b&gt;+++:+++&lt;/b&gt;+++ Source vertex+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++SET&lt;STRING&gt; e_type+++&lt;/code&gt;+++: Edge type to traverse+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++SET&lt;STRING&gt; re_type+++&lt;/code&gt;+++: Reverse edge type to traverse+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++STRING weight:+++&lt;/code&gt;+++The edge attribute to use as the weight of
+            the edge+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++INT top_k+++&lt;/code&gt;+++: Number of vertices+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++INT output_limit:+++&lt;/code&gt;++++++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++BOOL print_accum+++&lt;/code&gt;+++: If +++&lt;code&gt;+++true+++&lt;/code&gt;+++, output JSON to standard
+            output.+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++STRING filepath+++&lt;/code&gt;+++: If provided, the output will be written
+            to this file path in CSV format.+++&lt;/li&gt;+++
+          +++&lt;li&gt;++++++&lt;code&gt;+++STRING similarity_edge+++&lt;/code&gt;+++: If provided, the similarity score
+            will be saved to this edge.+++&lt;/li&gt;++++++&lt;/ul&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+    +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Result Size+++&lt;/td&gt;+++
+      +++&lt;td style="text-align:left"&gt;++++++&lt;code&gt;+++top_k+++&lt;/code&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+    +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Time Complexity+++&lt;/td&gt;+++
+      +++&lt;td style="text-align:left"&gt;+++O(D{caret}2), D = outdegree of vertex v+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+    +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Graph Types+++&lt;/td&gt;+++
+      +++&lt;td style="text-align:left"&gt;+++Undirected or directed edges, weighted edges+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++
+
+The output size is always K (if K &lt;= N), so the algorithm may arbitrarily choose to output one vertex over another if there are tied similarity scores.
+
+== Example
+
+Given one person's name, this algorithm calculates the cosine similarity between this person and each other person where there is at one movie they have both rated.
+
+In the previous example, if the source vertex is Alex, and `top_k` is set to 5, then we calculate the cosine similarity between him and two other persons, Jing and Kevin. The JSON output shows the top 5 similar vertices and their similarity score in descending order. The output limit is 5 persons, but we have only 2 qualified persons:
+
+[,text]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>[
+  {
+    "@@result_topk": [
+      {
+        "vertex1": "Alex",
+        "vertex2": "Jing",
+        "score": 0.42173
+      },
+      {
+        "vertex1": "Alex",
+        "vertex2": "Kevin",
+        "score": 0.14248
+      }
+    ]
+  }
+]</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>The FILE version output is not necessarily in descending order. It looks like the following:
+
+[,text]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vertex1,Vertex2,Similarity
+Alex,Kevin,0.142484
+Alex,Jing,0.421731</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>The ATTR version inserts an edge into the graph with the similarity score as an edge attribute whenever the score is larger than zero. The result looks like this:
+
+image::../../.gitbook/assets/screen-shot-2019-02-13-at-5.18.03-pm.png[]</pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

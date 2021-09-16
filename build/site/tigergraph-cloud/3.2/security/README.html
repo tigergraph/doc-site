@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Security and User Management :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-cloud" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../start/README.html">TigerGraph Cloud User Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../start/README.html">TigerGraph Cloud</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../start/getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../solutions/README.html">Solutions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/cloud-providers-and-regions.html">Cloud Providers and Regions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/create.html">Create a New Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/stop-restart-and-terminate.html">Stop, Restart, and Terminate a Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/sizing-and-scaling.html">Sizing and Scaling</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../access-solution/README.html">Access a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/graphstudio.html">Access a Solution through GraphStudio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#rest-requests">[rest-requests]</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../access-solution/gsql-web-shell.html">Access a Solution through GSQL Web Shell</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../monitor-solution/README.html">Monitor a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/monitor-solution-state.html">Monitor Solution State</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/view-activity-log.html">View Activity Log</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../resize-solution/README.html">Resize a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/resize-instance-type.html">Resize Instance Type</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/upgrade-storage-volume.html">Upgrade Storage Volume</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Security and User Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-database-users.html">Manage Database Users</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="manage-cloud-account.html">Manage Your TigerGraph Cloud Account</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../billing/README.html">Billing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/manage-payment-methods.html">Manage Payment Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/subscriptions.html">Subscriptions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/faqs.html">FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/support.html">Contact Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/README.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/aws.html">Amazon Web Services (AWS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/azure.html">Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/gcp.html">Google Cloud Platform (GCP)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/service-limits.html">Service Limits</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Cloud User Guide</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../start/README.html">TigerGraph Cloud User Guide</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../start/README.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/installation/install.html">TigerGraph Server User Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/installation/install.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../start/README.html">TigerGraph Cloud User Guide</a></li>
+    <li><a href="README.html">Security and User Management</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/cloud/edit/main/modules/security/pages/README.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Security and User Management</h1>
+<div class="sect1">
+<h2 id="_tigergraph_cloud_account"><a class="anchor" href="#_tigergraph_cloud_account"></a>TigerGraph Cloud account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your TigerGraph Cloud account serves as your credential on the platform level. It allows you to manage solutions as well as payments. It also gives you superuser access to all of the graphs hosted by the solutions on the account.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tigergraph_users"><a class="anchor" href="#_tigergraph_users"></a>TigerGraph users</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On the solution level, the same <a href="#../../ui/graphstudio/user-access-management.adoc" class="page unresolved">role-based access control</a> used by the on-prem version of TigerGraph also applies to TigerGraph Cloud. Each solution or solution cluster can have many TigerGraph users and each user can have different roles for each graph with different privileges.</p>
+</div>
+<div class="paragraph">
+<p>For more information on how to manage users and roles in Admin Portal, see <a href="#../../ui/admin-portal/management/user-management.adoc" class="page unresolved">User Management</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preconfigured_security_features"><a class="anchor" href="#_preconfigured_security_features"></a>Preconfigured security features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_encryption_at_rest"><a class="anchor" href="#_encryption_at_rest"></a>Encryption-at-rest</h3>
+<div class="paragraph">
+<p>All data loaded into TigerGraph Cloud, including data in disk storage and backups, are automatically encrypted-at-rest using the cloud provider&#8217;s native encryption protocol with platform-managed keys.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_transport_layer_security_tls"><a class="anchor" href="#_transport_layer_security_tls"></a>Transport Layer Security (TLS)</h3>
+<div class="paragraph">
+<p>TigerGraph Cloud uses TLS to encrypt connections to your graph databases.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restpp_authentication"><a class="anchor" href="#_restpp_authentication"></a>RESTPP Authentication</h3>
+<div class="paragraph">
+<p>By default, all TigerGraph Cloud solutions have RESTPP authentication turned on. To make requests to the RESTPP server, you must generate a secret in the Admin Portal and use that secret to generate an authentication token.</p>
+</div>
+<div class="paragraph">
+<p><mark>#</mark></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

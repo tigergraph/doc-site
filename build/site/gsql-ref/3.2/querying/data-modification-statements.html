@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data Modification Statements :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="data-modification-statements.html">Data Modification Statements</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/data-modification-statements.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Data Modification Statements</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The GSQL language provides full support for vertex and edge insertion, deletion, and attribute update is provided. Therefore, the language is more than just a "query" language.</p>
+</div>
+<div class="paragraph">
+<p>Each query is considered one transaction. Therefore, modifications to the graph data do not take effect until the entire query is completed (committed). Accordingly, any modification statement does not affect any other statements inside the same query.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_query_body_delete_statement"><a class="anchor" href="#_query_body_delete_statement"></a>Query-body DELETE Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The query-body DELETE statement deletes a given set of edges or vertices. This statement can only be used as a query-body statement. (Deletion at the DML-sub level is served by the DML-sub DELETE statement, described next.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+ The GSQL DELETE operation is a cascading deletion. If a vertex is deleted, then all of the edges which connect to it are automatically deleted as well.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">queryBodyDeleteStmt := DELETE alias FROM pattern [whereClause]
+pattern := (vertexPattern | edgePattern)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The vertexPattern and edgePattern terms in the FROM clause follow the same rules as those in the FROM clause in a SELECT statement. The WHERE clause can filter the items in the vertexPattern or edgePattern. Below are two examples, one for deleting vertices and one for deleting edges.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="DELETE statement example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Delete all "person" vertices with location equal to "us"
+CREATE QUERY deleteEx() FOR GRAPH workNet {
+  S = {person.*};
+  DELETE s FROM S:s
+    WHERE s.locationId == "us";
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="DELETE statement example 2" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Delete all "worksFor" edges where the person's location is "us"
+CREATE QUERY deleteEx2() FOR GRAPH workNet {
+  S = {person.*};
+  DELETE e FROM S:s -(worksFor:e)-&gt; company:t
+    WHERE s.locationId == "us";
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The following query can be used to observe the effect of the delete statements. This query counts the person vertices who work in the US ("us") and the worksFor edges for persons in the US.  When the initial workNet test data loaded, there are 5 persons and 9 worksFor edges for locationId = "us".  If query deleteEx2 is run, the worksAtUS query will then find the 5 persons but 0 worksFor edges.  Next, if the deleteEx query is run, the worksAtUS query will then find 0 persons and 0 worksFor edges.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Query to check the results of deleteEx and deleteEx2" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY countAtLocation(STRING loc) FOR GRAPH workNet {
+  SetAccum&lt;EDGE&gt; @@selEdge;
+  Start = {person.*};
+
+  SV = SELECT s FROM Start:s
+    WHERE s.locationId == loc;
+  PRINT SV.size() AS numVertices;
+
+  SE = SELECT s FROM Start:s -(worksFor:e)-&gt; company:t
+    WHERE s.locationId == loc
+    ACCUM @@selEdge += e;
+  PRINT @@selEdge.size() AS numEdges;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>For example, the following sequence of countAtLocation, deleteEx2, and deleteEx queries</p>
+</div>
+<div class="paragraph">
+<p>{% code title="deleteEx.run" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">RUN QUERY countAtLocation("us")
+RUN QUERY deleteEx2()
+RUN QUERY countAtLocation("us")
+RUN QUERY deleteEx()
+RUN QUERY countAtLocation("us")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>will produce the following result:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results from DeleteEx Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Before any deletions
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"numVertices": 5},
+    {"numEdges": 9}
+  ]
+}
+# Delete edges
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": []
+}
+# After deleting edges
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"numVertices": 5},
+    {"numEdges": 0}
+  ]
+}
+# Delete vertices
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": []
+}
+# After deleting vertices
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"numVertices": 0},
+    {"numEdges": 0}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dml_sub_delete_statement"><a class="anchor" href="#_dml_sub_delete_statement"></a>DML-sub DELETE Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>DML-sub DELETE is a DML-substatement which deletes one vertex or edge each time it is called.  (Deletion at the query-body level is served by the Query-body DELETE statement described above.) In practice, this statement resides within the body of a SELECT&#8230;&#8203;ACCUM/POST-ACCUM clause, so it is called once for each member of a selected vertex set or edge set.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+ The GSQL DELETE operation is a cascading deletion. If a vertex is deleted, then all of the edges which connect to it are automatically deleted as well.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+ The ACCUM clause iterates over an edge set, which can encounter the same vertex multiple times. If you wish to delete a vertex, it is best practice to place the DML-sub DELETE statement in the POST-ACCUM clause rather than in the ACCUM clause.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">dmlSubDeleteStmt := DELETE "(" alias ")"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The following example uses and modifies the graph data for socialNet.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="DELETE within ACCUM vs. POST-ACCUM" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Remove any post vertices posted by the given user
+CREATE QUERY deletePosts(vertex&lt;person&gt; seed) FOR GRAPH socialNet {
+	start = {seed};
+
+	# Best practice is to delete a vertex in a POST-ACCUM, which only
+	# occurs once for each vertex v, guaranteeing that a vertex is not
+	# deleted more than once
+	postAccumDeletedPosts = SELECT v FROM start -(posted:e)-&gt; post:v
+	       	 POST-ACCUM DELETE (v);
+
+	# Possible, but not recommended as the DML-sub DELETE statement occurs
+	# once for each edge of the vertex v
+	accumDeletedPosts = SELECT v FROM start -(posted:e)-&gt; post:v
+	       	 ACCUM DELETE (v);
+}
+
+# Need a separate query to display the results, because deletions don't take effect during the query.
+CREATE QUERY selectUserPosts(vertex&lt;person&gt; seed) FOR GRAPH socialNet {
+    start = {seed};
+
+    userPosts = SELECT v FROM start -(posted:e)-&gt; post:v;
+    PRINT userPosts;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>For example, the following sequence of selectUserPosts and deletePosts queries</p>
+</div>
+<div class="paragraph">
+<p>{% code title="deletePosts.run" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">RUN QUERY selectUserPosts("person3")
+RUN QUERY deletePosts("person3")
+RUN QUERY selectUserPosts("person3")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>will produce the following result:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results from DeletePosts Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Before the deletion
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"userPosts": [{
+    "v_id": "2",
+    "attributes": {
+      "postTime": "2011-02-03 01:02:42",
+      "subject": "query languages"
+    },
+    "v_type": "post"
+  }]}]
+}
+# Deletion; no output results requested at this point
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": []
+}
+# After the deletion
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"userPosts": []}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_insert_into_statement"><a class="anchor" href="#_insert_into_statement"></a><code>INSERT INTO</code> Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>INSERT INTO</code> statement adds edges or vertices to the graph. When the ID value(s) for the inserted vertex/edge match those of an existing vertex/edge, then the new values will overwrite the old values. To insert an edge, its endpoint vertices must already exist, either before running the query or inserted earlier in that query. The <code>INSERT INTO</code> statement can be used as a query-body-level statement or a DML-sub statement.</p>
+</div>
+<div class="paragraph">
+<p>Like any other data modification in a query, the insertion does not take effect until the entire query is completed.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">insertStmt := insertVertexStmt | insertEdgeStmt
+insertVertexStmt := INSERT INTO (vertexType | name)
+                 ["(" PRIMARY_ID ["," attrName]* ")"]
+                 VALUES "(" ( "_" | expr ) ["," ("_" | expr)]*] ")"
+
+insertEdgeStmt   := INSERT INTO (edgeType | EDGE name)
+                 ["(" FROM "," TO ["," attrName]* ")"]
+                 VALUES "(" ( "_" | expr ) [vertexType]
+                 ["," ( "_" | expr ) [vertexType] ["," ("_" | expr)]*] ")"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+<strong>Dynamic Query Support</strong><br>
+As of TigerGraph 3.0, the vertex or edge type in an <code>INSERT</code> statement can either be set statically (<code>vertexType</code> or <code>edgeType</code>), or it can be written as a string variable (<code>name</code>), with the value being set at run time, to make a<a href="query-operations.md#dynamic-querying">Dynamic DML query</a>.<br>
+<strong><code>INSERT INTO</code></strong> <code>(vertexType | name) ...</code><br>
+Note that to INSERT an edge type dynamically, the keyword EDGE is required:<br>
+<strong><code>INSERT INTO</code></strong> <code>(edgeType |</code> <strong><code>EDGE</code></strong> <code>name) ...</code>
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>There are two options for specifying the attributes of the vertex or edge type for the values provided:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide a value for the ID(s) and then each attribute, in the canonical order for the vertex or edge type. In this case, it is not necessary to explicitly name the attributes, since it is assumed that every attribute is being referenced, in order.</p>
+<div class="paragraph">
+<p>{% code title="INSERT with implicit attribute names" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">INSERT INTO vertex_or_edge_type VALUES (full_list_of_parameter_values)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</li>
+<li>
+<p>Name the specific attributes to be set, and then provide a corresponding list of values. The attributes can be in any order, with the exception that the IDs must come first.  That is, to insert a vertex, the first attribute name must be <code>PRIMARY_ID</code>.  To insert an edge, the first two attribute names must be <code>FROM</code> and <code>TO</code>.</p>
+<div class="paragraph">
+<p>{% code title="INSERT with explicit attribute names" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">INSERT INTO vertex_type (PRIMARY_ID, specified_attributes)
+VALUES (ID, values_for_specified_attributes)
+
+INSERT INTO edge_type (FROM, TO, specified_attributes)
+VALUES (</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For each attribute value, provide either an expression <em>expr</em> or <code><em></code>, which means the default value for that attribute type. The optional _name</em> which follows the first two (id) values is to specify the source vertex type and target vertex type, if the edge type had been defined with wildcard vertex types.</p>
+</div>
+<div class="sect2">
+<h3 id="_query_body_insert"><a class="anchor" href="#_query_body_insert"></a>Query-Body INSERT</h3>
+<div class="paragraph">
+<p>The query <code>insertEx</code> illustrates query-body level <code>INSERT</code> statements: insert new <code>company</code> vertices and <code>worksFor</code> edges into the <code>workNet</code> graph.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="INSERT statement" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY insertEx(STRING name, STRING name2, STRING name3, STRING comp) FOR GRAPH workNet {
+  # Vertex insertion
+    # Adds 2 'company' vertices. One is located in the USA, and a sister company in Japan.
+    # company:
+    # company(PRIMARY_ID clientId STRING, id STRING, country STRING)
+    INSERT INTO company VALUES ( comp, comp, "us" );
+    INSERT INTO company (PRIMARY_ID, country) VALUES ( comp + "_jp", "jp" );
+
+  # Edge insertion
+    # Adds a 'worksFor' edge from person 'name' to the company 'comp', filling in default
+    # values for startYear (0), startMonth (0), and fullTime (false).
+    # worksFor:
+    # worksFor(FROM person, TO company, startYear INT, startMonth INT, fullTime BOOL)
+    INSERT INTO worksFor VALUES (name person, comp company, _, _, _);
+
+    # Adds a 'worksFor' edge from person 'name2' to the company 'comp', filling in default
+    # values for startMonth (0), but specifying values for startYear and fullTime.
+    INSERT INTO worksFor (FROM, TO, startYear, fullTime) VALUES (name2 person, comp company, 2017, true);
+
+    # Adds a 'worksFor' edge from person 'name3' to the company 'comp', filling in default
+    # values for startMonth (0), and fullTime (false) but specifying a value for startYear (2017).
+    INSERT INTO worksFor (FROM, TO, startYear) VALUES (name3 person, comp company, 2000 + 17);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The query <code>whoWorksForCompany</code> can be used to check the effect of query <code>insertEx</code>. Prior to running <code>insertEx</code>, running <code>whoWorksForCompany("gsql")</code> will find 0 <code>companies</code> called <code>"gsql"</code> and 0 <code>worksFor</code> edges for company <code>"gsql"</code>.  If we then run the query <code>insertEx("tic", "tac", "toe", "gsql")</code>, then <code>insertEx("gsql")</code> will find a company called <code>"gsql"</code> and another one called <code>"gsql_jp"</code>.  Moreover, it will find 3 edges, tic, tac, and toe, with different values for the <code>startMonth</code>, <code>startYear</code>, and fullTime parameters.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Query to check the results of insertEx" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY whoWorksForCompany(STRING comp) FOR GRAPH workNet {
+  SetAccum&lt;EDGE&gt; @@setEdge;
+
+  Comps = {company.*};
+  PRINT Comps[Comps.id];   # output api v2
+
+  Pers = {person.*};
+  S = SELECT s
+    FROM Pers:s -(worksFor:e)-&gt; :t
+    WHERE t.id == comp
+    ACCUM @@setEdge += e;
+  PRINT @@setEdge;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dml_sub_insert"><a class="anchor" href="#_dml_sub_insert"></a>DML-sub INSERT</h3>
+<div class="paragraph">
+<p>The following example shows a DML-sub level INSERT. Because the statement applies to all companies, several vertices will be inserted.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="DML-sub INSERT statement" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Add a child company of a given company name. The new child company is in japan
+CREATE QUERY addNewChildCompany(STRING name) FOR GRAPH workNet {
+  allCompanies = {company.*};
+  X = SELECT s
+      FROM allCompanies:s
+      WHERE s.id == name
+      ACCUM  INSERT INTO company VALUES ( name + "_jp", name + "_jp", "jp" );
+}
+
+# Add separate query to list the companies, before and after the insertion
+CREATE QUERY listCompanyNames(STRING countryFilter) FOR GRAPH workNet {
+  allCompanies = {company.*};
+  C = SELECT s
+      FROM allCompanies:s
+      WHERE s.country == countryFilter;
+
+  PRINT C.size() AS numCompanies;
+  PRINT C;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Example: Add a child company in Japan to the US-based company <code>company3</code>.  List all the Japan-based companies before and after the insertion.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="addNewChildCompany.run" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">RUN QUERY listCompanyNames("jp")
+RUN QUERY addNewChildCompany("company4")
+RUN QUERY listCompanyNames("jp")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results from addNewChildCompany Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Before insertion
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"numCompanies": 1},
+    {"C": [{
+      "v_id": "company3",
+      "attributes": {
+        "country": "jp",
+        "id": "company3"
+      },
+      "v_type": "company"
+    }]}
+  ]
+}
+# insert company "company4_jp"
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": []
+}
+# after insertion
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"numCompanies": 2},
+    {"C": [
+      {
+        "v_id": "company3",
+        "attributes": {
+          "country": "jp",
+          "id": "company3"
+        },
+        "v_type": "company"
+      },
+      {
+        "v_id": "company4_jp",
+        "attributes": {
+          "country": "jp",
+          "id": "company4_jp"
+        },
+        "v_type": "company"
+      }
+    ]}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_update_statement"><a class="anchor" href="#_update_statement"></a>UPDATE Statement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>UPDATE</code> statement updates the attributes of vertices or edges.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">updateStmt := UPDATE alias FROM pattern SET dmlSubStmtList [whereClause]
+pattern := (vertexPattern | edgePattern)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The set of vertices or edges to update is described in the <code>FROM</code> clause, following the same rules as the <code>FROM</code> clause in a <code>SELECT</code> statement. In the <code>SET</code> clause, the <code>dmlSubStmtList</code> contains assignment statements to update the attributes of a vertex or edge. Both simple base type attributes and collection type attributes can be updated. These assignment statements use the vertex or edge aliases declared in the <code>FROM</code> clause. The optional <code>WHERE</code> clause supports boolean conditions to filter the items in the vertex set or edge set.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="UPDATE statement example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Change all "person" vertices with location equal to "us" to "USA"
+CREATE QUERY updateEx() FOR GRAPH workNet  {
+  S = {person.*};
+
+  UPDATE s FROM S:s
+  SET s.locationId = "USA",  # simple base type attribute
+      s.skillList = [1,2,3]  # collection-type attribute
+  WHERE s.locationId == "us";
+
+  # The update cannot become effective within this query, so PRINT S still show "us".
+  PRINT S;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The <code>UPDATE</code> statement can only be used as a query-body-level statement. However, DML-sub level updates are still possible by using other statement types. A vertex attribute&#8217;s value can be updated within the <code>POST-ACCUM</code> clause of a <code>SELECT</code> block by using the assignment operator (<code>=</code>); An edge attribute&#8217;s value can be updated within the <code>ACCUM</code> clause of a <code>SELECT</code> block by using the assignment operator. In fact, the <code>UPDATE</code> statement is equivalent to a <code>SELECT</code> statement with <code>ACCUM</code> and/or <code>POST-ACCUM</code> to update the vertex or edge attribute values.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ Updating a vertex&#8217;s attribute value in an <code>ACCUM</code> clause is not allowed, because the update can occur multiple times in parallel, and possibly result in a non-deterministic value. If the vertex attribute value update depends on an edge attribute value, use the vertex-attached accumulators to save the value and update the vertex attribute&#8217;s value in the <code>POST-ACCUM</code> clause.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>The query below uses a <code>SELECT</code> statement instead of an <code>UPDATE</code> statement and performs the same update as the query above. Query <code>updateEx2</code> reverses the <code>locationId</code> change made by <code>updateEx</code> .</p>
+</div>
+<div class="paragraph">
+<p>{% code title="UPDATE statement example 2" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># The second example is equivalent to the above updateEx
+CREATE QUERY updateEx2() FOR GRAPH workNet  {
+  S = {person.*};
+
+  X = SELECT s
+      FROM S:s
+      WHERE S.locationId == "USA"
+      POST-ACCUM S.locationId = "us",
+                 S.skillList = [3,2,1];
+  PRINT S;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Below is an example of an edge update with two attribute changes, including an incremental change:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="UPDATE statement example 3" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY updateEx3() FOR GRAPH workNet{
+  S = {person.*};
+
+  # update edge and target vertices' attribute
+  UPDATE e FROM S:s - (worksFor:e) -&gt; :t
+  SET e.startYear = e.startYear + 1, // Incremental change
+      e.fullTime = false
+  WHERE s.locationId == "us";
+
+  PRINT S;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_update_methods"><a class="anchor" href="#_other_update_methods"></a>Other Update Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In addition to <code>UPDATE</code> statements and <code>SELECT</code> statements, a simple assignment statement at the query-body level can be used to update the attribute value of a single vertex or edge, if the vertex or edge has been assigned to a variable or parameter.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="update by assignment" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># change the given person's new location
+CREATE QUERY updateByAssignment(VERTEX&lt;person&gt; v, STRING newLocation) FOR GRAPH workNet{
+  v.locationId = newLocation;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

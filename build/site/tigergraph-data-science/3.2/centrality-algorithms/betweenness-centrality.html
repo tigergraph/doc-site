@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Betweenness Centrality :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-data-science" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/overview.html">TigerGraph Data Science Library</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/overview.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Centrality Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="betweenness-centrality.html">Betweenness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="closeness-centrality.html">Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="harmonic-centrality.html">Harmonic Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="pagerank.html">PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="personalized-pagerank.html">Personalized PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="weighted-pagerank.html">Weighted PageRank</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Classification Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/greedy-graph-coloring.html">Greedy Graph Coloring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors.html">k-Nearest Neighbors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-batch.html">k-Nearest Neighbors (Batch Version)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-cross-validation.html">k-Nearest Neighbors (Cross-Validation Version)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Community Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/connected-components.html">Weakly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/k-core-decomposition.html">K-Core Decomposition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/label-propogation.html">Label Propogation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/local-clustering-coefficient.html">Local Clustering Coefficient</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/louvain-method-with-parallelism-and-refinement.html">Louvain Method with Parallelism and Refinement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/README.html">Community Algorithms</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/strongly-connected-components.html">Strongly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community-algorithms/triangle-counting.html">Triangle Counting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Node Embeddings</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/fast-random-projection.html">Fast Random Projection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/node2vec.html">Node2Vec</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pathfinding Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/all-pairs-shortest-path.html">All-Pairs Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/cycle-detection.html">Cycle Detection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/estimated-diameter.html">Estimated Diameter</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/maximum-independent-set.html">Maximum Independent Set</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-forest.html">Minimum Spanning Forest</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-tree.html">Minimum Spanning Tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/random-walk.html">Random Walk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-pair-shortest-path.html">Single-Pair Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-unweighted.html">Single-source Shortest Path (Unweighted)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-weighted.html">Single-source Shortest Path (Weighted)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Similarity Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-all-pairs.html">Cosine Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-batch.html">Cosine Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-single-source.html">Cosine Similarity of Neighborhoods (Single-Source)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-all-pairs.html">Jaccard Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-batch.html">Jaccard Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-single-source.html">Jaccard Similarity of Neighborhoods (Single Source)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Data Science Library</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/overview.html">TigerGraph Data Science Library</a></li>
+    <li>Centrality Algorithms</li>
+    <li><a href="betweenness-centrality.html">Betweenness Centrality</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/graph-ml/edit/main/modules/centrality-algorithms/pages/betweenness-centrality.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Betweenness Centrality</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Betweenness Centrality of a vertex is defined as the number of shortest paths that pass through this vertex, divided by the total number of shortest paths. That is</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[BC(v) =\sum_{s \ne v \ne t}PD_{st}(v)= \sum_{s \ne v \ne t} SP_{st}(v)/SP_{st} ,\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(PD\)is called the pair dependency, \(SP_{st}\)is the total number of shortest paths from node <code>s</code> to node <code>t</code> and \(SP_{st}(v)\)is the number of those paths that pass through <code>v</code>.</p>
+</div>
+<div class="paragraph">
+<p>The TigerGraph implementation is based on A Faster Algorithm for Betweenness Centrality by Ulrik Brandes, Journal of Mathematical Sociology 25(2):163-177, (2001). For every vertex <code>s</code> in the graph, the pair dependency starting from vertex <code>s</code> to all other vertices <code>t</code> via all other vertices <code>v</code> is computed first,</p>
+</div>
+<div class="paragraph">
+<p>\(PD_{s*}(v) = \sum_{t:s \in V} PD_{st}(v)\).</p>
+</div>
+<div class="paragraph">
+<p>Then betweenness centrality is computed as</p>
+</div>
+<div class="paragraph">
+<p>\(BC(v) =\sum_{s:s \in V}PD_{s*}(v)/2\).</p>
+</div>
+<div class="paragraph">
+<p>According to Brandes, the accumulated pair dependency can be calculated as</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[PD_{s*}(v) =\sum_{w:v \in P_s(w)} SP_{sv}(v)/SP_{sw} \cdot (1+PD_{s*}(w)) ,\]
+</div>
+</div>
+<div class="paragraph">
+<p>where\(P_s(w)\), the set of predecessors of vertex <code>w</code> on shortest paths from <code>s</code>, is defined as</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[P_s(w) = \{u \in V: \{u, w\} \in E, dist(s,w) = dist(s,u)+dist(u,w) \} .\]
+</div>
+</div>
+<div class="paragraph">
+<p>For every vertex, the algorithm works in two phases. The first phase calculates the number of shortest paths passing through each vertex. Then starting from the vertex on the most outside layer in a non-incremental order with pair dependency initial value of 0, traverse back to the starting vertex</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+This algorithm query employs a subquery called <strong>bc_subquery</strong>. Both queries are needed to run the algorithm.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specifications"><a class="anchor" href="#_specifications"></a><strong>Specifications</strong></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">CREATE QUERY tg_betweenness_cent(SET&lt;STRING&gt; v_type, SET&lt;STRING&gt; e_type,
+STRING re_type,INT max_hops=10, INT top_k=100, BOOL print_accum = True,
+STRING result_attr = "", STRING file_path = "", BOOL display_edges = FALSE)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameterscharacteristic"><a class="anchor" href="#_parameterscharacteristic"></a><strong>Parameters</strong><table><thead><tr><th style="text-align:left"><b>Characteristic</b></th></h2>
+<div class="sectionbody">
+<div class="literalblock">
+<div class="content">
+<pre>    +++&lt;th style="text-align:left"&gt;+++Value+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
++++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Result+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Computes a Betweenness Centrality value (FLOAT type) for each vertex.+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Required Input Parameters+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;ul&gt;++++++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++SET&lt;STRING&gt; v_type+++&lt;/code&gt;++++++&lt;/b&gt;+++: Names of vertex types to
+          use+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++SET&lt;STRING&gt; e_type+++&lt;/code&gt;++++++&lt;/b&gt;+++: Names of edge types to use+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++SET&lt;STRING&gt; re_type: +++&lt;/code&gt;++++++&lt;/b&gt;+++Names of reverse edge types
+          to use+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++INT max_hops+++&lt;/code&gt;++++++&lt;/b&gt;+++: If &gt;=0, look only this far from each
+          vertex+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++INT top_k+++&lt;/code&gt;+++:+++&lt;/b&gt;+++ Sort the scores highest first and output
+          only this many scores+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++BOOL print_accum+++&lt;/code&gt;++++++&lt;/b&gt;+++: If True, output JSON to standard
+          output+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++STRING result_attr+++&lt;/code&gt;++++++&lt;/b&gt;+++: If not empty, store centrality
+          values (FLOAT) to this attribute+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++STRING file_path+++&lt;/code&gt;+++:+++&lt;/b&gt;+++ If not empty, write output to this
+          file.+++&lt;/li&gt;+++
+        +++&lt;li&gt;++++++&lt;b&gt;++++++&lt;code&gt;+++BOOL display_edges+++&lt;/code&gt;++++++&lt;/b&gt;+++: If true, include the graph&amp;apos;s
+          edges in the JSON output, so that the full graph can be displayed.+++&lt;/li&gt;++++++&lt;/ul&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Result Size+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++V = number of vertices+++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Time Complexity+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++O(E*V), E = number of edges, V = number of vertices.+++&lt;/p&gt;+++
+      +++&lt;p&gt;+++Considering the high time cost of running this algorithm on a big graph,
+        the users can set a maximum number of iterations. Parallel processing reduces
+        the time needed for computation.+++&lt;/p&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;+++
+  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;+++Graph Types+++&lt;/td&gt;+++
+    +++&lt;td style="text-align:left"&gt;+++Undirected edges, Unweighted edges+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the example below, Claire is in the very center of the graph and has the highest betweenness centrality. Six shortest paths pass through Sam (i.e. paths from Victor to all other 6 people except for Sam and Victor), so the score of Sam is 6. David also has a score of 6, since Brian has 6 paths to other people that pass through David.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Use _ for default values
+RUN QUERY tg_betweenness_cent(["Person"], ["Friend"], _, _, _, _, _, _)</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/screen-shot-2019-12-03-at-1.03.07-pm.png" alt="Visualized results of example query on a social graph with undirected edges Friend">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[
+  {
+    "@@BC": {
+      "Alice": 0,
+      "Frank": 0,
+      "Claire": 17,
+      "Sam": 6,
+      "Brian": 0,
+      "David": 6,
+      "Richard": 0,
+      "Victor": 0
+    }
+  }
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the following example, both Charles and David have 9 shortest paths passing through them. Ellen is in a similar position as Charles, but her centrality is weakened due to the path between Frank and Jack.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/screen-shot-2019-12-13-at-4.04.01-pm.png" alt="Visualized results of example query on a social graph with undirected edges Friend">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">[
+  {
+    "@@BC": {
+      "Alice": 0,
+      "Frank": 0,
+      "Charles": 9,
+      "Ellen": 8,
+      "Brian": 0,
+      "David": 9,
+      "Jack": 0
+    }
+  }
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id=""><a class="anchor" href="#"></a><strong>*</strong>*</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

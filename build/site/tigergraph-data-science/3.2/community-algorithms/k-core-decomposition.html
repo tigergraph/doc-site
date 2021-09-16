@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>K-Core Decomposition :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-data-science" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/overview.html">TigerGraph Data Science Library</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/overview.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Centrality Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/approximate-closeness-centrality.html">Approximate Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/betweenness-centrality.html">Betweenness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/closeness-centrality.html">Closeness Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/harmonic-centrality.html">Harmonic Centrality</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/pagerank.html">PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/personalized-pagerank.html">Personalized PageRank</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../centrality-algorithms/weighted-pagerank.html">Weighted PageRank</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Classification Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/greedy-graph-coloring.html">Greedy Graph Coloring</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors.html">k-Nearest Neighbors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-batch.html">k-Nearest Neighbors (Batch Version)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../classification-algorithms/k-nearest-neighbors-cross-validation.html">k-Nearest Neighbors (Cross-Validation Version)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Community Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="connected-components.html">Weakly Connected Components</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="k-core-decomposition.html">K-Core Decomposition</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="label-propogation.html">Label Propogation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="local-clustering-coefficient.html">Local Clustering Coefficient</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="louvain-method-with-parallelism-and-refinement.html">Louvain Method with Parallelism and Refinement</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="README.html">Community Algorithms</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="strongly-connected-components.html">Strongly Connected Components</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="triangle-counting.html">Triangle Counting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Node Embeddings</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/fast-random-projection.html">Fast Random Projection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../node-embeddings/node2vec.html">Node2Vec</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Pathfinding Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/all-pairs-shortest-path.html">All-Pairs Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/cycle-detection.html">Cycle Detection</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/estimated-diameter.html">Estimated Diameter</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/maximum-independent-set.html">Maximum Independent Set</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-forest.html">Minimum Spanning Forest</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/minimum-spanning-tree.html">Minimum Spanning Tree</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/random-walk.html">Random Walk</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-pair-shortest-path.html">Single-Pair Shortest Path</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-unweighted.html">Single-source Shortest Path (Unweighted)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../pathfinding-algorithms/single-source-shortest-path-weighted.html">Single-source Shortest Path (Weighted)</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Similarity Algorithms</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-all-pairs.html">Cosine Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-batch.html">Cosine Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/cosine-similarity-of-neighborhoods-single-source.html">Cosine Similarity of Neighborhoods (Single-Source)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-all-pairs.html">Jaccard Similarity of Neighborhoods (All Pairs)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-batch.html">Jaccard Similarity of Neighborhoods (Batch)</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../similarity-algorithms/jaccard-similarity-of-neighborhoods-single-source.html">Jaccard Similarity of Neighborhoods (Single Source)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Data Science Library</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/overview.html">TigerGraph Data Science Library</a></li>
+    <li>Community Algorithms</li>
+    <li><a href="k-core-decomposition.html">K-Core Decomposition</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/graph-ml/edit/main/modules/community-algorithms/pages/k-core-decomposition.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">K-Core Decomposition</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <strong>k-core</strong> of a graph is a maximal connected subgraph in which every vertex is connected to at least k vertices in the subgraph. To obtain the k-core of a graph, the algorithm first deletes the vertices whose outdegree is less than <em>k</em>. It then updates the outdegree of the neighbors of the deleted vertices, and if that causes a vertex&#8217;s outdegree to fall below <em>k</em>, it will also delete that vertex. The algorithm repeats this operation until every vertex left in the subgraph has an outdegree of at least <em>k</em>.</p>
+</div>
+<div class="paragraph">
+<p>Our algorithm takes a range of values for <em>k</em> and returns the set of the vertices that constitute the k-core with the highest possible value of <em>k</em> within the range. It is an implementation of Algorithm 2 in <a href="https://ieeexplore.ieee.org/document/8622056">Scalable K-Core Decomposition for Static Graphs Using a Dynamic Graph Data Structure, Tripathy et al., IEEE Big Data 2018</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_time_complexity"><a class="anchor" href="#_time_complexity"></a>Time complexity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>O(E), where E is the number of edges in the graph.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_specifications"><a class="anchor" href="#_specifications"></a>Specifications</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tg_kcore(STRING v_type, STRING e_type, INT k_min = 0, INT k_max = -1,
+BOOL print_accum = TRUE, STRING attr = "", STRING file_path = "",
+BOOL show_membership = FALSE, BOOL show_shells=FALSE)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameters"><a class="anchor" href="#_parameters"></a>Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>v_type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vertex type to include in the k-core</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e_type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edge type to count for k-core connections</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>k_min</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum value of k. If the actual maximum core is below <code>k_min</code>, the algorithm will return an empty set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>k_max</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum value of k. If <code>k_max</code> is smaller than <code>k_min</code>, the algorithm will ignore this parameter and keep looking for k-cores until it reaches a value of k where a k-core cannot be found.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_membership</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>show_membership</code> is <code>true</code>, the algorithm will return the k-cores found for every value of k within the range provided. For each k-core, the results will include its member vertices.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>show_shells</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <em>*k*</em>*-shell* is the set of vertices that are part of the <em>k</em>-core but not part of the (<em>k</em>+1)-core. If <code>show_shells</code> is <code>true</code>, the algorithm will return the k-shells found for every value of k. within the range provided. For each k-shell, the results will include its member vertices.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>print_accum</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean value that decides whether the algorithm will return output in JSON</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>attr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. An attribute of the vertex to save the core level of the vertex to. If <code>attr</code> is provided, the core level of the vertex will be saved to this attribute of the vertex.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file_path</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. If <code>file_path</code> is provided, the algorithm will output results to a file specified by the file path in CSV format.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the example below based on the <a href="https://docs.tigergraph.com/start/gsql-101/get-set#GSQL101-DataSet"><code>social</code></a> graph from GSQL 101, we can see that Dan, Tom, and Jenny make up a 2-core, which is the max-core of the graph:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image.png" alt="image">
+</div>
+</div>
+<div class="paragraph">
+<p>If we run the <code>kcore</code> algorithm on this small graph like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">RUN QUERY tg_kcore("person", "friendship", 0, -1, TRUE, "", "", FALSE, FALSE)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is the returned JSON response, which includes a 2-core that is comprised of Dan, Jenny, and Tom:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">[
+  {
+    "core_size": 3,
+    "k": 2,             // the k-core with the highest possible k is returned
+    "max_core": [
+      {
+        "attributes": {
+          "@core": 2,
+          "@deg": 0,
+          "age": 40,
+          "gender": "male",
+          "name": "Tom",
+          "state": "ca"
+        },
+        "v_id": "Tom",
+        "v_type": "person"
+      },
+      {
+        "attributes": {
+          "@core": 2,
+          "@deg": 0,
+          "age": 34,
+          "gender": "male",
+          "name": "Dan",
+          "state": "ny"
+        },
+        "v_id": "Dan",
+        "v_type": "person"
+      },
+      {
+        "attributes": {
+          "@core": 2,
+          "@deg": 0,
+          "age": 25,
+          "gender": "female",
+          "name": "Jenny",
+          "state": "tx"
+        },
+        "v_id": "Jenny",
+        "v_type": "person"
+      }
+    ]
+  }
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

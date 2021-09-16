@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>V3.0 Removal of Previously Deprecated Features :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li>Release Notes and Change Logs</li>
+    <li><a href="v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/release-notes/pages/v3.0-removal-of-previously-deprecated-features.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">V3.0 Removal of Previously Deprecated Features</h1>
+<div class="paragraph">
+<p>TigerGraph 2.x contained some features which were labeled as deprecated. These features are no longer necessary because they have been superseded already by improved approaches for using the TigerGraph platform. The new approaches were developed because they use more consistent grammar, are more extensible,  or offer higher performance. Therefore, TigerGraph 3.0 has streamlined the product by removing support for some of these deprecated features, listed below:</p>
+</div>
+<h3 id="_data_types" class="discrete">Data Types</h3>
+<div class="paragraph">
+<p>See <a href="#../../dev/gsql-ref/querying/data-types.adoc" class="page unresolved">Data Types in GSQL Language Reference</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deprecated Type</th>
+<th class="tableblock halign-left valign-top">Alternate Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REAL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use FLOAT or DOUBLE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT_SET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use SET&lt;INT&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT_LIST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use LIST&lt;INT&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING_SET_COMPRESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use SET&lt;STRING COMPRESS&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING_LIST_CONPRESS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use LIST&lt;STRING COMPRESS&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UINT_SET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use SET&lt;INT&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UINT32_UINT32_KV_LIST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use MAP&lt;UINT, UINT&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT32_INT32_KV_LIST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use MAP&lt;INT, INT&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UINT32_UDT_KV_LIST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use MAP&lt;UINT, UDT_type&gt;, where UDT_type is a user-defined tuple type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT32_UDT_KV_LIST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use MAP&lt;INT, UDT_type&gt;, where UDT_type is a user-defined tuple type</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_syntax_for_control_flow_statements" class="discrete">Syntax for Control Flow Statements</h3>
+<div class="paragraph">
+<p>See xref:../../dev/gsql-ref/querying/control-flow-statements.adoc<span class="Control Flow Statements in GSQL Language Reference"><table></span><thead><tr><th style="text-align:left">Deprecated Statement</th>
+      <th style="text-align:left">Alternate Statement</th></tr></thead>
+  <tbody><tr><td style="text-align:left">FOREACH ... DO ... DONE</td>
+      <td style="text-align:left">FOREACH... DO... END</td></tr>
+    <tr><td style="text-align:left">FOREACH (condition) {
+        <br></br>body
+        <br></br>}</td>
+      <td style="text-align:left"><p>FOREACH condition DO</p>
+        <p>body</p>
+        <p>END</p></td></tr>
+    <tr><td style="text-align:left"><p>IF (condition) {</p>
+        <p>body1</p>
+        <p>} else {</p>
+        <p>body2</p>
+        <p>}</p></td>
+      <td style="text-align:left"><p>IF condition THEN</p>
+        <p>body1</p>
+        <p>ELSE</p>
+        <p>body2</p>
+        <p>END</p></td></tr>
+    <tr><td style="text-align:left"><p>WHILE (condition) {</p>
+        <p>body</p>
+        <p>}</p></td>
+      <td style="text-align:left"><p>WHILE condition DO</p>
+        <p>body</p>
+        <p>END</p></td></tr></tbody></table></p>
+</div>
+<h3 id="_vertex_set_variable_declaration" class="discrete">Vertex Set Variable Declaration</h3>
+<div class="paragraph">
+<p>See <a href="../../dev/gsql-ref/querying/declaration-and-assignment-statements.md#vertex-set-variable-declaration-and-assignment">Vertex Set Variable Declaration and Assignment</a></p>
+</div>
+<div class="paragraph">
+<p>If a vertex type is specified, the vertex type must be within parentheses.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deprecated Statement</th>
+<th class="tableblock halign-left valign-top">Alternate Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySet Person = &#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySet (Person) = &#8230;&#8203;</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_query_job_and_token_management" class="discrete">Query, Job, and Token Management</h3>
+<div class="paragraph">
+<p>These are documented in several places throughout the GSQL Language Reference:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../../dev/gsql-ref/querying/query-operations.md#create-query-statement">CREATE QUERY Statement</a></p>
+</li>
+<li>
+<p><a href="#../../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.adoc" class="page unresolved">Creating a Loading Job</a> and <a href="#../../dev/gsql-ref/ddl-and-loading/running-a-loading-job.adoc" class="page unresolved">Running a Loading Job</a></p>
+</li>
+<li>
+<p><a href="../../dev/gsql-ref/ddl-and-loading/modifying-a-graph-schema.md#run-schema_change-job">RUN SCHEMA_CHANGE JOB</a>, and <a href="../../dev/gsql-ref/ddl-and-loading/modifying-a-graph-schema.md#run-global-schema_change-job">RUN GLOBAL SCHEMA_CHANGE JOB</a></p>
+</li>
+<li>
+<p><a href="">CREATE / SHOW / DROP / REFRESH Token</a></p>
+</li>
+<li>
+<p>link:../../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.md#offline-2-online-job-conversion-deprecated<span class="offline2online in 'Creating a Loading Job'"><table></span><thead><tr><th style="text-align:left">Deprecated Operation</th>
+    <th style="text-align:left">Alternate Operation</th></tr></thead>
+<tbody><tr><td style="text-align:left">CREATE JOB <span class="loading job definition"></td></span>
+    <td style="text-align:left">CREATE LOADING JOB <span class="loading job definition"></td></span></tr>
+  <tr><td style="text-align:left">RUN JOB <span class="for loading and schema change jobs"></td></span>
+    <td style="text-align:left"><p>Specify the job type:</p>
+      <p>RUN LOADING JOB</p>
+      <p>RUN SCHEMA_CHANGE JOB</p>
+      <p>RUN GLOBAL SCHEMA_CHANGE JOB</p></td></tr>
+  <tr><td style="text-align:left">CREATE / SHOW/ REFRESH TOKEN</td>
+    <td style="text-align:left">To create a token, use the REST endpoint GET /requesttoken</td></tr>
+  <tr><td style="text-align:left">offline2online</td>
+    <td style="text-align:left">The offline loading job mode was discontinued in v2.0. Do not write loading
+      jobs using this syntax.</td></tr></tbody></table></p>
+</li>
+</ul>
+</div>
+<h3 id="_output" class="discrete">Output</h3>
+<div class="paragraph">
+<p>See <a href="../../dev/gsql-ref/querying/output-statements-and-file-objects.md#print-statement-api-v-2">PRINT Statement in 'Output Statements and File Objects'</a></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Deprecated Syntax</th>
+<th class="tableblock halign-left valign-top">Alternate Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON API v1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v2 has been the default JSON format since TigerGraph 1.1. No alternate JSON version will be available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PRINT &#8230;&#8203; TO_CSV [filepath]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define a file object, then PRINT &#8230;&#8203; TO_CSV [file_object]</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_built_in_queries" class="discrete">Built-in Queries</h3>
+<div class="paragraph">
+<p>See xref:../../start/gsql-101/built-in-select-queries.adoc<span class="Run Built-in Queries in 'GSQL 101'"><table></span><thead><tr><th style="text-align:left">Deprecated Statement</th>
+      <th style="text-align:left">Alternate Statement</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><p>SELECT count() FROM ...</p>
+        <p>// count may be out of date</p></td>
+      <td style="text-align:left"><p>SELECT approx_count(<strong>) FROM ...</p>
+        <p>// same behavior as count(); may not include all the latest data updates
+          <br></br></p>
+        <p>SELECT count(</strong>) FROM ...</p>
+        <p>// exact, but slower than approx_count(*)</p></td></tr></tbody></table></p>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

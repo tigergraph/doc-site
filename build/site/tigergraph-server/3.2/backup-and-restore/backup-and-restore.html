@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Backup and Restore :: TigerGraph Server User Guide</title>
+    <title>Backup and Restore :: TigerGraph Documentation</title>
     <meta name="description" content="GBAR - Graph Backup and Restore">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -13,7 +13,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -62,16 +62,28 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../installation/install.html">TigerGraph Server User Guide</a></h3>
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Introduction</span>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
   </li>
 </ul>
   </li>
@@ -84,7 +96,25 @@
     <span class="nav-text">Getting Started</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
 </ul>
   </li>
@@ -97,7 +127,19 @@
     <span class="nav-text">Installation</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../installation/install.html">Installation Guide</a>
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
   </li>
 </ul>
   </li>
@@ -107,7 +149,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">The GSQL Shell</span>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
@@ -120,10 +162,68 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data Definition</span>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
   </li>
 </ul>
   </li>
@@ -132,11 +232,50 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data loading</span>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
@@ -148,16 +287,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">System management</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/README.html">System Management</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
   </li>
 </ul>
   </li>
@@ -168,7 +305,13 @@
     <span class="nav-text">Security</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
   </li>
 </ul>
   </li>
@@ -177,13 +320,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Backup and Restore</span>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="backup-and-restore.html">Backup and Restore</a>
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="backup-and-restore.html">Backup and Restore</a>
   </li>
 </ul>
   </li>
@@ -199,14 +343,72 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -215,23 +417,47 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">TigerGraph Server User Guide</span>
+    <span class="title">TigerGraph Server</span>
     <span class="version">3.2</span>
   </div>
   <ul class="components">
-    <li class="component is-current">
-      <a class="title" href="../installation/install.html">TigerGraph Server User Guide</a>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../installation/install.html">3.2</a>
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -245,8 +471,7 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../installation/install.html">TigerGraph Server User Guide</a></li>
-    <li>Backup and Restore</li>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
     <li><a href="backup-and-restore.html">Backup and Restore</a></li>
   </ul>
 </nav>
@@ -259,12 +484,12 @@
 <article class="doc">
 <h1 class="page">Backup and Restore</h1>
 <div class="paragraph">
-<p>Graph Backup And Restore (GBAR, is an integrated tool for backing up and restoring the data and data dictionary (schema, loading jobs, and queries) of a single TigerGraph node.</p>
+<p>Graph Backup And Restore (GBAR), is an integrated tool for backing up and restoring the data and data dictionary (schema, loading jobs, and queries) of a TigerGraph instance or cluster.</p>
 </div>
 <div class="paragraph">
-<p>The backup feature packs TigerGraph data and configuration information in a single file onto the disk or a remote AWS S3 bucket. Multiple backup files can be archived. Later, you can use the restore feature to roll back the system to any backup point. This tool can also be integrated easily with Linux cron to perform periodic backup jobs.</p>
+<p>The backup feature packs TigerGraph data and configuration information into a directory on the local disk or a remote AWS S3 bucket. Multiple backup files can be archived. Later, you can use the restore feature to roll back the system to any backup point. This tool can also be integrated easily with Linux cron to perform periodic backup jobs.</p>
 </div>
-<h3 id="_introduction_and_syntax" class="discrete">Introduction and Syntax <a id="GBAR-GraphBackupandRestorev2.1-IntroductionandSyntax"></a></h3>
+<h3 id="_syntax" class="discrete">Syntax <a id="GBAR-GraphBackupandRestorev2.1-IntroductionandSyntax"></a></h3>
 <div class="paragraph">
 <p>{% hint style="info" %}
 The current version of GBAR is intended for restoring the same machine that was backed up. For help with cloning a database (i.e., backing up machine A and restoring the database to machine B), please contact <a href="mailto:support@tigergraph.com">support@tigergraph.com</a>.
@@ -275,17 +500,24 @@ The current version of GBAR is intended for restoring the same machine that was 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Usage: gbar backup [options] -t &lt;backup_tag&gt;
-       gbar restore [options] &lt;backup_tag&gt;
-       gbar config
-       gbar list
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Usage: gbar backup [options] -t &lt;backup_tag&gt;
+		      gbar restore [options] &lt;backup_tag&gt;
+		      gbar list [backup_tag] [-j]
+		      gbar remove|rm &lt;backup_tag&gt;
+		      gbar cleanup
+		      gbar expand [-a] &lt;new_nodes&gt;
+		           New nodes must be written in &lt;name&gt;:&lt;host&gt; pairs separated by comma
+		           Example:
+		               m1:192.168.1.2,m2:192.168.1.3,m3:192.168.1.4
 
-Options:
-  -h, --help     Show this help message and exit
-  -v             Run with debug info dumped
-  -vv            Run with verbose debug info dumped
-  -y             Run without prompt
-  -t BACKUP_TAG  Tag for backup file, required on backup</pre>
+		Options:
+		 -h, --help     	Show this help message and exit
+		 -v             	Run with debug info dumped
+		 -vv            	Run with verbose debug info dumped
+		 -y             	Run without prompt
+		 -j            		Print gbar list as JSON
+		 -t BACKUP_TAG  	Tag for backup file, required on backup
+		 -a, --advanced    Enable advanced mode for node expansion</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -308,10 +540,10 @@ Options:
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run <code>gadmin config entry system.backup</code>, At each prompt, enter the appropriate values for each config parameter.</p>
+<p>Run <code>gadmin config entry system.backup</code>. At each prompt, enter the appropriate values for each config parameter.</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ gadmin config entry system.backup
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gadmin config entry system.backup
 
 System.Backup.TimeoutSec [ 18000 ]: The backup timeout in seconds
 New: 18000
@@ -335,7 +567,7 @@ System.Backup.S3.AWSSecretAccessKey [ &lt;masked&gt; ]: The path to store the ba
 New:
 
 System.Backup.S3.BucketName [  ]: The path to store the backup files
-New:</pre>
+New:</code></pre>
 </div>
 </div>
 </li>
@@ -343,7 +575,7 @@ New:</pre>
 <p>After entering the configuration values, run the following command to apply the new configurations</p>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin config apply -y</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin config apply -y</code></pre>
 </div>
 </div>
 </li>
@@ -376,11 +608,11 @@ New:</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gbar backup -t &lt;backup_tag&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gbar backup -t &lt;backup_tag&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Depending on your configuration settings, your backup archive will be output to your local backup path and/or your AWS S3 bucket.</p>
+<p>Depending on your configuration settings, your backup archive will be output to your local backup path and/or your AWS S3 bucket. If you are running a cluster, there will be a backup archive on every node in the same path.</p>
 </div>
 <div class="paragraph">
 <p>A backup archive is stored as several files in a folder, rather than as a single file. The backup tag acts like a filename prefix for the archive filename. The full name of the backup archive will be <code>&lt;backup_tag&gt;-&lt;timestamp&gt;</code>, which is a subfolder of the backup repository.</p>
@@ -399,7 +631,7 @@ New:</pre>
 <p>GBAR Backup performs a live backup, meaning that normal operations may continue while the backup is in progress. When GBAR backup starts, GBAR will check if there are running loading jobs. If there are, it will pause loading for 1 minute to generate a snapshot and then continue the backup process. You can specify the loading pausing interval by the environment variable <code>PAUSE_LOADING</code>.</p>
 </div>
 <div class="paragraph">
-<p>And then, it sends a request to the admin server, which then requests the GPE and GSE to create snapshots of their data. Per the request, the GPE and GSE store their data under GBAR&#8217;s own working directory. GBAR also directly contacts the Dictionary and obtains a dump of its system configuration information. In addition, GBAR gathers the TigerGraph system version and customized information including user-defined functions, token functions, schema layouts and user-uploaded icons. Then, GBAR compresses each of these data and configuration information files in tgz format and stores them in the <code>&lt;backup_tag&gt;-&lt;timestamp&gt;</code> subfolder on each node. As the last step, GBAR copies that file to local storage or AWS S3, according to the Config settings, and removes all temporary files generated during backup.</p>
+<p>GBAR then sends a request to the admin server, which then requests the GPE and GSE to create snapshots of their data. Per the request, the GPE and GSE store their data under GBAR&#8217;s own working directory. GBAR also directly contacts the Dictionary and obtains a dump of its system configuration information. In addition, GBAR gathers the TigerGraph system version and customized information including user-defined functions, token functions, schema layouts and user-uploaded icons. Then, GBAR compresses each of these data and configuration information files in tgz format and stores them in the <code>&lt;backup_tag&gt;-&lt;timestamp&gt;</code> subfolder on each node. As the last step, GBAR copies that file to local storage or AWS S3, according to the Config settings, and removes all temporary files generated during backup.</p>
 </div>
 <div class="paragraph">
 <p>The current version of GBAR Backup takes snapshots quickly to make it very likely that all the components (GPE, GSE, and Dictionary) are in a consistent state, but it does not fully guarantee consistency.</p>
@@ -412,40 +644,26 @@ Backup does not save input message queues for REST&#43;&#43; or Kafka.
 <h3 id="_list_backup_files" class="discrete">List Backup Files <a id="list-backup-files"></a></h3>
 <div class="listingblock">
 <div class="content">
-<pre>gbar list</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gbar list</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>This command lists all generated backup files in the storage place configured by the user. For each file, it shows the file&#8217;s full tag, its size in human-readable format, and its creation time.</p>
 </div>
 <h3 id="_restore_from_a_backup_archive" class="discrete">Restore from a backup archive <a id="restore"></a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Before restoring a backup, you should ensure that the backup you are restoring from is compatible with your current version of TigerGraph:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>TigerGraph version numbers have the format X.Y[.Z], where X is the major version number and Y is the minor version number.</p>
-</li>
-<li>
-<p>Restore is supported if the backup archive and the current system have the same major version number AND the current system has a minor version number that is greater than or equal to the backup archive minor version number.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Before restoring a backup, you should ensure that the backup you are restoring from is in the <strong>same exact version</strong> as your current version of TigerGraph.</p>
 </div>
-</li>
-<li>
+<div class="paragraph">
 <p>To restore a backup, run the following command:</p>
-</li>
-</ol>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gbar restore &lt;archive_name&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gbar restore &lt;archive_name&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If GBAR can verify that the backup archive exists and that the backup&#8217;s system version is compatible with the current system version, GBAR will shut down the TigerGraph servers temporarily as it restores the backup. After completing the restore, GBAR will restart the TigerGraph servers.</p>
+<p>If GBAR can verify that the backup archive exists and that the backup&#8217;s system version is compatible with the current system version, GBAR will shut down the TigerGraph servers temporarily as it restores the backup. After completing the restore, GBAR will restart the TigerGraph servers. If you are running a cluster, and you have copied the backup files to each individual node in the cluster, running <code>gbar restore</code> on any node will restore the entire cluster.</p>
 </div>
 <div class="paragraph">
 <p>Restore is an offline operation, requiring the data services to be temporarily shut down. The user must specify the full archive name ( <code>&lt;backup_tag&gt;-&lt;timestamp&gt;</code> ) to be restored. When GBAR restore begins, it first searches for a backup archive exactly matching the archive name supplied in the command line. Then it decompresses the backup files to a working directory. Next, GBAR will compare the TigerGraph system version in the backup archive with the current system&#8217;s version, to make sure that the backup archive is compatible with that current system. It will then shut down the TigerGraph servers (GSE, RESTPP, etc.) temporarily. Then, GBAR makes a copy of the current graph data, as a precaution. Next, GBAR copies the backup graph data into the GPE and GSE and notifies the Dictionary to load the configuration data. Also, GBAR will notify the GST to load backup user data and copy the backup user-defined token/functions to the right location. When these actions are all done, GBAR will restart the TigerGraph servers.</p>
@@ -472,6 +690,27 @@ The primary purpose of GBAR is to save snapshots of the data configuration of a 
 Restore needs enough free space to accommodate both the old gstore and the gstore to be restored.
 {% endhint %}</p>
 </div>
+<h3 id="_remove_a_backup" class="discrete">Remove a backup <a id="gbar-detailed-example"></a></h3>
+<div class="paragraph">
+<p>To remove a backup, run the <code>gbar remove</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gbar remove &lt;backup_tag&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command removes a backup from the backup storage path. To retrieve the tag of a backup, you can use the <code>gbar list</code> command.</p>
+</div>
+<h3 id="_clean_up_temporary_files" class="discrete">Clean up temporary files</h3>
+<div class="paragraph">
+<p>Run <code>gbar cleanup</code> to delete the temporary files created during backup or restore operations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gbar cleanup</code></pre>
+</div>
+</div>
 <h3 id="_gbar_detailed_example" class="discrete">GBAR Detailed Example <a id="gbar-detailed-example"></a></h3>
 <div class="paragraph">
 <p>The following example describes a real example, to show the actual commands, the expected output, and the amount of time and disk space used, for a given set of graph data. For this example, an Amazon EC2 instance was used, with the following specifications:</p>
@@ -488,7 +727,7 @@ Restore needs enough free space to accommodate both the old gstore and the gstor
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gbar backup -t daily
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gbar backup -t daily
 [23:21:46] Retrieve TigerGraph system configuration
 [23:21:51] Start workgroup
 [23:21:59] Snapshot GPE/GSE data
@@ -498,7 +737,7 @@ Restore needs enough free space to accommodate both the old gstore and the gstor
 [23:46:43] Pack backup data
 [23:53:18] Put archive daily-20180607232159 to repo-local
 [23:53:19] Terminate workgroup
-Backup to daily-20180607232159 finished in 31m33s.</pre>
+Backup to daily-20180607232159 finished in 31m33s.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -510,7 +749,7 @@ Backup to daily-20180607232159 finished in 31m33s.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gbar restore daily-20180607232159
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gbar restore daily-20180607232159
 [23:57:06] Retrieve TigerGraph system configuration
 GBAR restore needs to reset TigerGraph system.
 Do you want to continue?(y/N):y
@@ -531,7 +770,7 @@ Do you want to continue?(y/N):y
 [00:19:42] recompiling loading jobs
 [00:20:01] Terminate workgroup
 Restore from daily-20180607232159 finished in 22m55s.
-Old gstore data saved under /home/tigergraph/tigergraph/gstore with suffix -20180608001836, you need to remove them manually.</pre>
+Old gstore data saved under /home/tigergraph/tigergraph/gstore with suffix -20180608001836, you need to remove them manually.</code></pre>
 </div>
 </div>
 <div class="paragraph">

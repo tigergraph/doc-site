@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Data Types :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="data-types.html">Data Types</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/data-types.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Data Types</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the data types that are native to and are supported by the GSQL Query Language. Most of the data objects used in queries come from one of three sources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The query&#8217;s input parameters</p>
+</li>
+<li>
+<p>The vertices, edges, and their attributes which are encountered when traversing the graph</p>
+</li>
+<li>
+<p>The variables defined within the query to assist in the computational work of the query</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This section covers the following subset of the EBNF language definitions:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for Data Types" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">lowercase          := [a-z]
+uppercase          := [A-Z]
+letter             := lowercase | uppercase
+digit              := [0-9]
+integer            := ["-"]digit+
+real               := ["-"]("."digit+) | ["-"](digit+"."digit*)
+numeric            := integer | real
+stringLiteral      := '"' [~["] | '\\' ('"' | '\\')]* '"'
+
+name := (letter | "_") [letter | digit | "_"]*   // Can be a single "_" or start with "_"
+graphName := name
+queryName := name
+paramName := name
+vertexType := name
+edgeType := name
+accumName := name
+vertexSetName := name
+attrName := name
+varName := name
+tupleType := name
+fieldName :=name
+funcName := name
+
+type := baseType | tupleType | accumType | STRING COMPRESS
+
+baseType := INT
+          | UINT
+          | FLOAT
+          | DOUBLE
+          | STRING
+          | BOOL
+          | VERTEX ["&lt;" vertexType "&gt;"]
+          | EDGE
+          | JSONOBJECT
+          | JSONARRAY
+          | DATETIME
+
+filePath := paramName | stringLiteral
+
+typedef := TYPEDEF TUPLE "&lt;" tupleFields "&gt;" tupleType
+
+tupleFields := (baseType fieldName) | (fieldName baseType)
+           ["," (baseType fieldName) | (fieldName baseType)]*
+
+parameterType := baseType
+               | [ SET | BAG ] "&lt;" baseType "&gt;"
+               | FILE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_identifiers"><a class="anchor" href="#_identifiers"></a>Identifiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An identifier is the name for an instance of a language element. In the GSQL query language, identifiers are used to name elements such as a query, a variable, or a user-defined function.  In the EBNF syntax, an identifier is referred as <code>name</code>. It can be a sequence of letters, digits, or underscores (<code>"_"</code>). Other punctuation characters are not supported. The initial character can only be a letter or an underscore.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="name (identifier)" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">name := (letter | "_") [letter | digit | "_"]*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview_of_types"><a class="anchor" href="#_overview_of_types"></a>Overview of Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Different types of data can be used in different contexts. The EBNF syntax defines several classes of data types.  The most basic is called base type (<code>baseType</code>).  The other independent types are <code>FILE</code> and <code>STRING COMPRESS</code>. The remaining types are either compound data types built from the independent data types, or supersets of other types.  The table below gives an overview of their definitions and their uses.<table><thead><tr><th style="text-align:left">EBNF term</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Use Case</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><code>baseType</code></td>
+      <td style="text-align:left"><code>INT</code>, <code>UINT</code>, <code>FLOAT</code>, <code>DOUBLE</code>, <code>STRING</code>, <code>BOOL</code>, <code>DATETIME,</code>  <code>VERTEX</code>, <code>EDGE</code>,
+        <br></br><code>JSONOBJECT</code>, or <code>JSONARRAY</code></td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Global variable</li>
+          <li>Query return value</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>tupleType</code></td>
+      <td style="text-align:left">Sequence of base types</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>User-defined tuple</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>accumType</code></td>
+      <td style="text-align:left">Family of specialized data objects which support accumulation operations</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Accumulate and aggregate data, when traversing a set of vertices or edges
+            <br></br>(Details are in the <a href="accumulators.md">Query Lang Spec - Accumulators</a> chapter.)</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>FILE</code></td>
+      <td style="text-align:left"><code>FILE</code> object</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Global sequential data object, linked to a text file</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>parameterType</code></td>
+      <td style="text-align:left"><code>baseType</code> (except <code>EDGE</code> or <code>JSONOBJECT</code>),
+        a set or bag of <code>baseType</code>, or <code>FILE</code> object</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Query parameter</li></ul></td></tr>
+    <tr><td style="text-align:left"><p><code>STRING COMPRESS</code></p>
+        <p>(&#x26A0;<b>suitable only in limited circumstances</b>)</p></td>
+      <td style="text-align:left">STRING COMPRESS</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>more compact storage of STRING, <b>if there is a limited number of different values and the value is rarely accessed. Otherwise, it may use more memory.</b></li></ul></td></tr>
+    <tr><td style="text-align:left"><code>elementType</code></td>
+      <td style="text-align:left"><code>baseType</code>, <code>STRING COMPRESS</code>, or identifier</td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Element for most types of container accumulators: <code>SetAccum</code>, <code>BagAccum</code>, <code>GroupByAccum</code>,
+            key of a <code>MapAccum</code> element</li></ul></td></tr>
+    <tr><td style="text-align:left"><code>type</code></td>
+      <td style="text-align:left"><code>baseType</code>, <code>STRING COMPRESS</code>, identifier, or <code>accumType</code></td>
+      <td style="text-align:left"><p></p>
+        <ul><li>Element of a <code>ListAccum</code>, value of a <code>MapAccum</code> element</li>
+          <li>Local variable</li></ul></td></tr></tbody></table></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_base_types"><a class="anchor" href="#_base_types"></a>Base Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The query language supports the following <em>base types</em>, which can be declared and assigned anywhere within their scope. Any of these base types may be used when defining a global variable, a local variable, a query return value, a parameter, part of a tuple, or an element of a container accumulator. Accumulators are described in detail in a later section.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">baseType := INT
+          | UINT
+          | FLOAT
+          | DOUBLE
+          | STRING
+          | BOOL
+          | VERTEX ["&lt;" vertexType "&gt;"]
+          | EDGE
+          | JSONOBJECT
+          | JSONARRAY
+          | DATETIME</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The default value of each base type is shown in the table below. The default value is the initial value of a base type variable (see Section "Variable Types" for more details), or the default return value for some functions (see Section "Operators, Functions, and Expressions" for more details).</p>
+</div>
+<div class="paragraph">
+<p>The first seven types (<code>INT</code>, <code>UINT</code>, <code>FLOAT</code>, <code>DOUBLE</code>, <code>BOOL</code>, <code>STRING</code>, and <code>DATETIME</code>) are the same ones mentioned in the "<a href="../ddl-and-loading/system-and-language-basics.md#attribute-data-types">Attribute Data Types</a>" section of <a href="../ddl-and-loading/"><em>*GSQL Language Reference, Part 1*</em></a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+<th class="tableblock halign-left valign-top">Literal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A signed integer: <code>-3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UINT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An unsigned integer: <code>5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A decimal: <code>3.14159</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A decimal with greater precision than <code>FLOAT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TRUE</code> or <code>FALSE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>""</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characters enclosed by double quotes: <code>"Hello"</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1970-01-01 00:00:00</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No literal. Can be converted from a correctly formatted string with <a href="func/type-conversion-functions.md#to_datetime"><code>to_datetime()</code></a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VERTEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>"Unknown"</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No literal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EDGE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No edge: <code>{}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No literal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>JSONOBJECT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An empty object: <code>{}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No literal. Can be converted from a correctly formatted string with <a href="func/type-conversion-functions.md#parse_json_object"><code>parse_json_object()</code></a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>JSONARRAY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An empty array: <code>[]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No literal. Can be converted from a correctly formatted string with <a href="func/type-conversion-functions.md#parse_json_array"><code>parse_json_array()</code></a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+<code>FLOAT</code> and <code>DOUBLE</code> input values must be in fixed point <code>d.dddd</code> <em>**</em>format, where <code>d</code> is a digit. Output values will be printed in either fixed point for exponential notation, whichever is more compact.</p>
+</div>
+<div class="paragraph">
+<p>The GSQL Loader can read FLOAT and DOUBLE values with exponential notation (e.g., 1.25 E-7).
+{% endhint %}</p>
+</div>
+<div class="sect2">
+<h3 id="_vertex_and_edge"><a class="anchor" href="#_vertex_and_edge"></a>Vertex and edge</h3>
+<div class="paragraph">
+<p>Vertex and edge are the two types of objects which form a graph. A query parameter or variable can be declared as either of these two types. In addition, the schema for the graph defines specific vertex and edge types. The parameter or variable type can be restricted by giving the vertex/edge type in angle brackets <code>&lt;&gt;</code> after the keyword <code>VERTEX</code> or <code>EDGE</code>. A vertex or edge variable declared without a specifier is called a <em>generic</em> type. Below are examples of generic and typed vertex and edge variable declarations:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Examples of generic and typed VERTEX and EDGE declarations" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">VERTEX anyVertex;
+VERTEX&lt;person&gt; owner;
+EDGE anyEdge;
+EDGE&lt;friendship&gt; friendEdge;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vertex_and_edge_attribute_types"><a class="anchor" href="#_vertex_and_edge_attribute_types"></a>Vertex and Edge Attribute Types</h3>
+<div class="paragraph">
+<p>The following table maps vertex or edge attribute types in the Data Definition Language (DDL) to GSQL query language types. If an attribute of a vertex or edge is referenced in a GSQL query, they will be automatically converted to their corresponding data type in the GSQL query language.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">DDL</th>
+<th class="tableblock halign-left valign-top">GSQL Query</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UINT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UINT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FLOAT</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DOUBLE</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BOOL</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING COMPRESS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>STRING</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SET&lt; type &gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SetAccum&lt; type &gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LIST&lt; type &gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ListAccum&lt; type &gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAP &lt;key_type, value_type&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MapAccum &lt;key_type, value_type&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DATETIME</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_set_and_list_literals"><a class="anchor" href="#_set_and_list_literals"></a><code>SET</code> and <code>LIST</code> literals</h4>
+<div class="paragraph">
+<p>In the GSQL query language, one cannot declare a variable of <code>SET</code> (<a href="declaration-and-assignment-statements.md#vertex-set-variable-declaration-and-assignment">vertex sets</a> are an exception), <code>LIST</code> , or <code>MAP</code> types.  However, one can still use <code>SET</code> and <code>LIST</code> literals to update the value of a vertex attribute of type <code>SET</code> or <code>LIST</code>, insert a vertex or edge with attributes of type <code>SET</code> or <code>LIST</code> , and initialize an accumulator.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Elements within a set or a list need to be of the same type
+set_literal := "(" expr ("," expr)* ")"
+list_literal := "[" expr ("," expr)* "]"
+expr := INT | UINT | FLOAT | DOUBLE | BOOL | STRING | UDT | DATETIME</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+Currently, GSQL query language syntax does not support <code>MAP</code> literals.<br>
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_jsonobject_and_jsonarray"><a class="anchor" href="#_jsonobject_and_jsonarray"></a><code>JSONOBJECT</code> and <code>JSONARRAY</code></h3>
+<div class="paragraph">
+<p>These two base types allow users to pass a complex data object or to write output in a customized format. These types follow the industry-standard definition of <a href="www.json.org">JSON</a>. A <code>JSONOBJECT</code> instance&#8217;s external representation (as input and output) is a string, starting and ending with curly braces ( <code>{}</code>) which enclose an unordered list of key-value <em><strong><strong>*_pairs. A <code>JSONARRAY</code> is represented as a string, starting and ending with square brackets (<code>[]</code>)which enclose an ordered list of _values</em>. Since a _value </strong></strong>*_can be an object or an array, JSON supports hierarchical, nested data structures.</p>
+</div>
+<div class="paragraph">
+<p>More details are introduced in the Section <a href="operators-and-expressions.md#jsonobject-and-jsonarray-functions">JSONOBJECT and JSONARRAY Functions</a>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ A <code>JSONOBJECT</code> or <code>JSONARRAY</code> value is immutable. No operator is allowed to modify its value.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tuple"><a class="anchor" href="#_tuple"></a>Tuple</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A tuple is a user-defined data structure consisting of a fixed sequence of base type variables. Tuple types can be created and named using a <code>TYPEDEF</code> statement. Tuples must be defined first, before any other statements in a query.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ENBF for tuples" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">typedef := TYPEDEF TUPLE "&lt;" tupleFields "&gt;" tupleType
+
+tupleFields := (baseType fieldName) | (fieldName baseType)
+           ["," (baseType fieldName) | (fieldName baseType)]*</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>A tuple can also be defined in a graph schema and then can be used as a vertex or edge attribute type. A tuple type that has been defined in the graph schema does not need to be re-defined in a query.</p>
+</div>
+<div class="paragraph">
+<p>The vertex type <code>person</code> contains two complex attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>secretInfo</code> of type <code>SECRET_INFO</code>, which a user-defined tuple</p>
+</li>
+<li>
+<p><code>portfolio</code> of type <code>MAP&lt;STRING, DOUBLE&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% code title="investmentNet schema" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TYPEDEF TUPLE &lt;age UINT (4), mothersName STRING(20) &gt; SECRET_INFO
+CREATE VERTEX person(PRIMARY_ID personId STRING, portfolio MAP&lt;STRING, DOUBLE&gt;, secretInfo SECRET_INFO)
+CREATE VERTEX stockOrder(PRIMARY_ID orderId STRING, ticker STRING, orderSize UINT, price FLOAT)
+CREATE UNDIRECTED EDGE makeOrder(FROM person, TO stockOrder, orderTime DATETIME)
+CREATE GRAPH investmentNet (*)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The query below reads both the <code>SECRET_INFO</code> tuple and the portfolio MAP. The tuple type does not need to redefine <code>SECRET_INFO</code>. To read and save the map, we define a <a href="accumulators.md#mapaccum"><code>MapAccum</code></a> with the same types for key and value as the <code>portfolio</code>  attribute. In addition, the query creates a new tuple type, <code>ORDER_RECORD</code>.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="tupleEx query" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY tupleEx(VERTEX&lt;person&gt; p) FOR GRAPH investmentNet{
+  #TYPEDEF TUPLE &lt;UINT age, STRING mothersName&gt; SECRET_INFO;       # already defined in schema
+  TYPEDEF TUPLE &lt;STRING ticker, FLOAT price, DATETIME orderTime&gt; ORDER_RECORD; # new for query
+
+  SetAccum&lt;SECRET_INFO&gt; @@info;
+  ListAccum&lt;ORDER_RECORD&gt; @@orderRecords;
+  MapAccum&lt;STRING, DOUBLE&gt; @@portf;       # corresponds to MAP&lt;STRING, DOUBLE&gt; attribute
+
+  INIT = {p};
+
+  # Get person p's secret_info and portfolio
+  X = SELECT v FROM INIT:v
+      ACCUM @@portf += v.portfolio, @@info += v.secretInfo;
+
+  # Search person p's orders to record ticker, price, and order time.
+  # Note that the tuple gathers info from both edges and vertices.
+  orders = SELECT t
+      FROM INIT:s -(makeOrder:e)-&gt;stockOrder:t
+      ACCUM @@orderRecords += ORDER_RECORD(t.ticker, t.price, e.orderTime);
+
+  PRINT @@portf, @@info;
+  PRINT @@orderRecords;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="tupleEx.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY tupleEx("person1")
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@info": [{
+        "mothersName": "JAMES",
+        "age": 25
+      }],
+      "@@portf": {
+        "AAPL": 3142.24,
+        "MS": 5000,
+        "G": 6112.23
+      }
+    },
+    {"@@orderRecords": [
+      {
+        "ticker": "AAPL",
+        "orderTime": "2017-03-03 18:42:28",
+        "price": 34.42
+      },
+      {
+        "ticker": "B",
+        "orderTime": "2017-03-03 18:42:30",
+        "price": 202.32001
+      },
+      {
+        "ticker": "A",
+        "orderTime": "2017-03-03 18:42:29",
+        "price": 50.55
+      }
+    ]}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_string_compress"><a class="anchor" href="#_string_compress"></a><code>STRING COMPRESS</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>STRING COMPRESS</code> is an integer type encoded by the system to represent string values. <code>STRING COMPRESS</code> uses less memory than <code>STRING</code>. The <code>STRING COMPRESS</code> type is designed to act like <code>STRING</code>: data are loaded and printed just as string data, and most functions and operators which take <code>STRING</code> input can also take <code>STRING COMPRESS</code> input. The difference is in how the data are stored internally. A <code>STRING COMPRESS</code> value can be obtained from a <code>STRING_SET COMPRESS</code> or <code>STRING_LIST COMPRESS</code> attribute or from converting a <code>STRING</code> value.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Using <code>STRING COMPRESS</code> instead of <code>STRING</code> is a trade-off: smaller storage vs. slower access times. The storage space will only be smaller if (1) the original strings are long, and (2) there are only a small number of different strings.  Performance will always be slower; the slowdown is greater if the <code>STRING COMPRESS</code> attributes are accessed more often.</p>
+</div>
+<div class="paragraph">
+<p>We recommend performing comparison tests for both performance and memory usage before settling on <code>STRING COMPRESS</code>.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p><code>STRING COMPRESS</code> type is beneficial for sets of string values when the same values are used multiple times. In practice, <code>STRING COMPRESS</code> are most useful for container accumulators like <code>ListAccum&lt;STRING COMPRESS&gt;</code> or <code>SetAccum&lt;STRING COMPRESS&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>An accumulator containing <code>STRING COMPRESS</code> stores the dictionary when it is assigned an attribute value or from another accumulator containing <code>STRING COMPRESS</code>. An accumulator containing <code>STRING COMPRESS</code> can store multiple dictionaries. A <code>STRING</code> value can be converted to a <code>STRING COMPRESS</code> value only if the value is in the dictionaries. If the <code>STRING</code> value is not in the dictionaries, the original string value is saved. A <code>STRING COMPRESS</code> value can be automatically converted to a <code>STRING</code> value.</p>
+</div>
+<div class="paragraph">
+<p>When a <code>STRING COMPRESS</code> value is output (e.g. by a <a href="output-statements-and-file-objects.md#print-statement-api-v-2"><code>PRINT</code> statement</a>), it is shown as a <code>STRING</code>.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ <code>STRING COMPRESS</code> is not a base type.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="STRING COMPRESS example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY stringCompressEx(VERTEX&lt;person&gt; m1) FOR GRAPH workNet {
+  ListAccum&lt;STRING COMPRESS&gt; @@strCompressList, @@strCompressList2;
+  SetAccum&lt;STRING COMPRESS&gt; @@strCompressSet, @@strCompressSet2;
+  ListAccum&lt;STRING&gt; @@strList, @@strList2;
+  SetAccum&lt;STRING&gt; @@strSet, @@strSet2;
+
+  S = {m1};
+
+  S = SELECT s
+      FROM S:s
+      ACCUM @@strSet += s.interestSet,
+            @@strList += s.interestList,
+            @@strCompressSet += s.interestSet,   # use the dictionary from person.interestSet
+            @@strCompressList += s.interestList; # use the dictionary from person.interestList
+
+  @@strCompressList2 += @@strCompressList;  # @@strCompressList2 gets the dictionary from @@strCompressList, which is from person.interestList
+  @@strCompressList2 += "xyz";   # "xyz" is not in the dictionary, so store the actual string value
+
+  @@strCompressSet2 += @@strCompressSet;
+  @@strCompressSet2 += @@strSet;
+
+  @@strList2 += @@strCompressList;  # string compress integer values are decoded to strings
+  @@strSet2 += @@strCompressSet;
+
+  PRINT @@strSet, @@strList, @@strCompressSet, @@strCompressList;
+  PRINT @@strSet2, @@strList2, @@strCompressSet2, @@strCompressList2;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="stringCompressEx.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY stringCompressEx("person12")
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@strCompressList": [
+        "music",
+        "engineering",
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "@@strSet": [ "teaching", "engineering", "music" ],
+      "@@strCompressSet": [ "music", "engineering", "teaching" ],
+      "@@strList": [
+        "music",
+        "engineering",
+        "teaching",
+        "teaching",
+        "teaching"
+      ]
+    },
+    {
+      "@@strSet2": [ "music", "engineering", "teaching" ],
+      "@@strCompressList2": [
+        "music",
+        "engineering",
+        "teaching",
+        "teaching",
+        "teaching",
+        "xyz"
+      ],
+      "@@strList2": [
+        "music",
+        "engineering",
+        "teaching",
+        "teaching",
+        "teaching"
+      ],
+      "@@strCompressSet2": [ "teaching", "engineering", "music" ]
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_object"><a class="anchor" href="#_file_object"></a><code>FILE</code> Object</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A <code>FILE</code> object is a sequential data storage object, associated with a text file on the local machine.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+When referring to a <code>FILE</code> object, we always capitalize the word <code>FILE</code> to distinguish it from ordinary files.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>When a <code>FILE</code> object is declared, associated with a particular text file, any existing content in the text file will be erased. During the execution of the query, content written to the <code>FILE</code> will be appended to the <code>FILE</code>. When the query where the <code>FILE</code> was declared finishes running, the <code>FILE</code> contents are saved to the text file.</p>
+</div>
+<div class="paragraph">
+<p>A <code>FILE</code> object can be passed as a parameter to another query. When a query receives a <code>FILE</code> object as a parameter, it can append data to that <code>FILE</code>, as can every other query which receives this <code>FILE</code> object as a parameter.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_query_parameter_types"><a class="anchor" href="#_query_parameter_types"></a>Query Parameter Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Input parameters to a query can be base type (except <code>EDGE</code> , <code>JSONARRAY</code>, or <code>JSONOBJECT</code>). A parameter can also be a <code>SET</code> or <code>BAG</code> which uses base type (except <code>EDGE</code> , <code>JSONARRAY</code>, or <code>JSONOBJECT</code>) as the element type. A <code>FILE</code> object can also be a parameter. Within the query, <code>SET</code> and <code>BAG</code> are converted to <a href="accumulators.md#setaccum"><code>SetAccum</code></a> and <a href="accumulators.md#bagaccum"><code>BagAccum</code></a>, respectively.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+A query parameter is immutable. It cannot be assigned a new value within the query.</p>
+</div>
+<div class="paragraph">
+<p>The <code>FILE</code> object is a special case.  It is passed by reference, meaning that the receiving query gets a link to the original <code>FILE</code> object.  The receiving query can write to the <code>FILE</code> object.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">parameterType := INT
+               | UINT
+               | FLOAT
+               | DOUBLE
+               | STRING
+               | BOOL
+               | VERTEX ["&lt;" vertexType "&gt;"]
+               | DATETIME
+               | [ SET | BAG ] "&lt;" baseType "&gt;"
+               | FILE</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Examples of collection type parameters" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">(SET&lt;VERTEX&lt;person&gt; p1, BAG&lt;INT&gt; ids, FILE f1)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

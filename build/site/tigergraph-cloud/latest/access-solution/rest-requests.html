@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Send REST Requests to a Solution :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-cloud" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../start/README.html">TigerGraph Cloud</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../start/README.html">TigerGraph Cloud</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../start/getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../solutions/README.html">Solutions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/cloud-providers-and-regions.html">Cloud Providers and Regions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/create.html">Create a New Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/stop-restart-and-terminate.html">Stop, Restart, and Terminate a Solution</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../solutions/sizing-and-scaling.html">Sizing and Scaling</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Access a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="graphstudio.html">Access a Solution through GraphStudio</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#rest-requests">[rest-requests]</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="gsql-web-shell.html">Access a Solution through GSQL Web Shell</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../monitor-solution/README.html">Monitor a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/monitor-solution-state.html">Monitor Solution State</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../monitor-solution/view-activity-log.html">View Activity Log</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../resize-solution/README.html">Resize a Solution</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/resize-instance-type.html">Resize Instance Type</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../resize-solution/upgrade-storage-volume.html">Upgrade Storage Volume</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../security/README.html">Security and User Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-database-users.html">Manage Database Users</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/manage-cloud-account.html">Manage Your TigerGraph Cloud Account</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../billing/README.html">Billing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/manage-payment-methods.html">Manage Payment Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../billing/subscriptions.html">Subscriptions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/faqs.html">FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../support/support.html">Contact Support</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../reference/README.html">Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/aws.html">Amazon Web Services (AWS)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/azure.html">Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/gcp.html">Google Cloud Platform (GCP)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/glossary.html">Glossary</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/service-limits.html">Service Limits</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Cloud</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../start/README.html">TigerGraph Cloud</a></li>
+    <li><a href="rest-requests.html">Send REST Requests to a Solution</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/cloud/edit/main/modules/access-solution/pages/rest-requests.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Send REST Requests to a Solution</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Besides GraphStudio, another way to interact with your TigerGraph database is through our REST API. Use RESTful endpoints to send requests to TigerGraph solutions and develop applications.</p>
+</div>
+<div class="paragraph">
+<p>On TigerGraph Cloud, <a href="">RESTPP Authentication</a> is enabled by default, and only the requests made with a valid authorization token in the request header will be accepted.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generate_an_authorization_token"><a class="anchor" href="#_generate_an_authorization_token"></a>Generate an authorization token</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is a step-by-step guide to generating and using an authorization token for RESTPP:</p>
+</div>
+<div class="sect2">
+<h3 id="_1_navigate_to_user_management"><a class="anchor" href="#_1_navigate_to_user_management"></a>1. Navigate to User Management</h3>
+<div class="paragraph">
+<p>From GraphStudio, go to <strong>Admin Portal</strong>, and click <strong>User Management</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2846%29.png" alt="Click User Management">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_generate_a_secret"><a class="anchor" href="#_2_generate_a_secret"></a>2. Generate a secret</h3>
+<div class="paragraph">
+<p>In the <strong>My Profile</strong> tab, find the graph you want to generate the secret for, enter an alias for your secret and click the "<strong>+</strong>" symbol at the right side of the row.</p>
+</div>
+<div class="paragraph">
+<p>Remember to copy and save the secret to a safe location. <strong>This is the only time the secret will be exposed in full in Admin Portal, and you will not be able to see it again</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2849%29.png" alt="image%20%2849%29">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_generate_a_token"><a class="anchor" href="#_3_generate_a_token"></a>3. Generate a token</h3>
+<div class="paragraph">
+<p>Use the <code>/requesttoken</code> endpoint to generate an authorization token for your solution. You can use either a GET or POST request. In this tutorial, we will be using a GET request.</p>
+</div>
+<div class="sect3">
+<h4 id="_1_find_the_domain_name_of_your_solution"><a class="anchor" href="#_1_find_the_domain_name_of_your_solution"></a>1. Find the domain name of your solution</h4>
+<div class="paragraph">
+<p>If you did not enter a subdomain when setting up your solution, a random subdomain will be automatically generated for you. Go to <strong>My Solutions</strong>, and click the solution you are trying to access, you will find the solution&#8217;s domain name in the expanded view. Use this domain name as the server address when making REST requests.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/image%20%2835%29.png" alt="image%20%2835%29">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_2_send_the_request_to_requesttoken"><a class="anchor" href="#_2_send_the_request_to_requesttoken"></a>2. Send the request to <code>/requesttoken</code></h4>
+<div class="paragraph">
+<p>The endpoint takes two parameters, <code>secret</code> and <code>lifetime</code>, and the latter is optional. Put the parameters in the query string and send the request using your favorite REST client. The below example uses curl to request the authentication token:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X GET 'https://aa768d833bbf47fea6db80a7972a9477.i.tgcloud.io:9000/requesttoken?secret=5e3dmjc5l79n4v30jmsou02qji07f8tb'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The response will look like this, where the string in the response with the key token is your authorization token:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
+  "code": "REST-0000",
+  "expiration": 1617232169,
+  "error": false,
+  "message": "Generate new token successfully.",
+  "token": "eq87e740arn73pp8chbf6j930pa7qorm"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_send_a_request_using_your_token"><a class="anchor" href="#_4_send_a_request_using_your_token"></a>4. Send a request using your token</h3>
+<div class="paragraph">
+<p>Now that you have an authorization token, you can proceed to make requests to your solution. To use the authorization token, include it in the request header as a bearer token.</p>
+</div>
+<div class="paragraph">
+<p>Refer to our <a href="../../dev/restpp-api/">RESTful API User Guide</a> to learn about all the endpoints available. In this tutorial, we will make a request to the <a href="../../dev/restpp-api/built-in-endpoints.md#list-vertices">List vertices</a> endpoint on a solution with the <a href="https://www.youtube.com/watch?v=s6-QapCEz1M&amp;feature=youtu.be&amp;ab_channel=TigerGraph">COVID-19 starter kit</a> and list 5 patients and the patients' age.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -H "Authorization: Bearer fc6p0i2ijjt031n0sja6m9ci70p232h7" \
+"https://aa768d833bbf47fea6db80a7972a9477.i.tgcloud.io:9000/graph/MyGraph/vertices/Patient?limit=5&amp;select=birth_year"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">{
+  "version": {
+    "edition": "enterprise",
+    "api": "v2",
+    "schema": 0
+  },
+  "error": false,
+  "message": "",
+  "results": [
+    {
+      "v_id": "6100000100",
+      "v_type": "Patient",
+      "attributes": {
+        "birth_year": 1959
+      }
+    },
+    {
+      "v_id": "6023000024",
+      "v_type": "Patient",
+      "attributes": {
+        "birth_year": 0
+      }
+    },
+    {
+      "v_id": "6022000024",
+      "v_type": "Patient",
+      "attributes": {
+        "birth_year": 1978
+      }
+    },
+    {
+      "v_id": "6020000020",
+      "v_type": "Patient",
+      "attributes": {
+        "birth_year": 0
+      }
+    },
+    {
+      "v_id": "6015000008",
+      "v_type": "Patient",
+      "attributes": {
+        "birth_year": 0
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

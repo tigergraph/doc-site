@@ -1,12 +1,18 @@
 site:
-  title: TigerGraph Server User Guide
+  title: TigerGraph Documentation
 content:
   sources:
   - url: https://github.com/lennessyy/tg-server.git
     branches: main
   - url: https://github.com/lennessyy/tg-gui.git
     branches: main
+  - url: https://github.com/lennessyy/cloud.git
+  - url: https://github.com/lennessyy/graph-ml.git
+  - url: https://github.com/lennessyy/gsql.git
 ui:
   bundle:
-    url: https://lightbend.github.io/antora-supplemental-ui-lightbend-theme/default_ui/ui-bundle-1023155878.zip
+    url: https://github.com/lennessyy/antora-ui/blob/main/build/ui-bundle.zip?raw=true
     snapshot: true
+asciidoc:
+  extensions:
+  - ./libs/tabs-block.js

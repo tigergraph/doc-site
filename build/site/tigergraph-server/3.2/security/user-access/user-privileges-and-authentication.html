@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>User Privileges and Authentication :: TigerGraph Server User Guide</title>
-    <meta name="generator" content="Antora 2.3.4">
+    <title>User Privileges and Authentication :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../../_/css/site.css">
     <script>var uiRootPath = '../../../../_'</script>
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -85,6 +85,15 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../getting-started/docker.html">Getting started with Docker</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -97,6 +106,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../installation/install.html">Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/upgrade.html">Upgrade Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../installation/uninstallation.html">Uninstallation</a>
   </li>
 </ul>
   </li>
@@ -218,6 +233,30 @@
     <span class="version">3.2</span>
   </div>
   <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <a class="title" href="../../installation/install.html">TigerGraph Server User Guide</a>
       <ul class="versions">
@@ -357,8 +396,8 @@ Creation and management of multiple users and roles is available in the Enterpri
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gsql [-u username] [-p pasword] [-g gname] &lt;commmand&gt;
-Password: ********</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gsql [-u username] [-p pasword] [-g gname] &lt;commmand&gt;
+Password: ********</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -372,7 +411,7 @@ Password: ********</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gsql
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gsql
 Password for tigergraph: ********
 Welcome to GSQL Shell version: 1.2
 
@@ -392,7 +431,7 @@ GSQL &gt; SHOW USER
     - Secret: *************************
     - Roles: designer, observer
 
-GSQL &gt; EXIT</pre>
+GSQL &gt; EXIT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -428,9 +467,9 @@ Authorization for <code>gadmin</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>gadmin config set RESTPP.Factory.EnableAuth true
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gadmin config set RESTPP.Factory.EnableAuth true
 gadmin config apply
-gadmin restart restpp nginx gui -y</pre>
+gadmin restart restpp nginx gui -y</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -457,7 +496,7 @@ gadmin restart restpp nginx gui -y</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET 'localhost:9000/requesttoken?secret=jiokmfqqfu2f95qs6ug85o89rpkneib3&amp;lifetime=1000000'</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X GET 'localhost:9000/requesttoken?secret=jiokmfqqfu2f95qs6ug85o89rpkneib3&amp;lifetime=1000000'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -477,7 +516,7 @@ gadmin restart restpp nginx gui -y</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET -H "Authorization: Bearer &lt;token&gt;" 'http://localhost:9000/query/graphname/queryname?param1=val1&amp;param2=val2'</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X GET -H "Authorization: Bearer &lt;token&gt;" 'http://localhost:9000/query/graphname/queryname?param1=val1&amp;param2=val2'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -491,8 +530,8 @@ gadmin restart restpp nginx gui -y</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gadmin config set GSQL.TokenCleaner.IntervalTimeSec &lt;new_interval_length&gt;
-$ gadmin config apply</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">$ gadmin config set GSQL.TokenCleaner.IntervalTimeSec &lt;new_interval_length&gt;
+$ gadmin config apply</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -500,8 +539,8 @@ $ gadmin config apply</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ gadmin config set GSQL.TokenCleaner.GraceTimeSec &lt;grace_period_length&gt;
-$ gadmin config apply</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">$ gadmin config set GSQL.TokenCleaner.GraceTimeSec &lt;grace_period_length&gt;
+$ gadmin config apply</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -826,12 +865,12 @@ $ gadmin config apply</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>CREATE USER
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE USER
 DROP USER &lt;user1&gt;,...&lt;userN&gt;
 SHOW USER
 ALTER PASSWORD [&lt;user1&gt;]
 GRANT ROLE admin [ON GRAPH &lt;gname&gt;] TO &lt;user1&gt;,...&lt;userN&gt;
-REVOKE ROLE admin [ON GRAPH &lt;gname&gt;] FROM &lt;user1&gt;,...&lt;userN&gt;</pre>
+REVOKE ROLE admin [ON GRAPH &lt;gname&gt;] FROM &lt;user1&gt;,...&lt;userN&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -844,8 +883,8 @@ REVOKE ROLE admin [ON GRAPH &lt;gname&gt;] FROM &lt;user1&gt;,...&lt;userN&gt;</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>tigergraph:GSQL &gt; CREATE USER
-User Name : `name@tigergraph.com`</pre>
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">tigergraph:GSQL &gt; CREATE USER
+User Name : `name@tigergraph.com`</code></pre>
 </div>
 </div>
 </div>
@@ -860,11 +899,11 @@ Create a new user.  GSQL will prompt for the user name and password.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>tigergraph:GSQL &gt; CREATE USER
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tigergraph:GSQL &gt; CREATE USER
 User Name : frank
 New Password : ************
 Re-enter Password : ************
-The user "frank" is created.</pre>
+The user "frank" is created.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -887,7 +926,7 @@ Delete the listed users.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>DROP USER &lt;user1&gt;,...&lt;userN&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">DROP USER &lt;user1&gt;,...&lt;userN&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -900,10 +939,10 @@ Delete the listed users.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>tigergraph:GSQL &gt; DROP USER hermione, jk
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tigergraph:GSQL &gt; DROP USER hermione, jk
 Password: *********
 The user "hermione" is dropped.
-The user "jk" is dropped.</pre>
+The user "jk" is dropped.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -921,7 +960,7 @@ Display user&#8217;s name, role, secret, and token. Non-admin/superuser users se
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>tigergraph:GSQL &gt; SHOW USER
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tigergraph:GSQL &gt; SHOW USER
 Users:
   - Name: tigergraph
     - Roles: admin, observer
@@ -935,7 +974,7 @@ Users:
     - Roles: observer
 
   - Name: hermione
-    - Roles: observer</pre>
+    - Roles: observer</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -946,8 +985,8 @@ Users:
 <h3 id="_grantrevoke_role"><a class="anchor" href="#_grantrevoke_role"></a>GRANT/REVOKE ROLE</h3>
 <div class="listingblock">
 <div class="content">
-<pre>GRANT ROLE &lt;rolename&gt; [ON GRAPH &lt;gname&gt;] TO &lt;user1&gt;,...&lt;userN&gt;
-REVOKE ROLE &lt;rolename&gt; [ON GRAPH &lt;gname&gt;] FROM &lt;user1&gt;,...&lt;userN&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GRANT ROLE &lt;rolename&gt; [ON GRAPH &lt;gname&gt;] TO &lt;user1&gt;,...&lt;userN&gt;
+REVOKE ROLE &lt;rolename&gt; [ON GRAPH &lt;gname&gt;] FROM &lt;user1&gt;,...&lt;userN&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -972,7 +1011,7 @@ Even if user is granted superuser role, all previous granted roles for the speci
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>GSQL &gt; GRANT ROLE queryreader ON GRAPH Hogwarts TO jk,hermione
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GSQL &gt; GRANT ROLE queryreader ON GRAPH Hogwarts TO jk,hermione
 Role "queryreader" is successfully granted to user(s): jk, hermione
 
 GSQL &gt; REVOKE ROLE queryreader ON GRAPH Hogwarts FROM hermione
@@ -999,7 +1038,7 @@ Users:
       - GraphName: Hogwarts
         - Roles: queryreader
       - GraphName: London
-        - Roles: querywriter</pre>
+        - Roles: querywriter</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1040,10 +1079,10 @@ Users:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>ALTER PASSWORD [user1]
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">ALTER PASSWORD [user1]
 CREATE SECRET [alias1]
 SHOW SECRET
-DROP SECRET &lt;secret1&gt;</pre>
+DROP SECRET &lt;secret1&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1058,7 +1097,7 @@ DROP SECRET &lt;secret1&gt;</pre>
 <h3 id="_passwords"><a class="anchor" href="#_passwords"></a>Passwords</h3>
 <div class="listingblock">
 <div class="content">
-<pre>ALTER PASSWORD [&lt;user1&gt;]</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">ALTER PASSWORD [&lt;user1&gt;]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1072,11 +1111,11 @@ DROP SECRET &lt;secret1&gt;</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>herminone:GSQL &gt; ALTER PASSWORD
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">herminone:GSQL &gt; ALTER PASSWORD
 Password: *******
 New Password : ************
 Re-enter Password : ************
-Password has been changed.</pre>
+Password has been changed.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1087,11 +1126,11 @@ Password has been changed.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>tigergraph:GSQL &gt; ALTER PASSWORD hermione
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">tigergraph:GSQL &gt; ALTER PASSWORD hermione
 Password: *******
 New Password : ************
 Re-enter Password : ************
-Password has been changed.</pre>
+Password has been changed.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1105,7 +1144,7 @@ Password has been changed.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>DROP SECRET &lt;secret1&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">DROP SECRET &lt;secret1&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1118,7 +1157,7 @@ Password has been changed.</pre>
 <h4 id="_create_a_secret"><a class="anchor" href="#_create_a_secret"></a>Create a secret</h4>
 <div class="listingblock">
 <div class="content">
-<pre>CREATE SECRET [&lt;alias&gt;]</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">CREATE SECRET [&lt;alias&gt;]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1132,7 +1171,7 @@ Password has been changed.</pre>
 <h4 id="_list_secrets"><a class="anchor" href="#_list_secrets"></a>List secrets</h4>
 <div class="listingblock">
 <div class="content">
-<pre>SHOW SECRET</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">SHOW SECRET</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1140,13 +1179,13 @@ Password has been changed.</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>GSQL &gt; SHOW SECRET
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">GSQL &gt; SHOW SECRET
     - Secret: s7s****3k5
       - Alias: HH
       - GraphName: Hogwarts
     - Secret: 75j****9i2
       - Alias: LL
-      - GraphName: London</pre>
+      - GraphName: London</code></pre>
 </div>
 </div>
 </div>
@@ -1154,7 +1193,7 @@ Password has been changed.</pre>
 <h4 id="_drop_a_secret"><a class="anchor" href="#_drop_a_secret"></a>Drop a secret</h4>
 <div class="listingblock">
 <div class="content">
-<pre>DROP SECRET &lt;secret&gt;</pre>
+<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">DROP SECRET &lt;secret&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">

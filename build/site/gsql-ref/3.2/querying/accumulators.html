@@ -1,0 +1,3272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Accumulators :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorials/pattern-matching/example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../tutorials/pattern-matching/summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Querying</li>
+    <li><a href="accumulators.html">Accumulators</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/querying/pages/accumulators.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Accumulators</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Accumulators are special types of variables that accumulate information about the graph during its traversal and exploration. Because they are a unique and important feature of the GSQL query language, we devote a separate section for their introduction, but additional detail on their usage will be covered in other sections, the "SELECT Statement" section in particular. This section covers the following subset of the EBNF language definitions:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">accumDeclStmt :=
+          accumType localAccumName ["=" constant]
+                    ["," localAccumName ["=" constant]]*
+        | [STATIC] accumType globalAccumName ["=" constant]
+                    ["," globalAccumName ["=" constant]]*
+localAccumName := "@"accumName;
+globalAccumName := "@@"accumName;
+
+
+accumType := "SumAccum" "&lt;" ( INT | FLOAT | DOUBLE | STRING | STRING COMPRESS) "&gt;"
+       | "MaxAccum" "&lt;" ( INT | FLOAT | DOUBLE ) "&gt;"
+       | "MinAccum" "&lt;" ( INT | FLOAT | DOUBLE ) "&gt;"
+       | "AvgAccum"
+       | "OrAccum"
+       | "AndAccum"
+       | "BitwiseOrAccum"
+       | "BitwiseAndAccum"
+       | "ListAccum" "&lt;" type "&gt;"
+       | "SetAccum"  "&lt;" elementType "&gt;"
+       | "BagAccum"  "&lt;" elementType "&gt;"
+       | "MapAccum"  "&lt;" elementType "," (baseType | accumType | tupleType) "&gt;"
+       | "HeapAccum" "&lt;" tupleType "&gt;" "(" simpleSize "," fieleName [ASC | DESC]
+                                          ["," fieldName [ASC | DESC]]* ")"
+       | "GroupByAccum" "&lt;" elementType fieldName ["," elementType fieldName]* ,
+		                     accumType fieldName ["," accumType fieldName]* "&gt;"
+       | "ArrayAccum" "&lt;" accumName "&gt;"
+
+elementType := baseType | tupleType | STRING COMPRESS
+
+gAccumAccumStmt := globalAccumName "+=" expr
+
+accumClause := ACCUM DMLSubStmtList
+
+postAccumClause := "POST-ACCUM" DMLSubStmtList</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>There are a number of different types of accumulators, each providing specific accumulation functions.  Accumulators are declared to have one of two types of association: <em>global</em> or <em>vertex-attached</em>.</p>
+</div>
+<div class="paragraph">
+<p>More technically, accumulators are mutable mutex variables shared among all the graph computation threads exploring the graph within a given query. To improve performance, the graph processing engine employs multithreaded processing. Modification of accumulators is coordinated at run-time so the accumulation operator works correctly (i.e., mutually exclusively) across all threads. This is particularly relevant in the ACCUM clause. During traversal of the graph, the selected set of edges or vertices is partitioned among a group of threads. These threads have shared mutually exclusive access to the accumulators.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_declaration_of_accumulators"><a class="anchor" href="#_declaration_of_accumulators"></a>Declaration of Accumulators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Global accumulators can be declared anywhere in the query. Vertex-attached accumulators can be declared anywhere in the query except for in a <code>FOREACH</code> loop or <code>WHILE</code> loop. Accumulators are <a href="declaration-and-assignment-statements.md#block-scoping">block-scoped</a> and can only be accessed in the block where they are declared.</p>
+</div>
+<div class="paragraph">
+<p>The name of a vertex-attached accumulator begins with a single <code>@</code>. The name of a global accumulator begins with <code>@@</code>. Additionally, a global accumulator may be declared to be static.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for Accumulator Declaration" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">accumDeclStmt :=
+          accumType localAccumName ["=" expr]
+                    ["," localAccumName ["=" expr]]*
+        | [STATIC] accumType globalAccumName ["=" expr]
+                    ["," globalAccumName ["=" expr]]*
+localAccumName := "@"accumName;
+globalAccumName := "@@"accumName;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vertex_attached_accumulators"><a class="anchor" href="#_vertex_attached_accumulators"></a>Vertex-attached Accumulators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vertex-attached accumulators are mutable state variables that are attached to each vertex in the graph for the duration of the query&#8217;s lifetime. They act as run-time attributes of a vertex. They are shared, mutual exclusively, among all of the query&#8217;s processes.</p>
+</div>
+<div class="paragraph">
+<p>Vertex-attached accumulators can be set to a value with the = operator. Additionally, an accumulate operator += can be used to update the state of the accumulator; the function of += depends on the accumulator type.</p>
+</div>
+<div class="paragraph">
+<p>In the example below, there are two accumulators attached to each vertex. The initial value of an accumulator of a given type is predefined, however it can be changed at declaration as in the accumulator @weight below.  All vertex-attached accumulator names have a single leading at-sign "@".</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Vertex-Attached Accumulators" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SumAccum&lt;int&gt;   @neighbors;
+MaxAccum&lt;float&gt; @weight = 2.8;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>If there is a graph with 10 vertices, then there is an instance of <code>@neighbors</code> <strong><strong>*and <code>@weight</code> </strong><strong>for each vertex (hence 10 of each, and 20 total accumulator instances). These are accessed via the dot operator on a vertex variable or a vertex alias (e.g., <code>v.@neighbor</code> </strong></strong>). The accumulator operator += only impacts the accumulator for the specific vertex being referenced. A statement such as <code>v1.@neighbors += 1</code>will only impact <strong>v1* 's <code>@neighbors</code> </strong><strong>and not the <code>@neighbors</code> </strong>**for other vertices.</p>
+</div>
+<div class="paragraph">
+<p>Vertex-attached accumulators can only be accessed or updated (via = or +=) in an <code>ACCUM</code> or <code>POST-ACCUM</code> clause within a <code>SELECT</code> block. The only exception to this rule is that vertex-attached accumulators can be referenced in a PRINT statement, as the PRINT has access to all information attached to a vertex set.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+ Edge-attached accumulators are not supported.
+{% endhint %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_global_accumulators"><a class="anchor" href="#_global_accumulators"></a>Global Accumulators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A global accumulator is a single mutable accumulator that can be accessed or updated within a query.  The names of global accumulators start with a double at-sign "@@".</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Global Accumulators" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SumAccum&lt;int&gt;   @@totalNeighbors;
+MaxAccum&lt;float&gt; @@entropy = 1.0;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Global accumulators can only be assigned (using the = operator) outside a SELECT block (i.e., not within an ACCUM or POST-ACCUM clause). Global accumulators can be accessed or updated via the accumulate operator += anywhere within a query, including inside a SELECT block.</p>
+</div>
+<div class="paragraph">
+<p>It is important to note that the accumulation operation for global accumulators in an ACCUM clause executes once for each process. That is, if the FROM clause uses an edge-induced selection (introduced in Section "SELECT Statement"), the ACCUM clause executes one process for each edge in the selected edge set. If the FROM clause uses a vertex-induced selection (introduced in Section "SELECT Statement"), the ACCUM clause executes one process for each vertex in the selected vertex set. Since global accumulators are shared in a mutually exclusive manner among processes, they behave very differently than a non-accumulator variable (see Section "Variable Types" for more details) in an ACCUM clause. Take the following code example. The global accumulator<strong>@@globalRelationshipCount</strong> is accumulated for every <strong>worksFor</strong> edge traversed since it is shared among processes. Conversely, <strong>relationshipCount</strong> appears to have only been incremented once. This is because a non-accumulator variable is not shared among processes. Each process has its own separate unshared copy of <strong>relationshipCount</strong> and increments <em>*the original value*</em> by one. (E.g., each process increments <strong>relationshipCount</strong> from 0 to 1.) There is no accumulation and the final value is one.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Global Variable vs Global Accumulator" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#Count the total number of employment relationships for all companies
+CREATE QUERY countEmploymentRelationships() FOR GRAPH workNet {
+
+  INT localRelationshipCount;
+  SumAccum&lt;INT&gt; @@globalRelationshipCount;
+
+  start = {company.*};
+
+  companies = SELECT s FROM start:s -(worksFor)-&gt; :t
+          ACCUM @@globalRelationshipCount += 1,
+                localRelationshipCount = localRelationshipCount + 1;
+
+  PRINT localRelationshipCount;
+  PRINT @@globalRelationshipCount;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="countEmploymentRelationship.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY countEmploymentRelationships()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"localRelationshipCount": 1},
+    {"@@globalRelationshipCount": 17}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="sect2">
+<h3 id="_static_global_accumulators"><a class="anchor" href="#_static_global_accumulators"></a>Static Global Accumulators</h3>
+<div class="paragraph">
+<p>A static global accumulator retains its value after the execution of a query. To declare a static global accumulator, include the STATIC keyword at the beginning of the declaration statement. For example, if a static global accumulator is incremented by 1 each time a query is executed, then its value is equal to the number of times the query has been run, since the query was installed. Each static global accumulator belongs to the particular query in which it is declared; it cannot be shared among different queries. The value only persists in the context of running the same query multiple times.  The value will reset to the default value when the GPE is restarted.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Static Global Accumulators example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY staticAccumEx(INT x) FOR GRAPH minimalNet {
+  STATIC ListAccum&lt;INT&gt; @@testList;
+  @@testList += x;
+  PRINT @@testList;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="staticAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY staticAccumEx(3)
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"@@testList": [
+    3,
+    -5,
+    3
+  ]}]
+}
+GSQL &gt; RUN QUERY staticAccumEx(-5)
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"@@testList": [
+    3,
+    -5,
+    3,
+    -5
+  ]}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>There is no command to deallocate a static global accumulator. If a static global accumulator is a collection accumulator and is no longer needed, it should be cleared to minimize memory usage.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accumulator_types"><a class="anchor" href="#_accumulator_types"></a>Accumulator Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following are the accumulator types we currently support. Each type of accumulator supports one or more data types.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="EBNF for Accumulator Types" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">accumType := "SumAccum" "&lt;" ( INT | FLOAT | DOUBLE | STRING | STRING COMPRESS) "&gt;"
+		   | "MaxAccum" "&lt;" ( INT | FLOAT | DOUBLE ) "&gt;"
+ 	     | "MinAccum" "&lt;" ( INT | FLOAT | DOUBLE ) "&gt;"
+     	 | "AvgAccum"
+		   | "OrAccum"
+		   | "AndAccum"
+       | "BitwiseOrAccum"
+       | "BitwiseAndAccum"
+		   | "ListAccum" "&lt;" type "&gt;"
+		   | "SetAccum"  "&lt;" elementType "&gt;"
+		   | "BagAccum"  "&lt;" elementType "&gt;"
+       | "MapAccum"  "&lt;" elementType "," (baseType | accumType | tupleType) "&gt;"
+       | "HeapAccum" "&lt;" tupleType "&gt;" "(" simpleSize "," fieleName [ASC | DESC]
+                               ["," fieldName [ASC | DESC]]* ")"
+		   | "GroupByAccum" "&lt;" elementType fieldName ["," elementType fieldName]* ,
+		                        accumType fieldName ["," accumType fieldName]* "&gt;"
+       | "ArrayAccum" "&lt;" accumName "&gt;"
+
+elementType := baseType | tupleType | STRING COMPRESS
+
+gAccumAccumStmt := globaAccumName "+=" expr</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The accumulators fall into two major groups :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Scalar Accumulators</strong> store a single value:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SumAccum</p>
+</li>
+<li>
+<p>MinAccum, MaxAccum</p>
+</li>
+<li>
+<p>AvgAccum</p>
+</li>
+<li>
+<p>AndAccum, OrAccum</p>
+</li>
+<li>
+<p>BitwiseAndAccum, BitwiseOrAccum</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Collection Accumulators</strong> store a set of values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ListAccum</p>
+</li>
+<li>
+<p>SetAccum</p>
+</li>
+<li>
+<p>BagAccum</p>
+</li>
+<li>
+<p>MapAccum</p>
+</li>
+<li>
+<p>ArrayAccum</p>
+</li>
+<li>
+<p>HeapAccum</p>
+</li>
+<li>
+<p>GroupByAccum</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The details of each accumulator type are summarized in the table below.  The Accumulation Operation column explains how the accumulator <strong>accumName</strong> is updated when the statement <strong>accumName += newVal</strong> is executed. Following the table are example queries for each accumulator type.</p>
+</div>
+<div class="paragraph">
+<p>Table Ac1: Accumulator Types and Their Accumulation Behavior<table><thead><tr><th style="text-align:left">Accumulator Type (Case Sensitive)</th>
+      <th style="text-align:left">Default Initial Value</th>
+      <th style="text-align:left">Accumulation operation
+        <br></br>(result of <em><code>accumName </code></em><code>= </code><em><code>newVal </code></em>)</th></tr></thead>
+  <tbody><tr><td style="text-align:left">SumAccum&lt;INT&gt;</td>
+      <td style="text-align:left">0</td>
+      <td style="text-align:left"><em>accumName </em>plus <em>newVal</em></td></tr>
+    <tr><td style="text-align:left">SumAccum&lt;FLOAT or DOUBLE&gt;</td>
+      <td style="text-align:left">0.0</td>
+      <td style="text-align:left"><em>accumName </em>plus <em>newVal</em></td></tr>
+    <tr><td style="text-align:left">SumAccum&lt;STRING&gt;</td>
+      <td style="text-align:left">empty string</td>
+      <td style="text-align:left">String concatenation of <em>accumName </em>and <em>newVal</em></td></tr>
+    <tr><td style="text-align:left">MaxAccum&lt;INT&gt;</td>
+      <td style="text-align:left">INT_MIN</td>
+      <td style="text-align:left">The greater of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MaxAccum&lt;FLOAT or DOUBLE&gt;</td>
+      <td style="text-align:left">FLOAT_MIN or DOUBLE_MIN</td>
+      <td style="text-align:left">The greater of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MaxAccum&lt;STRING&gt;</td>
+      <td style="text-align:left">empty string</td>
+      <td style="text-align:left">The greater of <em>newVal </em>and <em>accumName</em>  <em>, </em>according
+        to UTF-8 lexicographical ordering</td></tr>
+    <tr><td style="text-align:left">MaxAccum&lt;VERTEX&gt;</td>
+      <td style="text-align:left">the vertex with internal id 0</td>
+      <td style="text-align:left">The vertex with the greater internal id , either <em>newVal </em>or <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MaxAccum&lt;tupleTyple&gt;</td>
+      <td style="text-align:left">default for each field of the tuple</td>
+      <td style="text-align:left">The greater of <em>newVal </em>and <em>accumName. </em>tupleType is a user-defined
+        sequence of baseTypes. Ordering is hierarchical, using the leftmost field
+        of the tuple first, then the next field, and so on.</td></tr>
+    <tr><td style="text-align:left">MinAccum&lt;INT&gt;</td>
+      <td style="text-align:left">INT_MAX</td>
+      <td style="text-align:left">The lesser of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MinAccum&lt;FLOAT or DOUBLE&gt;</td>
+      <td style="text-align:left">FLOAT_MAX or DOUBLE_MAX</td>
+      <td style="text-align:left">The lesser of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MinAccum&lt;STRING&gt;</td>
+      <td style="text-align:left">empty string</td>
+      <td style="text-align:left">The lesser of <em>newVal </em>and <em>accumName</em>  <em>, </em>according
+        to UTF-8 lexicographical ordering</td></tr>
+    <tr><td style="text-align:left">MinAccum&lt;VERTEX&gt;</td>
+      <td style="text-align:left">unknown</td>
+      <td style="text-align:left">The vertex with the lesser internal id, either <em>newVal </em>or <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">MinAccum&lt;tupleType&gt;</td>
+      <td style="text-align:left">default for each field of the tuple</td>
+      <td style="text-align:left">The lesser of <em>newVal </em>and <em>accumName. </em>tupleType is a user-defined
+        sequence of baseTypes. Ordering is hierarchical, using the leftmost field
+        of the tuple first, then the next field, and so on.</td></tr>
+    <tr><td style="text-align:left">AvgAccum</td>
+      <td style="text-align:left">0.0 (double precision)</td>
+      <td style="text-align:left">Double precision average of <em>newVal </em>and all previous values accumulated
+        to<em>accumName</em></td></tr>
+    <tr><td style="text-align:left">AndAccum</td>
+      <td style="text-align:left">True</td>
+      <td style="text-align:left">Boolean AND of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">OrAccum</td>
+      <td style="text-align:left">False</td>
+      <td style="text-align:left">Boolean OR of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">BitwiseAndAccum</td>
+      <td style="text-align:left">-1 (INT) = 64-bit sequence of 1s</td>
+      <td style="text-align:left">Bitwise AND of <em>newVal </em>and <em>accumName</em></td></tr>
+    <tr><td style="text-align:left">BitwiseOrAccum</td>
+      <td style="text-align:left">0 (INT) = 64-bit sequence of 0s</td>
+      <td style="text-align:left">Bitwise OR of <em>newVal </em>and <em>accumName </em>
+        <br></br></td></tr>
+    <tr><td style="text-align:left"><p>ListAccum&lt; <em>type </em>&gt;</p>
+        <p>(ordered collection of elements)</p></td>
+      <td style="text-align:left">empty list</td>
+      <td style="text-align:left">List with <em>newVal </em>appended to end of <em>accumName. newVal </em>can
+        be a single value or a list. If <em>accumName </em>is [ 2, 4, 6 ], then <em>accumName </em>=
+        4
+        <br></br>produces <em>accumName </em>equal to <span class="2"></td></span></tr>
+    <tr><td style="text-align:left"><p>SetAccum&lt; t<em>ype </em>&gt;</p>
+        <p>(unordered collection of elements, duplicate items not allowed)</p></td>
+      <td style="text-align:left">empty set</td>
+      <td style="text-align:left">Set union of <em>newVal </em>and <em>accumName </em>. <em>newVal </em>can
+        be a single value or a set/bag.If <em>accumName </em>is ( 2, 4, 6 ), then <em>accumName </em>=
+        4
+        <br></br>produces <em>accumName </em>equal to ( 2, 4, 6)</td></tr>
+    <tr><td style="text-align:left"><p>BagAccum&lt;t<em>ype </em>&gt;</p>
+        <p>(unordered collection of elements, duplicate items allowed)</p></td>
+      <td style="text-align:left">empty bag</td>
+      <td style="text-align:left">Bag union of <em>newVal </em>and <em>accumName </em>. <em>newVal </em>can
+        be a single value or a set/bag.If <em>accumName </em>is ( 2, 4, 6 ), then <em>accumName </em>=
+        4
+        <br></br>would result in <em>accumName </em>equal to ( 2, 4, 4, 6)</td></tr>
+    <tr><td style="text-align:left"><p>MapAccum&lt; <em>type, type </em>&gt;</p>
+        <p>(unordered collection of (key,value) pairs)</p></td>
+      <td style="text-align:left">empty map</td>
+      <td style="text-align:left">Add or update a key:value pair to the <em>accumName </em>map. If <em>accumName </em>is
+        [ (&quot;red&quot;,3), (&quot;green&quot;,4),(&quot;blue&quot;,2) ], then <em>accumName </em>+=
+        (&quot;black&quot;&#8594; 5)
+        <br></br>produces <em>accumName </em>equal to <span class="(&quot;red&quot;"></td></span></tr>
+    <tr><td style="text-align:left">ArrayAccum&lt; <em>accumType </em>&gt;</td>
+      <td style="text-align:left">empty list</td>
+      <td style="text-align:left">See the ArrayAccum section below for details.</td></tr>
+    <tr><td style="text-align:left"><p>HeapAccum&lt; <em>tuple </em>&gt;(heapSize, sortKey <strong>)</p>
+        <p>(sorted collection of tuples)</p></td>
+      <td style="text-align:left">empty heap</td>
+      <td style="text-align:left">Insert <em>newVal </em>into the <em>accumName </em>heap, maintaining the
+        heap in sorted order, according to the sortKey(s) and size limit declared
+        for this HeapAccum</td></tr>
+    <tr><td style="text-align:left">GroupByAccum&lt; <em>type [, type]</strong> , accumType [, accumType]* </em>&gt;</td>
+      <td style="text-align:left">empty group by map</td>
+        <td style="text-align:left">Add or update a key:value pair in <em>accumName </em>. See Section &quot;GroupByAccum&quot;
+          for more details.</td></tr></tbody></table></p>
+</div>
+<div class="sect2">
+<h3 id="_sumaccum"><a class="anchor" href="#_sumaccum"></a>SumAccum</h3>
+<div class="paragraph">
+<p>The SumAccum type computes and stores the cumulative sum of numeric values or the cumulative concatenation of text values. The output of a SumAccum is a single numeric or string value. SumAccum variables operate on values of type INT, UINT, FLOAT, DOUBLE, or STRING only.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>=* operator updates the accumulator's state. For INT, FLOAT, and DOUBLE types, *= <code>arg</code></strong> performs a numeric addition, while for the STRING value type <strong>+= <code>arg</code></strong> concatenates <strong>arg</strong> to the current value of the SumAccum.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="SumAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># SumAccum Example
+CREATE QUERY sumAccumEx() FOR GRAPH minimalNet {
+
+  SumAccum&lt;INT&gt;    @@intAccum;
+  SumAccum&lt;FLOAT&gt;  @@floatAccum;
+  SumAccum&lt;DOUBLE&gt; @@doubleAccum;
+  SumAccum&lt;STRING&gt; @@stringAccum;
+
+  @@intAccum  = 1;
+  @@intAccum += 1;
+
+  @@floatAccum = @@intAccum;
+  @@floatAccum = @@floatAccum / 3;
+
+  @@doubleAccum  = @@floatAccum * 8;
+  @@doubleAccum += -1;
+
+  @@stringAccum  = "Hello ";
+  @@stringAccum += "World";
+
+  PRINT @@intAccum;
+  PRINT @@floatAccum;
+  PRINT @@doubleAccum;
+  PRINT @@stringAccum;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="sumAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY sumAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@intAccum": 2},
+    {"@@floatAccum": 0.66667},
+    {"@@doubleAccum": 4.33333},
+    {"@@stringAccum": "Hello World"}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_minaccum_maxaccum"><a class="anchor" href="#_minaccum_maxaccum"></a>MinAccum / MaxAccum</h3>
+<div class="paragraph">
+<p>The <code>MinAccum</code> and <code>MaxAccum</code> types calculate and store the cumulative minimum or the cumulative maximum of a series of values. The output of a <code>MinAccum</code> or a <code>MaxAccum</code> is a single value of the type that was passed in. <code>MinAccum</code> and <code>MaxAccum</code> variables operate on values of type <code>INT, UINT, FLOAT, DOUBLE, STRING, TUPLE</code>, and <code>VERTEX</code> (with optional specific vertex type) only.</p>
+</div>
+<div class="paragraph">
+<p>For <code>MinAccum</code>, <strong>+= <code>arg</code></strong> checks if the current value held is less than <strong>arg</strong> and stores the smaller of the two. <code>MaxAccum</code> behaves the same, with the exception that it checks for and stores the greater instead of the lesser of the two.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="MinAccum and MaxAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># MinAccum and MaxAccum Example
+CREATE QUERY minMaxAccumEx() FOR GRAPH minimalNet {
+
+  MinAccum&lt;INT&gt; @@minAccum;
+  MaxAccum&lt;FLOAT&gt; @@maxAccum;
+
+  @@minAccum += 40;
+  @@minAccum += 20;
+  @@minAccum += -10;
+
+  @@maxAccum += -1.1;
+  @@maxAccum += 2.5;
+  @@maxAccum += 2.8;
+
+  PRINT @@minAccum;
+  PRINT @@maxAccum;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="minMaxAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY minMaxAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@minAccum": -10},
+    {"@@maxAccum": 2.8}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>String minimum and maximum values are based on their UTF-8 codes, which is a multilingual superset of the ASCII codes. Within ASCII, a &lt; z, uppercase is less than lowercase, and digits are less than alphabetic characters.</p>
+</div>
+<div class="paragraph">
+<p>MinAccum and MaxAccum operating on VERTEX type have a special comparison. They do not compare vertex ids, but TigerGraph internal ids, which might not be in the same order as the external ids. Comparing internal ids is much faster, so MinAccum/MaxAccum&lt;VERTEX&gt; provides an efficient way to compare and select vertices. This is helpful for some graph algorithms that require the vertices to be numbered and sortable. For example, the following query returns one post from each person. The returned vertex is not necessarily the vertex with the alphabetically largest id.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="MaxAccum<VERTEX>example" %}</VERTEX></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># Output one random post vertex from each person
+CREATE QUERY minMaxAccumVertex() FOR GRAPH socialNet api("v2") {
+
+  MaxAccum&lt;VERTEX&gt; @maxVertex;
+  allUser = {person.*};
+  allUser = SELECT src
+            FROM allUser:src -(posted)-&gt; post:tgt
+            ACCUM src.@maxVertex += tgt
+            ORDER BY src.id;
+  PRINT allUser[allUser.@maxVertex]; // api v2
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="minMaxAccuxVertex.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY minMaxAccumVertex()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"allUser": [
+    {
+      "v_id": "person1",
+      "attributes": {"allUser.@maxVertex": "0"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person2",
+      "attributes": {"allUser.@maxVertex": "1"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person3",
+      "attributes": {"allUser.@maxVertex": "2"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person4",
+      "attributes": {"allUser.@maxVertex": "3"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person5",
+      "attributes": {"allUser.@maxVertex": "11"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person6",
+      "attributes": {"allUser.@maxVertex": "10"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person7",
+      "attributes": {"allUser.@maxVertex": "9"},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person8",
+      "attributes": {"allUser.@maxVertex": "7"},
+      "v_type": "person"
+    }
+  ]}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Tuple data types are treated as hierarchical structures, where the first field used for ordering is the leftmost one. When a tuple is used as an element of a <code>MinAccum</code> or <code>MaxAccum</code>, tuple fields can be directly accessed from the accumulator.  For example, if we have the following tuple type and <code>MaxAccum</code> :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">TYPEDEF TUPLE &lt;FLOAT weight&gt; EDGE_WEIGHT
+MinAccum&lt;EDGE_WEIGHT&gt; @@AccTest;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the <code>weight</code> field of the tuple can be accessed directly from the <code>MacAccum</code> through the doc operator(<code>.</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">@@AccTest.weight // Will return the weight field value for the EDGE_WEIGHT
+                 // type tuple stored in the MaxAccum</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_avgaccum"><a class="anchor" href="#_avgaccum"></a>AvgAccum</h3>
+<div class="paragraph">
+<p>The AvgAccum type calculates and stores the cumulative mean of a series of numeric values. Internally, its state information includes the sum value of all inputs and a count of how many input values it has accumulated. The output is the mean value; the sum and the count values are not accessible to the user. The data type of an AvgAccum variable is not declared; all AvgAccum accumulators accept inputs of type INT, UINT, FLOAT, and DOUBLE.  The output is always DOUBLE type.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>+= arg</strong> operation updates the AvgAccum variable&#8217;s state to be the mean of all the previous arguments along with the current argument; The <strong><code>= arg</code></strong> operation clears all the previously accumulated state and sets the new state to be <strong>arg</strong> with a count of one.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="AvgAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># AvgAccum Example
+CREATE QUERY avgAccumEx() FOR GRAPH minimalNet {
+
+  AvgAccum @@averageAccum;
+
+  @@averageAccum += 10;
+  @@averageAccum += 5.5; # avg = (10+5.5) / 2.0
+  @@averageAccum += -1;  # avg = (10+5.5-1) / 3.0
+
+  PRINT @@averageAccum;  # 4.8333...
+
+  @@averageAccum = 99;   # reset
+  @@averageAccum += 101; # avg = (99 + 101) / 2
+
+  PRINT @@averageAccum;  # 100
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="avgAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY avgAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@averageAccum": 4.83333},
+    {"@@averageAccum": 100}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_andaccum_oraccum"><a class="anchor" href="#_andaccum_oraccum"></a>AndAccum / OrAccum</h3>
+<div class="paragraph">
+<p>The AndAccum and OrAccum types calculate and store the cumulative result of a series of boolean operations. The output of an AndAccum or an OrAccum is a single boolean value (True or False). AndAccum and OrAccum variables operate on boolean values only.  The data type does not need to be declared.</p>
+</div>
+<div class="paragraph">
+<p>For AndAccum, <strong>+= arg</strong> updates the state to be the logical AND between the current boolean state and <strong>arg</strong>. OrAccum behaves the same, with the exception that it stores the result of a logical OR operation.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="AndAccum and OrAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># AndAccum and OrAccum Example
+CREATE QUERY andOrAccumEx() FOR GRAPH minimalNet {
+  # T = True
+  # F = False
+
+  AndAccum @@andAccumVar; # (default value = T)
+  OrAccum  @@orAccumVar;  # (default value = F)
+
+  @@andAccumVar += True;  # T and T = T
+  @@andAccumVar += False; # T and F = F
+  @@andAccumVar += True;  # F and T = F
+
+  PRINT @@andAccumVar;
+
+  @@orAccumVar += False;  # F or F == F
+  @@orAccumVar += True;   # F or T == T
+  @@orAccumVar += False;  # T or F == T
+
+  PRINT @@orAccumVar;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="andOrAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY andOrAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@andAccumVar": false},
+    {"@@orAccumVar": true}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bitwiseandaccum_bitwiseoraccum"><a class="anchor" href="#_bitwiseandaccum_bitwiseoraccum"></a>BitwiseAndAccum / BitwiseOrAccum</h3>
+<div class="paragraph">
+<p>The BitwiseAndAccum and BitwiseOrAccum types calculate and store the cumulative result of a series of bitwise boolean operations and store the resulting bit sequences. BitwiseAndAccum and BitwiseOrAccum operator on INT only. The data type does not need to be declared.</p>
+</div>
+<div class="paragraph">
+<p>Fundamental for understanding and using bitwise operations is the knowledge that integers are stored in base-2 representation as a 64-bit sequence of 1s and 0s. "Bitwise" means that each bit is treated as a separate boolean value, with 1 representing true and 0 representing false. Hence, an integer is equivalent to a sequence of boolean values. Computing the Bitwise AND of two numbers A and B means to compute the bit sequence C where the j th bit of C, denoted C j , is equal to (A j AND B j ).</p>
+</div>
+<div class="paragraph">
+<p>For BitwiseAndAccum, <strong>+= <code>arg</code></strong> updates the accumulator&#8217;s state to be the Bitwise AND of the current state and <strong>arg</strong> <code>.</code> BitwiseOrAccum behaves the same, with the exception that it computes a Bitwise OR.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+Bitwise Operations and Negative Integers</p>
+</div>
+<div class="paragraph">
+<p>Most computer systems represent negative integers using "2&#8217;s complement" format, where the uppermost bit has special significance. Operations that affect the uppermost bit are crossing the boundary between positive and negative numbers, and vice versa.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="BitwiseAndAccum and BitwiseOrAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># BitwiseAndAccum and BitwiseOrAccum Example
+CREATE QUERY bitwiseAccumEx() FOR GRAPH minimalNet {
+
+  BitwiseAndAccum @@bwAndAccumVar; # default value = 64-bits of 1 = -1 (INT)
+  BitwiseOrAccum  @@bwOrAccumVar;  # default value = 64-bits of 0 = 0 (INT))
+
+  # 11110000 = 240
+  # 00001111 =  15
+  # 10101010 = 170
+  # 01010101 =  85
+
+  # BitwiseAndAccum
+  @@bwAndAccumVar += 170; # 11111111 &amp; 10101010 -&gt; 10101010
+  @@bwAndAccumVar +=  85; # 10101010 &amp; 01010101 -&gt; 00000000
+  PRINT @@bwAndAccumVar;  # 0
+
+  @@bwAndAccumVar = 15;   # reset to 00001111
+  @@bwAndAccumVar += 85;  # 00001111 &amp; 01010101 -&gt; 00000101
+  PRINT @@bwAndAccumVar;  # 5
+
+  # BitwiseOrAccum
+  @@bwOrAccumVar += 170; # 00000000 | 10101010 -&gt; 10101010
+  @@bwOrAccumVar +=  85; # 10101010 | 01010101 -&gt; 11111111 = 255
+  PRINT @@bwOrAccumVar;  # 255
+
+  @@bwOrAccumVar = 15;   # reset to 00001111
+  @@bwOrAccumVar += 85;  # 00001111 | 01010101 -&gt; 01011111 = 95
+  PRINT @@bwOrAccumVar;  # 95
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="bitwiseAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY bitwiseAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@bwAndAccumVar": 0},
+    {"@@bwAndAccumVar": 5},
+    {"@@bwOrAccumVar": 255},
+    {"@@bwOrAccumVar": 95}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_listaccum"><a class="anchor" href="#_listaccum"></a>ListAccum</h3>
+<div class="paragraph">
+<p>The ListAccum type maintains a sequential collection of elements. The output of a ListAccum is a list of values in the order the elements were added. The element type can be any base type, tuple, or STRING COMPRESS. Additionally, a ListAccum can contain a nested collection of type ListAccum. Nesting of ListAccums is limited to a depth of three.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>+= arg</strong> operation appends <code>arg</code> to the end of the list. In this case, <code>arg</code> may be either a single element or another ListAccum.</p>
+</div>
+<div class="paragraph">
+<p>ListAccum supports two additional operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>@list1 + @list2</strong> creates a new ListAccum, which contains the elements of @list1 followed by the elements of @list2. The two ListAccums must have identical data types.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Change in "+" definition</p>
+</div>
+<div class="paragraph">
+<p>The pre-v2.0 definition of the ListAccum "+" operator ( <strong>@list + arg</strong>: Add arg to each member of @list) is no longer supported.
+{% endhint %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>@list1 * @list2</strong> (STRING data only) generates a new list of strings consisting of all permutations of an element of the first list followed by an element of the second list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ListAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the ListAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function (T is the element type)</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>.size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>.contains(</strong> T <em>val</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true/false if the list does/doesn&#8217;t contain the <em>value</em> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>.get(</strong> INT <em>idx</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the value at the given <em>index</em> position in the list. The index begins at 0. If the index is out of bound (including any negative value), the default value of the element type is returned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>.clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the list so it becomes empty with size 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>.update</strong> (INT <em>index,</em> T <em>value</em> )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assigns <em>value</em> to the list element at position <em>index</em>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="ListAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># ListAccum Example
+CREATE QUERY listAccumEx() FOR GRAPH minimalNet {
+
+  ListAccum&lt;INT&gt; @@intListAccum;
+  ListAccum&lt;STRING&gt; @@stringListAccum;
+  ListAccum&lt;STRING&gt; @@stringMultiplyListAccum;
+  ListAccum&lt;STRING&gt; @@stringAdditionAccum;
+  ListAccum&lt;STRING&gt; @@letterListAccum;
+  ListAccum&lt;ListAccum&lt;STRING&gt;&gt; @@nestedListAccum;
+
+  @@intListAccum = [1,3,5];
+  @@intListAccum += [7,9];
+  @@intListAccum += 11;
+  @@intListAccum += 13;
+  @@intListAccum += 15;
+
+  PRINT @@intListAccum;
+  PRINT @@intListAccum.get(0), @@intListAccum.get(1);
+  PRINT @@intListAccum.get(8); # Out of bound: default value of int: 0
+
+  #Other built-in functions
+  PRINT @@intListAccum.size();
+  PRINT @@intListAccum.contains(2);
+  PRINT @@intListAccum.contains(3);
+
+  @@stringListAccum += "Hello";
+  @@stringListAccum += "World";
+
+  PRINT @@stringListAccum; // ["Hello","World"]
+
+  @@letterListAccum += "a";
+  @@letterListAccum += "b";
+
+  # ListA + ListB produces a new list equivalent to ListB appended to ListA.
+  # Ex: [a,b,c] + [d,e,f] =&gt; [a,b,c,d,e,f]
+  @@stringAdditionAccum = @@stringListAccum + @@letterListAccum;
+
+  PRINT @@stringAdditionAccum;
+
+  #Multiplication produces a list of all list-to-list element combinations (STRING TYPE ONLY)
+  # Ex: [a,b] * [c,d] = [ac, ad, bc, bd]
+  @@stringMultiplyListAccum = @@stringListAccum * @@letterListAccum;
+
+  PRINT @@stringMultiplyListAccum;
+
+  #Two dimensional list (3 dimensions is possible as well)
+  @@nestedListAccum += [["foo", "bar"], ["Big", "Bang", "Theory"], ["String", "Theory"]];
+
+  PRINT @@nestedListAccum;
+  PRINT @@nestedListAccum.get(0);
+  PRINT @@nestedListAccum.get(0).get(1);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="listAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY listAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [ {"@@intListAccum": [ 1, 3, 5, 7, 9, 11, 13, 15 ]},
+    {
+      "@@intListAccum.get(0)": 1,
+      "@@intListAccum.get(1)": 3
+    },
+    {"@@intListAccum.get(8)": 0},
+    {"@@intListAccum.size()": 8},
+    {"@@intListAccum.contains(2)": false},
+    {"@@intListAccum.contains(3)": true},
+    {"@@stringListAccum": [ "Hello", "World" ]},
+    {"@@stringAdditionAccum": [ "Hello", "World", "a", "b"]},
+    {"@@stringMultiplyListAccum": [ "Helloa", "Worlda", "Hellob", "Worldb" ]},
+    {"@@nestedListAccum": [
+      [ "foo", "bar" ],
+      [ "Big", "Bang", "Theory" ],
+      [ "String", "Theory" ]
+    ]},
+    {"@@nestedListAccum.get(0)": [ "foo", "bar" ]},
+    {"@@nestedListAccum.get(0).get(1)": "bar"}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example for update function on a global ListAccum" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY listAccumUpdateEx() FOR GRAPH workNet {
+
+  # Global ListAccum
+  ListAccum&lt;INT&gt; @@intListAccum;
+  ListAccum&lt;STRING&gt; @@stringListAccum;
+  ListAccum&lt;BOOL&gt; @@passFail;
+
+  @@intListAccum += [0,2,4,6,8];
+  @@stringListAccum += ["apple","banana","carrot","daikon"];
+
+  # Global update at Query-Body Level
+  @@passFail += @@intListAccum.update(1,-99);
+  @@passFail += @@intListAccum.update(@@intListAccum.size()-1,40);  // last element
+  @@passFail += @@stringListAccum.update(0,"zero"); // first element
+  @@passFail += @@stringListAccum.update(4,"four"); // FAIL: out-of-range
+
+  PRINT @@intListAccum, @@stringListAccum, @@passFail;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results in listAcccumUpdateEx.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY listAccumUpdateEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{
+    "@@passFail": [ true, true, true, false ],
+    "@@intListAccum": [ 0, -99, 4, 6, 40 ],
+    "@@stringListAccum": [ "zero", "banana", "carrot", "daikon" ]
+  }]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example for update function on a vertex-attached ListAccum" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY listAccumUpdateEx2(SET&lt;VERTEX&lt;person&gt;&gt; seed) FOR GRAPH workNet api("v2") {
+
+  # Each person has an LIST&lt;INT&gt; of skills and a LIST&lt;STRING COMPRESS&gt; of interests.
+  # This function copies their lists into ListAccums, and then udpates the last
+  # int with -99 and updates the last string with "fizz".
+  ListAccum&lt;INT&gt; @intList;
+  ListAccum&lt;STRING COMPRESS&gt; @stringList;
+  ListAccum&lt;STRING&gt; @@intFails, @@strFails;
+
+  S0 (person) = seed;
+  S1 = SELECT s
+    FROM S0:s
+    ACCUM
+      s.@intList = s.skillList,
+      s.@stringList = s.interestList
+    POST-ACCUM
+      INT len = s.@intList.size(),
+      IF NOT s.@intList.update(len-1,-99) THEN
+        @@intFails += s.id END,
+      INT len2 = s.@stringList.size(),
+      IF NOT s.@stringList.update(len2-1,"fizz") THEN
+        @@strFails += s.id END
+  ;
+  PRINT S1[S1.skillList, S1.interestList, S1.@intList, S1.@stringList]; // api v2
+  PRINT @@intFails, @@strFails;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results for listAccumUpdateEx2" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY listAccumUpdateEx2(["person1","person5"])
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"S1": [
+      {
+        "v_id": "person1",
+        "attributes": {
+          "S1.@stringList": [ "management","fizz" ],
+          "S1.interestList": [ "management", "financial"],
+          "S1.skillList": [  1, 2, 3 ],
+          "S1.@intList": [ 1, 2, -99 ]
+        },
+        "v_type": "person"
+      },
+      {
+        "v_id": "person5",
+        "attributes": {
+          "S1.@stringList": [ "sport", "financial", "fizz" ],
+          "S1.interestList": [ "sport", "financial", "engineering" ],
+          "S1.skillList": [ 8, 2, 5 ],
+          "S1.@intList": [ 8, 2, -99 ]
+        },
+        "v_type": "person"
+      }
+    ]},
+    {
+      "@@strFails": [],
+      "@@intFails": []
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setaccum"><a class="anchor" href="#_setaccum"></a>SetAccum</h3>
+<div class="paragraph">
+<p>The SetAccum type maintains a collection of unique elements. The output of a SetAccum is a list of elements in arbitrary order. A SetAccum instance can contain values of one type. The element type can be any base type, tuple, or STRING COMPRESS.</p>
+</div>
+<div class="paragraph">
+<p>For SetAccum, the <strong>+= arg</strong> operation adds a non-duplicate element or set of elements to the set. If an element is already represented in the set, then the SetAccum state does not change.</p>
+</div>
+<div class="paragraph">
+<p>SetAccum also can be used with the three canonical set operators: UNION, INTERSECT, and MINUS (see Section "Set/Bag Expression and Operators" for more details).</p>
+</div>
+<div class="paragraph">
+<p>SetAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the SetAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function (T is the element type)</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>contains(</strong> T <em>value</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true/false if the set does/doesn&#8217;t contain the <em>value</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>remove(</strong> T <em>value *)*</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes <em>value</em> from the set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the set so it becomes empty with size 0.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="SetAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># SetAccum Example
+CREATE QUERY setAccumEx() FOR GRAPH minimalNet {
+
+  SetAccum&lt;INT&gt; @@intSetAccum;
+  SetAccum&lt;STRING&gt; @@stringSetAccum;
+
+  @@intSetAccum += 5;
+  @@intSetAccum.clear();
+
+  @@intSetAccum += 4;
+  @@intSetAccum += 11;
+  @@intSetAccum += 1;
+  @@intSetAccum += 11; # Sets do not store duplicates
+
+  @@intSetAccum += (1,2,3,4); # Can create simple sets this way
+  PRINT @@intSetAccum;
+  @@intSetAccum.remove(2);
+  PRINT @@intSetAccum AS RemovedVal2; # Demostrate remove.
+
+  PRINT @@intSetAccum.contains(3);
+
+  @@stringSetAccum += "Hello";
+  @@stringSetAccum += "Hello";
+  @@stringSetAccum += "There";
+  @@stringSetAccum += "World";
+  PRINT @@stringSetAccum;
+
+  PRINT @@stringSetAccum.contains("Hello");
+  PRINT @@stringSetAccum.size();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="setAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY setAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [ {"@@intSetAccum": [ 3, 2, 1, 11, 4 ]},
+    {"@@intSetAccum.contains(3)": true},
+    {"@@stringSetAccum": [ "World", "There", "Hello" ]},
+    {"@@stringSetAccum.contains(Hello)": true},
+    {"@@stringSetAccum.size()": 3}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bagaccum"><a class="anchor" href="#_bagaccum"></a>BagAccum</h3>
+<div class="paragraph">
+<p>The BagAccum type maintains a collection of elements with duplicated elements allowed. The output of a BagAccum is a list of elements in arbitrary order. A BagAccum instance can contain values of one type. The element type can be any base type, tuple, or STRING COMPRESS.</p>
+</div>
+<div class="paragraph">
+<p>For BagAccum, the <strong>+= arg</strong> operation adds an element or bag of elements to the bag.</p>
+</div>
+<div class="paragraph">
+<p>BagAccum also supports the <strong>+</strong> operator:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>@bag1 + @bag2</strong> creates a new BagAccum, which contains the elements of @bag1 and the elements of @bag2. The two BagAccums must have identical data types.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>BagAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions which modify the BagAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function (T is the element type)</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the bag.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>contains(</strong> T <em>value</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true/false if the bag does/doesn&#8217;t contain the <em>value</em> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the bag so it becomes empty with size 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>remove(</strong> T <em>value *)*</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes one instance of <em>value</em> from the bag.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>removeAll(</strong> T <em>value</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes all instances of the given value from the bag.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="BagAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql"># BagAccum Example
+CREATE QUERY bagAccumEx() FOR GRAPH minimalNet {
+
+  #Unordered collection
+  BagAccum&lt;INT&gt;    @@intBagAccum;
+  BagAccum&lt;STRING&gt; @@stringBagAccum;
+
+  @@intBagAccum += 5;
+  @@intBagAccum.clear();
+
+  @@intBagAccum += 4;
+  @@intBagAccum += 11;
+  @@intBagAccum += 1;
+  @@intBagAccum += 11;        #Bag accums can store duplicates
+  @@intBagAccum += (1,2,3,4);
+  PRINT @@intBagAccum;
+
+  PRINT @@intBagAccum.size();
+  PRINT @@intBagAccum.contains(4);
+
+  @@stringBagAccum += "Hello";
+  @@stringBagAccum += "Hello";
+  @@stringBagAccum += "There";
+  @@stringBagAccum += "World";
+  PRINT @@stringBagAccum.contains("Hello");
+  @@stringBagAccum.remove("Hello");    #Remove one matching element
+  @@stringBagAccum.removeAll("There"); #Remove all matching elements
+  PRINT @@stringBagAccum;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="bagAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY bagAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [ {"@@intBagAccum": [ 2, 3, 1, 1, 11, 11, 4, 4 ]},
+    {"@@intBagAccum.size()": 8},
+    {"@@intBagAccum.contains(4)": true},
+    {"@@stringBagAccum.contains(Hello)": true},
+    {"@@stringBagAccum": [ "World", "Hello" ]}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mapaccum"><a class="anchor" href="#_mapaccum"></a>MapAccum</h3>
+<div class="paragraph">
+<p>The MapAccum type maintains a collection of (key &#8594; value) pairs. The output of a MapAccum is a set of key and value pairs in which the keys are unique.</p>
+</div>
+<div class="paragraph">
+<p>The key type of a MapAccum can be all base types or tuples.  If the key type is VERTEX, then only the vertex&#8217;s id is stored and displayed.</p>
+</div>
+<div class="paragraph">
+<p>The value type of a MapAccum can be all base types, tuples, or any type of accumulator, except for HeapAccum.</p>
+</div>
+<div class="paragraph">
+<p>For MapAccum, the <strong>= `(key&#8594;val)+`</strong> operation adds a key-value element to the collection if <strong>key</strong> is not yet used in the MapAccum. If the MapAccum already contains <strong>key</strong> , then <strong>val</strong> is <em>accumulated</em> to the current value, where the accumulation operation depends on the data type of <strong>val</strong> . (Strings would get concatenated, lists would be appended, numerical values would be added, etc.)</p>
+</div>
+<div class="paragraph">
+<p>MapAccum also supports the <strong>+</strong> operator:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>@map1 + @map2</strong> creates a new MapAccum, which contains the (key,value) pairs of @map2 added to the (key,value) pairs of @map1. The two MapAccums must have identical data types.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MapAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the MapAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function (KEY is the key type)</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the map.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>containsKey(</strong> KEY <em>key</em> <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true/false if the map does/doesn&#8217;t contain <em>key</em> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get(</strong> KEY <em>key *)*</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>value</em> type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the value which the map associates with <em>key</em> . If the map doesn&#8217;t contain_key_ , then the return value is undefined.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the map so it becomes empty with size 0.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="MapAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#MapAccum Example
+CREATE QUERY mapAccumEx() FOR GRAPH minimalNet {
+
+  #Map(Key, Value)
+  # Keys can be INT or STRING only
+  MapAccum&lt;STRING, INT&gt; @@intMapAccum;
+  MapAccum&lt;INT, STRING&gt; @@stringMapAccum;
+  MapAccum&lt;INT, MapAccum&lt;STRING, STRING&gt;&gt; @@nestedMapAccum;
+
+  @@intMapAccum += ("foo" -&gt; 1);
+  @@intMapAccum.clear();
+
+  @@intMapAccum += ("foo" -&gt; 3);
+  @@intMapAccum += ("bar" -&gt; 2);
+  @@intMapAccum += ("baz" -&gt; 2);
+  @@intMapAccum += ("baz" -&gt; 1); #add 1 to existing value
+
+  PRINT @@intMapAccum.containsKey("baz");
+  PRINT @@intMapAccum.get("bar");
+  PRINT @@intMapAccum.get("root");
+
+  @@stringMapAccum += (1 -&gt; "apple");
+  @@stringMapAccum += (2 -&gt; "pear");
+  @@stringMapAccum += (3 -&gt; "banana");
+  @@stringMapAccum += (4 -&gt; "a");
+  @@stringMapAccum += (4 -&gt; "b"); #append "b" to existing value
+  @@stringMapAccum += (4 -&gt; "c"); #append "c" to existing value
+
+  PRINT @@intMapAccum;
+  PRINT @@stringMapAccum;
+
+  #Checking and getting keys
+  if @@stringMapAccum.containsKey(1) THEN
+    PRINT @@stringMapAccum.get(1);
+  END;
+
+  #Map nesting
+  @@nestedMapAccum += ( 1 -&gt; ("foo"  -&gt; "bar") );
+  @@nestedMapAccum += ( 1 -&gt; ("flip" -&gt; "top") );
+  @@nestedMapAccum += ( 2 -&gt; ("fizz" -&gt; "pop") );
+  @@nestedMapAccum += ( 1 -&gt; ("foo"  -&gt; "s") );
+
+  PRINT @@nestedMapAccum;
+
+  if @@nestedMapAccum.containsKey(1) THEN
+    if @@nestedMapAccum.get(1).containsKey("foo") THEN
+       PRINT @@nestedMapAccum.get(1).get("foo");
+    END;
+  END;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="mapAccumEx.json Result" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY mapAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@intMapAccum.containsKey(baz)": true},
+    {"@@intMapAccum.get(bar)": 2},
+    {"@@intMapAccum.get(root)": 0},
+    {"@@intMapAccum": {
+      "bar": 2,
+      "foo": 3,
+      "baz": 3
+    }},
+    {"@@stringMapAccum": {
+      "1": "apple",
+      "2": "pear",
+      "3": "banana",
+      "4": "abc"
+    }},
+    {"@@stringMapAccum.get(1)": "apple"},
+    {"@@nestedMapAccum": {
+      "1": {
+        "foo": "bars",
+        "flip": "top"
+      },
+      "2": {"fizz": "pop"}
+    }},
+    {"@@nestedMapAccum.get(1).get(foo)": "bars"}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrayaccum"><a class="anchor" href="#_arrayaccum"></a>ArrayAccum</h3>
+<div class="paragraph">
+<p>The ArrayAccum type maintains an array of accumulators. An array is a fixed-length sequence of elements, with direct access to elements by position.  The ArrayAccum has these particular characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The elements are accumulators, not primitive or base data types. All accumulators, except HeapAccum, MapAccum, and GroupByAccum, can be used.</p>
+</li>
+<li>
+<p>An ArrayAccum instance can be multidimensional. There is no limit to the number of dimensions.</p>
+</li>
+<li>
+<p>The size can be set at run-time (dynamically).</p>
+</li>
+<li>
+<p>There are operators which update the entire array efficiently.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When an ArrayAccum is declared, the instance name should be followed by a pair of brackets for each dimension.  The brackets may either contain an integer constant to set the size of the array, or they may be empty. In that case, the size must be set with the reallocate function before the ArrayAccum can be used.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ArrayAccum declaration example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">ArrayAccum&lt;SetAccum&lt;STRING&gt;&gt; @@names[10];
+ArrayAccum&lt;SetAccum&lt;INT&gt;&gt; @@ids[][];  // 2-dimensional, size to be determined</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Because each element of an ArrayAccum itself is an accumulator, the operators =, +=, and + can be used in two contexts: accumulator-level and element-level.</p>
+</div>
+<div class="sect3">
+<h4 id="_element_level_operations"><a class="anchor" href="#_element_level_operations"></a><strong>Element-level operations</strong></h4>
+<div class="paragraph">
+<p>If @A is an ArrayAccum of length 6, then @A[0] and @A[5] refer to its first and last elements, respectively. Referring to an ArrayAccum element is like referring to an accumulator of that type.  For example, given the following definitions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ArrayAccum&lt;SumAccum&lt;INT&gt;&gt; @@Sums[3];
+ArrayAccum&lt;ListAccum&lt;STRING&gt;&gt; @@Lists[2];</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then @@Sums[0], @@Sums[1], and @@Sums[2] each refer to an individual SumAccum&lt;INT&gt;, and @@Lists[0] and @@Lists[1] each refer to a ListAccum&lt;STRING&gt;, supporting all the operations for those accumulator and data types.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">@@Sums[1] = 1;
+@@Sums[1] += 2;  // value is now 3
+@@Lists[0] = "cat";
+@@Lists[0] += "egory";  // value is now "category"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_accumulator_level_operations"><a class="anchor" href="#_accumulator_level_operations"></a><strong>Accumulator-level operations</strong></h4>
+<div class="paragraph">
+<p>The operators =, +=, and + have special meanings when applied to an ArrayAccum as a whole. There operations efficiently update an entire ArrayAccum. All of the ArrayAccums must have the same element type.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Operator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the ArrayAccum on the left equal to the ArrayAccum on the right. The two ArrayAccums must have the same element type, but the left-side ArrayAccum will change its size and dimensions to match the one on the right side.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@A = @B;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performs element-by-element addition of two ArrayAccums of the same type and size.  The result is a new ArrayAccum of the same size.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@C = @A + @B;  // @A and @B must be the same size</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+=</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performs element-by-element accumulation (+=) from the right-side ArrayAccum to the left-side ArrayAccum. They must be the same type and size.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">@A += @B;  // @A and @B must be the same size</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ArrayAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the ArrayAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the total number of elements in the (multi-dimensional) array. For example, the size of an ArrayAccum declared as @A[3][4] is 12.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>reallocate(</strong> INT, &#8230;&#8203; <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discards the previous ArrayAccum instance and creates a new ArrayAccum, with the size(s) given. An N-dimensional ArrayAccum requires N integer parameters. The reallocate function cannot be used to change the number of dimensions.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="Example of ArrayAccum Element-level Operations" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY ArrayAccumElem() FOR GRAPH minimalNet {
+
+	ArrayAccum&lt;SumAccum&lt;DOUBLE&gt;&gt; @@aaSumD[2][2];  # 2D Sum Double
+	ArrayAccum&lt;SumAccum&lt;STRING&gt;&gt; @@aaSumS[2][2];  # 2D Sum String
+	ArrayAccum&lt;MaxAccum&lt;INT&gt;&gt; @@aaMax[2];
+	ArrayAccum&lt;MinAccum&lt;UINT&gt;&gt; @@aaMin[2];
+	ArrayAccum&lt;AvgAccum&gt; @@aaAvg[2];
+	ArrayAccum&lt;AndAccum&lt;BOOL&gt;&gt; @@aaAnd[2];
+	ArrayAccum&lt;OrAccum&lt;BOOL&gt;&gt; @@aaOr[2];
+	ArrayAccum&lt;BitwiseAndAccum&gt; @@aaBitAnd[2];
+	ArrayAccum&lt;BitwiseOrAccum&gt; @@aaBitOr[2];
+	ArrayAccum&lt;ListAccum&lt;INT&gt;&gt; @@aaList[2][2];    # 2D List
+	ArrayAccum&lt;SetAccum&lt;FLOAT&gt;&gt; @@aaSetF[2];
+	ArrayAccum&lt;BagAccum&lt;DATETIME&gt;&gt; @@aaBagT[2];
+
+	## for test data
+	ListAccum&lt;STRING&gt; @@words;
+	BOOL toggle = false;
+	@@words += "1st"; @@words += "2nd"; @@words += "3rd"; @@words += "4th";
+
+	# Int:  a[0] += 1, 2;   a[1] += 3, 4
+	# Bool: alternate true/false
+	# Float: a[0] += 1.111, 2.222;  a[1] += 3.333, 4.444
+	# 2D Doub: a[0][0] += 1.111, 2.222;   a[0][1] += 5.555, 6.666;
+	#          a[1][0] += 3.333, 4.444;   a[0][1] += 7.777, 8.888;
+
+	FOREACH i IN RANGE [0,1] DO
+		FOREACH n IN RANGE [1, 2] DO
+			toggle = NOT toggle;
+			@@aaMax[i] += i*2 + n;
+			@@aaMin[i] += i*2 + n;
+			@@aaAvg[i] += i*2 + n;
+			@@aaAnd[i] += toggle;
+			@@aaOr[i] += toggle;
+			@@aaBitAnd[i] += i*2 + n;
+			@@aaBitOr[i] += i*2 + n;
+			@@aaSetF[i] += (i*2 + n)/0.9;
+			@@aaBagT[i] += epoch_to_datetime(i*2 + n);
+
+			FOREACH j IN RANGE [0,1] DO
+				@@aaSumD[i][j] += (j*4 + i*2 + n)/0.9;
+				@@aaSumS[i][j] += @@words.get((j*2 + i + n)%4);
+				@@aaList[i][j] += j*4 +i*2 + n ;
+			END;
+		END;
+	END;
+
+	PRINT @@aaSumD;		PRINT @@aaSumS;
+	PRINT @@aaMax;		PRINT @@aaMin;		PRINT @@aaAvg;
+	PRINT @@aaAnd;		PRINT @@aaOr;
+	PRINT @@aaBitAnd;	PRINT @@aaBitOr;
+	PRINT @@aaList;		PRINT @@aaSetF;		PRINT @@aaBagT;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ArrayAccumElem.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY ArrayAccumElem()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@aaSumD": [
+      [ 3.33333, 12.22222 ],
+      [ 7.77778, 16.66667 ]
+    ]},
+    {"@@aaSumS": [
+      [ "2nd3rd", "4th1st" ],
+      [ "3rd4th", "1st2nd" ]
+    ]},
+    {"@@aaMax": [ 2, 4 ]},
+    {"@@aaMin": [ 1, 3 ]},
+    {"@@aaAvg": [ 1.5, 3.5 ]},
+    {"@@aaAnd": [ false, false ]},
+    {"@@aaOr": [ true, true ]},
+    {"@@aaBitAnd": [ 0, 0 ]},
+    {"@@aaBitOr": [ 3, 7]},
+    {"@@aaList": [
+      [
+        [ 1, 2 ],
+        [ 5, 6]
+      ],
+      [
+        [ 3, 4 ],
+        [ 7, 8 ]
+      ]
+    ]},
+    {"@@aaSetF": [
+      [ 2.22222, 1.11111],
+      [ 4.44444, 3.33333 ]
+    ]},
+    {"@@aaBagT": [
+      [ 2, 1 ],
+      [ 4, 3 ]
+    ]}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example of Operations between Whole ArrayAccums" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY ArrayAccumOp3(INT lenA) FOR GRAPH minimalNet {
+
+	ArrayAccum&lt;SumAccum&lt;INT&gt;&gt; @@arrayA[5]; // Original size
+	ArrayAccum&lt;SumAccum&lt;INT&gt;&gt; @@arrayB[2];
+	ArrayAccum&lt;SumAccum&lt;INT&gt;&gt; @@arrayC[][]; // No size
+	STRING msg;
+	@@arrayA.reallocate(lenA);  # Set/Change size dynamically
+	@@arrayB.reallocate(lenA+1);
+	@@arrayC.reallocate(lenA, lenA+1);
+
+	// Initialize arrays
+	FOREACH i IN RANGE[0,lenA-1] DO
+		@@arrayA[i] += i*i;
+		FOREACH j IN RANGE[0,lenA] DO
+			@@arrayC[i][j] += j*10 + i;
+		END;
+	END;
+	FOREACH i IN RANGE[0,lenA] DO
+		@@arrayB[i] += 100-i;
+	END;
+	msg = "Initial Values";
+	PRINT msg, @@arrayA, @@arrayB, @@arrayC;
+
+    msg = "Test 1: A = C, C = B";	// = operator
+    @@arrayA = @@arrayC;		// change dimensions: 1D &lt;- 2D
+    @@arrayC = @@arrayB;		// change dimensions: 2D &lt;- 1D
+    PRINT msg, @@arrayA, @@arrayC;
+
+    msg = "Test 2: B += C"; 		// += operator
+    @@arrayB += @@arrayC; 		// B and C must have same size &amp; dim
+    PRINT msg, @@arrayB, @@arrayC;
+
+    msg = "Test 3: A = B + C"; 		// + operator
+    @@arrayA = @@arrayB + @@arrayC; // B &amp; C must have same size &amp; dim
+    PRINT msg, @@arrayA; 			// A changes size &amp; dim
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="ArrayAccumOp3.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY ArrayAccumOp3(3)
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "msg": "Initial Values",
+      "@@arrayC": [
+		[ 0, 10, 20, 30 ],
+        [ 1, 11, 21, 31 ],
+        [ 2, 12, 22, 32 ]
+      ],
+      "@@arrayB": [ 100, 99, 98, 97 ],
+      "@@arrayA": [ 0, 1, 4 ]
+    },
+    {
+      "msg": "Test 1: A = C, C = B",
+      "@@arrayC": [ 100, 99, 98, 97 ],
+      "@@arrayA": [
+		[ 0, 10, 20, 30 ],
+        [ 1, 11, 21, 31 ],
+        [ 2, 12, 22, 32 ]
+      ]
+    },
+    {
+      "msg": "Test 2: B += C",
+      "@@arrayC": [ 100, 99, 98, 97 ],
+      "@@arrayB": [ 200, 198,196, 194 ]
+    },
+    {
+      "msg": "Test 3: A = B + C",
+      "@@arrayA": [ 300, 297, 294, 291 ]
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Example for Vertex-Attached ArrayAccum" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY arrayAccumLocal() FOR GRAPH socialNet api("v2") {
+	# Count each person's edges by type
+	# friend/liked/posted edges are type 0/1/2, respectively
+	ArrayAccum&lt;SumAccum&lt;INT&gt;&gt; @edgesByType[3];
+	Persons = {person.*};
+
+	Persons = SELECT s
+		FROM Persons:s -(:e)-&gt; :t
+		ACCUM CASE e.type
+			WHEN "friend" THEN s.@edgesByType[0] += 1
+			WHEN "liked"  THEN s.@edgesByType[1] += 1
+			WHEN "posted" THEN s.@edgesByType[2] += 1
+			END
+		ORDER BY s.id;
+
+	#PRINT Persons.@edgesByType; // api v1
+    PRINT Persons[Persons.@edgesByType]; // api v2
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Results for Query ArrayAccumLocal" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY arrayAccumLocal()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [{"Persons": [
+    {
+      "v_id": "person1",
+      "attributes": {"Persons.@edgesByType": [ 2, 1, 1 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person2",
+      "attributes": {"Persons.@edgesByType": [ 2, 2, 1 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person3",
+      "attributes": {"Persons.@edgesByType": [ 2, 1, 1 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person4",
+      "attributes": {"Persons.@edgesByType": [ 3, 1, 1 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person5",
+      "attributes": {"Persons.@edgesByType": [ 2, 1, 2 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person6",
+      "attributes": {"Persons.@edgesByType": [ 2, 1, 2 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person7",
+      "attributes": {"Persons.@edgesByType": [ 2, 1, 2 ]},
+      "v_type": "person"
+    },
+    {
+      "v_id": "person8",
+      "attributes": {"Persons.@edgesByType": [ 3, 1, 2 ]},
+      "v_type": "person"
+    }
+  ]}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_heapaccum"><a class="anchor" href="#_heapaccum"></a>HeapAccum</h3>
+<div class="paragraph">
+<p>The HeapAccum type maintains a sorted collection of tuples and enforces a maximum number of tuples in the collection. The output of a HeapAccum is a sorted collection of tuple elements. The <strong>= arg* operation adds a tuple to the collection in sorted order. If the HeapAccum is already at maximum capacity when the *=</strong> operator is applied, then the tuple which is last in the sorted order is dropped from the HeapAccum. Sorting of tuples is performed on one or more defined tuple fields ordered either ascending or descending. Sorting precedence is performed based on defined tuple fields from left to right.</p>
+</div>
+<div class="paragraph">
+<p>The declaration of a HeapAccum is more complex than for most other accumulators, because the user must define a custom tuple type, set the maximum capacity of the HeapAccum, and specify how the HeapAccum should be sorted. The declaration syntax is outlined in the figure below:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="HeapAccum declaration syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TYPEDEF TUPLE&lt;type field_1,.., type field_n&gt; tupleType;
+...
+HeapAccum&lt;tupleType&gt;(capacity, field_a [ASC|DESC],... , field_z [ASC|DESC]);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>First, the HeapAccum declaration must be preceded by a TYPEDEF statement which defines the tuple type. At least one of the fields (field_1, &#8230;&#8203;, field_n) must be of a data type that can be sorted.</p>
+</div>
+<div class="paragraph">
+<p>In the declaration of the HeapAccum itself, the keyword "HeapAccum" is followed by the tuple type in angle brackets &lt; &gt;. This is followed by a parenthesized list of two or more parameters. The first parameter is the maximum number of tuples that the HeapAccum may store. This parameter must be a positive integer. The subsequent parameters are a subset of the tuple&#8217;s field, which are used as sort keys. The sort key hierarchy is from left to right, with the leftmost key being the primary sort key. The keywords ASC and DESC indicate Ascending (lowest value first) or Descending (highest value first) sort order. Ascending order is the default.</p>
+</div>
+<div class="paragraph">
+<p>HeapAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the HeapAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the heap.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>top()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tupleType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the top tuple. If this heap is empty, returns a tuple with each element equal to the default value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>pop()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tupleType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the top tuple and removes it from the heap. If this heap is empty, returns a tuple with each element equal to the default value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>resize(</strong> INT <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes the maximum capacity of the heap.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the heap so it becomes empty with size 0.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="HeapAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#HeapAccum Example
+CREATE QUERY heapAccumEx() FOR GRAPH minimalNet {
+  TYPEDEF tuple&lt;STRING firstName, STRING lastName, INT score&gt; testResults;
+
+  #Heap with max size of 4 sorted decending by score then ascending last name
+  HeapAccum&lt;testResults&gt;(4, score DESC, lastName ASC) @@topTestResults;
+
+  PRINT @@topTestResults.top();
+
+  @@topTestResults += testResults("Bruce", "Wayne", 80);
+  @@topTestResults += testResults("Peter", "Parker", 80);
+  @@topTestResults += testResults("Tony", "Stark", 100);
+  @@topTestResults += testResults("Bruce", "Banner", 95);
+  @@topTestResults += testResults("Jean", "Summers", 95);
+  @@topTestResults += testResults("Clark", "Kent", 80);
+
+  #Show element with the highest sorted position
+  PRINT @@topTestResults.top();
+  PRINT @@topTestResults.top().firstName, @@topTestResults.top().lastName, @@topTestResults.top().score;
+
+  PRINT @@topTestResults;
+
+  #Increase the size of the heap to add more elements
+  @@topTestResults.resize(5);
+
+  #Find the size of the current heap
+  PRINT @@topTestResults.size();
+
+  @@topTestResults += testResults("Bruce", "Wayne", 80);
+  @@topTestResults += testResults("Peter", "Parker", 80);
+
+  PRINT @@topTestResults;
+
+  #Resizing smaller WILL REMOVE excess elements from the HeapAccum
+  @@topTestResults.resize(3);
+  PRINT @@topTestResults;
+
+  #Increasing capacity will not restore dropped elements
+  @@topTestResults.resize(5);
+  PRINT @@topTestResults;
+
+  #Removes all elements from the HeapAccum
+  @@topTestResults.clear();
+  PRINT @@topTestResults.size();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="heapAccumEx.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY heapAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@topTestResults.top()": {
+      "firstName": "",
+      "lastName": "",
+      "score": 0
+    }},
+    {"@@topTestResults.top()": {
+      "firstName": "Tony",
+      "lastName": "Stark",
+      "score": 100
+    }},
+    {
+      "@@topTestResults.top().firstName": "Tony",
+      "@@topTestResults.top().lastName": "Stark",
+      "@@topTestResults.top().score": 100
+    },
+    {"@@topTestResults": [
+      {
+        "firstName": "Tony",
+        "lastName": "Stark",
+        "score": 100
+      },
+      {
+        "firstName": "Bruce",
+        "lastName": "Banner",
+        "score": 95
+      },
+      {
+        "firstName": "Jean",
+        "lastName": "Summers",
+        "score": 95
+      },
+      {
+        "firstName": "Clark",
+        "lastName": "Kent",
+        "score": 80
+      }
+    ]},
+    {"@@topTestResults.size()": 4},
+    {"@@topTestResults": [
+      {
+        "firstName": "Tony",
+        "lastName": "Stark",
+        "score": 100
+      },
+      {
+        "firstName": "Bruce",
+        "lastName": "Banner",
+        "score": 95
+      },
+      {
+        "firstName": "Jean",
+        "lastName": "Summers",
+        "score": 95
+      },
+      {
+        "firstName": "Clark",
+        "lastName": "Kent",
+        "score": 80
+      },
+      {
+        "firstName": "Peter",
+        "lastName": "Parker",
+        "score": 80
+      }
+    ]},
+    {"@@topTestResults": [
+      {
+        "firstName": "Tony",
+        "lastName": "Stark",
+        "score": 100
+      },
+      {
+        "firstName": "Bruce",
+        "lastName": "Banner",
+        "score": 95
+      },
+      {
+        "firstName": "Jean",
+        "lastName": "Summers",
+        "score": 95
+      }
+    ]},
+    {"@@topTestResults": [
+      {
+        "firstName": "Tony",
+        "lastName": "Stark",
+        "score": 100
+      },
+      {
+        "firstName": "Bruce",
+        "lastName": "Banner",
+        "score": 95
+      },
+      {
+        "firstName": "Jean",
+        "lastName": "Summers",
+        "score": 95
+      }
+    ]},
+    {"@@topTestResults.size()": 0}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_groupbyaccum"><a class="anchor" href="#_groupbyaccum"></a>GroupByAccum</h3>
+<div class="paragraph">
+<p>The GroupByAccum is a compound accumulator, an accumulator of accumulators. At the top level, it is a MapAccum where both the key and the value can have multiple fields. Moreover, each of the value fields is an accumulator type.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="GroupByAccum syntax" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GroupByAccum&lt;type [, type]* , accumType [, accumType]* &gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>In the EBNF above, the <strong>type</strong> terms form the key set, and the <strong>accumType</strong> terms form the map&#8217;s value. Since they are accumulators, they perform a grouping. Like a MapAccum, if we try to store a (key&#8594;value) whose key has already been used, then the new value will accumulate to the data which is already stored.  In this case, each field of the multiple-field value has its own accumulation function. One way to think about GroupByAccum is that each unique key is a group ID.</p>
+</div>
+<div class="paragraph">
+<p>In GroupByAccum, the key types can be base type, tuple, or STRING COMPRESS. The accumulators are used for aggregating group values.  Each accumulator type can be any type including HeapAccum. Each base type and each accumulator type must be followed an alias. Below is an example declaration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Typedef tuple &lt;id int, name string, age int&gt; myTuple;
+Typedef HeapAccum &lt;myTuple&gt; (2, name desc, age desc, id asc) myHeap;
+GroupByAccum&lt;INT a, STRING b,
+             MaxAccum&lt;INT&gt; maxa,
+             ListAccum&lt;ListAccum&lt;INT&gt;&gt; lists,
+             myHeap h&gt; @@group;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To add new data to this GroupByAccum, the data should be formatted as <strong>(key1, key2 &#8594; value1, value2)</strong> .</p>
+</div>
+<div class="paragraph">
+<p>GroupByAccum also supports the following class functions.</p>
+</div>
+<div class="paragraph">
+<p>{% hint style="danger" %}
+Functions that modify the GroupByAccum (mutator functions) can be used only under the following conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mutator functions of global accumulators may only be used at the query-body level.</p>
+</li>
+<li>
+<p>Mutator functions of vertex-attached accumulators may only be used in a POST-ACCUM clause.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function (KEY1..KEYn are the key types)</th>
+<th class="tableblock halign-left valign-top">Return type</th>
+<th class="tableblock halign-left valign-top">Accessor / Mutator</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>size()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the number of elements in the heap.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>get(</strong> KEY1 <em>key_value1</em> , KEY2 <em>key_value2</em> &#8230;&#8203; )</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">element type(s) of the accumulator(s)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the values from each accumulator in the group associating with the given key(s). If the key(s) doesn&#8217;t exist, return the default value(s) of the accumulator type(s).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>containsKey(</strong> KEY1 <em>key_value1</em> , KEY2 <em>key_value2</em>&#8230;&#8203; <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BOOL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Accessor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns true/false if the accumulator contains the key(s)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>clear()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clears the heap so it becomes empty with size 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>remove</strong> ( KEY1 <em>key_value1</em> , KEY2 <em>key_value2</em> &#8230;&#8203; <strong>)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VOID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mutator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Removes the group associating with the key(s)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>{% code title="GroupByAccum Example" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#GroupByAccum Example
+CREATE QUERY groupByAccumEx () FOR GRAPH socialNet {
+  ##declare HeapAccum type and tuple used in the HeapAccum
+  Typedef tuple &lt;id int, name string, age int&gt; myTuple;
+  Typedef HeapAccum &lt;myTuple&gt; (2, name desc, age desc, id asc) myHeap;
+  ## declaration, first two primitive type are group by keys; the rest accumulator type are aggregates
+  GroupByAccum&lt;INT a, STRING b, MaxAccum&lt;INT&gt; maxa, ListAccum&lt;ListAccum&lt;INT&gt;&gt; lists&gt; @@group;
+  GroupByAccum&lt;STRING gender, MapAccum&lt;VERTEX&lt;person&gt;, DATETIME&gt; m&gt; @@group2;
+  GroupByAccum&lt;INT age, myHeap h&gt; @@group4;
+  # nested GroupByAccum
+  GroupByAccum&lt;INT a, MaxAccum&lt;INT&gt; maxa, GroupByAccum&lt;INT a, MaxAccum&lt;INT&gt; maxa&gt; heap&gt; @@group3;
+  Start = { person.* };
+
+  ## usage of global GroupByAccum
+  @@group += (1, "a" -&gt; 1, [1]);
+  @@group += (1, "a" -&gt; 2, [2]);
+  @@group += (2, "b" -&gt; 1, [4]);
+
+  @@group3 += (2 -&gt; 1, (2 -&gt; 0) );
+  @@group3 += (2 -&gt; 1, (2 -&gt; 5) );
+  @@group3 += (2 -&gt; 5, (3 -&gt; 3) );
+  PRINT @@group, @@group.get(1, "a"), @@group.get(1, "a").lists,  @@group.containsKey(1, "c"), @@group3;
+
+  ## HeapAccum inside GroupByAccum
+  @@group4 += (29-&gt;myTuple(1,"aaa", 18));
+  @@group4 += (29-&gt;myTuple(2,"bbb", 19));
+  @@group4 += (29-&gt;myTuple(3,"ccc", 20));
+  PRINT @@group4;
+
+  ## two kinds of foreach
+  FOREACH g IN @@group DO
+    PRINT g.a, g.b, g.maxa, g.lists;
+  END;
+  FOREACH (g1,g2,g3,g4) IN @@group DO
+    PRINT g1,g2,g3,g4;
+  END;
+
+  S = SELECT v
+      FROM Start:v - (liked:e) - post:t
+      ACCUM @@group2 += (v.gender -&gt; (v -&gt; e.actionTime));
+
+  PRINT @@group2, @@group2.get("Male").m, @@group2.get("Female").m;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Result for Query groupByAccum" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY groupByAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {
+      "@@group.get(1,a).lists": [
+        [1],
+        [2]
+      ],
+      "@@group3": [{
+        "a": 2,
+        "heap": [
+          {
+            "a": 3,
+            "maxa": 3
+          },
+          {
+            "a": 2,
+            "maxa": 5
+          }
+        ],
+        "maxa": 5
+      }],
+      "@@group.containsKey(1,c)": false,
+      "@@group.get(1,a)": {
+        "lists": [
+          [1],
+          [2]
+        ],
+        "maxa": 2
+      },
+      "@@group": [
+        {
+          "a": 2,
+          "b": "b",
+          "lists": [[4]],
+          "maxa": 1
+        },
+        {
+          "a": 1,
+          "b": "a",
+          "lists": [
+            [1],
+            [2]
+          ],
+          "maxa": 2
+        }
+      ]
+    },
+    {
+      "g.b": "b",
+      "g.maxa": 1,
+      "g.lists": [[4]],
+      "g.a": 2
+    },
+    {
+      "g.b": "a",
+      "g.maxa": 2,
+      "g.lists": [
+        [1],
+        [2]
+      ],
+      "g.a": 1
+    },
+    {
+      "g1": 2,
+      "g2": "b",
+      "g3": 1,
+      "g4": [[4]]
+    },
+    {
+      "g1": 1,
+      "g2": "a",
+      "g3": 2,
+      "g4": [
+        [1],
+        [2]
+      ]
+    },
+    {
+      "@@group2.get(Male).m": {
+        "person3": 1263618953,
+        "person1": 1263209520,
+        "person8": 1263180365,
+        "person7": 1263295325,
+        "person6": 1263468185
+      },
+      "@@group2": [
+        {
+          "gender": "Male",
+          "m": {
+            "person3": 1263618953,
+            "person1": 1263209520,
+            "person8": 1263180365,
+            "person7": 1263295325,
+            "person6": 1263468185
+          }
+        },
+        {
+          "gender": "Female",
+          "m": {
+            "person4": 1263352565,
+            "person2": 2526519281,
+            "person5": 1263330725
+          }
+        }
+      ],
+      "@@group2.get(Female).m": {
+        "person4": 1263352565,
+        "person2": 2526519281,
+        "person5": 1263330725
+      }
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nested_accumulators"><a class="anchor" href="#_nested_accumulators"></a>Nested Accumulators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Certain collection accumulators may be nested. That is, an accumulator may contain a collection of elements where the elements themselves are accumulators. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ListAccum&lt;ListAccum&lt;INT&gt;&gt; @@matrix; # a 2-dimensional jagged array of integers.  Each inner list has its own unique size.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only ListAccum, ArrayAccum, MapAccum, and GroupByAccum can contain other accumulators. However, not all combinations of collection accumulators are allowed. The following constraints apply:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ListAccum: ListAccum is the only accumulator type that can be nested within ListAccum, up to a depth of 3:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">ListAccum&lt;ListAccum&lt;INT&gt;&gt;
+ListAccum&lt;ListAccum&lt;ListAccum&lt;INT&gt;&gt;&gt;
+ListAccum&lt;SetAccum&lt;INT&gt;&gt; # illegal</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>MapAccum: All accumulator types, except for HeapAccum, can be nested within MapAccum as the value type. For example,</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">MapAccum&lt;STRING, ListAccum&lt;INT&gt;&gt;
+MapAccum&lt;INT, MapAccum&lt;INT, STRING&gt;&gt;
+MapAccum&lt;VERTEX, SumAccum&lt;INT&gt;&gt;
+MapAccum&lt;STRING, SetAccum&lt;VERTEX&gt;&gt;
+MapAccum&lt;STRING, GroupByAccum&lt;VERTEX a, MaxAccum&lt;INT&gt; maxs&gt;&gt;
+MapAccum&lt;SetAccum&lt;INT&gt;, INT&gt; # illegal</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GroupByAccum: All accumulator types, except for HeapAccum, can be nested within GroupByAccum as the accumulator type. For example:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">GroupByAccum&lt;INT a, STRING b, MaxAccum&lt;INT&gt; maxs, ListAccum&lt;ListAccum&lt;INT&gt;&gt; lists&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ArrayAccum: Unlike the other accumulators in this list, where nesting is optional, nesting is mandatory for ArrayAccum. See the <a href="accumulators.md#arrayaccum">ArrayAccum</a> section above.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It is legal to define nested ListAccums to form a multi-dimensional array. Note the declaration statements and the nested [ bracket ] notation in the example below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">CREATE QUERY nestedAccumEx() FOR GRAPH minimalNet {
+  ListAccum&lt;ListAccum&lt;INT&gt;&gt; @@_2d_list;
+  ListAccum&lt;ListAccum&lt;ListAccum&lt;INT&gt;&gt;&gt; @@_3d_list;
+  ListAccum&lt;INT&gt; @@_1d_list;
+  SumAccum &lt;INT&gt; @@sum = 4;
+
+  @@_1d_list += 1;
+  @@_1d_list += 2;
+  // add 1D-list to 2D-list as element
+  @@_2d_list += @@_1d_list;
+
+  // add 1D-enum-list to 2D-list as element
+  @@_2d_list += [@@sum, 5, 6];
+  // combine 2D-enum-list and 2d-list
+  @@_2d_list += [[7, 8, 9], [10, 11], [12]];
+
+  // add an empty 1D-list
+  @@_1d_list.clear();
+  @@_2d_list += @@_1d_list;
+
+  // combine two 2D-list
+  @@_2d_list += @@_2d_list;
+
+  PRINT @@_2d_list;
+
+  // test 3D-list
+  @@_3d_list += @@_2d_list;
+  @@_3d_list += [[7, 8, 9], [10, 11], [12]];
+  PRINT @@_3d_list;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% code title="nestedAccumEx.json Results" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; RUN QUERY nestedAccumEx()
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "edition": "developer",
+    "schema": 0,
+    "api": "v2"
+  },
+  "results": [
+    {"@@_2d_list": [
+      [1,2],
+      [4,5,6],
+      [7,8,9],
+      [10,11],
+      [12],
+      [],
+      [1,2],
+      [4,5,6],
+      [7,8,9],
+      [10,11],
+      [12],
+      []
+    ]},
+    {"@@_3d_list": [
+      [
+        [1,2],
+        [4,5,6],
+        [7,8,9],
+        [10,11],
+        [12],
+        [],
+        [1,2],
+        [4,5,6],
+        [7,8,9],
+        [10,11],
+        [12],
+        []
+      ],
+      [
+        [7,8,9],
+        [10,11],
+        [12]
+      ]
+    ]}
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Installation Guide :: TigerGraph Server User Guide</title>
+    <title>Installation Guide :: TigerGraph Documentation</title>
     <meta name="description" content="Installing Single-machine and Multi-machine systems">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -13,7 +13,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="../../..">TigerGraph Server User Guide</a>
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -62,16 +62,28 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="install.html">TigerGraph Server User Guide</a></h3>
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Introduction</span>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../intro/internal-architecture.html">TigerGraph Internal Architecture</a>
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
   </li>
 </ul>
   </li>
@@ -84,7 +96,25 @@
     <span class="nav-text">Getting Started</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../getting-started/docker.html">Getting started with Docker</a>
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
 </ul>
   </li>
@@ -96,8 +126,20 @@
     <button class="nav-item-toggle"></button>
     <span class="nav-text">Installation</span>
 <ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="install.html">Installation Guide</a>
+    <a class="nav-link" href="install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="license.html">Advanced License Issues</a>
   </li>
 </ul>
   </li>
@@ -107,7 +149,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">The GSQL Shell</span>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
@@ -120,10 +162,68 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data Definition</span>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../data-definition/README.html">Data Definition</a>
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
   </li>
 </ul>
   </li>
@@ -132,11 +232,50 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Data loading</span>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
@@ -148,16 +287,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">System management</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/README.html">System Management</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../administration/management-with-gadmin.html">Managing with gadmin</a>
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
   </li>
 </ul>
   </li>
@@ -168,7 +305,13 @@
     <span class="nav-text">Security</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../security/user-access/README.html">User Access Management</a>
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
   </li>
 </ul>
   </li>
@@ -177,13 +320,14 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <span class="nav-text">Backup and Restore</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
   </li>
 </ul>
   </li>
@@ -199,14 +343,72 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
 </ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -215,23 +417,47 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">TigerGraph Server User Guide</span>
+    <span class="title">TigerGraph Server</span>
     <span class="version">3.2</span>
   </div>
   <ul class="components">
-    <li class="component is-current">
-      <a class="title" href="install.html">TigerGraph Server User Guide</a>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="install.html">3.2</a>
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">TigerGraph Web UI Guide</a>
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -245,9 +471,9 @@
 <button class="nav-toggle"></button>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="install.html">TigerGraph Server User Guide</a></li>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
     <li>Installation</li>
-    <li><a href="install.html">Installation Guide</a></li>
+    <li><a href="install.html">Installlation</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/installation/pages/install.adoc">Edit this Page</a></div>
@@ -263,10 +489,26 @@
 <div class="paragraph">
 <p>This guide describes how to install the TigerGraph platform either as a single node or as a multi-node cluster, interactively or non-interactively.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you signed up for the Enterprise Free license, you also have access to the TigerGraph platform as a Docker image or a virtual machine (VirtualBox) image.
+Follow the instructions in <a href="#../../../cloud/getting-started.adoc" class="page unresolved">Getting started</a> to start up TigerGraph in a Docker container or with VirtualBox.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>{% hint style="info" %}
-If you signed up for the Enterprise Free license, you also have access to the TigerGraph platform as a Docker image or a virtual machine (VirtualBox) image.   Follow the instructions in <a href="#../../../cloud/getting-started.adoc" class="page unresolved">Getting started</a> to start up TigerGraph in a Docker container or with VirtualBox.
-{% endhint %}</p>
+<p>Video walkthrough:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/sfe3Q37oWJQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 </div>
 </div>
@@ -327,18 +569,33 @@ If you signed up for the Enterprise Free license, you also have access to the Ti
 <div class="paragraph">
 <p>Extract the package by running the following command. A folder named <code>tigergraph-&lt;version&gt;-offline</code> <em>**</em>will be created.</p>
 </div>
-<div class="paragraph">
-<p>{% tabs %}
-{% tab title="Example: extract for <version>= x.y.z" %}</version></p>
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_title-a"></a>Title A</p>
+</li>
+<li>
+<p><a id="tabset1_title-b"></a>Title B</p>
+</li>
+</ul>
 </div>
+<div class="content">
+<div class="tab-pane" aria-labelledby="tabset1_title-a">
 <div class="listingblock">
 <div class="content">
-<pre>$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>{% endtab %}
-{% endtabs %}</p>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_title-b">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gadmin status</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -346,23 +603,16 @@ If you signed up for the Enterprise Free license, you also have access to the Ti
 <div class="paragraph">
 <p>Navigate to the <code>tigergraph-&lt;version&gt;-offline</code> folder and run script <code>install.sh</code>  with the following commands:</p>
 </div>
-<div class="paragraph">
-<p>{% tabs %}
-{% tab title="Example: Default installation for <version>= 3.1.0" %}</version></p>
-</div>
 <div class="listingblock">
+<div class="title">Run the installation script</div>
 <div class="content">
-<pre>$ cd tigergraph-&lt;version&gt;-offline
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ cd tigergraph-&lt;version&gt;-offline
 
 # to install enterprise license
 $ sudo ./install.sh
 
-# For non-interactive installations, please see the non-interactive mode section.</pre>
+# For non-interactive installations, please see the non-interactive mode section.</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endtab %}
-{% endtabs %}</p>
 </div>
 <div class="paragraph">
 <p>The installer will ask for the following information, for which you may choose to hit Enter to skip and use the system default or enter a new value:</p>
@@ -406,12 +656,19 @@ $ sudo ./install.sh
 </ul>
 </div>
 <div class="paragraph">
-<p>To see what the default settings are, read the <a href="install.md#installation-options">Installation options</a> section below.</p>
+<p>To see what the default settings are, read the <a href="install.adoc#installation-options">Installation options</a> section below.</p>
 </div>
-<div class="paragraph">
-<p>{% hint style="danger" %}
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 Since license keys are long&#8201;&#8212;&#8201;over 100 characters long. If you copy-and-paste the license key, be careful not to accidentally include an end-of-line character.
-{% endhint %}</p>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -452,17 +709,24 @@ Since license keys are long&#8201;&#8212;&#8201;over 100 characters long. If you
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{% hint style="info" %}
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
 In TigerGraph 3.x, the installation machine can be within or outside the cluster. If outside the cluster, the installation machine still needs to be a Linux machine.
-{% endhint %}</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>After all the questions are answered, the script will proceed to installation. A screenshot of the interactive installation is shown below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../.gitbook/assets/image%20%2876%29.png" alt="image%20%2876%29">
+<img src="image%20%2876%29.png" alt="image%20%2876%29">
 </div>
 </div>
 </div>
@@ -473,7 +737,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ su &lt;username&gt;  # default username: tigergraph</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ su &lt;username&gt;  # default username: tigergraph</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -484,7 +748,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../.gitbook/assets/image%20%2877%29.png" alt="Status of all components upon successful installation">
+<img src="../../../.gitbook/assets/image%20%2877%29.png" alt="Status of all components upon successful installation">
 </div>
 </div>
 </div>
@@ -497,20 +761,13 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 <div class="sect3">
 <h4 id="_step_1_extract_the_package_2"><a class="anchor" href="#_step_1_extract_the_package_2"></a><strong>Step 1</strong>: Extract the package</h4>
 <div class="paragraph">
-<p>Extract the package by running the following command. A folder named <code>tigergraph-&lt;version&gt;-offline</code> <em>**</em>will be created.</p>
-</div>
-<div class="paragraph">
-<p>{% tabs %}
-{% tab title="Example: extract for <version>= x.y.z" %}</version></p>
+<p>Extract the package by running the following command. A folder named <code>tigergraph-&lt;version&gt;-offline</code> will be created.</p>
 </div>
 <div class="listingblock">
+<div class="title">Extract for version X.Y.Z</div>
 <div class="content">
-<pre>$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ tar -xzf tigergraph-&lt;version&gt;.tar.gz</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>{% endtab %}
-{% endtabs %}</p>
 </div>
 </div>
 <div class="sect3">
@@ -523,7 +780,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">{
   "BasicConfig": {
     "TigerGraph": {
       "Username": "tigergraph",
@@ -554,7 +811,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
       "ReplicationFactor": 1
     }
   }
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -672,7 +929,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ sudo ./install.sh -n</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo ./install.sh -n</code></pre>
 </div>
 </div>
 </div>
@@ -709,7 +966,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 <h4 id="_command_line_options"><a class="anchor" href="#_command_line_options"></a>Command-line options</h4>
 <div class="listingblock">
 <div class="content">
-<pre># Command-line options for install.sh
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Command-line options for install.sh
 Usage:
 ./install.sh [-n] [-u &lt;user&gt;] [-p &lt;password&gt;] [-r &lt;tigergraph_root_dir&gt;] [-l &lt;license_key&gt;] [-F] [-N]
 ./install.sh -h
@@ -729,7 +986,7 @@ Options:
             file should be modified before installation.
 
 [WARNING ]: Installer will fail if any option (except -F and -N)
-            is provided with option '-n' at the same time.</pre>
+            is provided with option '-n' at the same time.</code></pre>
 </div>
 </div>
 </div>

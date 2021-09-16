@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kafka Loader User Guide :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ha/cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Data Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="kafka-loader-user-guide.html">Kafka Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li><a href="README.html">Data Loading</a></li>
+    <li><a href="kafka-loader-user-guide.html">Kafka Loader User Guide</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/data-loading/pages/kafka-loader-user-guide.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Kafka Loader User Guide</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kafka is a popular pub-sub system in enterprise IT, offering a distributed and fault-tolerant real-time data pipeline. TigerGraph&#8217;s Kafka Loader feature lets you easily integrate with a Kafka cluster and speed up your real-time data ingestion. It is easily extensible using the many plugins available in the Kafka ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>The Kafka Loader consumes data in a Kafka cluster and loads data into the TigerGraph system.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture"><a class="anchor" href="#_architecture"></a>Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From a high level, a user provides instructions to the TigerGraph system through GSQL, and the external Kafka cluster loads data into TigerGraph&#8217;s RESTPP server. The following diagram demonstrates the Kafka Loader data architecture.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../.gitbook/assets/kafka-loading-architecture.png" alt="Kafka Data Loader Architecture">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You should have a Kafka cluster configured and set up in your environment.</p>
+</div>
+<div class="paragraph">
+<p>Once you have the external Kafka cluster setup, you need to prepare the following two configuration files and place them in your desired location in TigerGraph system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Kafka data source configuration file: This file includes the external Kafka broker&#8217;s domain name and port. Through the configuration file, TigerGraph system knows the location and port of the external Kafka broker.  Please see an example in <a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-CREATEDATA_SOURCEVariable"><strong>Step 1. Define the Data Source</strong></a>.</p>
+</li>
+<li>
+<p>Kafka topic and partition configuration file: This file includes the Kafka topic, partition list, and start offset for the loading messages.  Please see an example in <a href="kafka-loader-user-guide.md#2-create-a-loading-job"><strong>Step 2. Create a Loading Job</strong></a><strong>.</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_and_using_the_kafka_loader"><a class="anchor" href="#_configuring_and_using_the_kafka_loader"></a>Configuring and Using the Kafka Loader</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three basic steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-CREATEDATA_SOURCEVariable">Define the data source</a></p>
+</li>
+<li>
+<p><a href="kafka-loader-user-guide.md#2-create-loading-job-statement">Create a loading job</a></p>
+</li>
+<li>
+<p><a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-RunLoadingJobStatement">Run the loading job</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The GSQL syntax for the Kafka Loader is designed to be consistent with the existing GSQL loading syntax.</p>
+</div>
+<div class="sect2">
+<h3 id="_1_define_the_data_source"><a class="anchor" href="#_1_define_the_data_source"></a>1. Define the Data Source</h3>
+<div class="paragraph">
+<p>Before starting a Kafka data loading job, you need to define the Kafka server as a data source. The <code>CREATE DATA_SOURCE</code> statement defines a data_source variable with a subtype of KAFKA:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA data_source_name</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Specify Kafka Data Source Configuration File</strong></p>
+</div>
+<div class="paragraph">
+<p>After the data source is created, then use the <code>SET</code> command to specify the path to a configuration file for that data source.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; SET data_source_name = "/path/to/kafka.config"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This SET command reads, validates, and applies the configuration file, integrating its settings into TigerGraph&#8217;s dictionary. The data source configuration file&#8217;s content, structured as a JSON object, describes the Kafka server&#8217;s global settings, including the data source IP and port. A sample kafka.conf is shown in the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">{
+  "broker": "192.168.1.11:9092",
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The "broker" key is required, and its value is composite of a fully qualified domain name (or IP) and port. Additional Kafka configuration parameters may be provided (see Kafka documentation) by using the optional <code>"kafka_config"</code> key. For its value, provide a list of key-value pairs. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">{
+  "broker": "localhost:9092",
+  "kafka_config": {"group.id":"tigergraph"}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For simplicity, you can merge the <code>CREATE DATA_SOURCE</code> and <code>SET</code> statements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA data_source_name = "/path/to/kafka.config"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have a TigerGraph cluster, the configuration file must be on machine m1, where the GSQL server and GSQL client both reside,  and it must be in JSON format. If the configuration file uses a relative path, the path should be relative to the GSQL client working directory.</p>
+</li>
+<li>
+<p>Each time when the config file is updated, you must run "SET data_source_name"  to update the data source details in the dictionary.
+{% endhint %}</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To further simplify, instead of specifying the Kafka data source config file path, you can also directly provide the Kafka data source configuration as a string argument, as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA data_source_name = "{\"broker\":\"broker.full.domain.name:9092\"}"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="success" %}
+<strong>Tip</strong>: The above simplified statement is useful for using Kafka Data Loader in TigerGraph Cloud. In TigerGraph Cloud (tgcloud.io), you can use GSQL web shell to define and create Kafka data sources, without creating the Kafka data source configuration file in filesystem.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p><strong>Local data source vs global data source:</strong></p>
+</div>
+<div class="paragraph">
+<p>A data source can be either global or local:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A global data source can only be created by a superuser, who can grant it to any graph.</p>
+</li>
+<li>
+<p>An admin user can only create a local data source, which cannot be accessed by other graphs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following are examples of permitted <code>DATA_SOURCE</code> operations.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users with the <code>WRITE_DATASOURCE</code> privilege on the global scope may create a global level data source without assigning it to a particular graph:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA k1 = "/path/to/config"</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users with the <code>WRITE_DATASOURCE</code> privilege on the global scope may grant/revoke a data source to/from one or more graphs:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; GRANT DATA_SOURCE k1 TO GRAPH graph1, graph2
+GSQL &gt; REVOKE DATA_SOURCE k1 FROM GRAPH graph1, graph2</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Users with the <code>WRITE_DATASOURCE</code> privilege for a particular graph user may create a local data source for that graph:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA k1 = "/path/to/config" FOR GRAPH test_graph</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+In the above statement, the local data_source k1 is only accessible to graph test_graph. A superuser cannot grant it to another graph<strong>.</strong>
+{% endhint %}</p>
+</div>
+<div class="sect3">
+<h4 id="_drop_data_source"><a class="anchor" href="#_drop_data_source"></a>DROP DATA_SOURCE</h4>
+<div class="paragraph">
+<p>A data source variable can be dropped by a user who has privilege. A global data source can only be dropped by a users with global <code>WRITE_DATASOURCE</code> privilege. Users with <code>WRITE_DATASOURCE</code> privilege for one graph can drop data sources on that graph. The syntax for the <code>DROP DATA_SOURCE</code> command is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; DROP DATA_SOURCE &lt;source1&gt;[&lt;source2&gt;...] | * | ALL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below are several examples of Kafka data source <code>CREATE</code> and <code>DROP</code> commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GSQL &gt; CREATE DATA_SOURCE KAFKA k1 = "/home/tigergraph/kafka.conf"
+GSQL &gt; CREATE DATA_SOURCE KAFKA k2 = "/home/tigergraph/kafka2.conf"
+
+GSQL &gt; DROP DATA_SOURCE k1, k2
+GSQL &gt; DROP DATA_SOURCE *
+GSQL &gt; DROP DATA_SOURCE ALL</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_show_data_source"><a class="anchor" href="#_show_data_source"></a>SHOW DATA_SOURCE</h4>
+<div class="paragraph">
+<p>The <code>SHOW DATA_SOURCE</code> command will display a summary of all existing data_sources for which the user has privilege:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">GSQL &gt; SHOW DATA_SOURCE *
+
+# the sample output
+Data Source:
+  - KAFKA k1 ("127.0.0.1:9092")
+The global data source will be shown in global scope. The graph scope will only show the data source it has access to.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_create_a_loading_job"><a class="anchor" href="#_2_create_a_loading_job"></a>2. Create a Loading Job</h3>
+<div class="paragraph">
+<p>The Kafka Loader uses the same basic <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/creating-a-loading-job#create-loading-job">CREATE LOADING JOB</a> syntax used for standard GSQL loading jobs. A <code>DEFINE FILENAME</code> statement should be used to assign a loader <code>FILENAME</code> variable to a Kafka data source name and the path to its config file.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the filename can be specified in the <code>RUN LOADING JOB</code> statement with the <code>USING</code> clause. The filename value set by a <code>RUN</code> statement overrides the value set in the <code>CREATE LOADING JOB</code>.</p>
+</div>
+<div class="paragraph">
+<p>Below is the syntax for <code>DEFINE FILENAME</code> for use with the Kakfa Loader. In the syntax, <code>$DATA_SOURCE_NAME</code> is the Kafka data source name, and the path points to a configuration file with topic and partition information of the Kafka server. The Kafka configuration file must be in JSON format.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DEFINE FILENAME filevar "=" [filepath_string | data_source_string];
+data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong> <em><strong><strong>*_Load a Kafka Data Source _</strong><strong></em></strong>k1<strong>, _</strong></strong>*_where the path to the topic-partition configuration file is <code>"~/topic_partition1_conf.json"</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DEFINE FILENAME f1 = "$k1:~/topic_partition_config.json";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Kafka Topic-Partition Configuration File</strong></p>
+</div>
+<div class="paragraph">
+<p>The topic-partition configuration file tells the TigerGraph system exactly which Kafka records to read.  Similar to the data source configuration file described above, the contents are in JSON object format. An example file is shown below:</p>
+</div>
+<div class="paragraph">
+<p>{% code title="topic_partition_config.json" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">{
+  "topic": "topicName1",
+  "partition_list": [
+    {
+      "start_offset": -1,
+      "partition": 0
+    },
+    {
+      "start_offset": -1,
+      "partition": 1
+    },
+    {
+      "start_offset": -1,
+      "partition": 2
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>The <code>"topic"</code> key is required. Optionally,  a <code>"partition_list"</code> array can be included to specify which topic partitions to read and what start offsets to use.  If the <code>"partition_list"</code> key is missing or empty, all partitions in this topic will be used for loading. The default offset for loading is <code>"-1"</code>, which means you will load data from the most recent message in the topic, i.e., the end of the topic. If you want to load from the beginning of a topic, the "<code>start_offset"</code> value should be "-2".</p>
+</div>
+<div class="paragraph">
+<p>You can also overwrite the default offset by setting <code>"default_start_offset"</code> in the Kafka topic configuration file. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml"># all partition will be used if no "partition_list" item
+{
+  "topic": "topicName1"
+}
+
+# with empty "partition_list"
+{
+  "topic": "topicName1",
+  "partition_list": []
+}
+
+# overwrite the default start offset
+{
+  "topic": "topicName1",
+  "default_start_offset": 0
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead of specifying the config file path, you can also directly provide the topic-partition configuration as a string argument, as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">DEFINE FILENAME f1 = "$k1:~/topic_partition_config.json";
+DEFINE FILENAME f1 = "$k1:{\"topic\":\"zzz\",\"default_start_offset\":2,\"partition_list\":[]}";</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_run_the_loading_job"><a class="anchor" href="#_3_run_the_loading_job"></a>3. Run the loading Job</h3>
+<div class="paragraph">
+<p>The Kafka Loader uses the same <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/running-a-loading-job#run-loading-job">RUN LOADING JOB</a> statement that is used for GSQL loading from files. Each filename variable can be assigned a string "DATA_SOURCE Var:topic_partition configure", which will override the value defined in the loading job. In the example below, the config files for f3 and f4 are being set by the RUN command, whereas f1 is using the config which was specified in the CREATE LOADING JOB statement.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">RUN LOADING JOB job1 USING f1, f3="$k1:~/topic_part3_config.json", f4="$k1:~/topic_part4_config.json", EOF="true";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="warning" %}
+A <code>RUN LOADING JOB</code> command may only use one type of data source.  E.g., you may not mix both Kafka data sources and regular file data sources in one loading job.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>All filename variables in one loading job statement must refer to the same <code>DATA_SOURCE</code> variable.</p>
+</div>
+<div class="paragraph">
+<p>There are two modes for the Kafka Loader: streaming mode and EOF mode. The default mode is streaming mode.  In streaming mode, loading will never stop until the job is aborted. In EOF mode,  loading will stop after consuming the current Kafka message.</p>
+</div>
+<div class="paragraph">
+<p>To set EOF mode, an optional parameter is added to the <code>RUN LOADING JOB</code> syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">RUN LOADING JOB [-noprint] [-dryrun] [-n [i],j] jobname
+   [ USING filevar [="filepath_string"][, filevar [="filepath_string"]]*
+   [, CONCURRENCY="cnum"][,BATCH_SIZE="bnum"]][, EOF="true"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To learn about each option and parameter of the <code>RUN LOADING JOB</code> command, see <a href="../gsql-ref/ddl-and-loading/running-a-loading-job.md#options">Loading job options</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manage_loading_jobs"><a class="anchor" href="#_manage_loading_jobs"></a>Manage Loading Jobs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kafka Loader loading jobs are managed the same way as regular loading jobs. The three key commands are</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SHOW LOADING STATUS</code></p>
+</li>
+<li>
+<p><code>ABORT LOADING JOB</code></p>
+</li>
+<li>
+<p><code>RESUME LOADING JOB</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the syntax for the <code>SHOW LOADING STATUS</code> command is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">SHOW LOADING STATUS job_id|ALL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To refer to a specific job instance, using the job_id which is provided when <code>RUN LOADING JOB</code> is executed. For each loading job, the above command reports the following information :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Current loaded offset for each partition</p>
+</li>
+<li>
+<p>Average loading speed</p>
+</li>
+<li>
+<p>Loaded size</p>
+</li>
+<li>
+<p>Duration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://docs.tigergraph.com/dev/gsql-ref/ddl-and-loading/running-a-loading-job#inspecting-and-managing-loading-jobs">Inspecting and Managing Loading Jobs</a> for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kafka_loader_example"><a class="anchor" href="#_kafka_loader_example"></a>Kafka Loader Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here is an example code for loading data through Kafka Loader:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">USE GRAPH test_graph
+DROP JOB load_person
+DROP DATA_SOURCE k1
+
+#create data_source kafka k1 = "kafka_config.json" for graph test_graph
+CREATE DATA_SOURCE KAFKA k1 FOR GRAPH test_graph
+SET k1 = "kafka_config.json"
+
+# define the loading jobs
+CREATE LOADING JOB load_person FOR GRAPH test_graph {
+  DEFINE FILENAME f1 = "$k1:topic_partition_config.json";
+  LOAD f1
+      TO VERTEX Person VALUES ($2, $0, $1),
+      TO EDGE Person2Comp VALUES ($0, $1, $2)
+      USING SEPARATOR=",";
+}
+
+# load the data
+RUN LOADING JOB load_person</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>##</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Per Clause (Beta) :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../querying/func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../../querying/select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../querying/comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../../querying/appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Tutorials</li>
+    <li><a href="../README.html">Pattern Matching Tutorial</a></li>
+    <li><a href="README.html">Advanced Features</a></li>
+    <li><a href="per-clause.html">Per Clause (Beta)</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/tutorials/pages/pattern-matching/adv/per-clause.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Per Clause (Beta)</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pattern matching produces a virtual match table, and the ACCUM clause acts like a FOREACH loop, executing the clause&#8217;s statement once for each row of the match table.</p>
+</div>
+<div class="paragraph">
+<p>Patterns are paths in the graphs, and each row in the match table is a distinct path. However, paths may share some vertices or edges. Some applications do not want to do aggregations per path. Instead, they want to execute the ACCUM clause per distinct group of vertex aliases.</p>
+</div>
+<div class="paragraph">
+<p>For example, consider the following query which counts the number of paths in a simple 2-hop pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">SumAccum&lt;int&gt; @@cnt;
+
+S = SELECT t
+    FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+    ACCUM @@cnt += 1;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Suppose the query produces the following match table.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">(s, edge1, m , edge2, t)//match table schema
+v1, e1, v3, e2, v2 //match 1
+v1, e3, v4, e4, v2 //match 2
+v5, e5, v6, e6, v7 //match 3
+v8, e7, v9, e8, v7 //match 4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, the ACCUM clause will execute the <code>@@cnt += 1</code>statement 4 times, for each row in the match table. The result will be <code>@@cnt = 4</code>.</p>
+</div>
+<div class="paragraph">
+<p>For the same query, what if the user wants to</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>count the number of distinct path endings in the match table? For this case, we would want to iterate on the alias <code>t</code>.</p>
+</li>
+<li>
+<p>count the number of distinct (start, end) pairs in the match table? For that case, we would want to iterate on distinct pairs of the aliases <code>(s, t)</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To provide users with this added flexibility and finer control over ACCUM iteration, TigerGraph 3.0 adds the PER clause to pattern matching (V2) syntax.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_syntax"><a class="anchor" href="#_syntax"></a>Syntax</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The PER Clause is an optional clause that comes at the start of the ACCUM clause in a SELECT statement. As illustrated below, it starts with the keyword PER, and followed by a pair of parenthesis, in which user can put one or more distinct vertex aliases found in the FROM pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">selectBlock := SELECT alias
+               FROM pattern
+               [sampleClause]
+               [whereClause]
+               [[perClause] accumClause]
+               [postAccumClause]*
+               [havingClause]
+               [orderClause]
+               [limitClause]
+
+perClause := PER (vertex_alias_1, vertex_alias_2, ...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Examples</strong>. Below are multiple examples of the PER Clause using the same FROM clause.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">S1 = SELECT s
+     FROM S:s - (E1:edge1) - M:m - (E2:edge2) - T:t
+     PER (s)
+     ACCUM @@cnt += 1;
+
+S2 = SELECT t
+     FROM S:s - (E1:edge1) - M:m - (E2:edge2) - T:t
+     PER (t)
+     ACCUM @@cnt += 1;
+
+S3 = SELECT m
+     FROM S:s - (E1:edge1) - M:m - (E2:edge2) - T:t
+     PER (m)
+     ACCUM @@cnt += 1;
+
+S4 = SELECT t
+     FROM S:s - (E1:edge1) - M:m - (E2:edge2) - T:t
+     PER (s, t)
+     ACCUM @@cnt += 1;
+
+S5 = SELECT t
+     FROM S:s - (E1:edge1) - M:m - (E2:edge2) - T:t
+     PER (s, m, t)
+     ACCUM @@cnt += 1;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_semantics"><a class="anchor" href="#_semantics"></a>Semantics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The PER Clause specifies a list of vertex aliases, which are used to group the rows in the match table, one group per distinct value of the alias or of the alias list. If there are N distinct groups, we will execute the ACCUM clause N times, once per distinct vertex aliases' binding. Note that the PER clause has no effect on POST-ACCUM clauses semantic, except confining the POST-ACCUM vertex alias.</p>
+</div>
+<div class="paragraph">
+<p>Suppose s, m, and t are vertex aliases in a pattern. Below are some interpretations of the PER Clause based on the graph element bindings found in the match table.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PER (s) ACCUM</code>  means that per each distinct s vertex, execute the ACCUM clause once.</p>
+</li>
+<li>
+<p><code>PER (s,t) ACCUM</code>  means that per each distinct (s, t) pair, execute the ACCUM clause once.</p>
+</li>
+<li>
+<p><code>PER (s,m,t) ACCUM</code>  means that per each distinct (s, m, t) tuple, execute the ACCUM clause once.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Examples to show PER clause semantics.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">//match table
+(s, edge1, m , edge2, t)//schema
+v1, e1, v3, e2, v2 //match 1
+v1, e3, v4, e4, v2 //match 2
+v5, e5, v6, e6, v7 //match 3
+v8, e7, v9, e8, v7 //match 4
+
+//since we have v1, v5, and v8 three distinct vertices bind to s,
+//we execute ACCUM clause 3 times.
+S1 = SELECT s
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s)
+     ACCUM @@cnt += 1;
+
+//since we have v2, v7 two distinct vertices bind to t,
+//we execute ACCUM clause twice.
+S2 = SELECT t
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (t)
+     ACCUM @@cnt += 1;
+
+//since we have v3, v4, v6, v9 four distinct vertices bind to m,
+//we execute ACCUM clause 4 times.
+S3 = SELECT m
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (m)
+     ACCUM @@cnt += 1;
+
+//since we have (v1, v2), (v5, v7) and (v8, v7) three distinct vertex pairs
+//bind to (s,t), we execute ACCUM clause 3 times.
+S4 = SELECT t
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s, t)
+     ACCUM @@cnt += 1;
+
+
+//since we have (v1, v3, v2), (v1, v4, v2), (v5, v6, v7) and (v8, v9, v7) four
+//distinct vertex groups bind to (s,m,t), we execute ACCUM clause 4 times.
+S5 = SELECT t
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s, m, t)
+     ACCUM @@cnt += 1;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% hint style="info" %}
+If the PER Clause is used in a SELECT query block, then the vertex aliases used in the SELECT, ACCUM , and POST-ACCUM clauses must be confined to the aliases that appear in the PER clause.
+{% endhint %}</p>
+</div>
+<div class="paragraph">
+<p>Below are some illegal cases.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">//semantic error. SELECT t, but t doesn't appear in PER clause.
+S1 = SELECT t
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s, m)
+     ACCUM @@cnt += 1;
+
+//semantic error. ACCUM t.@cnt, but t doesn't appear in PER clause.
+S2 = SELECT t
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s, m)
+     ACCUM t.@cnt += 1;
+
+//semantic error. POST-ACCUM t.@cnt, but t doesn't appear in PER clause.
+S3 = SELECT s
+     FROM S:s - (E1:edge1) - M:m -(E2:edge2) - T:t
+     PER (s)
+     ACCUM s.@cnt += 1
+     POST-ACCUM t.@cnt =1;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_per_clause_examples"><a class="anchor" href="#_per_clause_examples"></a>PER Clause Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Example 1.</strong> Count the number of Countries that has a City which has a resident that likes a post.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">//Example 1.
+USE GRAPH ldbc_snb
+
+INTERPRET QUERY () SYNTAX v2 {
+  SumAccum&lt;int&gt; @@cnt;
+
+ R =   SELECT c
+       FROM   Country:c -(&lt;IS_PART_OF.&lt;IS_LOCATED_IN.LIKES&gt;)- Post:p
+       PER    (c)
+       ACCUM  @@cnt +=1;
+
+ PRINT @@cnt;
+}
+
+//results
+Using graph 'ldbc_snb'
+The query AA is dropped.
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@cnt": 111}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 2.</strong> Count the number of posts liked by a person who is located in a city that belongs to a country. (All cities are in a country, but humor us.  We are reusing the same FROM pattern in several examples.)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">//Example 2.
+USE GRAPH ldbc_snb
+
+INTERPRET QUERY () SYNTAX v2 {
+  SumAccum&lt;int&gt; @@cnt;
+
+ R =   SELECT p
+       FROM   Country:c -(&lt;IS_PART_OF.&lt;IS_LOCATED_IN.LIKES&gt;)- Post:p
+       PER    (p)
+       ACCUM  @@cnt +=1;
+
+ PRINT @@cnt;
+
+//result
+Using graph 'ldbc_snb'
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@cnt": 70668}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 3.</strong> Find for each country in ("Dominican_Republic","Angola", "Cambodia") the number of posts that is liked by a person living in that country.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">//Exmaple 3
+USE GRAPH ldbc_snb
+
+INTERPRET QUERY () SYNTAX v2{
+
+ MapAccum&lt;string, SumAccum&lt;int&gt;&gt; @@postPerCountry;
+
+ R =   SELECT p
+       FROM   Country:c -(&lt;IS_PART_OF.&lt;IS_LOCATED_IN.LIKES&gt;)- Post:p
+       WHERE  c.name in  ("Dominican_Republic","Angola", "Cambodia")
+       PER    (c, p)
+       ACCUM  @@postPerCountry += (c.name -&gt; 1);
+
+ PRINT @@postPerCountry;
+}
+
+//results
+Using graph 'ldbc_snb'
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"@@postPerCountry": {
+    "Dominican_Republic": 395,
+    "Angola": 12,
+    "Cambodia": 4002
+  }}]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Example 4.</strong>  Find for each country in ("Dominican_Republic","Angola", "Cambodia") the number of posts that is liked by a person living in that country. Use local accumulators this time.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH ldbc_snb
+
+INTERPRET QUERY () SYNTAX v2{
+
+ SumAccum&lt;int&gt; @postCnt;
+
+ R =   SELECT c
+       FROM   Country:c -(&lt;IS_PART_OF.&lt;IS_LOCATED_IN.LIKES&gt;)- Post:p
+       WHERE  c.name in  ("Dominican_Republic","Angola", "Cambodia")
+       PER    (c, p) //per (country, post), add 1 to c.@postCnt
+       ACCUM  c.@postCnt += 1;
+
+ PRINT R;
+}
+
+//results
+Using graph 'ldbc_snb'
+{
+  "error": false,
+  "message": "",
+  "version": {
+    "schema": 0,
+    "edition": "enterprise",
+    "api": "v2"
+  },
+  "results": [{"R": [
+    {
+      "v_id": "2",
+      "attributes": {
+        "@postCnt": 12,
+        "name": "Angola",
+        "id": 2,
+        "url": "http://dbpedia.org/resource/Angola"
+      },
+      "v_type": "Country"
+    },
+    {
+      "v_id": "67",
+      "attributes": {
+        "@postCnt": 4002,
+        "name": "Cambodia",
+        "id": 67,
+        "url": "http://dbpedia.org/resource/Cambodia"
+      },
+      "v_type": "Country"
+    },
+    {
+      "v_id": "11",
+      "attributes": {
+        "@postCnt": 395,
+        "name": "Dominican_Republic",
+        "id": 11,
+        "url": "http://dbpedia.org/resource/Dominican_Republic"
+      },
+      "v_type": "Country"
+    }
+  ]}]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_performance_and_best_practices"><a class="anchor" href="#_performance_and_best_practices"></a>Performance and Best Practices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The PER Clause not only helps users to control the semantics of the ACCUM clause, it also boosts the performance of the pattern match query, as it uses the PER clause to optimize the query execution.</p>
+</div>
+<div class="paragraph">
+<p>To get the best performance, we recommend three guidelines for writing efficient queries.</p>
+</div>
+<div class="sect2">
+<h3 id="_use_per_target_if_possible"><a class="anchor" href="#_use_per_target_if_possible"></a>Use PER (target) If Possible</h3>
+<div class="paragraph">
+<p>Per target is in general faster than Per source. In the example below, query q2 is faster than q1. The only difference between these two queries is q2&#8217;s FROM pattern is the flip of q1&#8217;s FROM pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH ldbc_snb
+
+# not recommended, since it does per (src).
+CREATE QUERY q1 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @@cnt ;
+
+  T = SELECT c
+      FROM Comment:c - (&lt;LIKES) - Person:ps - (IS_LOCATED_IN&gt;) - City:city
+      WHERE year(c.creationDate) &gt;= 2006
+      PER (c)
+      ACCUM @@cnt += 1;
+
+  PRINT @@cnt;
+}
+
+# recommended, since it does per (tgt)
+CREATE QUERY q2 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @@cnt ;
+
+  T = SELECT c
+      FROM City:city - (&lt;IS_LOCATED_IN) - Person:ps - (LIKES&gt;) - Comment:c
+      WHERE year(c.creationDate) &gt;= 2006
+      PER (c)
+      ACCUM @@cnt += 1;
+
+  PRINT @@cnt;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_write_patterns_with_smallest_expected_vertex_set_on_the_left"><a class="anchor" href="#_write_patterns_with_smallest_expected_vertex_set_on_the_left"></a>Write Patterns with Smallest Expected Vertex Set on the Left</h3>
+<div class="paragraph">
+<p>The match table is built by traversing the pattern from left to right. Follow the basic principle of pruning early rather than late by orienting the query the  smaller cardinality set on the left. This practice will result in producing the least number of candidate matches during the query computation. For example, if there are fewer distinct tags than persons, then query q4 is faster than q3.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH ldbc_snb
+
+# not recommended, since the pattern starts from a large cardinality vertex type
+# (Person), and ends at a small cardinality vertex type (Tag).
+CREATE QUERY q3 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @cnt;
+
+  V = SELECT s
+      FROM Person:s- (LIKES&gt;)-Post:p - (&lt;CONTAINER_OF)-:f - (HAS_TAG&gt;) - :t
+      PER (s)
+      ACCUM s.@cnt += 1;
+
+  PRINT V.size();
+}
+
+# recommended, start from small cardinality end (Tag), and use per tgt
+CREATE QUERY q4 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @cnt;
+
+  V = SELECT s
+      FROM Tag:t-(&lt;HAS_TAG)-Forum:f -(CONTAINER_OF&gt;)-Post:p  - (&lt;LIKES)- Person:s
+      PER (s)
+      ACCUM s.@cnt += 1;
+
+  PRINT V.size();
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_specify_complete_type_information"><a class="anchor" href="#_specify_complete_type_information"></a>Specify Complete Type Information</h3>
+<div class="paragraph">
+<p>Specifying complete type information improves performance. For example, query q6 is faster than q5 even though they are known to be logically identical. <code>Forum</code> is the <code>CONTAINER_OF</code> <code>Post</code>, so it does not need to be specified in q5, but explicitly saying <code>Forum</code> in q6 speeds up performance.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH ldbc_snb
+
+#we do not put Forum befoe :f, even if we know it.
+CREATE QUERY q5 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @@person_cnt;
+
+  V = SELECT s
+      FROM Person:s- (LIKES&gt;)-Post:p - (&lt;CONTAINER_OF)-:f - (HAS_TAG&gt;) - :t
+      PER (s)
+      ACCUM @@person_cnt += 1;
+
+  PRINT @@person_cnt;
+}
+
+
+#recommended: we put Forum as the type info.
+CREATE QUERY q6 () SYNTAX v2 {
+
+  SumAccum&lt;int&gt; @@person_cnt;
+
+  V = SELECT s
+      FROM Person:s- (LIKES&gt;)-Post:p - (&lt;CONTAINER_OF)-Forum:f - (HAS_TAG&gt;) - :t
+      PER (s)
+      ACCUM @@person_cnt += 1;
+
+  PRINT @@person_cnt;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ldbc_benchmark_queries"><a class="anchor" href="#_ldbc_benchmark_queries"></a>LDBC Benchmark Queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the PER clause and linear regular path pattern, we have translated all of the LDBC-SNB queries. You can find them on github at <a href="https://github.com/tigergraph/ecosys/tree/ldbc/ldbc_benchmark/tigergraph/queries_linear/queries" class="bare">https://github.com/tigergraph/ecosys/tree/ldbc/ldbc_benchmark/tigergraph/queries_linear/queries</a>. Most of the queries are installed as functions. You can find sample parameter(s) of the functions from  <a href="https://github.com/tigergraph/ecosys/tree/ldbc/ldbc_benchmark/tigergraph/queries/seeds" class="bare">https://github.com/tigergraph/ecosys/tree/ldbc/ldbc_benchmark/tigergraph/queries/seeds</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../../_/js/site.js"></script>
+<script async src="../../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>High Availability Support for Application Server :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="tigergraph-server" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../intro/introduction.html">TigerGraph Server</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../intro/introduction.html">Introduction</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/internal-architecture.html">Internal Architecture</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/multigraph-overview.html">Multigraph Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/transaction-and-acid.html">Transaction Processing and ACID Support</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/comparison-of-editions.html">Comparing TigerGraph Editions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../intro/continuous-availability-overview.html">Continuous Availability Overview</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Getting Started</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/docker.html">Get started with Docker</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Get started with cloud images</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/aws.html">Get Started on AWS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/azure.html">Get Started on Microsoft Azure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../getting-started/cloud-images/gcp.html">Get Started on Google Cloud</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installation</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/hw-and-sw-requirements.html">Hardware and Software Requirements</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/install.html">Installlation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/upgrade.html">Upgrade</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/uninstallation.html">Uninstallation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../installation/license.html">Advanced License Issues</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-shell/gsql-shell.html">The GSQL Shell</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-shell/using-a-remote-gsql-client.html">Using a Remote GSQL Client</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../user-access/README.html">User Access Management</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/enabling-user-authentication.html">Enabling User Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/managing-credentials.html">Managing Credentials</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/roles-and-privileges.html">Roles and Privileges</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/role-management.html">Role Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/user-management.html">User Management</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/vlac.html">Vertex-Level Access Control (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/sso.html">Single Sign-On</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../user-access/ldap.html">Lightweight Directory Access Protocol (LDAP)</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">High Availability</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ha-cluster.html">HA Cluster Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="ha-for-gsql-server.html">High Availability Support for GSQL Server</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="ha-for-application-server.html">High Availability Support for Application Server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="cluster-commands.html">Cluster Commands</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../cluster-resizing/README.html">Cluster Resizing</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/expand-a-cluster.html">Cluster Expansion</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/shrink-a-cluster.html">Cluster Shrinking</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../cluster-resizing/repartition-a-cluster.html">Cluster Repartition</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../crr/cross-region-replication.html">Cross-Region Replication</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../kubernetes/README.html">Kubernetes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-docker-desktop.html">Quickstart with Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-eks.html">Quickstart with EKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-aks.html">Quickstart with AKS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../kubernetes/quickstart-with-gke.html">Quickstart with GKE</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-definition/README.html">Database Definition</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../data-loading/README.html">Data Loading</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/s3-loader-user-guide.html">AWS S3 Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/kafka-loader-user-guide.html">Kafka Loader User Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data-loading/spark-connection-via-jdbc-driver.html">Spark Connection Via JDBC Driver</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-querying/README.html">Querying</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../gadmin/management-with-gadmin.html">Managing with gadmin</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Security</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-connections.html">Encrypting Connections</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/encrypting-data-at-rest.html">Encrypting Data At Rest</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../security/file-output-policy.html">File Output Policy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../import-export/database-import-export.html">Database Import/Export</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../backup-and-restore/backup-and-restore.html">Backup and Restore</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">REST API Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/built-in-endpoints.html">Built-in Endpoints</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/json-catalog.html">Built-in Endpoints JSON Catalog</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Troubleshooting</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/log-files.html">Log files</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../troubleshooting/troubleshooting-guide.html">Troubleshooting Guide</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Release Notes and Change Logs</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/release-notes.html">Release Notes - TigerGraph Server 3.2</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/change-log.html">Change Log</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../release-notes/v3.0-removal-of-previously-deprecated-features.html">V3.0 Removal of Previously Deprecated Features</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../legal/patents-and-third-party-software.html">Patents and Third Party Software</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/configuration-parameters.html">Configuration Parameters</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/error-codes.html">Error codes</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reference/list-of-privileges.html">List of Privileges</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">TigerGraph Server</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../intro/introduction.html">TigerGraph Server</a></li>
+    <li>High Availability</li>
+    <li><a href="ha-for-application-server.html">High Availability Support for Application Server</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/tg-server/edit/main/modules/ha/pages/ha-for-application-server.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">High Availability Support for Application Server</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TigerGraph supports native HA functionality for its application server, which serves the APIs for TigerGraph&#8217;s GUI - GraphStudio and Admin Portal. The application server follows the active-active architecture, in which <strong>the server is always on m1 and all replicas of m1</strong>. If one server falls offline, you can use the other servers without any loss of functionality.</p>
+</div>
+<div class="paragraph">
+<p>When you deploy TigerGraph in a cluster with multiple replicas, it is ideal to set up load balancing to distribute network traffic evenly across the different servers. This page discusses what to do when a server dies when you haven&#8217;t set up load balancing, and the steps needed to set up load balancing for the application server.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../../../.gitbook/assets/diagram-draft-1-.svg" alt="diagram draft 1 ">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_a_server_dies"><a class="anchor" href="#_when_a_server_dies"></a><strong>When a server dies</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a server dies, users can proceed to the next available server within the cluster to resume the operations. For example, assuming the TigerGraph cluster has Application Server on m1 and m2. If the server on m1 dies, users can access m2 to use GraphStudio and Admin Portal.</p>
+</div>
+<div class="paragraph">
+<p>To find out which node hosts the application server, run <a href="https://docs.tigergraph.com/v/3.2/admin/admin-guide/system-management/advanced-platform-operations#show-deployment-information">the <code>gssh</code> command</a> in the bash terminal of any active node in the cluster. The output will show you which nodes are hosting a GUI server.</p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that any long-running operation that is currently in process when the server dies will be lost.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_load_balancing"><a class="anchor" href="#_load_balancing"></a>Load Balancing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you deploy TigerGraph in a cluster with multiple replicas, it is ideal to set up load balancing to distribute network traffic evenly across the different servers.</p>
+</div>
+<div class="sect2">
+<h3 id="_set_up_load_balancing_with_nginx"><a class="anchor" href="#_set_up_load_balancing_with_nginx"></a>Set up load balancing with Nginx</h3>
+<div class="paragraph">
+<p>One possible choice for setting up load balancing is through the use of Nginx.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example Nginx configuration for the upstream and server directives:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">    upstream flask_pool {
+        ip_hash;
+        zone flask_pool 64k;
+        server 172.31.86.19:14240;
+        server 172.31.88.70:14240;
+        server 172.31.94.90:14240;
+
+        keepalive 32;
+    }
+
+    server {
+        listen      8000;
+        server_name localhost;
+
+        location / {
+                root html;
+                index index.html index.htm;
+                proxy_pass http://flask_pool;
+                proxy_read_timeout 3600;
+                proxy_set_header Connection "";
+                proxy_http_version 1.1;
+                chunked_transfer_encoding off;
+                proxy_buffering off;
+                proxy_cache off;
+        }
+        error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+                root html;
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The server directives should specify your nodes' addresses which you want to load balance. Since TigerGraph requires session persistence, the load balancing methods will be limited to <em>ip_hash</em> or <em>hash</em>, unless you have access to Nginx Plus, which then means any load balancing method may be used with session persistence setup: <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/#sticky" class="bare">https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/#sticky</a></p>
+</div>
+<div class="paragraph">
+<p>An active health check can be set on the following endpoint if using Nginx Plus:</p>
+</div>
+<div class="paragraph">
+<p><code>/api/ping</code></p>
+</div>
+<div class="paragraph">
+<p>Otherwise, only a passive health check is available. See Nginx documentation for more information: <a href="https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/" class="bare">https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_up_aws_elastic_load_balancer"><a class="anchor" href="#_set_up_aws_elastic_load_balancer"></a>Set up AWS Elastic Load Balancer</h3>
+<div class="paragraph">
+<p>If your applications are provisioned on AWS, another choice for load balancing is through the use of an <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html">Application Load Balancer</a>.</p>
+</div>
+<div class="paragraph">
+<p>To create an application load balancer, follow AWS&#8217;s guide to <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html">create an application load balancer</a>. The following configurations apply as you follow the guide:</p>
+</div>
+<div class="sect3">
+<h4 id="_configure_a_security_group"><a class="anchor" href="#_configure_a_security_group"></a>Configure a security group</h4>
+<div class="paragraph">
+<p>When creating or using an existing security group in Step 3, make sure it allows requests from the load balancer to port 14240 of the instances in the target group.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_health_check_url"><a class="anchor" href="#_health_check_url"></a>Health check URL</h4>
+<div class="paragraph">
+<p>In Step 4, set the health check URL to <code>/api/ping</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configure_targets_for_the_target_group"><a class="anchor" href="#_configure_targets_for_the_target_group"></a>Configure targets for the target group</h4>
+<div class="paragraph">
+<p>In Step 5, enter 14240 for the port of your instances.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enable_sticky_sessions"><a class="anchor" href="#_enable_sticky_sessions"></a>Enable sticky sessions</h4>
+<div class="paragraph">
+<p>After following the steps and creating your load balancer, <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/sticky-sessions.html">enable sticky sessions</a> in your target group.</p>
+</div>
+<div class="paragraph">
+<p>After successfully creating your load balancer, you should now be able to access GraphStudio through the load balancer&#8217;s DNS name. The DNS name can be found under the "Description" tab of your load balancer in the Amazon EC2 console.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_up_azure_application_gateway"><a class="anchor" href="#_set_up_azure_application_gateway"></a>Set up Azure Application Gateway</h3>
+<div class="paragraph">
+<p>If your instances are provisioned on Azure, you can set up an <a href="https://docs.microsoft.com/en-us/azure/application-gateway/overview">Application Gateway</a>.</p>
+</div>
+<div class="paragraph">
+<p>Follow the steps for setting up an Application Gateway outlined here:https://docs.microsoft.com/en-us/azure/application-gateway/quick-create-portal[Quickstart: Direct web traffic using the portal - Azure Application Gateway]</p>
+</div>
+<div class="paragraph">
+<p>Some different TigerGraph specific settings are required during Application Gateway setup:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Under the section &#8220;Configuration Tab&#8221;</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For step 5, where it states to use port 80 for the backend port, use port 14240 instead.</p>
+</li>
+<li>
+<p>In the same window, enable &#8220;Cookie-based affinity&#8221;.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_create_a_custom_probe_for_application_gateway"><a class="anchor" href="#_create_a_custom_probe_for_application_gateway"></a>Create a custom probe for Application Gateway</h4>
+<div class="paragraph">
+<p>After the Application Gateway is complete, we need to create a custom health probe in order to check the health/status of our Application Servers. You can follow the following steps outlined here:https://docs.microsoft.com/en-us/azure/application-gateway/application-gateway-create-probe-portal[Create a custom probe using the portal - Azure Application Gateway]</p>
+</div>
+<div class="paragraph">
+<p>When filling out the health probe information, the fields below should have the following values:</p>
+</div>
+<div class="paragraph">
+<p><strong>Pick port from backend HTTP settings:</strong> yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Path:</strong> <code>/api/ping</code></p>
+</div>
+<div class="paragraph">
+<p><strong>HTTP Settings:</strong> The HTTP settings associated with the backend pool create during the Application Gateway setup</p>
+</div>
+<div class="paragraph">
+<p>After successfully creating the Application Gateway, you should now be able to access GraphStudio from the frontend IP associated with the Application Gateway.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_up_gcp_external_https_load_balancer"><a class="anchor" href="#_set_up_gcp_external_https_load_balancer"></a>Set up GCP External HTTP(s) Load Balancer</h3>
+<div class="paragraph">
+<p>If your instances are provisioned on Google Cloud, you can set up anhttps://cloud.google.com/load-balancing/docs/https[External HTTP(s) Load Balancer]:</p>
+</div>
+<div class="paragraph">
+<p>You can follow Google&#8217;s provided steps in their documentation for setup here:https://cloud.google.com/iap/docs/load-balancer-howto[Setting up an external HTTPS load balancer  |  Identity-Aware Proxy]</p>
+</div>
+<div class="paragraph">
+<p>When <a href="https://cloud.google.com/iap/docs/load-balancer-howto#mig">creating the instance group</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click &#8220;Specify port name mapping&#8221;, and use 14240 for the port</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When <a href="https://cloud.google.com/load-balancing/docs/health-checks">setting up the health check</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For the port, use 14240.</p>
+</li>
+<li>
+<p>For the path, use <code>/api/ping</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Lastly, we need to set up session affinity for our load balancer. This is outlined in GCP documentation here:https://cloud.google.com/load-balancing/docs/https#session_affinity[External HTTP(S) Load Balancing overview  |  Google Cloud]</p>
+</div>
+<div class="paragraph">
+<p>After successfully creating the load balancer, you should now be able to access GraphStudio from the frontend IP associated with the load balancer.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Load Data :: TigerGraph Documentation</title>
+    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">TigerGraph Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="gsql-ref" data-version="3.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../intro/intro.html">GSQL Language Reference</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../intro/intro.html">Overview</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Tutorials</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../gsql-101/README.html">GSQL 101</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/define-a-schema.html">Define a Schema</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/load-data-gsql-101.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/built-in-select-queries.html">Run Built-in Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/parameterized-gsql-query.html">Develop Parameterized Queries</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../gsql-101/review.html">Review</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="README.html">Pattern Matching Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="get-set.html">Get Set</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="load-data.html">Load Data</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="one-hop-patterns.html">One-hop patterns</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repeating-a-pattern.html">Repeating a 1-Hop Pattern</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="multiple-hop-and-accumulation.html">Multiple Hop Patterns and Accumulation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="example.html">Example - A Recommender</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="adv/README.html">Advanced Features</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="adv/per-clause.html">Per Clause (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="adv/conjunctive-pattern-matching.html">Conjunctive Pattern Matching (Beta)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="adv/dml.html">Data Modification</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="summary.html">Summary</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Database definition &amp; Loading</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/system-and-language-basics.html">System &amp; Language Basics</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/defining-a-graph-schema.html">Defining a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/modifying-a-graph-schema.html">Modifying a Graph Schema</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/creating-a-loading-job.html">Creating a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../ddl-and-loading/running-a-loading-job.html">Running a Loading Job</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../ddl-and-loading/appendix/keywords-and-reserved-words.html">DDL Keywords &amp; Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#appendix/gsql-start-to-end-process.adoc">appendix/gsql-start-to-end-process.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Querying</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/introduction-query.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/query-operations.html">CREATE/INTERPRET/INSTALL/RUN QUERY</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/distributed-query-mode.html">Distributed Query Mode</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/data-types.html">Data Types</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/accumulators.html">Accumulators</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/operators-and-expressions.html">Operators and Expressions</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../querying/func/README.html">Functions</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/aggregation-functions.html">Aggregation Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/datetime-functions.html">Datetime Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/edge-methods.html">Edge Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/json-object-methods.html">JSON Object Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/jsonarray-methods.html">JSON Array Methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/mathematical-functions.html">Mathematical Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/miscellaneous-functions.html">Miscellaneous Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/query-user-defined-functions.html">Query User-Defined Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/string-functions.html">String Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/type-conversion-functions.html">Type Conversion Functions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/func/vertex-methods.html">Vertex Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/declaration-and-assignment-statements.html">Declaration and Assignment Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../querying/select-statement/README.html">SELECT Statement</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/select-statement/sql-like-select-statement.html">SQL-like SELECT statement</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/control-flow-statements.html">Control Flow Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/data-modification-statements.html">Data Modification Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/output-statements-and-file-objects.html">Output Statements and FILE Objects</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/exception-statements.html">Exception Statements</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../querying/comments.html">Comments</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/appendix-query/common-errors-and-problems.html">Common Errors and Problems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/appendix-query/complete-formal-syntax.html">Formal Grammar for Query Language</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/appendix-query/query-language-reserved-words.html">Query Language Reserved Words</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/appendix-query/example-graphs.html">Example Graphs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../querying/appendix-query/interpreted-gsql-limitations.html">Interpreted GSQL Limitations</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GSQL Language Reference</span>
+    <span class="version">3.2</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">GraphStudio and Admin Portal</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../intro/intro.html">GSQL Language Reference</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../intro/intro.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-cloud/latest/start/README.html">latest</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../../tigergraph-server/3.2/intro/introduction.html">TigerGraph Server</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../../tigergraph-server/3.2/intro/introduction.html">3.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../intro/intro.html">GSQL Language Reference</a></li>
+    <li>Tutorials</li>
+    <li><a href="README.html">Pattern Matching Tutorial</a></li>
+    <li><a href="load-data.html">Load Data</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/lennessyy/gsql/edit/main/modules/tutorials/pages/pattern-matching/load-data.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Load Data</h1>
+<div class="sect1">
+<h2 id="_define_the_loading_job"><a class="anchor" href="#_define_the_loading_job"></a>Define the Loading Job</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below, we use the GSQL loading language to define a loading job script, which encodes all the mappings from the source CSV file (generated by the LDBC SNB benchmark data generator) to our <a href="https://raw.githubusercontent.com/tigergraph/ecosys/ldbc/ldbc_benchmark/tigergraph/gsql102/3.0/setup_schema.gsql">schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>The script to load the LDBC-SNB data is below.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="# GSQL script for loading LDBC-SNB data" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH ldbc_snb
+CREATE LOADING JOB load_ldbc_snb FOR GRAPH ldbc_snb {
+  // define vertex
+  DEFINE FILENAME v_comment_file;
+  DEFINE FILENAME v_post_file;
+  DEFINE FILENAME v_organisation_file;
+  DEFINE FILENAME v_place_file;
+  DEFINE FILENAME v_forum_file;
+  DEFINE FILENAME v_person_file;
+  DEFINE FILENAME v_tag_file;
+  DEFINE FILENAME v_tagclass_file;
+
+  // define edge
+  DEFINE FILENAME forum_containerOf_post_file;
+  DEFINE FILENAME comment_hasCreator_person_file;
+  DEFINE FILENAME post_hasCreator_person_file;
+  DEFINE FILENAME person_hasInterest_tag_file;
+  DEFINE FILENAME forum_hasMember_person_file;
+  DEFINE FILENAME forum_hasModerator_person_file;
+  DEFINE FILENAME comment_hasTag_tag_file;
+  DEFINE FILENAME post_hasTag_tag_file;
+  DEFINE FILENAME forum_hasTag_tag_file;
+  DEFINE FILENAME tag_hasType_tagclass_file;
+  DEFINE FILENAME organisation_isLocatedIn_place_file;
+  DEFINE FILENAME comment_isLocatedIn_place_file;
+  DEFINE FILENAME post_isLocatedIn_place_file;
+  DEFINE FILENAME person_isLocatedIn_place_file;
+  DEFINE FILENAME place_isPartOf_place_file;
+  DEFINE FILENAME tagclass_isSubclassOf_tagclass_file;
+  DEFINE FILENAME person_knows_person_file;
+  DEFINE FILENAME person_likes_comment_file;
+  DEFINE FILENAME person_likes_post_file;
+  DEFINE FILENAME comment_replyOf_comment_file;
+  DEFINE FILENAME comment_replyOf_post_file;
+  DEFINE FILENAME person_studyAt_organisation_file;
+  DEFINE FILENAME person_workAt_organisation_file;
+
+  // load vertex
+  LOAD v_comment_file
+    TO VERTEX Comment VALUES ($0, $1, $2, $3, $4, $5) USING header="true", separator="|";
+  LOAD v_post_file
+    TO VERTEX Post VALUES ($0, $1, $2, $3, $4, $5, $6, $7) USING header="true", separator="|";
+  LOAD v_organisation_file
+    TO VERTEX Company VALUES ($0, $2, $3) WHERE $1=="company",
+    TO VERTEX University VALUES ($0, $2, $3) WHERE $1=="university" USING header="true", separator="|";
+  LOAD v_place_file
+    TO VERTEX City VALUES ($0, $1, $2) WHERE $3=="city",
+    TO VERTEX Country VALUES ($0, $1, $2) WHERE $3=="country",
+    TO VERTEX Continent VALUES ($0, $1, $2) WHERE $3=="continent" USING header="true", separator="|";
+  LOAD v_forum_file
+    TO VERTEX Forum VALUES ($0, $1, $2) USING header="true", separator="|";
+  LOAD v_person_file
+    TO VERTEX Person VALUES ($0, $1, $2, $3, $4, $5, $6, $7, SPLIT($8,";"), SPLIT($9,";")) USING header="true", separator="|";
+  LOAD v_tag_file
+    TO VERTEX Tag VALUES ($0, $1, $2) USING header="true", separator="|";
+  LOAD v_tagclass_file
+    TO VERTEX TagClass VALUES ($0, $1, $2) USING header="true", separator="|";
+
+  // load edge
+  LOAD forum_containerOf_post_file
+    TO EDGE CONTAINER_OF VALUES ($0, $1) USING header="true", separator="|";
+  LOAD comment_hasCreator_person_file
+    TO EDGE HAS_CREATOR VALUES ($0 Comment, $1) USING header="true", separator="|";
+  LOAD post_hasCreator_person_file
+    TO EDGE HAS_CREATOR VALUES ($0 Post, $1) USING header="true", separator="|";
+  LOAD person_hasInterest_tag_file
+    TO EDGE HAS_INTEREST VALUES ($0, $1) USING header="true", separator="|";
+  LOAD forum_hasMember_person_file
+    TO EDGE HAS_MEMBER VALUES ($0, $1, $2) USING header="true", separator="|";
+  LOAD forum_hasModerator_person_file
+    TO EDGE HAS_MODERATOR VALUES ($0, $1) USING header="true", separator="|";
+  LOAD comment_hasTag_tag_file
+    TO EDGE HAS_TAG VALUES ($0 Comment, $1) USING header="true", separator="|";
+  LOAD post_hasTag_tag_file
+    TO EDGE HAS_TAG VALUES ($0 Post, $1) USING header="true", separator="|";
+  LOAD forum_hasTag_tag_file
+    TO EDGE HAS_TAG VALUES ($0 Forum, $1) USING header="true", separator="|";
+  LOAD tag_hasType_tagclass_file
+    TO EDGE HAS_TYPE VALUES ($0, $1) USING header="true", separator="|";
+  LOAD organisation_isLocatedIn_place_file
+    TO EDGE IS_LOCATED_IN VALUES ($0 Company, $1 Country) WHERE to_int($1) &lt; 111,
+    TO EDGE IS_LOCATED_IN VALUES ($0 University, $1 City) WHERE to_int($1) &gt; 110 USING header="true", separator="|";
+  LOAD comment_isLocatedIn_place_file
+    TO EDGE IS_LOCATED_IN VALUES ($0 Comment, $1 Country) USING header="true", separator="|";
+  LOAD post_isLocatedIn_place_file
+    TO EDGE IS_LOCATED_IN VALUES ($0 Post, $1 Country) USING header="true", separator="|";
+  LOAD person_isLocatedIn_place_file
+    TO EDGE IS_LOCATED_IN VALUES ($0 Person, $1 City) USING header="true", separator="|";
+  LOAD place_isPartOf_place_file
+    TO EDGE IS_PART_OF VALUES ($0 Country, $1 Continent) WHERE to_int($0) &lt; 111,
+    TO EDGE IS_PART_OF VALUES ($0 City, $1 Country) WHERE to_int($0) &gt; 110 USING header="true", separator="|";
+  LOAD tagclass_isSubclassOf_tagclass_file
+    TO EDGE IS_SUBCLASS_OF VALUES ($0, $1) USING header="true", separator="|";
+  LOAD person_knows_person_file
+    TO EDGE KNOWS VALUES ($0, $1, $2) USING header="true", separator="|";
+  LOAD person_likes_comment_file
+    TO EDGE LIKES VALUES ($0, $1 Comment, $2) USING header="true", separator="|";
+  LOAD person_likes_post_file
+    TO EDGE LIKES VALUES ($0, $1 Post, $2) USING header="true", separator="|";
+  LOAD comment_replyOf_comment_file
+    TO EDGE REPLY_OF VALUES ($0, $1 Comment) USING header="true", separator="|";
+  LOAD comment_replyOf_post_file
+    TO EDGE REPLY_OF VALUES ($0, $1 Post) USING header="true", separator="|";
+  LOAD person_studyAt_organisation_file
+    TO EDGE STUDY_AT VALUES ($0, $1, $2) USING header="true", separator="|";
+  LOAD person_workAt_organisation_file
+    TO EDGE WORK_AT VALUES ($0, $1, $2) USING header="true", separator="|";
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prepare_the_raw_data"><a class="anchor" href="#_prepare_the_raw_data"></a>Prepare The Raw Data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We have generated a data set with scale factor 1 (approximate 1GB). You can download it from <a href="https://s3-us-west-1.amazonaws.com/tigergraph-benchmark-dataset/LDBC/SF-1/ldbc_snb_data-sf1.tar.gz" class="bare">https://s3-us-west-1.amazonaws.com/tigergraph-benchmark-dataset/LDBC/SF-1/ldbc_snb_data-sf1.tar.gz</a></p>
+</div>
+<div class="paragraph">
+<p>{% code title="# Linux Bash " %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">wget https://s3-us-west-1.amazonaws.com/tigergraph-benchmark-dataset/LDBC/SF-1/ldbc_snb_data-sf1.tar.gz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>After downloading the raw file, run the tar command below to decompress the downloaded file.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="# Linux Bash" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xzf  ldbc_snb_data-sf1.tar.gz</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>After decompressing the file, you will see a folder named "ldbc_snb_data". Within it, you will see two subfolders</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>social_network</p>
+</li>
+<li>
+<p>substitution_parameters</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The raw data is in the social_network folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run_the_loading_job"><a class="anchor" href="#_run_the_loading_job"></a>Run The Loading Job</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Download <a href="https://raw.githubusercontent.com/tigergraph/ecosys/ldbc/ldbc_benchmark/tigergraph/gsql102/3.0/setup_schema.gsql">setup_schema.gsql</a> which combines the schema script and loading job script shown before.</p>
+</div>
+<div class="paragraph">
+<p>Specify the environment variable <strong>LDBC_SNB_DATA_DIR</strong>  to point to your raw file folder un-tarred in the previous section. In our example below, the raw data is in <strong>/home/tigergraph/ldbc_snb_data/social_network,</strong> so we use the export shell command to specify its location. Then, start your TigerGraph services if needed. Finally, run the <strong>setup_schema.gsql</strong> script to create your LDBC Social Network graph.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="# Linux Bash" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">#change the directory to your raw file directory
+export LDBC_SNB_DATA_DIR=/home/tigergraph/ldbc_snb_data/social_network/
+
+#start all TigerGraph services
+gadmin start all
+
+#setup schema and loading job
+gsql setup_schema.gsql</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>Download the <a href="https://github.com/tigergraph/ecosys/blob/ldbc/ldbc_benchmark/tigergraph/gsql102/3.0/load_data.sh">loading job script</a> and invoke it on the command line. #</p>
+</div>
+<div class="paragraph">
+<p>{% code title="# Linux Bash" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./load_data.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>{% code title="# Sample Loading Progress Output" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tigergraph/gsql_102$ ./load_data.sh
+[Tip: Use "CTRL + C" to stop displaying the loading status update, then use "SHOW LOADING STATUS jobid" to track the loading progress again]
+[Tip: Manage loading jobs with "ABORT/RESUME LOADING JOB jobid"]
+Starting the following job, i.e.
+  JobName: load_ldbc_snb, jobid: ldbc_snb.load_ldbc_snb.file.m1.1558053156447
+  Loading log: '/mnt/data/tigergraph/logs/restpp/restpp_loader_logs/ldbc_snb/ldbc_snb.load_ldbc_snb.file.m1.1558053156447.log'
+
+Job "ldbc_snb.load_ldbc_snb.file.m1.1558053156447" loading status
+[FINISHED] m1 ( Finished: 31 / Total: 31 )
+  [LOADED]
+  +----------------------------------------------------------------------------------------------------------------------------------+
+  |                                                                              FILENAME |   LOADED LINES |   AVG SPEED |   DURATION|
+  |                       /mnt/data/download/ldbc_snb_data/social_network/comment_0_0.csv |        2052170 |    281 kl/s |     7.28 s|
+  |     /mnt/data/download/ldbc_snb_data/social_network/comment_hasCreator_person_0_0.csv |        2052170 |    251 kl/s |     8.17 s|
+  |            /mnt/data/download/ldbc_snb_data/social_network/comment_hasTag_tag_0_0.csv |        2698394 |    422 kl/s |     6.38 s|
+  |     /mnt/data/download/ldbc_snb_data/social_network/comment_isLocatedIn_place_0_0.csv |        2052170 |    291 kl/s |     7.04 s|
+  |       /mnt/data/download/ldbc_snb_data/social_network/comment_replyOf_comment_0_0.csv |        1040750 |    253 kl/s |     4.11 s|
+  |          /mnt/data/download/ldbc_snb_data/social_network/comment_replyOf_post_0_0.csv |        1011421 |    248 kl/s |     4.07 s|
+  |                         /mnt/data/download/ldbc_snb_data/social_network/forum_0_0.csv |          90493 |     87 kl/s |     1.03 s|
+  |        /mnt/data/download/ldbc_snb_data/social_network/forum_containerOf_post_0_0.csv |        1003606 |    240 kl/s |     4.18 s|
+  |        /mnt/data/download/ldbc_snb_data/social_network/forum_hasMember_person_0_0.csv |        1611870 |    431 kl/s |     3.74 s|
+  |     /mnt/data/download/ldbc_snb_data/social_network/forum_hasModerator_person_0_0.csv |          90493 |     89 kl/s |     1.01 s|
+  |              /mnt/data/download/ldbc_snb_data/social_network/forum_hasTag_tag_0_0.csv |         309767 |    297 kl/s |     1.04 s|
+  |                  /mnt/data/download/ldbc_snb_data/social_network/organisation_0_0.csv |           7956 |      7 kl/s |     1.00 s|
+  |/mnt/data/download/ldbc_snb_data/social_network/organisation_isLocatedIn_place_0_0.csv |           7956 |      7 kl/s |     1.00 s|
+  |                        /mnt/data/download/ldbc_snb_data/social_network/person_0_0.csv |           9893 |      9 kl/s |     1.05 s|
+  |        /mnt/data/download/ldbc_snb_data/social_network/person_hasInterest_tag_0_0.csv |         229167 |    223 kl/s |     1.03 s|
+  |      /mnt/data/download/ldbc_snb_data/social_network/person_isLocatedIn_place_0_0.csv |           9893 |      9 kl/s |     1.00 s|
+  |           /mnt/data/download/ldbc_snb_data/social_network/person_knows_person_0_0.csv |         180624 |    169 kl/s |     1.06 s|
+  |          /mnt/data/download/ldbc_snb_data/social_network/person_likes_comment_0_0.csv |        1438419 |    449 kl/s |     3.20 s|
+  |             /mnt/data/download/ldbc_snb_data/social_network/person_likes_post_0_0.csv |         751678 |    331 kl/s |     2.27 s|
+  |   /mnt/data/download/ldbc_snb_data/social_network/person_studyAt_organisation_0_0.csv |           7950 |      7 kl/s |     1.00 s|
+  |    /mnt/data/download/ldbc_snb_data/social_network/person_workAt_organisation_0_0.csv |          21655 |     21 kl/s |     1.00 s|
+  |                         /mnt/data/download/ldbc_snb_data/social_network/place_0_0.csv |           1461 |      1 kl/s |     1.00 s|
+  |          /mnt/data/download/ldbc_snb_data/social_network/place_isPartOf_place_0_0.csv |           1455 |      1 kl/s |     1.00 s|
+  |                          /mnt/data/download/ldbc_snb_data/social_network/post_0_0.csv |        1003606 |    195 kl/s |     5.14 s|
+  |        /mnt/data/download/ldbc_snb_data/social_network/post_hasCreator_person_0_0.csv |        1003606 |    320 kl/s |     3.13 s|
+  |               /mnt/data/download/ldbc_snb_data/social_network/post_hasTag_tag_0_0.csv |         713259 |    341 kl/s |     2.09 s|
+  |        /mnt/data/download/ldbc_snb_data/social_network/post_isLocatedIn_place_0_0.csv |        1003606 |    327 kl/s |     3.07 s|
+  |                           /mnt/data/download/ldbc_snb_data/social_network/tag_0_0.csv |          16081 |     16 kl/s |     1.00 s|
+  |          /mnt/data/download/ldbc_snb_data/social_network/tag_hasType_tagclass_0_0.csv |          16081 |     16 kl/s |     1.00 s|
+  |                      /mnt/data/download/ldbc_snb_data/social_network/tagclass_0_0.csv |             72 |      71 l/s |     1.00 s|
+  |/mnt/data/download/ldbc_snb_data/social_network/tagclass_isSubclassOf_tagclass_0_0.csv |             71 |      70 l/s |     1.00 s|
+  +----------------------------------------------------------------------------------------------------------------------------------+</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+<div class="paragraph">
+<p>After loading, you can check the graph&#8217;s size using  built-in REST endpoint calls.</p>
+</div>
+<div class="paragraph">
+<p>Below we call two functions, stat_vertex_number and stat_edge_number to return the cardinality of each vertex and edge type.</p>
+</div>
+<div class="paragraph">
+<p>{% code title="Linux shell" %}</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -X POST 'http://localhost:9000/builtins/ldbc_snb' -d  '{"function":"stat_vertex_number","type":"*"}'  | jq .
+curl -X POST 'http://localhost:9000/builtins/ldbc_snb' -d  '{"function":"stat_edge_number","type":"*"}' | jq .</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{% endcode %}</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
