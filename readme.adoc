@@ -13,6 +13,6 @@ npm i
 To build the site locally, run:
 [,bash]
 ----
-antora generate --fetch antora-playbook.yml
+npm run build
 ----
 The build will be available in the `build/` folder in the root directory.
