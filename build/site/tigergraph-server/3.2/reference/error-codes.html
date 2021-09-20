@@ -116,6 +116,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -358,7 +370,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -490,7 +502,7 @@
 <p>This page documents the <em>status codes</em> and <em>exit codes</em> on the TigerGraph platform. Each status code follows the format: <code>&lt;component&gt;-&lt;code&gt;</code> , while exit codes are numeric values between 0 - 255.</p>
 </div>
 <div class="paragraph">
-<p>If the system was handling a user request, the status code and message will be in the JSON response (see <a href="../dev/gsql-ref/querying/query-operations.md#gsql-query-output-format">GSQL Query Output Format</a> ). For internal errors, the error information may be in a log file.</p>
+<p>If the system was handling a user request, the status code and message will be in the JSON response (see <a href="../../../gsql-ref/3.2/querying/query-operations.html#_gsql_query_output_format" class="page">GSQL Query Output Format</a> ). For internal errors, the error information may be in a log file.</p>
 </div>
 <div class="paragraph">
 <p>The GSQL Client will exit with a non-zero code if there&#8217;s an error while handling a user request. To view the exit code of the GSQL client, run the command <code>echo $?</code> and the exit code of the most recent command will be printed to the terminal.</p>

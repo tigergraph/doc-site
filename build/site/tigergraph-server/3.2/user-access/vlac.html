@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -567,13 +579,13 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="vertex-level-access-control-beta.md#define-a-tag">Define tags</a>.</p>
+<p><a href="#_define_a_tag">Define a tag</a>.</p>
 </li>
 <li>
-<p><a href="vertex-level-access-control-beta.md#mark-vertex-types-as-taggable">Mark vertex types as taggable</a>.</p>
+<p><a href="#_mark_vertex_types_as_taggable">Mark vertex types as taggable</a>.</p>
 </li>
 <li>
-<p><a href="vertex-level-access-control-beta.md#create-a-tag-based-graph-1">Create a tag-based graph</a>.</p>
+<p><a href="#_create_a_tag_based_graph_2">Create a Tag-Based Graph</a>.</p>
 </li>
 </ol>
 </div>
@@ -599,13 +611,13 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="vertex-level-access-control-beta.md#add-tags-on-existing-data">Explicitly add/modify tags on existing data</a>: A user with the privilege <code>ACCESS_TAG</code> and <code>WRITE_DATA</code> privileges on the base graph can create and run a DML query that sets tags on selected individual vertices.</p>
+<p><a href="#_add_tags_on_existing_data">Add tags on existing data</a>: A user with the privilege <code>ACCESS_TAG</code> and <code>WRITE_DATA</code> privileges on the base graph can create and run a DML query that sets tags on selected individual vertices.</p>
 </li>
 <li>
-<p><a href="vertex-level-access-control-beta.md#set-tags-explicitly-with-tags-clause">Explicitly set tags when loading data</a> into to a base graph: A user with <code>EXECUTE_LOADINGJOB</code> , <code>WRITE_LOADINGJOB</code> and <code>ACCESS_TAG</code> privileges on the base graph can create and run a loading job that explicitly sets tags on the newly loaded base graph vertices.</p>
+<p><a href="#_set_tags_explicitly_with_tags_clause">Set tags explicitly with <code>TAGS</code> clause</a>: A user with <code>EXECUTE_LOADINGJOB</code> , <code>WRITE_LOADINGJOB</code> and <code>ACCESS_TAG</code> privileges on the base graph can create and run a loading job that explicitly sets tags on the newly loaded base graph vertices.</p>
 </li>
 <li>
-<p><a href="vertex-level-access-control-beta.md#set-tags-implicitly-by-inserting-into-a-tag-based-graph">Implicitly set tags when loading into a tag-based graph</a>: A user with tag-based graph loading or insert privilege (e.g., a <code>designer</code> or <code>querywriter</code>) can create an ordinary loading or upsert job which inserts new vertices. The new vertices will be automatically tagged according to the tag-based graph&#8217;s schema definition.</p>
+<p><a href="#_set_tags_implicitly_by_inserting_into_a_tag_based_graph"><strong>Set tags implicitly by inserting into a tag-based graph</strong></a>: A user with tag-based graph loading or insert privilege (e.g., a <code>designer</code> or <code>querywriter</code>) can create an ordinary loading or upsert job which inserts new vertices. The new vertices will be automatically tagged according to the tag-based graph&#8217;s schema definition.</p>
 </li>
 </ol>
 </div>
@@ -637,7 +649,7 @@ Features not yet supported:</p>
 {% endhint %}</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use the graph <a href="../../../dev/gsql-ref/querying/appendix-query/example-graphs.md#socialnet">socialNet</a> as an example in the following sections.</p>
+<p>We&#8217;ll use the graph <a href="../../../gsql-ref/3.2/querying/appendix-query/example-graphs.html#_socialnet" class="page">socialNet</a> as an example in the following sections.</p>
 </div>
 </div>
 </div>
@@ -658,7 +670,7 @@ Features not yet supported:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">ADD TAG &lt;tag_name&gt; [DESCRIPTION &lt;tag_description&gt;]</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">ADD TAG &lt;tag_name&gt; [DESCRIPTION &lt;tag_description&gt;]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -669,7 +681,7 @@ Features not yet supported:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 
 CREATE SCHEMA_CHANGE JOB add_tags {
   ADD TAG public DESCRIPTION "Open for public";
@@ -688,7 +700,7 @@ RUN SCHEMA_CHANGE JOB add_tags</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">...
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">...
 
 Tags:
 - TAG public DESCRIPTION "Open for public"
@@ -708,7 +720,7 @@ Tags:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">DROP TAG &lt;tag_name&gt; ["," &lt;tag_name&gt;]*</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">DROP TAG &lt;tag_name&gt; ["," &lt;tag_name&gt;]*</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -719,7 +731,7 @@ Tags:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 
 CREATE SCHEMA_CHANGE JOB drop_dummy_tag {
   DROP TAG dummy;
@@ -757,7 +769,7 @@ RUN SCHEMA_CHANGE JOB drop_dummy_tag</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 
 # in general, this would be a local schema change job, but in socialNet, the
 # vertex types are global, so this needs to be a global schema change job
@@ -774,7 +786,7 @@ RUN GLOBAL SCHEMA_CHANGE JOB make_taggable</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">CREATE VERTEX v2(PRIMARY_ID id UINT, name STRING) WITH TAGGABLE="true"</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">CREATE VERTEX v2(PRIMARY_ID id UINT, name STRING) WITH TAGGABLE="true"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -808,7 +820,7 @@ RUN GLOBAL SCHEMA_CHANGE JOB make_taggable</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 CREATE GRAPH vipNet AS socialNet(person:vip, post, friend, posted, liked)</code></pre>
 </div>
 </div>
@@ -823,7 +835,7 @@ CREATE GRAPH vipNet AS socialNet(person:vip, post, friend, posted, liked)</code>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 CREATE GRAPH mixedNet AS socialNet(person:public&amp;vip, post:public&amp;tech&amp;dummy, friend, posted, liked)</code></pre>
 </div>
 </div>
@@ -838,7 +850,7 @@ CREATE GRAPH mixedNet AS socialNet(person:public&amp;vip, post:public&amp;tech&a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 CREATE GRAPH publicNet2 AS socialNet:public</code></pre>
 </div>
 </div>
@@ -847,7 +859,7 @@ CREATE GRAPH publicNet2 AS socialNet:public</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 CREATE GRAPH publicNet1 AS socialNet(person:public, post:public, friend, posted, liked)</code></pre>
 </div>
 </div>
@@ -862,7 +874,7 @@ CREATE GRAPH publicNet1 AS socialNet(person:public, post:public, friend, posted,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">&lt;create_tag_graph&gt; :=
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">&lt;create_tag_graph&gt; :=
     CREATE GRAPH &lt;tag_graph_name&gt; AS &lt;base_graph_name&gt;
     ( "(" &lt;tagged_element_name&gt; ("," &lt;tagged_element_name&gt;)* ")" | ":" &lt;tag_expr&gt; )
 
@@ -901,10 +913,11 @@ CREATE GRAPH publicNet1 AS socialNet(person:public, post:public, friend, posted,
 <div class="sect2">
 <h3 id="_add_tags_on_existing_data"><a class="anchor" href="#_add_tags_on_existing_data"></a>Add tags on existing data</h3>
 <div class="paragraph">
-<p>In GSQL, special vertex methods are provided to access and modify the tags of a vertex in a DML query (full list available on page <a href="../../../dev/gsql-ref/querying/func/vertex-methods.md#vlac-vertex-alias-methods">Vertex Functions</a>).  These functions are only available for vertex aliases (defined in the <code>FROM</code> clause of a <code>SELECT</code> statement); they cannot be applied to vertex variables in other contexts.</p>
+<p>In GSQL, special vertex methods are provided to access and modify the tags of a vertex in a DML query (full list available on page <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html" class="page">Vertex Functions</a>).
+These functions are only available for vertex aliases (defined in the <code>FROM</code> clause of a <code>SELECT</code> statement); they cannot be applied to vertex variables in other contexts.</p>
 </div>
 <div class="paragraph">
-<p>There are <a href="#../reference/vertex-level-access-control-functions.adoc" class="page unresolved">8 DML-level tag-access functions</a> in the vertex-query block or edge-query block. Use the <a href="../reference/reference.md#addtags-string-tag-1-string-tagn"><code>v.addTags()</code></a> function to tag a vertex.</p>
+<p>There are <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html" class="page">8 DML-level tag-access functions</a> in the vertex-query block or edge-query block. Use the <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_addtags" class="page">addTags()</a> function to tag a vertex.</p>
 </div>
 <div class="sect3">
 <h4 id="_required_privilege"><a class="anchor" href="#_required_privilege"></a>Required privilege</h4>
@@ -924,7 +937,7 @@ To add or modify tags, you should work at the base graph level.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE QUERY addTagsToPerson() {
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">CREATE QUERY addTagsToPerson() {
   Seed = { any };
   # person1 ~ person5 will be tagged as public.
   vSet = SELECT s
@@ -947,11 +960,11 @@ To add or modify tags, you should work at the base graph level.
 </div>
 </div>
 <div class="paragraph">
-<p>Use <a href="../reference/vertex-level-access-control-functions.md#removetags-string-tag-1-string-tagn"><code>removeTags()</code></a> and <a href="../reference/vertex-level-access-control-functions.md#removealltags"><code>removeAllTags()</code></a> to remove tags from vertices:</p>
+<p>Use <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_removetags" class="page">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removetags</a> and <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_removealltags" class="page">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removealltags</a> to remove tags from vertices:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">// remove tag “vip” and “public” from all person vertices.
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">// remove tag “vip” and “public” from all person vertices.
 CREATE QUERY removetagsFromPerson() {
   vSet = { person.* };
   # remove tag vip and public from all person vertices
@@ -1013,7 +1026,7 @@ CREATE QUERY removealltagsFromPerson() {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">$ cat persons1
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">$ cat persons1
 person1,Male
 person2,Female
 person3,Male
@@ -1034,7 +1047,7 @@ person8,Male,vip</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 
 # person1 - person5 will be tagged as public.
 CREATE LOADING JOB loadPersonPublic {
@@ -1069,7 +1082,7 @@ RUN LOADING JOB loadPerson USING f="./persons3"</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">$ cat posts1
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">$ cat posts1
 3,cats,2011-02-05 01:02:44
 8,cats,2011-02-03 17:05:52
 9,cats,2011-02-05 23:12:42
@@ -1093,7 +1106,7 @@ $ cat posts3
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">USE GRAPH socialNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH socialNet
 
 # posts 3, 8, 9, 10, and 11 will be tagged as public.
 CREATE LOADING JOB loadPostPublic {
@@ -1124,7 +1137,7 @@ RUN LOADING JOB loadPostPublicTech USING f="./posts3"
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH vipNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH vipNet
 
 CREATE LOADING JOB loadMember {
   DEFINE filename f;
@@ -1160,7 +1173,7 @@ RUN LOADING JOB loadMember USING f="./persons3"</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">USE GRAPH vipNet
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">USE GRAPH vipNet
 
 CREATE QUERY findAll() {
   seed = {person.*};
@@ -1180,7 +1193,7 @@ RUN QUERY findAll()</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">{
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">{
   "error": false,
   "message": "",
   "version": {
@@ -1263,23 +1276,23 @@ RUN QUERY findAll()</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Define a tag</strong>. In a schema change job, <a href="vertex-level-access-control.md#define-a-tag">declare a tag</a> <code>T</code> for this application.</p>
+<p><strong>Define a tag</strong>. In a schema change job, <a href="#_define_a_tag">Define a tag</a> <code>T</code> for this application.</p>
 </li>
 <li>
-<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types you want to give selective access for, and <a href="vertex-level-access-control.md#taggable-vertex-types">mark those vertex types as taggable</a> in a schema change job.</p>
+<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types you want to give selective access for, and <a href="vlac.adoc#_mark_vertex_types_as_taggable">mark those vertex types as taggable</a> in a schema change job.</p>
 </li>
 <li>
-<p><strong>Define a tag-based graph</strong>. <a href="vertex-level-access-control.md#create-a-tag-based-graph">Define a tag-based graph</a> <code>B</code> with the taggable vertex types, with <code>T</code> as their tag expression.</p>
+<p><strong>Define a tag-based graph</strong>. <a href="vlac.adoc#_create_a_tag_based_graph">Define a tag-based graph</a> <code>B</code> with the taggable vertex types, with <code>T</code> as their tag expression.</p>
 </li>
 <li>
-<p><strong>Tag vertices</strong>. Write a DML query on the base graph and use the tag functions in the query to <a href="vertex-level-access-control.md#Use-tag-functions-in-a-DML-query-to-update-base-graph-vertices">tag the vertices</a> you want to include in the tag-based graph, and run the query.</p>
+<p><strong>Tag vertices</strong>. Write a DML query on the base graph and use the tag functions in the query to <a href="vlac.adoc#_add_tags_on_existing_data">tag the vertices</a> you want to include in the tag-based graph, and run the query.</p>
 </li>
 <li>
 <p><strong>Grant users permission to the tag-based graph</strong>. On the tag-based graph B, grant roles that have the appropriate privileges for graph <code>B</code> to the target users.</p>
 </li>
 </ol>
 </div>
-<h4 id="_scenario_ii" class="discrete"><strong>Scenario II</strong> <a id="Scenario-II:-Before-you-ingest-a-source-file-to-a-base-graph,-you-can-derive-tags(classes)-of-each-vertex-type.-You-want-to-grant-a-group-of-users-access-permissions-based-on-the-vertex-tags."></a></h4>
+<h4 id="_scenario_ii" class="discrete"><strong>Scenario II</strong></h4>
 <div class="paragraph">
 <p><strong>Problem</strong></p>
 </div>
@@ -1295,23 +1308,23 @@ RUN QUERY findAll()</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Define tags</strong>. <a href="vertex-level-access-control.md#define-a-tag">Declare tags</a> <code>T1, T2, … Tn</code> for all the classes in your source file in a schema change job.</p>
+<p><strong>Define tags</strong>. <a href="vlac.adoc#_define_a_tag">Declare tags</a> <code>T1, T2, … Tn</code> for all the classes in your source file in a schema change job.</p>
 </li>
 <li>
-<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types of the vertices in your source file that have class annotations, and<a href="vertex-level-access-control.md#taggable-vertex-types">mark those vertex types as taggable</a> in a schema change job.</p>
+<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types of the vertices in your source file that have class annotations, and <a href="#_mark_vertex_types_as_taggable">mark those vertex types as taggable</a> in a schema change job.</p>
 </li>
 <li>
-<p><strong>Define a tag-based graph</strong>.<a href="vertex-level-access-control.md#create-a-tag-based-graph">Define a tag-based graph</a> <code>B</code> with <code>T1</code> as the tag expression.</p>
+<p><strong>Define a tag-based graph</strong>. <a href="vlac.adoc#_create_a_tag_based_graph">Define a tag-based graph</a> <code>B</code> with <code>T1</code> as the tag expression.</p>
 </li>
 <li>
-<p><strong>Explicitly tag vertices during data loading</strong>. Write a base graph loading job, and in the loading job, use a <code>TAGS() BY</code> clause to <a href="vertex-level-access-control.md#set-tags-explicitly-during-data-loading">explicitly add tags</a> to the ingested vertices.</p>
+<p><strong>Explicitly tag vertices during data loading</strong>. Write a base graph loading job, and in the loading job, use a <code>TAGS() BY</code> clause to <a href="vlac.adoc#_set_tags_explicitly_with_tags_clause">explicitly add tags</a> to the ingested vertices.</p>
 </li>
 <li>
 <p><strong>Grant roles on the tag-based graph</strong>. On the tag-based graph <code>B</code>, grant roles that have the appropriate privileges for the graph <code>B</code> to target users.</p>
 </li>
 </ol>
 </div>
-<h4 id="_scenario_iii" class="discrete"><strong>Scenario III</strong> <a id="Scenario-III:-A-base-graph-admin-want-to-give-read/write-access-to-a-group-of-user-who-only-generate-a-class-of-vertices."></a></h4>
+<h4 id="_scenario_iii" class="discrete"><strong>Scenario III</strong></h4>
 <div class="paragraph">
 <p><strong>Problem</strong></p>
 </div>
@@ -1327,13 +1340,13 @@ RUN QUERY findAll()</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Define a tag</strong>. <a href="vertex-level-access-control.md#define-a-tag">Declare a tag</a> <code>T</code> for this application in a schema change job.</p>
+<p><strong>Define a tag</strong>. <a href="vlac.adoc#_define_a_tag">Declare a tag</a> <code>T</code> for this application in a schema change job.</p>
 </li>
 <li>
-<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types to give selective access to, and <a href="vertex-level-access-control.md#taggable-vertex-types">mark the relevant vertex types as taggable</a> in a schema change job.</p>
+<p><strong>Mark vertex types as taggable</strong>. Identify the vertex types to give selective access to, and <a href="vlac.adoc#_mark_vertex_types_as_taggable">mark the relevant vertex types as taggable</a> in a schema change job.</p>
 </li>
 <li>
-<p><strong>Define a tag-based graph</strong>. <a href="vertex-level-access-control.md#create-a-tag-based-graph">Define a tag-based graph</a> <code>B</code> with <code>T</code> as the tag expression.</p>
+<p><strong>Define a tag-based graph</strong>. <a href="#_create_a_tag_based_graph">Define a tag-based graph</a> <code>B</code> with <code>T</code> as the tag expression.</p>
 </li>
 <li>
 <p><strong>Grant roles on the tag-based graph</strong>. On the tag-based graph, grant roles with the appropriate privileges to target users.</p>

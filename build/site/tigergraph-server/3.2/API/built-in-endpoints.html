@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -730,7 +742,7 @@ blue_commons         release_2.6.0_05-09-2020 432763afc49bf986aed4731e50254243d3
 <p><code>POST /ts3/api/datapoints</code></p>
 </div>
 <div class="paragraph">
-<p>TigerGraph System State Service (TS3) is TigerGraph&#8217;s managed monitoring service that collects system metrics and events. Many TigerGraph components will report metrics such as CPU usage, memory usage, disk usage, and network traffic to TS3 at regular intervals. You can use this endpoint to read from TS3,  filtering for the data points you need by time (<code>when</code>, <code>from</code>, and <code>to</code>), component(<code>who</code>), metric(<code>what</code>) and location(<code>where</code>). Visualization of such metrics are available in Admin Portal - Dashboard - <a href="../../ui/admin-portal/dashboard.md#TigerGraphAdminPortalUIGuide-Charts">Cluster Monitoring</a>.</p>
+<p>TigerGraph System State Service (TS3) is TigerGraph&#8217;s managed monitoring service that collects system metrics and events. Many TigerGraph components will report metrics such as CPU usage, memory usage, disk usage, and network traffic to TS3 at regular intervals. You can use this endpoint to read from TS3,  filtering for the data points you need by time (<code>when</code>, <code>from</code>, and <code>to</code>), component(<code>who</code>), metric(<code>what</code>) and location(<code>where</code>). Visualization of such metrics are available in Admin Portal - Dashboard - <a href="../../../tigergraph-gui/3.2/admin-portal/dashboard.html" class="page">Cluster Monitoring</a>.</p>
 </div>
 <div class="paragraph">
 <p>On a TigerGraph cluster, this endpoint is only present on the <code>m1</code> node.</p>
@@ -1312,7 +1324,7 @@ $ curl -X GET 'http://localhost:9000/deleted_vertex_check?threadnum=10&amp;verbo
 <h2 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The endpoints in this subsection allow users to create, refresh and delete authentication tokens for requests made to the REST&#43;&#43; server. <strong>These endpoints only exist when</strong> <a href=""><strong>user authentication is enabled</strong></a> <strong>on RESTPP endpoints.</strong></p>
+<p>The endpoints in this subsection allow users to create, refresh and delete authentication tokens for requests made to the REST&#43;&#43; server. <strong>These endpoints only exist when</strong> <a href="../user-access/enabling-user-authentication.html" class="page"><strong>user authentication is enabled</strong></a> <strong>on RESTPP endpoints.</strong></p>
 </div>
 <div class="sect2">
 <h3 id="_request_a_token_get"><a class="anchor" href="#_request_a_token_get"></a>Request a token (<code>GET</code>)</h3>
@@ -1325,7 +1337,7 @@ $ curl -X GET 'http://localhost:9000/deleted_vertex_check?threadnum=10&amp;verbo
 <div class="ulist">
 <ul>
 <li>
-<p>A secret, which is a random string generated in GSQL (see<a href="">Managing User Privileges and Authentication</a>)</p>
+<p>A secret, which is a random string generated in GSQL (see <a href="../user-access/managing-credentials.html" class="page">Managing User Privileges and Authentication</a>)</p>
 </li>
 <li>
 <p>Their username and password in their request header as well as specifying the graph</p>
@@ -1551,13 +1563,10 @@ curl --user example_username:example_password -X GET "localhost:9000/requesttoke
 <p><code>POST /ddl/{graph_name}</code></p>
 </div>
 <div class="paragraph">
-<p>This endpoint is for loading data into a graph. It submits data as an HTTP request payload, to be loaded into the graph by the DDL Loader. The data payload can be formatted as generic CSV or JSON. For more details, please see<a href="../gsql-ref/ddl-and-loading/">GSQL Language Reference Part 1 - Defining Graphs and Loading Data</a>.</p>
+<p>This endpoint is for loading data into a graph. It submits data as an HTTP request payload, to be loaded into the graph by the DDL Loader. The data payload can be formatted as generic CSV or JSON. For more details, please see <a href="../../../gsql-ref/3.2/ddl-and-loading/README.html" class="page">GSQL Language Reference Part 1 - Defining Graphs and Loading Data</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the loading job references multiple files, multiple HTTP requests are needed to complete the loading job since you can only provide data for one filename varibale at a time. The loading job will skip the <code>LOAD</code> statements referencing filename variables that the request didn&#8217;t provide data for.  To provide data for a filename variable, put the data in the request body and use the <code>filename</code> parameter (explained in the parameter table below) to match the variable name defined in the loading job.</p>
-</div>
-<div class="paragraph">
-<p>If a <code>LOAD</code> statement is written using a filepath string instead of a file variable, even though the filepath is already provided in the loading job, you still need to provide data in the request body for the <code>LOAD</code> statement to run. Since there isn&#8217;t a file variable in this case, use a <a href="../gsql-ref/ddl-and-loading/creating-a-loading-job.md#position-based-file-identifier">position-based file identifier</a> to identify the filepath string you are providing data for in the <code>filename</code> parameter.</p>
 </div>
 <div class="sect3">
 <h4 id="_request_body"><a class="anchor" href="#_request_body"></a>Request body:</h4>
@@ -1699,7 +1708,7 @@ curl -X POST --data-binary @./work_at.csv \
 <p>If there are special characters in your parameter values, the special characters should use <a href="https://www.w3schools.com/tags/ref_urlencode.asp">URL encoding</a>. To avoid confusion about whether you should you one or two backslashes, we do not support backslash escapes for the <code>eol</code> or <code>sep</code> parameter.</p>
 </div>
 <div class="paragraph">
-<p>The maximum size of data you can upload via this endpoint is controlled by the <a href="intro.md#request-body-size"><code>Nginx.ClientMaxBodySize</code></a> configuration parameter (default is 200 MB).</p>
+<p>The maximum size of data you can upload via this endpoint is controlled by the <a href="intro.adoc#_request_body_size"><code>Nginx.ClientMaxBodySize</code></a> configuration parameter (default is 200 MB).</p>
 </div>
 </div>
 </div>
@@ -2244,7 +2253,7 @@ with default values for their attributes.</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The response is the number of vertices and edges that were accepted. The API uses JSON format to describe the vertices and edges to be upserted. The JSON code can be stored in a text file or specified directly in a command line. There is a maximum size for a <code>POST</code> data payload (see the <a href="intro.md#size-and-time-limits"><strong>Size Limits</strong></a> <em>**</em>section). The JSON format for describing a vertex set or edge set is summarized below.</p>
+<p>The response is the number of vertices and edges that were accepted. The API uses JSON format to describe the vertices and edges to be upserted. The JSON code can be stored in a text file or specified directly in a command line. There is a maximum size for a <code>POST</code> data payload (see the <a href="intro.adoc#_size_and_time_limits"><strong>Size Limits</strong></a> section). The JSON format for describing a vertex set or edge set is summarized below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2367,7 +2376,7 @@ with default values for their attributes.</p></td>
 <p>{% endcode %}</p>
 </div>
 <div class="paragraph">
-<p>Follow the instructions in the Introduction section to <a href="intro.md#formatting-data-in-json">format advanced data types</a>. For example, the following payload is used to upsert two <code>User</code> vertices with an attribute <code>coordinates</code> of type <code>LIST</code> and an attribute <code>measurements</code> of type <code>MAP</code>:</p>
+<p>Follow the instructions in the Introduction section to <a href="intro.adoc#_formatting_data_in_json">format advanced data types</a>. For example, the following payload is used to upsert two <code>User</code> vertices with an attribute <code>coordinates</code> of type <code>LIST</code> and an attribute <code>measurements</code> of type <code>MAP</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2559,7 +2568,7 @@ To support multiple graphs within one system, the graph data REST endpoint URLs 
 <div class="sect2">
 <h3 id="_insert_vertices"><a class="anchor" href="#_insert_vertices"></a>Insert vertices</h3>
 <div class="paragraph">
-<p>To insert vertices or edges, use the <a href="built-in-endpoints.md#upsert-data-to-graph">Upsert data to graph</a> endpoint.</p>
+<p>To insert vertices or edges, use the <a href="built-in-endpoints.adoc#_upsert_data_to_graph">Upsert data to graph</a> endpoint.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2913,7 +2922,7 @@ the system-wide endpoint timeout setting is applied.</p></td>
 <div class="sect2">
 <h3 id="_insert_edges"><a class="anchor" href="#_insert_edges"></a>Insert edges</h3>
 <div class="paragraph">
-<p>To insert vertices or edges, use the <a href="built-in-endpoints.md#upsert-data-to-graph">Upsert data to graph</a> endpoint.</p>
+<p>To insert vertices or edges, use the <a href="built-in-endpoints.adoc#_upsert_data_to_graph">Upsert data to graph</a> endpoint.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3379,7 +3388,7 @@ Use <code>"_"</code> for <code>edge_type</code> in the URL to permit any edge ty
 <h4 id="_sample_request_20"><a class="anchor" href="#_sample_request_20"></a>Sample request:</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">$ curl -u tigergraph:tigergraph -X GET \
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">$ curl -u tigergraph:tigergraph -X GET \
 "http://localhost:14240/gsqlserver/gsql/queryinfo?graph=workNet&amp;query=to_vertex_setTest"
 
 {
@@ -3516,7 +3525,7 @@ Use <code>"_"</code> for <code>edge_type</code> in the URL to permit any edge ty
 <div class="sect3">
 <h4 id="_query_parameter_passing"><a class="anchor" href="#_query_parameter_passing"></a>Query parameter passing</h4>
 <div class="paragraph">
-<p>When using a <code>GET</code> request to run an installed query, the query parameters are <a href="intro.md#query-string-parameter-passing">passed in through the query string of the URL</a>.</p>
+<p>When using a <code>GET</code> request to run an installed query, the query parameters are <a href="intro.adoc#_query_string_parameter_passing">passed in through the query string of the URL</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3646,7 +3655,7 @@ curl -X GET -H "GSQL-REPLICA: 1" "http://localhost:9000/query/social/hello?p=Tom
 <div class="sect3">
 <h4 id="_query_parameter_passing_2"><a class="anchor" href="#_query_parameter_passing_2"></a>Query parameter Passing</h4>
 <div class="paragraph">
-<p>When using a <code>POST</code> request to run an installed query, the query parameters are passed in through the request body and <a href="intro.md#formatting-data-in-json">encoded in JSON format</a>. The formatting rules for the JSON payload is the same as <a href="../gsql-ref/querying/query-operations.md#parameter-json-object">using JSON to pass in parameters in the <code>RUN QUERY</code> command</a>.</p>
+<p>When using a <code>POST</code> request to run an installed query, the query parameters are passed in through the request body and <a href="intro.adoc#_formatting_data_in_json">encoded in JSON format</a>. The formatting rules for the JSON payload is the same as <a href="../../../gsql-ref/3.2/querying/query-operations.html#_parameter_json_object" class="page">using JSON to pass in parameters in the <code>RUN QUERY</code> command</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 99%;">
 <colgroup>
@@ -3740,7 +3749,7 @@ curl -X POST -d -H "GSQL-THREAD-LIMIT: 4" '{"p":{"id":"Tom","type":"person"}}' \
 </div>
 <div class="paragraph">
 <p>{% hint style="info" %}
-Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#detached-mode-async-option">Detached Mode</a>. To do this, use the <code>GSQL-ASYNC</code>header and set its value to <code>true</code>. The <a href="built-in-endpoints.md#check-query-status-detached-mode">results</a> and <a href="built-in-endpoints.md#check-query-status-detached-mode">status</a> of the queries run in Detached Mode can be retrieved with a query ID, which is returned immediately when queries are executed in Detached Mode.
+Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#detached-mode-async-option">Detached Mode</a>. To do this, use the <code>GSQL-ASYNC</code>header and set its value to <code>true</code>. The <a href="built-in-endpoints.adoc#_check_query_status_detached_mode">results</a> and <a href="built-in-endpoints.adoc#_check_query_status_detached_mode">status</a> of the queries run in Detached Mode can be retrieved with a query ID, which is returned immediately when queries are executed in Detached Mode.
 {% endhint %}</p>
 </div>
 </div>
@@ -3765,7 +3774,7 @@ Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#d
 <div class="sect3">
 <h4 id="_parameter_passing"><a class="anchor" href="#_parameter_passing"></a>Parameter passing:</h4>
 <div class="paragraph">
-<p>When running an interpreted query through this endpoint, the query parameters should be <a href="intro.md#query-string-parameter-passing">passed in through the URL query string</a>.</p>
+<p>When running an interpreted query through this endpoint, the query parameters should be <a href="intro.adoc#_query_string_parameters">passed in through the URL query string</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3906,7 +3915,7 @@ Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#d
 <p><code>GET /query_status</code></p>
 </div>
 <div class="paragraph">
-<p>This endpoint allows you to check the status of a query run in <a href="../gsql-ref/querying/query-operations.md#detached-mode-async-option">detached mode</a>.</p>
+<p>This endpoint allows you to check the status of a query run in <a href="../../../gsql-ref/3.2/querying/query-operations.html#_detached_mode_async_option" class="page">detached mode</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_sample_request_26"><a class="anchor" href="#_sample_request_26"></a>Sample request:</h4>
@@ -3963,7 +3972,7 @@ Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#d
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>expirationTime</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp for when the given query times out. The default timeout limit is 16 seconds and can be set using the<a href="intro.md#gsql-query-timeout"><code>GSQL-TIMEOUT</code></a> header.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp for when the given query times out. The default timeout limit is 16 seconds and can be set using the <a href="intro.adoc#_gsql_query_timeout"><code>GSQL-TIMEOUT</code></a> header.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>elapsedTime</code></p></td>
@@ -4037,7 +4046,7 @@ so far.</p></td>
 <h4 id="_sample_request_27"><a class="anchor" href="#_sample_request_27"></a>Sample request:</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">$ curl -s -X GET curl -s -X GET "http://localhost:9000/query_result?requestid=196611.RESTPP_1_1.1630601692834.N"
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">$ curl -s -X GET curl -s -X GET "http://localhost:9000/query_result?requestid=196611.RESTPP_1_1.1630601692834.N"
 
 {
   "error": false,
@@ -4432,7 +4441,7 @@ AttrributeTag "action" &#8201;&#8212;&#8201; Video 2&#8201;&#8212;&#8201;VidUser
 </div>
 </div>
 <div class="paragraph">
-<p>Other versions of pathfinding algorithms are available in the <a href="../../graph-algorithm-library/#path-algorithms">GSQL Graph Algorithm Library</a>.</p>
+<p>Other versions of pathfinding algorithms are available in the <a href="#graph-ml:intro.adoc" class="page unresolved">GSQL Graph Algorithm Library</a>.</p>
 </div>
 </div>
 </div>

@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -499,7 +511,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar &lt;path&gt;gsql_client.jar</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar &lt;path&gt;gsql_client.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -507,7 +519,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">gsql DROP ALL
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">gsql DROP ALL
 gsql create_my_schema.gsql
 gsql LS</code></pre>
 </div>
@@ -517,7 +529,7 @@ gsql LS</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar gsql_client.jar DROP ALL
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar gsql_client.jar DROP ALL
 java -jar gsql_client.jar create_my_schema.gsql
 java -jar gsql_client.jar LS</code></pre>
 </div>
@@ -527,7 +539,7 @@ java -jar gsql_client.jar LS</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -572,18 +584,18 @@ java -jar gsql_client.jar LS</code></pre>
 </div>
 <div class="paragraph">
 <p>{% hint style="danger" %}
- It is strongly recommended that you enable user authentication. See the document <a href="../admin/admin-guide/user-access/user-privileges-and-authentication.md#gsql-authentication"><em>*Managing User Privileges and Authentication v2.1#GSQLAuthentication*</em></a> <em>_**</em>_for more details.
+ It is strongly recommended that you enable user authentication. See the document <a href="../user-access/enabling-user-authentication.html" class="page">Enabling User Authentication</a> for more details.
 {% endhint %}</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_https_connection"><a class="anchor" href="#_https_connection"></a>HTTPS Connection</h3>
 <div class="paragraph">
-<p>If SSL/TLS is enabled for TigerGraph, to connect a GSQL remote client to the GSQL server, each GSQL command line should provide the certificate chain file via the -cacert option. This certificate file should be exactly the same as the file of entry Nginx.SSL.Cert setting SSL for Nginx. See <a href="../admin/admin-guide/data-encryption/encrypting-connections.md#step-2-configure-ssl-with-gadmin">Encrypting Connections: Step 2. Configure SSL with Gadmin</a>. For example:</p>
+<p>If SSL/TLS is enabled for TigerGraph, to connect a GSQL remote client to the GSQL server, each GSQL command line should provide the certificate chain file via the -cacert option. This certificate file should be exactly the same as the file of entry Nginx.SSL.Cert setting SSL for Nginx. See <a href="../security/encrypting-connections.html" class="page">Encrypting Connections: Step 2. Configure SSL with gadmin</a>. For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gsql -cacert /path/to/certificate -ip hostname:port</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gsql -cacert /path/to/certificate -ip hostname:port</code></pre>
 </div>
 </div>
 </div>
@@ -608,7 +620,7 @@ Rule: If a remote GSQL client invokes an instruction containing a relative path,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</code></pre>
 </div>
 </div>
 </div>
@@ -665,7 +677,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">123.45.67.255</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">123.45.67.255</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -680,7 +692,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql='java -jar ~/gsql_client/gsql_client.jar'</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql='java -jar ~/gsql_client/gsql_client.jar'</code></pre>
 </div>
 </div>
 <div class="olist upperalpha">
@@ -695,7 +707,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">alias gsql='java -jar gsql_client.jar'
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
 ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</code></pre>
@@ -735,7 +747,7 @@ ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">#!/bin/bash
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">#!/bin/bash
 alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar

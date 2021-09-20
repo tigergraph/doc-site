@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -488,7 +500,7 @@
 </div>
 <h3 id="_data_types" class="discrete">Data Types</h3>
 <div class="paragraph">
-<p>See <a href="#../../dev/gsql-ref/querying/data-types.adoc" class="page unresolved">Data Types in GSQL Language Reference</a></p>
+<p>See <a href="../../../gsql-ref/3.2/querying/data-types.html" class="page">Data Types in GSQL Language Reference</a></p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -546,7 +558,8 @@
 </table>
 <h3 id="_syntax_for_control_flow_statements" class="discrete">Syntax for Control Flow Statements</h3>
 <div class="paragraph">
-<p>See xref:../../dev/gsql-ref/querying/control-flow-statements.adoc<span class="Control Flow Statements in GSQL Language Reference"><table></span><thead><tr><th style="text-align:left">Deprecated Statement</th>
+<p>See <a href="../../../gsql-ref/3.2/querying/control-flow-statements.html" class="page">Control Flow Statements in GSQL Language Reference</a>
+<table><thead><tr><th style="text-align:left">Deprecated Statement</th>
       <th style="text-align:left">Alternate Statement</th></tr></thead>
   <tbody><tr><td style="text-align:left">FOREACH ... DO ... DONE</td>
       <td style="text-align:left">FOREACH... DO... END</td></tr>
@@ -600,39 +613,20 @@
 </table>
 <h3 id="_query_job_and_token_management" class="discrete">Query, Job, and Token Management</h3>
 <div class="paragraph">
-<p>These are documented in several places throughout the GSQL Language Reference:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="../../dev/gsql-ref/querying/query-operations.md#create-query-statement">CREATE QUERY Statement</a></p>
-</li>
-<li>
-<p><a href="#../../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.adoc" class="page unresolved">Creating a Loading Job</a> and <a href="#../../dev/gsql-ref/ddl-and-loading/running-a-loading-job.adoc" class="page unresolved">Running a Loading Job</a></p>
-</li>
-<li>
-<p><a href="../../dev/gsql-ref/ddl-and-loading/modifying-a-graph-schema.md#run-schema_change-job">RUN SCHEMA_CHANGE JOB</a>, and <a href="../../dev/gsql-ref/ddl-and-loading/modifying-a-graph-schema.md#run-global-schema_change-job">RUN GLOBAL SCHEMA_CHANGE JOB</a></p>
-</li>
-<li>
-<p><a href="">CREATE / SHOW / DROP / REFRESH Token</a></p>
-</li>
-<li>
-<p>link:../../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.md#offline-2-online-job-conversion-deprecated<span class="offline2online in 'Creating a Loading Job'"><table></span><thead><tr><th style="text-align:left">Deprecated Operation</th>
-    <th style="text-align:left">Alternate Operation</th></tr></thead>
-<tbody><tr><td style="text-align:left">CREATE JOB <span class="loading job definition"></td></span>
-    <td style="text-align:left">CREATE LOADING JOB <span class="loading job definition"></td></span></tr>
-  <tr><td style="text-align:left">RUN JOB <span class="for loading and schema change jobs"></td></span>
-    <td style="text-align:left"><p>Specify the job type:</p>
-      <p>RUN LOADING JOB</p>
-      <p>RUN SCHEMA_CHANGE JOB</p>
-      <p>RUN GLOBAL SCHEMA_CHANGE JOB</p></td></tr>
-  <tr><td style="text-align:left">CREATE / SHOW/ REFRESH TOKEN</td>
-    <td style="text-align:left">To create a token, use the REST endpoint GET /requesttoken</td></tr>
-  <tr><td style="text-align:left">offline2online</td>
-    <td style="text-align:left">The offline loading job mode was discontinued in v2.0. Do not write loading
-      jobs using this syntax.</td></tr></tbody></table></p>
-</li>
-</ul>
+<p><table><thead><tr><th style="text-align:left">Deprecated Operation</th>
+      <th style="text-align:left">Alternate Operation</th></tr></thead>
+  <tbody><tr><td style="text-align:left">CREATE JOB <span class="loading job definition"></td></span>
+      <td style="text-align:left">CREATE LOADING JOB <span class="loading job definition"></td></span></tr>
+    <tr><td style="text-align:left">RUN JOB <span class="for loading and schema change jobs"></td></span>
+      <td style="text-align:left"><p>Specify the job type:</p>
+        <p>RUN LOADING JOB</p>
+        <p>RUN SCHEMA_CHANGE JOB</p>
+        <p>RUN GLOBAL SCHEMA_CHANGE JOB</p></td></tr>
+    <tr><td style="text-align:left">CREATE / SHOW/ REFRESH TOKEN</td>
+      <td style="text-align:left">To create a token, use the REST endpoint GET /requesttoken</td></tr>
+    <tr><td style="text-align:left">offline2online</td>
+      <td style="text-align:left">The offline loading job mode was discontinued in v2.0. Do not write loading
+        jobs using this syntax.</td></tr></tbody></table></p>
 </div>
 <h3 id="_output" class="discrete">Output</h3>
 <div class="paragraph">
@@ -662,14 +656,14 @@
 </table>
 <h3 id="_built_in_queries" class="discrete">Built-in Queries</h3>
 <div class="paragraph">
-<p>See xref:../../start/gsql-101/built-in-select-queries.adoc<span class="Run Built-in Queries in 'GSQL 101'"><table></span><thead><tr><th style="text-align:left">Deprecated Statement</th>
+<p><span class="Run Built-in Queries in 'GSQL 101'"><table></span><thead><tr><th style="text-align:left">Deprecated Statement</th>
       <th style="text-align:left">Alternate Statement</th></tr></thead>
   <tbody><tr><td style="text-align:left"><p>SELECT count() FROM ...</p>
         <p>// count may be out of date</p></td>
-      <td style="text-align:left"><p>SELECT approx_count(<strong>) FROM ...</p>
+      <td style="text-align:left"><p>SELECT approx_count(*) FROM ...</p>
         <p>// same behavior as count(); may not include all the latest data updates
           <br></br></p>
-        <p>SELECT count(</strong>) FROM ...</p>
+        <p>SELECT count(*) FROM ...</p>
         <p>// exact, but slower than approx_count(*)</p></td></tr></tbody></table></p>
 </div>
 </article>

@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -492,7 +504,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE ROLE &lt;role_name&gt; (, &lt;role_name&gt;)* [ON GRAPH &lt;graph_name&gt;]</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">CREATE ROLE &lt;role_name&gt; (, &lt;role_name&gt;)* [ON GRAPH &lt;graph_name&gt;]</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -510,7 +522,7 @@
 <p>To create a local role, run the <code>CREATE ROLE</code> command like below. If you choose not to specify a graph in the command, the current scope will be used as the scope of the role:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">GSQL &gt; USE GRAPH example_graph
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">GSQL &gt; USE GRAPH example_graph
 GSQL &gt; CREATE ROLE role1, role2</code></pre>
 </div>
 </div>
@@ -529,7 +541,7 @@ GSQL &gt; CREATE ROLE role1, role2</code></pre>
 <h4 id="_syntax" class="discrete">Syntax</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE ROLE &lt;role_name&gt; (, &lt;role_name&gt;)* ON GLOBAL</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">CREATE ROLE &lt;role_name&gt; (, &lt;role_name&gt;)* ON GLOBAL</code></pre>
 </div>
 </div>
 <h4 id="_required_privilege" class="discrete">Required privilege</h4>
@@ -546,7 +558,7 @@ GSQL &gt; CREATE ROLE role1, role2</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">CREATE ROLE role1 ON GLOBAL</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">CREATE ROLE role1 ON GLOBAL</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -686,7 +698,7 @@ This role has no privilege.</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>This will allow users with the roles <code>role1</code> and <code>role2</code> to edit and install queries, as well as modify roles on the graph <code>example_graph</code>. To see a full list of privileges and the command they allow users to run, see <a href="#../reference/list-of-privileges.adoc" class="page unresolved">List of Privileges</a>.</p>
+<p>This will allow users with the roles <code>role1</code> and <code>role2</code> to edit and install queries, as well as modify roles on the graph <code>example_graph</code>. To see a full list of privileges and the command they allow users to run, see <a href="../reference/list-of-privileges.html" class="page">List of Privileges</a>.</p>
 </div>
 <h3 id="_revoke_privileges_from_a_role" class="discrete">Revoke privileges from a role</h3>
 <div class="paragraph">

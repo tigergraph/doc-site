@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -496,10 +508,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Each user <a href="../../admin/admin-guide/user-access/managing-credentials.md#create-a-secret">can create one or more <strong>secrets</strong> (unique pseudorandom strings)</a>. Each secret is associated with a particular user and the user&#8217;s privileges for a particular graph.</p>
+<p>Each user <a href="../user-access/managing-credentials.html#_create_a_secret" class="page">can create one or more <strong>secrets</strong> (unique pseudorandom strings)</a>. Each secret is associated with a particular user and the user&#8217;s privileges for a particular graph.</p>
 </li>
 <li>
-<p>Anyone who has this secret can invoke a special REST endpoint to <a href="built-in-endpoints.md#request-a-token-get">generate authorization <strong>tokens</strong></a> <em>**</em>(other pseudorandom strings).</p>
+<p>Anyone who has this secret can invoke a special REST endpoint to <a href="built-in-endpoints.adoc#_request_a_token_get">generate authorization <strong>tokens</strong></a> (other pseudorandom strings).</p>
 </li>
 <li>
 <p>An authorization token can then be used to perform TigerGraph database operations via other REST endpoints. Each token will expire after a certain period of time. The TigerGraph default lifetime for a token is 1 month.</p>

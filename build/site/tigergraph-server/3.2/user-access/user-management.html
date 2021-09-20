@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -572,7 +584,7 @@ The user "frank" is created.</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">SHOW PRIVILEGE ON USER &lt;username&gt; (, &lt;username&gt;)*</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">SHOW PRIVILEGE ON USER &lt;username&gt; (, &lt;username&gt;)*</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -634,7 +646,7 @@ The user "frank" is created.</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">GRANT ROLE &lt;role_name1&gt; (, role_name2)* [ON GRAPH &lt;graph_name&gt;]
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">GRANT ROLE &lt;role_name1&gt; (, role_name2)* [ON GRAPH &lt;graph_name&gt;]
         TO &lt;username1&gt; (, &lt;username2&gt;)*</code></pre>
 </div>
 </div>
@@ -678,7 +690,7 @@ GSQL &gt; USE GRAPH example_graph</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">REVOKE ROLE &lt;roleName1&gt; (, &lt;roleName2)* [ON GRAPH &lt;graphName&gt;]
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">REVOKE ROLE &lt;roleName1&gt; (, &lt;roleName2)* [ON GRAPH &lt;graphName&gt;]
         FROM &lt;userName1&gt; (, &lt;userName2&gt;)*</code></pre>
 </div>
 </div>
@@ -722,7 +734,7 @@ GSQL &gt; USE GRAPH example_graph</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">ALTER PASSWORD &lt;username&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">ALTER PASSWORD &lt;username&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -755,7 +767,7 @@ GSQL &gt; USE GRAPH example_graph</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-erlang hljs" data-lang="erlang">DROP USER &lt;user1&gt; (,&lt;user2&gt;)*</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">DROP USER &lt;user1&gt; (,&lt;user2&gt;)*</code></pre>
 </div>
 </div>
 <div class="paragraph">

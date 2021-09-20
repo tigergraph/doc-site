@@ -1,0 +1,18 @@
+= TigerGraph Documentation Site Build
+
+This repository contains the Antora playbook used to build the TigerGraph documentation site.
+
+== Install dependencies
+To install dependencies:
+[,bash]
+----
+npm i
+----
+
+== Build site locally
+To build the site locally, run:
+[,bash]
+----
+antora generate --fetch antora-playbook.yml
+----
+The build will be available in the `build/` folder in the root directory.

@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -596,7 +608,7 @@
 When the primary cluster executes an <code>IMPORT</code> , <code>DROP ALL</code>, or<code>CLEAR GRAPH STORE</code> GSQL command, or the <code>gsql --reset</code> bash command, the services on the DR cluster will stop syncing with the primary and become outdated.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="cross-region-replication.md#sync-an-outdated-dr-cluster">Sync an outdated DR cluster</a> on how to bring an outdated DR cluster back in sync.
+<p>See <a href="#_sync_an_outdated_dr_cluster">Sync an outdated DR cluster</a> on how to bring an outdated DR cluster back in sync.
 {% endhint %}</p>
 </div>
 </div>
@@ -630,7 +642,7 @@ This setup assumes that you are setting up a DR cluster for an existing primary 
 <div class="sect2">
 <h3 id="_step_1_backup_primary_data"><a class="anchor" href="#_step_1_backup_primary_data"></a>Step 1: Backup primary data</h3>
 <div class="paragraph">
-<p>Use GBAR to <a href="system-management/backup-and-restore.md#backup">create a backup</a> of the primary cluster. See <a href="#system-management/backup-and-restore.adoc" class="page unresolved">Backup and Restore</a> on how to create a backup.</p>
+<p>Use GBAR to <a href="../backup-and-restore/backup-and-restore.html" class="page">create a backup</a> of the primary cluster. See <a href="../backup-and-restore/backup-and-restore.html" class="page">Backup and Restore</a> on how to create a backup.</p>
 </div>
 <div class="paragraph">
 <p>If you are setting up both the primary cluster and the DR cluster from scratch, you can skip Steps 1, 2, and 4 and only perform Step 3.</p>
@@ -639,7 +651,7 @@ This setup assumes that you are setting up a DR cluster for an existing primary 
 <div class="sect2">
 <h3 id="_step_2_restore_on_the_dr_cluster"><a class="anchor" href="#_step_2_restore_on_the_dr_cluster"></a>Step 2: Restore on the DR cluster</h3>
 <div class="paragraph">
-<p>Copy the backup files from every node to every node on the new cluster.  <a href="system-management/backup-and-restore.md#restore">Restore the backup</a> of the primary cluster on the DR cluster. See <a href="#system-management/backup-and-restore.adoc" class="page unresolved">Backup and Restore</a> on how to restore a backup.</p>
+<p>Copy the backup files from every node to every node on the new cluster.  <a href="../backup-and-restore/backup-and-restore.html#restore" class="page">Restore the backup</a> of the primary cluster on the DR cluster. See <a href="../backup-and-restore/backup-and-restore.html" class="page">Backup and Restore</a> on how to restore a backup.</p>
 </div>
 </div>
 <div class="sect2">
@@ -798,7 +810,7 @@ gadmin restart all -y</code></pre>
 <p>When the primary cluster executes an <code>IMPORT</code>, <code>DROP ALL</code>, or <code>CLEAR GRAPH STORE</code> GSQL command, or the <code>gsql --reset</code> bash command, the services on the DR cluster will stop syncing with the primary and become outdated.</p>
 </div>
 <div class="paragraph">
-<p>To bring an outdated cluster back in sync, you need to generate a fresh backup of the primary cluster, and perform the <a href="cross-region-replication.md#setup">setup steps</a> again. However, you can skip Step 3: Enable CRR on the DR cluster, because CRR will have already been enabled.</p>
+<p>To bring an outdated cluster back in sync, you need to generate a fresh backup of the primary cluster, and perform the <a href="#_setup">setup steps</a> again. However, you can skip Step 3: Enable CRR on the DR cluster, because CRR will have already been enabled.</p>
 </div>
 </div>
 </div>

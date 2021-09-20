@@ -116,6 +116,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -358,7 +370,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -497,7 +509,7 @@
 </td>
 <td class="content">
 If you signed up for the Enterprise Free license, you also have access to the TigerGraph platform as a Docker image or a virtual machine (VirtualBox) image.
-Follow the instructions in <a href="#../../../cloud/getting-started.adoc" class="page unresolved">Getting started</a> to start up TigerGraph in a Docker container or with VirtualBox.
+Follow the instructions in <a href="#cloud:start:getting-started.adoc" class="page unresolved">Getting started</a> to start up TigerGraph in a Docker container or with VirtualBox.
 </td>
 </tr>
 </table>
@@ -656,7 +668,7 @@ $ sudo ./install.sh
 </ul>
 </div>
 <div class="paragraph">
-<p>To see what the default settings are, read the <a href="install.adoc#installation-options">Installation options</a> section below.</p>
+<p>To see what the default settings are, read the <a href="install.adoc#_installation_options">Installation options</a> section below.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -733,7 +745,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 <div class="sect3">
 <h4 id="_step_4_verify_installation"><a class="anchor" href="#_step_4_verify_installation"></a><strong>Step 4</strong>: Verify installation</h4>
 <div class="paragraph">
-<p>After installation is complete, you can switch to the Linux user who owns the platform (created in <a href="install.md#step-2-run-installation-script">Step 2</a>) with the following command :</p>
+<p>After installation is complete, you can switch to the Linux user who owns the platform (created in <a href="install.adoc#_step_2_run_installation_script">Step 2</a>) with the following command :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -744,7 +756,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 <p>At the prompt, enter the password that was set in Step 2.</p>
 </div>
 <div class="paragraph">
-<p>After switching to the correct user, you now have access to <a href="#../system-management/management-with-gadmin.adoc" class="page unresolved"><code>gadmin</code> commands</a>. Confirm successful installation by running <code>gadmin status</code>. If the system is installed correctly and the license is activated, the command should report that all services are up and ready. Since there is no graph data loaded yet, GSE <em>**</em>and GPE will show <code>"Warmup"</code>.</p>
+<p>After switching to the correct user, you now have access to <a href="#gadmin:management-with-gadmin:adoc"><code>gadmin</code> commands</a>. Confirm successful installation by running <code>gadmin status</code>. If the system is installed correctly and the license is activated, the command should report that all services are up and ready. Since there is no graph data loaded yet, GSE <em>**</em>and GPE will show <code>"Warmup"</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -901,7 +913,7 @@ In TigerGraph 3.x, the installation machine can be within or outside the cluster
 </div>
 </li>
 <li>
-<p><code>"ReplicationFactor"</code>: <a href="../../../tigergraph-platform-overview/continuous-availability-overview.md#continuous-availability-definitions">Replication factor</a> of the cluster.</p>
+<p><code>"ReplicationFactor"</code>: <a href="../intro/continuous-availability-overview.html#_continuous_availability__definitions" class="page">Replication factor</a> of the cluster.</p>
 <div class="ulist">
 <ul>
 <li>

@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="system-administration-faqs.html">System Administration FAQs</a>
@@ -777,7 +789,7 @@ $ grun all “grep UDF:: /home/tigergraph/tigergraph/logs/GPE_*/log.INFO | tail 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Insufficient Memory</strong> When a query begins to use too much memory, the engine will start to put data onto the disk, and memory swapping will also kick in. Use the Linux command: <strong><code>free -g</code></strong> to check available memory and swap status, or you can also <a href="troubleshooting-guide.md#how-to-monitor-memory-usage-by-query">monitor the memory usage of specific queries through GPE logs</a>. To avoid running into insufficient memory problems, optimize the data structure used within the query or increase the physical memory size on the machine.</p>
+<p><strong>Insufficient Memory</strong> When a query begins to use too much memory, the engine will start to put data onto the disk, and memory swapping will also kick in. Use the Linux command: <strong><code>free -g</code></strong> to check available memory and swap status, or you can also <a href="troubleshooting-guide.adoc#_how_to_monitor_memory_usage_by_query">monitor the memory usage of specific queries through GPE logs</a>. To avoid running into insufficient memory problems, optimize the data structure used within the query or increase the physical memory size on the machine.</p>
 </li>
 <li>
 <p><strong>GSQL Logic</strong> Usually, a single server machine can process up to 20 million edges per second. If the actual number of vertices or edges is much much lower,  most of the time it can be due to inefficient query logic. That is, the query logic is now following the natural execution of GSQL. You will need to optimize your query to tune the performance.</p>
@@ -814,7 +826,7 @@ $ grun all “grep UDF:: /home/tigergraph/tigergraph/logs/GPE_*/log.INFO | tail 
 <p><strong>Query is in an infinite loop</strong> To verify this is the issue, check the GPE log.INFO file to see if graph iteration log lines are continuing to be produced. If they are, and the edgeMaps log the same number of edges every few iterations, you have an infinite loop in your query.  If this is the case, please restart GPE to stop the query : <strong><code>gadmin restart gpe -y</code></strong>. Proceed to refine your query and make sure your loops within the query are able to break out of the loop.</p>
 </li>
 <li>
-<p><strong>Query is simply slow</strong> If you have a very large graph, please be patient. Ensure that there is no infinite loop in your query, and refer to the <a href="troubleshooting-guide.md#slow-query-performance">slow query performance</a> section for possible causes.</p>
+<p><strong>Query is simply slow</strong> If you have a very large graph, please be patient. Ensure that there is no infinite loop in your query, and refer to the <a href="troubleshooting-guide.adoc#_slow_query_performance">slow query performance</a> section for possible causes.</p>
 </li>
 <li>
 <p><strong>GraphStudio Error</strong> If you are running the query from GraphStudio, the loading bar may continue spinning as if the query has not finished running. You can right-click the page and select <em>inspect&#8594;console</em> (in the Google Chrome browser) __and try to find any suspicious errors there.</p>
@@ -857,7 +869,7 @@ The number of vertices and edges traversed can be observed in the GPE log.INFO f
 </div>
 </div>
 <div class="paragraph">
-<p>Go down to the last error and it will point you to the error. This will show you any query errors that could be causing the failed installation. If you have created a <a href="../dev/gsql-ref/querying/operators-and-expressions.md#user-defined-functions">user-defined function</a>, you could potentially have a c&#43;&#43; compilation error.</p>
+<p>Go down to the last error and it will point you to the error. This will show you any query errors that could be causing the failed installation. If you have created a <a href="../../../gsql-ref/3.2/querying/func/query-user-defined-functions.html" class="page">user-defined function</a>, you could potentially have a c&#43;&#43; compilation error.</p>
 </div>
 <div class="paragraph">
 <p>{% hint style="danger" %}
@@ -923,7 +935,7 @@ CurrentGB|1|SysMinFreePct|10|SysAlertFreePct|30|FreePct|69</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When free memory drops below 10 percent (<code>SysMinFreePct</code>), all queries are aborted. This threshold is adjustable through <a href="../admin/admin-guide/system-management/management-with-gadmin.md#gadmin-config"><code>gadmin config</code></a>.</p>
+<p>When free memory drops below 10 percent (<code>SysMinFreePct</code>), all queries are aborted. This threshold is adjustable through <a href="../gadmin/management-with-gadmin.html#_gadmin_config" class="page"><code>gadmin config</code></a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1083,7 +1095,7 @@ $ gadmin --config apply</code></pre>
 <p>Any invalid lines in the data source file. Check the log file for any errors. If an input value does not match the vertex or edge type, the corresponding vertex or edge will not be created.</p>
 </li>
 <li>
-<p>Using quotes in the data file may cause interference with the tokenization of elements in the data file. Please check the GSQL Language Reference section under <a href="../dev/gsql-ref/ddl-and-loading/creating-a-loading-job.md#other-optional-load-clauses">Other Optional LOAD Clauses</a>. Look for the QUOTE parameter to see how you should set up your loading job.</p>
+<p>Using quotes in the data file may cause interference with the tokenization of elements in the data file. Please check the GSQL Language Reference section under <a href="../../../gsql-ref/3.2/ddl-and-loading/creating-a-loading-job.html#_other_optional_load_clauses" class="page">Other Optional LOAD Clauses</a>. Look for the QUOTE parameter to see how you should set up your loading job.</p>
 </li>
 <li>
 <p>Your loading job loads edges in the incorrect order. When you defined the graph schema, the <strong>from</strong>  and <strong>to</strong> vertex order will affect the way you write the loading job. If you wrote the loading job in reversed order, the edges will not be created, possibly also affecting the population of vertices.</p>
@@ -1141,7 +1153,7 @@ $ gadmin --config apply</code></pre>
 <h2 id="_schema_change_debugging"><a class="anchor" href="#_schema_change_debugging"></a>Schema Change Debugging</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section will only cover the debugging schema change jobs, for more information about schema changes, please read the <a href="#../dev/gsql-ref/ddl-and-loading/modifying-a-graph-schema.adoc" class="page unresolved">Modifying a Graph Schema</a> page.</p>
+<p>This section will only cover the debugging schema change jobs, for more information about schema changes, please read the <a href="../../../gsql-ref/3.2/ddl-and-loading/modifying-a-graph-schema.html" class="page">Modifying a Graph Schema</a> page.</p>
 </div>
 <div class="paragraph">
 <p>Understanding what happens behind the scenes during a schema change.</p>
@@ -1381,13 +1393,13 @@ If GSE crashes, and there are no reports of OOM, please reach out to TigerGraph 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Huge JSON response</strong> User-written queries can return very large JSON responses. If GraphStudio often crashes on large query responses, you can try reducing the size limit for JSON responses by changing the <code>GUI.RESTPPResponseMaxSizeBytes</code> configuration using <a href="../admin/admin-guide/system-management/management-with-gadmin.md#gadmin-config"><code>gadmin config</code></a>. The default limit is 33554432 bytes.</p>
+<p><strong>Huge JSON response</strong> User-written queries can return very large JSON responses. If GraphStudio often crashes on large query responses, you can try reducing the size limit for JSON responses by changing the <code>GUI.RESTPPResponseMaxSizeBytes</code> configuration using <a href="../gadmin/management-with-gadmin.html#_gadmin_config" class="page"><code>gadmin config</code></a>. The default limit is 33554432 bytes.</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gadmin config entry GUI.RESTPPResponseMaxSizeBytes
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gadmin config entry GUI.RESTPPResponseMaxSizeBytes
 New: 33554431
 [   Info] Configuration has been changed. Please use 'gadmin config apply' to persist the changes.
 $ gadmin config apply</code></pre>
@@ -1436,7 +1448,7 @@ VIS : /home/tigergraph/tigergraph/logs/gui/gui_INFO.log</code></pre>
 <div class="sect3">
 <h4 id="_known_issues"><a class="anchor" href="#_known_issues"></a>Known Issues</h4>
 <div class="paragraph">
-<p>There is a list of known GraphStudio issues <a href="#../ui/graphstudio/known-issues.adoc" class="page unresolved">here</a>.</p>
+<p>There is a list of known GraphStudio issues <a href="#gui:graphstudio:known-issues.adoc" class="page unresolved">here</a>.</p>
 </div>
 </div>
 </div>

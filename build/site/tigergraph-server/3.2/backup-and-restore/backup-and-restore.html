@@ -116,6 +116,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -358,7 +370,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -489,7 +501,7 @@
 <div class="paragraph">
 <p>The backup feature packs TigerGraph data and configuration information into a directory on the local disk or a remote AWS S3 bucket. Multiple backup files can be archived. Later, you can use the restore feature to roll back the system to any backup point. This tool can also be integrated easily with Linux cron to perform periodic backup jobs.</p>
 </div>
-<h3 id="_syntax" class="discrete">Syntax <a id="GBAR-GraphBackupandRestorev2.1-IntroductionandSyntax"></a></h3>
+<h3 id="_syntax" class="discrete">Syntax</h3>
 <div class="paragraph">
 <p>{% hint style="info" %}
 The current version of GBAR is intended for restoring the same machine that was backed up. For help with cloning a database (i.e., backing up machine A and restoring the database to machine B), please contact <a href="mailto:support@tigergraph.com">support@tigergraph.com</a>.
@@ -533,7 +545,7 @@ The current version of GBAR is intended for restoring the same machine that was 
 </li>
 </ul>
 </div>
-<h3 id="_configure_gbar" class="discrete">Configure GBAR  <a id="config"></a></h3>
+<h3 id="_configure_gbar" class="discrete">Configure GBAR</h3>
 <div class="paragraph">
 <p>Before using the backup or the restore feature, GBAR must be configured.</p>
 </div>
@@ -602,7 +614,7 @@ New:</code></pre>
 </li>
 </ul>
 </div>
-<h3 id="_perform_a_backup" class="discrete">Perform a backup <a id="backup"></a></h3>
+<h3 id="_perform_a_backup" class="discrete">Perform a backup</h3>
 <div class="paragraph">
 <p>To perform a backup, run the following command as the TigerGraph Linux user:</p>
 </div>
@@ -641,7 +653,7 @@ New:</code></pre>
 Backup does not save input message queues for REST&#43;&#43; or Kafka.
 {% endhint %}</p>
 </div>
-<h3 id="_list_backup_files" class="discrete">List Backup Files <a id="list-backup-files"></a></h3>
+<h3 id="_list_backup_files" class="discrete">List Backup Files</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gbar list</code></pre>
@@ -650,7 +662,7 @@ Backup does not save input message queues for REST&#43;&#43; or Kafka.
 <div class="paragraph">
 <p>This command lists all generated backup files in the storage place configured by the user. For each file, it shows the file&#8217;s full tag, its size in human-readable format, and its creation time.</p>
 </div>
-<h3 id="_restore_from_a_backup_archive" class="discrete">Restore from a backup archive <a id="restore"></a></h3>
+<h3 id="_restore_from_a_backup_archive" class="discrete">Restore from a backup archive</h3>
 <div class="paragraph">
 <p>Before restoring a backup, you should ensure that the backup you are restoring from is in the <strong>same exact version</strong> as your current version of TigerGraph.</p>
 </div>
@@ -690,7 +702,7 @@ The primary purpose of GBAR is to save snapshots of the data configuration of a 
 Restore needs enough free space to accommodate both the old gstore and the gstore to be restored.
 {% endhint %}</p>
 </div>
-<h3 id="_remove_a_backup" class="discrete">Remove a backup <a id="gbar-detailed-example"></a></h3>
+<h3 id="_remove_a_backup" class="discrete">Remove a backup</h3>
 <div class="paragraph">
 <p>To remove a backup, run the <code>gbar remove</code> command:</p>
 </div>
@@ -711,7 +723,7 @@ Restore needs enough free space to accommodate both the old gstore and the gstor
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gbar cleanup</code></pre>
 </div>
 </div>
-<h3 id="_gbar_detailed_example" class="discrete">GBAR Detailed Example <a id="gbar-detailed-example"></a></h3>
+<h3 id="_gbar_detailed_example" class="discrete">GBAR Detailed Example</h3>
 <div class="paragraph">
 <p>The following example describes a real example, to show the actual commands, the expected output, and the amount of time and disk space used, for a given set of graph data. For this example, an Amazon EC2 instance was used, with the following specifications:</p>
 </div>
@@ -721,7 +733,7 @@ Restore needs enough free space to accommodate both the old gstore and the gstor
 <div class="paragraph">
 <p>Naturally, backup and restore time will vary depending on the hardware used.</p>
 </div>
-<h4 id="_gbar_backup_operational_details" class="discrete">GBAR Backup Operational Details <a id="gbar-backup-operational-details"></a></h4>
+<h4 id="_gbar_backup_operational_details" class="discrete">GBAR Backup Operational Details</h4>
 <div class="paragraph">
 <p>To run a daily backup, we tell GBAR to backup with the tag name <em>daily</em>.</p>
 </div>
@@ -743,7 +755,7 @@ Backup to daily-20180607232159 finished in 31m33s.</code></pre>
 <div class="paragraph">
 <p>The total backup process took about 31 minutes, and the generated archive is about 49 GB. Dumping the GPE + GSE data to disk took 12 minutes. Compressing the files took another 20 minutes.</p>
 </div>
-<h4 id="_gbar_restore_operational_details" class="discrete">GBAR Restore Operational Details <a id="gbar-restore-operational-details"></a></h4>
+<h4 id="_gbar_restore_operational_details" class="discrete">GBAR Restore Operational Details</h4>
 <div class="paragraph">
 <p>To restore from a backup archive, a full archive name needs to be provided, such as <em>daily-20180607232159</em>. By default, restore will ask the user to approve to continue. If you want to pre-approve these actions, use the "-y" option. GBAR will make the default choice for you.</p>
 </div>
@@ -779,7 +791,7 @@ Old gstore data saved under /home/tigergraph/tigergraph/gstore with suffix -2018
 <div class="paragraph">
 <p>Note that after the restore is done, GBAR informs you were the pre-restore graph data (gstore) has been saved. After you have verified that the restore was successful, you may want to delete the old gstore files to free up disk space.</p>
 </div>
-<h4 id="_performance_summary_of_example" class="discrete">Performance Summary of Example <a id="perf-summary-of-example"></a></h4>
+<h4 id="_performance_summary_of_example" class="discrete">Performance Summary of Example</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">

@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -489,7 +501,7 @@
 <p>TigerGraph&#8217;s REST API endpoints exist on the REST&#43;&#43; and the GSQL server. REST&#43;&#43; (or RESTPP) is the TigerGraph customized <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> server. Our API accepts URL-encoded query string parameters, <a href="https://www.json.org/json-en.html">JSON</a>-encoded request bodies and returns JSON encoded responses. This user guide provides information on how to engage with our REST APIs: the introduction section explains how to send requests, pass parameters, and format request bodies, while the subsequent sections describe in detail each endpoint and its input and output.</p>
 </div>
 <div class="paragraph">
-<p>To submit a request, send an HTTP request to the REST&#43;&#43; server or the GSQL server. <a href="../../admin/admin-guide/system-administration-faqs.md#TigerGraphSystemAdministrationFAQs-HowcanIfindouttheportofaservice?">By default</a>, the REST&#43;&#43; server listens for requests at port 9000 and the GSQL server listens on port 14240. A request needs to specify five things:</p>
+<p>To submit a request, send an HTTP request to the REST&#43;&#43; server or the GSQL server. <a href="../troubleshooting/system-administration-faqs.html#_how_can_i_find_out_the_port_of_a_service" class="page">By default</a>, the REST&#43;&#43; server listens for requests at port 9000 and the GSQL server listens on port 14240. A request needs to specify five things:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -668,7 +680,7 @@ In a test or development environment, the requester may be on the same server as
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-sql hljs" data-lang="sql">TYPEDEF TUPLE &lt;field1 INT(1), field2 UINT, field3 STRING(10), field4 DOUBLE&gt; myTuple</code></pre>
+<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">TYPEDEF TUPLE &lt;field1 INT(1), field2 UINT, field3 STRING(10), field4 DOUBLE&gt; myTuple</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -904,7 +916,7 @@ curl -X method "http://server_ip:9000/path_to_endpoint?request_parameters" | pyt
 <p>Extra header to include in the request when sending HTTP to a server. You may specify any number of extra headers.</p>
 </li>
 <li>
-<p>TigerGraph APIs use headers to specify <a href="intro.md#size-and-time-limits">size and time limits</a>, as well as to provide RESTPP <a href="intro.md#rest-server-requests">authentication</a> tokens.</p>
+<p>TigerGraph APIs use headers to specify <a href="intro.adoc#_size_and_time_limits">size and time limits</a>, as well as to provide RESTPP <a href="authentication.adoc#_rest_server_requests">authentication</a> tokens.</p>
 </li>
 </ul>
 </div>

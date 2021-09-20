@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="system-administration-faqs.html">System Administration FAQs</a>
@@ -483,7 +495,7 @@
 </aside>
 <article class="doc">
 <h1 class="page">System Administration FAQs</h1>
-<h3 id="_how_do_i_apply_or_update_my_license_key" class="discrete">How do I apply or update my license key? <a id="TigerGraphSystemAdministrationFAQs-HowdoIapplyorupdatemylicensekey?"></a></h3>
+<h3 id="_how_do_i_apply_or_update_my_license_key" class="discrete">How do I apply or update my license key?</h3>
 <div class="paragraph">
 <p>If you have a version 1.0 string-type license key, then during initial platform installation, you can either specify your license key as an argument, for example:</p>
 </div>
@@ -511,14 +523,14 @@ gadmin license set @textfile</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>If this is the initial installation or you are updating a previous key file, then please see the document <a href="#install-and-config/system-specific-license-activation.adoc" class="page unresolved">Activating a System-Specific License</a></p>
+<p>If this is the initial installation or you are updating a previous key file, then please see the document <a href="../installation/license.html" class="page">Advanced License Issues</a></p>
 </li>
 <li>
 <p>If you are updating from a version 1.0 key string to a version 2.0 key file, please contact <a href="mailto:support@tigergraph.com">support@tigergraph.com</a>for the correct procedure.</p>
 </li>
 </ul>
 </div>
-<h3 id="_when_does_my_license_key_expire" class="discrete">When does my license key expire? <a id="TigerGraphSystemAdministrationFAQs-Whendoesmylicensekeyexpire?"></a></h3>
+<h3 id="_when_does_my_license_key_expire" class="discrete">When does my license key expire?</h3>
 <div class="paragraph">
 <p>If you have a version 1.0 string-type license key, the following command will tell you your key&#8217;s expiration date:</p>
 </div>
@@ -543,7 +555,7 @@ gadmin license set @textfile</code></pre>
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin license status</code></pre>
 </div>
 </div>
-<h3 id="_what_are_the_components_of_the_tigergraph_platform" class="discrete">What are the components of the TigerGraph platform? <a id="TigerGraphSystemAdministrationFAQs-WhatarethecomponentsoftheTigerGraphplatform?"></a></h3>
+<h3 id="_what_are_the_components_of_the_tigergraph_platform" class="discrete">What are the components of the TigerGraph platform?</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Command Line Usage Name : Official Name
@@ -569,9 +581,9 @@ gadmin license set @textfile</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>A description of each component is given in the Glossary section of the <a href="#../../tigergraph-platform-overview/internal-architecture.adoc" class="page unresolved">TigerGraph Platform Overview</a>document.</p>
+<p>A description of each component is given in the Glossary section of the <a href="../intro/internal-architecture.html" class="page">Internal Architecture</a> document.</p>
 </div>
-<h3 id="_how_can_i_find_out_current_status_of_the_system" class="discrete">How can I find out current status of the system? <a id="TigerGraphSystemAdministrationFAQs-HowcanIfindoutcurrentstatusofthesystem?"></a></h3>
+<h3 id="_how_can_i_find_out_current_status_of_the_system" class="discrete">How can I find out current status of the system?</h3>
 <div class="paragraph">
 <p>The following command tells you the basic summary of each component:</p>
 </div>
@@ -588,7 +600,7 @@ gadmin license set @textfile</code></pre>
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin status -v</code></pre>
 </div>
 </div>
-<h3 id="_how_can_i_find_out_the_port_of_a_service" class="discrete">How can I find out the port of a service? <a id="TigerGraphSystemAdministrationFAQs-HowcanIfindouttheportofaservice?"></a></h3>
+<h3 id="_how_can_i_find_out_the_port_of_a_service" class="discrete">How can I find out the port of a service?</h3>
 <div class="paragraph">
 <p>To find out the port of a service, use the <code>gadmin config get &lt;port_name&gt;</code> command:</p>
 </div>
@@ -613,9 +625,9 @@ gadmin license set @textfile</code></pre>
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin config set &lt;port_name&gt; &lt;port_number&gt;</code></pre>
 </div>
 </div>
-<h3 id="_how_do_i_backup_my_data" class="discrete">How do I backup my data? <a id="TigerGraphSystemAdministrationFAQs-HowdoIbackupmydata?"></a></h3>
+<h3 id="_how_do_i_backup_my_data" class="discrete">How do I backup my data?</h3>
 <div class="paragraph">
-<p><strong>GBAR</strong> is the utility to do backup and restore of TigerGraph system.  Before a backup, GBAR needs to be configured. Please see <a href="#system-management/backup-and-restore.adoc" class="page unresolved">GBAR - Graph Backup and Restore</a>for details.</p>
+<p><strong>GBAR</strong> is the utility to do backup and restore of TigerGraph system.  Before a backup, GBAR needs to be configured. Please see <a href="../backup-and-restore/backup-and-restore.html" class="page">GBAR - Graph Backup and Restore</a> for details.</p>
 </div>
 <div class="paragraph">
 <p>To backup the current system:</p>
@@ -628,7 +640,7 @@ gadmin license set @textfile</code></pre>
 <div class="paragraph">
 <p>Please be advised that GBAR only backs up data and configuration. No logs or binaries will be backed up.</p>
 </div>
-<h3 id="_how_do_i_restore_a_backup" class="discrete">How do I restore a backup? <a id="TigerGraphSystemAdministrationFAQs-HowdoIrestoreabackup?"></a></h3>
+<h3 id="_how_do_i_restore_a_backup" class="discrete">How do I restore a backup?</h3>
 <div class="paragraph">
 <p>To restore an existing backup:</p>
 </div>
@@ -640,7 +652,7 @@ gadmin license set @textfile</code></pre>
 <div class="paragraph">
 <p>Please be advised that running restore will STOP the service and ERASE existing data.</p>
 </div>
-<h3 id="_how_can_i_find_out_statistics_of_my_graph_data" class="discrete">How can I find out statistics of my graph data? <a id="TigerGraphSystemAdministrationFAQs-HowcanIfindoutstatisticsofmygraphdata?"></a></h3>
+<h3 id="_how_can_i_find_out_statistics_of_my_graph_data" class="discrete">How can I find out statistics of my graph data?</h3>
 <div class="paragraph">
 <p>You can get statistics of Graph data on TigerGraph database instance using <strong>gstatusgraph</strong> utility:</p>
 </div>
@@ -673,7 +685,7 @@ Due to a known bug, <strong>gstatusgraph</strong> command will count each undire
 <p><code>"[WARN ] Above vertex and edge counts are for internal use which show approximate topology size of the local graph partition. Use DML to get the correct graph topology information"</code>
 {% endhint %}</p>
 </div>
-<h3 id="_how_can_i_find_out_statistics_of_requests" class="discrete">How can I find out statistics of requests? <a id="TigerGraphSystemAdministrationFAQs-HowcanIfindoutstatisticsofrequests?"></a></h3>
+<h3 id="_how_can_i_find_out_statistics_of_requests" class="discrete">How can I find out statistics of requests?</h3>
 <div class="paragraph">
 <p>TigerGraph provides a RESTful API to tell request statistics. Assuming REST port is 9000, use command below:</p>
 </div>
@@ -682,7 +694,7 @@ Due to a known bug, <strong>gstatusgraph</strong> command will count each undire
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">curl -l http://localhost:9000/statistics</code></pre>
 </div>
 </div>
-<h3 id="_how_do_i_restart_a_service" class="discrete">How do I restart a service? <a id="TigerGraphSystemAdministrationFAQs-HowdoIrestartaservice?"></a></h3>
+<h3 id="_how_do_i_restart_a_service" class="discrete">How do I restart a service?</h3>
 <div class="paragraph">
 <p>If you need to restart everything, use the following:</p>
 </div>
@@ -702,7 +714,7 @@ Due to a known bug, <strong>gstatusgraph</strong> command will count each undire
 <div class="paragraph">
 <p>Multiple component names are separated by spaces.</p>
 </div>
-<h3 id="_how_to_i_stop_some_or_all_services" class="discrete">How to I stop some or all services? <a id="TigerGraphSystemAdministrationFAQs-HowtoIstopsomeorallservices?"></a></h3>
+<h3 id="_how_to_i_stop_some_or_all_services" class="discrete">How to I stop some or all services?</h3>
 <div class="paragraph">
 <p>Normally it is not necessary to manually turn off any services. However if you wish to, use the stop command.</p>
 </div>
@@ -716,7 +728,7 @@ gadmin stop
 gadmin stop &lt;component_name(s)&gt;</code></pre>
 </div>
 </div>
-<h3 id="_why_the_service_is_down" class="discrete">Why the service is down? <a id="TigerGraphSystemAdministrationFAQs-Whytheserviceisdown?"></a></h3>
+<h3 id="_why_the_service_is_down" class="discrete">Why the service is down?</h3>
 <div class="paragraph">
 <p>There are a few typical causes for a service being down:</p>
 </div>
@@ -733,7 +745,7 @@ gadmin stop &lt;component_name(s)&gt;</code></pre>
 </li>
 </ol>
 </div>
-<h3 id="_where_are_the_logs" class="discrete">Where are the logs? <a id="TigerGraphSystemAdministrationFAQs-Wherearethelogs?"></a></h3>
+<h3 id="_where_are_the_logs" class="discrete">Where are the logs?</h3>
 <div class="paragraph">
 <p>Use following command to figure out where are log files for each component:</p>
 </div>
@@ -750,7 +762,7 @@ gadmin stop &lt;component_name(s)&gt;</code></pre>
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">gadmin log &lt;component&gt;</code></pre>
 </div>
 </div>
-<h3 id="_why_has_my_request_timed_out" class="discrete">Why has my request timed out? <a id="TigerGraphSystemAdministrationFAQs-Whyhasmyrequesttimedout?"></a></h3>
+<h3 id="_why_has_my_request_timed_out" class="discrete">Why has my request timed out?</h3>
 <div class="paragraph">
 <p>Timeout is applied to any request coming into TigerGraph system. If a request runs longer than the Timeout value, it will be killed. The default timeout value is 16 second.</p>
 </div>
@@ -779,7 +791,7 @@ gadmin restart</code></pre>
 <pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">curl -X &lt;GET/POST&gt; -H "GSQL-TIMEOUT: &lt;timeout value in milliseconds&gt;" '&lt;request_URL&gt;'</code></pre>
 </div>
 </div>
-<h3 id="_where_are_the_core_dump_files_located" class="discrete">Where are the core dump files located? <a id="TigerGraphSystemAdministrationFAQs-Wherearethecoredumpfileslocated?"></a></h3>
+<h3 id="_where_are_the_core_dump_files_located" class="discrete">Where are the core dump files located?</h3>
 <div class="paragraph">
 <p>A core dump file is produced by the OS when a certain signal causes a process to terminate. The core dump is a disk file containing an image of the process&#8217;s memory at the time of termination. This image can be used in a debugger (e.g., gdb) to inspect the state of the program at the time that it terminated.</p>
 </div>

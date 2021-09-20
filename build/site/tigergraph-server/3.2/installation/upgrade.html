@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -555,7 +567,7 @@ If you have written User-Defined Functions for your queries, be sure to make a b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Make sure all in-memory graph updates are persisted to disk data by running the <a href="../../../dev/restpp-api/built-in-endpoints.md#rebuild-graph-engine"><code>/rebuildnow</code> endpoint</a> and no active jobs are running. For graphs requiring an authentication token, the endpoint must be called for each graph utilizing their respective tokens. For graphs not requiring tokens, you can call the endpoint once for all graphs. The <code>/rebuildnow</code> endpoint does not guarantee that all KAFKA messages are consumed by the engine (you have to wait until there is no PullDelta in the GPE log to guarantee that all KAFKA messages have been consumed by the engine). It only guarantees that all the in-memory graph updates are persisted to disk data.</p>
+<p>Make sure all in-memory graph updates are persisted to disk data by running the <a href="../API/built-in-endpoints.html#_rebuild_graph_engine" class="page"><code>/rebuildnow</code> endpoint</a> and no active jobs are running. For graphs requiring an authentication token, the endpoint must be called for each graph utilizing their respective tokens. For graphs not requiring tokens, you can call the endpoint once for all graphs. The <code>/rebuildnow</code> endpoint does not guarantee that all KAFKA messages are consumed by the engine (you have to wait until there is no PullDelta in the GPE log to guarantee that all KAFKA messages have been consumed by the engine). It only guarantees that all the in-memory graph updates are persisted to disk data.</p>
 </li>
 <li>
 <p>Make sure config is applied by using this command : <code>gadmin config-apply</code>.</p>

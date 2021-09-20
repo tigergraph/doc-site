@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -519,10 +531,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Kafka data source configuration file: This file includes the external Kafka broker&#8217;s domain name and port. Through the configuration file, TigerGraph system knows the location and port of the external Kafka broker.  Please see an example in <a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-CREATEDATA_SOURCEVariable"><strong>Step 1. Define the Data Source</strong></a>.</p>
+<p>Kafka data source configuration file: This file includes the external Kafka broker&#8217;s domain name and port. Through the configuration file, TigerGraph system knows the location and port of the external Kafka broker.  Please see an example in <a href="#_1_define_the_data_source"><strong>Step 1. Define the Data Source</strong></a>.</p>
 </li>
 <li>
-<p>Kafka topic and partition configuration file: This file includes the Kafka topic, partition list, and start offset for the loading messages.  Please see an example in <a href="kafka-loader-user-guide.md#2-create-a-loading-job"><strong>Step 2. Create a Loading Job</strong></a><strong>.</strong></p>
+<p>Kafka topic and partition configuration file: This file includes the Kafka topic, partition list, and start offset for the loading messages.  Please see an example in <a href="#_2_create_a_loading_job"><strong>Step 2. Create a Loading Job</strong></a>.</p>
 </li>
 </ol>
 </div>
@@ -537,13 +549,13 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-CREATEDATA_SOURCEVariable">Define the data source</a></p>
+<p><a href="#_1_define_the_data_source">Define the data source</a></p>
 </li>
 <li>
-<p><a href="kafka-loader-user-guide.md#2-create-loading-job-statement">Create a loading job</a></p>
+<p><a href="#_2_create_a_loading_job">Create a loading job</a></p>
 </li>
 <li>
-<p><a href="kafka-loader-user-guide.md#KafkaLoaderUserDocumentationDraft-RunLoadingJobStatement">Run the loading job</a></p>
+<p><a href="#_3_run_the_loading_job">Run the loading job</a></p>
 </li>
 </ol>
 </div>
@@ -855,7 +867,7 @@ A <code>RUN LOADING JOB</code> command may only use one type of data source.  E.
 </div>
 </div>
 <div class="paragraph">
-<p>To learn about each option and parameter of the <code>RUN LOADING JOB</code> command, see <a href="../gsql-ref/ddl-and-loading/running-a-loading-job.md#options">Loading job options</a>.</p>
+<p>To learn about each option and parameter of the <code>RUN LOADING JOB</code> command, see <a href="../../../gsql-ref/3.2/ddl-and-loading/running-a-loading-job.html#_options" class="page">Loading job options</a>.</p>
 </div>
 </div>
 </div>

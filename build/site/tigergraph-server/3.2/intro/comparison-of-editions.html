@@ -115,6 +115,18 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../getting-started/linux.html">Install TigerGraph on Linux</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Learn GSQL</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+  </li>
+</ul>
+  </li>
 </ul>
   </li>
 </ul>
@@ -357,7 +369,7 @@
     <span class="nav-text">Troubleshooting</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../troubleshooting/faqs.html">Knowledge Base and FAQs</a>
+    <a class="nav-link" href="https://tigergraph.freshdesk.com/support/solutions">Knowledge base and FAQs</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../troubleshooting/system-administration-faqs.html">System Administration FAQs</a>
@@ -489,42 +501,41 @@
 <p>This document compares what is included in the Enterprise Edition vs. TigerGraph Cloud of the TigerGraph platform.</p>
 </div>
 <div class="paragraph">
-<p>To see what has been added or changed in different releases (versions) of TigerGraph, see <a href="../faqs/change-log-1/">Change Log</a>.</p>
+<p>To see what has been added or changed in different releases (versions) of TigerGraph, see <a href="#release-notes:change-log.adoc/">Change Log</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview<table><thead><tr><th style="text-align:left"></th></h2>
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>    +++&lt;th style="text-align:left"&gt;+++TigerGraph Cloud+++&lt;/th&gt;+++
-    +++&lt;th style="text-align:left"&gt;+++Enterprise Edition+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Licensing+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++Pay as you go by the minute; Annual contracts available+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++A free license is available with up to 50 GB storage after compression
-      - +++&lt;a href="https://info.tigergraph.com/pricing"&gt;+++contact us+++&lt;/a&gt;+++ for a paid
-      version without storage limitations+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Includes+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;+++The power of TigerGraph, as a Service+++&lt;/p&gt;+++
-      +++&lt;p&gt;++++ Instant Deployment+++&lt;/p&gt;+++
-      +++&lt;p&gt;++++ Automatic backups+++&lt;/p&gt;+++
-      +++&lt;p&gt;++++ Scaling out &amp; Replication+++&lt;/p&gt;+++
-      +++&lt;p&gt;++++ Security+++&lt;/p&gt;+++
-      +++&lt;p&gt;++++ Pay for what you use+++&lt;/p&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++All TigerGraph Database and Enterprise features, including
-      +++&lt;br&gt;++++++&lt;/br&gt;++++ Distributed Graph
-      +++&lt;br&gt;++++++&lt;/br&gt;++++ MultiGraph
-      +++&lt;br&gt;++++++&lt;/br&gt;++++ Security
-      +++&lt;br&gt;++++++&lt;/br&gt;++++ User Management+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Support+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++Free version includes support from the +++&lt;a href="https://community.tigergraph.com/"&gt;+++Community Forum+++&lt;/a&gt;+++.
-      Contact us to get professional support.+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++How to Get It+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;++++++&lt;a href="https://www.tigergraph.com/cloud"&gt;+++www.tigergraph.com/cloud+++&lt;/a&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;++++++&lt;a href="https://info.tigergraph.com/enterprise-free"&gt;+++www.tigergraph.com/free-trial+++&lt;/a&gt;++++++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
+<div class="paragraph">
+<p><table><thead><tr><th style="text-align:left"></th>
+      <th style="text-align:left">TigerGraph Cloud</th>
+      <th style="text-align:left">Enterprise Edition</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><b>Licensing</b></td>
+      <td style="text-align:left">Pay as you go by the minute; Annual contracts available</td>
+      <td style="text-align:left">A free license is available with up to 50 GB storage after compression
+        - <a href="https://info.tigergraph.com/pricing">contact us</a> for a paid
+        version without storage limitations</td></tr>
+    <tr><td style="text-align:left"><b>Includes</b></td>
+      <td style="text-align:left"><p>The power of TigerGraph, as a Service</p>
+        <p>+ Instant Deployment</p>
+        <p>+ Automatic backups</p>
+        <p>+ Scaling out &amp; Replication</p>
+        <p>+ Security</p>
+        <p>+ Pay for what you use</p></td>
+      <td style="text-align:left">All TigerGraph Database and Enterprise features, including
+        <br></br>+ Distributed Graph
+        <br></br>+ MultiGraph
+        <br></br>+ Security
+        <br></br>+ User Management</td></tr>
+    <tr><td style="text-align:left"><b>Support</b></td>
+      <td style="text-align:left">&#x2705;</td>
+      <td style="text-align:left">Free version includes support from the <a href="https://community.tigergraph.com/">Community Forum</a>.
+        Contact us to get professional support.</td></tr>
+    <tr><td style="text-align:left"><b>How to Get It</b></td>
+      <td style="text-align:left"><a href="https://www.tigergraph.com/cloud">www.tigergraph.com/cloud</a></td>
+      <td style="text-align:left"><a href="https://info.tigergraph.com/enterprise-free">www.tigergraph.com/free-trial</a></td></tr></tbody></table></p>
 </div>
 </div>
 </div>
@@ -661,31 +672,30 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_security_featuresfeature"><a class="anchor" href="#_security_featuresfeature"></a>Security Features<table><thead><tr><th style="text-align:left">Feature</th></h2>
+<h2 id="_security_features"><a class="anchor" href="#_security_features"></a>Security Features</h2>
 <div class="sectionbody">
-<div class="literalblock">
-<div class="content">
-<pre>    +++&lt;th style="text-align:center"&gt;+++TigerGraph Cloud+++&lt;/th&gt;+++
-    +++&lt;th style="text-align:left"&gt;+++Enterprise Edition+++&lt;/th&gt;++++++&lt;/tr&gt;++++++&lt;/thead&gt;+++
-+++&lt;tbody&gt;++++++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Data Encryption +++&lt;/b&gt;+++
-      +++&lt;br&gt;++++++&lt;/br&gt;+++At Rest and In Motion+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Enterprise User Management +++&lt;/b&gt;+++
-      +++&lt;br&gt;++++++&lt;/br&gt;+++LDAP and SSO+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;through GSQL web shell+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Role-Based Access Control+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++&amp;#x2705;+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;b&gt;+++Audit Compliance+++&lt;/b&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;SOC 2 type 1 and type 2+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++Coming soon+++&lt;/td&gt;++++++&lt;/tr&gt;+++
-  +++&lt;tr&gt;++++++&lt;td style="text-align:left"&gt;++++++&lt;p&gt;++++++&lt;b&gt;+++Cloud Security:+++&lt;/b&gt;++++++&lt;/p&gt;+++
-      +++&lt;p&gt;+++VPC for each account+++&lt;/p&gt;++++++&lt;/td&gt;+++
-    +++&lt;td style="text-align:center"&gt;+++&amp;#x2705;+++&lt;/td&gt;+++
-    +++&lt;td style="text-align:left"&gt;+++N/A+++&lt;/td&gt;++++++&lt;/tr&gt;++++++&lt;/tbody&gt;++++++&lt;/table&gt;+++</pre>
-</div>
+<div class="paragraph">
+<p><table><thead><tr><th style="text-align:left">Feature</th>
+      <th style="text-align:center">TigerGraph Cloud</th>
+      <th style="text-align:left">Enterprise Edition</th></tr></thead>
+  <tbody><tr><td style="text-align:left"><b>Data Encryption </b>
+        <br></br>At Rest and In Motion</td>
+      <td style="text-align:center">&#x2705;</td>
+      <td style="text-align:left">&#x2705;</td></tr>
+    <tr><td style="text-align:left"><b>Enterprise User Management </b>
+        <br></br>LDAP and SSO</td>
+      <td style="text-align:center">&#x2705;through GSQL web shell</td>
+      <td style="text-align:left">&#x2705;</td></tr>
+    <tr><td style="text-align:left"><b>Role-Based Access Control</b></td>
+      <td style="text-align:center">&#x2705;</td>
+      <td style="text-align:left">&#x2705;</td></tr>
+    <tr><td style="text-align:left"><b>Audit Compliance</b></td>
+      <td style="text-align:center">&#x2705;SOC 2 type 1 and type 2</td>
+      <td style="text-align:left">Coming soon</td></tr>
+    <tr><td style="text-align:left"><p><b>Cloud Security:</b></p>
+        <p>VPC for each account</p></td>
+      <td style="text-align:center">&#x2705;</td>
+      <td style="text-align:left">N/A</td></tr></tbody></table></p>
 </div>
 </div>
 </div>
