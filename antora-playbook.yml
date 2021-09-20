@@ -7,8 +7,11 @@ content:
   - url: https://github.com/lennessyy/tg-gui.git
     branches: main
   - url: https://github.com/lennessyy/cloud.git
+    branches: main
   - url: https://github.com/lennessyy/graph-ml.git
+    branches: main
   - url: https://github.com/lennessyy/gsql.git
+    branches: main
 ui:
   bundle:
     url: https://github.com/lennessyy/antora-ui/blob/main/build/ui-bundle.zip?raw=true
