@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Vertex-Level Access Control (Beta) :: TigerGraph Documentation</title>
-    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -120,10 +120,10 @@
     <span class="nav-text">Learn GSQL</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:gsql-101/README.adoc">3.2@gsql-ref:tutorials:gsql-101/README.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:pattern-matching/README.adoc">3.2@gsql-ref:tutorials:pattern-matching/README.adoc</a>
   </li>
 </ul>
   </li>
@@ -440,30 +440,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
       <ul class="versions">
@@ -505,7 +481,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../../.gitbook/assets/vlac-graphs-figure.png" alt="Figure 1. Tag-based graphs as subgraphs of a Base graph">
+<img src="../../.gitbook/assets/vlac-graphs-figure.png" alt="Figure 1. Tag-based graphs as subgraphs of a Base graph">
 </div>
 </div>
 <div class="paragraph">
@@ -649,7 +625,7 @@ Features not yet supported:</p>
 {% endhint %}</p>
 </div>
 <div class="paragraph">
-<p>We&#8217;ll use the graph <a href="../../../gsql-ref/3.2/querying/appendix-query/example-graphs.html#_socialnet" class="page">socialNet</a> as an example in the following sections.</p>
+<p>We&#8217;ll use the graph <a href="#3.2@gsql-ref:querying:appendix-query/example-graphs.adoc#_socialnet" class="page unresolved">socialNet</a> as an example in the following sections.</p>
 </div>
 </div>
 </div>
@@ -913,11 +889,11 @@ CREATE GRAPH publicNet1 AS socialNet(person:public, post:public, friend, posted,
 <div class="sect2">
 <h3 id="_add_tags_on_existing_data"><a class="anchor" href="#_add_tags_on_existing_data"></a>Add tags on existing data</h3>
 <div class="paragraph">
-<p>In GSQL, special vertex methods are provided to access and modify the tags of a vertex in a DML query (full list available on page <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html" class="page">Vertex Functions</a>).
+<p>In GSQL, special vertex methods are provided to access and modify the tags of a vertex in a DML query (full list available on page <a href="#3.2@gsql-ref:querying:func/vertex-methods.adoc" class="page unresolved">3.2@gsql-ref:querying:func/vertex-methods.adoc</a>).
 These functions are only available for vertex aliases (defined in the <code>FROM</code> clause of a <code>SELECT</code> statement); they cannot be applied to vertex variables in other contexts.</p>
 </div>
 <div class="paragraph">
-<p>There are <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html" class="page">8 DML-level tag-access functions</a> in the vertex-query block or edge-query block. Use the <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_addtags" class="page">addTags()</a> function to tag a vertex.</p>
+<p>There are <a href="#3.2@gsql-ref:querying:func/vertex-methods.adoc" class="page unresolved">8 DML-level tag-access functions</a> in the vertex-query block or edge-query block. Use the <a href="#3.2@gsql-ref:querying:func/vertex-methods.adoc#_addtags" class="page unresolved">addTags()</a> function to tag a vertex.</p>
 </div>
 <div class="sect3">
 <h4 id="_required_privilege"><a class="anchor" href="#_required_privilege"></a>Required privilege</h4>
@@ -960,7 +936,7 @@ To add or modify tags, you should work at the base graph level.
 </div>
 </div>
 <div class="paragraph">
-<p>Use <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_removetags" class="page">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removetags</a> and <a href="../../../gsql-ref/3.2/querying/func/vertex-methods.html#_removealltags" class="page">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removealltags</a> to remove tags from vertices:</p>
+<p>Use <a href="#3.2@gsql-ref:querying:func/vertex-methods.adoc#_removetags" class="page unresolved">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removetags</a> and <a href="#3.2@gsql-ref:querying:func/vertex-methods.adoc#_removealltags" class="page unresolved">3.2@gsql-ref:querying:func/vertex-methods.adoc#_removealltags</a> to remove tags from vertices:</p>
 </div>
 <div class="listingblock">
 <div class="content">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Using a Remote GSQL Client :: TigerGraph Documentation</title>
-    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -120,10 +120,10 @@
     <span class="nav-text">Learn GSQL</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:gsql-101/README.adoc">3.2@gsql-ref:tutorials:gsql-101/README.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:pattern-matching/README.adoc">3.2@gsql-ref:tutorials:pattern-matching/README.adoc</a>
   </li>
 </ul>
   </li>
@@ -440,30 +440,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
       <ul class="versions">
@@ -511,7 +487,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar &lt;path&gt;gsql_client.jar</code></pre>
+<pre>java -jar &lt;path&gt;gsql_client.jar</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -519,9 +495,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">gsql DROP ALL
+<pre>gsql DROP ALL
 gsql create_my_schema.gsql
-gsql LS</code></pre>
+gsql LS</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -529,9 +505,9 @@ gsql LS</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar gsql_client.jar DROP ALL
+<pre>java -jar gsql_client.jar DROP ALL
 java -jar gsql_client.jar create_my_schema.gsql
-java -jar gsql_client.jar LS</code></pre>
+java -jar gsql_client.jar LS</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -539,7 +515,7 @@ java -jar gsql_client.jar LS</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</code></pre>
+<pre>alias gsql="java -jar &lt;path&gt;/gsql_client.jar"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -595,7 +571,7 @@ java -jar gsql_client.jar LS</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gsql -cacert /path/to/certificate -ip hostname:port</code></pre>
+<pre>gsql -cacert /path/to/certificate -ip hostname:port</pre>
 </div>
 </div>
 </div>
@@ -620,7 +596,7 @@ Rule: If a remote GSQL client invokes an instruction containing a relative path,
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</code></pre>
+<pre>java -jar gsql_client.jar 'RUN JOB load_cf USING FILENAME="/home/tigergraph/example/cf/cf_data.csv", SEPARATOR=",", EOL="\n"</pre>
 </div>
 </div>
 </div>
@@ -677,7 +653,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">123.45.67.255</code></pre>
+<pre>123.45.67.255</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -692,7 +668,7 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql='java -jar ~/gsql_client/gsql_client.jar'</code></pre>
+<pre>alias gsql='java -jar ~/gsql_client/gsql_client.jar'</pre>
 </div>
 </div>
 <div class="olist upperalpha">
@@ -707,10 +683,10 @@ gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">alias gsql='java -jar gsql_client.jar'
+<pre>alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
-ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</code></pre>
+ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -747,7 +723,7 @@ ln -s ~/gsql_client/gsql_server_ip_config gsql_server_ip_config</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-gsql hljs" data-lang="gsql">#!/bin/bash
+<pre>#!/bin/bash
 alias gsql='java -jar gsql_client.jar'
 shopt -s expand_aliases
 ln -s ~/gsql_client/gsql_client.jar gsql_client.jar
@@ -766,7 +742,7 @@ gsql -g gsql_demo ../${test}/${test}_load.gsql
 # Querying
 gsql -g gsql_demo ../${test}/${test}_query.gsql
 gsql -g gsql_demo INSTALL QUERY ALL
-gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</code></pre>
+gsql -g gsql_demo 'RUN QUERY topCoLiked("id1", 10)'</pre>
 </div>
 </div>
 <div class="paragraph">

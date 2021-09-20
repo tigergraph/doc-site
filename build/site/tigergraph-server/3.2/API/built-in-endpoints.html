@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Built-in Endpoints :: TigerGraph Documentation</title>
-    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -120,10 +120,10 @@
     <span class="nav-text">Learn GSQL</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:gsql-101/README.adoc">3.2@gsql-ref:tutorials:gsql-101/README.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:pattern-matching/README.adoc">3.2@gsql-ref:tutorials:pattern-matching/README.adoc</a>
   </li>
 </ul>
   </li>
@@ -437,30 +437,6 @@
       <ul class="versions">
         <li class="version is-latest">
           <a href="../../../tigergraph-gui/3.2/graphstudio/overview.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
         </li>
       </ul>
     </li>
@@ -1563,7 +1539,7 @@ curl --user example_username:example_password -X GET "localhost:9000/requesttoke
 <p><code>POST /ddl/{graph_name}</code></p>
 </div>
 <div class="paragraph">
-<p>This endpoint is for loading data into a graph. It submits data as an HTTP request payload, to be loaded into the graph by the DDL Loader. The data payload can be formatted as generic CSV or JSON. For more details, please see <a href="../../../gsql-ref/3.2/ddl-and-loading/README.html" class="page">GSQL Language Reference Part 1 - Defining Graphs and Loading Data</a>.</p>
+<p>This endpoint is for loading data into a graph. It submits data as an HTTP request payload, to be loaded into the graph by the DDL Loader. The data payload can be formatted as generic CSV or JSON. For more details, please see <a href="#3.2@gsql-ref:ddl-and-loading:README.adoc" class="page unresolved">GSQL Language Reference Part 1 - Defining Graphs and Loading Data</a>.</p>
 </div>
 <div class="paragraph">
 <p>If the loading job references multiple files, multiple HTTP requests are needed to complete the loading job since you can only provide data for one filename varibale at a time. The loading job will skip the <code>LOAD</code> statements referencing filename variables that the request didn&#8217;t provide data for.  To provide data for a filename variable, put the data in the request body and use the <code>filename</code> parameter (explained in the parameter table below) to match the variable name defined in the loading job.</p>
@@ -3655,7 +3631,7 @@ curl -X GET -H "GSQL-REPLICA: 1" "http://localhost:9000/query/social/hello?p=Tom
 <div class="sect3">
 <h4 id="_query_parameter_passing_2"><a class="anchor" href="#_query_parameter_passing_2"></a>Query parameter Passing</h4>
 <div class="paragraph">
-<p>When using a <code>POST</code> request to run an installed query, the query parameters are passed in through the request body and <a href="intro.adoc#_formatting_data_in_json">encoded in JSON format</a>. The formatting rules for the JSON payload is the same as <a href="../../../gsql-ref/3.2/querying/query-operations.html#_parameter_json_object" class="page">using JSON to pass in parameters in the <code>RUN QUERY</code> command</a>.</p>
+<p>When using a <code>POST</code> request to run an installed query, the query parameters are passed in through the request body and <a href="intro.adoc#_formatting_data_in_json">encoded in JSON format</a>. The formatting rules for the JSON payload is the same as <a href="#3.2@gsql-ref:querying:query-operations.adoc#_parameter_json_object" class="page unresolved">using JSON to pass in parameters in the <code>RUN QUERY</code> command</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 99%;">
 <colgroup>
@@ -3915,7 +3891,7 @@ Installed queries can run in <a href="../gsql-ref/querying/query-operations.md#d
 <p><code>GET /query_status</code></p>
 </div>
 <div class="paragraph">
-<p>This endpoint allows you to check the status of a query run in <a href="../../../gsql-ref/3.2/querying/query-operations.html#_detached_mode_async_option" class="page">detached mode</a>.</p>
+<p>This endpoint allows you to check the status of a query run in <a href="#3.2@gsql-ref:querying:query-operations.adoc#_detached_mode_async_option" class="page unresolved">detached mode</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_sample_request_26"><a class="anchor" href="#_sample_request_26"></a>Sample request:</h4>

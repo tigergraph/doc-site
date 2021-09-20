@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Get Started with Docker :: TigerGraph Documentation</title>
-    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -120,10 +120,10 @@
     <span class="nav-text">Learn GSQL</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:gsql-101/README.adoc">3.2@gsql-ref:tutorials:gsql-101/README.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:pattern-matching/README.adoc">3.2@gsql-ref:tutorials:pattern-matching/README.adoc</a>
   </li>
 </ul>
   </li>
@@ -440,30 +440,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
       <ul class="versions">
@@ -624,8 +600,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">    $ mkdir data
-    $ chmod 777 data</code></pre>
+<pre>    $ mkdir data
+    $ chmod 777 data</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -644,7 +620,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ docker run -d -p 14022:22 -p 9000:9000 -p 14240:14240 --name tigergraph --ulimit nofile=1000000:1000000 -v ~/data:/home/tigergraph/mydata -t docker.tigergraph.com/tigergraph:latest</code></pre>
+<pre>$ docker run -d -p 14022:22 -p 9000:9000 -p 14240:14240 --name tigergraph --ulimit nofile=1000000:1000000 -v ~/data:/home/tigergraph/mydata -t docker.tigergraph.com/tigergraph:latest</pre>
 </div>
 </div>
 <div class="ulist">
@@ -698,7 +674,7 @@ Replace "latest" with a specific version number if a dedicated version of TigerG
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ docker run -d -p 14022:22 -p 9000:9000 -p 14240:14240 --name tigergraph --ulimit nofile=1000000:1000000 -t docker.tigergraph.com/tigergraph:latest</code></pre>
+<pre>$ docker run -d -p 14022:22 -p 9000:9000 -p 14240:14240 --name tigergraph --ulimit nofile=1000000:1000000 -t docker.tigergraph.com/tigergraph:latest</pre>
 </div>
 </div>
 </div>
@@ -715,7 +691,7 @@ Replace "latest" with a specific version number if a dedicated version of TigerG
 <p>Verify that the container is running. You should see a row that describes the running container after running the command below:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ docker ps | grep tigergraph</code></pre>
+<pre>$ docker ps | grep tigergraph</pre>
 </div>
 </div>
 </li>
@@ -723,7 +699,7 @@ Replace "latest" with a specific version number if a dedicated version of TigerG
 <p>Use ssh to open a shell to the container. At the prompt, enter <code>tigergraph</code>  as the password. Note that we have mapped the host 14022 port to the container&#8217;s 22 port (the ssh default port), so on the host we use ssh to connect to port 14022.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ ssh -p 14022 tigergraph@localhost</code></pre>
+<pre>$ ssh -p 14022 tigergraph@localhost</pre>
 </div>
 </div>
 </li>
@@ -740,7 +716,7 @@ Replace "latest" with a specific version number if a dedicated version of TigerG
 <p>After connecting to the container via ssh, inside the container, start all TigerGraph services with the following command (which may take up to one minute):</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gadmin start all</code></pre>
+<pre>$ gadmin start all</pre>
 </div>
 </div>
 </li>
@@ -748,8 +724,8 @@ Replace "latest" with a specific version number if a dedicated version of TigerG
 <p>Run the <code>gsql</code> command as shown below to start the GSQL shell. If you are new to TigerGraph, you can run the <a href="../gsql-101/">GSQL 101</a> tutorial now.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gsql
-GSQL &gt;</code></pre>
+<pre>$ gsql
+GSQL &gt;</pre>
 </div>
 </div>
 </li>
@@ -772,8 +748,8 @@ GSQL &gt;</code></pre>
 <p>After you start Docker Desktop, use the commands below to stop and restart the container:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">  $ docker container stop tigergraph
-  $ docker container start tigergraph</code></pre>
+<pre>  $ docker container stop tigergraph
+  $ docker container start tigergraph</pre>
 </div>
 </div>
 </li>
@@ -781,8 +757,8 @@ GSQL &gt;</code></pre>
 <p>Start the TigerGraph service within the container:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">  $ gadmin start all
-  $ gadmin stop  all</code></pre>
+<pre>  $ gadmin start all
+  $ gadmin stop  all</pre>
 </div>
 </div>
 </li>
@@ -790,8 +766,8 @@ GSQL &gt;</code></pre>
 <p>ssh to the container. Note: if localhost is not recognized, remove the localhost entry from ~/.ssh/known_hosts</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">  $ sed -i.bak '/localhost/d' ~/.ssh/known_hosts
-  $ ssh -p 14022 tigergraph@localhost</code></pre>
+<pre>  $ sed -i.bak '/localhost/d' ~/.ssh/known_hosts
+  $ ssh -p 14022 tigergraph@localhost</pre>
 </div>
 </div>
 <div class="quoteblock">
@@ -803,8 +779,8 @@ GSQL &gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">  $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' tigergraph
-  $vssh tigergraph@&lt;container_ip_address&gt;</code></pre>
+<pre>  $ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' tigergraph
+  $vssh tigergraph@&lt;container_ip_address&gt;</pre>
 </div>
 </div>
 </li>
@@ -818,7 +794,7 @@ GSQL &gt;</code></pre>
 <p>After running <code>gadmin start</code>, you can go to GraphStudio. Open a browser on your laptop (host OS) and access GraphStudio at the following URL:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">  http://localhost:14240</code></pre>
+<pre>  http://localhost:14240</pre>
 </div>
 </div>
 </li>
@@ -826,7 +802,7 @@ GSQL &gt;</code></pre>
 <p>Check the version of GSQL:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">$ gsql version</code></pre>
+<pre>$ gsql version</pre>
 </div>
 </div>
 </li>

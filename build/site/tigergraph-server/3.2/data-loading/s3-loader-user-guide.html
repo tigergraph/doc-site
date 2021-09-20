@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>AWS S3 Loader User Guide :: TigerGraph Documentation</title>
-    <meta name="generator" content="Antora 3.0.0-alpha.8">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
   </head>
@@ -120,10 +120,10 @@
     <span class="nav-text">Learn GSQL</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/gsql-101/README.html">GSQL 101</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:gsql-101/README.adoc">3.2@gsql-ref:tutorials:gsql-101/README.adoc</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../../gsql-ref/3.2/tutorials/pattern-matching/README.html">Pattern Matching Tutorial</a>
+    <a class="nav-link" href="#3.2@gsql-ref:tutorials:pattern-matching/README.adoc">3.2@gsql-ref:tutorials:pattern-matching/README.adoc</a>
   </li>
 </ul>
   </li>
@@ -440,30 +440,6 @@
         </li>
       </ul>
     </li>
-    <li class="component">
-      <a class="title" href="../../../gsql-ref/3.2/intro/intro.html">GSQL Language Reference</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../gsql-ref/3.2/intro/intro.html">3.2</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-cloud/latest/start/README.html">TigerGraph Cloud</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-cloud/latest/start/README.html">latest</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../../tigergraph-data-science/3.2/intro/overview.html">TigerGraph Data Science Library</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../tigergraph-data-science/3.2/intro/overview.html">3.2</a>
-        </li>
-      </ul>
-    </li>
     <li class="component is-current">
       <a class="title" href="../intro/introduction.html">TigerGraph Server</a>
       <ul class="versions">
@@ -514,7 +490,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../../.gitbook/assets/graphguru15-image1.png" alt="graphguru15 image1">
+<img src="../.gitbook/assets/graphguru15-image1.png" alt="graphguru15 image1">
 </div>
 </div>
 </div>
@@ -571,7 +547,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">CREATE DATA_SOURCE S3 data_source_name</code></pre>
+<pre>CREATE DATA_SOURCE S3 data_source_name</pre>
 </div>
 </div>
 </div>
@@ -582,7 +558,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">SET data_source_name = "/path/to/s3.config";</code></pre>
+<pre>SET data_source_name = "/path/to/s3.config";</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -593,10 +569,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">{
+<pre>{
     "file.reader.settings.fs.s3a.access.key": "AKIAJ****4YGHQ",
     "file.reader.settings.fs.s3a.secret.key": "R8bli****p+dT4"
-}</code></pre>
+}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -607,7 +583,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">CREATE DATA_SOURCE S3 data_source_name = "/path/to/s3.config"</code></pre>
+<pre>CREATE DATA_SOURCE S3 data_source_name = "/path/to/s3.config"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -629,7 +605,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">CREATE DATA_SOURCE S3 data_source_name = "{\"file.reader.settings.fs.s3a.access.key\":\"AKIAJ****4YGHQ\",\"file.reader.settings.fs.s3a.secret.key\":\"R8bli****p+dT4\"}"</code></pre>
+<pre>CREATE DATA_SOURCE S3 data_source_name = "{\"file.reader.settings.fs.s3a.access.key\":\"AKIAJ****4YGHQ\",\"file.reader.settings.fs.s3a.secret.key\":\"R8bli****p+dT4\"}"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -665,7 +641,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">CREATE DATA_SOURCE S3 s1 = "/path/to/config"</code></pre>
+<pre>CREATE DATA_SOURCE S3 s1 = "/path/to/config"</pre>
 </div>
 </div>
 <div class="literalblock">
@@ -675,8 +651,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">GRANT DATA_SOURCE s1 TO GRAPH graph1, graph2
-REVOKE DATA_SOURCE s1 FROM GRAPH graph1, graph2</code></pre>
+<pre>GRANT DATA_SOURCE s1 TO GRAPH graph1, graph2
+REVOKE DATA_SOURCE s1 FROM GRAPH graph1, graph2</pre>
 </div>
 </div>
 <div class="literalblock">
@@ -686,7 +662,7 @@ REVOKE DATA_SOURCE s1 FROM GRAPH graph1, graph2</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">CREATE DATA_SOURCE S3 s1 = "/path/to/config" FOR GRAPH test_graph</code></pre>
+<pre>CREATE DATA_SOURCE S3 s1 = "/path/to/config" FOR GRAPH test_graph</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -702,7 +678,7 @@ In the above statement, the local data_source s1 is only accessible to graph tes
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DROP DATA_SOURCE &lt;source1&gt;[&lt;source2&gt;...] | * | ALL</code></pre>
+<pre>DROP DATA_SOURCE &lt;source1&gt;[&lt;source2&gt;...] | * | ALL</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -710,12 +686,12 @@ In the above statement, the local data_source s1 is only accessible to graph tes
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-coffeescript hljs" data-lang="coffeescript">CREATE DATA_SOURCE S3 s1 = "/home/tigergraph/s3.config"
+<pre>CREATE DATA_SOURCE S3 s1 = "/home/tigergraph/s3.config"
 CREATE DATA_SOURCE S3 s2 = "/home/tigergraph/s3_2.config"
 
 DROP DATA_SOURCE s1, s2
 DROP DATA_SOURCE *
-DROP DATA_SOURCE ALL</code></pre>
+DROP DATA_SOURCE ALL</pre>
 </div>
 </div>
 </div>
@@ -726,13 +702,13 @@ DROP DATA_SOURCE ALL</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ GSQL SHOW DATA_SOURCE *
+<pre>$ GSQL SHOW DATA_SOURCE *
 
 # The sample output:
 Data Source:
   - S3 s1 ("file.reader.settings.fs.s3a.access.key": "AKIAJ****4YGHQ", "file.reader.settings.fs.s3a.secret.key": "R8bli****p+dT4")
 # The global data source will be shown in global scope.
-# The graph scope will only show the data source it has access to.</code></pre>
+# The graph scope will only show the data source it has access to.</pre>
 </div>
 </div>
 </div>
@@ -750,8 +726,8 @@ Data Source:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DEFINE FILENAME filevar "=" [filepath_string | data_source_string];
-data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
+<pre>DEFINE FILENAME filevar "=" [filepath_string | data_source_string];
+data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -759,7 +735,7 @@ data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DEFINE FILENAME f1 = "$s1:~/files.config";</code></pre>
+<pre>DEFINE FILENAME f1 = "$s1:~/files.config";</pre>
 </div>
 </div>
 <div class="sect3">
@@ -772,9 +748,9 @@ data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">{
+<pre>{
     "file.uris": "s3://my-bucket/data.csv"
-}</code></pre>
+}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -788,9 +764,9 @@ data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">{
+<pre>{
     "file.uris": "s3://my-bucket1/data1.csv,s3://my-bucket1/data2.csv,s3://my-bucket2/data3.csv"
-}</code></pre>
+}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -801,8 +777,8 @@ data_source_string = $DATA_SOURCE_NAME":"&lt;path_to_configfile&gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">DEFINE FILENAME f1 = "$s1:~/files.config";
-DEFINE FILENAME f1 = "$s1:{\"file.uris\":\"s3://my-bucket/data.csv\"}";</code></pre>
+<pre>DEFINE FILENAME f1 = "$s1:~/files.config";
+DEFINE FILENAME f1 = "$s1:{\"file.uris\":\"s3://my-bucket/data.csv\"}";</pre>
 </div>
 </div>
 </div>
@@ -816,7 +792,7 @@ DEFINE FILENAME f1 = "$s1:{\"file.uris\":\"s3://my-bucket/data.csv\"}";</code></
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">{
+<pre>{
     "tasks.max": 1,
     "file.uris": "s3://my-bucket/data.csv",
     "file.regexp": ".*",
@@ -828,7 +804,7 @@ DEFINE FILENAME f1 = "$s1:{\"file.uris\":\"s3://my-bucket/data.csv\"}";</code></
     "file.reader.text.archive.extensions.tar": "tar",
     "file.reader.text.archive.extensions.zip": "zip",
     "file.reader.text.archive.extensions.gzip": "tar.gz,tgz"
-}</code></pre>
+}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -897,7 +873,7 @@ The archive type is applied to all files in "file.uris" when loading. If you hav
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">RUN LOADING JOB job1 USING f1, f2="$s1:~/files1.config", f3="$s2:~/files2.config", EOF="true";</code></pre>
+<pre>RUN LOADING JOB job1 USING f1, f2="$s1:~/files1.config", f3="$s2:~/files2.config", EOF="true";</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -916,9 +892,9 @@ A RUN LOADING JOB instance may only use one type of data source.  E.g., you may 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">RUN LOADING JOB [-noprint] [-dryrun] [-n [i],j] jobname
+<pre>RUN LOADING JOB [-noprint] [-dryrun] [-n [i],j] jobname
    [ USING filevar [="filepath_string"][, filevar [="filepath_string"]]*
-   [, CONCURRENCY="cnum"][,BATCH_SIZE="bnum"]][, EOF="true"]</code></pre>
+   [, CONCURRENCY="cnum"][,BATCH_SIZE="bnum"]][, EOF="true"]</pre>
 </div>
 </div>
 </div>
@@ -948,7 +924,7 @@ A RUN LOADING JOB instance may only use one type of data source.  E.g., you may 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">SHOW LOADING STATUS job_id|ALL</code></pre>
+<pre>SHOW LOADING STATUS job_id|ALL</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -983,7 +959,7 @@ A RUN LOADING JOB instance may only use one type of data source.  E.g., you may 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-ruby hljs" data-lang="ruby">USE GRAPH test_graph
+<pre>USE GRAPH test_graph
 DROP JOB load_person
 DROP DATA_SOURCE s1
 
@@ -1001,7 +977,7 @@ CREATE LOADING JOB load_person FOR GRAPH test_graph {
 }
 
 # load the data
-RUN LOADING JOB load_person</code></pre>
+RUN LOADING JOB load_person</pre>
 </div>
 </div>
 </div>
