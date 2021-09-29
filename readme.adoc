@@ -15,9 +15,22 @@ To build the site locally, run:
 ----
 npm run build
 ----
-The build will be available in the `build/` folder in the root directory. To open the build:
+The build will be available in the `build/` folder in the root directory. 
+
+== Run a local server to view the build
+
+To open the build:
 [,bash]
 ----
-open build/site/tigergraph-server/3.2/index.html
+$ npm i -g http-server
+$ http-server build/site -c-1
 ----
-From `index.html`, you should be able to navigate to any page of the build. 
+Upon launching the command, the local address of the web server will be displayed in your terminal. You should see the following output in your terminal:
+
+----
+Starting up http-server, serving build/site
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.1.8:8080
+Hit CTRL-C to stop the server
+----
