@@ -1,6 +1,7 @@
 site:
   title: TigerGraph Documentation
   url: http://127.0.0.1:8080
+  start_page: tigergraph-server:intro:introduction.adoc
 content:
   sources:
   - url: https://github.com/lennessyy/tg-server.git
