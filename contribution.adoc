@@ -1,0 +1,48 @@
+= Contribution
+
+It takes commitment from both writers and devs, as well as collaboration to create and maintain good documentation. Part of that commitment is to contribute to the documentation.
+
+== Writing a new page
+
+To write a new page in Antora, you need to:
+
+. Write the plain text in Asciidoc in the `pages` directory of a module,
+. Add your page to the https://docs.antora.org/antora/2.3/navigation/files-and-lists/#whats-a-nav-file[navigation file] of that module.
+
+If you are creating a new module, you will need to link the pages of the module in a navigation file, and then link that navigation file to https://docs.antora.org/antora/2.3/component-version-descriptor/[the `antora.yml` file] of the component.
+
+If you are not familiar with Asciidoc, read link:https://docs.asciidoctor.org/asciidoc/latest/[Asciidoc documentation] to learn how to author in Asciidoc.
+
+.Page, module & component
+* *page*
+** Every entry in the left site navigation is a page. A page must exist in the `pages` directory of a module.
+* *module*
+** The entries in the left site navigation that display without needing to be clicked to expand to show, along with all the pages inside it.
+* *component*
+** All the modules and pages on a left site navigation.
+
+.Page, module & component
+====
+----
+TigerGraph Cloud <1>
+|- Solutions <2>
+     |-- Create a solution <3>
+----
+<1> _TigerGraph Cloud_, along with all the modules and pages inside it, is a component
+<2> _Solutions_, along with all the pages inside it,  is a module
+<3> _Create a solution_ is a page.
+====
+
+=== Add assets
+If you need to add images, files, or other assets to your document, add it to the family directory of a module (`images`, `assets`, etc.) If the directory doesn't exist, create one.
+
+Read more about family directories https://docs.antora.org/antora/2.3/family-directories/[here].
+
+== Editing an existing page
+
+Click the `Edit on Github` button in the upper right corner of a page to make edits. When you are done, submit a pull request with a comment on why the edit was necessary.
+
+== Raise issues
+
+If you find issues with the content of a page or module that cannot be easily fixed with a short edit, raise an issue in the GitHub repository.
+

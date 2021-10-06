@@ -1,0 +1,19 @@
+= Reviews
+
+SME Reviews are critical to documentation quality. When a documentation draft is done, the new draft is submitted as a pull request, and will go through review before the new page is merged in.
+
+== Who
+The creator of the doc ticket should designate a reviewer at the time of creating the ticket.
+If a reviewer is not designated,then the creator of the ticket bears the responsibility of reviewing the document.
+
+== How
+1. Read through the document. Particularly, pay attention to the following:
+    * Is the document easy to read and skim?
+    * Is it missing any important information?
+    * Is critical information properly highlighted?
++
+You are encouraged to offer any feedback you have.
+As someone who is reading the draft for the first time, your perspective is valuable regardless of whether you think you are good at writing.
+The writer will also use their judgement to decide whether to incorporate your suggestions.
+
+2. Answer any questions that the writer asked regarding the document.
