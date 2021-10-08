@@ -1,6 +1,6 @@
 site:
   title: Docs
-  url: http://127.0.0.1:8080
+  url: https://serene-mclean-f91eb7.netlify.app/
   start_page: tigergraph-server:intro:introduction.adoc
 content:
   sources:
@@ -17,6 +17,7 @@ content:
 ui:
   bundle:
     url: https://github.com/lennessyy/antora-ui/blob/main/build/ui-bundle.zip?raw=true
+    # url: /Users/lenny.chen/Documents/migration/antora-ui/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 asciidoc:
