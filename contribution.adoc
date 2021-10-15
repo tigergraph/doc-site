@@ -6,7 +6,9 @@ It takes commitment from both writers and devs, as well as collaboration to crea
 
 To write a new page in Antora, you need to:
 
-. Write the plain text in Asciidoc in the `pages` directory of a module,
+. Write the plain text in Asciidoc in the `pages` directory of a module
+** You can write in your editor of choice. Manay editors have plugins that allow you to view the source and preview the rendered result side-by-side. 
+** IntelliJ's Asciidoc plugin provides a beautiful preview and works with Antora's file structure so images are also rendered correctly. 
 . Add your page to the https://docs.antora.org/antora/2.3/navigation/files-and-lists/#whats-a-nav-file[navigation file] of that module.
 
 If you are creating a new module, you will need to link the pages of the module in a navigation file, and then link that navigation file to https://docs.antora.org/antora/2.3/component-version-descriptor/[the `antora.yml` file] of the component.

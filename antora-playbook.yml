@@ -7,7 +7,7 @@ content:
   - url: https://github.com/lennessyy/tg-server.git
     branches: main
   - url: https://github.com/lennessyy/tg-gui.git
-    branches: main
+    branches: [main, 3.3]
   - url: https://github.com/lennessyy/cloud.git
     branches: main
   - url: https://github.com/lennessyy/graph-ml.git
