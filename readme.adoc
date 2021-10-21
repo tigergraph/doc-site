@@ -17,6 +17,11 @@ npm run build
 ----
 The build will be available in the `build/` folder in the root directory. 
 
+=== Build from your local content source repository
+To have Anotora build site from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository. 
+
+See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[Use local content repositories] on Antora's documentation. 
+
 == Run a local server to view the build
 
 To open the build:

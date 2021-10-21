@@ -17,3 +17,17 @@ As someone who is reading the draft for the first time, your perspective is valu
 The writer will also use their judgement to decide whether to incorporate your suggestions.
 
 2. Answer any questions that the writer asked regarding the document.
+
+3. If you requested edits, review the edits after they are made.
+When you think a doc is satisfactory, approve the Pull Request.
+
+== When
+Please review the draft within 48 hours of being assigned a review.
+Without an approving review, a documentation edit cannot be published.
+
+== Exceptions
+The following edits can be merged without a review.
+
+* Typos
+* Quick factual fixes
+* Reformatting content to be in line with style guide
