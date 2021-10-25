@@ -2,6 +2,9 @@ site:
   title: Docs
   url: https://serene-mclean-f91eb7.netlify.app/
   start_page: tigergraph-server:intro:introduction.adoc
+  robots: |
+    User-agent: *
+    Sitemap: https://serene-mclean-f91eb7.netlify.app/sitemap.xml
 content:
   sources:
   - url: https://github.com/lennessyy/tg-server.git
