@@ -25,6 +25,17 @@ To have Anotora build site from your local content source repository, change the
 
 See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[Use local content repositories] on Antora's documentation. 
 
+== Wach Mode
+
+Watch Mode launch a local web server for preview, it will continue watch your local content source repository change and rebuild the site.
+
+[,bash]
+----
+npm run dev
+----
+
+You can access the web server at http://localhost:5000[http://localhost:5000]
+
 == Run a local server to view the build
 
 To open the build:
