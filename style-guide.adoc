@@ -1,0 +1,36 @@
+= TigerGraph Docs Style Guide
+
+This style guide is intended for use by contributors, not necessarily end-users.
+It provides general guidance to anyone who contributes to TigerGraph's documentation.
+
+== Intended audience
+This style guide is intended for use by any contributors that are writing documentation for TigerGraph, including software engineers.
+This guide can help project contributors to communicate clearly and consistently in TigerGraph's documentation
+
+== Our preferred style guide
+We have adopted the https://developers.google.com/style[Google developer documentation style guide] for TigerGraph documentation.
+
+For a quick summary, see https://developers.google.com/style/highlights[the Google style guide highlights]. The rest of this document describes our project-specific customizations to Google's guide.
+
+We use standard American spelling and our preferred dictionary is the American Heritage Dictionary.
+
+== Glossary of preferred terms
+|===
+|Preferred term | Avoid these terms | Explanation
+
+|the TigerGraph Linux user
+|the tigergraph user, tigergraph user
+|Users can change the default name for the TigerGraph Linux user. Additionally, "tigergraph user" is very ambiguous.
+
+|TigerGraph Cloud
+|TG Cloud, Tg cloud
+|Always use the full name or official acronym to refer to products.
+
+|For example
+|e.g.
+|Avoid non-English words.
+
+|that is
+|i.e.
+|Avoid non-English words.
+|===
