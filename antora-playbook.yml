@@ -16,7 +16,7 @@ content:
   - url: https://github.com/lennessyy/graph-ml.git
     branches: main
   - url: https://github.com/lennessyy/gsql.git
-    branches: main
+    branches: [main, 3.3]
 ui:
   bundle:
     url: https://github.com/lennessyy/antora-ui/blob/main/build/ui-bundle.zip?raw=true
