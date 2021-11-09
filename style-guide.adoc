@@ -14,6 +14,15 @@ For a quick summary, see https://developers.google.com/style/highlights[the Goog
 
 We use standard American spelling and our preferred dictionary is the American Heritage Dictionary.
 
+NOTE: If you see an instance where the style guide isn't followed, feel free to edit it to be consistent with the style guide. 
+
+=== Exceptions
+There are a couple of style choices in our documentation that are different from the Google style guide.
+
+* Titles
+** Document titles use title-style capitalization instead of sentence-style.
+
+
 == Glossary of preferred terms
 |===
 |Preferred term | Avoid these terms | Explanation

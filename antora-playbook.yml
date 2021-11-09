@@ -1,25 +1,25 @@
 site:
   title: Docs
-  url: https://serene-mclean-f91eb7.netlify.app/
+  url: https://docs-tigergraph.netlify.app/
   start_page: tigergraph-server:intro:introduction.adoc
   robots: |
     User-agent: *
-    Sitemap: https://serene-mclean-f91eb7.netlify.app/sitemap.xml
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 content:
   sources:
-  - url: https://github.com/lennessyy/tg-server.git
+  - url: https://github.com/tigergraph/server-docs.git
     branches: [main, 3.3]
-  - url: https://github.com/lennessyy/tg-gui.git
+  - url: https://github.com/tigergraph/gui-docs.git
     branches: [main, 3.3]
-  - url: https://github.com/lennessyy/cloud.git
+  - url: https://github.com/tigergraph/cloud-docs.git
     branches: main
-  - url: https://github.com/lennessyy/graph-ml.git
+  - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: main
-  - url: https://github.com/lennessyy/gsql.git
+  - url: https://github.com/tigergraph/gsql-docs.git
     branches: [main, 3.3]
 ui:
   bundle:
-    url: https://github.com/lennessyy/antora-ui/blob/main/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
     # url: /Users/lenny.chen/Documents/migration/antora-ui/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui

@@ -14,27 +14,22 @@ MathJax.Hub.Config({
 </script>
 {{/unless}}
 {{/with}}
-{{!-- <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-<script>
-  docsearch({
-    // Your apiKey and indexName will be given to you once
-    // we create your config
-    apiKey: '271b7a553acb2a30275787302cab57d3',
-    indexName: 'tgdocs',
-    appId: 'G2WKSUM995', // Should be only included if you are running DocSearch on your own.
-    // Replace inputSelector with a CSS selector
-    // matching your search input
-    inputSelector: '#search',
-    // Set debug to true to inspect the dropdown
-    debug: false,
-  });
-</script> --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
 <script type="text/javascript">
+  algoliasearchNetlify({
+    appId: '409KFVA9VJ',
+    apiKey: 'd5bc9bb6a67cef0d9c48594227714d4c',
+    siteId: '53417c03-70c6-495f-bd18-c373e8a691b5',
+    branch: 'main',
+    selector: '#search',
+  });
+</script>
+{{!-- <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
   (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
   
   _st('install','wGW4288Z7D7GjQmQFrP7','2.0.0');
-</script>
+</script> --}}
