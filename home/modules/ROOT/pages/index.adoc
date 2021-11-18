@@ -1,0 +1,16 @@
+= TigerGraph Documentation
+:navtitle: home
+:page-role: home
+
+Welcome to the TigerGraph documentation site!
+Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
+
+== Legacy documentation site
+Our new documentation site provides you with improved organization, more accurate search, as well as faster page loading. However, it only contains documentation for TigerGraph 3.2 and later.
+
+To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs.tigergraph.com/legacy[legacy documentation site].
+
+== Navigation and switch versions
+On the left side of any page you can find a navigation menu to any component of the documentation site.
+
+To switch to a different version, click the version number you'd like to proceed with in the left-side navigation.

@@ -7,23 +7,22 @@ site:
     Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 content:
   sources:
-  - url: https://github.com/tigergraph/doc-site.git
-    branches: [main]
+  - url: /Users/lenny.chen/workstation/doc-site
+    branches: main
     start_paths: home
-  - url: https://github.com/tigergraph/server-docs.git
-    branches: [main, 3.3, 3.4]
-  - url: https://github.com/tigergraph/gui-docs.git
+  - url: /Users/lenny.chen/workstation/server-docs
     branches: [main, 3.3]
-  - url: https://github.com/tigergraph/cloud-docs.git
+  - url: /Users/lenny.chen/workstation/gui-docs
+    branches: [main, 3.3]
+  - url: /Users/lenny.chen/workstation/cloud-docs
     branches: main
-  - url: https://github.com/tigergraph/tigdsl-docs.git
+  - url: /Users/lenny.chen/workstation/tigdsl-docs
     branches: main
-  - url: https://github.com/tigergraph/gsql-docs.git
+  - url: /Users/lenny.chen/workstation/gsql-docs
     branches: [main, 3.3]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
-    # url: /Users/lenny.chen/Documents/migration/antora-ui/build/ui-bundle.zip
+    url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 asciidoc:

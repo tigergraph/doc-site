@@ -4,14 +4,14 @@ This repository contains the Antora playbook used to build the TigerGraph docume
 
 == Install dependencies
 To install dependencies, run:
-[,bash]
+[,console]
 ----
 npm install
 ----
 
 == Build site locally
 To build the site locally, run:
-[,bash]
+[,console]
 ----
 npm run build
 ----
@@ -29,7 +29,7 @@ See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[U
 
 Watch Mode launch a local web server for preview, it will continue watch your local content source repository change and rebuild the site.
 
-[,bash]
+[,console]
 ----
 npm run dev
 ----
@@ -39,7 +39,7 @@ You can access the web server at http://localhost:5000[http://localhost:5000]
 == Run a local server to view the build
 
 To open the build:
-[,bash]
+[,console]
 ----
 $ npm i -g http-server
 $ http-server build/site -c-1
