@@ -16,5 +16,5 @@
     from = "/ui/graphstudio/patent-and-third-party-notice"
     to = "/gui/3.4/graphstudio/patent-and-third-party-notice"
 
-    from = "/cloud/tigergraph-cloud-faqs
+    from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/3.4/support/faqs"
