@@ -5,15 +5,15 @@
 
 [[redirects]]
     from = "/admin/admin-guide/user-access/roles-and-privileges"
-    to = "tigergraph-server/3.4/user-access/readme"
+    to = "/tigergraph-server/3.4/user-access/readme"
 
 [[redirects]]
     from = "/ui/admin-portal"
-    to = "/gui"
+    to = "/gui/3.4"
 
 [[redirects]]
     from = "/ui/graphstudio"
-    to = "/gui"
+    to = "/gui/3.4/admin-portal/overview"
 
 [[redirects]]
     from = "/ui/graphstudio/patent-and-third-party-notice"
@@ -21,4 +21,4 @@
 
 [[redirects]]
     from = "/cloud/tigergraph-cloud-faqs"
-    to = "/cloud/3.4/support/faqs"
+    to = "/cloud/support/faqs"
