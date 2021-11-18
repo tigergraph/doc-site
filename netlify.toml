@@ -1,0 +1,20 @@
+[build]
+
+    publish = "build/site/"
+    command = "npm run build"
+
+[[redirects]]
+    from = "/admin/admin-guide/user-access/roles-and-privileges"
+    to = "tigergraph-server/3.4/user-access/readme"
+
+    from = "/ui/admin-portal"
+    to = "/gui"
+
+    from = "/ui/graphstudio"
+    to = "/gui"
+
+    from = "/ui/graphstudio/patent-and-third-party-notice"
+    to = "/gui/3.4/graphstudio/patent-and-third-party-notice"
+
+    from = "/cloud/tigergraph-cloud-faqs
+    to = "/cloud/3.4/support/faqs"
