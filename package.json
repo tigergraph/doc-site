@@ -14,7 +14,6 @@
   "dependencies": {
     "@antora/cli": "^2.3.4",
     "@antora/site-generator-default": "^2.3.4",
-    "@antora/xref-validator": "gitlab:antora/xref-validator",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-connect": "^5.7.0",
