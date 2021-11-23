@@ -11,15 +11,15 @@ content:
     branches: main
     start_paths: home
   - url: /Users/lenny.chen/workstation/server-docs
-    branches: [main, 3.3]
+    branches: [main, 3.3, 3.4]
   - url: /Users/lenny.chen/workstation/gui-docs
-    branches: [main, 3.3]
+    branches: [main, 3.3, 3.4]
   - url: /Users/lenny.chen/workstation/cloud-docs
     branches: main
   - url: /Users/lenny.chen/workstation/tigdsl-docs
     branches: main
   - url: /Users/lenny.chen/workstation/gsql-docs
-    branches: [main, 3.3]
+    branches: [main, 3.3, 3.4]
 ui:
   bundle:
     url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
