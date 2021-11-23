@@ -11,15 +11,15 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [main, 3.3]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [main, 3.3]
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: main
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: main
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [main, 3.3]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
