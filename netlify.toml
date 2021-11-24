@@ -20,5 +20,5 @@
     to = "/gui/3.4/graphstudio/patent-and-third-party-notice"
 
 [[redirects]]
-    from = "/cloud/tigergraph-cloud-faqs"
+    from = "/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
