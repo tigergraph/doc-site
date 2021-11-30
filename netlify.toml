@@ -22,3 +22,7 @@
 [[redirects]]
     from = "/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
+
+[[redirects]]
+    from = "/cloud/tigergraph-cloud-faqs"
+    to = "/cloud/support/faqs"
