@@ -62,3 +62,7 @@
 [[redirects]]
     from = "/dev/gsql-ref/querying/data-types"
     to = "/gsql-ref/3.3/querying/data-types"
+
+[[redirects]]
+    from = "/dev/restpp-api/authentication"
+    to = "/tigergraph-server/3.3/api/authentication"
