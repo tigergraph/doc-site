@@ -20,6 +20,8 @@ content:
     branches: main
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [main, 3.3, 3.4]
+  - url: https://github.com/lennessyy/tigergraphql.git
+    branches: [main]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
