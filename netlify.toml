@@ -38,3 +38,27 @@
 [[redirects]]
     from = "/dev/gsql-ref/querying/func/vertex-methods"
     to ="/gsql-ref/3.3/querying/func/vertex-methods"
+
+[[redirects]]
+    from = "/admin/admin-guide/install-and-config/install"
+    to = "/tigergraph-server/3.3/installation/install"
+
+[[redirects]]
+    from = "/dev/gsql-ref"
+    to = "/gsql-ref/3.3/intro/intro"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/accumulators"
+    to = "/gsql-ref/3.3/querying/accumulators"
+
+[[redirects]]
+    from = "/start"
+    to = "/gsql-ref/3.3/tutorials/gsql-101/readme"
+
+[[redirects]]
+    from = "/dev/gsql-ref/ddl-and-loading/defining-a-graph-schema"
+    to = "/gsql-ref/3.3/ddl-and-loading/defining-a-graph-schema"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/data-types"
+    to = "/gsql-ref/3.3/querying/data-types"
