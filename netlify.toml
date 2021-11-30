@@ -26,3 +26,15 @@
 [[redirects]]
     from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func/string-functions"
+    to = "/gsql-ref/3.3/querying/func/string-functions"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func"
+    to = "/gsql-ref/3.3/querying/func/readme"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func/vertex-methods"
+    to ="/gsql-ref/3.3/querying/func/vertex-methods"
