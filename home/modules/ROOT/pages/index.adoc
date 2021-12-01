@@ -47,3 +47,8 @@ TigerGraph Cloud is a fully-managed cloud database built on the same TigerGraph 
 TigerGraph Cloud handles all the complexity of deploying and managing your deployments on the cloud service provider of your choice (AWS, Azure, and GCP).
 
 For more information, see xref:cloud:start:overview.adoc[].
+
+=== TigerGraph GraphQL Service
+TigerGraph GraphQL Service enables users to access graph data in TigerGraph using GraphQL queries. With TigerGraph GraphQL Service, you will be able to use any GraphQL client or to simply submit GraphQL queries directly to the service to quickly access the graph data in TigerGraph. 
+
+To learn more, see xref:graphql::intro.adoc[]
