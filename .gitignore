@@ -1,2 +1,5 @@
 node_modules/
 build/
+local-antora-playbook.yml
+.idea/
+.DS_Store

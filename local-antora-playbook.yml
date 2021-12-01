@@ -27,7 +27,7 @@ ui:
   supplemental_files: ./supplemental-ui
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml'
+    page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml, graphql'
   extensions:
   - ./libs/tabs-block.js
 urls:
