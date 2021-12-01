@@ -66,3 +66,7 @@
 [[redirects]]
     from = "/dev/restpp-api/authentication"
     to = "/tigergraph-server/3.3/api/authentication"
+
+[[redirects]]
+    from = "/dev/restpp-api"
+    to = "/tigergraph-server/3.3/api/intro"
