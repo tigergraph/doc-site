@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "antora generate --fetch antora-playbook.yml",
     "dev": "gulp",
-    "serve": "http-server build/site -c-1"
+    "serve": "http-server build/site -c-1",
+    "local": "antora local-antora-playbook.yml"
   },
   "author": "",
   "license": "ISC",
