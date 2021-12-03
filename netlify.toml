@@ -3,70 +3,78 @@
     publish = "build/site/"
     command = "npm run build"
 
-[[redirects]]
-    from = "/admin/admin-guide/user-access/roles-and-privileges"
-    to = "/tigergraph-server/3.3/user-access/readme"
-
-[[redirects]]
-    from = "/ui/admin-portal"
-    to = "/gui/3.3"
-
+# redirects for gui
 [[redirects]]
     from = "/ui/graphstudio"
-    to = "/gui/3.3/admin-portal/overview"
+    to = "/gui/current"
 
 [[redirects]]
-    from = "/ui/graphstudio/patent-and-third-party-notice"
-    to = "/gui/3.3/graphstudio/patent-and-third-party-notice"
+    from = "/ui/admin-portal/*"
+    to = "/gui/current/admin-portal/:splat"
+
+[[redirects]]
+    from = "/ui/graphstudio/*"
+    to = "/gui/current/graphstudio/:splat"
 
 [[redirects]]
     from = "/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
+# redirects for cloud
 [[redirects]]
     from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
-[[redirects]]
-    from = "/dev/gsql-ref/querying/func/string-functions"
-    to = "/gsql-ref/3.3/querying/func/string-functions"
-
+# redirects for language reference
 [[redirects]]
     from = "/dev/gsql-ref/querying/func"
-    to = "/gsql-ref/3.3/querying/func/readme"
-
-[[redirects]]
-    from = "/dev/gsql-ref/querying/func/vertex-methods"
-    to ="/gsql-ref/3.3/querying/func/vertex-methods"
-
-[[redirects]]
-    from = "/admin/admin-guide/install-and-config/install"
-    to = "/tigergraph-server/3.3/installation/install"
+    to = "/gsql-ref/current/querying/func/readme"
 
 [[redirects]]
     from = "/dev/gsql-ref"
-    to = "/gsql-ref/3.3/intro/intro"
+    to = "/gsql-ref/current/intro/intro"
 
 [[redirects]]
-    from = "/dev/gsql-ref/querying/accumulators"
-    to = "/gsql-ref/3.3/querying/accumulators"
+    from = "/dev/gsql-ref/querying/select-statement"
+    to = "/gsql-ref/current/querying/select-statement/readme"
 
 [[redirects]]
-    from = "/start"
-    to = "/gsql-ref/3.3/tutorials/gsql-101/readme"
+    from = "/dev/gsql-ref/*"
+    to = "/gsql-ref/current/:splat"
 
 [[redirects]]
-    from = "/dev/gsql-ref/ddl-and-loading/defining-a-graph-schema"
-    to = "/gsql-ref/3.3/ddl-and-loading/defining-a-graph-schema"
+    from = "/start/gsql-101"
+    to = "/gsql-ref/current/tutorials/gsql-101/readme"
 
 [[redirects]]
-    from = "/dev/gsql-ref/querying/data-types"
-    to = "/gsql-ref/3.3/querying/data-types"
+    from = "/start/gsql-101/*"
+    to = "/gsql-ref/current/tutorials/gsql-101/:splat"
 
 [[redirects]]
-    from = "/dev/restpp-api/authentication"
-    to = "/tigergraph-server/3.3/api/authentication"
+    from = "/start/gsql-102"
+    to = "/gsql-ref/current/tutorials/pattern-matching/readme"
 
+[[redirects]]
+    from = "/start/gsql-102/*"
+    to = "/gsql-ref/current/tutorials/pattern-matching/:splat"
+
+[[redirects]]
+    from = "/start/accumulators-tutorial"
+    to = "/gsql-ref/current/tutorials/accumulators-tutorial"
+
+# redirects for server
 [[redirects]]
     from = "/dev/restpp-api"
-    to = "/tigergraph-server/3.3/api/intro"
+    to = "/tigergraph-server/current/api/intro"
+
+[[redirects]]
+    from = "/dev/restpp-api/*"
+    to = "/tigergraph-server/current/api/:splat"
+
+[[redirects]]
+    from = "/admin/admin-guide/install-and-config/*"
+    to = "/tigergraph-server/current/installation/:splat"
+
+[[redirects]]
+    from = "/admin/admin-guide/user-access/*"
+    to = "/tigergraph-server/current/user-access/:splat"
