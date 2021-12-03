@@ -35,6 +35,6 @@ asciidoc:
   - ./libs/tabs-block.js
 urls:
   html_extension_style: drop
-  latest_version_segment_strategy: replace
+  latest_version_segment_strategy: redirect:to
   latest_version_segment: current
   redirect_facility: netlify
