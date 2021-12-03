@@ -8,7 +8,7 @@ Here you can find the reference materials, guides, and examples to develop your 
 == Legacy documentation site
 Our new documentation site provides you with improved organization, more accurate search, as well as faster page loading. However, it only contains documentation for TigerGraph 3.2 and later.
 
-To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs.tigergraph.com/legacy[legacy documentation site].
+To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
 
 == Navigation and switch versions
 On the left side of any page you can find a navigation menu to any area of the documentation site.
@@ -47,3 +47,8 @@ TigerGraph Cloud is a fully-managed cloud database built on the same TigerGraph 
 TigerGraph Cloud handles all the complexity of deploying and managing your deployments on the cloud service provider of your choice (AWS, Azure, and GCP).
 
 For more information, see xref:cloud:start:overview.adoc[].
+
+=== TigerGraph GraphQL Service
+TigerGraph GraphQL Service enables users to access graph data in TigerGraph using GraphQL queries. With TigerGraph GraphQL Service, you will be able to use any GraphQL client or to simply submit GraphQL queries directly to the service to quickly access the graph data in TigerGraph. 
+
+To learn more, see xref:graphql::intro.adoc[]

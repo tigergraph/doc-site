@@ -5,20 +5,68 @@
 
 [[redirects]]
     from = "/admin/admin-guide/user-access/roles-and-privileges"
-    to = "/tigergraph-server/3.4/user-access/readme"
+    to = "/tigergraph-server/3.3/user-access/readme"
 
 [[redirects]]
     from = "/ui/admin-portal"
-    to = "/gui/3.4"
+    to = "/gui/3.3"
 
 [[redirects]]
     from = "/ui/graphstudio"
-    to = "/gui/3.4/admin-portal/overview"
+    to = "/gui/3.3/admin-portal/overview"
 
 [[redirects]]
     from = "/ui/graphstudio/patent-and-third-party-notice"
-    to = "/gui/3.4/graphstudio/patent-and-third-party-notice"
+    to = "/gui/3.3/graphstudio/patent-and-third-party-notice"
+
+[[redirects]]
+    from = "/tigergraph-cloud/tigergraph-cloud-faqs"
+    to = "/cloud/support/faqs"
 
 [[redirects]]
     from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func/string-functions"
+    to = "/gsql-ref/3.3/querying/func/string-functions"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func"
+    to = "/gsql-ref/3.3/querying/func/readme"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/func/vertex-methods"
+    to ="/gsql-ref/3.3/querying/func/vertex-methods"
+
+[[redirects]]
+    from = "/admin/admin-guide/install-and-config/install"
+    to = "/tigergraph-server/3.3/installation/install"
+
+[[redirects]]
+    from = "/dev/gsql-ref"
+    to = "/gsql-ref/3.3/intro/intro"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/accumulators"
+    to = "/gsql-ref/3.3/querying/accumulators"
+
+[[redirects]]
+    from = "/start"
+    to = "/gsql-ref/3.3/tutorials/gsql-101/readme"
+
+[[redirects]]
+    from = "/dev/gsql-ref/ddl-and-loading/defining-a-graph-schema"
+    to = "/gsql-ref/3.3/ddl-and-loading/defining-a-graph-schema"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/data-types"
+    to = "/gsql-ref/3.3/querying/data-types"
+
+[[redirects]]
+    from = "/dev/restpp-api/authentication"
+    to = "/tigergraph-server/3.3/api/authentication"
+
+[[redirects]]
+    from = "/dev/restpp-api"
+    to = "/tigergraph-server/3.3/api/intro"

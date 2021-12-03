@@ -20,6 +20,8 @@ content:
     branches: main
   - url: /Users/lenny.chen/workstation/gsql-docs
     branches: [main, 3.3, 3.4]
+  - url: /Users/lenny.chen/workstation/tigergraphql
+    branches: [main]
 ui:
   bundle:
     url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
