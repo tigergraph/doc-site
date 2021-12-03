@@ -78,3 +78,7 @@
 [[redirects]]
     from = "/admin/admin-guide/user-access/*"
     to = "/tigergraph-server/current/user-access/:splat"
+
+[[redirects]]
+    from = "/dev/using-a-remote-gsql-client "
+    to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
