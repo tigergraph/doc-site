@@ -14,7 +14,7 @@
 
 [[redirects]]
     from = "/ui/graphstudio/*"
-    to = "/gui/3.3/graphstudio/:splat"
+    to = "/gui/current/graphstudio/:splat"
 
 [[redirects]]
     from = "/tigergraph-cloud/tigergraph-cloud-faqs"
@@ -33,6 +33,10 @@
 [[redirects]]
     from = "/dev/gsql-ref"
     to = "/gsql-ref/current/intro/intro"
+
+[[redirects]]
+    from = "/dev/gsql-ref/querying/select-statement"
+    to = "/gsql-ref/current/querying/select-statement/readme"
 
 [[redirects]]
     from = "/dev/gsql-ref/*"
@@ -55,8 +59,8 @@
     to = "/gsql-ref/current/tutorials/pattern-matching/:splat"
 
 [[redirects]]
-    from = "/start/accumulator-tutorial"
-    to = "/gsql-ref/current/tutorials/accumulator-tutorial"
+    from = "/start/accumulators-tutorial"
+    to = "/gsql-ref/current/tutorials/accumulators-tutorial"
 
 # redirects for server
 [[redirects]]
