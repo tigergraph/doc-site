@@ -3,3 +3,4 @@ build/
 local-antora-playbook.yml
 .idea/
 .DS_Store
+.vscode/
