@@ -11,15 +11,15 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [3.2, 3.3, 3.4]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [3.2, 3.3, 3.4]
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: main
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: main
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [main, 3.3, 3.4]
+    branches: [3.2, 3.3, 3.4]
   - url: https://github.com/lennessyy/tigergraphql.git
     branches: [main]
 ui:
