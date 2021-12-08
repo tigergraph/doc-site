@@ -9,6 +9,10 @@
     to = "/gui/current"
 
 [[redirects]]
+    from = "/ui/admin-portal"
+    to = "/gui/current/admin-portal/overview"
+
+[[redirects]]
     from = "/ui/admin-portal/*"
     to = "/gui/current/admin-portal/:splat"
 
