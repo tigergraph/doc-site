@@ -75,6 +75,10 @@
     from = "/start/get-started/*"
     to = "tigergraph-server/current/getting-started/:splat"
 
+[[redirects]]
+    from = "/admin/admin-guide/system-management/management-with-gadmin"
+    to = "/tigergraph-server/current/gadmin/management-with-gadmin"
+
 
 [[redirects]]
     from = "/dev/restpp-api/*"
