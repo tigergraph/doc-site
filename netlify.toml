@@ -73,7 +73,7 @@
 
 [[redirects]]
     from = "/start/get-started/*"
-    to = "tigergraph-server/current/getting-started/:splat"
+    to = "/tigergraph-server/current/getting-started/:splat"
 
 [[redirects]]
     from = "/admin/admin-guide/system-management/management-with-gadmin"
