@@ -72,6 +72,11 @@
     to = "/tigergraph-server/current/api/intro"
 
 [[redirects]]
+    from = "/start/get-started/*"
+    to = "tigergraph-server/current/getting-started/:splat"
+
+
+[[redirects]]
     from = "/dev/restpp-api/*"
     to = "/tigergraph-server/current/api/:splat"
 
@@ -86,3 +91,12 @@
 [[redirects]]
     from = "/dev/using-a-remote-gsql-client "
     to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
+
+# redirects for graph-ml
+[[redirects]]
+    from = "/graph-algorithm-library"
+    to = "/graph-ml/current/intro/overview"
+
+[[redirects]]
+    from = "/dev/data-loader-guides/*"
+    to = "/tigergraph-server/current/data-loading/:splat"
