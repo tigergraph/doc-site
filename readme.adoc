@@ -1,5 +1,7 @@
 = TigerGraph Documentation Site Build
 
+TigerGraph's documentation runs on Antora, which uses configuration files, or "playbooks" to generate the site and display the output in a certain way.
+
 This repository contains the Antora playbook used to build the TigerGraph documentation site.
 
 == Install dependencies
@@ -18,16 +20,16 @@ npm run build
 The build will be available in the `build/` folder in the root directory. 
 
 IMPORTANT: Though the files are all in the `/build` folder, you won't be able to access other pages through the links if the files are not served by a server.
-To preview locally, you can run a <<Run a local server to view the build>>.If you really don't want to use a local server, edit the `antora-playbook.yml` file in your local environment, and change the `html_extension_style` under `urls` to `default`. This allows you to open the static files and have the links work.  
+To preview locally, you can run a <<Run a local server to view the build>>. If you really don't want to use a local server, edit the `antora-playbook.yml` file in your local environment, and change the `html_extension_style` under `urls` to `default`. This allows you to open the static files with working internal links.
 
 === Build from your local content source repository
-To have Anotora build site from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository. 
+To have Antora build from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository.
 
 See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[Use local content repositories] on Antora's documentation. 
 
 == Watch Mode
 
-Watch Mode launch a local web server for preview, it will continue watch your local content source repository change and rebuild the site.
+Watch Mode launches a local web server for preview. It will continually rebuild the site as your source files change.
 
 [,console]
 ----

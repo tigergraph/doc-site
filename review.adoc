@@ -26,8 +26,8 @@ Please review the draft within 48 hours of being assigned a review.
 Without an approving review, a documentation edit cannot be published.
 
 == Exceptions
-The following edits can be merged without a review.
+The following edits can be merged without a review:
 
 * Typos
 * Quick factual fixes
-* Reformatting content to be in line with style guide
+* Reformatting content to be in line with the style guide
