@@ -22,6 +22,9 @@ content:
     branches: [3.2, 3.3, 3.4]
   - url: https://github.com/lennessyy/tigergraphql.git
     branches: [main]
+  - url: https://github.com/tigergraph/tse.git
+    branches: main
+    start_path: knowledge_base
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
