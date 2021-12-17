@@ -15,7 +15,21 @@ For a quick summary, see https://developers.google.com/style/highlights[the Goog
 We use standard American spelling and our preferred dictionary is the American Heritage Dictionary.
 
 NOTE: If you see an instance where the style guide isn't followed, feel free to edit it to be consistent with the style guide.
-However, if you make any edit, please make sure you correct all occurrences in the same document.
+However, if you make an edit, please make sure you correct all occurrences in the same document.
+
+=== Key points
+
+* Function of pages
+** Consider entries from the point of view of someone wanting to achieve a task. If the documentation doesn't help the user achieve a task, it is ineffective. Do not list out each function and its location in the UI, but rather explain their use cases.
+
+* Repetition
+** Some repetition is ideal in a tutorial context. Otherwise, avoid giving extra detail (such as the location of buttons) more than once or twice in an article.
+
+* Screenshots
+** Screenshots should give enough context for a user to find the relevant location on the screen. Using many screenshots in a single article breaks up the flow of text and will cause extra work in case of a UI update. Use screenshots only when concise instructions are not enough to direct users to their goals.
+
+* Timeless voice
+** Avoid phrases that hint at ongoing development of the product such as "currently" or "for the time being." A detailed list of such phrases can be found https://developers.google.com/style/timeless-documentation[on Google's style guide here.]
 
 === Exceptions
 There are a couple of style choices in our documentation that are different from the Google style guide.
@@ -23,6 +37,8 @@ There are a couple of style choices in our documentation that are different from
 * Titles
 ** Document titles use title-style capitalization instead of sentence-style.
 
+* Commas
+** The Oxford comma is not used in a list: "A, B and C" is preferred over "A, B, and C."
 
 == Glossary of preferred terms
 |===
@@ -43,4 +59,5 @@ There are a couple of style choices in our documentation that are different from
 |that is
 |i.e.
 |Avoid non-English words.
+
 |===
