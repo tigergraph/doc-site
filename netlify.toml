@@ -96,6 +96,10 @@
     from = "/dev/using-a-remote-gsql-client "
     to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
 
+[[redirects]]
+    from = "/faq/change-log-1"
+    to = "/tigergraph-server/current/release-notes/release-notes"
+
 # redirects for graph-ml
 [[redirects]]
     from = "/graph-algorithm-library"
