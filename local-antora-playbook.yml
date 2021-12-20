@@ -11,7 +11,7 @@ content:
     branches: main
     start_paths: home
   - url: /Users/lenny.chen/workstation/server-docs
-    branches: [main, 3.3, 3.4]
+    branches: [main, 3.3, memory-mgmt-DOC-688]
   - url: /Users/lenny.chen/workstation/gui-docs
     branches: [main, 3.3, 3.4]
   - url: /Users/lenny.chen/workstation/cloud-docs
@@ -34,3 +34,6 @@ asciidoc:
   - ./libs/tabs-block.js
 urls:
   html_extension_style: drop
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+  redirect_facility: netlify
