@@ -80,6 +80,14 @@
     to = "/tigergraph-server/current/api/intro"
 
 [[redirects]]
+    from = "/admin/admin-guide/system-management/backup-and-restore"
+    to = "/tigergraph-server/current/backup-and-restore/backup-and-restore"
+
+[[redirects]]
+    from = "/tigergraph-platform-overview/internal-architecture"
+    to = "/tigergraph-server/current/intro/internal-architecture"
+
+[[redirects]]
     from = "/start/get-started/*"
     to = "/tigergraph-server/current/getting-started/:splat"
 
