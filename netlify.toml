@@ -70,6 +70,10 @@
     from = "/start/accumulators-tutorial"
     to = "/gsql-ref/current/tutorials/accumulators-tutorial"
 
+[[redirects]]
+    from = "/dev/using-a-remote-gsql-client"
+    to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
+
 # redirects for server
 [[redirects]]
     from = "/dev/restpp-api"
