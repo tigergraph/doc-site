@@ -88,6 +88,10 @@
     to = "/tigergraph-server/current/intro/internal-architecture"
 
 [[redirects]]
+    from = "/faqs/troubleshooting-guide"
+    to = "/tigergraph-server/current/troubleshooting/troubleshooting-guide"
+
+[[redirects]]
     from = "/start/get-started/*"
     to = "/tigergraph-server/current/getting-started/:splat"
 
