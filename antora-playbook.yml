@@ -20,7 +20,7 @@ content:
     branches: main
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4]
-  - url: https://github.com/lennessyy/tigergraphql.git
+  - url: https://github.com/tigergraph/tigergraphql.git
     branches: [main]
 ui:
   bundle:
