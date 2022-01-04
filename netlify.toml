@@ -76,8 +76,24 @@
 
 # redirects for server
 [[redirects]]
+    from = "/start"
+    to = "/tigergraph-server/current/getting-started/docker"
+
+[[redirects]]
     from = "/dev/restpp-api"
     to = "/tigergraph-server/current/api/intro"
+
+[[redirects]]
+    from = "/legal/patents-and-third-party-software"
+    to = "/tigergraph-server/current/legal/patents-and-third-party-software"
+
+[[redirects]]
+    from = "/admin/admin-guide/data-encryption/encrypting-connections"
+    to = "/tigergraph-server/current/security/encrypting-connections"
+
+[[redirects]]
+    from = "/admin/admin-guide/hw-and-sw-requirements"
+    to = "/tigergraph-server/current/installation/hw-and-sw-requirements"
 
 [[redirects]]
     from = "/admin/admin-guide/system-management/backup-and-restore"
@@ -123,6 +139,10 @@
 # redirects for graph-ml
 [[redirects]]
     from = "/graph-algorithm-library"
+    to = "/graph-ml/current/intro/overview"
+
+[[redirects]]
+    from = "/tigergraph-platform-overview/graph-algorithm-library"
     to = "/graph-ml/current/intro/overview"
 
 [[redirects]]
