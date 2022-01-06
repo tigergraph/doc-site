@@ -80,6 +80,18 @@
     to = "/tigergraph-server/current/getting-started/docker"
 
 [[redirects]]
+    from = "/cloud/tigergraph-cloud-release-notes"
+    to = "/cloud/release-notes/release-notes"
+
+[[redirects]]
+    from = "/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+
+[[redirects]]
+    from = "/v/3.1/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+
+[[redirects]]
     from = "/dev/restpp-api"
     to = "/tigergraph-server/current/api/intro"
 
