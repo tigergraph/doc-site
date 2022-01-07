@@ -148,6 +148,15 @@
     from = "/faqs/change-log-1"
     to = "/tigergraph-server/current/release-notes/change-log"
 
+[[redirects]]
+    from = "/tigergraph-platform-overview/*"
+    to = "/tigergraph-server/current/intro/:splat"
+
+[[redirects]]
+    from = "/v/*"
+    to ="https://docs-legacy.tigergraph.com/v/:splat"
+
+
 # redirects for graph-ml
 [[redirects]]
     from = "/graph-algorithm-library"
