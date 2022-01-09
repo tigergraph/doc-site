@@ -10,7 +10,7 @@ npm install
 ----
 
 == Build site locally
-To build the site locally, run:
+To build the site locally, navigate to a repository and run:
 [,console]
 ----
 npm run build
@@ -18,7 +18,7 @@ npm run build
 The build will be available in the `build/` folder in the root directory. 
 
 IMPORTANT: Though the files are all in the `/build` folder, you won't be able to access other pages through the links if the files are not served by a server.
-To preview locally, you can run a <<Run a local server to view the build>>.If you really don't want to use a local server, edit the `antora-playbook.yml` file in your local environment, and change the `html_extension_style` under `urls` to `default`. This allows you to open the static files and have the links work.  
+To preview locally, you can <<Run a local server to view the build>>. If you really don't want to use a local server, edit the `antora-playbook.yml` file in your local environment, and change the `html_extension_style` under `urls` to `default`. This allows you to open the static files and have the links work.  
 
 === Build from your local content source repository
 To have Anotora build site from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository. 
