@@ -3,7 +3,7 @@
 This repository contains the Antora playbook used to build the TigerGraph documentation site.
 
 == Install dependencies
-To install dependencies, navigate to a repository and run:
+To install dependencies, navigate to this repository and run:
 [,console]
 ----
 npm install
