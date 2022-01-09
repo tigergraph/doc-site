@@ -27,18 +27,18 @@ See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[U
 
 == Watch Mode
 
-Watch Mode launchess a local web server for preview. It will continue watching your local content source repository changes and rebuild the site.
+Watch Mode launches a local web server for preview. It will continue watching your local content source repository changes and rebuild the site.
 
 [,console]
 ----
 npm run dev
 ----
 
-You can access the web server at http://localhost:5000[http://localhost:5000]
+You can access the web server at http://localhost:5000[http://localhost:5000].
 
 == Run a local server to view the build
 
-To open the build:
+To open the build, run:
 [,console]
 ----
 $ npm i -g http-server
