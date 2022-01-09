@@ -3,14 +3,14 @@
 This repository contains the Antora playbook used to build the TigerGraph documentation site.
 
 == Install dependencies
-To install dependencies, run:
+To install dependencies, navigate to a repository and run:
 [,console]
 ----
 npm install
 ----
 
 == Build site locally
-To build the site locally, navigate to a repository and run:
+To build the site locally, run:
 [,console]
 ----
 npm run build
@@ -21,13 +21,13 @@ IMPORTANT: Though the files are all in the `/build` folder, you won't be able to
 To preview locally, you can <<Run a local server to view the build>>. If you really don't want to use a local server, edit the `antora-playbook.yml` file in your local environment, and change the `html_extension_style` under `urls` to `default`. This allows you to open the static files and have the links work.  
 
 === Build from your local content source repository
-To have Antora build site from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository. 
+To have Antora build the site from your local content source repository, change the corresponding content source in the file `antora-playbook.yml` to point to your local git repository. 
 
 See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[Use local content repositories] on Antora's documentation. 
 
 == Watch Mode
 
-Watch Mode launch a local web server for preview, it will continue watch your local content source repository change and rebuild the site.
+Watch Mode launchess a local web server for preview. It will continue watching your local content source repository changes and rebuild the site.
 
 [,console]
 ----
