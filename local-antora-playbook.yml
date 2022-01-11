@@ -11,22 +11,21 @@ content:
     branches: main
     start_paths: home
   - url: /Users/lenny.chen/workstation/server-docs
-    branches: [main, 3.3, memory-mgmt-DOC-688]
+    branches: [3.2, 3.3, 3.4, 3.5]
   - url: /Users/lenny.chen/workstation/gui-docs
-    branches: [main, 3.3, 3.4]
+    branches: [3.2, 3.3, 3.4]
   - url: /Users/lenny.chen/workstation/cloud-docs
     branches: main
   - url: /Users/lenny.chen/workstation/tigdsl-docs
     branches: main
   - url: /Users/lenny.chen/workstation/gsql-docs
-    branches: [main, 3.3, 3.4]
+    branches: [3.2, 3.3, 3.4]
   - url: /Users/lenny.chen/workstation/tigergraphql
     branches: [main]
 ui:
   bundle:
     url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
     snapshot: true
-  supplemental_files: ./supplemental-ui
 asciidoc:
   attributes:
     page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml, tigergraphql'

@@ -15,8 +15,8 @@ On the left side of any page you can find a navigation menu to any area of the d
 
 To switch to a different version, click the version number you'd like to proceed with in the left-side navigation.
 
-== Site areas
-The TigerGraph documentation site consists of the following areas:
+== Site sections
+The TigerGraph documentation site consists of the following section:
 
 === TigerGraph Server
 xref:tigergraph-server:intro:introduction.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
