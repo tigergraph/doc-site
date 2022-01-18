@@ -11,7 +11,7 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 'acl-DOC-979']
+    branches: [3.2, 3.3, 3.4, 3.5]
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4]
   - url: https://github.com/tigergraph/cloud-docs.git
@@ -21,7 +21,7 @@ content:
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4]
   - url: https://github.com/lennessyy/tigergraphql.git
-    branches: [main]
+    branches: [main, 0.8]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/asciidoctor-docsearch/build/ui-bundle.zip?raw=true
