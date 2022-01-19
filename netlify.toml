@@ -132,7 +132,7 @@
     to = "/tigergraph-server/current/gadmin/management-with-gadmin"
 
 [[redirects]]
-    from = "/admin/admin-guide/user-access/user-privileges-and-authentication"
+    from = "/admin/admin-guide/user-access-management/user-privileges-and-authentication"
     to = "/tigergraph-server/current/user-access/readme"
 
 [[redirects]]
