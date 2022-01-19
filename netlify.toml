@@ -39,6 +39,10 @@
     to = "/gsql-ref/current/querying/func/readme"
 
 [[redirects]]
+    from = "/gsql-ref/current/querying/operators-functions-and-expressions"
+    to = "/gsql-ref/current/querying/operators-and-expressions"
+
+[[redirects]]
     from = "/dev/gsql-ref"
     to = "/gsql-ref/current/intro/intro"
 
@@ -127,6 +131,17 @@
     from = "/admin/admin-guide/system-management/management-with-gadmin"
     to = "/tigergraph-server/current/gadmin/management-with-gadmin"
 
+[[redirects]]
+    from = "/admin/admin-guide/user-access/user-privileges-and-authentication"
+    to = "/tigergraph-server/current/user-access/readme"
+
+[[redirects]]
+    from = "/tigergraph-server/current/api/restpp-requests"
+    to = "/tigergraph-server/current/api/intro"
+
+[[redirects]]
+    from = "/tigergraph-server/current/user-access/single-sign-on"
+    to = "/tigergraph-server/current/user-access/sso"
 
 [[redirects]]
     from = "/dev/restpp-api/*"
@@ -149,6 +164,10 @@
     to = "/tigergraph-server/current/release-notes/change-log"
 
 [[redirects]]
+    from = "/tigergraph-platform-overview/graph-algorithm-library"
+    to = "/graph-ml/current/intro/overview"
+
+[[redirects]]
     from = "/tigergraph-platform-overview/*"
     to = "/tigergraph-server/current/intro/:splat"
 
@@ -162,10 +181,8 @@
     from = "/graph-algorithm-library"
     to = "/graph-ml/current/intro/overview"
 
-[[redirects]]
-    from = "/tigergraph-platform-overview/graph-algorithm-library"
-    to = "/graph-ml/current/intro/overview"
 
 [[redirects]]
     from = "/dev/data-loader-guides/*"
     to = "/tigergraph-server/current/data-loading/:splat"
+
