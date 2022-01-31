@@ -54,10 +54,10 @@ There are a couple of style choices in our documentation that are different from
 
 |For example
 |e.g.
-|Avoid non-English words.
+|Avoid non-English words; Too many people mix up e.g. and i.e.
 
 |that is
 |i.e.
-|Avoid non-English words.
+|Avoid non-English words; Too many people mix up e.g. and i.e.
 
 |===
