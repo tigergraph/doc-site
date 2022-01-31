@@ -63,4 +63,4 @@ As a peer reviewer, read through the document and pay attention to the following
 
 === Publish
 Once a draft has passed both reviews, it is ready to publish.
-Merge the PR to publish the final draft. 
+Merge the PR to publish the final draft.
