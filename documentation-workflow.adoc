@@ -1,21 +1,27 @@
-= Documentation Process
+= Documentation Process for Product Change
 :sectnums:
 
-== Documentation for a product change
+Documentation is required when:
 
-=== Design stage
-For any user-facing feature, the responsible PM/engineer should create a DOC ticket linked to the feature's design document.
+* A new or enhanced feature is shipped that impacts the user or administrator experience.
+* There are changes to the user interface or API.
+* A process, workflow, or previously documented feature is changed.
+* A feature is deprecated or removed.
+
+== Design stage
+For any user-facing feature or change, the responsible PM/engineer should create a DOC ticket linked to the feature's design document.
 The ticket should also specify a subject-matter expert (SME), who will be the primary point of contact for the Docs team to reach out for questions and feedback.
 
-Docs team can offer feedback on the design from a user's perspective early in the feature design stage, as well as help with writing user-facing strings.
+Docs team should designate a writer to assign the ticket to.
+The writer can offer feedback on the design from a user's perspective early in the feature design stage, as well as help with writing user-facing strings.
 
-=== Release planning
-Once it has been determined which the feature will be included in, PM/engineering should notify Documentation the release date that the feature documentation needs to be ready by.
+== Release planning
+Once it has been determined which the feature will be included in, PM/engineering should notify Docs team the release date that the feature documentation needs to be ready by.
 
-At this stage, the feature should be relatively developed, and Docs team should assign a story point based on the estimated effort required to complete the ticket as well as a due date.
+At this stage, the feature should be relatively developed, and the writer should provide an estimate of efforts required to complete the ticket as well as a due date to complete the feature by.
 
-=== Draft for review
-Documentation works with the engineer to produce a draft of the feature documentation.
+== Draft for review
+The writer works with the engineer to produce a draft of the feature documentation.
 This step may include the following:
 
 * Tag the engineer in the ticket or design doc to ask clarifying questions
@@ -33,7 +39,7 @@ The writer should notify the reviewers that their reviews have been requested as
 
 For feature documents that are long and span an entire page or several pages, consider making a staging preview so that the reviewers have an easier time reading through your content.
 
-=== SME review
+== SME review
 Below are directions for the SME to review a documentation draft:
 
 1. Read through the document.
@@ -52,7 +58,7 @@ The writer will also use their judgement to decide whether to incorporate your s
 3. If you requested changes, review the edits after they are made.
 When you think a doc is satisfactory, approve the Pull Request.
 
-=== Peer review
+== Peer review
 Peer review happens in parallel to SME review.
 The purpose of peer reviews is to minimize typos and mistakes, as well as ensure the documentation follow a consistent style.
 As a peer reviewer, read through the document and pay attention to the following:
@@ -61,6 +67,6 @@ As a peer reviewer, read through the document and pay attention to the following
 * Are there concepts or terms that are unclear to me that could be better linked?
 * Are there typos or deviations from the link:style-guide.adoc[style guide]?
 
-=== Publish
+== Publish
 Once a draft has passed both reviews, it is ready to publish.
 Merge the PR to publish the final draft.

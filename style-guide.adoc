@@ -60,4 +60,9 @@ There are a couple of style choices in our documentation that are different from
 |i.e.
 |Avoid non-English words; Too many people mix up e.g. and i.e.
 
+|can, might, must, we recommend
+|should
+|See https://developers.google.com/style/word-list#should
+
 |===
+
