@@ -19,7 +19,7 @@ To switch to a different version, click the version number you'd like to proceed
 The TigerGraph documentation site consists of the following section:
 
 === TigerGraph Server
-xref:tigergraph-server:intro:introduction.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
+xref:tigergraph-server:intro:index.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
 This area includes all the information for you to install, operate, maintain, and communicate with the TigerGraph database server programmatically.
 
 === GSQL Language Reference

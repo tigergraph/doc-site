@@ -108,6 +108,10 @@
     to = "/tigergraph-server/current/security/encrypting-connections"
 
 [[redirects]]
+    from = "/admin/admin-guide/system-administration-faqs"
+    to = "/tigergraph-server/current/troubleshooting/system-administration-faqs"
+
+[[redirects]]
     from = "/admin/admin-guide/hw-and-sw-requirements"
     to = "/tigergraph-server/current/installation/hw-and-sw-requirements"
 
@@ -122,6 +126,14 @@
 [[redirects]]
     from = "/faqs/troubleshooting-guide"
     to = "/tigergraph-server/current/troubleshooting/troubleshooting-guide"
+
+[[redirects]]
+    from = "/faqs/knowledge-base-and-faqs"
+    to = "https://tigergraph.freshdesk.com/support/solutions"
+
+[[redirects]]
+    from = "/faqs/error-codes"
+    to = "/tigergraph-server/current/reference/error-codes"
 
 [[redirects]]
     from = "/start/get-started/*"
