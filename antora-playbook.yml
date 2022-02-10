@@ -11,7 +11,6 @@ content:
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
-    # url: /Users/lenny.chen/Documents/migration/antora-ui/build/ui-bundle.zip
     snapshot: true
 asciidoc:
   extensions:
