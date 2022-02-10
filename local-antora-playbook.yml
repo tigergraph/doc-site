@@ -11,16 +11,20 @@ content:
     branches: main
     start_paths: home
   - url: /Users/lenny.chen/workstation/server-docs
-    branches: [3.2, 3.3, 3.4, 3.5]
+    branches: [3.5]
   - url: /Users/lenny.chen/workstation/gui-docs
-    branches: [3.2, 3.3, 3.4]
+    branches: [3.5]
   - url: /Users/lenny.chen/workstation/cloud-docs
     branches: main
   - url: /Users/lenny.chen/workstation/tigdsl-docs
     branches: main
   - url: /Users/lenny.chen/workstation/gsql-docs
-    branches: [3.2, 3.3, 3.4]
+    branches: [3.5]
   - url: /Users/lenny.chen/workstation/tigergraphql
+    branches: [0.8]
+  - url: /Users/lenny.chen/workstation/mlworkbench-docs
+    branches: [main]
+  - url: /Users/lenny.chen/workstation/data360-docs
     branches: [main]
 ui:
   bundle:
@@ -28,7 +32,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml, tigergraphql'
+    page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml, graphql, ml-workbench, data360'
   extensions:
   - ./libs/tabs-block.js
 urls:
