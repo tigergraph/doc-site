@@ -1,7 +1,6 @@
 site:
   title: Docs
   url: https://docs.tigergraph.com/
-  start_page: home::index.adoc
   robots: |
     User-agent: *
     Sitemap: https://docs.tigergraph.com/sitemap.xml
