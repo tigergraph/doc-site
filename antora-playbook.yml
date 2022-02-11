@@ -1,12 +1,15 @@
 site:
   title: Docs
   url: https://docs.tigergraph.com/
+  start_page: ml-workbench:overview:index.adoc
   robots: |
     User-agent: *
     Sitemap: https://docs.tigergraph.com/sitemap.xml
 content:
   sources:
   - url: https://github.com/tigergraph/data360-docs.git
+    branches: [main]
+  - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
 ui:
   bundle:
