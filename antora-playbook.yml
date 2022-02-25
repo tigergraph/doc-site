@@ -22,6 +22,8 @@ content:
     branches: [3.2, 3.3, 3.4, 3.5]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [main, 0.8]
+  - url: https://github.com/tigergraph/mlworkbench-docs.git
+    branches: [main]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/asciidoctor-docsearch/build/ui-bundle.zip?raw=true
