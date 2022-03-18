@@ -3,6 +3,11 @@
     publish = "build/site/"
     command = "npm run build"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
+
 # redirects for gui
 [[redirects]]
     from = "/ui/graphstudio"
