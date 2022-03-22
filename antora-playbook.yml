@@ -24,13 +24,15 @@ content:
     branches: [main, 0.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
+  - url: https://github.com/tigergraph/pytigergraph-docs
+    branches: [main]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, graph-ml, ml-workbench, graphql'
+    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, graph-ml, ml-workbench, pytigergraph, graphql'
   extensions:
   - ./libs/tabs-block.js
 urls:
