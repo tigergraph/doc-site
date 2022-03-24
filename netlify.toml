@@ -10,10 +10,6 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
-[[redirects]]
-    from = "/jp/*"
-    to = "https://my-other-site.netlify.app/:splat"
-    status = 200
 
 # redirects for gui
 [[redirects]]
