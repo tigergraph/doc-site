@@ -12,7 +12,7 @@
 
 [[redirects]]
     from = "/jp/*"
-    to = "https://my-other-site.netlify.app/:splat"
+    to = "https://jp-tgdocs.netlify.app/:splat"
     status = 200
 
 # redirects for gui
