@@ -62,7 +62,45 @@ There are a couple of style choices in our documentation that are different from
 
 |can, might, must, we recommend
 |should
-|See https://developers.google.com/style/word-list#should
+|link:https://developers.google.com/style/word-list#should[Google Style Guide - Should]
+
+|privileges (plural form)
+|privilege (singular form)
+|
+
+|the data is
+|the data are
+|link:https://developers.google.com/style/word-list?hl=en#data[Google Style Guide - Data]
+
+|on-premise, on-prem
+|on-premises
+|
+
+|tarball, .tar file
+|tar file
+|Describe common file extensions without the period
+
+|log in (verb), login (noun or adjective)
+|Avoid inconsistent usage
+|link:https://developers.google.com/style/word-list?hl=en#login[Google Style Guide - Login]
+
+|repository
+|repo
+|link:https://developers.google.com/style/word-list?hl=en#repo[Google Style Guide - Repo]
+
+|Spell out numbers from zero to nine in most cases
+|Avoid inconsistent usage
+|link:https://developers.google.com/style/numbers?hl=en[Google Style Guide - Numbers] Read the Google style guide for more information about which form to use for numbers.
+
 
 |===
 
+=== Abbreviated terms to spell out
+
+The following terms are important TigerGraph-related concepts that may not be familiar to users outside the TigerGraph community.
+Spell out each of these terms when they first appear in an article.
+
+* DDL - Data Definition Language
+* DML - Data Manipulation Language
+* GPE - Graph Processing Engine
+* GSE - Graph Storage Engine
