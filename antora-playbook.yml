@@ -19,7 +19,7 @@ content:
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: main
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5]
+    branches: [3.2, 3.3, 3.4, 'gsql-style-guide-DOC-971']
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [main, 0.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
