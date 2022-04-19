@@ -28,7 +28,7 @@ content:
     branches: [main]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/version-filter/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:
