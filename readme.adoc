@@ -27,7 +27,7 @@ See https://docs.antora.org/antora/2.3/playbook/content-source-url/#local-urls[U
 
 == Wach Mode
 
-Watch Mode launch a local web server for preview, it will continue watch your local content source repository change and rebuild the site.
+Watch Mode launches a local web server for preview. It will continue watching your local content source repository change and rebuild the site.
 
 [,console]
 ----
@@ -44,7 +44,8 @@ To open the build:
 $ npm i -g http-server
 $ http-server build/site -c-1
 ----
-Upon launching the command, the local address of the web server will be displayed in your terminal. You should see the following output in your terminal:
+Upon launching the command, the local address of the web server will be displayed in your terminal.
+You should see the following output in your terminal:
 
 ----
 Starting up http-server, serving build/site

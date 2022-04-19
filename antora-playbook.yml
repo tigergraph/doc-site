@@ -13,11 +13,11 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5]
+    branches: [3.2, 3.3, 3.4, 3.5, 'updates-for-3-6-DOC-1093']
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: main
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: main
+    branches: ['gds-algorithm-links-DOC-1047']
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 'gsql-style-guide-DOC-971']
   - url: https://github.com/tigergraph/tigergraphql.git
