@@ -7,20 +7,20 @@ site:
     Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 content:
   sources:
-  - url: /Users/lenny.chen/workstation/doc-site
-    branches: main
-    start_paths: home
-  - url: /Users/lenny.chen/workstation/server-docs
-    branches: [main, 3.3, 3.4, 3.5]
-  - url: /Users/lenny.chen/workstation/gui-docs
-    branches: [main, 3.3, 3.4, 3.5]
-  - url: /Users/lenny.chen/workstation/cloud-docs
-    branches: main
-  - url: /Users/lenny.chen/workstation/tigdsl-docs
-    branches: main
-  - url: /Users/lenny.chen/workstation/gsql-docs
-    branches: [main, 3.3, 3.4, 'gsql-style-guide-DOC-971']
-  - url: /Users/lenny.chen/workstation/tigergraphql
+  # - url: /Users/lenny.chen/workstation/doc-site
+  #   branches: main
+  #   start_paths: home
+  # - url: /Users/lenny.chen/workstation/server-docs
+  #   branches: [main, 3.3, 3.4, 3.5]
+  # - url: /Users/lenny.chen/workstation/gui-docs
+  #   branches: [main, 3.3, 3.4, 3.5]
+  # - url: /Users/lenny.chen/workstation/cloud-docs
+  #   branches: main
+  # - url: /Users/lenny.chen/workstation/tigdsl-docs
+  #   branches: main
+  # - url: /Users/lenny.chen/workstation/gsql-docs
+  #   branches: [main, 3.3, 3.4, 'gsql-style-guide-DOC-971']
+  - url: /Users/lenny.chen/workstation/pytigergraph-docs
     branches: [main]
 ui:
   bundle:
