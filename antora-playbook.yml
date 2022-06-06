@@ -11,15 +11,15 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 'avro-support-DOC-1130']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: main
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 'gsql-style-guide-DOC-971']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [main, 0.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
