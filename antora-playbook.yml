@@ -15,7 +15,7 @@ content:
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main, 'private-access-DOC-1095']
+    branches: [main, 'private-access-DOC-1095', 'cloud-multi-org-DOC-1180']
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
@@ -40,4 +40,3 @@ urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
   redirect_facility: netlify
-  
