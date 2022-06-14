@@ -40,4 +40,3 @@ urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: current
   redirect_facility: netlify
-  
