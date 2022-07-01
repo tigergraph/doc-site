@@ -21,7 +21,7 @@ content:
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/tigergraphql.git
-    branches: [main, 0.8]
+    branches: [0.9]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/pytigergraph-docs
