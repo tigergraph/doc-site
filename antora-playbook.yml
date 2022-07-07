@@ -15,7 +15,7 @@ content:
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 'sso-2fa-aad-DOC-1208']
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main, 'cloud-multi-org-DOC-1180']
+    branches: [main]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
