@@ -11,15 +11,40 @@ Our new documentation site provides you with improved organization, more accurat
 To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
 
 == Navigation and switch versions
-On the left side of any page you can find a navigation menu to any area of the documentation site.
+On the top navigation bar, click hover over the Product tab and navigate to the documentation for any TigerGraph product.
 
-To switch to a different version, click the version number you'd like to proceed with in the left-side navigation.
+If a product has different versions, you
+
+== Get started
+
+[cols="3,3,3",grid=none,frame=none]
+|===
+a|
+=== TigerGraph Cloud
+
+* Run TigerGraph with Docker
+* Get started with TigerGraph Cloud
+*
+a|
+=== TigerGraph Server
+a|
+=== GSQL
+
+|Column 1, row 2
+|Column 2, row 2
+|Column 3, row 2
+|===
+
+
+== TigerGraph UI tools
+
+== Connectors and APIs
 
 == Site areas
 The TigerGraph documentation site consists of the following areas:
 
 === TigerGraph Server
-xref:tigergraph-server:intro:introduction.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
+xref:tigergraph-server:intro:index.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
 This area includes all the information for you to install, operate, maintain, and communicate with the TigerGraph database server programmatically.
 
 === GSQL Language Reference

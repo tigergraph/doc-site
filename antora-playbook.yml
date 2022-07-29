@@ -13,22 +13,22 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 'sso-2fa-aad-DOC-1208']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main, 'cloud-multi-org-DOC-1180']
+    branches: [main]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6]
+    branches: [3.2, 3.3, 3.4, 3.5, 'token-function-DOC-1186']
   - url: https://github.com/tigergraph/tigergraphql.git
-    branches: [main, 0.8]
+    branches: [0.9]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main, 'v1-docs-DOC-1197']
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: [main]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/version-filter/build/ui-bundle.zip?raw=true
+    url: https://github.com/WeiXiaoTG/antora-ui/blob/newnav/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:
