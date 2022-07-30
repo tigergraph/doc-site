@@ -5,50 +5,128 @@
 Welcome to the TigerGraph documentation site!
 Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
 
+== Get started
+
+[cols="3,3,3",grid=none,frame=none]
+|===
+a|
+=== TigerGraph Cloud
+
+TigerGraph Cloud is a fully-managed cloud database built on the same TigerGraph Enterprise Server engine that is delivering the fastest and most scalable graph database.
+
+xref:cloud:start:overview.adoc[]
+
+a|
+=== TigerGraph Server
+TigerGraph, the world’s fastest and most scalable graph analytics platform, breaks through the limitations of other graph technologies to enable real-time big data graph applications.
+
+xref:tigergraph-server:intro:index.adoc[]
+
+a|
+=== GSQL
+The GSQL™ software program is the TigerGraph comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
+
+xref:gsql-ref:intro:intro.adoc[]
+|===
+
+
+== TigerGraph UI tools
+
+[cols="3,3",grid=none,frame=none]
+|===
+a|
+=== GraphStudio
+GraphStudio™ is an intuitive, browser-based interface for graph-based application development tasks.
+
+xref:gui:graphstudio:overview.adoc[GraphStudio]
+a|
+=== Admin Portal
+
+Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
+
+xref:gui:admin-portal:overview.adoc[Admin Portal]
+|===
+
+== Graph Data Science
+
+[cols="3,3",grid=none,frame=none]
+|===
+a|
+=== ML Workbench
+ML Workbench is Jupyter-based Python development framework offered either as a fully-managed, on-cloud offering or as an integrated on-prem solution for direct integration with existing machine learning infrastructure.
+
+xref:ml-workbench:overview:index.adoc[]
+a|
+
+=== Graph Data Science Library
+
+TigerGraph provides a collection of expertly written GSQL queries that efficiently implement common graph algorithms.
+
+
+xref:graph-ml:intro:index.adoc[]
+
+|===
+
+== Connectors and APIs
+
+[cols="3,3,3,3",grid=none,frame=none]
+|===
+a|
+=== pyTigerGraph
+pyTigerGraph is a Python package for connecting to TigerGraph databases.
+
+xref:pytigergraph:intro:index.adoc[]
+a|
+=== GraphQL Service
+TigerGraph GraphQL Service enables users to access graph data in TigerGraph using GraphQL queries.
+
+xref:graphql:ROOT:index.adoc[]
+
+a|
+=== JDBC Driver
+
+JDBC Driver is a Type 4 driver, converting JDBC calls directly into TigerGraph database commands.
+
+link:https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
+a|
+=== REST API
+
+REST API endpoints developers can use to communicate with the TigerGraph database.
+
+xref:tigergraph-server:API:index.adoc[]
+|===
+
+== More developer resources
+
+[cols="3a,3a,3a"]
+|===
+|=== Developer Portal
+All the essential in-house and community developed tools to get the most out of your TigerGraph solution.
+
+link:https://dev.tigergraph.com/[Developer Portal]
+|=== TigerGraph University
+Complete TigerGraph-developed courses and receive certifications for completed learning paths.
+
+link:https://tigergraphuniversity.lessonly.com/lesson/1005737-welcome-to-tigergraph-university[TigerGraph University]
+|=== Community
+Join in the conversation and get your questions answered by fellow developers in the TigerGraph community.
+
+
+https://dev.tigergraph.com/forum/[TigerGraph Community]
+|===
+
+
 == Legacy documentation site
 Our new documentation site provides you with improved organization, more accurate search, as well as faster page loading. However, it only contains documentation for TigerGraph 3.2 and later.
 
 To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
 
 == Navigation and switch versions
-On the left side of any page you can find a navigation menu to any area of the documentation site.
 
-To switch to a different version, click the version number you'd like to proceed with in the left-side navigation.
+On the top navigation bar, click hover over the Product tab and navigate to the documentation for any TigerGraph product or service.
 
-== Site sections
-The TigerGraph documentation site consists of the following section:
+image::locate-product.png[]
 
-=== TigerGraph Server
-xref:tigergraph-server:intro:index.adoc[TigerGraph Server documentation] provides guides and references for the core TigerGraph database server.
-This area includes all the information for you to install, operate, maintain, and communicate with the TigerGraph database server programmatically.
+If a product or service has different versions, you can click the version number under the top navigation bar to switch to a different version.
 
-=== GSQL Language Reference
-The GSQL™ software program is the TigerGraph comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
-In short, TigerGraph users do most of their work via the GSQL program.
-
-To learn more about GSQL, see the xref:gsql-ref:intro:intro.adoc[GSQL Language Reference].
-
-=== TigerGraph Graph Data Science Library
-TigerGraph provides a collection of expertly written GSQL queries that efficiently implement common graph algorithms.
-For more information, see xref:graph-ml:intro:index.adoc[TigerGraph Graph Data Science Library].
-
-=== GraphStudio and Admin Portal
-GraphStudio and Admin Portal are TigerGraph's Graphic User Interfaces.
-
-The TigerGraph GraphStudio™ UI (User Interface) provides an intuitive, browser-based interface that helps users get started quickly with graph-based application development tasks: designing a graph schema, creating a schema mapping, loading data, exploring the graph, and writing GSQL queries.
-
-The TigerGraph Admin Portal is a browser-based devops tool which provides users an overview of a running TigerGraph system, from an application and infrastructure point of view.
-It also allows the users to configure the TigerGraph system through a user-friendly interface.
-
-To learn more about GraphStudio and Admin Portal, see xref:gui:graphstudio:overview.adoc[GraphStudio and Admin Portal].
-
-=== TigerGraph Cloud
-TigerGraph Cloud is a fully-managed cloud database built on the same TigerGraph Enterprise Server engine that is delivering the fastest and most scalable graph database.
-TigerGraph Cloud handles all the complexity of deploying and managing your deployments on the cloud service provider of your choice (AWS, Azure, and GCP).
-
-For more information, see xref:cloud:start:overview.adoc[].
-
-=== TigerGraph GraphQL Service
-TigerGraph GraphQL Service enables users to access graph data in TigerGraph using GraphQL queries. With TigerGraph GraphQL Service, you will be able to use any GraphQL client or to simply submit GraphQL queries directly to the service to quickly access the graph data in TigerGraph. 
-
-To learn more, see xref:graphql::index.adoc[]
+image::switch-version.png[]
