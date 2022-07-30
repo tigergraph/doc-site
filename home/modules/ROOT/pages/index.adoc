@@ -98,7 +98,7 @@ xref:tigergraph-server:API:index.adoc[]
 
 == More developer resources
 
-[cols="3a,3a,3a"]
+[cols="3a,3a,3a",grid="none",frame="none"]
 |===
 |=== Developer Portal
 All the essential in-house and community developed tools to get the most out of your TigerGraph solution.
@@ -121,12 +121,12 @@ Our new documentation site provides you with improved organization, more accurat
 
 To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
 
-== Navigation and switch versions
-
-On the top navigation bar, click hover over the Product tab and navigate to the documentation for any TigerGraph product or service.
-
-image::locate-product.png[]
-
-If a product or service has different versions, you can click the version number under the top navigation bar to switch to a different version.
-
-image::switch-version.png[]
+//== Navigation and switch versions
+//
+//On the top navigation bar, click hover over the Product tab and navigate to the documentation for any TigerGraph product or service.
+//
+//image::locate-product.png[]
+//
+//If a product or service has different versions, you can click the version number under the top navigation bar to switch to a different version.
+//
+//image::switch-version.png[]
