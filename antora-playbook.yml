@@ -17,7 +17,7 @@ content:
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: ['requirements-tag-DOC-1270']
+    branches: [main, 'requirements-tag-DOC-1270']
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 'token-function-DOC-1186']
   - url: https://github.com/tigergraph/tigergraphql.git
