@@ -23,7 +23,7 @@ content:
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [0.9]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
-    branches: [main, 'mlwb-cloud-features-DOC-1247']
+    branches: [main]
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: [main]
 ui:
