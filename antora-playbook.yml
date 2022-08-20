@@ -11,7 +11,7 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 'rbac-enhancement-DOC-1266']
+    branches: [3.2, 3.3, 3.4, 3.5, 'azure-blob-DOC-1254']
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6]
   - url: https://github.com/tigergraph/cloud-docs.git
@@ -28,7 +28,7 @@ content:
     branches: [main]
 ui:
   bundle:
-    url: https://github.com/WeiXiaoTG/antora-ui/blob/newnav/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/jian-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:
