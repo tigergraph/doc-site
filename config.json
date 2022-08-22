@@ -10,7 +10,8 @@
         "version": [
           "3.2",
           "3.3",
-          "3.4"
+          "3.4",
+          "3.5"
         ]
       }
     },
@@ -22,7 +23,7 @@
         ]
       },
       "extra_attributes": {
-        "version": "3.5"
+        "version": "3.6"
       }
     },
     {
@@ -30,6 +31,17 @@
       "variables": {
         "component": [
           "graph-ml"
+        ]
+      },
+      "extra_attributes":{
+        "version": "1.0"
+      }
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
+      "variables": {
+        "component": [
+          "pytigergraph"
         ]
       },
       "extra_attributes":{
