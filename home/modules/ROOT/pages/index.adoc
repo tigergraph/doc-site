@@ -53,9 +53,10 @@ xref:gui:admin-portal:overview.adoc[Admin Portal]
 |===
 a|
 === ML Workbench
-ML Workbench is Jupyter-based Python development framework offered either as a fully-managed, on-cloud offering or as an integrated on-prem solution for direct integration with existing machine learning infrastructure.
+ML Workbench is a Jupyter-based Python development framework offered either as a fully-managed, on-cloud offering or as an integrated on-prem solution for direct integration with existing machine learning infrastructure.
 
-xref:ml-workbench:overview:index.adoc[]
+xref:ml-workbench:intro:index.adoc[]
+
 a|
 
 === Graph Data Science Library
