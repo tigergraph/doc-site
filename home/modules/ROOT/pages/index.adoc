@@ -7,7 +7,7 @@ Here you can find the reference materials, guides, and examples to develop your 
 
 == Get started
 
-[cols="3,3,3",grid=none,frame=none]
+[cols="3,3,3",grid=none,frame=none,.home-card]
 |===
 a|
 === TigerGraph Cloud
