@@ -23,7 +23,8 @@
         ]
       },
       "extra_attributes": {
-        "version": "3.6"
+        "version": "3.6",
+        "latest": true
       }
     },
     {
@@ -34,7 +35,8 @@
         ]
       },
       "extra_attributes":{
-        "version": "1.0"
+        "version": "1.0",
+        "latest": true
       }
     },
     {
@@ -45,7 +47,20 @@
         ]
       },
       "extra_attributes":{
-        "version": "1.0"
+        "version": "1.0",
+        "latest": true
+      }
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
+      "variables": {
+        "component": [
+          "ml-workbench"
+        ]
+      },
+      "extra_attributes":{
+        "version": "1.0",
+        "latest": true
       }
     },
     {
@@ -54,6 +69,9 @@
         "component": [
           "cloud"
         ]
+      },
+      "extra_attributes":{
+        "latest": true
       },
       "selectors_key": "versionless"
     }
