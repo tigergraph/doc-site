@@ -8,7 +8,7 @@ site:
 content:
   sources:
   - url: https://github.com/tigergraph/doc-site.git
-    branches: [main]
+    branches: [staging]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
