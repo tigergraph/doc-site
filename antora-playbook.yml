@@ -19,12 +19,14 @@ content:
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 'query-optimizer-DOC-1245']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
   - url: https://github.com/tigergraph/tigergraphql.git
-    branches: [0.9]
+    branches: [3.7]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/pytigergraph-docs
+    branches: [main]
+  - url: https://github.com/tigergraph/insights-docs
     branches: [main]
 ui:
   bundle:
