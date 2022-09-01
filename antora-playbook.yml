@@ -34,7 +34,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, graph-ml, ml-workbench, pytigergraph, graphql'
+    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, insights, graph-ml, ml-workbench, pytigergraph, graphql'
   extensions:
   - ./libs/tabs-block.js
 urls:
