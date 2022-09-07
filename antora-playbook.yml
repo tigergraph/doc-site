@@ -25,7 +25,7 @@ content:
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/pytigergraph-docs
-    branches: [main]
+    branches: [main, 'v1.1']
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
