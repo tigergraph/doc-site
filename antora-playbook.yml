@@ -11,7 +11,7 @@ content:
     branches: [staging]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 'release-notes-3.7-DOC-134']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 'release-notes-3.7-DOC-1341']
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
   - url: https://github.com/tigergraph/cloud-docs.git
