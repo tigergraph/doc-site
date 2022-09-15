@@ -50,6 +50,8 @@ xref:gui:admin-portal:overview.adoc[Admin Portal]
 a|
 === Insights
 A no-code visual graph analyzer that makes building data analytics dashboards intuitive.
+
+xref:insights:intro:index.adoc[TigerGraph Insights]
 a|
 === GSQL Web Shell
 A GSQL shell in your browser, offering a more friendly interface packed with usability features to accelerate your graph journey.
