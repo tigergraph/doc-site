@@ -11,7 +11,8 @@
           "3.2",
           "3.3",
           "3.4",
-          "3.5"
+          "3.5",
+          "3.6"
         ]
       }
     },
@@ -19,11 +20,11 @@
       "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
       "variables": {
         "component": [
-          "tigergraph-server", "gsql-ref", "gui"
+          "tigergraph-server", "gsql-ref", "gui", "insights", "graphql"
         ]
       },
       "extra_attributes": {
-        "version": "3.6",
+        "version": "3.7",
         "latest": true
       }
     },
