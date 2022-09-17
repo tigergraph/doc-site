@@ -15,11 +15,11 @@ content:
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main, 'solution-to-cluster-DOC-1320']
+    branches: ['security-summary-DOC-1376']
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, "security-summary-DOC-1376"]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, "optimizer"]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
