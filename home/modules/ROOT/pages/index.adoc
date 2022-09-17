@@ -121,9 +121,11 @@ xref:tigergraph-server:API:index.adoc[]
 
 [.home-card,cols="a,a"]
 |===
-|TigerGraph Server |TigerGraph Cloud
 
-|TigerGraph Server provides various features to secure your deployments. Some key features include:
+|
+=== TigerGraph Server
+
+TigerGraph Server provides various features to secure your deployments. Some key features include:
 
 * Authentication
 * Role-based access control
@@ -132,6 +134,7 @@ xref:tigergraph-server:API:index.adoc[]
 
 For more information, see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Server].
 |
+=== TigerGraph Cloud
 TigerGraph Cloud provides additional network security and authorization features on top of all TigerGraph Server security features:
 
 * Dedicated VPCs
