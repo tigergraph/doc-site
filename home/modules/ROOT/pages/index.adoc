@@ -119,7 +119,7 @@ xref:tigergraph-server:API:index.adoc[]
 
 == Security resources
 
-[cols="a,a"]
+[.home-card,cols="a,a"]
 |===
 |TigerGraph Server |TigerGraph Cloud
 
@@ -130,7 +130,7 @@ xref:tigergraph-server:API:index.adoc[]
 * Access control lists
 * Data encryption
 
-For more information see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Server].
+For more information, see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Server].
 |
 TigerGraph Cloud provides additional network security and authorization features on top of all TigerGraph Server security features:
 
@@ -139,7 +139,7 @@ TigerGraph Cloud provides additional network security and authorization features
 * Private Links
 * Integrated Identity and Access Management (IAM)
 
-For more information see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Cloud].
+For more information, see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Cloud].
 |===
 
 
