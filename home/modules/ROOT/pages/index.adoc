@@ -117,6 +117,34 @@ REST API endpoints developers can use to communicate with the TigerGraph databas
 xref:tigergraph-server:API:index.adoc[]
 |===
 
+== Security resources
+
+[.home-card,cols="a,a"]
+|===
+
+|
+=== TigerGraph Server
+
+TigerGraph Server provides a comprehensive set of features to secure your deployments. Some key features include:
+
+* Authentication
+* Role-based access control
+* Access control lists
+* Data encryption
+
+For more information, see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Server].
+|
+=== TigerGraph Cloud
+TigerGraph Cloud provides additional network security and authorization features on top of all TigerGraph Server security features:
+
+* Dedicated VPCs
+* VPC peering
+* Private Links
+* Integrated Identity and Access Management (IAM)
+
+For more information, see xref:cloud:security:index.adoc[Security for TigerGraph Cloud].
+|===
+
 == More developer resources
 
 [.home-card,cols="3a,3a,3a",grid="none",frame="none"]
