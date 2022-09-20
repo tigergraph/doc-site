@@ -17,7 +17,7 @@ content:
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: ['security-summary-DOC-1376']
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [main]
+    branches: [main, 'pathfinding-checklist-DOC-1379']
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, "optimizer"]
   - url: https://github.com/tigergraph/tigergraphql.git
