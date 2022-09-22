@@ -9,12 +9,14 @@
     Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
-
-
 # redirects for gui
 [[redirects]]
     from = "/ui/graphstudio"
     to = "/gui/current"
+
+[[redirects]]
+    from = "/ui/admin-portal"
+    to = "/gui/current/admin-portal/overview"
 
 [[redirects]]
     from = "/ui/admin-portal/*"
@@ -26,6 +28,10 @@
 
 [[redirects]]
     from = "/tigergraph-cloud/tigergraph-cloud-faqs"
+    to = "/cloud/support/faqs"
+
+[[redirects]]
+    from = "/v/2.5/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
 # redirects for cloud
@@ -74,13 +80,77 @@
     from = "/start/accumulators-tutorial"
     to = "/gsql-ref/current/tutorials/accumulators-tutorial"
 
+[[redirects]]
+    from = "/dev/using-a-remote-gsql-client"
+    to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
+
 # redirects for server
+[[redirects]]
+    from = "/start"
+    to = "/tigergraph-server/current/getting-started/docker"
+
+[[redirects]]
+    from = "/cloud/tigergraph-cloud-release-notes"
+    to = "/cloud/release-notes/release-notes"
+
+[[redirects]]
+    from = "/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+
+[[redirects]]
+    from = "/v/3.1/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+
 [[redirects]]
     from = "/dev/restpp-api"
     to = "/tigergraph-server/current/api/intro"
 
 [[redirects]]
-    from = "/admin/admin-guide/user-access/user-privileges-and-authentication"
+    from = "/legal/patents-and-third-party-software"
+    to = "/tigergraph-server/current/legal/patents-and-third-party-software"
+
+[[redirects]]
+    from = "/admin/admin-guide/data-encryption/encrypting-connections"
+    to = "/tigergraph-server/current/security/encrypting-connections"
+
+[[redirects]]
+    from = "/admin/admin-guide/system-administration-faqs"
+    to = "/tigergraph-server/current/troubleshooting/system-administration-faqs"
+
+[[redirects]]
+    from = "/admin/admin-guide/hw-and-sw-requirements"
+    to = "/tigergraph-server/current/installation/hw-and-sw-requirements"
+
+[[redirects]]
+    from = "/admin/admin-guide/system-management/backup-and-restore"
+    to = "/tigergraph-server/current/backup-and-restore/backup-and-restore"
+
+[[redirects]]
+    from = "/tigergraph-platform-overview/internal-architecture"
+    to = "/tigergraph-server/current/intro/internal-architecture"
+
+[[redirects]]
+    from = "/faqs/troubleshooting-guide"
+    to = "/tigergraph-server/current/troubleshooting/troubleshooting-guide"
+
+[[redirects]]
+    from = "/faqs/knowledge-base-and-faqs"
+    to = "https://tigergraph.freshdesk.com/support/solutions"
+
+[[redirects]]
+    from = "/faqs/error-codes"
+    to = "/tigergraph-server/current/reference/error-codes"
+
+[[redirects]]
+    from = "/start/get-started/*"
+    to = "/tigergraph-server/current/getting-started/:splat"
+
+[[redirects]]
+    from = "/admin/admin-guide/system-management/management-with-gadmin"
+    to = "/tigergraph-server/current/gadmin/management-with-gadmin"
+
+[[redirects]]
+    from = "/admin/admin-guide/user-access-management/user-privileges-and-authentication"
     to = "/tigergraph-server/current/user-access/readme"
 
 [[redirects]]
@@ -103,7 +173,34 @@
     from = "/admin/admin-guide/user-access/*"
     to = "/tigergraph-server/current/user-access/:splat"
 
-# redirects for graph-ml
+[[redirects]]
+    from = "/dev/using-a-remote-gsql-client "
+    to = "/tigergraph-server/current/gsql-shell/using-a-remote-gsql-client"
+
+[[redirects]]
+    from = "/faqs/change-log-1"
+    to = "/tigergraph-server/current/release-notes/change-log"
+
 [[redirects]]
     from = "/tigergraph-platform-overview/graph-algorithm-library"
     to = "/graph-ml/current/intro/overview"
+
+[[redirects]]
+    from = "/tigergraph-platform-overview/*"
+    to = "/tigergraph-server/current/intro/:splat"
+
+[[redirects]]
+    from = "/v/*"
+    to ="https://docs-legacy.tigergraph.com/v/:splat"
+
+
+# redirects for graph-ml
+[[redirects]]
+    from = "/graph-algorithm-library"
+    to = "/graph-ml/current/intro/overview"
+
+
+[[redirects]]
+    from = "/dev/data-loader-guides/*"
+    to = "/tigergraph-server/current/data-loading/:splat"
+
