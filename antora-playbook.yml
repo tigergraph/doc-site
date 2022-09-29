@@ -15,7 +15,7 @@ content:
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: ['security-summary-DOC-1376']
+    branches: ['create-cluster-redesign']
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [main, 'pathfinding-checklist-DOC-1379', 'installation-page-DOC-1078']
   - url: https://github.com/tigergraph/gsql-docs.git
