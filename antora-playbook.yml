@@ -17,7 +17,7 @@ content:
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: ['create-cluster-redesign']
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [main, 'pathfinding-checklist-DOC-1379', 'installation-page-DOC-1078']
+    branches: [main]
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, "optimizer"]
   - url: https://github.com/tigergraph/tigergraphql.git
