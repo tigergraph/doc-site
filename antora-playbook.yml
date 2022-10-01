@@ -1,7 +1,7 @@
 site:
   title: Docs
   url: https://docs.tigergraph.com/
-  start_page: home::index.adoc
+  start_page: tigergraph-server::intro:index.adoc
   robots: |
     User-agent: *
     Sitemap: https://docs.tigergraph.com/sitemap.xml
@@ -11,7 +11,7 @@ content:
     branches: [main]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: ["ja-3.4"]
+    branches: ["ja-3.7"]
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.7]
   - url: https://github.com/tigergraph/cloud-docs.git
@@ -19,13 +19,15 @@ content:
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: ja-1.0
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: ["ja-3.4"]
+    branches: ["ja-3.7"]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [main, 0.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [main]
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: [1.0, 1.1]
+  - url: https://github.com/tigergraph/insights-docs
+    branches: [3.7]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/jp/build/ui-bundle.zip?raw=true
