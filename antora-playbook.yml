@@ -27,7 +27,7 @@ content:
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: [1.0, 1.1]
   - url: https://github.com/tigergraph/insights-docs
-    branches: [3.7]
+    branches: [main]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/jp/build/ui-bundle.zip?raw=true
