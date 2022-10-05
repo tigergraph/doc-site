@@ -1,7 +1,7 @@
 site:
   title: Docs
   url: https://docs.tigergraph.com/
-  start_page: tigergraph-server::intro:index.adoc
+  start_page: tigergraph-server:intro:index.adoc
   robots: |
     User-agent: *
     Sitemap: https://docs.tigergraph.com/sitemap.xml
