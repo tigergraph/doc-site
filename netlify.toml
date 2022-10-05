@@ -11,7 +11,7 @@
     X-Frame-Options = "DENY"
 
 # Temp redirects for insights
-[[reditects]]
+[[redirects]]
     from = "/insights/current"
     to = "https://staging--docs-tigergraph.netlify.app/insights/current/intro/"
 
