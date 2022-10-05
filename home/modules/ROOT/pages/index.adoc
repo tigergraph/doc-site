@@ -26,7 +26,7 @@ a|
 === GSQL
 The GSQL™ software program is the TigerGraph comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
 
-xref:gsql-ref:intro:intro.adoc[]
+xref:gsql-ref:intro:index.adoc[]
 |===
 
 [#_tigergraph_suite]
@@ -36,7 +36,7 @@ TigerGraph Suite is a family of browser-based applications that operate on top o
 GraphStudio and Admin Portal have always been part of a standard TigerGraph installation. 
 Starting with TigerGraph 3.7, TigerGraph Insights, GraphQL Service, and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite. 
 
-[.home-card,cols="3,3,3,3,3",grid=none,frame=none]
+[.home-card,cols="3,3,3,3",grid=none,frame=none]
 |===
 a|
 === GraphStudio
@@ -49,11 +49,7 @@ a|
 Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
 
 xref:gui:admin-portal:overview.adoc[Admin Portal]
-a|
-=== Insights
-A no-code visual graph analyzer that makes building data analytics dashboards intuitive.
 
-xref:insights:intro:index.adoc[TigerGraph Insights]
 a|
 === GSQL Web Shell
 A GSQL shell in your browser, offering a more friendly interface packed with usability features to accelerate your graph journey.
