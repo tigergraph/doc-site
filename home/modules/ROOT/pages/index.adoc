@@ -34,7 +34,7 @@ xref:gsql-ref:intro:index.adoc[]
 
 TigerGraph Suite is a family of browser-based applications that operate on top of TigerGraph Server. 
 GraphStudio and Admin Portal have always been part of a standard TigerGraph installation. 
-Starting with TigerGraph 3.7, TigerGraph Insights, GraphQL Service, and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite. 
+Starting with TigerGraph 3.7, GraphQL Service and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite.
 
 [.home-card,cols="3,3,3,3",grid=none,frame=none]
 |===
