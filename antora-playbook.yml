@@ -13,11 +13,11 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: ['create-cluster-rework-DOC-1403']
+    branches: ['nov-2022-update-staging']
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [main]
+    branches: [1.0, "gds-algorithm-links-DOC-1047"]
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8]
   - url: https://github.com/tigergraph/tigergraphql.git
