@@ -20,8 +20,8 @@ content:
   #   branches: main
   # - url: /Users/lenny.chen/workstation/gsql-docs
   #   branches: [main, 3.3, 3.4, 'gsql-style-guide-DOC-971']
-  - url: /Users/lenny.chen/workstation/pytigergraph-docs
-    branches: [main]
+  # url: /Users/lenny.chen/workstation/pytigergraph-docs
+  #  branches: [main]
 ui:
   bundle:
     url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
