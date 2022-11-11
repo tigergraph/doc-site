@@ -17,7 +17,7 @@ content:
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: ['nov-2022-update-staging']
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [1.0]
+    branches: ['main', "gds-algorithm-links-DOC-1047"]
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8]
   - url: https://github.com/tigergraph/tigergraphql.git
