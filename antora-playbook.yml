@@ -23,7 +23,7 @@ content:
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
-    branches: [1.0, 1.1]
+    branches: [1.0, 1.1, 1.2]
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: ["v1.0", "v1.1", "v1.2"]
   - url: https://github.com/tigergraph/insights-docs
