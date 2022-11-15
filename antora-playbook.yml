@@ -19,7 +19,7 @@ content:
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/insights-docs.git
-    branches: [3.8]
+    branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
   - url: https://github.com/tigergraph/tigergraphql.git
@@ -27,7 +27,7 @@ content:
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [1.0, 1.1]
   - url: https://github.com/tigergraph/pytigergraph-docs
-    branches: ['v1.0', 'v1.1']
+    branches: ['v1.0', 'v1.1', 'v1.2']
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
