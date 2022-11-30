@@ -12,19 +12,19 @@ Here you can find the reference materials, guides, and examples to develop your 
 a|
 === TigerGraph Cloud
 
-TigerGraph Cloud is a fully-managed cloud database built on the same TigerGraph Enterprise Server engine that is delivering the fastest and most scalable graph database.
+A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[]
 
 a|
 === TigerGraph Server
-TigerGraph, the world’s fastest and most scalable graph analytics platform, breaks through the limitations of other graph technologies to enable real-time big data graph applications.
+The world’s fastest and most scalable graph analytics platform, breaking through the limitations of other graph technologies to enable real-time big data graph applications.
 
 xref:tigergraph-server:intro:index.adoc[]
 
 a|
 === GSQL
-The GSQL™ software program is the TigerGraph comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
+The comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
 
 xref:gsql-ref:intro:index.adoc[]
 |===
@@ -34,7 +34,7 @@ xref:gsql-ref:intro:index.adoc[]
 
 TigerGraph Suite is a family of browser-based applications that operate on top of TigerGraph Server. 
 GraphStudio and Admin Portal have always been part of a standard TigerGraph installation. 
-Starting with TigerGraph 3.7, GraphQL Service and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite.
+Starting with TigerGraph 3.7, GraphQL Service, Insights, and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite.
 
 [.home-card,cols="3,3,3,3,3",grid=none,frame=none]
 |===
@@ -97,25 +97,25 @@ xref:graph-ml:intro:index.adoc[]
 |===
 a|
 === pyTigerGraph
-pyTigerGraph is a Python package for connecting to TigerGraph databases.
+A Python package for connecting to TigerGraph databases.
 
 xref:pytigergraph:intro:index.adoc[]
 a|
 === GraphQL Service
-TigerGraph GraphQL Service enables users to access graph data in TigerGraph using GraphQL queries.
+Enables users to access graph data in TigerGraph using GraphQL queries.
 
 xref:graphql:ROOT:index.adoc[]
 
 a|
 === JDBC Driver
 
-JDBC Driver is a Type 4 driver, converting JDBC calls directly into TigerGraph database commands.
+A Type 4 driver, converting JDBC calls directly into TigerGraph database commands.
 
 link:https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
 a|
 === REST API
 
-REST API endpoints developers can use to communicate with the TigerGraph database.
+Endpoints developers can use to communicate with the TigerGraph database.
 
 xref:tigergraph-server:API:index.adoc[]
 |===
