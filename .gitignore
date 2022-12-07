@@ -5,3 +5,4 @@ local-antora-playbook.yml
 .DS_Store
 .vscode/
 *.env
+env.env
