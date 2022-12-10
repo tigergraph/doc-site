@@ -11,13 +11,13 @@ content:
     branches: [staging]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 'access-management-redesign-DOC-1240']
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: ['nov-2022-update-staging']
+    branches: ['main']
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [3.7, 3.8, "gds-algorithm-links-DOC-1047"]
+    branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/gsql-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8]
   - url: https://github.com/tigergraph/tigergraphql.git
