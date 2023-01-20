@@ -2,8 +2,9 @@
 :navtitle: home
 :page-role: home
 
-Welcome to the TigerGraph documentation site!
 Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
+
+NOTE: xref:tigergraph_server:release-notes:index.adoc[TigerGraph 3.8] was released on Nov. 15, 2022.
 
 == Get started
 
@@ -18,13 +19,13 @@ xref:cloud:start:overview.adoc[]
 
 a|
 === TigerGraph Server
-The world’s fastest and most scalable graph analytics platform, breaking through the limitations of other graph technologies to enable real-time big data graph applications.
+The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
 xref:tigergraph-server:intro:index.adoc[]
 
 a|
 === GSQL
-The comprehensive environment for designing graph schemas, loading and managing data to build a graph, and querying the graph to perform data analysis.
+TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
 xref:gsql-ref:intro:index.adoc[]
 |===
@@ -32,21 +33,18 @@ xref:gsql-ref:intro:index.adoc[]
 [#_tigergraph_suite]
 == TigerGraph Suite
 
-TigerGraph Suite is a family of browser-based applications that operate on top of TigerGraph Server. 
-GraphStudio and Admin Portal have always been part of a standard TigerGraph installation. 
-Starting with TigerGraph 3.7, GraphQL Service, Insights, and GSQL Web Shell all come with a standard TigerGraph installation as part of TigerGraph Suite.
+A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT. Also includes xref:ml-workbench:intro:index.adoc[ML Workbench] and xref:graphql:ROOT:index.adoc[GraphQL Service].
 
-[.home-card,cols="3,3,3,3,3",grid=none,frame=none]
+[.home-card,cols="3,3,3,3",grid=none,frame=none]
 |===
 a|
 === GraphStudio
-GraphStudio™ is an intuitive, browser-based interface for graph-based application development tasks.
+An intuitive, browser-based interface for graph-based application development tasks.
 
 xref:gui:graphstudio:overview.adoc[GraphStudio]
 a|
 === Admin Portal
-
-Admin Portal is a browser-based DevOps tool that provides users an overview of a running TigerGraph system from an application and infrastructure point of view.
+Your hub for managing and monitoring system operation and access privileges.
 
 xref:gui:admin-portal:overview.adoc[Admin Portal]
 
@@ -56,18 +54,12 @@ A no-code visual graph analyzer that makes building data analytics dashboards in
 
 xref:insights:intro:index.adoc[TigerGraph Insights]
 
-
 a|
 === GSQL Web Shell
-A GSQL shell in your browser, offering a more friendly interface packed with usability features to accelerate your graph journey.
+A GSQL shell in your browser, packed with usability features to accelerate your graph journey.
 
 xref:tigergraph-server:gsql-shell:web.adoc[GSQL Web Shell]
-a|
-=== GraphQL Service
-TigerGraph GraphQL Service enables users to access and modify graph data in TigerGraph using GraphQL queries.
 
-
-xref:graphql:ROOT:index.adoc[]
 |===
 
 == Graph Data Science
@@ -76,7 +68,8 @@ xref:graphql:ROOT:index.adoc[]
 |===
 a|
 === ML Workbench
-ML Workbench is a Jupyter-based Python development framework offered either as a fully-managed, on-cloud offering or as an integrated on-prem solution for direct integration with existing machine learning infrastructure.
+A package of in-database ML functions and Jupyter notebook templates to accelerate graph-enhanced machine learning projects, available as a TigerGraph Cloud service or an installable package to integrate with existing machine learning infrastructure.
+
 
 xref:ml-workbench:intro:index.adoc[]
 
@@ -84,7 +77,7 @@ a|
 
 === Graph Data Science Library
 
-TigerGraph provides a collection of expertly written GSQL queries that efficiently implement common graph algorithms.
+A package of over 50 graph data science algorithms executing as GSQL queries on the TigerGraph Enterprise Server.
 
 
 xref:graph-ml:intro:index.adoc[]
@@ -96,13 +89,20 @@ xref:graph-ml:intro:index.adoc[]
 [.home-card,cols="3,3,3,3",grid=none,frame=none]
 |===
 a|
+=== REST API
+Endpoints that developers can use to communicate with the TigerGraph database.
+
+xref:tigergraph-server:API:index.adoc[]
+
+a|
 === pyTigerGraph
-A Python package for connecting to TigerGraph databases.
+A Python package for working with TigerGraph, including data science functions.
 
 xref:pytigergraph:intro:index.adoc[]
+
 a|
 === GraphQL Service
-Enables users to access graph data in TigerGraph using GraphQL queries.
+GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:graphql:ROOT:index.adoc[]
 
@@ -112,12 +112,6 @@ a|
 A Type 4 driver, converting JDBC calls directly into TigerGraph database commands.
 
 link:https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
-a|
-=== REST API
-
-Endpoints developers can use to communicate with the TigerGraph database.
-
-xref:tigergraph-server:API:index.adoc[]
 |===
 
 == Security resources
@@ -171,7 +165,5 @@ https://dev.tigergraph.com/forum/[TigerGraph Community]
 
 
 == Legacy documentation site
-Our new documentation site provides you with improved organization, more accurate search, as well as faster page loading. However, it only contains documentation for TigerGraph 3.2 and later.
-
 To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
 
