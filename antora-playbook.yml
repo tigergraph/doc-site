@@ -11,15 +11,15 @@ content:
     branches: [staging]
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 'data-loading-overhaul-DOC-1564']
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9,]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main, 'nav-reorganize-DOC-1579']
+    branches: [main]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8, 3.9]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
@@ -27,7 +27,7 @@ content:
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: ["v1.0", "v1.1", "v1.2","v1.3"]
   - url: https://github.com/tigergraph/insights-docs
-    branches: [3.7, 3.8]
+    branches: [3.7, 3.8, 3.9]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
