@@ -68,7 +68,7 @@ xref:tigergraph-server:gsql-shell:web.adoc[GSQL Web Shell]
 |===
 a|
 === ML Workbench
-A package of in-database ML functions and Jupyter notebook templates to accelerate the development of graph-enhanced machine learning, available as a TigerGraph Cloud service or an installable package to integrate with existing machine learning infrastructure.
+A package of in-database ML functions and Jupyter notebook templates to accelerate graph-enhanced machine learning projects, available as a TigerGraph Cloud service or an installable package to integrate with existing machine learning infrastructure.
 
 
 xref:ml-workbench:intro:index.adoc[]
