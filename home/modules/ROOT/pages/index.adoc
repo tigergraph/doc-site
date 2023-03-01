@@ -4,7 +4,7 @@
 
 Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
 
-NOTE: xref:tigergraph_server:release-notes:index.adoc[TigerGraph 3.9] was released on Feb. 28, 2023.
+NOTE: xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9] was released on Feb. 28, 2023.
 
 == Get started
 
