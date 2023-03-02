@@ -142,7 +142,7 @@ TigerGraph Cloud provides additional network security and authorization features
 For more information, see xref:cloud:security:index.adoc[Security for TigerGraph Cloud].
 |===
 
-NOTE: See xref:cve-2022-30331.adoc[our response to CVE-2022-30331].
+=== See our list of xref:alerts.adoc[Security and Other Alerts].
 
 == More developer resources
 
