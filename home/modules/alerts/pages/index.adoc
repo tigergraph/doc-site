@@ -11,7 +11,7 @@ This page lists security alerts, critical patch updates, and other important adv
 |February 2023
 |xref:directory-traversal-leading-to-privilege-escalation.adoc[]
 
-|Jun '22
+|June 2022
 |xref:cve-2022-30331.adoc[]
 
 
