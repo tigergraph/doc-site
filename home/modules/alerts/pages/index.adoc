@@ -1,0 +1,18 @@
+= Alerts and Critical Path Updates
+
+This page lists security alerts, critical patch updates, and other important advisories for TigerGraph.
+
+== Security Alerts
+
+[cols="1,1"]
+|===
+|Date | Name
+
+|February 2023
+|xref:directory-traversal-leading-to-privilege-escalation.adoc[]
+
+|Jun '22
+|xref:cve-2022-30331.adoc[]
+
+
+

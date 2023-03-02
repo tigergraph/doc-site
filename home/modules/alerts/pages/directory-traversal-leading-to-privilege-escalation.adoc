@@ -1,0 +1,27 @@
+= Alert: Directory Traversal leading to Privilege Escalation
+:description: TigerGraph's response to CVE-2022-30331.
+
+Type: Security
+
+Original report: Feb 28, 2023
+
+A high severity directory traversal vulnerability has been discovered in versions 3.1.0 to 3.8.0 of the software.
+The vulnerability allows an attacker to traverse the file system and gain elevated privileges.
+
+=== Impact
+
+An attacker can exploit this vulnerability to gain unauthorized access to sensitive information and potentially take control of the affected system.
+
+=== Mitigation
+
+This vulnerability will be mitigated in version 3.9.1 and future releases of the software.
+We strongly recommend that all users update to the latest version as soon as possible.
+TigerGraph Administrators may also revoke execute LOADING JOB privileges from users (see xref:tigergraph-server:user-access:role-management.adoc[]), until fixes for this issue are in place.
+
+=== Note
+
+It is important to follow best practices for security and keep all software up-to-date to prevent potential exploits.
+
+We would like to thank Neo4j for bringing this issue to our attention.
+
+If you have any questions or concerns, please contact TigerGraph at support@tigergraph.com
