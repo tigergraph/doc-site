@@ -1,4 +1,4 @@
-= Alerts and Critical Path Updates
+= Alerts and Critical Patch Updates
 
 This page lists security alerts, critical patch updates, and other important advisories for TigerGraph.
 
