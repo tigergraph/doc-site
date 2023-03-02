@@ -16,7 +16,7 @@ An attacker can exploit this vulnerability to gain unauthorized access to sensit
 
 This vulnerability will be mitigated in version 3.9.1 and future releases of the software.
 We strongly recommend that all users update to the latest version as soon as possible.
-TigerGraph Administrators may also revoke execute LOADING JOB privileges from users xref:tigergraph-server:user-access:role-management.adoc[], until fixes for this issue are in place.
+TigerGraph Administrators may also revoke execute LOADING JOB privileges from users (see xref:tigergraph-server:user-access:role-management.adoc[]), until fixes for this issue are in place.
 
 === Note
 
