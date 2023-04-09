@@ -1,27 +1,14 @@
 site:
   title: Docs
-  # (1A) Where will the site be published? For prod or preview?
-  # url: https://docs.tigergraph.com/ # For prod
-  url: https://docs-tigergraph.netlify.app/ # For Preview
+  url: https://docs.tigergraph.com/
   start_page: home::index.adoc
-
-  # (1B) The sitemap should be with the site!
-  #robots: |
-  #  User-agent: *
-  #  Sitemap: https://docs.tigergraph.com/sitemap.xml
   robots: |
     User-agent: *
-    # Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
+    Sitemap: https://docs.tigergraph.com/sitemap.xml
 content:
-  # (2) Where is this file (antora-playbook.yml)?  Remote or local? What branch, main or some staging?
   sources:
-  #- url: https://github.com/tigergraph/doc-site.git
-  #  branches: [main]
-  #- url: /Users/victorlee/Documents/GitHub1/Docs/doc-site # Victor's local site
   - url: https://github.com/tigergraph/doc-site.git
     branches: [staging]
-
-  # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9,]
@@ -44,7 +31,6 @@ content:
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
-    #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:

@@ -17,8 +17,7 @@ content:
   sources:
   #- url: https://github.com/tigergraph/doc-site.git
   #  branches: [main]
-  #- url: /Users/victorlee/Documents/GitHub1/Docs/doc-site # Victor's local site
-  - url: https://github.com/tigergraph/doc-site.git
+  - url: /Users/victorlee/Documents/GitHub1/Docs/doc-site # Victor's local site
     branches: [staging]
 
   # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
