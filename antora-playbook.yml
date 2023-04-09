@@ -11,7 +11,7 @@ site:
   #  Sitemap: https://docs.tigergraph.com/sitemap.xml
   robots: |
     User-agent: *
-    # Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
 content:
   # (2) Where is this file (antora-playbook.yml)?  Remote or local? What branch, main or some staging?
   sources:
