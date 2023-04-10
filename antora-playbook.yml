@@ -28,11 +28,11 @@ content:
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main]
+    branches: [main, CLOUD-23-04]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8, 3.9]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.8, 3.9]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
@@ -48,7 +48,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, insights, graph-ml, ml-workbench, pytigergraph, graphql'
+    page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql'
   extensions:
   - ./libs/tabs-block.js
 urls:
