@@ -5,6 +5,8 @@ site:
   robots: |
     User-agent: *
     Sitemap: https://docs.tigergraph.com/sitemap.xml
+runtime:
+  fetch: true
 content:
   sources:
   - url: https://github.com/tigergraph/doc-site.git
