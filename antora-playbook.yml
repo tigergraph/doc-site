@@ -24,15 +24,15 @@ content:
   # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
     start_paths: home
   - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.9.2]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2]
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.9.2]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2]
   - url: https://github.com/tigergraph/cloud-docs.git
     branches: [CLOUD-23-04]
   - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [3.7, 3.8, 3.9, 3.9.2]
+    branches: [3.7, 3.8, 3.9.2]
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.9.2]
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7, 3.8]
   - url: https://github.com/tigergraph/mlworkbench-docs.git
