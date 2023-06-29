@@ -1,44 +1,60 @@
 site:
   title: Docs
-  url: https://docs.tigergraph.com/
+  # For each section (1A,etc) comment/uncomment the option for prod or staging
+
+  # (1A) Where will the site be published? For prod or preview?
+  url: https://docs.tigergraph.com/ # For prod
+  # url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
+
+  # (1B) The sitemap URL should correspond to the site's URL (1A)
   robots: |
     User-agent: *
-    Sitemap: https://docs.tigergraph.com/sitemap.xml
+    Sitemap: https://docs.tigergraph.com/sitemap.xml # For Prod (keep robots lines together as a block)
+  #robots: |
+  #  User-agent: *
+  #  Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
 runtime:
   fetch: true
 content:
+  # (2) Where is this file (antora-playbook.yml)?  Remote or local? What branch, main or some staging?
   sources:
-  - url: https://github.com/tigergraph/doc-site.git
-    branches: [main]
-    start_paths: home
-  - url: https://github.com/tigergraph/server-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/gui-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/cloud-docs.git
-    branches: main
-  - url: https://github.com/tigergraph/tigdsl-docs.git
-    branches: [3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/insights-docs.git
-    branches: [3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/tigergraphql.git
-    branches: [3.7, 3.8, 3.9]
-  - url: https://github.com/tigergraph/mlworkbench-docs.git
-    branches: [1.0, 1.1, 1.2, 1.3, 1.4]
-  - url: https://github.com/tigergraph/pytigergraph-docs
-    branches: ['v1.0', 'v1.1', 'v1.2', 'v1.3', 'v1.4']
+    - url: https://github.com/tigergraph/doc-site.git
+      branches: [main]
+    #- url: https://github.com/tigergraph/doc-site.git
+    #  branches: [staging]
+    #- url: /Users/victorlee/Documents/GitHub1/Docs/doc-site # Victor's local site
+
+  # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
+      start_paths: home
+    - url: https://github.com/tigergraph/server-docs.git
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9] #3.9.2
+    - url: https://github.com/tigergraph/gui-docs.git
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9] #3.9.2
+    - url: https://github.com/tigergraph/cloud-docs.git
+      branches: [main]
+    - url: https://github.com/tigergraph/tigdsl-docs.git #3.9.2
+      branches: [3.7, 3.8, 3.9]
+    - url: https://github.com/tigergraph/gsql-docs.git
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9] #3.9.2
+    - url: https://github.com/tigergraph/tigergraphql.git
+      branches: [3.7, 3.8, 3.9]
+    - url: https://github.com/tigergraph/mlworkbench-docs.git
+      branches: [1.0, 1.1, 1.2, 1.3, 1.4]
+    - url: https://github.com/tigergraph/pytigergraph-docs
+      branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4"]
+    - url: https://github.com/tigergraph/insights-docs
+      branches: [3.7, 3.8, 3.9]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
+    #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
   attributes:
     page-component-order: '!home, cloud, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql'
   extensions:
-  - ./libs/tabs-block.js
+    - ./libs/tabs-block.js
 urls:
   html_extension_style: drop
   latest_version_segment_strategy: redirect:to
