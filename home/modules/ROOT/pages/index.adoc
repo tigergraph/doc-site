@@ -6,6 +6,8 @@ Here you can find the reference materials, guides, and examples to develop your 
 
 [NOTE]
 ====
+* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.2-1] and
+xref:https://docs.tigergraph.com/tigergraph-server/3.6/release-notes/[TigerGraph 3.6.4] was released on Oct. 10th, 2023.
 * xref:1.5@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.5] was released on Sept. 25th, 2023.
 * xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.2] was released on June 29, 2023.
 * xref:1.4@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.4] and
