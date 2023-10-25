@@ -28,22 +28,22 @@ content:
   # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
       start_paths: home
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2 #Replace 3.9.2 with 3.9.3
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2 #Replace 3.9.2 with 3.9.3
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [main]
     - url: https://github.com/tigergraph/tigdsl-docs.git #3.9.2
       branches: [3.7, 3.8, 3.9.2]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.2] #3.9.2 #Replace 3.9.2 with 3.9.3
     - url: https://github.com/tigergraph/tigergraphql.git
       branches: [3.7, 3.8, 3.9]
     - url: https://github.com/tigergraph/mlworkbench-docs.git
       branches: [1.0, 1.1, 1.2, 1.3, 1.4]
     - url: https://github.com/tigergraph/pytigergraph-docs
       branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5"]
-    - url: https://github.com/tigergraph/insights-docs
+    - url: https://github.com/tigergraph/insights-docs #Replace 3.9 with 3.9.3
       branches: [3.7, 3.8, 3.9]
 ui:
   bundle:
