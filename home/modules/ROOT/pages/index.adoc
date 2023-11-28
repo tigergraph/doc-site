@@ -6,14 +6,13 @@ Here you can find the reference materials, guides, and examples to develop your 
 
 [NOTE]
 ====
-* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.3] was released on Nov. 7th, 2023
+* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-1] was released on Nov. [], 2023.
+* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.3] was released on Nov. 7th, 2023.
 * xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.2-1] and
 xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] were released on Oct. 10th, 2023.
 * xref:1.5@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.5] was released on Sept. 25th, 2023.
-* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.2] was released on June 29, 2023.
 * xref:1.4@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.4] and
 xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] were released on May 17, 2023.
-* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9] was released on Feb. 28, 2023.
 ====
 
 == Get started
