@@ -1,27 +1,23 @@
-= TigerGraph Documentation [Staging Revamp]
+= TigerGraph Documentation
 :navtitle: home
 :page-role: home
 
-Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
-
-NOTE: xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9] was released on Feb. 28, 2023.
-
-== Get started
+*[Staging Revamp]*
 
 [.home-card,cols="3,3,3",grid=none,frame=none]
 |===
+a|
+=== TigerGraph Server
+The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
+
+xref:tigergraph-server:intro:index.adoc[]
+
 a|
 === TigerGraph Cloud
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[]
-
-a|
-=== TigerGraph Server
-The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
-
-xref:tigergraph-server:intro:index.adoc[]
 
 a|
 === GSQL
