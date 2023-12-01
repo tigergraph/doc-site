@@ -1,4 +1,4 @@
-= TigerGraph Documentation
+= TigerGraph Documentation [Staging Revamp]
 :navtitle: home
 :page-role: home
 
