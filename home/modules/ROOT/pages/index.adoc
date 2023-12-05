@@ -6,7 +6,7 @@ Here you can find the reference materials, guides, and examples to develop your 
 
 [NOTE]
 ====
-* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-1] was released on Nov. [], 2023.
+* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-1] was released on Dec. 5th, 2023.
 * xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.3] was released on Nov. 7th, 2023.
 * xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.9.2-1] and
 xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] were released on Oct. 10th, 2023.
