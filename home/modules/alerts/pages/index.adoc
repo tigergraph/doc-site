@@ -8,6 +8,9 @@ This page lists security alerts, critical patch updates, and other important adv
 |===
 |Date | Name
 
+|December 2023
+|xref:cve-2023-28479.adoc[]
+
 |February 2023
 |xref:directory-traversal-leading-to-privilege-escalation.adoc[]
 
