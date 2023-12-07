@@ -1,3 +1,4 @@
 * xref:index.adoc[]
+** xref:cve-2023-28479.adoc[]
 ** xref:cve-2022-30331.adoc[]
 ** xref:directory-traversal-leading-to-privilege-escalation.adoc[]
