@@ -5,8 +5,8 @@ site:
   # (1A) Where will the site be published? For prod or preview?
   # url: https://docs.tigergraph.com/ # For prod
   url: https://docs-tigergraph.netlify.app/ # For Preview
-  # start_page: home::index.adoc
   start_page: home::index_revamp.adoc
+  # start_page: home::index.adoc
 
   # (1B) The sitemap URL should correspond to the site's URL (1A)
   #robots: |  # For Prod (keep the whole robots section together)
