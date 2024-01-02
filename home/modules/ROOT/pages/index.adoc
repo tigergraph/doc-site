@@ -6,6 +6,7 @@ Here you can find the reference materials, guides, and examples to develop your 
 
 [NOTE]
 ====
+* xref:home:alerts:cve-2023-22949.adoc[] was released on Jan. 2nd, 2024.
 * xref:home:alerts:cve-2023-28479.adoc[] was released on Dec. 7th, 2023.
 * xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-1] was released on Dec. 5th, 2023.
 * xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] was released on Oct. 10th, 2023.
