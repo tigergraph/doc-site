@@ -6,7 +6,8 @@
 [.home-card,cols="3,3,3",grid=none,frame=none]
 |===
 a|
-=== TigerGraph DB
+*TigerGraph DB*
+
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
 image::home::TigerLogo.png[]
@@ -14,14 +15,14 @@ image::home::TigerLogo.png[]
 xref:tigergraph-server:intro:index.adoc[]
 
 a|
-=== TigerGraph Cloud
+*TigerGraph Cloud*
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[]
 
 a|
-=== TigerGraph Suite
+*TigerGraph Suite*
 
 Insert description
 
@@ -29,40 +30,43 @@ xref:insights:intro:index.adoc[link]
 
 
 a|
-=== Security
-Insert description
-
-xref:insights:intro:index.adoc[link]
-
-a|
-=== Connectors and API
-Insert description
-
-xref:insights:intro:index.adoc[link]
-
-a|
-=== Languages
+*Security*
 
 Insert description
 
 xref:insights:intro:index.adoc[link]
 
 a|
-=== Graph Data Science
+*Connectors and API*
 
 Insert description
 
 xref:insights:intro:index.adoc[link]
 
 a|
-=== Tutorials
+*Languages*
 
 Insert description
 
 xref:insights:intro:index.adoc[link]
 
 a|
-=== Resources
+*Graph Data Science*
+
+Insert description
+
+xref:insights:intro:index.adoc[link]
+
+a|
+*Tutorials*
+
+Insert description
+
+xref:insights:intro:index.adoc[link]
+
+a|
+*Resources*
+
 Insert description
 
 xref:insights:intro:index.adoc[link]
