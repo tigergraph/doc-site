@@ -8,6 +8,9 @@ This page lists security alerts, critical patch updates, and other important adv
 |===
 |Date | Name
 
+|January 2024
+|xref:cve-2023-22949.adoc[]
+
 |December 2023
 |xref:cve-2023-28479.adoc[]
 
