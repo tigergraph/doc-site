@@ -105,6 +105,7 @@ a|
 GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:graphql:ROOT:index.adoc[]
+xref:graphql:ROOT:index.adoc[]
 
 a|
 === JDBC Driver

@@ -10,7 +10,7 @@ a|
 
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
-image::home::TigerLogo.png[]
+//image::home::TigerLogo.png[]
 
 xref:tigergraph-server:intro:index.adoc[]
 
@@ -24,52 +24,37 @@ xref:cloud:start:overview.adoc[]
 a|
 *TigerGraph Suite*
 
-Insert description
+A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-xref:insights:intro:index.adoc[link]
+
+xref:gui:graphstudio:overview.adoc[GraphStudio], xref:gui:admin-portal:overview.adoc[Admin Portal], xref:insights:intro:index.adoc[Insights]
 
 
 a|
-*Security*
+*GSQL Language*
 
-Insert description
+TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
-xref:insights:intro:index.adoc[link]
+xref:gsql-ref:intro:index.adoc[]
 
 a|
 *Connectors and API*
 
-Insert description
+A Python package encompassing data science functions and
+GraphQL API support for both reading and modifying TigerGraph data.
 
-xref:insights:intro:index.adoc[link]
-
-a|
-*Languages*
-
-Insert description
-
-xref:insights:intro:index.adoc[link]
+xref:pytigergraph:intro:index.adoc[],
+xref:0.7@graphql:ROOT:intro.adoc[GraphQL Service]
 
 a|
 *Graph Data Science*
 
-Insert description
+Two comprehensive packages,
+featuring over 50 algorithms executed as GSQL queries,
+and offering accelerated graph-enhanced machine learning in TigerGraph Cloud or as an installable package.
 
-xref:insights:intro:index.adoc[link]
-
-a|
-*Tutorials*
-
-Insert description
-
-xref:insights:intro:index.adoc[link]
-
-a|
-*Resources*
-
-Insert description
-
-xref:insights:intro:index.adoc[link]
+xref:ml-workbench:intro:index.adoc[ML Workbench],
+xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 
 a|
 |===
