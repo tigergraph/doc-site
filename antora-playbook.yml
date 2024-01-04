@@ -29,7 +29,7 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1923-ServerDocsRevamp2]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [main] #DOC-1923-CloudDocsRevamp
+    branches: [DOC-1923-CloudRevamp] #DOC-1923-CloudRevamp
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8, 3.9.2] #DOC-1923-TigdslDocsRevamp
   - url: https://github.com/tigergraph/gsql-docs.git
