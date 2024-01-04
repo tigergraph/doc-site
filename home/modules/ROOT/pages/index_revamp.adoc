@@ -12,7 +12,7 @@ The world’s fastest and most scalable graph analytics platform, enabling real-
 
 //image::home::TigerLogo.png[]
 
-xref:tigergraph-server:intro:index.adoc[]
+xref:tigergraph-server:intro:index.adoc[TigerGraph DB]
 
 a|
 *TigerGraph Cloud*
