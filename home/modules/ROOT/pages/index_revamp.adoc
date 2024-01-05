@@ -27,7 +27,7 @@ a|
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
 
-xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio] xref:gui:graphstudio:overview.adoc[GraphStudio], xref:gui:admin-portal:overview.adoc[Admin Portal], xref:insights:intro:index.adoc[Insights]
+xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio] xref:insights:intro:index.adoc[Insights]
 
 
 a|
