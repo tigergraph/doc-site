@@ -29,11 +29,11 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1923-ServerDocsRevamp2]
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [DOC-1923-CloudRevamp] #DOC-1923-CloudRevamp
+    branches: [DOC-1923-CloudRevamp]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8, DOC-1923-TigdslDocsRevamp] #DOC-1923-TigdslDocsRevamp
   - url: https://github.com/tigergraph/gsql-docs.git
-    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1934-improve-nav-fix-links] #DOC-1923-GSQLDocsRevamp
+    branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1923-GSQLDocsRevamp]
   - url: https://github.com/tigergraph/tigergraphql.git
     branches: [3.7, 3.8] #DOC-1923-GraphDocsRevamp
   - url: https://github.com/tigergraph/mlworkbench-docs.git
@@ -41,9 +41,9 @@ content:
   - url: https://github.com/tigergraph/pytigergraph-docs
     branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5"] #DOC-1923-PyDocsRevamp
   - url: https://github.com/tigergraph/gui-docs.git
-    branches: [ 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1923-GUIDocsRevamp] #DOC-1923-GUIDocsRevamp
+    branches: [ 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, DOC-1923-GUIDocsRevamp]
   - url: https://github.com/tigergraph/insights-docs
-    branches: [3.7, 3.8, DOC-1923-InsightsDocsRevamp] #DOC-1923-InsightsDocsRevamp
+    branches: [3.7, 3.8, DOC-1923-InsightsDocsRevamp]
 ui:
   bundle:
     #url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
