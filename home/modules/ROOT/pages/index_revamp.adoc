@@ -1,8 +1,17 @@
-= TigerGraph Documentation [Staging Revamp]
+= Welcome to the TigerGraph Documentation Site [Staging Revamp]
 :navtitle: home
 :page-role: home
 
+== Announcements
 
+Recent News and Releases
+
+NOTE: [Recent links to release notes]
+
+Security Alerts and Responses
+xref:home:alerts:index.adoc[]
+
+== Get to Know TigerGraph Products
 [.home-card,cols="3,3,3",grid=none,frame=none]
 |===
 a|
@@ -58,3 +67,4 @@ xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 
 a|
 |===
+
