@@ -15,9 +15,11 @@ xref:home:alerts:index.adoc[]
 [.home-card,cols="2",grid=none,frame=none]
 |===
 a|
+
+image:TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=85,height=85]
 *TigerGraph DB*
 
-image::TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=64,height=64]
+//image::TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=64,height=64]
 
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
