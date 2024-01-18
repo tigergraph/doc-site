@@ -12,16 +12,17 @@ Security Alerts and Responses
 xref:home:alerts:index.adoc[]
 
 == Get to Know TigerGraph Products
-[.home-card,cols="3,3,3",grid=none,frame=none]
+[.home-card,cols="2",grid=none,frame=none]
 |===
 a|
 *TigerGraph DB*
 
+image::TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=64,height=64]
+
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
-//image::home::TigerLogo.png[]
-
-xref:tigergraph-server:intro:index.adoc[TigerGraph DB]
+xref:tigergraph-server:intro:index.adoc[TigerGraph DB],
+xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started]
 
 a|
 *TigerGraph Cloud*
