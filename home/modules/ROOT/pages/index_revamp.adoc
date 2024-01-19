@@ -16,22 +16,22 @@ xref:home:alerts:index.adoc[]
 |===
 a|
 
-image:TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=85,height=85]
+image:TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=74,height=74]
 *TigerGraph DB*
 
 //image::TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=64,height=64]
 
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
-xref:tigergraph-server:intro:index.adoc[TigerGraph DB],
-xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started]
+xref:tigergraph-server:intro:index.adoc[TigerGraph DB ↗]
+xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started ↗]
 
 a|
-image:cloudIcon-homecard.png[alt=TigerGraphDB,width=85,height=85] *TigerGraph Cloud*
+image:cloudIcon-homecard.png[alt=TigerGraphDB,width=74,height=74] *TigerGraph Cloud*
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
-xref:cloud:start:overview.adoc[]
+xref:cloud:start:overview.adoc[TigerGraph Cloud ↗]
 
 a|
 *TigerGraph Suite*
@@ -39,7 +39,7 @@ a|
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
 
-xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio], xref:insights:intro:index.adoc[Insights]
+xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio ↗] xref:insights:intro:index.adoc[Insights ↗]
 
 
 a|
@@ -47,7 +47,7 @@ a|
 
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
-xref:gsql-ref:intro:index.adoc[]
+xref:gsql-ref:intro:index.adoc[GSQL Language Reference ↗]
 
 a|
 *Connectors and API*
@@ -55,8 +55,8 @@ a|
 A Python package encompassing data science functions and
 GraphQL API support for both reading and modifying TigerGraph data.
 
-xref:pytigergraph:intro:index.adoc[],
-xref:3.9@graphql:ROOT:index.adoc[GraphQL Service]
+xref:pytigergraph:intro:index.adoc[pyTigerGraph ↗]
+xref:3.9@graphql:ROOT:index.adoc[GraphQL Service ↗]
 
 a|
 *Graph Data Science*
@@ -65,8 +65,8 @@ Two comprehensive packages,
 featuring over 50 algorithms executed as GSQL queries,
 and offering accelerated graph-enhanced machine learning in TigerGraph Cloud or as an installable package.
 
-xref:ml-workbench:intro:index.adoc[ML Workbench],
-xref:graph-ml:intro:index.adoc[Graph Data Science Library]
+xref:ml-workbench:intro:index.adoc[ML Workbench ↗]
+xref:graph-ml:intro:index.adoc[Graph Data Science Library ↗]
 
 a|
 |===
