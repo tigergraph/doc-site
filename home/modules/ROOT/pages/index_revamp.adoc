@@ -33,6 +33,7 @@ image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud ↗]
+//xref:cloud:start:overview.adoc[Getting Started ↗]
 
 a|
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
@@ -41,7 +42,9 @@ image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
 
-xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio ↗] xref:insights:intro:index.adoc[Insights ↗]
+xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio ↗]
+xref:insights:intro:index.adoc[Insights ↗]
+xref:3.9@tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell ↗]
 
 
 a|
