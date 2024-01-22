@@ -16,7 +16,7 @@ xref:home:alerts:index.adoc[]
 |===
 a|
 
-image:TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=74,height=74]
+image:tg_database-homecard.png[alt=TigerGraphDB,width=74,height=74]
 *TigerGraph DB*
 
 //image::TigerGraphLogoNOBG-homecard.png[alt=TigerGraphDB,width=64,height=64]
@@ -27,13 +27,15 @@ xref:tigergraph-server:intro:index.adoc[TigerGraph DB ↗]
 xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started ↗]
 
 a|
-image:cloudIcon-homecard.png[alt=TigerGraphDB,width=74,height=74] *TigerGraph Cloud*
+image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
+*TigerGraph Cloud*
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud ↗]
 
 a|
+image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 *TigerGraph Suite*
 
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
@@ -43,6 +45,7 @@ xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio ↗] xref:insights:in
 
 
 a|
+image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 *GSQL Language*
 
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
@@ -50,6 +53,7 @@ TigerGraph's comprehensive graph language for designing schemas, loading data, q
 xref:gsql-ref:intro:index.adoc[GSQL Language Reference ↗]
 
 a|
+image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
 *Connectors and API*
 
 A Python package encompassing data science functions and
@@ -59,6 +63,7 @@ xref:pytigergraph:intro:index.adoc[pyTigerGraph ↗]
 xref:3.9@graphql:ROOT:index.adoc[GraphQL Service ↗]
 
 a|
+image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
 *Graph Data Science*
 
 Two comprehensive packages,
