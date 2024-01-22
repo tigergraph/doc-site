@@ -33,7 +33,7 @@ image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud ↗]
-//xref:cloud:start:overview.adoc[Getting Started ↗]
+//xref: [Getting Started ↗]
 
 a|
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
@@ -64,6 +64,7 @@ GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:pytigergraph:intro:index.adoc[pyTigerGraph ↗]
 xref:3.9@graphql:ROOT:index.adoc[GraphQL Service ↗]
+https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver ↗]
 
 a|
 image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
