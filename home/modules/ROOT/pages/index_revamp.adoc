@@ -33,7 +33,7 @@ image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud ↗]
-//xref: [Getting Started ↗]
+xref:cloud:start:get_started.adoc[Get Started ↗]
 
 a|
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
@@ -54,6 +54,7 @@ image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
 xref:gsql-ref:intro:index.adoc[GSQL Language Reference ↗]
+xref:3.9@gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101 ↗]
 
 a|
 image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
