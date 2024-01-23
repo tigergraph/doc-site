@@ -12,7 +12,7 @@ Security Alerts and Responses
 xref:home:alerts:index.adoc[]
 
 == Get to Know TigerGraph Products
-[.home-card,cols="3,3,3",grid=none,frame=none]
+[.home-card,cols="2",grid=none,frame=none]
 |===
 a|
 
