@@ -2,176 +2,85 @@
 :navtitle: home
 :page-role: home
 
-Here you can find the reference materials, guides, and examples to develop your application and scale your analytics with the power of graph.
+== Announcements
+Recent News and Releases
 
 [NOTE]
 ====
+* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-2] was released on Jan. 16th, 2024.
 * xref:home:alerts:cve-2023-22949.adoc[] was released on Jan. 2nd, 2024.
 * xref:home:alerts:cve-2023-28479.adoc[] was released on Dec. 7th, 2023.
-* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-1] was released on Dec. 5th, 2023.
 * xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] was released on Oct. 10th, 2023.
 * xref:1.5@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.5] was released on Sept. 25th, 2023.
 * xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] was released on May 17, 2023.
 ====
 
-== Get started
+Security Alerts and Responses
+xref:home:alerts:index.adoc[]
 
-[.home-card,cols="3,3,3",grid=none,frame=none]
+== Get to Know TigerGraph Products
+[.home-card,cols="2",grid=none,frame=none, separator=¦]
 |===
-a|
-=== TigerGraph Cloud
+¦
+image:tg_database-homecard.png[alt=TigerGraphDB,width=74,height=74]
+*TigerGraph DB*
+
+The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
+
+xref:tigergraph-server:intro:index.adoc[TigerGraph DB |]
+xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started]
+
+¦
+image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
+*TigerGraph Cloud*
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
-xref:cloud:start:overview.adoc[]
+xref:cloud:start:overview.adoc[TigerGraph Cloud |]
+xref:cloud:start:get_started.adoc[Get Started |]
 
-a|
-=== TigerGraph Server
-The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
+¦
+image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
+*TigerGraph Suite*
 
-xref:tigergraph-server:intro:index.adoc[]
+A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-a|
-=== GSQL
+
+xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio |]
+xref:insights:intro:index.adoc[Insights |]
+xref:3.9@tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
+
+
+¦
+image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
+*GSQL Language*
+
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
-xref:gsql-ref:intro:index.adoc[]
-|===
+xref:gsql-ref:intro:index.adoc[GSQL Language Reference |]
+xref:3.9@gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
 
-[#_tigergraph_suite]
-== TigerGraph Suite
+¦
+image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
+*Connectors and API*
 
-A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT. Also includes xref:ml-workbench:intro:index.adoc[ML Workbench] and xref:graphql:ROOT:index.adoc[GraphQL Service].
-
-[.home-card,cols="3,3,3,3",grid=none,frame=none]
-|===
-a|
-=== GraphStudio
-An intuitive, browser-based interface for graph-based application development tasks.
-
-xref:gui:graphstudio:overview.adoc[GraphStudio]
-a|
-=== Admin Portal
-Your hub for managing and monitoring system operation and access privileges.
-
-xref:gui:admin-portal:overview.adoc[Admin Portal]
-
-a|
-=== Insights
-A no-code visual graph analyzer that makes building data analytics dashboards intuitive.
-
-xref:insights:intro:index.adoc[TigerGraph Insights]
-
-a|
-=== GSQL Web Shell
-A GSQL shell in your browser, packed with usability features to accelerate your graph journey.
-
-xref:tigergraph-server:gsql-shell:web.adoc[GSQL Web Shell]
-
-|===
-
-== Graph Data Science
-
-[.home-card,cols="3,3",grid=none,frame=none]
-|===
-a|
-=== ML Workbench
-A package of in-database ML functions and Jupyter notebook templates to accelerate graph-enhanced machine learning projects, available as a TigerGraph Cloud service or an installable package to integrate with existing machine learning infrastructure.
-
-
-xref:ml-workbench:intro:index.adoc[]
-
-a|
-
-=== Graph Data Science Library
-
-A package of over 50 graph data science algorithms executing as GSQL queries on the TigerGraph Enterprise Server.
-
-
-xref:graph-ml:intro:index.adoc[]
-
-|===
-
-== Connectors and APIs
-
-[.home-card,cols="3,3,3,3",grid=none,frame=none]
-|===
-a|
-=== REST API
-Endpoints that developers can use to communicate with the TigerGraph database.
-
-xref:tigergraph-server:API:index.adoc[]
-
-a|
-=== pyTigerGraph
-A Python package for working with TigerGraph, including data science functions.
-
-xref:pytigergraph:intro:index.adoc[]
-
-a|
-=== GraphQL Service
+A Python package encompassing data science functions and
 GraphQL API support for both reading and modifying TigerGraph data.
 
-xref:graphql:ROOT:index.adoc[]
+xref:pytigergraph:intro:index.adoc[pyTigerGraph |]
+xref:3.9@graphql:ROOT:index.adoc[GraphQL Service |]
+https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
 
-a|
-=== JDBC Driver
+¦
+image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
+*Graph Data Science*
 
-A Type 4 driver, converting JDBC calls directly into TigerGraph database commands.
+Two comprehensive packages,
+featuring over 50 algorithms executed as GSQL queries,
+and offering accelerated graph-enhanced machine learning in TigerGraph Cloud or as an installable package.
 
-link:https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
+xref:ml-workbench:intro:index.adoc[ML Workbench |]
+xref:graph-ml:intro:index.adoc[Graph Data Science Library]
+
+¦
 |===
-
-== Security resources
-
-[.home-card,cols="a,a"]
-|===
-
-|
-=== TigerGraph Server
-
-TigerGraph Server provides a comprehensive set of features to secure your deployments. Some key features include:
-
-* Authentication
-* Role-based access control
-* Access control lists
-* Data encryption
-
-For more information, see xref:tigergraph-server:security:index.adoc[Security for TigerGraph Server].
-|
-=== TigerGraph Cloud
-TigerGraph Cloud provides additional network security and authorization features on top of all TigerGraph Server security features:
-
-* Dedicated VPCs
-* VPC peering
-* Private Links
-* Integrated Identity and Access Management (IAM)
-
-For more information, see xref:cloud:security:index.adoc[Security for TigerGraph Cloud].
-|===
-
-=== See our list of xref:alerts:index.adoc[Security and Other Alerts].
-
-== More developer resources
-
-[.home-card,cols="3a,3a,3a",grid="none",frame="none"]
-|===
-|=== Developer Portal
-All the essential in-house and community developed tools to get the most out of your TigerGraph solution.
-
-link:https://dev.tigergraph.com/[Developer Portal]
-|=== TigerGraph University
-Complete TigerGraph-developed courses and receive certifications for completed learning paths.
-
-link:https://tigergraphuniversity.lessonly.com/lesson/1005737-welcome-to-tigergraph-university[TigerGraph University]
-|=== Community
-Join in the conversation and get your questions answered by fellow developers in the TigerGraph community.
-
-
-https://dev.tigergraph.com/forum/[TigerGraph Community]
-|===
-
-
-== Legacy documentation site
-To access the documentation for TigerGraph 3.1 or earlier, please visit our https://docs-legacy.tigergraph.com[legacy documentation site].
-
