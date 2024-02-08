@@ -2,15 +2,6 @@
 :navtitle: home
 :page-role: home
 
-== Announcements
-
-Recent News and Releases
-
-NOTE: [Recent links to release notes]
-
-Security Alerts and Responses
-xref:home:alerts:index.adoc[]
-
 == Get to Know TigerGraph Products
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
 |===
@@ -78,3 +69,16 @@ xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 ¦
 |===
 
+== Announcements
+Recent News and Releases
+
+[NOTE]
+====
+* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-2] was released on Jan. 16th, 2024.
+* xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] was released on Oct. 10th, 2023.
+* xref:1.5@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.5] was released on Sept. 25th, 2023.
+* xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] was released on May 17, 2023.
+====
+
+Security Alerts and Responses
+xref:home:alerts:index.adoc[]
