@@ -74,6 +74,7 @@ Recent News and Releases
 
 [NOTE]
 ====
+* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.10.0] preview version was released on Mar. 13th, 2024.
 * xref:tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_9_3_3[TigerGraph 3.9.3-3] was released on Feb. 15th, 2024.
 * xref:home:alerts:cve-2023-22949.adoc[] was released on Jan. 2nd, 2024.
 * xref:home:alerts:cve-2023-28479.adoc[] was released on Dec. 7th, 2023.
