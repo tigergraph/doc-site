@@ -22,7 +22,7 @@ A fully-managed cloud database built on the fast and highly scalable TigerGraph 
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud |]
 xref:cloud:start:get_started.adoc[Get Started |]
-xref:cloudBeta:get-started:index.adoc[v4.0 Beta]
+xref:cloudBeta:overview:index.adoc[v4.0 Beta]
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 *TigerGraph Suite*
