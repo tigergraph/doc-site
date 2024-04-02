@@ -47,7 +47,8 @@ content:
     branches: [3.7, 3.8, 3.9.3, 3.10.1] #3.10.1 changes
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/stagingUITesting/build/ui-bundle.zip?raw=true
+    #url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
     #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     #url: https://github.com/tigergraph/antora-ui/blob/DOC-1923-RemovingVersionFromNav-Homepage/build/ui-bundle.zip?raw=true
     snapshot: true
