@@ -57,13 +57,17 @@ https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC D
 
 ¦
 image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
-*Graph Data Science*
+*Graph + AI*
+
+[TODO: Write new descrpition]
 
 Two comprehensive packages,
 featuring over 50 algorithms executed as GSQL queries,
 and offering accelerated graph-enhanced machine learning in TigerGraph Cloud or as an installable package.
 
-xref:ml-workbench:intro:index.adoc[ML Workbench |]
+
+xref:beta@tg-copilot:intro:index.adoc[] |
+xref:ml-workbench:intro:index.adoc[ML Workbench] |
 xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 
 ¦
