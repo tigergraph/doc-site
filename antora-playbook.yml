@@ -40,7 +40,7 @@ content:
   - url: https://github.com/tigergraph/mlworkbench-docs.git
     branches: [1.0, 1.1, 1.2, 1.3, 1.4] #3.10.0 changes
   - url: https://github.com/tigergraph/pytigergraph-docs
-    branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5"] #3.10.0 changes
+    branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5", "v1.6"] #3.10.0 changes
   - url: https://github.com/tigergraph/gui-docs.git
     branches: [ 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1] #3.10.0 changes
   - url: https://github.com/tigergraph/insights-docs
