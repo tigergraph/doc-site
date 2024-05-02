@@ -57,6 +57,7 @@ ui:
 asciidoc:
   attributes:
     page-component-order: '!home, cloud, cloudBeta, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot,'
+    page-pagination: '@'
   extensions:
   - ./libs/tabs-block.js
 urls:
