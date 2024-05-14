@@ -10,9 +10,10 @@ site:
   # (1B) The sitemap URL should correspond to the site's URL (1A)
   robots: |
     User-agent: *
-    Allow: /cloudbeta/
-    Allow: /cloudBeta/
-    Sitemap: https://docs.tigergraph.com/sitemap.xml # For Prod (keep robots lines together as a block)
+    Allow: /cloudbeta/*
+    Allow: /cloudBeta/* 
+    Sitemap: https://docs.tigergraph.com/sitemap.xml
+  # For Prod (keep robots lines together as a block)
   #robots: |
   #  User-agent: *
   #  Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
@@ -57,7 +58,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, cloud, cloudBeta, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
+    page-component-order: '!home, cloud, cloudbeta, cloudBeta, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
   extensions:
     - ./libs/tabs-block.js
 urls:
