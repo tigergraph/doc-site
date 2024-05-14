@@ -10,12 +10,13 @@ site:
   # (1B) The sitemap URL should correspond to the site's URL (1A)
   robots: |
     User-agent: *
-    Allow: /cloudbeta/*
-    Allow: /cloudBeta/* 
+    Allow: /
     Sitemap: https://docs.tigergraph.com/sitemap.xml
   # For Prod (keep robots lines together as a block)
   #robots: |
   #  User-agent: *
+  # Allow: /cloudbeta/*
+  # Allow: /cloudBeta/*
   #  Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
 runtime:
   fetch: true
