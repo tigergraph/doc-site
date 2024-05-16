@@ -29,7 +29,7 @@ content:
   - url: https://github.com/tigergraph/server-docs.git
     branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, new3.10.1AndCloudBetaUpdates] #3.10.0 changes
   - url: https://github.com/tigergraph/cloud-docs.git
-    branches: [cloudBeta] #3.10.0 changes cloudBeta
+    branches: [cloudBeta-automateTesting] #3.10.0 changes cloudBeta
     start_paths: [modules/cloud, modules/cloudbeta]
   - url: https://github.com/tigergraph/tigdsl-docs.git
     branches: [3.7, 3.8, revampLibrary] #revamp libaray changes
