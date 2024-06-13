@@ -1,4 +1,7 @@
-= Welcome to the TigerGraph Documentation Site [Staging Revamp]
+= Welcome to the TigerGraph Documentation Site 
+
+//[Staging Revamp]
+
 :navtitle: home
 :page-role: home
 
