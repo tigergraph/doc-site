@@ -70,6 +70,7 @@ ui:
 asciidoc:
   attributes:
     page-component-order: '!home, cloud, cloudbeta, cloudBeta, tigergraph-server, gsql-ref, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
+
   extensions:
     - ./libs/tabs-block.js
 urls:

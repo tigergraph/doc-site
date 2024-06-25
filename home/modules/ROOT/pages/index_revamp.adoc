@@ -1,15 +1,6 @@
-= TigerGraph Documentation
+= Welcome to the TigerGraph Documentation Site [Staging Revamp]
 :navtitle: home
 :page-role: home
-
-
-====
-* xref:3.10.1@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1]-  was released on May 7th, 2024.
-
-* xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29th, 2024.
-
-Click here to see other xref:index.adoc#_announcements[].
-====
 
 == Get to Know TigerGraph Products
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
@@ -21,7 +12,8 @@ image:tg_database-homecard.png[alt=TigerGraphDB,width=74,height=74]
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
 xref:tigergraph-server:intro:index.adoc[TigerGraph DB] |
-xref:3.10.1@tigergraph-server:getting-started:index.adoc[Get Started]
+xref:3.9@tigergraph-server:getting-started:index.adoc[Get Started]
+
 ¦
 image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 *TigerGraph Cloud*
@@ -50,7 +42,7 @@ image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
 xref:gsql-ref:intro:index.adoc[GSQL Language Reference] |
-xref:3.9@gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
+xref:gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
 
 ¦
 image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
@@ -70,9 +62,11 @@ image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
 Unlock the power of Graph + AI with our host of AI products
 and graph data science library featuring over 50 algorithms executed as GSQL queries,
 
-xref:tg-copilot:intro:index.adoc[] |
+
+xref:beta@tg-copilot:intro:index.adoc[] |
 xref:ml-workbench:intro:index.adoc[ML Workbench] |
 xref:graph-ml:intro:index.adoc[Graph Data Science Library]
+
 ¦
 |===
 
@@ -81,17 +75,9 @@ Recent News and Releases
 
 [NOTE]
 ====
-
-
-
-* xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29th, 2024.
-* xref:beta@tg-copilot:intro:index.adoc[] was released on Apr. 29th, 2024.
-* xref:1.6@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.6] was released on Apr. 29th, 2024.
-//* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.10.0] preview version was released on Mar. 13th, 2024.
-* xref:3.9@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_9_3_3[TigerGraph 3.9.3-3] was released on Feb. 15th, 2024.
-* xref:home:alerts:cve-2023-22949.adoc[] was released on Jan. 2nd, 2024.
-* xref:home:alerts:cve-2023-28479.adoc[] was released on Dec. 7th, 2023.
+* xref:tigergraph-server:release-notes:index.adoc#_fixed_issues[TigerGraph 3.9.3-2] was released on Jan. 16th, 2024.
 * xref:3.6@tigergraph-server:release-notes:index.adoc[TigerGraph 3.6.4] was released on Oct. 10th, 2023.
+* xref:1.5@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.5] was released on Sept. 25th, 2023.
 * xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] was released on May 17, 2023.
 ====
 
