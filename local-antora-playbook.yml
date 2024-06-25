@@ -1,0 +1,38 @@
+site:
+  title: Docs
+  url: https://docs-tigergraph.netlify.app/
+  start_page: home::index.adoc
+  robots: |
+    User-agent: *
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
+content:
+  sources:
+  - url: /Users/lenny.chen/workstation/doc-site
+    branches: main
+    start_paths: home
+  - url: /Users/lenny.chen/workstation/server-docs
+    branches: [3.2, 3.3, 3.4, 3.5]
+  - url: /Users/lenny.chen/workstation/gui-docs
+    branches: [3.2, 3.3, 3.4]
+  - url: /Users/lenny.chen/workstation/cloud-docs
+    branches: main
+  - url: /Users/lenny.chen/workstation/tigdsl-docs
+    branches: main
+  - url: /Users/lenny.chen/workstation/gsql-docs
+    branches: [3.2, 3.3, 3.4]
+  - url: /Users/lenny.chen/workstation/tigergraphql
+    branches: [main]
+ui:
+  bundle:
+    url: /Users/lenny.chen/workstation/antora-ui/build/ui-bundle.zip
+    snapshot: true
+asciidoc:
+  attributes:
+    page-component-order: '!home, tigergraph-server, gsql-ref, gui, cloud, graph-ml, tigergraphql'
+  extensions:
+  - ./libs/tabs-block.js
+urls:
+  html_extension_style: drop
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: current
+  redirect_facility: netlify
