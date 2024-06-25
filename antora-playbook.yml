@@ -1,35 +1,45 @@
 site:
   title: Docs
-  # For each section (1A,etc) comment/uncomment the option for prod or staging
+  # Special Instructions
+  # In order to document the subtle configuration differences between
+  # the main branch and the staging branch, this file should contain BOTH configurations.
 
-  # (1A) Where will the site be published? For prod or preview?
+  # In each section (e.g. Section 1), there should be one or more lines of code for the
+  # main (Prod) branch, followed by corresponding lines of code for the staging branch.keys:
+
+  # If this is the main (prod) branch, then comment out the staging branch config.
+  # If this is the staging branch, then comment out the main branch config.
+
+  # (1A) Purpose: Where will the site be published? For prod or preview?
   url: https://docs.tigergraph.com/ # For prod
   # url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
 
-  # (1B) The sitemap URL should correspond to the site's URL (1A)
-  robots: |
+  # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
+  robots: | # For Prod (keep robots lines together as a block)
     User-agent: *
     Allow: /
     Sitemap: https://docs.tigergraph.com/sitemap.xml
-  # For Prod (keep robots lines together as a block)
-  #robots: |
-  #  User-agent: *
   # Allow: /cloudbeta/*
-  # Allow: /cloudBeta/*
-  #  Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml # For Preview
+  # robots: | # For Preview (keep robots lines together as a block)
+  #  User-agent: *
+  #  Allow: /
+  #  Sitemap: https://docs.tigergraph.com/sitemap.xml
+
 runtime:
   fetch: true
 content:
-  # (2) Where is this file (antora-playbook.yml)?  Remote or local? What branch, main or some staging?
+
+  # (2) Purpose: Where is this file (antora-playbook.yml)?  Remote or local?
+  # What branch, main or some staging?
   sources:
     - url: https://github.com/tigergraph/doc-site.git
       branches: [main]
     #- url: https://github.com/tigergraph/doc-site.git
     #  branches: [staging]
-    #- url: /Users/victorlee/Documents/GitHub1/Docs/doc-site # Victor's local site
 
-  # (3) Content: remote or local?  What versions (Previews will usually have extra versions).
+  # (3) Purpose: What is the content: remote or local?
+  # What versions (Previews will usually have extra versions).
       start_paths: home
     - url: https://github.com/tigergraph/server-docs.git
       branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1]
