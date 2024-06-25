@@ -1,4 +1,4 @@
-= TigerGraph Documentationn [ Staging Branch]
+= TigerGraph Documentation [ Staging Branch]
 :navtitle: home
 :page-role: home
 
