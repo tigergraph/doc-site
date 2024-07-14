@@ -22,6 +22,7 @@ The world’s fastest and most scalable graph analytics platform, enabling real-
 
 xref:tigergraph-server:intro:index.adoc[TigerGraph DB] |
 xref:3.10.1@tigergraph-server:getting-started:index.adoc[Get Started]
+
 ¦
 image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 *TigerGraph Cloud*
@@ -31,17 +32,16 @@ A fully-managed cloud database built on the fast and highly scalable TigerGraph 
 xref:cloud:start:overview.adoc[TigerGraph Cloud] |
 xref:cloud:start:get_started.adoc[Get Started] |
 xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0]
+
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 *TigerGraph Suite*
 
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-
 xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio] |
 xref:insights:intro:index.adoc[Insights] |
 xref:3.9@tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
-
 
 ¦
 image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
@@ -73,7 +73,7 @@ and graph data science library featuring over 50 algorithms executed as GSQL que
 xref:tg-copilot:intro:index.adoc[] |
 xref:ml-workbench:intro:index.adoc[ML Workbench] |
 xref:graph-ml:intro:index.adoc[Graph Data Science Library]
-¦
+
 |===
 
 == Announcements
