@@ -4,7 +4,7 @@
 
 
 ====
-* xref:3.10.1@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1]-  was released on May 7th, 2024.
+* xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1]-  was released on May 7th, 2024.
 
 * xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29th, 2024.
 
@@ -21,7 +21,7 @@ image:tg_database-homecard.png[alt=TigerGraphDB,width=74,height=74]
 The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
 
 xref:tigergraph-server:intro:index.adoc[TigerGraph DB] |
-xref:3.10.1@tigergraph-server:getting-started:index.adoc[Get Started]
+xref:tigergraph-server:getting-started:index.adoc[Get Started]
 
 ¦
 image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
