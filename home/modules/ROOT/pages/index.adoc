@@ -4,7 +4,7 @@
 
 
 ====
-* xref:3.10.1@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1]-  was released on May 7th, 2024.
+* xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1]-  was released on May 7th, 2024.
 
 * xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29th, 2024.
 
