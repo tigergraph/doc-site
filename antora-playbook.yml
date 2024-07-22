@@ -1,6 +1,6 @@
 site:
   title: Docs
-  # Special Instructions
+  # Special Instructions:
   # In order to document the subtle configuration differences between
   # the main branch and the staging branch, this file should contain BOTH configurations.
 
