@@ -82,7 +82,6 @@ Recent News and Releases
 ====
 
 
-
 * xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29th, 2024.
 * xref:beta@tg-copilot:intro:index.adoc[] was released on Apr. 29th, 2024.
 * xref:1.6@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.6] was released on Apr. 29th, 2024.
