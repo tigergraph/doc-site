@@ -44,7 +44,7 @@ content:
     - url: https://github.com/tigergraph/server-docs.git
       branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1, 4.1.o, 4.1-rewrite-org]
+      branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1, 4.1.o, 4.1-rewrite-dev]
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [main]
       start_paths: [modules/cloud, modules/cloudbeta]
