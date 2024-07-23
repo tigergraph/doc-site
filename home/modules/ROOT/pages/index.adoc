@@ -1,4 +1,4 @@
-= TigerGraph Documentation [GSQL Rewrite, post-4.1.0]
+= TigerGraph Documentation [ GSQL Rewrite, post-4.1.0]
 :navtitle: home
 :page-role: home
 
