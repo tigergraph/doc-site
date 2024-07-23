@@ -29,11 +29,9 @@ image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-
 xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio] |
 xref:insights:intro:index.adoc[Insights] |
 xref:3.9@tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
-
 
 ¦
 image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
@@ -62,12 +60,10 @@ image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
 Unlock the power of Graph + AI with our host of AI products
 and graph data science library featuring over 50 algorithms executed as GSQL queries,
 
-
 xref:beta@tg-copilot:intro:index.adoc[] |
 xref:ml-workbench:intro:index.adoc[ML Workbench] |
 xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 
-¦
 |===
 
 == Announcements
