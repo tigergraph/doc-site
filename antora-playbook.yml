@@ -36,7 +36,7 @@ content:
     #- url: https://github.com/tigergraph/doc-site.git
     #  branches: [main]
     - url: https://github.com/tigergraph/doc-site.git
-      branches: [copilot-dev]
+      branches: [pytg-dev]
 
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
@@ -57,11 +57,11 @@ content:
     - url: https://github.com/tigergraph/mlworkbench-docs.git
       branches: [1.0, 1.1, 1.2, 1.3, 1.4]
     - url: https://github.com/tigergraph/pytigergraph-docs
-      branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5","v1.6"]
+      branches: ["v1.0", "v1.1", "v1.2","v1.3","v1.4","v1.5","v1.6", dev]
     - url: https://github.com/tigergraph/insights-docs
       branches: [3.7, 3.8, 3.9.3, 3.10.1]
     - url: https://github.com/tigergraph/copilot-docs.git
-      branches: [dev]
+      branches: [main]
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
