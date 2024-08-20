@@ -45,6 +45,14 @@
     from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
+[[redirects]]
+    from = "/cloud/start"
+    to = "/cloud/current/start"
+
+[[redirects]]
+    from = "/cloudbeta/overview"
+    to = "/cloudbeta/current/overview"
+
 # redirects for language reference
 [[redirects]]
     from = "/dev/gsql-ref/querying/func"
