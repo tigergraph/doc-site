@@ -46,8 +46,8 @@
     to = "/cloud/support/faqs"
 
 [[redirects]]
-    from = "/cloud/start"
-    to = "/cloud/current/start"
+    from = "/cloud/start/get_started"
+    to = "/cloud/current/start/get_started"
 
 [[redirects]]
     from = "/cloudbeta/overview"
