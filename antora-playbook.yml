@@ -24,7 +24,7 @@ site:
   robots: | # For Preview (keep robots lines together as a block)
     User-agent: *
     Allow: /
-   Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 
 runtime:
   fetch: true
