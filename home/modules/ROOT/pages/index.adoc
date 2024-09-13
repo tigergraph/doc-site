@@ -2,6 +2,7 @@
 :navtitle: home
 :page-role: home
 
+
 ====
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 
