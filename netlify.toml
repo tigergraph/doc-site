@@ -47,11 +47,11 @@
 
 [[redirects]]
     from = "/cloud/start/get_started"
-    to = "/cloud/current/start/get_started"
+    to = "/cloud/main/start/get_started"
 
 [[redirects]]
     from = "/cloudbeta/overview"
-    to = "/cloudbeta/current/overview"
+    to = "/cloudbeta/main/overview"
 
 # redirects for language reference
 [[redirects]]
