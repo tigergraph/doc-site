@@ -32,6 +32,7 @@
     from = "/ui/graphstudio/*"
     to = "/gui/current/graphstudio/:splat"
 
+# redirects for cloud
 [[redirects]]
     from = "/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
@@ -40,18 +41,22 @@
     from = "/v/2.5/tigergraph-cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
-# redirects for cloud
 [[redirects]]
     from = "/cloud/tigergraph-cloud-faqs"
     to = "/cloud/support/faqs"
 
 [[redirects]]
     from = "/cloud/start/get_started"
-    to = "/cloud/main/start/get_started"
+    to = "/cloud/current/start/get_started"
 
 [[redirects]]
     from = "/cloudbeta/overview"
-    to = "/cloudbeta/main/overview"
+    to = "/cloudbeta/current/overview"
+
+# cloud - general redirect from "current" to "main"
+[[redirects]]
+    from = "/cloud/current/*"
+    to = "/cloud/main/:splat"
 
 # redirects for language reference
 [[redirects]]
