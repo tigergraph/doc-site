@@ -53,10 +53,14 @@
     from = "/cloudbeta/overview"
     to = "/cloudbeta/current/overview"
 
-# cloud - general redirect from "current" to "main"
+# cloud and cloudbeta- general redirect from "current" to "main"
 [[redirects]]
     from = "/cloud/current/*"
     to = "/cloud/main/:splat"
+
+[[redirects]]
+    from = "/cloudbeta/current/*"
+    to = "/cloudbeta/main/:splat"
 
 # redirects for language reference
 [[redirects]]
