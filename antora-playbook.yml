@@ -2,7 +2,7 @@ site:
   title: Docs
   # Special Instructions
   # In order to document the subtle configuration differences between
-  # the main branch and the staging branch, this file should contain BOTH configurations.
+  # the main branch and the staging branch, this file should contain BOTH configurations..
 
   # In each section (e.g. Section 1), there should be one or more lines of code for the
   # main (Prod) branch, followed by corresponding lines of code for the staging branch.keys:
