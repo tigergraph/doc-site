@@ -6,7 +6,6 @@ site:
 
   # In each section (e.g. Section 1), there should be one or more lines of code for the
   # main (Prod) branch, followed by corresponding lines of code for the staging branch.keys:
-  
 
   # If this is the main (prod) branch, then comment out the staging branch config.
   # If this is the staging branch, then comment out the main branch config.
