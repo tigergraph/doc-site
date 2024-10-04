@@ -4,8 +4,6 @@
 
 
 ====
-* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
-
 * xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1] was released on May 7, 2024.
 
 * xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0 beta] was released on Apr. 29, 2024.
@@ -32,8 +30,7 @@ image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud] |
-xref:cloud:start:get_started.adoc[Get Started] |
-xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0]
+xref:cloud:start:get_started.adoc[Get Started] 
 
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
