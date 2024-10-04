@@ -217,7 +217,6 @@
     from = "/graph-algorithm-library"
     to = "/graph-ml/current/intro/overview"
 
-
 [[redirects]]
     from = "/dev/data-loader-guides/*"
     to = "/tigergraph-server/current/data-loading/:splat"
