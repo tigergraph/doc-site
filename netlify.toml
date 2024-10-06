@@ -10,10 +10,6 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
-# Temp redirects for insights
-[[redirects]]
-    from = "/insights/current"
-    to = "https://staging--docs-tigergraph.netlify.app/insights/current/intro/"
 
 # redirects for gui
 [[redirects]]
@@ -227,3 +223,31 @@
     from = "/dev/data-loader-guides/*"
     to = "/tigergraph-server/current/data-loading/:splat"
 
+# redirects for maintenance versions to feature versions
+[[redirects]]
+    from = "/gsql/3.10.1/*"
+    to = "/gsql/3.10/:splat"
+    
+[[redirects]]
+    from = "/gui/3.10.1/*"
+    to = "/gui/3.10/:splat"
+    
+[[redirects]]
+    from = "/gui/3.11.0/*"
+    to = "/gui/3.11/:splat"
+    
+[[redirects]]
+    from = "/gui/4.1.1/*"
+    to = "/gui/4.1/:splat"
+    
+[[redirects]]
+    from = "/insights/3.10.1/*"
+    to = "/insights/3.10/:splat"
+    
+[[redirects]]
+    from = "/insights/3.11.0/*"
+    to = "/insights/3.11/:splat"
+    
+[[redirects]]
+    from = "/insights/4.1.1/*"
+    to = "/insights/4.1/:splat"
