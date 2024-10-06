@@ -237,17 +237,9 @@
     to = "/gui/3.11/:splat"
     
 [[redirects]]
-    from = "/gui/4.1.1/*"
-    to = "/gui/4.1/:splat"
-    
-[[redirects]]
     from = "/insights/3.10.1/*"
     to = "/insights/3.10/:splat"
     
 [[redirects]]
     from = "/insights/3.11.0/*"
     to = "/insights/3.11/:splat"
-    
-[[redirects]]
-    from = "/insights/4.1.1/*"
-    to = "/insights/4.1/:splat"
