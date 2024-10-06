@@ -41,9 +41,9 @@ image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-xref:3.9@gui:intro:index.adoc[Admin Portal and GraphStudio] |
+xref:gui:intro:index.adoc[Admin Portal and GraphStudio] |
 xref:insights:intro:index.adoc[Insights] |
-xref:3.9@tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
+xref:tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
 
 ¦
 image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
@@ -52,7 +52,7 @@ image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
 xref:gsql-ref:intro:index.adoc[GSQL Language Reference] |
-xref:3.9@gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
+xref:gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
 
 ¦
 image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
@@ -62,7 +62,7 @@ A Python package encompassing data science functions and
 GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
-xref:3.9@graphql:ROOT:index.adoc[GraphQL Service] |
+xref:graphql:ROOT:index.adoc[GraphQL Service] |
 https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
 
 ¦
