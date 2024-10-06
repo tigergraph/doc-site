@@ -221,3 +221,16 @@
     from = "/dev/data-loader-guides/*"
     to = "/tigergraph-server/current/data-loading/:splat"
 
+# redirects for maintenance versions to feature versions
+[[redirects]]
+    from = "/gsql/3.10.1/*"
+    to = "/gsql/3.10/:splat"
+    
+[[redirects]]
+    from = "/gui/3.10.1/*"
+    to = "/gui/3.10/:splat"
+    
+[[redirects]]
+    from = "/insights/3.10.1/*"
+    to = "/insights/3.10/:splat"
+    
