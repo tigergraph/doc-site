@@ -7,7 +7,7 @@
 
 * xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_1[TigerGraph Server 3.10.1] was released on May 7, 2024.
 
-* xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0 beta] was released on Apr. 29, 2024.
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4 beta] was released on Apr. 29, 2024.
 
 Click here to see other xref:index.adoc#_announcements[].
 ====
@@ -32,7 +32,7 @@ A fully-managed cloud database built on the fast and highly scalable TigerGraph 
 
 xref:cloud:start:overview.adoc[TigerGraph Cloud] |
 xref:cloud:start:get_started.adoc[Get Started] |
-xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0]
+xref:cloud4:overview:index.adoc[TigerGraph Cloud 4]
 
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
@@ -84,7 +84,7 @@ Recent News and Releases
 ====
 * xref:1.7@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.7] was released on Aug. 21, 2024.
 * xref:0.9@tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
-* xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29, 2024.
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] - TigerGraph Cloud 4 beta version was released on Apr. 29, 2024.
 //* xref:1.6@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.6] was released on Apr. 29, 2024.
 //* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.10.0] preview version was released on Mar. 13, 2024.
 * xref:3.9@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_9_3_3[TigerGraph 3.9.3-3] was released on Feb. 15, 2024.
