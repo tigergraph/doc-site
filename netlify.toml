@@ -252,11 +252,7 @@
     from = "/insights/4.1.1/*"
     to = "/insights/4.1/:splat"
 
-# redirects from k8s-operator subpages to the main page (because the subpages don't exist anymore)
-[[redirects]]
-    from = "/tigergraph-server/:version/kubernetes/k8s-operator/installation"
-    to = "/tigergraph-server/:version/kubernetes/k8s-operator"
-    
+# redirects from k8s-operator subpages to the main page (because the subpages don't exist anymore) 
 [[redirects]]
     from = "/tigergraph-server/:version/kubernetes/k8s-operator/*"
     to = "/tigergraph-server/:version/kubernetes/k8s-operator"
