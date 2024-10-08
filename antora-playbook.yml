@@ -46,7 +46,7 @@ content:
     - url: https://github.com/tigergraph/gui-docs.git
       branches: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/cloud-docs.git
-      branches: [main]
+      branches: [cloud-dev]
       start_paths: [modules/cloud, modules/cloudbeta]
     - url: https://github.com/tigergraph/tigdsl-docs.git
       branches: [3.7, 3.8, 3.9.2]
