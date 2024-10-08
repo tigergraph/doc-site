@@ -254,13 +254,9 @@
 
 # redirects from k8s-operator subpages to the main page (because the subpages don't exist anymore)
 [[redirects]]
-    from = "/tigergraph-server/4.1/kubernetes/k8s-operator/*"
-    to = "/tigergraph-server/4.1/kubernetes/k8s-operator"
-
+    from = "/tigergraph-server/:version/kubernetes/k8s-operator/installation"
+    to = "/tigergraph-server/:version/kubernetes/k8s-operator"
+    
 [[redirects]]
-    from = "/tigergraph-server/3.10/kubernetes/k8s-operator/*"
-    to = "/tigergraph-server/3.10/kubernetes/k8s-operator"
-
-[[redirects]]
-    from = "/tigergraph-server/3.9/kubernetes/k8s-operator/*"
-    to = "/tigergraph-server/3.9/kubernetes/k8s-operator"
+    from = "/tigergraph-server/:version/kubernetes/k8s-operator/*"
+    to = "/tigergraph-server/:version/kubernetes/k8s-operator"
