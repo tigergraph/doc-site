@@ -46,8 +46,8 @@
     to = "/cloud/current/start/get_started"
 
 [[redirects]]
-    from = "/cloudbeta/overview"
-    to = "/cloudbeta/current/overview"
+    from = "/cloud4/overview"
+    to = "/cloud4/current/overview"
 
 # cloud and cloudbeta- general redirect from "current" to "main"
 [[redirects]]
@@ -55,8 +55,8 @@
     to = "/cloud/main/:splat"
 
 [[redirects]]
-    from = "/cloudbeta/current/*"
-    to = "/cloudbeta/main/:splat"
+    from = "/cloud4/current/*"
+    to = "/cloud4/main/:splat"
 
 # redirects for language reference
 [[redirects]]
