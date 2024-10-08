@@ -42,6 +42,19 @@
     to = "/cloud/support/faqs"
 
 [[redirects]]
+    from = "/cloud/start/get_started"
+    to = "/cloud/current/start/get_started"
+
+[[redirects]]
+    from = "/cloud4/overview"
+    to = "/cloud4/current/overview"
+
+# cloud and cloudbeta- general redirect from "current" to "main"
+[[redirects]]
+    from = "/cloud/current/*"
+    to = "/cloud/main/:splat"
+
+[[redirects]]
     from = "/cloud4/current/*"
     to = "/cloud4/main/:splat"
 
