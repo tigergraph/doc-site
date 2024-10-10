@@ -30,7 +30,7 @@ image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 
 A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
-xref:cloud:start:overview.adoc[TigerGraph Cloud] |
+xref:cloud:start:overview.adoc[TigerGraph Cloud Classic] |
 xref:cloud:start:get_started.adoc[Get Started] |
 xref:cloud4:overview:index.adoc[TigerGraph Cloud 4]
 
