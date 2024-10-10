@@ -223,7 +223,7 @@
     from = "/dev/data-loader-guides/*"
     to = "/tigergraph-server/current/data-loading/:splat"
 
-# redirects for maintenance versions to feature versions
+# redirects from maintenance versions to feature versions
 [[redirects]]
     from = "/gsql/3.10.1/*"
     to = "/gsql/3.10/:splat"
@@ -251,3 +251,8 @@
 [[redirects]]
     from = "/insights/4.1.1/*"
     to = "/insights/4.1/:splat"
+
+# redirects from k8s-operator subpages to the main page (because the subpages don't exist anymore) 
+[[redirects]]
+    from = "/tigergraph-server/:version/kubernetes/k8s-operator/*"
+    to = "/tigergraph-server/:version/kubernetes/k8s-operator"
