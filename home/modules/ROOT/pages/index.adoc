@@ -4,7 +4,7 @@
 
 
 ====
-* xref:3.10.2@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph Server 3.10.2] was released on Oct 18, 2024.
+* xref:3.10.1@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph Server 3.10.2] was released on Oct 18, 2024.
 
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 
