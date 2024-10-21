@@ -7,7 +7,7 @@
 
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 
-* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] was released on Apr. 29, 2024.
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] beta was released on Apr. 29, 2024.
 
 Click here to see other xref:index.adoc#_announcements[].
 ====
