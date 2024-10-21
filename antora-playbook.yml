@@ -45,11 +45,11 @@ content:
       branches: [main]
       start_paths: [modules/cloud, modules/cloudbeta]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.7, 3.9.3, 3.10.1, 4.1.o]
+      branches: [3.6, 3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.7, 3.9.3, 3.10.1, 4.1.o]
+      branches: [3.6, 3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.6, 3.7, 3.9.3, 3.10.1, 4.1.o]
+      branches: [3.6, 3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/insights-docs
       branches: [3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/tigdsl-docs.git
