@@ -10,7 +10,7 @@
 
 * xref:cloudBeta:overview:index.adoc[TigerGraph Cloud 4.0 beta] was released on Apr. 29, 2024.
 
-Click here to see other xref:index.adoc#_announcements[].
+Click here to see other xref:index.adoc#_announcements[]!
 ====
 
 == Get to Know TigerGraph Products
