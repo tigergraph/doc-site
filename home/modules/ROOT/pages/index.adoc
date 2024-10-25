@@ -64,7 +64,7 @@ A Python package encompassing data science functions and
 GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
-xref:0.7@graphql:ROOT:intro.adoc[GraphQL Service] |
+xref:graphql:ROOT:intro.adoc[GraphQL Service] |
 https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
 
 ¦
