@@ -53,7 +53,7 @@ content:
     - url: https://github.com/tigergraph/insights-docs
       branches: [3.9.3, 3.10.1, 4.1.o]
     - url: https://github.com/tigergraph/tigdsl-docs.git
-      branches: [3.10]
+      branches: ["3.10"]
     - url: https://github.com/tigergraph/tigergraphql.git
       branches: [3.9]
     - url: https://github.com/tigergraph/pytigergraph-docs
