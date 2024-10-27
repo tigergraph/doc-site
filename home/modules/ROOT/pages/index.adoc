@@ -3,13 +3,15 @@
 :page-role: home
 
 ====
+* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph Server 3.11.0 Preview] was released on Oct 25, 2024.
+
 * xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph Server 3.10.2] was released on Oct 18, 2024.
 
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 
 * xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] was released on Apr. 29, 2024.
 
-Click here to see other xref:index.adoc#_announcements[].
+Click here to see other xref:index.adoc#_announcements[]!
 ====
 
 == Get to Know TigerGraph Products
@@ -61,7 +63,7 @@ A Python package encompassing data science functions and
 GraphQL API support for both reading and modifying TigerGraph data.
 
 xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
-xref:graphql:ROOT:index.adoc[GraphQL Service] |
+xref:graphql:ROOT:intro.adoc[GraphQL Service] |
 https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
 
 ¦
@@ -83,8 +85,8 @@ Recent News and Releases
 [NOTE]
 ====
 * xref:1.7@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.7] was released on Aug. 21, 2024.
-* xref:0.9@tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
-* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] - TigerGraph Cloud 4 beta version was released on Apr. 29, 2024.
+* xref:tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29, 2024.
 //* xref:1.6@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.6] was released on Apr. 29, 2024.
 //* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.10.0] preview version was released on Mar. 13, 2024.
 * xref:3.9@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_9_3_3[TigerGraph 3.9.3-3] was released on Feb. 15, 2024.
