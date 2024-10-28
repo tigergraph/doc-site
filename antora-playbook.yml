@@ -32,13 +32,11 @@ runtime:
   fetch: true
 content:
 
-  # (2) Purpose: Where is this file (antora-playbook.yml)?  Remote or local?
+  # (2) 
   # What branch, main or some staging, e.g. cloud-dev?
   sources:
     - url: https://github.com/tigergraph/doc-site.git
-      branches: [main]
-    #- url: https://github.com/tigergraph/doc-site.git
-    #  branches: [staging]
+      branches: [older]
 
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
