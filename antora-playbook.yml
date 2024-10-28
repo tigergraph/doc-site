@@ -45,13 +45,13 @@ content:
       branches: [dev]
       start_paths: [modules/cloud, modules/cloud4]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9.3, 3.10.1, 3.11.0, 4.1.o]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.9.3, 3.10.1, 3.11.0, 4.1.o]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.6, 3.9.3, 3.10.1, 3.11.0, 4.1.o]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
     - url: https://github.com/tigergraph/insights-docs
-      branches: [3.9.3, 3.10.1, 3.11.0, 4.1.o]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
     - url: https://github.com/tigergraph/tigdsl-docs.git
       branches: ["3.10"]
     - url: https://github.com/tigergraph/tigergraphql.git
