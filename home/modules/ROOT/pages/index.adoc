@@ -6,6 +6,10 @@
 ====
 Site for Documentation of Older TigerGraph versions.
 
+IMPORTANT: This is archival documentation for older versions of TigerGraph's products.
+This documentation is not actively being maaintained.
+
+
 Click here to see other xref:index.adoc#_announcements[]!
 ====
 
