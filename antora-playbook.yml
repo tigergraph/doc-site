@@ -64,7 +64,7 @@ content:
       branches: [main]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/nav-with-versions/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/ui-dev/build/ui-bundle.zip?raw=true
     #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
