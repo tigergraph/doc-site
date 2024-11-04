@@ -3,13 +3,16 @@
 :page-role: home
 
 ====
+
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] was released on Nov 6, 2024.
+
 * xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph Server 3.11.0 Preview] was released on Oct 25, 2024.
 
 * xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph Server 3.10.2] was released on Oct 18, 2024.
 
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 
-* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4] was released on Apr. 29, 2024.
+* xref:cloud4:overview:index.adoc[TigerGraph Cloud 4 beta] was released on Apr. 29, 2024.
 
 Click here to see other xref:index.adoc#_announcements[]!
 ====
