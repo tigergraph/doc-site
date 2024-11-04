@@ -49,6 +49,11 @@
     from = "/cloud4/overview"
     to = "/cloud4/current/overview"
 
+# redirect cloudbeta to cloud4
+[[redirects]]
+    from = "/cloudBeta"
+    to = "/cloud4/main/overview"
+
 # cloud and cloudbeta- general redirect from "current" to "main"
 [[redirects]]
     from = "/cloud/current/*"
