@@ -57,7 +57,7 @@ content:
     - url: https://github.com/tigergraph/tigergraphql.git
       branches: [3.9]
     - url: https://github.com/tigergraph/pytigergraph-docs
-      branches: ["v1.5","v1.6", "v1.7"]
+      branches: ["v1.6", "v1.7", "v1.8"]
     - url: https://github.com/tigergraph/mlworkbench-docs.git
       branches: [1.4]
     - url: https://github.com/tigergraph/copilot-docs.git
