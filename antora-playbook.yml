@@ -11,8 +11,8 @@ site:
   # If this is the staging branch, then comment out the main branch config.
 
   # (1A) Purpose: Where will the site be published? For prod or preview?
-  url: https://docs.tigergraph.com/ # For prod
-  #url: https://docs-tigergraph.netlify.app/ # For Preview
+  #url: https://docs.tigergraph.com/ # For prod
+  url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
 
   # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
@@ -24,7 +24,7 @@ site:
   robots: | # For Preview (keep robots lines together as a block)
     User-agent: *
     Allow: /
-   Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 
 runtime:
   fetch: true
