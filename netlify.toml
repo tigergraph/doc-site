@@ -6,7 +6,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
+    Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src * mailto: ; style-src * 'unsafe-inline';"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
@@ -46,8 +46,13 @@
     to = "/cloud/current/start/get_started"
 
 [[redirects]]
-    from = "/cloudbeta/overview"
-    to = "/cloudbeta/current/overview"
+    from = "/cloud4/overview"
+    to = "/cloud4/current/overview"
+
+# redirect cloudbeta to cloud4
+[[redirects]]
+    from = "/cloudBeta"
+    to = "/cloud4/main/overview"
 
 # cloud and cloudbeta- general redirect from "current" to "main"
 [[redirects]]
@@ -55,8 +60,8 @@
     to = "/cloud/main/:splat"
 
 [[redirects]]
-    from = "/cloudbeta/current/*"
-    to = "/cloudbeta/main/:splat"
+    from = "/cloud4/current/*"
+    to = "/cloud4/main/:splat"
 
 # redirects for language reference
 [[redirects]]
