@@ -69,7 +69,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, cloud, cloudbeta, cloudBeta, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
+    page-component-order: '!home, tigergraph-server, gsql-ref, cloud4, cloud, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
   extensions:
     - ./libs/tabs-block.js
 urls:
