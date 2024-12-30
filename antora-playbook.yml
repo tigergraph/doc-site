@@ -34,7 +34,7 @@ content:
   # What branch, main or some staging, e.g. cloud-dev?
   sources:
     - url: https://github.com/tigergraph/doc-site.git
-      branches: [cloud-dev]
+      branches: [TGCloud4_25_01_A]
     #- url: https://github.com/tigergraph/doc-site.git
     #  branches: [staging]
 
