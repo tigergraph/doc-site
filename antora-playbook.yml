@@ -20,7 +20,7 @@ site:
   #  User-agent: *
   #  Allow: /
   #  Sitemap: https://docs.tigergraph.com/sitemap.xml
-  # Allow: /cloudbeta/*
+  # Allow: /cloud4/*
   robots: | # For Preview (keep robots lines together as a block)
     User-agent: *
     Allow: /
@@ -43,7 +43,7 @@ content:
       start_paths: home
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [main]
-      start_paths: [modules/cloud, modules/cloudbeta]
+      start_paths: [modules/cloud, modules/cloud4]
     - url: https://github.com/tigergraph/server-docs.git
       branches: [3.6, 3.9, "3.10.3-dev", 3.11, "4.1"]
     - url: https://github.com/tigergraph/gsql-docs.git
