@@ -2,7 +2,7 @@
 :navtitle: home
 :page-role: home
 
-Click here to see xref:index.adoc#_announcements[Release Notes and Announcements]
+Click here to see xref:index.adoc#_announcements[Release Notes and Announcements]!
 
 
 == Get to Know TigerGraph Products
@@ -71,7 +71,7 @@ xref:graph-ml:intro:index.adoc[Graph Data Science Library]
 |===
 
 == Announcements
-Recent News and Releases
+Recent News and Releases!
 
 [NOTE]
 ====
