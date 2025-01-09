@@ -43,8 +43,8 @@ image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 
 TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
 
-xref:gsql-ref:intro:index.adoc[GSQL Language Reference] |
-xref:gsql-ref:tutorials:gsql-101/index.adoc[GSQL 101]
+link:https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md[GSQL V3 Tutorial] |
+xref:gsql-ref:intro:index.adoc[GSQL Language Reference]
 
 ¦
 image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
