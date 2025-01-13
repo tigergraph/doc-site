@@ -5,28 +5,34 @@
       "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
-          "tigergraph-server", "gsql-ref", "gui"
+          "tigergraph-server",
+          "gsql-ref",
+          "gui",
+          "insights"
         ],
         "version": [
-          "3.2",
-          "3.3",
-          "3.4",
-          "3.5",
           "3.6",
-          "3.7",
-          "3.8"
-        ]
-      }
-    },
-    {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
-      "variables": {
-        "component": [
-          "tigergraph-server", "gsql-ref", "gui", "insights", "graphql"
+          "3.9",
+          "3.10",
+          "3.11",
+          "4.1"
         ]
       },
       "extra_attributes": {
-        "version": "3.9",
+        "latest": true
+      }
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "graphql"
+        ],
+        "version": [
+          "3.9"
+        ]
+      },
+      "extra_attributes": {
         "latest": true
       }
     },
@@ -37,20 +43,10 @@
           "graph-ml"
         ],
         "version": [
-          "3.7",
-          "3.8"
-        ]
-      }
-    },
-    {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
-      "variables": {
-        "component": [
-          "graph-ml"
+          "3.10"
         ]
       },
-      "extra_attributes":{
-        "version": "3.9",
+      "extra_attributes": {
         "latest": true
       }
     },
@@ -61,21 +57,12 @@
           "pytigergraph"
         ],
         "version": [
-          "1.0",
-          "1.1",
-          "1.2"
-        ]
-      }
-    },
-    {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
-      "variables": {
-        "component": [
-          "pytigergraph"
+          "1.6",
+          "1.7",
+          "1.8"
         ]
       },
-      "extra_attributes":{
-        "version": "1.3",
+      "extra_attributes": {
         "latest": true
       }
     },
@@ -86,19 +73,10 @@
           "ml-workbench"
         ],
         "version": [
-          "1.1"
-        ]
-      }
-    },
-    {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/current/",
-      "variables": {
-        "component": [
-          "ml-workbench"
+          "1.4"
         ]
       },
-      "extra_attributes":{
-        "version": "1.2",
+      "extra_attributes": {
         "latest": true
       }
     },
@@ -109,7 +87,31 @@
           "cloud"
         ]
       },
-      "extra_attributes":{
+      "extra_attributes": {
+        "latest": true
+      },
+      "selectors_key": "versionless"
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          "cloudbeta"
+        ]
+      },
+      "extra_attributes": {
+        "latest": true
+      },
+      "selectors_key": "versionless"
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
+      "variables": {
+        "component": [
+          "tg-copilot"
+        ]
+      },
+      "extra_attributes": {
         "latest": true
       },
       "selectors_key": "versionless"
