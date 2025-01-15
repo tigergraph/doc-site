@@ -43,7 +43,7 @@ content:
       start_paths: home
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [main]
-      start_paths: [modules/cloud, modules/cloudbeta]
+      start_paths: [modules/cloud, modules/cloud4]
     - url: https://github.com/tigergraph/server-docs.git
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-dev"]
     - url: https://github.com/tigergraph/gsql-docs.git
