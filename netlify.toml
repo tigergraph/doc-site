@@ -1,3 +1,7 @@
+# Document the purposes of the redirects here
+# (This list is being compiled after this file has been in use for years, so it is likely incomplete)
+# DOC-2459: Redirect searches for the "GSQL Tutorial" to whatever is its actual location.
+
 [build]
 
     publish = "build/site/"
@@ -9,6 +13,11 @@
     Content-Security-Policy = "default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
+
+# DOC-2459
+[[redirects]]
+    to = "/gsql-ref/current/tutorials/gsql-tutorial"
+    to = "https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md"
 
 
 # redirects for gui
