@@ -16,9 +16,8 @@
 
 # DOC-2459
 [[redirects]]
-    to = "/gsql-ref/current/tutorials/gsql-tutorial"
+    from = "/gsql-ref/current/tutorials/gsql-tutorial"
     to = "https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md"
-
 
 # redirects for gui
 [[redirects]]
