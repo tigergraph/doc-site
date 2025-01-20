@@ -46,13 +46,19 @@
     to = "/cloud/current/start/get_started"
 
 [[redirects]]
-    from = "/cloud4/overview"
-    to = "/cloud4/current/overview"
+    from = "/savanna/overview"
+    to = "/savanna/current/overview"
 
 # redirect cloudbeta to cloud4
 [[redirects]]
     from = "/cloudBeta"
-    to = "/cloud4/main/overview"
+    to = "/savanna/main/overview"
+
+# redirect cloud4 to savanna
+[[redirects]]
+    from = "/cloud4"
+    to = "/savanna/main/overview"
+
 
 # cloud and cloudbeta- general redirect from "current" to "main"
 [[redirects]]
@@ -62,6 +68,10 @@
 [[redirects]]
     from = "/cloud4/current/*"
     to = "/cloud4/main/:splat"
+
+[[redirects]]
+    from = "/savanna/current/*"
+    to = "/savanna/main/:splat"
 
 # redirects for language reference
 [[redirects]]

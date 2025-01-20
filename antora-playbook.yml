@@ -43,7 +43,7 @@ content:
       start_paths: home
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [dev]
-      start_paths: [modules/cloud, modules/cloud4]
+      start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
       branches: [3.6, 3.9, "3.10", 3.11, 4.1]
     - url: https://github.com/tigergraph/gsql-docs.git
@@ -69,7 +69,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, cloud4, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot, cloud'
+    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot, cloud'
   extensions:
     - ./libs/tabs-block.js
 urls:
