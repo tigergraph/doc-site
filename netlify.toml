@@ -18,7 +18,7 @@
 # DOC-2463
 [[redirects]]
 from = "/cloud/cloud4/*"
-to = "/cloud/savannal/:splat"
+to = "/cloud/savanna/:splat"
 
 # DOC-2459
 [[redirects]]
