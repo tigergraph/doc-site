@@ -75,6 +75,14 @@ asciidoc:
     page-component-order: '!home, tigergraph-server, gsql-ref, cloud4, cloud, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
   extensions:
     - ./libs/tabs-block.js
+navigation:
+  - menu: Products
+    items: [tigergraph-server, cloud4, cloud]
+  - menu: Languages and APIs
+    items: [gsql-ref, pytigergraph, graphql]
+  - menu: Tools
+    items: [gui, insights, graph-ml, ml-workbench, tg-copilot]
+
 urls:
   html_extension_style: drop
   latest_version_segment_strategy: redirect:from
