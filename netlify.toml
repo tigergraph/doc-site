@@ -1,6 +1,7 @@
 # Document the purposes of the redirects here
 # (This list is being compiled after this file has been in use for years, so it is likely incomplete)
-# DOC-2459: Redirect searches for the "GSQL Tutorial" to whatever is its actual location.
+# DOC-2459: Redirect searches for the "GSQL Tutorial" to whatever is its actual location: NOT WORKING
+# DOC-2463: Redirect searches /cloud4 to /savanna
 
 [build]
 
@@ -14,9 +15,14 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
+# DOC-2463
+[[redirects]]
+from = "/cloud/cloud4/*"
+to = "/cloud/savannal/:splat"
+
 # DOC-2459
 [[redirects]]
-    from = "/gsql-ref/current/tutorials/gsql-tutorial"
+    from = "/cloud-docs/current/tutorials/gsql-tutorial"
     to = "https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md"
 
 # redirects for gui

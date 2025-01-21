@@ -19,13 +19,12 @@ xref:tigergraph-server:getting-started:index.adoc[Get Started]
 
 ¦
 image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
-*TigerGraph Cloud*
+*TigerGraph Savanna*
 
-A fully-managed cloud database built on the fast and highly scalable TigerGraph Enterprise Server engine.
+A fully-managed cloud-native database built on the fast and highly scalable TigerGraph Enterprise Server engine.
 
-xref:cloud:start:overview.adoc[TigerGraph Cloud] |
-xref:cloud:start:get_started.adoc[Get Started] |
-xref:cloud4:overview:index.adoc[TigerGraph Cloud 4.0]
+xref:savanna:overview:index.adoc[TigerGraph Savanna]
+| xref:savanna:main:get_started.adoc[Get Started]
 
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
