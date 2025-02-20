@@ -45,7 +45,7 @@ content:
       branches: [main]
       start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-dev"]
+      branches: ["3.6", "3.9", "3.10", "3.11", "4.1", "4.2.0-dev"]
     - url: https://github.com/tigergraph/gsql-docs.git
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-dev"]
     - url: https://github.com/tigergraph/gui-docs.git
