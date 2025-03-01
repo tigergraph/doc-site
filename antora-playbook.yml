@@ -36,7 +36,7 @@ content:
     #- url: https://github.com/tigergraph/doc-site.git
     #  branches: [main]
     - url: https://github.com/tigergraph/doc-site.git
-      branches: [4-2-0-alpha]
+      branches: [4-2-nav]
 
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
@@ -45,9 +45,9 @@ content:
       branches: [main]
       start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "DOC-2554-nav"]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "DOC-2554-nav"]
     - url: https://github.com/tigergraph/gui-docs.git
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
     - url: https://github.com/tigergraph/insights-docs
