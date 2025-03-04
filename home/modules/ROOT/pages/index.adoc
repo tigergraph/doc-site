@@ -35,7 +35,7 @@ Multiple graph query languages, vector search, and hybrid graph+vector search pu
 link:https://github.com/tigergraph/ecosys/blob/master/tutorial/GSQL.md[GSQL Tutorial] |
 xref:gsql-ref:intro:index.adoc[GSQL Reference] |
 xref:gsql-ref:openCypher-in-gsql:openCypher-in-gsql.adoc[openCypher] |
-xref:gsql-ref:vector:search.adoc[Hybrid Graph+Vector Search]
+xref:gsql-ref:vector:index.adoc[Hybrid Graph+Vector Search]
 
 ¦
 image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
@@ -43,7 +43,7 @@ image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
 
 Unlock AI+Graph with graph+vector search, in-database graph algorithms, and Python libraries for GNNs and GraphRAG.
 
-xref:gsql-ref:vector:search.adoc[Graph+Vector Search] |
+xref:gsql-ref:vector:index.adoc[Graph+Vector Search] |
 xref:graph-ml:intro:index.adoc[Graph Algorithms] |
 xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
 https://github.com/TigerGraph-DevLabs/tigergraphx[TigerGraphX]
