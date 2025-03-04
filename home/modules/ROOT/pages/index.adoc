@@ -2,8 +2,7 @@
 :navtitle: home
 :page-role: home
 
-Click here to see xref:index.adoc#_announcements[Release Notes and Announcements]!
-
+See xref:index.adoc#_announcements[Release Notes and Announcements] below
 
 == Get to Know TigerGraph Products
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
@@ -12,19 +11,54 @@ Click here to see xref:index.adoc#_announcements[Release Notes and Announcements
 image:tg_database-homecard.png[alt=TigerGraphDB,width=74,height=74]
 *TigerGraph DB*
 
-The world’s fastest and most scalable graph analytics platform, enabling real-time big data applications.
+The world’s fastest and most scalable graph analytics platform for supercharging AI.
 
 xref:tigergraph-server:intro:index.adoc[TigerGraph DB] |
-xref:tigergraph-server:getting-started:index.adoc[Get Started]
+xref:tigergraph-server:getting-started:index.adoc[Get Started] |
+xref:gsql-ref:vector:index.adoc[Vector Data]
 
 ¦
 image:cloudIcon-homecard.png[alt=TigerGraphCloud,width=74,height=74]
 *TigerGraph Savanna*
 
-A fully-managed cloud-native database built on the fast and highly scalable TigerGraph Enterprise Server engine.
+A fully-managed cloud-native database built on the TigerGraph DB engine.
 
 xref:savanna:overview:index.adoc[TigerGraph Savanna]
 | xref:savanna:get-started:index.adoc[Get Started]
+
+¦
+image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
+*Query & Search Languages*
+
+Multiple graph query languages, vector search, and hybrid graph+vector search put more power in your hands.
+
+link:https://github.com/tigergraph/ecosys/blob/master/tutorial/GSQL.md[GSQL Tutorial] |
+xref:gsql-ref:intro:index.adoc[GSQL Reference] |
+xref:gsql-ref:openCypher-in-gsql:openCypher-in-gsql.adoc[openCypher] |
+xref:gsql-ref:vector:index.adoc[Hybrid Graph+Vector Search]
+
+¦
+image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
+*AI + Graph Intelligence*
+
+Unlock AI+Graph with graph+vector search, in-database graph algorithms, and Python libraries for GNNs and GraphRAG.
+
+xref:gsql-ref:vector:index.adoc[Graph+Vector Search] |
+xref:graph-ml:intro:index.adoc[Graph Algorithms] |
+xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
+https://github.com/TigerGraph-DevLabs/tigergraphx[TigerGraphX]
+
+¦
+image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
+*Connectors and API*
+
+A Python package encompassing data science functions and
+GraphQL API support for both reading and modifying TigerGraph data.
+
+xref:tigergraph-server:data-loading:index.adoc[Data Connectors] |
+xref:tigergraph-server:API:index.adoc[REST API] |
+xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
+xref:graphql:ROOT:intro.adoc[GraphQL Service] |
 
 ¦
 image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
@@ -35,38 +69,6 @@ A family of browser-based applications for TigerGraph Server, serving the needs 
 xref:gui:intro:index.adoc[Admin Portal and GraphStudio] |
 xref:insights:intro:index.adoc[Insights] |
 xref:tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
-
-¦
-image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
-*GSQL Language*
-
-TigerGraph's comprehensive graph language for designing schemas, loading data, querying, and analyzing your graph.
-
-link:https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md[GSQL V3 Tutorial] |
-xref:gsql-ref:intro:index.adoc[GSQL Language Reference]
-
-¦
-image:connectors-homecard.png[alt=ConnectorsandAPI,width=74,height=74]
-*Connectors and API*
-
-A Python package encompassing data science functions and
-GraphQL API support for both reading and modifying TigerGraph data.
-
-xref:pytigergraph:intro:index.adoc[pyTigerGraph] |
-xref:graphql:ROOT:intro.adoc[GraphQL Service] |
-https://github.com/tigergraph/ecosys/tree/master/tools/etl/tg-jdbc-driver[JDBC Driver]
-
-¦
-image:graphdatasci-homecard.png[alt=GraphDataScience,width=74,height=74]
-*Graph + AI*
-
-Unlock the power of Graph + AI with our host of AI products
-and graph data science library featuring over 50 algorithms executed as GSQL queries,
-
-xref:tg-copilot:intro:index.adoc[] |
-xref:ml-workbench:intro:index.adoc[ML Workbench] |
-xref:graph-ml:intro:index.adoc[Graph Data Science Library]
-
 |===
 
 == Announcements
@@ -74,18 +76,20 @@ Recent News and Releases
 
 [NOTE]
 ====
-* xref:3.10@tigergraph-server:release-notes:index.adoc[TigerGraph Server 3.10.3] was released on Jan. 28, 2025.
+
+* xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.0 Alpha] was released on Mar. 4, 2025.
+* xref:3.10@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.10.3] was released on Jan. 28, 2025.
 * xref:savanna:overview:index.adoc[TigerGraph Savanna] - was released on Jan. 21, 2025.
-* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.2] was released on Dec. 20, 2024.
-* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph Server 3.11.1] was released on Dec. 18, 2024
-* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.1] was released on Nov. 12, 2024.
+* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.1.2] was released on Dec. 20, 2024.
+* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.11.1] was released on Dec. 18, 2024
+* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.1.1] was released on Nov. 12, 2024.
 * xref:1.8@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.8] was released on Nov. 5, 2024.
-* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph Server 3.11.0 Preview] was released on Oct 25, 2024.
-* xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph Server 3.10.2] was released on Oct 18, 2024.
+* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.11.0 Preview] was released on Oct 25, 2024.
+* xref:3.10@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_10_2[TigerGraph DB 3.10.2] was released on Oct 18, 2024.
 //* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
-* xref:tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
-* xref:savanna:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29, 2024.
-* xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] was released on May 17, 2023.
+//* xref:tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
+//* xref:savanna:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29, 2024.
+//* xref:1.4@ml-workbench:faq:release-notes.adoc[ML Workbench 1.4] was released on May 17, 2023.
 //* xref:1.6@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.6] was released on Apr. 29, 2024.
 //* xref:tigergraph-server:release-notes:index.adoc[TigerGraph 3.10.0] preview version was released on Mar. 13, 2024.
 //* xref:3.9@tigergraph-server:release-notes:index.adoc#_fixed_and_improved_in_3_9_3_3[TigerGraph 3.9.3-3] was released on Feb. 15, 2024.

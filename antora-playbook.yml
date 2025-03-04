@@ -12,7 +12,7 @@ site:
 
   # (1A) Purpose: Where will the site be published? For prod or preview?
   url: https://docs.tigergraph.com/ # For prod
-  #url: https://docs-tigergraph.netlify.app/ # For Preview
+  # url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
 
   # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
@@ -20,11 +20,11 @@ site:
     User-agent: *
     Allow: /
     Sitemap: https://docs.tigergraph.com/sitemap.xml
-  # Allow: /savanna/*
+    Allow: /savanna/*
   #robots: | # For Preview (keep robots lines together as a block)
   #  User-agent: *
   #  Allow: /
-  # Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
+  #  Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
 
 runtime:
   fetch: true
@@ -36,7 +36,7 @@ content:
     - url: https://github.com/tigergraph/doc-site.git
       branches: [main]
     #- url: https://github.com/tigergraph/doc-site.git
-    #  branches: [staging]
+    #  branches: [4-2-0-alpha]
 
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
@@ -45,13 +45,13 @@ content:
       branches: [main]
       start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
     - url: https://github.com/tigergraph/insights-docs
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.9, "3.10", 3.11, 4.1, "4.2.0-alpha"]
     - url: https://github.com/tigergraph/tigdsl-docs.git
       branches: ["3.10"]
     - url: https://github.com/tigergraph/tigergraphql.git
