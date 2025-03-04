@@ -68,7 +68,7 @@ A family of browser-based applications for TigerGraph Server, serving the needs 
 
 xref:gui:intro:index.adoc[Admin Portal and GraphStudio] |
 xref:insights:intro:index.adoc[Insights] |
-xref:tigergraph-server:get-started:gsql-shell:index.adoc[GSQL Web Shell]
+xref:tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
 |===
 
 == Announcements
