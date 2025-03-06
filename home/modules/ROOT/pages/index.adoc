@@ -32,7 +32,7 @@ image:gsqlLangaugeRef_Icon.png[alt=GSQLLanguage,width=74,height=74]
 
 Multiple graph query languages, vector search, and hybrid graph+vector search put more power in your hands.
 
-link:https://github.com/tigergraph/ecosys/blob/master/tutorial/GSQL.md[GSQL Tutorial] |
+link:https://github.com/tigergraph/ecosys/blob/master/tutorials/GSQL.md[GSQL Tutorial] |
 xref:gsql-ref:intro:index.adoc[GSQL Reference] |
 xref:gsql-ref:openCypher-in-gsql:openCypher-in-gsql.adoc[openCypher] |
 xref:gsql-ref:vector:index.adoc[Hybrid Graph+Vector Search]
