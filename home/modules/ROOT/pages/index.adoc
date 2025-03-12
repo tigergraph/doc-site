@@ -34,7 +34,7 @@ Multiple graph query languages, vector search, and hybrid graph+vector search pu
 
 link:https://github.com/tigergraph/ecosys/blob/master/tutorials/GSQL.md[GSQL Tutorial] |
 xref:gsql-ref:intro:index.adoc[GSQL Reference] |
-xref:gsql-ref:openCypher-in-gsql:openCypher-in-gsql.adoc[openCypher] |
+xref:gsql-ref:openCypher-in-gsql:index.adoc[openCypher] |
 xref:gsql-ref:vector:index.adoc[Hybrid Graph+Vector Search]
 
 ¦
