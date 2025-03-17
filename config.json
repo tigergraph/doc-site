@@ -15,7 +15,8 @@
           "3.9",
           "3.10",
           "3.11",
-          "4.1"
+          "4.1",
+          "4.2"
         ]
       },
       "extra_attributes": {
@@ -96,7 +97,7 @@
       "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
       "variables": {
         "component": [
-          "cloudbeta"
+          "savanna"
         ]
       },
       "extra_attributes": {
