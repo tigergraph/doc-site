@@ -10,6 +10,10 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
+# DOC-2646: Redirect gsql-endpoints from gsql-ref to tigergraph-server
+[[redirects]]
+from = "/gsql-ref/API/gsql-endpoints"
+to = "/tigergraph-server/API/gsql-endpoints"
 
 # redirects for gui
 [[redirects]]
