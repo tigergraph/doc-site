@@ -12,8 +12,12 @@
 
 # DOC-2646: Redirect gsql-endpoints from gsql-ref to tigergraph-server
 [[redirects]]
-from = "/gsql-ref/API/gsql-endpoints"
-to = "/tigergraph-server/API/gsql-endpoints"
+from = "/gsql-ref/4.2/api/*"
+to = "/tigergraph-server/4.2/api/:splat"
+
+[[redirects]]
+from = "/gsql-ref/4.1/api/*"
+to = "/tigergraph-server/4.1/api/:splat"
 
 # redirects for gui
 [[redirects]]
