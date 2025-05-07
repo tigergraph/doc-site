@@ -33,7 +33,7 @@ content:
   # (2) Purpose: Where is this file (antora-playbook.yml)?  Remote or local?
   # What branch, main or some staging, e.g. cloud-dev?
   sources:
-    - url: https://github.com/tigergraph/doc-site.git
+    - url: ../doc-site
       branches: [main]
     #- url: https://github.com/tigergraph/doc-site.git
     #  branches: [4-2-0-alpha]
@@ -41,26 +41,26 @@ content:
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
       start_paths: home
-    - url: https://github.com/tigergraph/cloud-docs.git
+    - url: ../cloud-docs
       branches: [main]
       start_paths: [modules/cloud, modules/savanna]
-    - url: https://github.com/tigergraph/server-docs.git
+    - url: ../server-docs
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
-    - url: https://github.com/tigergraph/gsql-docs.git
+    - url: ../gsql-docs
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
-    - url: https://github.com/tigergraph/gui-docs.git
+    - url: ../gui-docs
       branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
-    - url: https://github.com/tigergraph/insights-docs
-      branches: [3.9, "3.10", 3.11, 4.1, 4.2]
-    - url: https://github.com/tigergraph/tigdsl-docs.git
+    - url: ../insights-docs
+      branches: [3.9, "3.10", 3.11, 4.1, "DOC-2771"]
+    - url: ../tigdsl-docs
       branches: ["3.10"]
-    - url: https://github.com/tigergraph/tigergraphql.git
+    - url: ../tigergraphql
       branches: [3.9]
-    - url: https://github.com/tigergraph/pytigergraph-docs
+    - url: ../pytigergraph-docs
       branches: ["v1.6", "v1.7", "v1.8"]
-    - url: https://github.com/tigergraph/mlworkbench-docs.git
+    - url: ../mlworkbench-docs
       branches: [1.4]
-    - url: https://github.com/tigergraph/copilot-docs.git
+    - url: ../copilot-docs
       branches: [main]
 ui:
   bundle:
@@ -73,7 +73,7 @@ asciidoc:
   extensions:
     - ./libs/tabs-block.js
 urls:
-  html_extension_style: drop
+  html_extension_style: default
   latest_version_segment_strategy: redirect:from
   latest_version_segment: current
   redirect_facility: netlify
