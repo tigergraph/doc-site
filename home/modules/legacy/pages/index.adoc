@@ -2,6 +2,7 @@
 
 For historical purposes, snapshot copies of the documentation for certain older versions of TigerGraph are available in PDF format.
 
+* xref:attachment$TigerGraph-docs-3.3.pdf[TigerGraph 3.3] (Released Nov 1, 2021. ~2100 pages, 31 MB PDF)
 * xref:attachment$TigerGraph-docs-3.2.pdf[TigerGraph 3.2] (Released Sep 30, 2021. ~2000 pages, 29 MB PDF)
 * xref:attachment$TigerGraph-docs-3.1.pdf[TigerGraph 3.1] (Released Dec 2, 2020. ~2000 pages, 31 MB PDF)
 * xref:attachment$TigerGraph-docs-3.0.pdf[TigerGraph 3.0] (Released Jun 30, 2020. ~1600 pages, 25 MB PDF)
