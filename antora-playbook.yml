@@ -11,21 +11,21 @@ site:
   # If this is the staging branch, then comment out the main branch config.
 
   # (1A) Purpose: Where will the site be published? For prod or preview?
-  #url: https://docs.tigergraph.com/ # For prod
-  url: https://docs-tigergraph.netlify.app/ # For Preview
+  url: https://docs.tigergraph.com/ # For prod
+  #url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
 
   # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
   #robots: | # For Prod (keep robots lines together as a block)
   #  User-agent: *
   #  Allow: /
-  # Sitemap: https://docs.tigergraph.com/sitemap.xml
-  # Allow: /cloud4/*
+  #  Sitemap: https://docs.tigergraph.com/sitemap.xml
+  #  Allow: /savanna/*
   robots: | # For Preview (keep robots lines together as a block)
     User-agent: *
     Allow: /
     Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
-
+    Allow: /savanna/*
 runtime:
   fetch: true
 content:
@@ -43,15 +43,15 @@ content:
       start_paths: home
     - url: https://github.com/tigergraph/cloud-docs.git
       branches: [main]
-      start_paths: [modules/cloud, modules/cloud4]
+      start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/insights-docs
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1]
+      branches: [3.9, "3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/tigdsl-docs.git
       branches: ["3.10"]
     - url: https://github.com/tigergraph/tigergraphql.git
@@ -64,7 +64,7 @@ content:
       branches: [main]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/nav-dev/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob/DOC-2810-remove-docs-legacy/build/ui-bundle.zip?raw=true
     #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
@@ -72,12 +72,12 @@ asciidoc:
     products: '!home, tigergraph-server, cloud4, cloud'
     languages_and_apis: 'gsql-ref, pytigergraph, graphql'
     tools: 'gui, insights, graph-ml, ml-workbench, tg-copilot'
-    page-component-order: '!home, tigergraph-server, gsql-ref, cloud4, cloud, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot'
+    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot, cloud'
   extensions:
     - ./libs/tabs-block.js
 navigation:
   - menu: Products
-    items: [tigergraph-server, cloud4, cloud]
+    items: [tigergraph-server, savanna, cloud]
   - menu: Languages and APIs
     items: [gsql-ref, pytigergraph, graphql]
   - menu: Tools
