@@ -1,6 +1,7 @@
 # Document the purposes of the redirects here
 # (This list is being compiled after this file has been in use for years, so it is likely incomplete)
-# DOC-2459: Redirect searches for the "GSQL Tutorial" to whatever is its actual location.
+# DOC-2459: Redirect searches for the "GSQL Tutorial" to whatever is its actual location: NOT WORKING
+# DOC-2463: Redirect searches /cloud4 to /savanna: NOT WORKING
 
 [build]
 
@@ -14,10 +15,29 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
-# DOC-2459
+# DOC-2810: Redirect docs-legacy.tigergraph.com to docs.tigergraph.com/home/legacy
 [[redirects]]
-    from = "/gsql-ref/current/tutorials/gsql-tutorial"
-    to = "https://github.com/tigergraph/ecosys/blob/master/demos/guru_scripts/docker/tutorial/4.x/README.md"
+    from = "https://docs-legacy.tigergraph.com/*"
+    to = "https://docs.tigergraph.com/home/legacy/"
+
+# DOC-2646: Redirect gsql-endpoints from gsql-ref to tigergraph-server
+[[redirects]]
+    from = "/gsql-ref/4.2/api/*"
+    to = "/tigergraph-server/4.2/api/:splat"
+
+[[redirects]]
+    from = "/gsql-ref/4.1/api/*"
+    to = "/tigergraph-server/4.1/api/:splat"
+
+# DOC-2463: Redirect searches /cloud4 to /savanna: NOT WORKING
+[[redirects]]
+    from = "/cloud4/*"
+    to = "/savanna/:splat"
+
+# DOC-2459: Redirect searches for "GSQL Tutorial" to whatever is its actual location: NOT WORKING
+[[redirects]]
+    from = "/cloud/current/tutorials/gsql-tutorial"
+    to = "https://github.com/tigergraph/ecosys/blob/master/tutorials/GSQL.md"
 
 # redirects for gui
 [[redirects]]
@@ -122,11 +142,11 @@
 
 [[redirects]]
     from = "/faqs/release-notes-tigergraph-3.1"
-    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs.tigergraph.com/home/legacy/"
 
 [[redirects]]
     from = "/v/3.1/faqs/release-notes-tigergraph-3.1"
-    to = "https://docs-legacy.tigergraph.com/v/3.1/faqs/release-notes-tigergraph-3.1"
+    to = "https://docs.tigergraph.com/home/legacy/"
 
 [[redirects]]
     from = "/dev/restpp-api"
