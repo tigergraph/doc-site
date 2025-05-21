@@ -64,7 +64,7 @@ content:
       branches: [main]
 ui:
   bundle:
-    url: https://github.com/tigergraph/antora-ui/blob/DOC-2810-remove-docs-legacy/build/ui-bundle.zip?raw=true
+    url: https://github.com/tigergraph/antora-ui/blob//build/ui-bundle.zip?raw=true
     #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
 asciidoc:
@@ -75,14 +75,6 @@ asciidoc:
     page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot, cloud'
   extensions:
     - ./libs/tabs-block.js
-navigation:
-  - menu: Products
-    items: [tigergraph-server, savanna, cloud]
-  - menu: Languages and APIs
-    items: [gsql-ref, pytigergraph, graphql]
-  - menu: Tools
-    items: [gui, insights, graph-ml, ml-workbench, tg-copilot]
-
 urls:
   html_extension_style: drop
   latest_version_segment_strategy: redirect:from
