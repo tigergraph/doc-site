@@ -60,8 +60,7 @@ content:
       branches: ["v1.6", "v1.7", "v1.8"]
     - url: https://github.com/tigergraph/mlworkbench-docs.git
       branches: [1.4]
-    - url: https://github.com/tigergraph/copilot-docs.git
-      branches: [main]
+
 ui:
   bundle:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
@@ -69,7 +68,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, tg-copilot, cloud'
+    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, cloud'
   extensions:
     - ./libs/tabs-block.js
 urls:
