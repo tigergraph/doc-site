@@ -14,6 +14,8 @@ site:
   url: https://docs.tigergraph.com/ # For prod
   # url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
+  keys:
+    google_analytics: G-517YJDP198
 
   # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
   robots: | # For Prod (keep robots lines together as a block)
