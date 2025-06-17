@@ -61,7 +61,7 @@ content:
     - url: https://github.com/tigergraph/pytigergraph-docs
       branches: ["v1.6", "v1.7", "v1.8"]
     - url: https://github.com/tigergraph/mlworkbench-docs.git
-      branches: [1.4]
+      branches: ["1.4C"]
 
 ui:
   bundle:
@@ -70,7 +70,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, ml-workbench, graphql, cloud'
+    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, graphql, cloud, ml-workbench'
   extensions:
     - ./libs/tabs-block.js
 urls:
