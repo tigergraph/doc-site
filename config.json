@@ -104,7 +104,7 @@
         "latest": true
       },
       "selectors_key": "versionless"
-    },
+    }
   ],
   "sitemap_urls": [
     "https://docs.tigergraph.com/sitemap.xml"
