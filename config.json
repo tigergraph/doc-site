@@ -105,18 +105,6 @@
       },
       "selectors_key": "versionless"
     },
-    {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
-      "variables": {
-        "component": [
-          "tg-copilot"
-        ]
-      },
-      "extra_attributes": {
-        "latest": true
-      },
-      "selectors_key": "versionless"
-    }
   ],
   "sitemap_urls": [
     "https://docs.tigergraph.com/sitemap.xml"
