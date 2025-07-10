@@ -76,14 +76,14 @@ Recent News and Releases
 [NOTE]
 ====
 
+* xref:3.10@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.10.4] was released on July. 10, 2025.
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.1.3] was released on May. 15, 2025.
 * xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.0 Preview] was released on Apr. 4, 2025.
 * xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.0 Alpha] was released on Mar. 4, 2025.
-* xref:3.10@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.10.3] was released on Jan. 28, 2025.
 * xref:savanna:overview:index.adoc[TigerGraph Savanna] - was released on Jan. 21, 2025.
 * xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.11.1] was released on Dec. 18, 2024
 * xref:1.8@pytigergraph:release-notes:index.adoc[pyTigerGraph 1.8] was released on Nov. 5, 2024.
-* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.11.0 Preview] was released on Oct 25, 2024.
+* xref:3.11@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.11.0 Preview] was released on Oct. 25, 2024.
 //* xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph Server 4.1.0 Preview] was released on Aug. 30, 2024.
 //* xref:tg-copilot:intro:index.adoc[CoPilot 0.9] was released on Aug. 19, 2024.
 //* xref:savanna:overview:index.adoc[TigerGraph Cloud 4.0] - TigerGraph Cloud 4.0 beta version was released on Apr. 29, 2024.
