@@ -11,8 +11,8 @@ site:
   # If this is the staging branch, then comment out the main branch config.
 
   # (1A) Purpose: Where will the site be published? For prod or preview?
-    url: https://docs.tigergraph.com/ # For prod
-  # url: https://docs-tigergraph.netlify.app/ # For Preview
+  url: https://docs.tigergraph.com/ # For prod
+  #url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
   keys:
     google_analytics: G-517YJDP198
