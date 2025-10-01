@@ -1,0 +1,41 @@
+= Compatibility between TigerGraph 3.10 and TigerGraph 4.1
+:description: Lists compatibility issues between TigerGraph 3.10 and TigerGraph 4.1 for users planning to migrate
+
+Upgrading from TigerGraph 3.10 to 4.1 introduces important changes to security, privileges, and REST APIs. 
+While the upgrade process automatically handles some migrations, certain features have been removed or modified.
+
+This page highlights the changes you need to review and the steps you may need to take to ensure your applications, queries, and integrations continue to work smoothly after the upgrade.
+
+[NOTE]
+====
+TigerGraph versioning branched after 3.10. From 3.10, you can upgrade either to 3.11 or to 4.1.
+4.1 is not the successor to 3.11. They are two separate upgrade paths.
+====
+
+== TigerGraph Compatibility changes from 3.10 to 4.1
+
+[options="header,autowidth"]
+|===
+| Version | Description | Recommendation
+
+| 4.1.0
+| Many REST API endpoints were updated, including consolidation, path prefix changes, and token authentication support.
+| Review and update API calls to match the new endpoints and authentication. See the xref:4.1@tigergraph-server:API:index.adoc[REST API reference].
+
+| 4.1.0
+| A full export package now includes access policies and template queries.
+| Verify that exports include the new components when migrating or restoring data.
+
+| 4.1.0
+| Access Control Lists (ACLs) are no longer supported. ACL privileges are automatically migrated to object-based privileges during upgrade.
+| Verify migrated privileges after upgrading from 3.x to 4.x. See xref:{page-component-version}@user-access:query-privilege-migration.adoc[Query privilege migration].
+
+| 4.1.0
+| Vertex-level Access Control (VLAC) and VLAC methods are removed.
+| Remove any references to VLAC features in queries or applications.
+
+| 4.1.0
+| The WRITE_DATA RBAC privilege is deprecated.
+| Replace usage of WRITE_DATA with the appropriate object-based privileges.
+
+|===
