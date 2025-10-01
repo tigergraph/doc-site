@@ -1,6 +1,12 @@
 = Compatibility and Migration Issues
 :description:Description of compatibility and migration issues for users moving from previous versions of TigerGraph
 
+[NOTE]
+====
+TigerGraph versioning branched after 3.10. From 3.10, you can upgrade either to 3.11 or to 4.1.
+4.1 is not the successor to 3.11. They are two separate upgrade paths.
+====
+
 This section provides a historical record of feature changes between versions of TigerGraph which are not fully backwardly compatibility with earlier versions.
 This includes:
 
