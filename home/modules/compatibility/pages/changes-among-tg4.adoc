@@ -1,0 +1,42 @@
+= Compatibility among TigerGraph 4 versions
+:description: lists the compatibility issues between different versions of TigerGraph 4, for users who plan to migrate
+
+This page lists the discontinued features or other incompatible changes from one TigerGraph 4.x version to another TigerGraph 4.x version.
+
+[NOTE]
+====
+The list does not include bug fixes where a feature was not working correctly before and now is working according to the specification.
+Those issues are listed on the Release Notes page.
+====
+
+== TigerGraph 4.2 Compatibility Changes
+
+[options="header,autowidth"]
+|===
+| Version | Description | Recommendation
+
+| 4.2.0
+| xref:security:gsql-file-input-policy.adoc[File Input] and xref:security:file-output-policy.adoc[File Output] Policy changes require restarting `gsql` and `restpp` servers.
+| Restart `gsql` and `restpp` with `gadmin restart gsql restpp -y` after policy updates.
+
+| 4.2.0
+| The `--incremental` backup option now performs true incremental backups.
+| Plan xref:backup-and-restore:incremental-backup.adoc[backup and restore] processes accordingly.
+
+| 4.2.0
+| In CDC messages, the format of *tuple values* has changed.
+| Update your applications that consume xref:system-management:change-data-capture/cdc-message-example.adoc#_message_examples[CDC messages] to handle the new format for tuple values.
+
+| 4.2.0
+| `SelectVertex()` no longer allows relative filepaths.
+| Use absolute filepaths in `SelectVertex()` calls.
+
+| 4.2.0
+| The `--meta` option for backup is no longer needed because metadata is included automatically.
+| Remove the `--meta` option from your `gadmin` backup commands
+
+| 4.2.0
+| External Kafka streaming connector (3.6 to 3.9.2) is no longer supported.
+| Switch to supported Kafka connectors or newer versions.
+
+|===
