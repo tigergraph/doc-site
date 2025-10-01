@@ -9,7 +9,7 @@ The list does not include bug fixes where a feature was not working correctly be
 Those issues are listed on the Release Notes page.
 ====
 
-== TigerGraph 4.2 Compatibility Changes
+== TigerGraph Compatibility changes from 4.1 to 4.2
 
 [options="header,autowidth"]
 |===
