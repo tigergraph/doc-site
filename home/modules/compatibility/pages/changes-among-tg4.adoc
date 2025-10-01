@@ -15,10 +15,6 @@ Those issues are listed on the Release Notes page.
 |===
 | Version | Description | Recommendation
 
-| 4.2.1
-| Long and dynamic length BitwiseAccum (>64 bits or variable length) not supported in distributed mode and limited to 10,000,000 bits.
-| Use single-node mode for long or dynamic BitwiseAccum and apply `.clear()` to manage memory. See xref:4.2@gsql-ref:querying:accumulators.adoc#_bitwiseandaccum_bitwiseoraccum[Bitwise Accumulators].
-
 | 4.2.0
 | xref:security:gsql-file-input-policy.adoc[File Input] and xref:security:file-output-policy.adoc[File Output] Policy changes require restarting `gsql` and `restpp` servers.
 | Restart `gsql` and `restpp` with `gadmin restart gsql restpp -y` after policy updates.
@@ -43,37 +39,4 @@ Those issues are listed on the Release Notes page.
 | External Kafka streaming connector (3.6 to 3.9.2) is no longer supported.
 | Switch to supported Kafka connectors or newer versions.
 
-| 4.2.0
-| The format for tuple structures in CDC messages will change in a future version, likely similar to the new map format.
-| Prepare CDC processing to adapt to future xref:{page-component-version}@tigergraph-server:system-management:change-data-capture/cdc-message-example.adoc#_cdc_message_with_type_edge[format changes].
-
 |===
-
-== TigerGraph 4.1 Compatibility Changes
-
-[options="header,autowidth"]
-|===
-| Version | Description | Recommendation
-
-| 4.1.0
-| Many REST API endpoints were updated, including consolidation, path prefix changes, and token authentication support.
-| Review and update API calls to match the new endpoints and authentication. See the xref:4.1@tigergraph-server:API:index.adoc[REST API reference].
-
-| 4.1.0
-| A full export package now includes access policies and template queries.
-| Verify that exports include the new components when migrating or restoring data.
-
-| 4.1.0
-| Access Control Lists (ACLs) are no longer supported. ACL privileges are automatically migrated to object-based privileges during upgrade.
-| Verify migrated privileges after upgrading from 3.x to 4.x. See xref:{page-component-version}@user-access:query-privilege-migration.adoc[Query privilege migration].
-
-| 4.1.0
-| Vertex-level Access Control (VLAC) and VLAC methods are removed.
-| Remove any references to VLAC features in queries or applications.
-
-| 4.1.0
-| The `WRITE_DATA` RBAC privilege is deprecated.
-| Replace usage of `WRITE_DATA` with the appropriate object-based privileges.
-
-|===
-
