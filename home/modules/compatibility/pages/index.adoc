@@ -15,7 +15,7 @@ For example, change the name of schema elements and refactor queries if a new re
 If you have any questions or uncertainty, please contact TigerGraph Support.
 
 See all the sections that pertain to your proposed migration.
-For example, if you are considering migrating for 2.6 to 3.6, please see both pages.
+For example, if you are considering migrating for 2.6 to 3.10, please see both pages.
 
 * xref:home:compatibility:changes-from-tg2-to-tg3.adoc[]
 * xref:home:compatibility:changes-among-tg3.adoc[]
