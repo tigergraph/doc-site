@@ -9,7 +9,7 @@ The list does not include bug fixes where a feature was not working correctly be
 Those issues are listed on the Release Notes page.
 ====
 
-== TigerGraph 3.11 Compatibility Changes
+== TigerGraph Compatibility changes from 3.10 to 3.11
 
 [options="header,autowidth"]
 |===
@@ -25,7 +25,7 @@ Those issues are listed on the Release Notes page.
 
 |===
 
-== TigerGraph 3.10 Compatibility Changes
+== TigerGraph Compatibility changes from 3.9 to 3.10
 
 [options="header,autowidth"]
 |===
@@ -41,7 +41,7 @@ Those issues are listed on the Release Notes page.
 
 |===
 
-== TigerGraph 3.9 Compatibility Changes
+== TigerGraph Compatibility changes from 3.6 to 3.9
 
 [options="header,autowidth"]
 |===
@@ -82,7 +82,7 @@ Those issues are listed on the Release Notes page.
 |===
 
 
-== TigerGraph 3.6 Compatibility Changes
+== TigerGraph Compatibility changes from 3.4 to 3.6
 
 [options="header,autowidth"]
 |===
