@@ -32,12 +32,12 @@ Those issues are listed on the Release Notes page.
 | Version | Description | Recommendation
 
 | 3.10.0
-| File input/output policy violations may occur during upgrades
-| Review the file input/output policies before upgrading. See xref:3.10@tigergraph-server:security:gsql-file-input-policy.adoc#_backward_compatibility[Input policy backward compatibility].
+| New xref:3.10@security:security:gsql-file-input-policy.adoc[File Input Policy] feature introduces a list of local files locations that may not be used to load data.
+| Review the file input/output policies before upgrading. Note that TigerGraph enforces an implicit blocklist of restricted file locations, which cannot be modified. See xref:3.10@tigergraph-server:security:gsql-file-input-policy.adoc#_backward_compatibility[Input policy backward compatibility].
 
 | 3.10.0
 | The `gbar` command is removed and replaced with `gadmin` backup.
-| Use `gadmin backup` for backups in 3.10.0. Restore pre-3.10.0 `gbar` backups with `gadmin backup restore` after upgrading.
+| Use `gadmin backup` for new backups. You can still restore older `gbar` backups with `gadmin backup restore`, since the restore process remains the same.
 
 |===
 
@@ -51,31 +51,31 @@ Those issues are listed on the Release Notes page.
 | Edge operations require privileges on both the edge and its source/target vertices.
 | Grant the same data privilege on the edge type and the related vertex types.
 
-| 3.9.3+
+| 3.9.3
 | PRINT now removes spaces from expression-based output labels. For example, `count(DISTINCT @@ids`) changes to `count(DISTINCT@@ids`).
 | Update queries if they depend on output labels with spaces.
 
-| 3.9.2+
+| 3.9.2
 | Betweenness Centrality algorithm: `reverse_edge_type` changed to `reverse_edge_type_set (SET<STRING>)`
 | Update queries to use the new parameter name and type.
 
-| 3.9.2+
+| 3.9.2
 | Vertices with string-type primary IDs cannot have empty string values.
 | Ensure input data has no empty string IDs.
 
-| 3.9.2+
+| 3.9.2
 | Kafka Connector default mode changed from EOF="false" to EOF="true".
 | Set EOF explicitly in your configs if your workflow requires "false."
 
-| 3.9.2+
+| 3.9.2
 | Default retention time for `Informant` and `TS3` services reduced from 30 to 7 days.
 | Adjust retention settings for longer periods if needed.
 
-| 3.9.2+
+| 3.9.2
 | `/informant/metrics/get/cpu-memory` accepts lists of ServiceDescriptors.
 | Update API calls to provide a list format.
 
-| 3.9+
+| 3.9
 | UDFs named `to_string()` or with the `tg_` prefix are not accepted due to new xref:3.10@tigergraph-server:security:index.adoc#_udf_file_scanning[security checks].
 | Rename UDFs and update code to avoid these names for smooth upgrades.
 
