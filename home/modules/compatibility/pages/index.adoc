@@ -28,6 +28,7 @@ For example, if you are considering migrating for 2.6 to 3.10, please see both p
 
 For upgrade guidance, see the pages for your target version: 3.10 to 4.1 or within 4.x.  
 
-* xref:home:compatibility:changes-among-tg4.adoc[]
 * xref:home:compatibility:changes-from-tg3.10-to-tg4.1.adoc[]
+* xref:home:compatibility:changes-among-tg4.adoc[]
+
 
