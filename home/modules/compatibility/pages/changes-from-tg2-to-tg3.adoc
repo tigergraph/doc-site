@@ -186,3 +186,8 @@ a|
 * `SELECT count(*) FROM ...`
 ** exact, but slower than `approx_count(*)`
 |===
+
+---
+
+See also xref:home:compatibility:changes-among-tg3.adoc[Compatibility among TigerGraph 3 versions]
+
