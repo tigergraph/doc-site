@@ -165,3 +165,5 @@ a| Loading `TAGS`: syntax changed from BY (OR\|OVERWRITE) to `BY OR\|OVERWRITE`
 
 |===
 
+See also xref:home:compatibility:changes-from-tg2-to-tg3.adoc[Compatibility between TigerGraph 2 and TigerGraph 3.0] and xref:home:compatibility:changes-from-tg3.10-to-tg4.1.adoc[Compatibility between TigerGraph 3.10 and TigerGraph 4.1]
+
