@@ -19,10 +19,10 @@ TigerGraph versioning branched after 3.10. From 3.10, you can upgrade either to 
 | Version | Description | Recommendation
 
 | 4.1.0
-a|
-* Plain-text tokens generated before the upgrade remain valid until they expire. However, if you _export_ a database from 3.x and import it to 4.x, the plain-text tokens are not imported.
-* Version 4.1 introduces JWT (JSON Web Token) as the default and more secure format for authentication. New tokens are created in JWT format.
-| Use JWT tokens for all authentication starting from version 4.1. Update your scripts and applications to use the new token format and endpoints. 
+| Plain-text tokens generated before the upgrade remain valid until they expire. However, if you _export_ a database from 3.x and import it to 4.x, the plain-text tokens are not imported.
+
+Version 4.1 introduces JWT (JSON Web Token) as the default and more secure format for authentication. New tokens are created in JWT format.
+| Use JWT tokens for all authentication starting from version 4.1. Update your scripts and applications to use the new token format and endpoints.
 See xref:4.1@tigergraph-server:API:built-in-endpoints.adoc#_authentication[Authentication].
 
 | 4.1.0
