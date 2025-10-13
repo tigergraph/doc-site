@@ -53,3 +53,5 @@ Use xref:4.1@tigergraph-server:user-access:rbac-row-policy/rbac-row-policy.adoc[
 | Replace usage of WRITE_DATA with the appropriate object-based privileges.
 
 |===
+
+See also xref:home:compatibility:changes-among-tg3.adoc[Compatibility among TigerGraph 3 versions] and xref:home:compatibility:changes-among-tg4.adoc[Compatibility among TigerGraph 4 versions]
