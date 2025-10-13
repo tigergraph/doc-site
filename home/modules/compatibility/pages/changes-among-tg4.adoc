@@ -40,3 +40,5 @@ Those issues are listed on the Release Notes page.
 | Switch to supported Kafka connectors or newer versions.
 
 |===
+
+See also xref:home:compatibility:changes-from-tg3.10-to-tg4.1.adoc[Compatibility between TigerGraph 3.10 and TigerGraph 4.1]
