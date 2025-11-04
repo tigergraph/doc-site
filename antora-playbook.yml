@@ -47,13 +47,13 @@ content:
       branches: [main]
       start_paths: [modules/cloud, modules/savanna]
     - url: https://github.com/tigergraph/server-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
+      branches: ["3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/gsql-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
+      branches: ["3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/gui-docs.git
-      branches: [3.6, 3.9, "3.10", 3.11, 4.1, 4.2]
+      branches: ["3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/insights-docs
-      branches: [3.9, "3.10", 3.11, 4.1, 4.2]
+      branches: ["3.10", 3.11, 4.1, 4.2]
     - url: https://github.com/tigergraph/tigdsl-docs.git
       branches: ["3.10"]
     - url: https://github.com/tigergraph/tigergraphql.git
