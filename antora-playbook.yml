@@ -11,23 +11,23 @@ site:
   # If this is the staging branch, then comment out the main branch config.
 
   # (1A) Purpose: Where will the site be published? For prod or preview?
-  url: https://docs.tigergraph.com/ # For prod
-  #url: https://docs-tigergraph.netlify.app/ # For Preview
+  # url: https://docs.tigergraph.com/ # For prod
+  url: https://docs-tigergraph.netlify.app/ # For Preview
   start_page: home::index.adoc
   keys:
     google_analytics: G-517YJDP198
 
-# (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
-  robots: | # For Prod (keep robots lines together as a block)
+  # (1B) Purpose: Where is the sitemap, same as the site's URL (in 1A)?
+  # robots: | # For Prod (keep robots lines together as a block)
+  #  User-agent: *
+  # Allow: /
+  # Sitemap: https://docs.tigergraph.com/sitemap.xml
+  # Allow: /savanna/*
+  robots: | # For Preview (keep robots lines together as a block)
     User-agent: *
     Allow: /
-    Sitemap: https://docs.tigergraph.com/sitemap.xml
-    Allow: /savanna/*
-  #robots: | # For Preview (keep robots lines together as a block)
-  # User-agent: *
-  # Allow: /
-  # Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
-    
+    Sitemap: https://docs-tigergraph.netlify.app/sitemap.xml
+
 runtime:
   fetch: true
 content:
@@ -38,7 +38,7 @@ content:
     - url: https://github.com/tigergraph/doc-site.git
       branches: [main]
     #- url: https://github.com/tigergraph/doc-site.git
-    # branches: [4-2-0-alpha]
+    #  branches: [K8s-migration-1.6-dev]
 
       # (3) Purpose: What is the content: remote or local?
       # What versions (Previews will usually have extra versions).
@@ -62,6 +62,8 @@ content:
       branches: ["v1.6", "v1.7", "v1.8"]
     - url: https://github.com/tigergraph/mlworkbench-docs.git
       branches: ["1.4C"]
+    - url: https://github.com/tigergraph/k8s-docs.git
+      branches: [K8s-migration-1.6-dev]
 
 ui:
   bundle:
