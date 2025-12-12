@@ -72,7 +72,7 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, graphql, cloud, ml-workbench'
+    page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, graphql, cloud, ml-workbench, k8s-docs'
   extensions:
     - ./libs/tabs-block.js
 urls:
