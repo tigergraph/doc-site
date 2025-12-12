@@ -2,7 +2,7 @@
 :navtitle: home
 :page-role: home
 
-See xref:index.adoc#_announcements[Release Notes and Announcements] below
+See xref:index.adoc#_announcements[Release Notes and Announcements] below !
 
 == Get to Know TigerGraph Products
 [.home-card,cols="2",grid=none,frame=none, separator=¦]
