@@ -1,0 +1,301 @@
+= TigerGraph Product Release and Lifecycle Policy
+:description:This page explains TigerGraph's release and lifecycle policies.
+
+Updated February 16, 2026
+
+TigerGraph is committed to delivering a reliable, secure, and high-performance enterprise-grade graph database.
+Our product testing and versioning are designed to ensure stable, reliable software for production.
+
+== Version Progression and Upgrade Paths
+
+Within a product generation, TigerGraph follows a single, forward-moving version progression.
+For example, moving from 4.1 to 4.2 to 4.3, each new feature version builds upon the previous one and includes cumulative capabilities and improvements.
+
+Customers may upgrade from an early to a later version using documented TigerGraph upgrade procedures.
+
+== Release Lifecycle Options
+
+TigerGraph designates some versions as LTS (Long Term Support) versions.
+Other feature versions follow the standard (non-LTS) lifecycle.
+
+=== LTS (Long Term Support) Versions
+
+LTS versions provide an extended maintenance lifecycle. Customers who prefer less frequent upgrades may adopt LTS versions.
+
+=== Non-LTS Versions
+
+Non-LTS versions provide earlier access to new capabilities and are intended for teams that can accommodate a more frequent upgrade cadence.
+
+.TigerGraph Release, Support, and Maintenance Lifecycle
+[width="100%",cols="<1,1,1",options="header",]
+|===
+| Release Type | LTS | Non-LTS
+
+
+| Maintenance period (bug fixes & security updates)
+| 2 years
+| 1 year
+
+| Support-only period following Maintenance period
+| 1 additional year
+| 1 additional year
+
+| Release cadence
+| Approximately once a year
+| Usually one release between LTS releases, typically about half a year after the most recent LTS release
+
+|===
+
+During the support-only period, TigerGraph provides technical assistance and troubleshooting but does not issue new maintenance releases.
+
+== Lifecycle Stages
+
+A feature version goes through the following lifecycle stages, with 3 types of releases:
+
+. Preview Releases
+. GA Release
+. Maintenance Releases
+
+== Release Numbering and Terminology
+
+TigerGraph version numbers generally follows https://semver.org/[semantic versioning]:
+
+ `<generation>.<feature>.<maintenance>`
+
+Certain releases add an additional suffix to indicate the release type.
+
+[#generation]
+*Generation*
+
+A _generation_ represents a core architecture.
+The generation remains stable for years.
+Upgrading to a new generation may require some migration effort.
+
+*Feature Version*
+
+A _feature version_ represents a set of product features.
+When a new feature version is released, `<feature>` is incremented.
+We strive for backward compatibility so that existing applications built on the previous feature version will continue to work without modification.
+
+*Preview Release of a Feature Version*
+
+A _Preview Release_ is a pre-GA release available for customer evaluation.
+It is generally feature-complete.
+Preview releases are not recommended for production deployment.
+
+* A Preview release of a new feature version has `<maintenance>` = 0 and a suffix `-preN` to emphasize that this is a Preview, e.g. `4.3.0-pre1`.
+
+*GA (General Availability) Release*
+
+The _GA Release_ is the first production-ready release for a feature version.
+The feature set is frozen.
+It marks the beginning of the maintenance period for that feature version.
+
+* The GA release of a new feature version has `<maintenance>` = 1, e.g. `4.3.1`.
+
+
+*Maintenance Release/Update*
+
+A _Maintenance Release_ addresses bugs and security issues.
+It does not introduce new functionality except when necessary to resolve critical problems.
+
+Each feature version receives its own set of cumulative maintenance releases following its GA release.
+The release tempo varies, depending on the number and severity of issues that have been detected and addressed.
+
+NOTE: For each feature version, TigerGraph recommends upgrading to the most recent maintenance release, which incorporates all prior bug fixes and security updates and reflects the most validated state of that version.
+
+
+* The Maintenance Releases of a feature version have `<maintenance>` = 2, 3, ... as needed.
+
+The following table summarizes the release types and their naming.
+
+.TigerGraph Release Types and Numbering
+[width="100%",cols="<1,<3,<2",options="header",]
+|===
+| Release Type | Description | Release ID
+
+| Preview
+| Feature complete; seeking customer feedback and field testing
+| X.Y.0-pre1, +
+X.Y.0-pre2, ...
+
+| GA
+| Production-ready; features frozen; refined after customer feedback and field testing
+| X.Y.1
+
+| Maintenance
+| Bug fixes, security updates
+| X.Y.2, +
+X.Y.3, ...
+|===
+
+== Release Deliverables and Upgrade Support
+
+=== Support
+
+* Paid customers may open support tickets at https://tigergraph.zendesk.com/hc/en-us/[TigerGraph's ZenDesk Portal].
+* https://www.tigergraph.com/tigergraph-product-support-policy/[TigerGraph Support Policy]
+
+
+=== Preview Release (Pre-GA)
+
+*Documentation:*
+When a feature version is introduced as a Preview release (`-preN`), the following documentation deliverables accompany the release:
+
+* A dedicated documentation branch for the feature version (at https://docs.tigergraph.com)
+* Release Notes for the Preview version
+* Upgrade guidance for customers evaluating the Preview release
+
+Note: Preview documentation may be updated as the release evolves prior to GA.
+
+*Notification:*
+
+* Preview releases are announced on the documentation website.
+* TigerGraph Customer Success proactively sharse the release notes with existing customers who have expressed interest in the Preview.
+
+*Upgrade Support:*
+
+* Upgrade procedures are documented in the xref:tigergraph-server:installation:upgrade.adoc[Upgrade] documentation.
+* Customers may https://tigergraph.zendesk.com/hc/en-us/[open a support ticket] for assistance.
+* Preview releases are not recommended for production use.
+
+=== General Availability (GA) Release
+
+*Documentation:* The GA release includes:
+
+* Finalized documentation branch
+* GA Release Notes
+* Verified xref:tigergraph-server:installation:upgrade.adoc[Upgrade] documentation
+
+*Notification:*
+
+* GA releases are formally announced.
+* Customer Success proactively distributes release notes and lifecycle details.
+
+*Upgrade Support:*
+
+* Customers upgrading to GA should follow the Upgrade documentation.
+* Support tickets may be opened for upgrade assistance.
+
+=== Maintenance Releases (Post-GA)
+
+A Maintenance Release provides bug fixes and security updates for a GA feature version.
+
+*Documentation:*
+
+* Maintenance releases do not create a new documentation branch.
+* Information specific to the maintenance release is incorporated into the existing feature version documentation.
+
+*Notification:*
+
+* Announced via Release Notes.
+* Customer Success informs customers who are on that feature version or have express interest in upgrading to that version.
+
+*Upgrade Support:*
+
+* Upgrade instructions are provided in the Upgrade section.
+* For critical fixes, Customer Success may proactively recommend upgrading.
+
+=== Patches
+
+A Patch is a targeted update addressing a critical defect or security vulnerability outside the regular maintenance cycle.
+
+*Characteristics:*
+
+* Limited scope
+* May apply only to specific environments or configurations
+* Released as needed
+
+*Notification:*
+
+* Affected customers are contacted directly.
+* A remediation plan is communicated as soon as it is developed.
+
+*Application:*
+
+* Once a patch is certified, customers receive instructions for downloading and applying the patch.
+* In Managed Cloud deployments, TigerGraph may apply the patch directly.
+
+*Lifecycle:*
+
+* Patches are incorporated into subsequent maintenance or feature releases.
+* Interim patches may be superseded by a more comprehensive fix in later releases.
+
+== Managed Cloud Service
+
+For customers using a cloud service managed by TigerGraph, including TigerGraph Savanna, TigerGraph cloud engineers may apply upgrades for backward compatible updates or patches transparently during a agreed-upon maintenance window.
+
+For releases with non-backward compatible changes, TigerGraph Customer Success team will contact customers to discuss their options and to coordinate upgrade planning.
+
+.Release Types and Deliverables
+[cols="1,1,1,1,2,2",options="header"]
+|===
+| Release Type
+| Identifier / Version
+| Scope
+| Production Use
+| Vendor Commitments
+| Customer Actions
+
+| Preview (Pre-GA)
+| `X.Y.Z-preN`
+| Feature version introduction (pre-GA)
+| Not recommended
+|
+* Publish dedicated documentation branch
+* Publish Preview release notes
+* Provide upgrade guidance
+* Announce release on documentation site
+* Customer Success shares release notes
+|
+* Evaluate new capabilities
+* Review release notes and upgrade guidance
+* Provide feedback as needed
+* Avoid production deployment
+
+| GA (General Availability)
+| `X.Y.Z`
+| First production-ready release of a feature version
+| Recommended
+|
+* Finalize documentation branch
+* Publish GA release notes
+* Validate and document upgrade paths
+* Announce GA release
+* Provide full maintenance and support
+|
+* Review GA release notes
+* Follow documented upgrade procedures
+* Open support tickets for upgrade assistance as needed
+
+| Maintenance Release (Post-GA)
+| `X.Y.(Z+1)`
+| Bug fixes and security updates within a GA feature version
+| Recommended
+|
+* Publish maintenance release notes
+* Update existing documentation branch as needed
+* Provide bug and security fixes during maintenance period
+* Proactively notify customers of high-severity issues when appropriate
+|
+* Review maintenance release notes
+* Apply updates as appropriate for stability and security
+* Follow upgrade documentation
+* Open support tickets for assistance if required
+
+| Patch (Out-of-Band Fix)
+| Patch identifier varies
+| Targeted fix for critical defect or security vulnerability
+| Recommended for affected systems
+|
+* Notify affected customers directly
+* Provide remediation plan and instructions
+* Deliver certified patch build
+* Incorporate fix into future maintenance or feature releases
+|
+* Review notification and remediation guidance
+* Apply patch promptly if affected
+* Coordinate with support or Cloud Engineering as needed
+|===
+
+
