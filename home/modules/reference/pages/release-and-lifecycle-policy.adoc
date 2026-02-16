@@ -178,4 +178,3 @@ For customers who subscribe to TigerGraph’s Managed Cloud Service, our Cloud E
 For releases with non-backward compatible changes, the TigerGraph Customer Success team will reach out to customers to discuss opt-out or opt-in choices.
 
 Should the customer choose to opt-in, our Cloud Engineering team will coordinate and perform the upgrade for the customer.
-
