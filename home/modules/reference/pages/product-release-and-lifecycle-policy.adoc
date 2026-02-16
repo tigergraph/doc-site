@@ -11,7 +11,7 @@ Our product testing and versioning are designed to ensure stable, reliable softw
 Within a product generation, TigerGraph follows a single, forward-moving version progression.
 For example, moving from 4.1 to 4.2 to 4.3, each new feature version builds upon the previous one and includes cumulative capabilities and improvements.
 
-Customers may upgrade to later versions using documented TigerGraph upgrade procedures.
+Customers may upgrade from an early to a later version using documented TigerGraph upgrade procedures.
 
 == Release Lifecycle Options
 
@@ -52,9 +52,9 @@ During the support-only period, TigerGraph provides technical assistance and tro
 
 A feature version goes through the following lifecycle stages, with 3 types of releases:
 
-. Preview releases
+. Preview Releases
 . GA Release
-. Maintenance releases
+. Maintenance Releases
 
 == Release Numbering and Terminology
 
@@ -62,7 +62,7 @@ TigerGraph version numbers generally follows https://semver.org/[semantic versio
 
  `<generation>.<feature>.<maintenance>`
 
-, with an optional suffix.
+Certain releases add an additional suffix to indicate the release type.
 
 [#generation]
 *Generation*
@@ -79,7 +79,7 @@ We strive for backward compatibility so that existing applications built on the 
 
 *Preview Release of a Feature Version*
 
-A _Preview Release_ is a pre-GA release available for customer evaluatioh.
+A _Preview Release_ is a pre-GA release available for customer evaluation.
 It is generally feature-complete.
 Preview releases are not recommended for production deployment.
 
@@ -97,14 +97,14 @@ It marks the beginning of the maintenance period for that feature version.
 *Maintenance Release/Update*
 
 A _Maintenance Release_ addresses bugs and security issues.
-It does not introduce new functionality except when necessary to resolve critica problems.
+It does not introduce new functionality except when necessary to resolve critical problems.
 
 Each feature version receives its own set of maintenance releases following its GA release.
 The release tempo varies, depending on the number and severity of issues that have been detected and addressed.
 
-* The maintenance releases of a feature version have `<maintenance>` = 2, 3, ... as needed.
+* The Maintenance Releases of a feature version have `<maintenance>` = 2, 3, ... as needed.
 
-The following table summarized the release types and their naming.
+The following table summarizes the release types and their naming.
 
 .TigerGraph Release Types and Numbering
 [width="100%",cols="<1,<3,<2",options="header",]
@@ -178,4 +178,3 @@ For customers who subscribe to TigerGraph’s Managed Cloud Service, our Cloud E
 For releases with non-backward compatible changes, the TigerGraph Customer Success team will reach out to customers to discuss opt-out or opt-in choices.
 
 Should the customer choose to opt-in, our Cloud Engineering team will coordinate and perform the upgrade for the customer.
-
