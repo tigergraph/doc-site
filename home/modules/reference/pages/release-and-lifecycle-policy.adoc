@@ -1,6 +1,6 @@
 = TigerGraph Product Release and Lifecycle Policy
 :description:This page explains TigerGraph's release and lifecycle policies.
-:page-aliases: 3.10@tigergraph-server:intro:release-process.adoc
+//:page-aliases: 3.10@tigergraph-server:intro:release-process.adoc
 //:page-aliases: tigergraph-server:intro:release-process.adoc
 
 Updated February 16, 2026
