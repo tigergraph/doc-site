@@ -99,8 +99,11 @@ It marks the beginning of the maintenance period for that feature version.
 A _Maintenance Release_ addresses bugs and security issues.
 It does not introduce new functionality except when necessary to resolve critical problems.
 
-Each feature version receives its own set of maintenance releases following its GA release.
+Each feature version receives its own set of cumulative maintenance releases following its GA release.
 The release tempo varies, depending on the number and severity of issues that have been detected and addressed.
+
+NOTE: For each feature version, TigerGraph recommends upgrading to the most recent maintenance release, which incorporates all prior bug fixes and security updates and reflects the most validated state of that version.
+
 
 * The Maintenance Releases of a feature version have `<maintenance>` = 2, 3, ... as needed.
 
@@ -126,55 +129,173 @@ X.Y.0-pre2, ...
 X.Y.3, ...
 |===
 
-== Release Deliverables
-
-=== Feature Version
-
-*Documentation:*
-When a new feature version is introduced as a Preview relesase, the following documentation deliverables accompany the software release:
-
-* A new branch in the TigerGraph online documentation for that product version (found at https://docs.tigergraph.com/https://docs.tigergraph.com/[docs.tigergraph.com])
-* xref:tigergraph-server:release-notes:index.adoc[] section included in the TigerGraph online documentation.
-* xref:tigergraph-server:installation:upgrade.adoc[Upgrade] section included in the TigerGraph online documentation.
-
-*Notification:* Feature releases will be announced on our documentation website.
-TigerGraph’s Customer Success team will also proactively share the release notes with existing customers.
-
-*Upgrade Support:* Customers using an older version should refer to the upgrade section of the online documentation and should https://tigergraph.zendesk.com/hc/en-us/[open a support ticket] for assistance.
-
-=== Maintenance Release
-
-A Maintenance release provides fixes and improvements for a particular feature version.
-The release cycle varies, depending on the number and severity of issues that have been detected and addressed.
-
-*Documentation:*
-We do not provide a new documentation branch for maintenance releases. Instead, we may update the corresponding feature version’s documents.
-
-*Notification:* Maintenance releases are announced on our documentation website in a subsection of the Release Notes.
-TigerGraph’s Customer Success team will proactively share the release notes with existing customers.
-
-*Upgrade Support:* Users should refer to the xref:installation:upgrade.adoc[Upgrade] section of the documentation. Depending on the urgency of the patch, our Customer Success team may reach out to customers to discuss upgrading.
-
-=== Patches
-
-A patch is a limited scope update to a portion of the full product, to quickly address security vulnerabilities or critical functional issues.
-Patches are released as the situation demands.
-They could be universal, applicable to all users, or case-specific, applicable to systems deployed in a certain environment or configuration.
-
-*Notification:* As a patch is being developed, the Customer Success team will reach out to the affected customers to inform them of the discovered issue and the immediate remediation plan while the patch is under development.
-
-*Application of the patch:* After the patch is developed and has gone through the release certification process, the technical support team will email customers instructions on downloading and applying the patch.
-
-*Post-release:* The patch will be merged in to future maintenance and feature releases. Given the additional time before those releases, the patch may be replaced with an improved solution to the problem.
+== Release Deliverables and Upgrade Support
 
 === Support
 
-Customers who need assistance can open a support ticket at https://tigergraph.zendesk.com/hc/en-us/[TigerGraph's ZenDesk Portal].
+* Paid customers may open support tickets at https://tigergraph.zendesk.com/hc/en-us/[TigerGraph's ZenDesk Portal].
+* https://www.tigergraph.com/tigergraph-product-support-policy/[TigerGraph Support Policy]
+
+
+=== Preview Release (Pre-GA)
+
+*Documentation:*
+When a feature version is introduced as a Preview release (`-preN`), the following documentation deliverables accompany the release:
+
+* A dedicated documentation branch for the feature version (at https://docs.tigergraph.com)
+* Release Notes for the Preview version
+* Upgrade guidance for customers evaluating the Preview release
+
+Note: Preview documentation may be updated as the release evolves prior to GA.
+
+*Notification:*
+
+* Preview releases are announced on the documentation website.
+* TigerGraph Customer Success proactively sharse the release notes with existing customers who have expressed interest in the Preview.
+
+*Upgrade Support:*
+
+* Upgrade procedures are documented in the xref:tigergraph-server:installation:upgrade.adoc[Upgrade] documentation.
+* Customers may https://tigergraph.zendesk.com/hc/en-us/[open a support ticket] for assistance.
+* Preview releases are not recommended for production use.
+
+=== General Availability (GA) Release
+
+*Documentation:* The GA release includes:
+
+* Finalized documentation branch
+* GA Release Notes
+* Verified xref:tigergraph-server:installation:upgrade.adoc[Upgrade] documentation
+
+*Notification:*
+
+* GA releases are formally announced.
+* Customer Success proactively distributes release notes and lifecycle details.
+
+*Upgrade Support:*
+
+* Customers upgrading to GA should follow the Upgrade documentation.
+* Support tickets may be opened for upgrade assistance.
+
+=== Maintenance Releases (Post-GA)
+
+A Maintenance Release provides bug fixes and security updates for a GA feature version.
+
+*Documentation:*
+
+* Maintenance releases do not create a new documentation branch.
+* Information specific to the maintenance release is incorporated into the existing feature version documentation.
+
+*Notification:*
+
+* Announced via Release Notes.
+* Customer Success informs customers who are on that feature version or have express interest in upgrading to that version.
+
+*Upgrade Support:*
+
+* Upgrade instructions are provided in the Upgrade section.
+* For critical fixes, Customer Success may proactively recommend upgrading.
+
+=== Patches
+
+A Patch is a targeted update addressing a critical defect or security vulnerability outside the regular maintenance cycle.
+
+*Characteristics:*
+
+* Limited scope
+* May apply only to specific environments or configurations
+* Released as needed
+
+*Notification:*
+
+* Affected customers are contacted directly.
+* A remediation plan is communicated as soon as it is developed.
+
+*Application:*
+
+* Once a patch is certified, customers receive instructions for downloading and applying the patch.
+* In Managed Cloud deployments, TigerGraph may apply the patch directly.
+
+*Lifecycle:*
+
+* Patches are incorporated into subsequent maintenance or feature releases.
+* Interim patches may be superseded by a more comprehensive fix in later releases.
 
 == Managed Cloud Service
 
-For customers who subscribe to TigerGraph’s Managed Cloud Service, our Cloud Engineering team will apply upgrades for backward compatible changes or One-Off patches transparently when the release is available or during the customer-notified system maintenance window (in situations requiring system downtime).
+For customers using a cloud service managed by TigerGraph, including TigerGraph Savanna, TigerGraph cloud engineers may apply upgrades for backward compatible updates or patches transparently during a agreed-upon maintenance window.
 
-For releases with non-backward compatible changes, the TigerGraph Customer Success team will reach out to customers to discuss opt-out or opt-in choices.
+For releases with non-backward compatible changes, TigerGraph Customer Success team will contact customers to discuss their options and to coordinate upgrade planning.
 
-Should the customer choose to opt-in, our Cloud Engineering team will coordinate and perform the upgrade for the customer.
+.Release Types and Deliverables
+[cols="1,1,1,1,2,2",options="header"]
+|===
+| Release Type
+| Identifier / Version
+| Scope
+| Production Use
+| Vendor Commitments
+| Customer Actions
+
+| Preview (Pre-GA)
+| `X.Y.Z-preN`
+| Feature version introduction (pre-GA)
+| Not recommended
+|
+* Publish dedicated documentation branch
+* Publish Preview release notes
+* Provide upgrade guidance
+* Announce release on documentation site
+* Customer Success shares release notes
+|
+* Evaluate new capabilities
+* Review release notes and upgrade guidance
+* Provide feedback as needed
+* Avoid production deployment
+
+| GA (General Availability)
+| `X.Y.Z`
+| First production-ready release of a feature version
+| Recommended
+|
+* Finalize documentation branch
+* Publish GA release notes
+* Validate and document upgrade paths
+* Announce GA release
+* Provide full maintenance and support
+|
+* Review GA release notes
+* Follow documented upgrade procedures
+* Open support tickets for upgrade assistance as needed
+
+| Maintenance Release (Post-GA)
+| `X.Y.(Z+1)`
+| Bug fixes and security updates within a GA feature version
+| Recommended
+|
+* Publish maintenance release notes
+* Update existing documentation branch as needed
+* Provide bug and security fixes during maintenance period
+* Proactively notify customers of high-severity issues when appropriate
+|
+* Review maintenance release notes
+* Apply updates as appropriate for stability and security
+* Follow upgrade documentation
+* Open support tickets for assistance if required
+
+| Patch (Out-of-Band Fix)
+| Patch identifier varies
+| Targeted fix for critical defect or security vulnerability
+| Recommended for affected systems
+|
+* Notify affected customers directly
+* Provide remediation plan and instructions
+* Deliver certified patch build
+* Incorporate fix into future maintenance or feature releases
+|
+* Review notification and remediation guidance
+* Apply patch promptly if affected
+* Coordinate with support or Cloud Engineering as needed
+|===
+
+
