@@ -105,7 +105,7 @@ The release tempo varies, depending on the number and severity of issues that ha
 NOTE: For each feature version, TigerGraph recommends upgrading to the most recent maintenance release, which incorporates all prior bug fixes and security updates and reflects the most validated state of that version.
 
 
-* The Maintenance Releases of a feature version set `<maintenance>` = 2, 3, ... as needed, e.g. `4.3.2` followed by `4.3.3`.
+* The Maintenance Releases of a feature version use `<maintenance>` = 2, 3, ... as needed, e.g. `4.3.2` followed by `4.3.3`.
 
 The following table summarizes the release types and their naming.
 
