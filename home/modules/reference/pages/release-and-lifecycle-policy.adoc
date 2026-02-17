@@ -1,5 +1,6 @@
 = TigerGraph Product Release and Lifecycle Policy
 :description:This page explains TigerGraph's release and lifecycle policies.
+:page-aliases: 3.10@tigergraph-server:intro:release-process.adoc
 
 Updated February 16, 2026
 
@@ -227,7 +228,7 @@ For customers using a cloud service managed by TigerGraph, including TigerGraph 
 
 For releases with non-backward compatible changes, TigerGraph Customer Success team will contact customers to discuss their options and to coordinate upgrade planning.
 
-=== Summary: Release Types and Deliverables
+== Summary: Release Types and Deliverables
 
 .Release Types and Deliverables
 [cols="1,1,1,1,2,2",options="header"]
