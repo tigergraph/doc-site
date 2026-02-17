@@ -245,7 +245,7 @@ For releases with non-backward compatible changes, TigerGraph Customer Success t
 | Customer Actions
 
 | Preview (Pre-GA)
-| `X.Y.Z-preN`
+| `X.Y.0-preN`
 | Feature version introduction (pre-GA)
 | Not recommended
 |
@@ -261,7 +261,7 @@ For releases with non-backward compatible changes, TigerGraph Customer Success t
 * Avoid production deployment
 
 | GA (General Availability)
-| `X.Y.Z`
+| `X.Y.1`
 | First production-ready release of a feature version
 | Recommended
 |
@@ -276,7 +276,7 @@ For releases with non-backward compatible changes, TigerGraph Customer Success t
 * Open support tickets for upgrade assistance as needed
 
 | Maintenance Release (Post-GA)
-| `X.Y.(Z+1)`
+| `X.Y.Z`
 | Bug fixes and security updates within a GA feature version
 | Recommended
 |
