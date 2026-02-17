@@ -229,6 +229,7 @@ For releases with non-backward compatible changes, TigerGraph Customer Success t
 
 === Summary: Release Types and Deliverables
 
+.Release Types and Deliverables
 [cols="1,1,1,1,2,2",options="header"]
 |===
 | Release Type
