@@ -73,7 +73,7 @@ Upgrading to a new generation may require some migration effort.
 
 *Feature Version*
 
-A _feature version_ represents a set of product features.
+A _feature version_ is distinguished by its unique set of product features.
 When a new feature version is released, `<feature>` is incremented.
 We strive for backward compatibility so that existing applications built on the previous feature version will continue to work without modification.
 
@@ -105,7 +105,7 @@ The release tempo varies, depending on the number and severity of issues that ha
 NOTE: For each feature version, TigerGraph recommends upgrading to the most recent maintenance release, which incorporates all prior bug fixes and security updates and reflects the most validated state of that version.
 
 
-* The Maintenance Releases of a feature version have `<maintenance>` = 2, 3, ... as needed.
+* The Maintenance Releases of a feature version use `<maintenance>` = 2, 3, ... as needed, e.g. `4.3.2` followed by `4.3.3`.
 
 The following table summarizes the release types and their naming.
 
@@ -151,7 +151,7 @@ Note: Preview documentation may be updated as the release evolves prior to GA.
 *Notification:*
 
 * Preview releases are announced on the documentation website.
-* TigerGraph Customer Success proactively sharse the release notes with existing customers who have expressed interest in the Preview.
+* TigerGraph Customer Success proactively shares the release notes with existing customers who have expressed interest in the Preview.
 
 *Upgrade Support:*
 
@@ -226,6 +226,8 @@ A Patch is a targeted update addressing a critical defect or security vulnerabil
 For customers using a cloud service managed by TigerGraph, including TigerGraph Savanna, TigerGraph cloud engineers may apply upgrades for backward compatible updates or patches transparently during a agreed-upon maintenance window.
 
 For releases with non-backward compatible changes, TigerGraph Customer Success team will contact customers to discuss their options and to coordinate upgrade planning.
+
+=== Summary: Release Types and Deliverables
 
 .Release Types and Deliverables
 [cols="1,1,1,1,2,2",options="header"]
