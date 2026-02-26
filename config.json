@@ -11,12 +11,24 @@
           "insights"
         ],
         "version": [
-          "3.6",
-          "3.9",
           "3.10",
           "3.11",
           "4.1",
           "4.2"
+        ]
+      },
+      "extra_attributes": {
+        "latest": true
+      }
+    },
+    {
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "variables": {
+        "component": [
+          "home"
+        ],
+        "version": [
+          "master"
         ]
       },
       "extra_attributes": {
