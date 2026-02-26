@@ -22,18 +22,16 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
       "variables": {
         "component": [
           "home"
-        ],
-        "version": [
-          "master"
         ]
       },
       "extra_attributes": {
         "latest": true
-      }
+      },
+      "selectors_key": "versionless"
     },
     {
       "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
