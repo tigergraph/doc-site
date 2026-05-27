@@ -2,7 +2,7 @@
   "index_name": "tgdocs",
   "start_urls": [
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "tigergraph-server",
@@ -22,7 +22,7 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/",
       "variables": {
         "component": [
           "home"
@@ -34,7 +34,7 @@
       "selectors_key": "versionless"
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "graphql"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "graph-ml"
@@ -62,7 +62,7 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "pytigergraph"
@@ -78,7 +78,7 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/(?P<version>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/(?P<version>.*?)/",
       "variables": {
         "component": [
           "ml-workbench"
@@ -92,7 +92,7 @@
       }
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/",
       "variables": {
         "component": [
           "cloud"
@@ -104,7 +104,7 @@
       "selectors_key": "versionless"
     },
     {
-      "url": "https://docs.tigergraph.com/(?P<component>.*?)/",
+      "url": "https://www.tigergraph.com/docs/(?P<component>.*?)/",
       "variables": {
         "component": [
           "savanna"
@@ -117,7 +117,7 @@
     }
   ],
   "sitemap_urls": [
-    "https://docs.tigergraph.com/sitemap.xml"
+    "https://www.tigergraph.com/docs/sitemap.xml"
   ],
   "scrape_start_urls": true,
   "stop_urls": [],
