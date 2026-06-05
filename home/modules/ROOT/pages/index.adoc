@@ -76,8 +76,8 @@ Recent News and Releases
 [NOTE]
 ====
 
+* xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.3] was released on June. 5, 2026.
 * xref:4.1@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.1.4] was released on May. 6, 2026.
-* xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.2] was released on September. 30, 2025.
 * xref:3.10@tigergraph-server:release-notes:index.adoc[TigerGraph DB 3.10.4] was released on July. 10, 2025.
 * xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.0 Preview] was released on Apr. 4, 2025.
 * xref:4.2@tigergraph-server:release-notes:index.adoc[TigerGraph DB 4.2.0 Alpha] was released on Mar. 4, 2025.
