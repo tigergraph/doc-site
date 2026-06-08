@@ -28,6 +28,10 @@ Those issues are listed on the Release Notes page.
 | Update your applications that consume xref:4.2@tigergraph-server:system-management:change-data-capture/cdc-message-example.adoc#_message_examples[CDC messages] to handle the new format for tuple values.
 
 | 4.2.0
+| The response field returned when submitting an xref:4.2@gsql-ref:querying:query-operations.adoc#_detached_mode_async_option[asynchronous query] was changed from `request_id` to `requestid` to align with query management APIs such as `/query_status`, `/query_result`, and query cancellation endpoints.
+| Update scripts, applications, log parsers, and automation that extract the asynchronous query identifier from API responses to use `requestid` instead of `request_id`.
+
+| 4.2.0
 | `SelectVertex()` no longer allows relative filepaths.
 | Use absolute filepaths in `SelectVertex()` calls.
 
