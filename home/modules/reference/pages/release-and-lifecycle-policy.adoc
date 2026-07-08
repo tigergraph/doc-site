@@ -246,7 +246,7 @@ For releases with non-backward compatible changes, TigerGraph Customer Success t
 | Customer Actions
 
 | Preview (Pre-GA)
-| `X.Y.0-preN`
+| `X.Y.0-rc1, X.Y.0-rc2, …`
 | Feature version introduction (pre-GA)
 | Not recommended
 |
