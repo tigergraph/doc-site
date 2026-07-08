@@ -88,7 +88,7 @@ A _Preview Release_ is a pre-GA release available for customer evaluation.
 It is generally feature-complete.
 Preview releases are not recommended for production deployment.
 
-* A Preview release of a new feature version has `<maintenance>` = 0 and a suffix `-preN` to emphasize that this is a Preview, e.g. `4.3.0-pre1`.
+* A Preview release of a new feature version has <maintenance> = 0 and may use a release candidate suffix such as -rc1, -rc2, etc., e.g. 4.3.0-rc1.
 
 *GA (General Availability) Release*
 
@@ -121,8 +121,8 @@ The following table summarizes the release types and their naming.
 
 | Preview
 | Feature complete; seeking customer feedback and field testing
-| X.Y.0-pre1, +
-X.Y.0-pre2, ...
+| X.Y.0-rc1, +
+X.Y.0-rc2, ...
 
 | GA
 | Production-ready; features frozen; refined after customer feedback and field testing
