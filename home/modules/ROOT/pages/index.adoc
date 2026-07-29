@@ -65,7 +65,8 @@ image:tg_suites-homecard.png[alt=TigerGraphSuite,width=74,height=74]
 
 A family of browser-based applications for TigerGraph Server, serving the needs of developers, analytics, data scientists, and IT.
 
-xref:gui:intro:index.adoc[Admin Portal and GraphStudio] |
+xref:gui:intro:index.adoc[GraphStudio] |
+xref:gui:intro:index.adoc[Admin Portal] |
 xref:insights:intro:index.adoc[Insights] |
 xref:tigergraph-server:gsql-shell:index.adoc[GSQL Web Shell]
 |===
