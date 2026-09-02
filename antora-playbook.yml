@@ -68,6 +68,12 @@ ui:
     url: https://github.com/tigergraph/antora-ui/blob/main/build/ui-bundle.zip?raw=true
     #url: /Users/victorlee/Documents/GitHub1/Docs/antora-ui/build/ui-bundle.zip?raw=true
     snapshot: true
+
+antora:
+  extensions:
+    # Publish a Markdown twin next to each HTML page for Copy page / View as Markdown.
+    - ./libs/markdown-for-llm.js
+
 asciidoc:
   attributes:
     page-component-order: '!home, tigergraph-server, gsql-ref, savanna, gui, insights, graph-ml, pytigergraph, graphql, cloud, ml-workbench'

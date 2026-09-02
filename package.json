@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/llm-utils-test.js",
     "build": "antora generate --fetch antora-playbook.yml",
     "dev": "gulp",
     "serve": "http-server build/site -c-1"
@@ -17,6 +17,7 @@
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-connect": "^5.7.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "node-html-markdown": "^1.3.0"
   }
 }
