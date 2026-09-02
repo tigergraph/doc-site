@@ -15,6 +15,11 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
 
+[[headers]]
+  for = "/**/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+
 # DOC-2646: Redirect gsql-endpoints from gsql-ref to tigergraph-server
 [[redirects]]
 from = "/gsql-ref/4.2/api/*"
