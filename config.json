@@ -114,7 +114,7 @@
       "extra_attributes": {
         "latest": true
       },
-      "selectors_key": "versionless"
+      "selectors_key": "savanna"
     }
   ],
   "sitemap_urls": [
@@ -138,13 +138,29 @@
     "versionless": {
       "lvl0": {
         "global": true,
-        "selector": ".nav-panel-explore .context .title"
+        "selector": ".nav-panel-explore .context .title, .nav-menu > h3.title"
       },
-      "lvl1": ".doc > h1.page",
+      "lvl1": ".doc h1.page",
       "lvl2": ".doc .sect1 > h2:first-child",
       "lvl3": ".doc .sect2 > h3:first-child",
       "lvl4": ".doc .sect3 > h4:first-child",
       "lvl5": ".doc .sidebarblock > .content > .title",
+      "text": ".doc p, .doc dt, .doc td.content, .doc th.tableblock"
+    },
+    "savanna": {
+      "lvl0": {
+        "global": true,
+        "selector": ".nav-menu > h3.title"
+      },
+      "lvl1": {
+        "global": true,
+        "selector": ".nav-tabs .nav-tab.is-active"
+      },
+      "lvl2": ".doc h1.page",
+      "lvl3": ".doc .sect1 > h2:first-child",
+      "lvl4": ".doc .sect2 > h3:first-child",
+      "lvl5": ".doc .sect3 > h4:first-child",
+      "lvl6": ".doc .sidebarblock > .content > .title",
       "text": ".doc p, .doc dt, .doc td.content, .doc th.tableblock"
     }
   },
