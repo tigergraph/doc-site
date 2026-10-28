@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/llm-utils-test.js",
-    "build": "antora generate --fetch antora-playbook.yml",
+    "build": "node diagnose-build.js",
+    "build:antora": "antora generate --fetch antora-playbook.yml",
     "dev": "gulp",
     "serve": "http-server build/site -c-1"
   },
