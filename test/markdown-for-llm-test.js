@@ -65,6 +65,21 @@ check('does not emit design-schema.md', markdown.includes('design-schema.md'), f
 check('does not leave the relative docs link', markdown.includes('](../graph-development/design-schema/)'), false)
 check('keeps the original sentence', markdown.includes('See [Design a schema]'), true)
 
+const anchored = markdownify(page({
+  contents: Buffer.from('<p><a href="#_run_global_schema_change_job">Run the schema change job</a> and <a href="#_side_effects_of_schema_change">queries and loading jobs for expected side effects</a>.</p>'),
+}), resolver)
+check(
+  'same-page heading link points at this markdown file',
+  anchored.includes('[Run the schema change job](https://www.tigergraph.com/docs/savanna/main/overview/index.md#_run_global_schema_change_job)'),
+  true
+)
+check(
+  'second same-page heading link points at this markdown file',
+  anchored.includes('[queries and loading jobs for expected side effects](https://www.tigergraph.com/docs/savanna/main/overview/index.md#_side_effects_of_schema_change)'),
+  true
+)
+check('does not leave a bare encoded fragment', anchored.includes('](#%5F'), false)
+
 const localResolver = createLinkResolver({ pages })
 const local = markdownify(page(), localResolver)
 check('local build omits canonical_url', local.includes('canonical_url:'), false)
@@ -87,4 +102,4 @@ if (failed) {
   console.error(failed + ' failed')
   process.exit(1)
 }
-console.log(required.length + 8 + ' passed')
+console.log(required.length + 11 + ' passed')

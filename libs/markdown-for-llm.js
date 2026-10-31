@@ -116,8 +116,13 @@ function markdownify (page, resolver) {
   const html = prepareHtml(page.contents ? page.contents.toString() : '')
   let markdown = nhm.translate(html)
   const pageUrl = page.pub && page.pub.url
-  if (resolver) markdown = resolver.rewrite(markdown, pageUrl)
-  else markdown = rewriteInternalLinks(markdown)
+  if (resolver) {
+    let previous
+    for (let pass = 0; pass < 4 && markdown !== previous; pass++) {
+      previous = markdown
+      markdown = resolver.rewrite(markdown, pageUrl)
+    }
+  } else markdown = rewriteInternalLinks(markdown)
 
   const urls = resolver && pageUrl ? resolver.urlsFor(pageUrl) : {}
   const htmlUrl = (urls && urls.canonicalUrl) || pageUrl

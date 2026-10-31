@@ -13,6 +13,14 @@ const PAGES = [
   '/savanna/main/graph-development/design-schema/',
   '/savanna/main/get-started/connect-agent-mcp',
   '/gsql-ref/4.3/ddl-and-loading/defining-a-graph-schema',
+  '/gsql-ref/4.3/ddl-and-loading/modifying-a-graph-schema',
+  '/gsql-ref/4.3/ddl-and-loading/creating-a-loading-job',
+  '/gsql-ref/4.3/ddl-and-loading/functions/token/',
+  '/gsql-ref/4.3/ddl-and-loading/functions/token/gsql_substring',
+  '/insights/4.3/widgets/graph-widget',
+  '/gsql-ref/3.10/querying/accumulators',
+  '/gsql-ref/3.10/ddl-and-loading/defining-a-graph-schema',
+  '/gsql-ref/3.10/ddl-and-loading/modifying-a-graph-schema',
   '/gsql-ref/4.2/ddl-and-loading/defining-a-graph-schema',
   '/gsql-ref/4.3/appendix/',
   '/gui/4.3/graphstudio/design-schema/',
@@ -82,6 +90,26 @@ const rewriteCases = [
     'same-page anchor',
     '[Auth](#authentication)',
     '[Auth](https://www.tigergraph.com/docs/savanna/main/overview/index.md#authentication)',
+  ],
+  [
+    'encoded same-page anchor points at the markdown file',
+    '[Run the schema change job](#%5Frun%5Fglobal%5Fschema%5Fchange%5Fjob)',
+    '[Run the schema change job](https://www.tigergraph.com/docs/gsql-ref/4.3/ddl-and-loading/modifying-a-graph-schema.md#_run_global_schema_change_job)',
+  ],
+  [
+    'encoded cross-page anchor points at the markdown file',
+    '[Creating a Loading Job page](creating-a-loading-job#%5Fdrop%5Fjob%5Fstatement)',
+    '[Creating a Loading Job page](https://www.tigergraph.com/docs/gsql-ref/4.3/ddl-and-loading/creating-a-loading-job.md#_drop_job_statement)',
+  ],
+  [
+    'encoded page name points at the markdown file',
+    '[gsql\\_substring(\\_str\\_, \\_beginIndex\\_ \\[, \\_length\\_\\])](gsql%5Fsubstring)',
+    '[gsql\\_substring(\\_str\\_, \\_beginIndex\\_ \\[, \\_length\\_\\])](https://www.tigergraph.com/docs/gsql-ref/4.3/ddl-and-loading/functions/token/gsql_substring.md)',
+  ],
+  [
+    'escaped label on any page still points at that markdown file',
+    '[\\[graph-algorithms\\]](#graph-algorithms)',
+    '[\\[graph-algorithms\\]](https://www.tigergraph.com/docs/insights/4.3/widgets/graph-widget.md#graph-algorithms)',
   ],
   [
     'external site',
@@ -208,7 +236,13 @@ const rewriteCases = [
 for (const [name, input, expected] of rewriteCases) {
   const pageUrl = name === 'encoded image filename' || name === 'pdf download' || name === 'zip download keeps the query' || name === 'csv download'
     ? '/gsql-ref/4.3/appendix/'
-    : fromOverview
+    : name === 'encoded same-page anchor points at the markdown file' || name === 'encoded cross-page anchor points at the markdown file'
+      ? '/gsql-ref/4.3/ddl-and-loading/modifying-a-graph-schema'
+      : name === 'encoded page name points at the markdown file'
+        ? '/gsql-ref/4.3/ddl-and-loading/functions/token/'
+        : name === 'escaped label on any page still points at that markdown file'
+          ? '/insights/4.3/widgets/graph-widget'
+          : fromOverview
   check(name, resolver.rewrite(input, pageUrl), expected)
 }
 
@@ -231,6 +265,23 @@ const mixedExpected = [
   'Use `../graph-development/design-schema/` in examples.',
 ].join('\n')
 check('prose, fences, and inline code', resolver.rewrite(mixed, fromOverview), mixedExpected)
+check(
+  'unclosed code marker does not hide later links',
+  resolver.rewrite('use `` or `ANY` then [Auth](#%5Fauthentication)', fromOverview),
+  'use `` or `ANY` then [Auth](https://www.tigergraph.com/docs/savanna/main/overview/index.md#_authentication)'
+)
+
+const shifted = 'Section "\\`SELECT\\` Statement"), the `ACCUM` clause. See [ArrayAccum](#%5Farrayaccum) below.'
+check(
+  'escaped backticks do not hide a later link',
+  resolver.rewrite(shifted, '/gsql-ref/3.10/querying/accumulators'),
+  'Section "\\`SELECT\\` Statement"), the `ACCUM` clause. See [ArrayAccum](https://www.tigergraph.com/docs/gsql-ref/3.10/querying/accumulators.md#_arrayaccum) below.'
+)
+check(
+  'link wrapped in code still points at the markdown file',
+  resolver.rewrite('`[ADD VERTEX/EDGE](modifying-a-graph-schema#%5Fadd%5Fvertex%5Fedge)`', '/gsql-ref/3.10/ddl-and-loading/defining-a-graph-schema'),
+  '`[ADD VERTEX/EDGE](https://www.tigergraph.com/docs/gsql-ref/3.10/ddl-and-loading/modifying-a-graph-schema.md#_add_vertex_edge)`'
+)
 check('idempotent', resolver.rewrite(resolver.rewrite(mixed, fromOverview), fromOverview), mixedExpected)
 
 const urls = resolver.urlsFor('/savanna/main/overview/')
@@ -263,4 +314,4 @@ if (failed) {
   console.error(failed + ' failed')
   process.exit(1)
 }
-console.log(urlCases.length + 1 + rewriteCases.length + 12 + ' passed')
+console.log(urlCases.length + 1 + rewriteCases.length + 15 + ' passed')
