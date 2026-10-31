@@ -281,6 +281,9 @@ function createLinkResolver ({ siteUrl, pages = [], aliases = [] } = {}) {
     rewrite (markdown, pageHtmlUrl) {
       return rewriteOutsideCode(String(markdown || ''), (segment) => rewriteSegment(segment, pageHtmlUrl))
     },
+    resolveLink (raw, pageHtmlUrl) {
+      return resolve(raw, pageHtmlUrl || '/')
+    },
     urlsFor (pageHtmlUrl) {
       if (!site.public || !pageHtmlUrl) return {}
       const htmlPath = normalizePath(pageHtmlUrl).split(/[?#]/)[0]
