@@ -135,6 +135,11 @@ const text = buildLlmsTxt({ playbook, contentCatalog, navigationCatalog, resolve
 const required = [
   '# TigerGraph Documentation',
   '> TigerGraph is a graph database for connected data. It stores information as vertices and edges',
+  '## Downloads',
+  '- [Enterprise Edition](https://dl.tigergraph.com/?tab=enterprise)',
+  '- [Community Edition](https://dl.tigergraph.com/?tab=community)',
+  '- [Tools](https://dl.tigergraph.com/?tab=tools)',
+  '- [Solution](https://dl.tigergraph.com/?tab=solution)',
   '- [HTML site](https://www.tigergraph.com/docs)',
   '## Home',
   '- [Welcome](https://www.tigergraph.com/docs/home/index.md)',
@@ -154,6 +159,7 @@ for (const snippet of required) {
   check('includes ' + snippet, text.includes(snippet), true)
 }
 
+const downloadsAt = text.indexOf('## Downloads')
 const homeAt = text.indexOf('## Home')
 const serverAt = text.indexOf('## TigerGraph Server')
 const gsqlAt = text.indexOf('## GSQL Language Reference (4.3)')
@@ -163,6 +169,7 @@ const savannaAt = text.indexOf('## TigerGraph Savanna')
 const savannaDesc = text.indexOf('TigerGraph Savanna is the fully managed cloud service')
 const savannaLink = text.indexOf('- [Overview](https://www.tigergraph.com/docs/savanna/main/overview/index.md)')
 const cloudAt = text.indexOf('## TigerGraph Cloud Classic')
+check('downloads before the product list', downloadsAt > 0 && downloadsAt < homeAt, true)
 check('home before server', homeAt < serverAt, true)
 check('server before gsql', serverAt < gsqlAt, true)
 check('current gsql before the 4.2 link', gsqlAt < gsql42At, true)
@@ -182,4 +189,4 @@ if (failed) {
   console.error(text)
   process.exit(1)
 }
-console.log(required.length + 13 + ' passed')
+console.log(required.length + 14 + ' passed')

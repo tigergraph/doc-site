@@ -18,6 +18,13 @@ const SUMMARY =
   '> TigerGraph is a graph database for connected data. It stores information as vertices and edges and is built to answer questions that follow many hops across a large graph. ' +
   'You design a schema, load data, and query it with GSQL. The same engine also runs openCypher and the pattern-matching part of GQL, and it can combine a graph search with a vector search.'
 
+const DOWNLOADS = [
+  '- [Enterprise Edition](https://dl.tigergraph.com/?tab=enterprise)',
+  '- [Community Edition](https://dl.tigergraph.com/?tab=community)',
+  '- [Tools](https://dl.tigergraph.com/?tab=tools)',
+  '- [Solution](https://dl.tigergraph.com/?tab=solution)',
+]
+
 const PRODUCT_DESCRIPTIONS = {
   'tigergraph-server': 'TigerGraph DB is the self-managed database. It runs on Linux, Docker, Kubernetes, and cloud marketplace images. The docs cover installation, clustering and high availability, loading data, security, backup and restore, system management, and the REST endpoints for GSQL and for running queries. The GSQL Web Shell, the browser shell served on port 14240, is a page in this set.',
   'gsql-ref': 'GSQL is the language for defining a schema, loading data, and querying the graph. This reference also covers openCypher in GSQL and hybrid graph and vector search.',
@@ -157,6 +164,12 @@ function buildLlmsTxt ({ playbook, contentCatalog, navigationCatalog, resolver }
     `# ${TITLE}`,
     '',
     SUMMARY,
+    '',
+    '## Downloads',
+    '',
+    'TigerGraph software is downloaded from these pages.',
+    '',
+    ...DOWNLOADS,
     '',
     `- [HTML site](${siteUrl || '/'})`,
     '',
