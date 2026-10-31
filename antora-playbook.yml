@@ -71,6 +71,7 @@ antora:
   extensions:
     # Publish a Markdown twin next to each HTML page for Copy page / View as Markdown.
     - ./libs/markdown-for-llm.js
+    # ./libs/llms-txt.js writes /llms.txt. Leave it disabled until that index should cover this site.
 
 asciidoc:
   attributes:
