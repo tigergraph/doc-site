@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test/llm-utils-test.js",
+    "test": "node test/llm-utils-test.js && node test/markdown-for-llm-test.js",
     "build": "antora generate --fetch antora-playbook.yml",
     "dev": "gulp",
     "serve": "http-server build/site -c-1"

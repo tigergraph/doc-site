@@ -15,12 +15,17 @@
  *   /overview/  →  /overview/index.md
  *   /savanna/main/overview/pricing  →  /savanna/main/overview/pricing.md
  *
+ * Links inside the Markdown are resolved with playbook site.url and the pages
+ * this build publishes. A published page becomes an absolute .md URL. A docs
+ * URL with no generated Markdown file stays an absolute HTML URL. Hosts outside
+ * the documentation site are left unchanged.
+ *
  * Markdown is derived from the resolved AsciiDoc→HTML body (includes, attributes,
- * conditionals, and xrefs already applied) — never from raw `.adoc` source.
+ * conditionals, and xrefs already applied), never from raw `.adoc` source.
  */
 
 const { NodeHtmlMarkdown } = require('node-html-markdown')
-const { stripTags, htmlToMdUrl } = require('./llm-utils')
+const { stripTags, htmlToMdUrl, createLinkResolver } = require('./llm-utils')
 
 const textReplace = [
   [/[“”]/g, '"'],
@@ -86,7 +91,7 @@ function rewriteInternalLinks (markdown) {
     .replace(/\]\(([^)\s]+)\.html\)/g, ']($1.md)')
 }
 
-function buildFrontmatter (page) {
+function buildFrontmatter (page, urls) {
   const attrs = (page.asciidoc && page.asciidoc.attributes) || {}
   const lines = ['---']
   lines.push(`title: ${JSON.stringify(stripTags(page.title) || page.src.stem)}`)
@@ -95,6 +100,8 @@ function buildFrontmatter (page) {
   if (page.src && page.src.version) lines.push(`version: ${JSON.stringify(page.src.version)}`)
   if (page.src && page.src.module) lines.push(`module: ${JSON.stringify(page.src.module)}`)
   if (page.pub && page.pub.url) lines.push(`html_url: ${JSON.stringify(page.pub.url)}`)
+  if (urls && urls.canonicalUrl) lines.push(`canonical_url: ${JSON.stringify(urls.canonicalUrl)}`)
+  if (urls && urls.markdownUrl) lines.push(`markdown_url: ${JSON.stringify(urls.markdownUrl)}`)
   lines.push('---', '')
   return lines.join('\n')
 }
@@ -104,15 +111,18 @@ function prepareHtml (html) {
   return String(html || '').replace(/<a\b[^>]*\bclass="[^"]*\banchor\b[^"]*"[^>]*>\s*<\/a>/gi, '')
 }
 
-function markdownify (page) {
+function markdownify (page, resolver) {
   const title = stripTags(page.title) || (page.src && page.src.stem) || 'Untitled'
   const html = prepareHtml(page.contents ? page.contents.toString() : '')
   let markdown = nhm.translate(html)
-  markdown = rewriteInternalLinks(markdown)
+  const pageUrl = page.pub && page.pub.url
+  if (resolver) markdown = resolver.rewrite(markdown, pageUrl)
+  else markdown = rewriteInternalLinks(markdown)
 
-  const htmlUrl = page.pub && page.pub.url
+  const urls = resolver && pageUrl ? resolver.urlsFor(pageUrl) : {}
+  const htmlUrl = (urls && urls.canonicalUrl) || pageUrl
   const header = [
-    buildFrontmatter(page),
+    buildFrontmatter(page, urls),
     `[View as HTML](${htmlUrl})`,
     '',
     `# ${title}`,
@@ -134,16 +144,34 @@ function isPublishablePage (page) {
   )
 }
 
+function aliasEntries (contentCatalog) {
+  if (!contentCatalog || typeof contentCatalog.findBy !== 'function') return []
+  return contentCatalog.findBy({ family: 'alias' }).reduce((accum, file) => {
+    const from = file.pub && file.pub.url
+    const to = file.rel && file.rel.pub && file.rel.pub.url
+    if (!from || !to || from === to) return accum
+    accum.push({ from, to, splat: !!(file.pub && file.pub.splat) })
+    return accum
+  }, [])
+}
+
 module.exports.register = function () {
   const pending = new Map()
 
   // Capture resolved document HTML before the UI layout wraps it.
-  this.on('documentsConverted', ({ contentCatalog }) => {
-    for (const page of contentCatalog.getPages(isPublishablePage)) {
+  this.on('documentsConverted', ({ contentCatalog, playbook }) => {
+    const siteUrl = playbook && playbook.site && playbook.site.url
+    const pages = contentCatalog.getPages(isPublishablePage)
+    const resolver = createLinkResolver({
+      siteUrl,
+      pages: pages.map((page) => page.pub && page.pub.url).filter(Boolean),
+      aliases: aliasEntries(contentCatalog),
+    })
+    for (const page of pages) {
       const outPath = page.out.path.replace(/\.html$/, '.md')
       const pubUrl = htmlToMdUrl(page.pub.url)
       pending.set(outPath, {
-        contents: Buffer.from(markdownify(page)),
+        contents: Buffer.from(markdownify(page, resolver)),
         outPath,
         pubUrl,
       })
@@ -163,3 +191,5 @@ module.exports.register = function () {
     }
   })
 }
+
+module.exports.markdownify = markdownify
