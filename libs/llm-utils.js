@@ -18,7 +18,13 @@ const LEGACY_DOC_HOSTS = new Set([
   'docs.tigergraph.com',
 ])
 
-const LINK_RX = /(!?\[[^\]\n]*\])\((<[^>\n]+>|[^()\n\s]*(?:\([^()\n\s]*\)[^()\n\s]*)*)(?:\s+("[^"\n]*"))?\)/g
+const LINK_RX = /(!?\[(?:\\.|[^\]\n])*\])\((<[^>\n]+>|[^()\n\s]*(?:\([^()\n\s]*\)[^()\n\s]*)*)(?:\s+("[^"\n]*"))?\)/g
+
+// node-html-markdown encodes "_" and "*" in every href. Put them back so a
+// link can be matched to the Markdown file for that page.
+function restoreHrefChars (value) {
+  return String(value).replace(/%5F/gi, '_').replace(/%2A/gi, '*')
+}
 
 function stripTags (html) {
   return String(html || '')
@@ -120,7 +126,21 @@ function createLinkResolver ({ siteUrl, pages = [], aliases = [] } = {}) {
     let path = sitePath || '/'
     if (!path.startsWith('/')) path = '/' + path
     const base = site.public ? site.href + path : path
-    return base + (suffix || '')
+    return base + decodeHash(suffix)
+  }
+
+  // node-html-markdown percent-encodes "_" in heading ids (#%5Frun%5F...).
+  // The Markdown file should use the id itself: page.md#_run_...
+  function decodeHash (suffix) {
+    if (!suffix || suffix.indexOf('#') === -1) return suffix || ''
+    const hashAt = suffix.indexOf('#')
+    const query = suffix.slice(0, hashAt)
+    const hash = suffix.slice(hashAt)
+    try {
+      return query + decodeURIComponent(hash)
+    } catch (err) {
+      return suffix
+    }
   }
 
   function normalizePath (value) {
@@ -209,6 +229,7 @@ function createLinkResolver ({ siteUrl, pages = [], aliases = [] } = {}) {
 
   function resolve (raw, pageHtmlUrl) {
     if (!raw || raw === '#') return null
+    raw = restoreHrefChars(raw)
     if (/^(?:mailto|tel|javascript|data):/i.test(raw)) return null
 
     if (raw.startsWith('#') || raw.startsWith('?')) {
@@ -296,11 +317,27 @@ function createLinkResolver ({ siteUrl, pages = [], aliases = [] } = {}) {
   }
 }
 
+function escaped (markdown, index) {
+  let slashes = 0
+  for (let j = index - 1; j >= 0 && markdown.charAt(j) === '\\'; j--) slashes++
+  return slashes % 2 === 1
+}
+
+function nextFence (markdown, index) {
+  for (let j = index; j < markdown.length; j++) {
+    if (escaped(markdown, j)) continue
+    if (markdown.startsWith('```', j) || markdown.startsWith('~~~', j)) return j
+  }
+  return markdown.length
+}
+
 function rewriteOutsideCode (markdown, rewriteSegment) {
+  // Only fenced code is left untouched. Inline code is not a reliable boundary:
+  // one unmatched backtick would hide every link after it on the page.
   let out = ''
   let i = 0
   while (i < markdown.length) {
-    if (markdown.startsWith('```', i) || markdown.startsWith('~~~', i)) {
+    if ((markdown.startsWith('```', i) || markdown.startsWith('~~~', i)) && !escaped(markdown, i)) {
       const fence = markdown.slice(i, i + 3)
       const end = markdown.indexOf(fence, i + 3)
       const close = end === -1 ? markdown.length : end + 3
@@ -308,29 +345,8 @@ function rewriteOutsideCode (markdown, rewriteSegment) {
       i = close
       continue
     }
-    if (markdown.startsWith('``', i)) {
-      const end = markdown.indexOf('``', i + 2)
-      const close = end === -1 ? markdown.length : end + 2
-      out += markdown.slice(i, close)
-      i = close
-      continue
-    }
-    if (markdown.charAt(i) === '`') {
-      const end = markdown.indexOf('`', i + 1)
-      const close = end === -1 ? markdown.length : end + 1
-      out += markdown.slice(i, close)
-      i = close
-      continue
-    }
-    let next = markdown.length
-    const fence = markdown.indexOf('```', i)
-    const tilde = markdown.indexOf('~~~', i)
-    const tick = markdown.indexOf('`', i)
-    if (fence !== -1) next = Math.min(next, fence)
-    if (tilde !== -1) next = Math.min(next, tilde)
-    if (tick !== -1) next = Math.min(next, tick)
-    const segment = markdown.slice(i, next)
-    out += rewriteSegment(segment)
+    const next = nextFence(markdown, i)
+    out += rewriteSegment(markdown.slice(i, next))
     i = next
   }
   return out
