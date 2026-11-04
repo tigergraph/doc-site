@@ -14,12 +14,12 @@ function walk(dir) {
       continue
     }
 
-    if (!/\.(html|xml)$/i.test(entry.name)) continue
+    if (!/\.(html|xml|md)$/i.test(entry.name)) continue
 
     let content = fs.readFileSync(file, 'utf8')
     const original = content
 
-    if (/^sitemap.*\.xml$/i.test(entry.name)) {
+    if (/^sitemap.*\.xml$/i.test(entry.name) || /\.md$/i.test(entry.name)) {
       content = content.split(oldOrigin).join(newOrigin)
     } else if (/\.html$/i.test(entry.name)) {
       content = content.replace(
