@@ -134,7 +134,7 @@ function check (name, actual, expected) {
 const text = buildLlmsTxt({ playbook, contentCatalog, navigationCatalog, resolver })
 const required = [
   '# TigerGraph Documentation',
-  '> TigerGraph is a graph database for connected data. It stores information as vertices and edges',
+  '> TigerGraph builds an enterprise graph database and analytics platform for connected data.',
   '## Downloads',
   '- [Enterprise Edition](https://dl.tigergraph.com/?tab=enterprise)',
   '- [Community Edition](https://dl.tigergraph.com/?tab=community)',
@@ -151,9 +151,6 @@ const required = [
   '- [Defining a graph schema](https://www.tigergraph.com/docs/gsql-ref/4.3/ddl-and-loading/defining-a-graph-schema.md)',
   '## TigerGraph Savanna',
   '- [Overview](https://www.tigergraph.com/docs/savanna/main/overview/index.md)',
-  '## TigerGraph Cloud Classic',
-  '- [Cloud Classic](https://www.tigergraph.com/docs/cloud/main/start/overview.md)',
-  '- [Status](https://status.tigergraph.com)',
 ]
 for (const snippet of required) {
   check('includes ' + snippet, text.includes(snippet), true)
@@ -168,14 +165,13 @@ const gsql41At = text.indexOf('- [GSQL Language Reference 4.1](https://www.tiger
 const savannaAt = text.indexOf('## TigerGraph Savanna')
 const savannaDesc = text.indexOf('TigerGraph Savanna is the fully managed cloud service')
 const savannaLink = text.indexOf('- [Overview](https://www.tigergraph.com/docs/savanna/main/overview/index.md)')
-const cloudAt = text.indexOf('## TigerGraph Cloud Classic')
 check('downloads before the product list', downloadsAt > 0 && downloadsAt < homeAt, true)
 check('home before server', homeAt < serverAt, true)
 check('server before gsql', serverAt < gsqlAt, true)
 check('current gsql before the 4.2 link', gsqlAt < gsql42At, true)
 check('4.2 link before 4.1 link', gsql42At < gsql41At, true)
 check('older links before savanna', gsql41At < savannaAt, true)
-check('savanna before cloud', savannaAt < cloudAt, true)
+check('omits Cloud Classic', text.includes('Cloud Classic') || text.includes('/cloud/'), false)
 check('savanna description sits under its heading', savannaAt < savannaDesc && savannaDesc < savannaLink, true)
 check('does not copy the 4.2 navigation', text.includes('Old introduction'), false)
 check('does not copy the 4.1 navigation', text.includes('Older introduction'), false)

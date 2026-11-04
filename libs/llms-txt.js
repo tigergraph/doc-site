@@ -14,9 +14,15 @@
 const { createLinkResolver, htmlToMdUrl, stripTags } = require('./llm-utils')
 
 const TITLE = 'TigerGraph Documentation'
+
+// Cloud Classic is retiring, so the index does not list it.
+const OMITTED_COMPONENTS = new Set(['cloud'])
 const SUMMARY =
-  '> TigerGraph is a graph database for connected data. It stores information as vertices and edges and is built to answer questions that follow many hops across a large graph. ' +
-  'You design a schema, load data, and query it with GSQL. The same engine also runs openCypher and the pattern-matching part of GQL, and it can combine a graph search with a vector search.'
+  '> TigerGraph builds an enterprise graph database and analytics platform for connected data. ' +
+  'The database stores entities and the relationships between them, and it is built to answer questions that follow many hops across a large graph. ' +
+  'Customers run it as self-managed TigerGraph DB or as Savanna, the fully managed cloud service. ' +
+  'Queries use GSQL, with support for openCypher, the pattern-matching part of GQL, and hybrid graph and vector search. ' +
+  'The rest of the platform is GraphStudio and Admin Portal for building and operating a database, Insights for no-code dashboards, a Graph Data Science Library of graph algorithms, the pyTigerGraph Python client, a GraphQL service, and ML Workbench.'
 
 const DOWNLOADS = [
   '- [Enterprise Edition](https://dl.tigergraph.com/?tab=enterprise)',
@@ -28,13 +34,12 @@ const DOWNLOADS = [
 const PRODUCT_DESCRIPTIONS = {
   'tigergraph-server': 'TigerGraph DB is the self-managed database. It runs on Linux, Docker, Kubernetes, and cloud marketplace images. The docs cover installation, clustering and high availability, loading data, security, backup and restore, system management, and the REST endpoints for GSQL and for running queries. The GSQL Web Shell, the browser shell served on port 14240, is a page in this set.',
   'gsql-ref': 'GSQL is the language for defining a schema, loading data, and querying the graph. This reference also covers openCypher in GSQL and hybrid graph and vector search.',
-  savanna: 'TigerGraph Savanna is the fully managed cloud service at https://tgcloud.io, and the successor to Cloud Classic. Storage and compute scale separately. You create workgroups and workspaces, then design a schema, load data, and query from the browser or from an API. The Savanna REST API at https://api.tgcloud.io is the control plane for those resources. Reading and writing the graph inside a workspace uses the TigerGraph DB data-plane endpoints.',
+  savanna: 'TigerGraph Savanna is the fully managed cloud service at https://tgcloud.io. Storage and compute scale separately. You create workgroups and workspaces, then design a schema, load data, and query from the browser or from an API. The Savanna REST API at https://api.tgcloud.io is the control plane for those resources. Reading and writing the graph inside a workspace uses the TigerGraph DB data-plane endpoints.',
   gui: 'GraphStudio and Admin Portal are the browser tools for a running database. GraphStudio is where you design the schema, map and load data, write queries, and explore the graph. Admin Portal is where you monitor the system and manage users, security, and operations.',
   insights: 'Insights is the no-code visual graph analyzer. You build dashboards and applications that show graph results to people who do not write GSQL.',
   'graph-ml': 'The Graph Data Science Library is a set of more than 50 GSQL queries that implement standard graph algorithms, including centrality, community detection, similarity, pathfinding, classification, embeddings, and link prediction. The published docs for this library are version 3.10.',
   pytigergraph: 'pyTigerGraph is the Python package for connecting to a TigerGraph database. It wraps the REST API and adds helpers for schema, queries, graph data science, datasets, and visualization.',
   graphql: 'TigerGraph GraphQL Service lets a GraphQL client query and modify graph data. It translates the GSQL schema into a GraphQL schema and supports queries, filtering, sorting, pagination, and mutations. The published docs are version 3.9.',
-  cloud: 'TigerGraph Cloud Classic is the earlier fully managed cloud, built on the enterprise database and integrated with GraphStudio, Admin Portal, and Insights, on AWS, Azure, or GCP. It is no longer offered to new users. New cloud work starts in Savanna.',
   'ml-workbench': 'TigerGraph ML Workbench was the platform for training graph machine learning models on data stored in TigerGraph. It is retiring. The Community edition remains available as-is and is no longer maintained. Feature extraction and graph embeddings continue in the pyTigerGraph GDS library.',
 }
 
@@ -181,6 +186,8 @@ function buildLlmsTxt ({ playbook, contentCatalog, navigationCatalog, resolver }
   )
 
   for (const component of components) {
+    if (OMITTED_COMPONENTS.has(component.name)) continue
+
     const versions = versionsNewestFirst(component)
     const latest = versions[0]
     if (!latest) continue
