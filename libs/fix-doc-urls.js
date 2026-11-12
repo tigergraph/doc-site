@@ -5,7 +5,35 @@ const siteDir = path.resolve('build/site')
 const oldOrigin = 'https://docs.tigergraph.com'
 const newOrigin = 'https://www.tigergraph.com/docs'
 
-function walk(dir) {
+function rewriteOrigins (content) {
+  return String(content).split(oldOrigin).join(newOrigin)
+}
+
+// HTML stays limited to the tags Antora fills from the Netlify URL.
+// Markdown is rewritten in full because Copy page ships that file to the user.
+function rewriteSiteFile (name, content) {
+  if (/^sitemap.*\.xml$/i.test(name) || /\.md$/i.test(name)) {
+    return rewriteOrigins(content)
+  }
+  if (/\.html$/i.test(name)) {
+    let next = content.replace(
+      /<link\b[^>]*\brel=["']canonical["'][^>]*>/gi,
+      tag => rewriteOrigins(tag)
+    )
+    next = next.replace(
+      /<meta\b[^>]*\bproperty=["']og:url["'][^>]*>/gi,
+      tag => rewriteOrigins(tag)
+    )
+    next = next.replace(
+      /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
+      tag => rewriteOrigins(tag)
+    )
+    return next
+  }
+  return content
+}
+
+function walk (dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name)
 
@@ -14,29 +42,10 @@ function walk(dir) {
       continue
     }
 
-    if (!/\.(html|xml)$/i.test(entry.name)) continue
+    if (!/\.(html|xml|md)$/i.test(entry.name)) continue
 
-    let content = fs.readFileSync(file, 'utf8')
-    const original = content
-
-    if (/^sitemap.*\.xml$/i.test(entry.name)) {
-      content = content.split(oldOrigin).join(newOrigin)
-    } else if (/\.html$/i.test(entry.name)) {
-      content = content.replace(
-        /<link\b[^>]*\brel=["']canonical["'][^>]*>/gi,
-        tag => tag.split(oldOrigin).join(newOrigin)
-      )
-
-      content = content.replace(
-        /<meta\b[^>]*\bproperty=["']og:url["'][^>]*>/gi,
-        tag => tag.split(oldOrigin).join(newOrigin)
-      )
-
-      content = content.replace(
-        /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
-        tag => tag.split(oldOrigin).join(newOrigin)
-      )
-    }
+    const original = fs.readFileSync(file, 'utf8')
+    const content = rewriteSiteFile(entry.name, original)
 
     if (content !== original) {
       fs.writeFileSync(file, content)
@@ -45,8 +54,11 @@ function walk(dir) {
   }
 }
 
-if (!fs.existsSync(siteDir)) {
-  throw new Error(`Generated site directory not found: ${siteDir}`)
+if (require.main === module) {
+  if (!fs.existsSync(siteDir)) {
+    throw new Error(`Generated site directory not found: ${siteDir}`)
+  }
+  walk(siteDir)
 }
 
-walk(siteDir)
+module.exports = { rewriteSiteFile, oldOrigin, newOrigin }
