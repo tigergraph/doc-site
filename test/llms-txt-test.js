@@ -6,7 +6,7 @@ const path = require('path')
 const root = path.join(__dirname, '..')
 const dir = fs.existsSync(path.join(root, 'libs')) ? 'libs' : 'lib'
 const { createLinkResolver } = require(path.join(root, dir, 'llm-utils.js'))
-const { buildLlmsTxt } = require(path.join(root, dir, 'llms-txt.js'))
+const { buildLlmsTxt, publishedSiteUrl } = require(path.join(root, dir, 'llms-txt.js'))
 
 const SITE = 'https://www.tigergraph.com/docs'
 const pages = [
@@ -180,9 +180,28 @@ check('does not load the 4.2 navigation', sawOldVersion, false)
 check('does not use the playbook title Docs', text.startsWith('# Docs'), false)
 check('leaves the external host alone', text.includes('status.tigergraph.com.md'), false)
 
+const legacyPlaybook = {
+  site: { title: 'Docs', url: 'https://docs.tigergraph.com' },
+  asciidoc: playbook.asciidoc,
+}
+const legacyResolver = createLinkResolver({
+  siteUrl: publishedSiteUrl(legacyPlaybook),
+  pages,
+  aliases: [{ from: '/gsql-ref/current', to: '/gsql-ref/4.3', splat: true }],
+})
+const legacyText = buildLlmsTxt({
+  playbook: legacyPlaybook,
+  contentCatalog,
+  navigationCatalog,
+  resolver: legacyResolver,
+})
+check('legacy host maps to the public docs site', publishedSiteUrl(legacyPlaybook), SITE)
+check('legacy build uses the public docs host', legacyText.includes(SITE + '/savanna/main/overview/index.md'), true)
+check('legacy build omits the old docs host', legacyText.includes('docs.tigergraph.com'), false)
+
 if (failed) {
   console.error(failed + ' failed')
   console.error(text)
   process.exit(1)
 }
-console.log(required.length + 14 + ' passed')
+console.log(required.length + 17 + ' passed')

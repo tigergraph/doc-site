@@ -15,6 +15,10 @@ const { createLinkResolver, htmlToMdUrl, stripTags } = require('./llm-utils')
 
 const TITLE = 'TigerGraph Documentation'
 
+// Netlify sets URL to the old docs host, and Antora uses that as site.url.
+// The index still names the public docs site. This does not change HTML pages.
+const PUBLIC_SITE_URL = 'https://www.tigergraph.com/docs'
+
 // Cloud Classic is retiring, so the index does not list it.
 const OMITTED_COMPONENTS = new Set(['cloud'])
 const SUMMARY =
@@ -41,6 +45,17 @@ const PRODUCT_DESCRIPTIONS = {
   pytigergraph: 'pyTigerGraph is the Python package for connecting to a TigerGraph database. It wraps the REST API and adds helpers for schema, queries, graph data science, datasets, and visualization.',
   graphql: 'TigerGraph GraphQL Service lets a GraphQL client query and modify graph data. It translates the GSQL schema into a GraphQL schema and supports queries, filtering, sorting, pagination, and mutations. The published docs are version 3.9.',
   'ml-workbench': 'TigerGraph ML Workbench was the platform for training graph machine learning models on data stored in TigerGraph. It is retiring. The Community edition remains available as-is and is no longer maintained. Feature extraction and graph embeddings continue in the pyTigerGraph GDS library.',
+}
+
+function publishedSiteUrl (playbook) {
+  const configured = (playbook && playbook.site && playbook.site.url) || ''
+  if (!configured) return ''
+  try {
+    if (new URL(configured).hostname === 'docs.tigergraph.com') return PUBLIC_SITE_URL
+  } catch (err) {
+    return configured
+  }
+  return configured.replace(/\/$/, '')
 }
 
 function absoluteUrl (siteUrl, path) {
@@ -164,7 +179,7 @@ function earlierVersionLines (component, versions, siteUrl, resolver) {
 }
 
 function buildLlmsTxt ({ playbook, contentCatalog, navigationCatalog, resolver }) {
-  const siteUrl = (playbook && playbook.site && playbook.site.url) || ''
+  const siteUrl = publishedSiteUrl(playbook)
   const lines = [
     `# ${TITLE}`,
     '',
@@ -244,7 +259,7 @@ module.exports.register = function () {
   let contents
 
   this.on('navigationBuilt', ({ playbook, contentCatalog, navigationCatalog }) => {
-    const siteUrl = playbook && playbook.site && playbook.site.url
+    const siteUrl = publishedSiteUrl(playbook)
     const resolver = createLinkResolver({
       siteUrl,
       pages: pageUrls(contentCatalog),
@@ -268,3 +283,4 @@ module.exports.register = function () {
 }
 
 module.exports.buildLlmsTxt = buildLlmsTxt
+module.exports.publishedSiteUrl = publishedSiteUrl
