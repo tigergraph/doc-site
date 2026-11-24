@@ -9,24 +9,40 @@ function rewriteOrigins (content) {
   return String(content).split(oldOrigin).join(newOrigin)
 }
 
+// Netlify serves every path in lowercase and 301s mixed-case requests
+// (e.g. /API/, /README), so the URLs we declare must be lowercase too.
+// Query strings and fragments are left as they are.
+const docsUrlPath = /https:\/\/www\.tigergraph\.com\/docs[^\s"'<>?#]*/g
+
+function lowercaseDocsPaths (content) {
+  return String(content).replace(docsUrlPath, url => url.toLowerCase())
+}
+
+function rewriteDeclaredUrls (content) {
+  return lowercaseDocsPaths(rewriteOrigins(content))
+}
+
 // HTML stays limited to the tags Antora fills from the Netlify URL.
 // Markdown is rewritten in full because Copy page ships that file to the user.
 function rewriteSiteFile (name, content) {
-  if (/^sitemap.*\.xml$/i.test(name) || /\.md$/i.test(name)) {
+  if (/^sitemap.*\.xml$/i.test(name)) {
+    return rewriteDeclaredUrls(content)
+  }
+  if (/\.md$/i.test(name)) {
     return rewriteOrigins(content)
   }
   if (/\.html$/i.test(name)) {
     let next = content.replace(
       /<link\b[^>]*\brel=["']canonical["'][^>]*>/gi,
-      tag => rewriteOrigins(tag)
+      tag => rewriteDeclaredUrls(tag)
     )
     next = next.replace(
       /<meta\b[^>]*\bproperty=["']og:url["'][^>]*>/gi,
-      tag => rewriteOrigins(tag)
+      tag => rewriteDeclaredUrls(tag)
     )
     next = next.replace(
       /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi,
-      tag => rewriteOrigins(tag)
+      tag => rewriteDeclaredUrls(tag)
     )
     return next
   }

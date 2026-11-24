@@ -54,8 +54,27 @@ const sitemap = `<url><loc>${oldPage}</loc></url>`
 check('sitemap uses the public docs host', rewriteSiteFile('sitemap.xml', sitemap), `<url><loc>${newPage}</loc></url>`)
 check('other sitemap names are unchanged', rewriteSiteFile('other.xml', sitemap), sitemap)
 
+// Netlify lowercases every path, so declared URLs must not keep source casing.
+const mixedOld = 'https://docs.tigergraph.com/tigergraph-server/4.2/API/README'
+const mixedNew = 'https://www.tigergraph.com/docs/tigergraph-server/4.2/api/readme'
+const mixedHtml = [
+  `<link rel="canonical" href="${mixedOld}">`,
+  `<meta property="og:url" content="${mixedOld}">`,
+  `<script type="application/ld+json">{"headline":"REST API","url":"${mixedOld}","logo":"https://www.tigergraph.com/wp-content/uploads/2021/09/TigerGraph-Logo.svg"}</script>`,
+  `<a href="../API/README#_Section">API</a>`,
+].join('\n')
+const loweredHtml = rewriteSiteFile('index.html', mixedHtml)
+check('html canonical path is lowercase', loweredHtml.includes(`<link rel="canonical" href="${mixedNew}">`), true)
+check('html og:url path is lowercase', loweredHtml.includes(`content="${mixedNew}"`), true)
+check('json-ld url path is lowercase', loweredHtml.includes(`"url":"${mixedNew}"`), true)
+check('json-ld text and non-docs urls keep their case', loweredHtml.includes('"headline":"REST API"') && loweredHtml.includes('TigerGraph-Logo.svg'), true)
+check('html body links are not touched', loweredHtml.includes('<a href="../API/README#_Section">'), true)
+check('sitemap path is lowercase', rewriteSiteFile('sitemap-tigergraph-server.xml', `<url><loc>${mixedOld}</loc></url>`), `<url><loc>${mixedNew}</loc></url>`)
+check('fragment keeps its case', rewriteSiteFile('sitemap.xml', `<loc>${mixedOld}#_Check_Status</loc>`), `<loc>${mixedNew}#_Check_Status</loc>`)
+check('markdown urls keep their case', rewriteSiteFile('index.md', `[API](${mixedOld})`), '[API](https://www.tigergraph.com/docs/tigergraph-server/4.2/API/README)')
+
 if (failed) {
   console.error(failed + ' failed')
   process.exit(1)
 }
-console.log('9 passed')
+console.log('17 passed')
