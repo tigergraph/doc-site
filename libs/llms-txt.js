@@ -1,17 +1,20 @@
 'use strict'
 
 /**
- * Antora extension: generate /llms.txt from the site navigation model.
+ * Antora extension: generate /llms.txt and /llms-full.txt from this build.
  *
- * The doc-site playbook loads this file. The published index is
- * https://www.tigergraph.com/docs/llms.txt. Each product is indexed in full
- * at its current version. Earlier versions are one link each, so they are
- * not left out. Links point at the Markdown twin of each page.
+ * The doc-site playbook loads this file. /llms.txt is the index described at
+ * https://llmstxt.org/. Each product is indexed in full at its current
+ * version. Earlier versions are one link each, so they are not left out.
+ * Links point at the Markdown twin of each page.
  *
- * Spec: https://llmstxt.org/
+ * /llms-full.txt is that same index with each linked page inlined. The body
+ * is the Markdown twin written for the page during this build, so the file
+ * changes when the navigation or the page content changes. A link with no
+ * Markdown twin stays a link. Both files are published next to the site root.
  */
 
-const { createLinkResolver, htmlToMdUrl, stripTags } = require('./llm-utils')
+const { createLinkResolver, htmlToMdUrl, pageKey, stripTags } = require('./llm-utils')
 
 const TITLE = 'TigerGraph Documentation'
 
@@ -80,7 +83,85 @@ function linkTarget (item, siteUrl, resolver) {
   return absoluteUrl(siteUrl, item.url)
 }
 
-function renderNavItems (items, siteUrl, resolver, lines, depth) {
+function sitePathname (href, siteUrl) {
+  if (!href) return ''
+  let pathname = href
+  if (/^https?:\/\//i.test(href)) {
+    try {
+      pathname = new URL(href).pathname
+    } catch (err) {
+      return ''
+    }
+  }
+  let base = ''
+  if (siteUrl) {
+    try {
+      base = new URL(String(siteUrl).replace(/\/$/, '') + '/').pathname.replace(/\/$/, '')
+    } catch (err) {
+      base = ''
+    }
+  }
+  if (base && (pathname === base || pathname.startsWith(base + '/'))) {
+    pathname = pathname.slice(base.length) || '/'
+  }
+  return pathname
+}
+
+function lookupMarkdown (href, siteUrl, pages) {
+  if (!pages || typeof pages.get !== 'function' || !href) return ''
+  const found = pages.get(pageKey(sitePathname(href, siteUrl)))
+  return found ? String(found) : ''
+}
+
+// Drop the twin's front matter, HTML pointer, and title. The index supplies
+// the title from the navigation label so the outline stays in nav order.
+function pageBody (markdown) {
+  let text = String(markdown || '').replace(/^\uFEFF?---\r?\n[\s\S]*?\r?\n---\r?\n*/, '')
+  text = text.replace(/^\[View as HTML\]\([^)\n]*\)\r?\n+/, '')
+  text = text.replace(/^# [^\n]*\r?\n+/, '')
+  return text.trim()
+}
+
+function shiftHeadings (markdown, amount) {
+  if (!amount || !markdown) return markdown
+  const lines = String(markdown).split('\n')
+  let fence = ''
+  return lines.map((line) => {
+    const opened = /^(```+|~~~+)/.exec(line)
+    if (!fence && opened) {
+      fence = opened[1]
+      return line
+    }
+    if (fence) {
+      if (line.startsWith(fence)) fence = ''
+      return line
+    }
+    return line.replace(/^(#{1,6})(?= )/, (hashes) => '#'.repeat(Math.min(6, hashes.length + amount)))
+  }).join('\n')
+}
+
+function appendLinkedPage (lines, { label, href, depth, siteUrl, pages }) {
+  const markdown = lookupMarkdown(href, siteUrl, pages)
+  if (!markdown) {
+    lines.push(`${'  '.repeat(depth)}- [${label}](${href})`)
+    return
+  }
+
+  // Sit the page under the product heading, then under its nav parent.
+  const level = Math.min(6, 3 + depth)
+  const body = shiftHeadings(pageBody(markdown), level - 1)
+  lines.push('')
+  lines.push(`${'#'.repeat(level)} ${label}`)
+  lines.push('')
+  lines.push(`Source: ${href}`)
+  if (body) {
+    lines.push('')
+    lines.push(body)
+  }
+  lines.push('')
+}
+
+function renderNavItems (items, siteUrl, resolver, lines, depth, pages) {
   if (!items || !items.length) return
 
   for (const item of items) {
@@ -90,8 +171,9 @@ function renderNavItems (items, siteUrl, resolver, lines, depth) {
     const href = linkTarget(item, siteUrl, resolver)
 
     if (href) {
-      lines.push(`${indent}- [${label}](${href})`)
-      if (hasChildren) renderNavItems(item.items, siteUrl, resolver, lines, depth + 1)
+      if (pages) appendLinkedPage(lines, { label, href, depth, siteUrl, pages })
+      else lines.push(`${indent}- [${label}](${href})`)
+      if (hasChildren) renderNavItems(item.items, siteUrl, resolver, lines, depth + 1, pages)
       continue
     }
 
@@ -100,12 +182,12 @@ function renderNavItems (items, siteUrl, resolver, lines, depth) {
       lines.push('')
       lines.push(`### ${label}`)
       lines.push('')
-      renderNavItems(item.items, siteUrl, resolver, lines, 0)
+      renderNavItems(item.items, siteUrl, resolver, lines, 0, pages)
       continue
     }
 
     if (label) lines.push(`${indent}- ${label}`)
-    if (hasChildren) renderNavItems(item.items, siteUrl, resolver, lines, depth + 1)
+    if (hasChildren) renderNavItems(item.items, siteUrl, resolver, lines, depth + 1, pages)
   }
 }
 
@@ -167,18 +249,28 @@ function versionHeading (version) {
   return `## ${version.title || 'Documentation'}${name ? ` (${name})` : ''}`
 }
 
-function earlierVersionLines (component, versions, siteUrl, resolver) {
-  return versions.map((version) => {
-    const name = versionName(version)
-    const title = version.title || component.title || component.name
-    const label = name ? `${title} ${name}` : title
-    const raw = version.url || `/${component.name}/${version.version}/`
-    const href = (resolver && resolver.resolveLink(raw, '/')) || absoluteUrl(siteUrl, raw)
-    return `- [${label}](${href})`
-  })
+function versionLink (component, version, siteUrl, resolver) {
+  const name = versionName(version)
+  const title = version.title || component.title || component.name
+  const label = name ? `${title} ${name}` : title
+  const raw = version.url || `/${component.name}/${version.version}/`
+  const href = (resolver && resolver.resolveLink(raw, '/')) || absoluteUrl(siteUrl, raw)
+  return { label, href }
 }
 
-function buildLlmsTxt ({ playbook, contentCatalog, navigationCatalog, resolver }) {
+function appendEarlierVersions (lines, component, versions, siteUrl, resolver, pages) {
+  if (!versions.length) return
+  lines.push('')
+  lines.push('Earlier versions:')
+  lines.push('')
+  for (const version of versions) {
+    const link = versionLink(component, version, siteUrl, resolver)
+    if (pages) appendLinkedPage(lines, Object.assign({ depth: 0, siteUrl, pages }, link))
+    else lines.push(`- [${link.label}](${link.href})`)
+  }
+}
+
+function composeIndex ({ playbook, contentCatalog, navigationCatalog, resolver, pages }) {
   const siteUrl = publishedSiteUrl(playbook)
   const lines = [
     `# ${TITLE}`,
@@ -220,21 +312,23 @@ function buildLlmsTxt ({ playbook, contentCatalog, navigationCatalog, resolver }
     }
 
     for (const tree of navTrees) {
-      renderNavItems(tree.items || [tree], siteUrl, resolver, lines, 0)
+      renderNavItems(tree.items || [tree], siteUrl, resolver, lines, 0, pages)
     }
 
-    const earlier = earlierVersionLines(component, versions.slice(1), siteUrl, resolver)
-    if (earlier.length) {
-      lines.push('')
-      lines.push('Earlier versions:')
-      lines.push('')
-      lines.push(...earlier)
-    }
+    appendEarlierVersions(lines, component, versions.slice(1), siteUrl, resolver, pages)
 
     lines.push('')
   }
 
   return `${lines.join('\n').replace(/\n{3,}/g, '\n\n').trim()}\n`
+}
+
+function buildLlmsTxt (args) {
+  return composeIndex(Object.assign({}, args, { pages: null }))
+}
+
+function buildLlmsFullTxt (args) {
+  return composeIndex(Object.assign({}, args, { pages: (args && args.pages) || new Map() }))
 }
 
 function aliasEntries (contentCatalog) {
@@ -255,8 +349,21 @@ function pageUrls (contentCatalog) {
   }).map((page) => page.pub.url)
 }
 
+function addTextFile (siteCatalog, filePath, contents) {
+  if (!contents) return
+  siteCatalog.addFile({
+    contents: Buffer.from(contents),
+    mediaType: 'text/plain',
+    out: { path: filePath },
+    path: filePath,
+    pub: { url: '/' + filePath },
+    src: { stem: filePath.replace(/\.txt$/, '') },
+  })
+}
+
 module.exports.register = function () {
   let contents
+  let fullContents
 
   this.on('navigationBuilt', ({ playbook, contentCatalog, navigationCatalog }) => {
     const siteUrl = publishedSiteUrl(playbook)
@@ -265,22 +372,19 @@ module.exports.register = function () {
       pages: pageUrls(contentCatalog),
       aliases: aliasEntries(contentCatalog),
     })
-    contents = buildLlmsTxt({ playbook, contentCatalog, navigationCatalog, resolver })
+    const index = { playbook, contentCatalog, navigationCatalog, resolver }
+    contents = buildLlmsTxt(index)
+    // Markdown twins are captured during documentsConverted, which runs first.
+    const pages = require('./markdown-for-llm').getPublishedMarkdown()
+    fullContents = buildLlmsFullTxt(Object.assign({ pages }, index))
   })
 
   this.on('beforePublish', ({ siteCatalog }) => {
-    if (!contents) return
-
-    siteCatalog.addFile({
-      contents: Buffer.from(contents),
-      mediaType: 'text/plain',
-      out: { path: 'llms.txt' },
-      path: 'llms.txt',
-      pub: { url: '/llms.txt' },
-      src: { stem: 'llms' },
-    })
+    addTextFile(siteCatalog, 'llms.txt', contents)
+    addTextFile(siteCatalog, 'llms-full.txt', fullContents)
   })
 }
 
 module.exports.buildLlmsTxt = buildLlmsTxt
+module.exports.buildLlmsFullTxt = buildLlmsFullTxt
 module.exports.publishedSiteUrl = publishedSiteUrl
