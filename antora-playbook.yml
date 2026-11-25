@@ -72,6 +72,7 @@ antora:
     # Publish a Markdown twin next to each HTML page for Copy page / View as Markdown.
     - ./libs/markdown-for-llm.js
     # /llms.txt indexes the current version of every component in this build.
+    # /llms-full.txt inlines the Markdown twin of each page that index links to.
     - ./libs/llms-txt.js
 
 asciidoc:

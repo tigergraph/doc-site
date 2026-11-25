@@ -352,4 +352,4 @@ function rewriteOutsideCode (markdown, rewriteSegment) {
   return out
 }
 
-module.exports = { stripTags, htmlToMdUrl, createLinkResolver }
+module.exports = { stripTags, htmlToMdUrl, pageKey, createLinkResolver }

@@ -25,7 +25,7 @@
  */
 
 const { NodeHtmlMarkdown } = require('node-html-markdown')
-const { stripTags, htmlToMdUrl, createLinkResolver } = require('./llm-utils')
+const { stripTags, htmlToMdUrl, pageKey, createLinkResolver } = require('./llm-utils')
 
 const textReplace = [
   [/[“”]/g, '"'],
@@ -83,6 +83,14 @@ const customTranslators = {
 }
 
 nhm = new NodeHtmlMarkdown({ textReplace, useInlineLinks: true }, customTranslators)
+
+// Keyed by the page path. llms-full.txt reads this after documentsConverted,
+// which runs before navigationBuilt, and inlines each linked page.
+const publishedMarkdown = new Map()
+
+function getPublishedMarkdown () {
+  return publishedMarkdown
+}
 
 function rewriteInternalLinks (markdown) {
   // Convert in-site HTML links to their Markdown twins.
@@ -172,11 +180,15 @@ module.exports.register = function () {
       pages: pages.map((page) => page.pub && page.pub.url).filter(Boolean),
       aliases: aliasEntries(contentCatalog),
     })
+    publishedMarkdown.clear()
+    pending.clear()
     for (const page of pages) {
       const outPath = page.out.path.replace(/\.html$/, '.md')
       const pubUrl = htmlToMdUrl(page.pub.url)
+      const markdown = markdownify(page, resolver)
+      publishedMarkdown.set(pageKey(page.pub.url), markdown)
       pending.set(outPath, {
-        contents: Buffer.from(markdownify(page, resolver)),
+        contents: Buffer.from(markdown),
         outPath,
         pubUrl,
       })
@@ -198,3 +210,4 @@ module.exports.register = function () {
 }
 
 module.exports.markdownify = markdownify
+module.exports.getPublishedMarkdown = getPublishedMarkdown
